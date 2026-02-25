@@ -1,0 +1,409 @@
+{% doc %}
+  @prompt
+    題名「ギフトカードプレゼント」下に説明文入れる。, 題名「ギフトカードプレゼント」下に説明文、その下に左に画像右に説明文入れたい, スマホで見たときに左画像、説明文に配置
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-gift-card-section-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-gift-card-section__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-gift-card-section__title-{{ ai_gen_id }} {
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size }}px;
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    font-weight: 600;
+  }
+
+  .ai-gift-card-section__intro-{{ ai_gen_id }} {
+    color: {{ block.settings.intro_color }};
+    font-size: {{ block.settings.intro_size }}px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-gift-card-section__content-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.content_gap }}px;
+    align-items: {{ block.settings.vertical_alignment }};
+  }
+
+  .ai-gift-card-section__image-wrapper-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.image_width }}%;
+    max-width: {{ block.settings.image_width }}%;
+  }
+
+  .ai-gift-card-section__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-gift-card-section__image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    position: relative;
+  }
+
+  .ai-gift-card-section__image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-gift-card-section__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-gift-card-section__text-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  .ai-gift-card-section__description-{{ ai_gen_id }} {
+    color: {{ block.settings.description_color }};
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-gift-card-section__title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.85);
+    }
+
+    .ai-gift-card-section__intro-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.intro_size }}px * 0.9);
+    }
+
+    .ai-gift-card-section__description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.description_size }}px * 0.9);
+    }
+
+    .ai-gift-card-section__content-{{ ai_gen_id }} {
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-gift-card-section__image-wrapper-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.mobile_image_width }}%;
+      max-width: {{ block.settings.mobile_image_width }}%;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-gift-card-section-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-gift-card-section__header-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-gift-card-section__title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.intro_text != blank %}
+      <div class="ai-gift-card-section__intro-{{ ai_gen_id }}">
+        {{ block.settings.intro_text }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-gift-card-section__content-{{ ai_gen_id }}">
+    <div class="ai-gift-card-section__image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 800 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          class="ai-gift-card-section__image-{{ ai_gen_id }}"
+        >
+      {% else %}
+        <div class="ai-gift-card-section__image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-gift-card-section__empty-state-{{ ai_gen_id }}">
+            画像を追加してください
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-gift-card-section__text-{{ ai_gen_id }}">
+      {% if block.settings.description != blank %}
+        <div class="ai-gift-card-section__description-{{ ai_gen_id }}">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "ギフトカードプレゼント",
+  "settings": [
+    {
+      "type": "header",
+      "content": "タイトルと紹介文"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "タイトル",
+      "default": "ギフトカードプレゼント"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "紹介文",
+      "default": "<p>特別なキャンペーン期間中、ギフトカードをプレゼントいたします。</p>"
+    },
+    {
+      "type": "header",
+      "content": "画像と説明文"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>こちらのギフトカードは、オンラインストアおよび実店舗でご利用いただけます。有効期限はございませんので、お好きなタイミングでお使いください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "ヘッダーテキスト配置",
+      "options": [
+        {
+          "value": "left",
+          "label": "左揃え"
+        },
+        {
+          "value": "center",
+          "label": "中央揃え"
+        },
+        {
+          "value": "right",
+          "label": "右揃え"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "画像と説明文の縦位置",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "上揃え"
+        },
+        {
+          "value": "center",
+          "label": "中央揃え"
+        },
+        {
+          "value": "flex-end",
+          "label": "下揃え"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "%",
+      "label": "画像の幅（デスクトップ）",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_width",
+      "min": 20,
+      "max": 50,
+      "step": 5,
+      "unit": "%",
+      "label": "画像の幅（モバイル）",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "全体の余白",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 8,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "ヘッダーと画像の間隔",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 4,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "タイトルと紹介文の間隔",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "画像と説明文の間隔（デスクトップ）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "画像と説明文の間隔（モバイル）",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "全体の角の丸み",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "画像の角の丸み",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "タイトルスタイル"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 14,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "タイトルサイズ",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "タイトルカラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "header",
+      "content": "紹介文スタイル"
+    },
+    {
+      "type": "range",
+      "id": "intro_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "紹介文サイズ",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "intro_color",
+      "label": "紹介文カラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "header",
+      "content": "説明文スタイル"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "説明文サイズ",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "説明文カラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "header",
+      "content": "背景"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景色",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ギフトカードプレゼント"
+    }
+  ]
+}
+{% endschema %}

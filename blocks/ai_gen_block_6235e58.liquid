@@ -1,0 +1,1073 @@
+{% doc %}
+  @prompt
+    Shopifyのオンラインストアエディタ用に、動的に動くアンケート（Typeformのような形式）を作成してください。
+    
+    ---
+    
+    ### 🎯目的
+    訪問者が「なぜこのサイトに来たのか」を答えることで、その人に合ったおすすめのコートやジャケットを提案する診断コンテンツを作りたい。
+    
+    ---
+    
+    ### 💬アンケート構成（ver.1 テスト版）
+    
+    **質問1：今回、なぜKAPOK KNOTのサイトに来てくれたのですか？**
+    1. KAPOK KNOTに興味があったから  
+    2. 薄くて軽いコートがあると聞いて  
+    3. サステナブルダウンコートというものが気になった  
+    
+    → どの回答でも、次の質問に進む。
+    
+    ---
+    
+    **質問2：どんな気温で着られるコートを探していますか？**
+    A. 秋から着られる（10〜20度）  
+    B. 冬用（10度を下回る）  
+    C. 極寒対応（0度前後）
+    
+    → 回答に応じておすすめを表示：
+    
+    | 回答 | おすすめアイテム |
+    |------|------------------|
+    | A | エアースムース／シャツブルゾン／ロングベスト |
+    | B | チェスターコート／リバーシブルボアコート |
+    | C | エアーライトジャケット／スタンドカラーコート |
+    
+    ---
+    
+    ### 🧭動作仕様
+    - 一問ずつ順番に表示（前の質問を答えると次が表示される）
+    - ページリロードなしで動作（JavaScriptで制御）
+    - 最後に「あなたにおすすめのスタイル」が表示される
+    - おすすめ商品の下に画像・商品名・「商品を見る」ボタンを表示
+    
+    ---
+    
+    ### 🎨デザイン要件
+    - KAPOK KNOTらしいミニマルで温かみのあるデザイン  
+    - 背景は白またはベージュ系のナチュラルカラー  
+    - 角丸ボタンとプログレスバーを使用  
+    - フェードインアニメーションで質問と結果を切り替える  
+    
+    ---
+    
+    ### ⚙️技術的要件
+    - Shopifyセクション・ブロック構造で動作
+    - HTML / CSS / JavaScript（Liquid互換）
+    - スマホでも快適に操作できるレスポンシブ対応
+    - テキスト、ボタン、メッセージはすべて日本語表示
+    
+    ---
+    
+    この仕様に基づいて、HTML・CSS・JavaScriptを自動生成してください。
+    , 質問1のテキスト
+    のアウター診断は真ん中に揃えましょう。
+    アンケート機能だというのがわかるように全体の背景を薄いグレーで立体的になるようにtypeformをまねしましょう。
+    
+    アンケート項目の右側が余白あいているので、そこに画像項目を設けましょう。
+    全体的に左に寄り過ぎているので、その画像に合わせてセンターに寄せましょう, いい感じだけどちょっと余白が大きすぎる。
+    こちらの手元で余白修正できるように、調整バーを設定してください。, ごめんちょっと上手く伝わってないね。セクションとアンケートの間が大きいという意味です。
+    ここにその大きさはいらないので、なんとか調整したい
+    診断アンケートの大きさはとてもいい感じ, 今の内容で良いけど、商品1の画像はクリックしたら商品詳細画面に行きたいので、productに紐づいた画面にしてほしい, 質問1のテキスト上部に「おすすめアウター診断」って言葉も見出しとして入れよう
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-quiz-wrapper-{{ ai_gen_id }} {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    padding: {{ block.settings.section_padding_top }}px {{ block.settings.section_padding_horizontal }}px {{ block.settings.section_padding_bottom }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-quiz-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .ai-quiz-main-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.main_title_font_size }}px;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    margin-bottom: {{ block.settings.main_title_margin_bottom }}px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .ai-quiz-progress-{{ ai_gen_id }} {
+    width: 100%;
+    height: 6px;
+    background-color: {{ block.settings.progress_bg_color }};
+    border-radius: 10px;
+    margin-bottom: 50px;
+    overflow: hidden;
+  }
+
+  .ai-quiz-progress-bar-{{ ai_gen_id }} {
+    height: 100%;
+    background-color: {{ block.settings.progress_color }};
+    transition: width 0.4s ease;
+    border-radius: 10px;
+  }
+
+  .ai-quiz-question-{{ ai_gen_id }} {
+    opacity: 0;
+    display: none;
+    animation: ai-quiz-fade-in-{{ ai_gen_id }} 0.5s ease forwards;
+  }
+
+  .ai-quiz-question-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  @keyframes ai-quiz-fade-in-{{ ai_gen_id }} {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ai-quiz-question-content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .ai-quiz-question-left-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ai-quiz-question-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.question_font_size }}px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .ai-quiz-options-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ai-quiz-option-{{ ai_gen_id }} {
+    padding: 20px 25px;
+    background-color: {{ block.settings.option_bg_color }};
+    border: 2px solid {{ block.settings.option_border_color }};
+    border-radius: {{ block.settings.option_border_radius }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: {{ block.settings.option_font_size }}px;
+    color: {{ block.settings.text_color }};
+    text-align: center;
+  }
+
+  .ai-quiz-option-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.option_hover_bg_color }};
+    border-color: {{ block.settings.option_hover_border_color }};
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-quiz-question-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 500px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-quiz-question-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-quiz-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-quiz-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .ai-quiz-result-{{ ai_gen_id }} {
+    opacity: 0;
+    display: none;
+    animation: ai-quiz-fade-in-{{ ai_gen_id }} 0.5s ease forwards;
+  }
+
+  .ai-quiz-result-{{ ai_gen_id }}.active {
+    display: block;
+  }
+
+  .ai-quiz-result-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.result_title_font_size }}px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .ai-quiz-result-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.result_subtitle_font_size }}px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .ai-quiz-products-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .ai-quiz-product-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .ai-quiz-product-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-quiz-product-image-link-{{ ai_gen_id }} {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .ai-quiz-product-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: {{ block.settings.product_image_border_radius }}px;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-quiz-product-image-link-{{ ai_gen_id }}:hover .ai-quiz-product-image-{{ ai_gen_id }} {
+    opacity: 0.85;
+  }
+
+  .ai-quiz-product-name-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_name_font_size }}px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .ai-quiz-product-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: {{ block.settings.button_font_size }}px;
+  }
+
+  .ai-quiz-product-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    transform: scale(1.05);
+  }
+
+  .ai-quiz-restart-{{ ai_gen_id }} {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .ai-quiz-restart-button-{{ ai_gen_id }} {
+    padding: 14px 35px;
+    background-color: {{ block.settings.restart_button_bg_color }};
+    color: {{ block.settings.restart_button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    font-size: {{ block.settings.button_font_size }}px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .ai-quiz-restart-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.restart_button_hover_bg_color }};
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-quiz-question-content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .ai-quiz-question-image-{{ ai_gen_id }} {
+      height: 350px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-quiz-wrapper-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top_mobile }}px {{ block.settings.section_padding_horizontal_mobile }}px {{ block.settings.section_padding_bottom_mobile }}px;
+    }
+
+    .ai-quiz-container-{{ ai_gen_id }} {
+      padding: 30px 20px;
+    }
+
+    .ai-quiz-main-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.main_title_font_size }}px * 0.85);
+      margin-bottom: calc({{ block.settings.main_title_margin_bottom }}px * 0.75);
+    }
+
+    .ai-quiz-question-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.question_font_size }}px * 0.85);
+      margin-bottom: 30px;
+    }
+
+    .ai-quiz-option-{{ ai_gen_id }} {
+      padding: 15px 20px;
+      font-size: calc({{ block.settings.option_font_size }}px * 0.9);
+    }
+
+    .ai-quiz-question-image-{{ ai_gen_id }} {
+      height: 250px;
+    }
+
+    .ai-quiz-products-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-quiz-wrapper-{{ ai_gen_id }}">
+  <kapok-quiz-{{ ai_gen_id }} class="ai-quiz-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <h1 class="ai-quiz-main-title-{{ ai_gen_id }}">{{ block.settings.main_title }}</h1>
+
+    <div class="ai-quiz-progress-{{ ai_gen_id }}">
+      <div class="ai-quiz-progress-bar-{{ ai_gen_id }}" data-progress-bar></div>
+    </div>
+
+    <div class="ai-quiz-question-{{ ai_gen_id }} active" data-question="1">
+      <h2 class="ai-quiz-question-title-{{ ai_gen_id }}">{{ block.settings.question_1_text }}</h2>
+      <div class="ai-quiz-question-content-{{ ai_gen_id }}">
+        <div class="ai-quiz-question-left-{{ ai_gen_id }}">
+          <div class="ai-quiz-options-{{ ai_gen_id }}">
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="1">{{ block.settings.q1_option_1 }}</div>
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="2">{{ block.settings.q1_option_2 }}</div>
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="3">{{ block.settings.q1_option_3 }}</div>
+          </div>
+        </div>
+        <div class="ai-quiz-question-image-{{ ai_gen_id }}">
+          {% if block.settings.question_1_image %}
+            <img
+              src="{{ block.settings.question_1_image | image_url: width: 800 }}"
+              alt="{{ block.settings.question_1_text }}"
+              loading="lazy"
+              width="800"
+              height="500"
+            >
+          {% else %}
+            <div class="ai-quiz-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-quiz-question-{{ ai_gen_id }}" data-question="2">
+      <h2 class="ai-quiz-question-title-{{ ai_gen_id }}">{{ block.settings.question_2_text }}</h2>
+      <div class="ai-quiz-question-content-{{ ai_gen_id }}">
+        <div class="ai-quiz-question-left-{{ ai_gen_id }}">
+          <div class="ai-quiz-options-{{ ai_gen_id }}">
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="a">{{ block.settings.q2_option_a }}</div>
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="b">{{ block.settings.q2_option_b }}</div>
+            <div class="ai-quiz-option-{{ ai_gen_id }}" data-answer="c">{{ block.settings.q2_option_c }}</div>
+          </div>
+        </div>
+        <div class="ai-quiz-question-image-{{ ai_gen_id }}">
+          {% if block.settings.question_2_image %}
+            <img
+              src="{{ block.settings.question_2_image | image_url: width: 800 }}"
+              alt="{{ block.settings.question_2_text }}"
+              loading="lazy"
+              width="800"
+              height="500"
+            >
+          {% else %}
+            <div class="ai-quiz-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-quiz-result-{{ ai_gen_id }}" data-result>
+      <h2 class="ai-quiz-result-title-{{ ai_gen_id }}">{{ block.settings.result_title }}</h2>
+      <p class="ai-quiz-result-subtitle-{{ ai_gen_id }}">{{ block.settings.result_subtitle }}</p>
+      <div class="ai-quiz-products-{{ ai_gen_id }}" data-products></div>
+      <div class="ai-quiz-restart-{{ ai_gen_id }}">
+        <button class="ai-quiz-restart-button-{{ ai_gen_id }}" data-restart>{{ block.settings.restart_button_text }}</button>
+      </div>
+    </div>
+  </kapok-quiz-{{ ai_gen_id }}>
+</div>
+
+<script>
+  (function() {
+    class KapokQuiz{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentQuestion = 1;
+        this.totalQuestions = 2;
+        this.selectedAnswer = null;
+        this.productMapping = {
+          'a': [
+            {
+              product: {{ block.settings.product_a1 | json }},
+              url: '{{ block.settings.product_a1.url }}'
+            },
+            {
+              product: {{ block.settings.product_a2 | json }},
+              url: '{{ block.settings.product_a2.url }}'
+            },
+            {
+              product: {{ block.settings.product_a3 | json }},
+              url: '{{ block.settings.product_a3.url }}'
+            }
+          ],
+          'b': [
+            {
+              product: {{ block.settings.product_b1 | json }},
+              url: '{{ block.settings.product_b1.url }}'
+            },
+            {
+              product: {{ block.settings.product_b2 | json }},
+              url: '{{ block.settings.product_b2.url }}'
+            }
+          ],
+          'c': [
+            {
+              product: {{ block.settings.product_c1 | json }},
+              url: '{{ block.settings.product_c1.url }}'
+            },
+            {
+              product: {{ block.settings.product_c2 | json }},
+              url: '{{ block.settings.product_c2.url }}'
+            }
+          ]
+        };
+      }
+
+      connectedCallback() {
+        this.progressBar = this.querySelector('[data-progress-bar]');
+        this.questions = this.querySelectorAll('[data-question]');
+        this.options = this.querySelectorAll('.ai-quiz-option-{{ ai_gen_id }}');
+        this.resultSection = this.querySelector('[data-result]');
+        this.productsContainer = this.querySelector('[data-products]');
+        this.restartButton = this.querySelector('[data-restart]');
+
+        this.updateProgress();
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.options.forEach(option => {
+          option.addEventListener('click', () => {
+            const answer = option.getAttribute('data-answer');
+            this.handleAnswer(answer);
+          });
+        });
+
+        this.restartButton.addEventListener('click', () => {
+          this.restart();
+        });
+      }
+
+      handleAnswer(answer) {
+        if (this.currentQuestion === 1) {
+          this.currentQuestion = 2;
+          this.showQuestion(2);
+          this.updateProgress();
+        } else if (this.currentQuestion === 2) {
+          this.selectedAnswer = answer;
+          this.showResult();
+        }
+      }
+
+      showQuestion(questionNumber) {
+        this.questions.forEach(q => {
+          q.classList.remove('active');
+        });
+
+        const targetQuestion = this.querySelector(`[data-question="${questionNumber}"]`);
+        if (targetQuestion) {
+          targetQuestion.classList.add('active');
+        }
+      }
+
+      showResult() {
+        this.questions.forEach(q => {
+          q.classList.remove('active');
+        });
+
+        this.displayProducts();
+        this.resultSection.classList.add('active');
+        this.updateProgress();
+      }
+
+      displayProducts() {
+        const products = this.productMapping[this.selectedAnswer] || [];
+        this.productsContainer.innerHTML = '';
+
+        products.forEach(item => {
+          if (item.product && item.url) {
+            const product = item.product;
+            const productCard = document.createElement('div');
+            productCard.className = 'ai-quiz-product-card-{{ ai_gen_id }}';
+
+            let imageHtml = '';
+            if (product.featured_image) {
+              imageHtml = `
+                <a href="${item.url}" class="ai-quiz-product-image-link-{{ ai_gen_id }}">
+                  <img src="${product.featured_image}" alt="${product.title}" class="ai-quiz-product-image-{{ ai_gen_id }}" loading="lazy">
+                </a>
+              `;
+            }
+
+            productCard.innerHTML = `
+              ${imageHtml}
+              <div class="ai-quiz-product-name-{{ ai_gen_id }}">${product.title}</div>
+              <a href="${item.url}" class="ai-quiz-product-button-{{ ai_gen_id }}">{{ block.settings.view_product_text }}</a>
+            `;
+
+            this.productsContainer.appendChild(productCard);
+          }
+        });
+      }
+
+      updateProgress() {
+        let progress = 0;
+        if (this.currentQuestion === 1) {
+          progress = 0;
+        } else if (this.currentQuestion === 2) {
+          progress = 50;
+        } else {
+          progress = 100;
+        }
+
+        this.progressBar.style.width = progress + '%';
+      }
+
+      restart() {
+        this.currentQuestion = 1;
+        this.selectedAnswer = null;
+        this.resultSection.classList.remove('active');
+        this.showQuestion(1);
+        this.updateProgress();
+      }
+    }
+
+    customElements.define('kapok-quiz-{{ ai_gen_id }}', KapokQuiz{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "KAPOK診断アンケート",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "メインタイトル"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "メインタイトル",
+      "default": "おすすめアウター診断"
+    },
+    {
+      "type": "range",
+      "id": "main_title_font_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "メインタイトル文字サイズ",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "main_title_margin_bottom",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "メインタイトル下余白",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "質問1の設定"
+    },
+    {
+      "type": "text",
+      "id": "question_1_text",
+      "label": "質問1のテキスト",
+      "default": "今回、なぜKAPOK KNOTのサイトに来てくれたのですか?"
+    },
+    {
+      "type": "image_picker",
+      "id": "question_1_image",
+      "label": "質問1の画像"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_1",
+      "label": "選択肢1",
+      "default": "KAPOK KNOTに興味があったから"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_2",
+      "label": "選択肢2",
+      "default": "薄くて軽いコートがあると聞いて"
+    },
+    {
+      "type": "text",
+      "id": "q1_option_3",
+      "label": "選択肢3",
+      "default": "サステナブルダウンコートというものが気になった"
+    },
+    {
+      "type": "header",
+      "content": "質問2の設定"
+    },
+    {
+      "type": "text",
+      "id": "question_2_text",
+      "label": "質問2のテキスト",
+      "default": "どんな気温で着られるコートを探していますか?"
+    },
+    {
+      "type": "image_picker",
+      "id": "question_2_image",
+      "label": "質問2の画像"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_a",
+      "label": "選択肢A",
+      "default": "秋から着られる(10〜20度)"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_b",
+      "label": "選択肢B",
+      "default": "冬用(10度を下回る)"
+    },
+    {
+      "type": "text",
+      "id": "q2_option_c",
+      "label": "選択肢C",
+      "default": "極寒対応(0度前後)"
+    },
+    {
+      "type": "header",
+      "content": "結果画面の設定"
+    },
+    {
+      "type": "text",
+      "id": "result_title",
+      "label": "結果タイトル",
+      "default": "あなたにおすすめのスタイル"
+    },
+    {
+      "type": "text",
+      "id": "result_subtitle",
+      "label": "結果サブタイトル",
+      "default": "あなたにぴったりのKAPOK KNOTアイテムをご紹介します"
+    },
+    {
+      "type": "text",
+      "id": "view_product_text",
+      "label": "商品ボタンテキスト",
+      "default": "商品を見る"
+    },
+    {
+      "type": "text",
+      "id": "restart_button_text",
+      "label": "再診断ボタンテキスト",
+      "default": "もう一度診断する"
+    },
+    {
+      "type": "header",
+      "content": "回答A(秋)のおすすめ商品"
+    },
+    {
+      "type": "product",
+      "id": "product_a1",
+      "label": "商品1"
+    },
+    {
+      "type": "product",
+      "id": "product_a2",
+      "label": "商品2"
+    },
+    {
+      "type": "product",
+      "id": "product_a3",
+      "label": "商品3"
+    },
+    {
+      "type": "header",
+      "content": "回答B(冬)のおすすめ商品"
+    },
+    {
+      "type": "product",
+      "id": "product_b1",
+      "label": "商品1"
+    },
+    {
+      "type": "product",
+      "id": "product_b2",
+      "label": "商品2"
+    },
+    {
+      "type": "header",
+      "content": "回答C(極寒)のおすすめ商品"
+    },
+    {
+      "type": "product",
+      "id": "product_c1",
+      "label": "商品1"
+    },
+    {
+      "type": "product",
+      "id": "product_c2",
+      "label": "商品2"
+    },
+    {
+      "type": "header",
+      "content": "セクション余白調整"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "上余白",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "下余白",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "左右余白",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "上余白(モバイル)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "下余白(モバイル)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "左右余白(モバイル)",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "デザイン設定"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "テキスト色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "progress_bg_color",
+      "label": "プログレスバー背景色",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "progress_color",
+      "label": "プログレスバー色",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "option_bg_color",
+      "label": "選択肢背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "option_border_color",
+      "label": "選択肢ボーダー色",
+      "default": "#ddd5cb"
+    },
+    {
+      "type": "color",
+      "id": "option_hover_bg_color",
+      "label": "選択肢ホバー背景色",
+      "default": "#f7f6f5"
+    },
+    {
+      "type": "color",
+      "id": "option_hover_border_color",
+      "label": "選択肢ホバーボーダー色",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "商品カード背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "ボタン背景色",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "ボタンテキスト色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "ボタンホバー背景色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "restart_button_bg_color",
+      "label": "再診断ボタン背景色",
+      "default": "#ddd5cb"
+    },
+    {
+      "type": "color",
+      "id": "restart_button_text_color",
+      "label": "再診断ボタンテキスト色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "restart_button_hover_bg_color",
+      "label": "再診断ボタンホバー背景色",
+      "default": "#c8baa7"
+    },
+    {
+      "type": "header",
+      "content": "角丸設定"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "コンテナ角丸",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "option_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "選択肢角丸",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "商品カード角丸",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "質問画像角丸",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "product_image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "商品画像角丸",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "ボタン角丸",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "フォントサイズ"
+    },
+    {
+      "type": "range",
+      "id": "question_font_size",
+      "min": 16,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "質問文字サイズ",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "option_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "選択肢文字サイズ",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "result_title_font_size",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "結果タイトル文字サイズ",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "result_subtitle_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "結果サブタイトル文字サイズ",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "product_name_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "商品名文字サイズ",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "ボタン文字サイズ",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "KAPOK診断アンケート"
+    }
+  ]
+}
+{% endschema %}

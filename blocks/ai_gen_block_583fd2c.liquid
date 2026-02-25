@@ -1,0 +1,386 @@
+{% doc %}
+  @prompt
+    題名「いいパートナーシップの日」下に説明文。その下にスマホで見たときカルーセル4枚分のメッセージを入れたい。カルーセルの中身は題名と説明文を入れたい。
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-partnership-day-{{ ai_gen_id }} {
+    padding: 40px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-partnership-day__header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .ai-partnership-day__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px;
+  }
+
+  .ai-partnership-day__description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+  }
+
+  .ai-partnership-day__carousel-container-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .ai-partnership-day__carousel-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 20px;
+  }
+
+  .ai-partnership-day__carousel-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-partnership-day__card-{{ ai_gen_id }} {
+    flex: 0 0 calc(100% - 40px);
+    scroll-snap-align: start;
+    background-color: {{ block.settings.card_background_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-partnership-day__card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_title_size }}px;
+    color: {{ block.settings.card_text_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .ai-partnership-day__card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_description_size }}px;
+    color: {{ block.settings.card_text_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-partnership-day__dots-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ai-partnership-day__dot-{{ ai_gen_id }} {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: {{ block.settings.dot_color }};
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-partnership-day__dot-{{ ai_gen_id }}.active {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-partnership-day__carousel-{{ ai_gen_id }} {
+      gap: 20px;
+    }
+
+    .ai-partnership-day__card-{{ ai_gen_id }} {
+      flex: 0 0 calc(50% - 30px);
+    }
+  }
+{% endstyle %}
+
+<partnership-day-carousel-{{ ai_gen_id }}
+  class="ai-partnership-day-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-partnership-day__header-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-partnership-day__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+    {% if block.settings.description != blank %}
+      <div class="ai-partnership-day__description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    {% endif %}
+  </div>
+
+  <div class="ai-partnership-day__carousel-container-{{ ai_gen_id }}">
+    <div class="ai-partnership-day__carousel-{{ ai_gen_id }}" data-carousel>
+      {% for i in (1..4) %}
+        {% liquid
+          assign card_title_key = 'card_' | append: i | append: '_title'
+          assign card_description_key = 'card_' | append: i | append: '_description'
+          assign card_title = block.settings[card_title_key]
+          assign card_description = block.settings[card_description_key]
+        %}
+        <div class="ai-partnership-day__card-{{ ai_gen_id }}" data-card="{{ i }}">
+          {% if card_title != blank %}
+            <h3 class="ai-partnership-day__card-title-{{ ai_gen_id }}">{{ card_title }}</h3>
+          {% endif %}
+          {% if card_description != blank %}
+            <div class="ai-partnership-day__card-description-{{ ai_gen_id }}">{{ card_description }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="ai-partnership-day__dots-{{ ai_gen_id }}" data-dots>
+      {% for i in (1..4) %}
+        <span class="ai-partnership-day__dot-{{ ai_gen_id }} {% if i == 1 %}active{% endif %}" data-dot="{{ i }}"></span>
+      {% endfor %}
+    </div>
+  </div>
+</partnership-day-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class PartnershipDayCarousel{{ai_gen_id}} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.carousel = this.querySelector('[data-carousel]');
+        this.dots = this.querySelectorAll('[data-dot]');
+        this.currentIndex = 0;
+
+        this.setupEventListeners();
+        this.updateActiveDot();
+      }
+
+      setupEventListeners() {
+        this.carousel.addEventListener('scroll', () => {
+          this.handleScroll();
+        });
+
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            this.scrollToCard(index);
+          });
+        });
+      }
+
+      handleScroll() {
+        const scrollLeft = this.carousel.scrollLeft;
+        const cardWidth = this.carousel.querySelector('[data-card]').offsetWidth;
+        const gap = 16;
+        const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+
+        if (newIndex !== this.currentIndex) {
+          this.currentIndex = newIndex;
+          this.updateActiveDot();
+        }
+      }
+
+      scrollToCard(index) {
+        const cards = this.carousel.querySelectorAll('[data-card]');
+        const targetCard = cards[index];
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+      }
+
+      updateActiveDot() {
+        this.dots.forEach((dot, index) => {
+          if (index === this.currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    }
+
+    customElements.define('partnership-day-carousel-{{ ai_gen_id }}', PartnershipDayCarousel{{ai_gen_id}});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "いいパートナーシップの日",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "ヘッダー"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "題名",
+      "default": "<p>いいパートナーシップの日</p>"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "題名サイズ",
+      "default": 28
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>大切な人へ、感謝の気持ちを伝えましょう</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "説明文サイズ",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "カード1"
+    },
+    {
+      "type": "richtext",
+      "id": "card_1_title",
+      "label": "題名",
+      "default": "<p>メッセージ1</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "card_1_description",
+      "label": "説明文",
+      "default": "<p>ここにメッセージの内容を入力してください</p>"
+    },
+    {
+      "type": "header",
+      "content": "カード2"
+    },
+    {
+      "type": "richtext",
+      "id": "card_2_title",
+      "label": "題名",
+      "default": "<p>メッセージ2</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "card_2_description",
+      "label": "説明文",
+      "default": "<p>ここにメッセージの内容を入力してください</p>"
+    },
+    {
+      "type": "header",
+      "content": "カード3"
+    },
+    {
+      "type": "richtext",
+      "id": "card_3_title",
+      "label": "題名",
+      "default": "<p>メッセージ3</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "card_3_description",
+      "label": "説明文",
+      "default": "<p>ここにメッセージの内容を入力してください</p>"
+    },
+    {
+      "type": "header",
+      "content": "カード4"
+    },
+    {
+      "type": "richtext",
+      "id": "card_4_title",
+      "label": "題名",
+      "default": "<p>メッセージ4</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "card_4_description",
+      "label": "説明文",
+      "default": "<p>ここにメッセージの内容を入力してください</p>"
+    },
+    {
+      "type": "header",
+      "content": "スタイル"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "テキスト色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "カード背景色",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "カードテキスト色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "カード角丸",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "カード題名サイズ",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "カード説明文サイズ",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "ドット色",
+      "default": "#1c1c1c"
+    }
+  ],
+  "presets": [
+    {
+      "name": "いいパートナーシップの日"
+    }
+  ]
+}
+{% endschema %}

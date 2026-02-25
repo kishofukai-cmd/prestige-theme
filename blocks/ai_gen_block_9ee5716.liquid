@@ -1,0 +1,507 @@
+{% doc %}
+  @prompt
+    商品売上ランキング作りたいからそのブロックと3つ分の商品リンク用のボタンを設定して調整しやすいように作ってん, ボタンが設定されてるけど、それはいらない。普通に商品画像や商品名触ったら遷移するように設定してくれ
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ranking-container-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-ranking-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    text-align: {{ block.settings.title_alignment }};
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+  }
+
+  .ai-ranking-list-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.item_spacing }}px;
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-ranking-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.content_gap }}px;
+    padding: {{ block.settings.item_padding }}px;
+    background-color: {{ block.settings.item_background }};
+    border-radius: {{ block.settings.item_border_radius }}px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+
+  .ai-ranking-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-2px);
+  }
+
+  .ai-ranking-badge-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.badge_size }}px;
+    height: {{ block.settings.badge_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ block.settings.badge_font_size }}px;
+    font-weight: 700;
+    border-radius: 50%;
+    color: {{ block.settings.badge_text_color }};
+  }
+
+  .ai-ranking-badge-{{ ai_gen_id }}--1 {
+    background-color: {{ block.settings.badge_color_1 }};
+  }
+
+  .ai-ranking-badge-{{ ai_gen_id }}--2 {
+    background-color: {{ block.settings.badge_color_2 }};
+  }
+
+  .ai-ranking-badge-{{ ai_gen_id }}--3 {
+    background-color: {{ block.settings.badge_color_3 }};
+  }
+
+  .ai-ranking-product-image-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.image_size }}px;
+    height: {{ block.settings.image_size }}px;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-ranking-product-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-ranking-product-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-ranking-product-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .ai-ranking-product-info-{{ ai_gen_id }} {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .ai-ranking-product-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_title_size }}px;
+    color: {{ block.settings.product_title_color }};
+    margin: 0 0 {{ block.settings.title_price_gap }}px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .ai-ranking-product-price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_price_size }}px;
+    color: {{ block.settings.product_price_color }};
+    font-weight: 600;
+  }
+
+  .ai-ranking-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-ranking-item-{{ ai_gen_id }} {
+      gap: {{ block.settings.content_gap | times: 0.7 }}px;
+      padding: {{ block.settings.item_padding | times: 0.7 }}px;
+    }
+
+    .ai-ranking-badge-{{ ai_gen_id }} {
+      width: {{ block.settings.badge_size | times: 0.8 }}px;
+      height: {{ block.settings.badge_size | times: 0.8 }}px;
+      font-size: {{ block.settings.badge_font_size | times: 0.8 }}px;
+    }
+
+    .ai-ranking-product-image-{{ ai_gen_id }} {
+      width: {{ block.settings.image_size | times: 0.8 }}px;
+      height: {{ block.settings.image_size | times: 0.8 }}px;
+    }
+
+    .ai-ranking-product-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.product_title_size | times: 0.9 }}px;
+    }
+
+    .ai-ranking-product-price-{{ ai_gen_id }} {
+      font-size: {{ block.settings.product_price_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-ranking-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.title != blank %}
+    <h2 class="ai-ranking-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+  {% endif %}
+
+  <div class="ai-ranking-list-{{ ai_gen_id }}">
+    {% liquid
+      assign has_any_product = false
+      for i in (1..3)
+        assign product_key = 'product_' | append: i
+        if block.settings[product_key] != blank
+          assign has_any_product = true
+          break
+        endif
+      endfor
+    %}
+
+    {% if has_any_product %}
+      {% for i in (1..3) %}
+        {% liquid
+          assign product_key = 'product_' | append: i
+          assign product = block.settings[product_key]
+        %}
+
+        {% if product != blank %}
+          <a href="{{ product.url }}" class="ai-ranking-item-{{ ai_gen_id }}">
+            <div class="ai-ranking-badge-{{ ai_gen_id }} ai-ranking-badge-{{ ai_gen_id }}--{{ i }}">
+              {{ i }}
+            </div>
+
+            <div class="ai-ranking-product-image-{{ ai_gen_id }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 200 }}"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  width="200"
+                  height="200"
+                  loading="lazy"
+                >
+              {% else %}
+                <div class="ai-ranking-product-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="ai-ranking-product-info-{{ ai_gen_id }}">
+              <h3 class="ai-ranking-product-title-{{ ai_gen_id }}">
+                {{ product.title }}
+              </h3>
+              <div class="ai-ranking-product-price-{{ ai_gen_id }}">
+                {{ product.price | money }}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <div class="ai-ranking-empty-state-{{ ai_gen_id }}">
+        商品を選択してランキングを作成してください
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "商品売上ランキング",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "タイトル"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "売上ランキング TOP3"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "タイトルサイズ",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "タイトルカラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "タイトル配置",
+      "options": [
+        {
+          "value": "left",
+          "label": "左"
+        },
+        {
+          "value": "center",
+          "label": "中央"
+        },
+        {
+          "value": "right",
+          "label": "右"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "タイトル下の余白",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "1位の商品"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "商品"
+    },
+    {
+      "type": "header",
+      "content": "2位の商品"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "商品"
+    },
+    {
+      "type": "header",
+      "content": "3位の商品"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "商品"
+    },
+    {
+      "type": "header",
+      "content": "ランキングバッジ"
+    },
+    {
+      "type": "range",
+      "id": "badge_size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "バッジサイズ",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "バッジ文字サイズ",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "バッジ文字色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_color_1",
+      "label": "1位バッジ色",
+      "default": "#FFD700"
+    },
+    {
+      "type": "color",
+      "id": "badge_color_2",
+      "label": "2位バッジ色",
+      "default": "#C0C0C0"
+    },
+    {
+      "type": "color",
+      "id": "badge_color_3",
+      "label": "3位バッジ色",
+      "default": "#CD7F32"
+    },
+    {
+      "type": "header",
+      "content": "商品画像"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "min": 60,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "画像サイズ",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "画像角丸",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "商品情報"
+    },
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "商品名サイズ",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "product_title_color",
+      "label": "商品名カラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "product_price_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "価格サイズ",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "product_price_color",
+      "label": "価格カラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "title_price_gap",
+      "min": 4,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "label": "商品名と価格の間隔",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "最大幅",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "セクションパディング",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "商品間の余白",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "商品カード内余白",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "要素間の余白",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "商品カード角丸",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_background",
+      "label": "商品カード背景色",
+      "default": "#f9f9f9"
+    }
+  ],
+  "presets": [
+    {
+      "name": "商品売上ランキング"
+    }
+  ]
+}
+{% endschema %}

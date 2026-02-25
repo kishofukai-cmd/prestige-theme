@@ -1,0 +1,447 @@
+{% doc %}
+  @prompt
+    スマホ表示に最適に。
+    topにKV画像
+    その下題名holiday gift
+    その下に説明文, 全体的にクリスマスっぽく背景を変えて, topのKVの上下にクリスマスっぽい背景が欲しい。文字なしで
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-holiday-gift-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-holiday-gift-top-decoration-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.decoration_height_mobile }}px;
+    background: {{ block.settings.background_gradient }};
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-holiday-gift-top-decoration-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 15% 40%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 75% 60%, {{ block.settings.snowflake_color }} 1.5px, transparent 1.5px),
+      radial-gradient(circle at 35% 20%, {{ block.settings.snowflake_color }} 2.5px, transparent 2.5px),
+      radial-gradient(circle at 85% 30%, {{ block.settings.snowflake_color }} 1px, transparent 1px),
+      radial-gradient(circle at 25% 80%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 55% 15%, {{ block.settings.snowflake_color }} 1.5px, transparent 1.5px),
+      radial-gradient(circle at 45% 70%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 95% 50%, {{ block.settings.snowflake_color }} 1px, transparent 1px);
+    background-size: 200px 200px, 250px 250px, 180px 180px, 220px 220px, 190px 190px, 240px 240px, 210px 210px, 230px 230px;
+    background-position: 0 0, 40px 60px, 80px 20px, 120px 80px, 20px 100px, 100px 40px, 60px 120px, 140px 10px;
+    opacity: {{ block.settings.snowflake_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-holiday-gift-bottom-decoration-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.decoration_height_mobile }}px;
+    background: {{ block.settings.background_gradient }};
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-holiday-gift-bottom-decoration-{{ ai_gen_id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 80% 50%, {{ block.settings.snowflake_color }} 1.5px, transparent 1.5px),
+      radial-gradient(circle at 40% 70%, {{ block.settings.snowflake_color }} 2.5px, transparent 2.5px),
+      radial-gradient(circle at 90% 20%, {{ block.settings.snowflake_color }} 1px, transparent 1px),
+      radial-gradient(circle at 10% 80%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 60% 10%, {{ block.settings.snowflake_color }} 1.5px, transparent 1.5px),
+      radial-gradient(circle at 30% 90%, {{ block.settings.snowflake_color }} 2px, transparent 2px),
+      radial-gradient(circle at 70% 60%, {{ block.settings.snowflake_color }} 1px, transparent 1px);
+    background-size: 200px 200px, 250px 250px, 180px 180px, 220px 220px, 190px 190px, 240px 240px, 210px 210px, 230px 230px;
+    background-position: 0 0, 40px 60px, 80px 20px, 120px 80px, 20px 100px, 100px 40px, 60px 120px, 140px 10px;
+    opacity: {{ block.settings.snowflake_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-holiday-gift-kv-{{ ai_gen_id }} {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-holiday-gift-kv-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-holiday-gift-kv-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    aspect-ratio: 3 / 4;
+  }
+
+  .ai-holiday-gift-kv-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-holiday-gift-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-holiday-gift-content-{{ ai_gen_id }} {
+    padding: {{ block.settings.content_padding_mobile }}px;
+    text-align: {{ block.settings.text_alignment }};
+    background-color: {{ block.settings.content_background_color }};
+  }
+
+  .ai-holiday-gift-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size_mobile }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+    font-weight: {{ block.settings.title_weight }};
+    letter-spacing: {{ block.settings.title_letter_spacing }}px;
+  }
+
+  .ai-holiday-gift-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size_mobile }}px;
+    color: {{ block.settings.description_color }};
+    line-height: {{ block.settings.description_line_height }};
+    margin: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-holiday-gift-top-decoration-{{ ai_gen_id }},
+    .ai-holiday-gift-bottom-decoration-{{ ai_gen_id }} {
+      height: {{ block.settings.decoration_height_desktop }}px;
+    }
+
+    .ai-holiday-gift-content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding_desktop }}px;
+    }
+
+    .ai-holiday-gift-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size_desktop }}px;
+    }
+
+    .ai-holiday-gift-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size_desktop }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-holiday-gift-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-holiday-gift-top-decoration-{{ ai_gen_id }}"></div>
+
+  <div class="ai-holiday-gift-kv-{{ ai_gen_id }}">
+    {% if block.settings.kv_image %}
+      <img
+        src="{{ block.settings.kv_image | image_url: width: 1500 }}"
+        alt="{{ block.settings.kv_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.kv_image.width }}"
+        height="{{ block.settings.kv_image.height }}"
+      >
+    {% else %}
+      <div class="ai-holiday-gift-kv-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+        <div class="ai-holiday-gift-empty-state-{{ ai_gen_id }}">
+          KV画像を追加してください
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-holiday-gift-bottom-decoration-{{ ai_gen_id }}"></div>
+
+  <div class="ai-holiday-gift-content-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-holiday-gift-title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-holiday-gift-description-{{ ai_gen_id }}">
+        {{ block.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Holiday gift",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "KV画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "kv_image",
+      "label": "KV画像"
+    },
+    {
+      "type": "header",
+      "content": "装飾背景"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "背景グラデーション",
+      "default": "linear-gradient(135deg, #1a472a 0%, #2d5f3f 50%, #8b0000 100%)"
+    },
+    {
+      "type": "color",
+      "id": "snowflake_color",
+      "label": "雪の結晶カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "snowflake_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "雪の結晶の透明度",
+      "default": 0.3
+    },
+    {
+      "type": "range",
+      "id": "decoration_height_mobile",
+      "min": 30,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "装飾の高さ（モバイル）",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "decoration_height_desktop",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "label": "装飾の高さ（デスクトップ）",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "コンテンツ"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "タイトル",
+      "default": "holiday gift"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>大切な人へ、心を込めた贈り物を。</p>"
+    },
+    {
+      "type": "color",
+      "id": "content_background_color",
+      "label": "コンテンツ背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "テキスト配置",
+      "options": [
+        {
+          "value": "left",
+          "label": "左揃え"
+        },
+        {
+          "value": "center",
+          "label": "中央揃え"
+        },
+        {
+          "value": "right",
+          "label": "右揃え"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "コンテンツ余白（モバイル）",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_padding_desktop",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "コンテンツ余白（デスクトップ）",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "タイトルスタイル"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "タイトルサイズ（モバイル）",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "タイトルサイズ（デスクトップ）",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "タイトルカラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "タイトル太さ",
+      "options": [
+        {
+          "value": "300",
+          "label": "細い"
+        },
+        {
+          "value": "400",
+          "label": "標準"
+        },
+        {
+          "value": "500",
+          "label": "中太"
+        },
+        {
+          "value": "600",
+          "label": "太い"
+        },
+        {
+          "value": "700",
+          "label": "極太"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "title_letter_spacing",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "タイトル字間",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "タイトル下余白",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "説明文スタイル"
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "説明文サイズ（モバイル）",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "説明文サイズ（デスクトップ）",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "説明文カラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "description_line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "説明文行間",
+      "default": 1.6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holiday gift"
+    }
+  ]
+}
+{% endschema %}

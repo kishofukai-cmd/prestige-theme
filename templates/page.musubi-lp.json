@@ -1,0 +1,10 @@
+{
+  "layout": "theme.musubi-lp",
+  "sections": {
+    "musubi-lp": {
+      "type": "musubi-lp",
+      "settings": {}
+    }
+  },
+  "order": ["musubi-lp"]
+}

@@ -1,0 +1,450 @@
+{% doc %}
+  @prompt
+    まずはTOPにKVをつける, その下に題名「Holiday Gift 2025」を入れて説明文を入れたい
+    その後、ボタンをつけて, まずはTOPにKVをつける。その下に題名「Holiday Gift 2025」を入れて説明文を入れたい
+    その後、題名、どんな商品をお探しですか？
+    説明文、贈る相手やシーンに合わせて、おすすめのカテゴリーをご用意しました。とかいて、その下に2つのボタン設置。
+    
+    , まずはTOPにKVをつける。その下に題名「Holiday Gift 2025」を入れて説明文を入れたい
+    その後、題名、どんな商品をお探しですか？
+    説明文、贈る相手やシーンに合わせて、おすすめのカテゴリーをご用意しました。とかいて、その下に2つのボタン設置したい。スマホで見たときに横並日になるようにして。
+    
+    , まずはTOPにKVの画像を入れる。その下に題名「Holiday Gift 2025」を入れて説明文を入れたい
+    その後、題名、どんな商品をお探しですか？
+    説明文、贈る相手やシーンに合わせて、おすすめのカテゴリーをご用意しました。とかいて、その下に2つのボタン設置したい。スマホで見たときに横並日になるようにして。題名ギフトカードプレゼント。説明文入れる。
+    
+    , まずはTOPにKVの画像を入れる。
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-kv-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.height_desktop }}vh;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-kv-{{ ai_gen_id }} {
+      height: {{ block.settings.height_mobile }}vh;
+    }
+  }
+
+  .ai-hero-kv-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-kv-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-kv-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hero-kv-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-hero-kv-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+  }
+
+  .ai-hero-kv-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: {{ block.settings.content_position_vertical }};
+    align-items: {{ block.settings.content_position_horizontal }};
+    padding: 40px 20px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-kv-content-{{ ai_gen_id }} {
+      padding: 60px 40px;
+    }
+  }
+
+  .ai-hero-kv-content-wrapper-{{ ai_gen_id }} {
+    max-width: {{ block.settings.content_max_width }}px;
+  }
+
+  .ai-hero-kv-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size_mobile }}px;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-kv-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_desktop }}px;
+    }
+  }
+
+  .ai-hero-kv-subheading-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size_mobile }}px;
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-kv-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size_desktop }}px;
+    }
+  }
+
+  .ai-hero-kv-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-hero-kv-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+{% endstyle %}
+
+<div class="ai-hero-kv-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.image %}
+    <img
+      src="{{ block.settings.image | image_url: width: 2000 }}"
+      srcset="{{ block.settings.image | image_url: width: 750 }} 750w,
+              {{ block.settings.image | image_url: width: 1500 }} 1500w,
+              {{ block.settings.image | image_url: width: 2000 }} 2000w"
+      sizes="100vw"
+      alt="{{ block.settings.image.alt | escape }}"
+      loading="eager"
+      width="{{ block.settings.image.width }}"
+      height="{{ block.settings.image.height }}"
+      class="ai-hero-kv-image-{{ ai_gen_id }}"
+    >
+  {% else %}
+    <div class="ai-hero-kv-placeholder-{{ ai_gen_id }}">
+      {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      <div class="ai-hero-kv-empty-state-{{ ai_gen_id }}">
+        画像を追加してください
+      </div>
+    </div>
+  {% endif %}
+
+  {% if block.settings.show_overlay %}
+    <div class="ai-hero-kv-overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+
+  <div class="ai-hero-kv-content-{{ ai_gen_id }}">
+    <div class="ai-hero-kv-content-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h1 class="ai-hero-kv-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h1>
+      {% endif %}
+
+      {% if block.settings.subheading != blank %}
+        <div class="ai-hero-kv-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</div>
+      {% endif %}
+
+      {% if block.settings.button_text != blank %}
+        <a href="{{ block.settings.button_link }}" class="ai-hero-kv-button-{{ ai_gen_id }}">
+          {{ block.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "KV Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "デスクトップの高さ",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "モバイルの高さ",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "オーバーレイ"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "オーバーレイを表示",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "オーバーレイカラー",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "オーバーレイの透明度",
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "コンテンツ"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "新しいコレクション"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "サブテキスト",
+      "default": "<p>最新のアイテムをご覧ください</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "見出しサイズ（デスクトップ）",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "見出しサイズ（モバイル）",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "テキストサイズ（デスクトップ）",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "テキストサイズ（モバイル）",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "テキストカラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "select",
+      "id": "content_position_vertical",
+      "label": "縦位置",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "上"
+        },
+        {
+          "value": "center",
+          "label": "中央"
+        },
+        {
+          "value": "flex-end",
+          "label": "下"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_position_horizontal",
+      "label": "横位置",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "左"
+        },
+        {
+          "value": "center",
+          "label": "中央"
+        },
+        {
+          "value": "flex-end",
+          "label": "右"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "テキスト配置",
+      "options": [
+        {
+          "value": "left",
+          "label": "左"
+        },
+        {
+          "value": "center",
+          "label": "中央"
+        },
+        {
+          "value": "right",
+          "label": "右"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "コンテンツ最大幅",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "ボタン"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "ボタンリンク"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "ボタン背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "ボタンテキストカラー",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "ボタンホバー背景色",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "ボタンホバーテキストカラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "ボタン角丸",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "KV Hero"
+    }
+  ]
+}
+{% endschema %}
