@@ -3,7 +3,35 @@
   "sections": {
     "hero": {
       "type": "musubi-lp-hero",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "proof_1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "2,000",
+            "label": "枚突破"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "408",
+            "label": "名支援"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★4.1",
+            "label": "レビュー"
+          }
+        }
+      },
+      "block_order": [
+        "proof_1",
+        "proof_2",
+        "proof_3"
+      ]
     },
     "video-loop": {
       "type": "musubi-lp-video-loop",
@@ -11,39 +39,343 @@
     },
     "why": {
       "type": "musubi-lp-why",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "number": "01",
+            "title": "やさしい重み設計",
+            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "number": "02",
+            "title": "あみあみ構造",
+            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "number": "03",
+            "title": "日本の暮らし基準サイズ",
+            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ]
     },
     "empathy": {
       "type": "musubi-lp-empathy",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "text": "<p>頭のなかが<br>ぐるぐる休まらない</p>"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "text": "<p>波立つように<br>心が落ち着かない</p>"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "text": "<p>リラックスする<br>習慣が続かない</p>"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ]
     },
     "story": {
       "type": "musubi-lp-story",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "para_1": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>「早くスマホを手放した方がいい」<br>頭ではそう分かっていても、ギリギリまでSNSのタイムラインを見つめてしまう夜。</p>"
+          }
+        },
+        "para_2": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>だからこそ、強制的に休息へと切り替える<strong>物理的な「入り口（導入スイッチ）」</strong>がカギになると私たちは考えました。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "para_1",
+        "para_2"
+      ]
     },
     "science": {
       "type": "musubi-lp-science",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "label": "<p>均一な重み</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "label": "<p>深いリラックス<br>状態の促進</p>"
+          }
+        },
+        "paper_1": {
+          "type": "paper",
+          "settings": {
+            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia"
+          }
+        },
+        "paper_2": {
+          "type": "paper",
+          "settings": {
+            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia"
+          }
+        },
+        "paper_3": {
+          "type": "paper",
+          "settings": {
+            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "paper_1",
+        "paper_2",
+        "paper_3"
+      ]
     },
     "sizes": {
       "type": "musubi-lp-sizes",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "size_nap": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Nap Size (M)",
+            "badge": "ソファにおすすめ",
+            "featured": false,
+            "name": "Nap Size (M)",
+            "price": "¥29,800",
+            "price_note": "(税込)",
+            "dimensions": "100 × 70 cm",
+            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+          }
+        },
+        "size_sleep": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+          }
+        }
+      },
+      "block_order": [
+        "size_nap",
+        "size_sleep"
+      ]
     },
     "colors": {
       "type": "musubi-lp-colors",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "color_1": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Powder Beige",
+            "color_code": "#d9cfc4"
+          }
+        },
+        "color_2": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Dusty Navy",
+            "color_code": "#3d4259"
+          }
+        },
+        "color_3": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Calm Brown",
+            "color_code": "#8b6b50"
+          }
+        },
+        "color_4": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Cloud White",
+            "color_code": "#e8e4de"
+          }
+        },
+        "color_5": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Blossom Peach",
+            "color_code": "#d4a5a0"
+          }
+        },
+        "color_6": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Earth Green",
+            "color_code": "#5e7a5a"
+          }
+        },
+        "color_7": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Moon Purple",
+            "color_code": "#7b6b8a"
+          }
+        }
+      },
+      "block_order": [
+        "color_1",
+        "color_2",
+        "color_3",
+        "color_4",
+        "color_5",
+        "color_6",
+        "color_7"
+      ]
     },
     "care": {
       "type": "musubi-lp-care",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "care_1": {
+          "type": "care_point",
+          "settings": {
+            "icon": "✨",
+            "title": "日常はシュッとひとふきで完結",
+            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
+          }
+        },
+        "care_2": {
+          "type": "care_point",
+          "settings": {
+            "icon": "🫧",
+            "title": "本気のケアは「ご家庭で手洗い」",
+            "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。"
+          }
+        }
+      },
+      "block_order": [
+        "care_1",
+        "care_2"
+      ]
     },
     "reviews": {
       "type": "musubi-lp-reviews",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "review_1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "重さに驚き！",
+            "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！",
+            "meta": "50代男性 / 商社勤務",
+            "tags": "#安心感, #よく眠れた気がする"
+          }
+        },
+        "review_2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "新しいジャンルでときめいた！",
+            "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！",
+            "meta": "30代女性 / アパレルメーカー勤務",
+            "tags": "#ソファ時間, #蒸れにくい"
+          }
+        },
+        "review_3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "一度も起きることなく…快眠！",
+            "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！",
+            "meta": "50代女性 / 主婦",
+            "tags": "#よく眠れた気がする, #安心感"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
     },
     "hotels": {
       "type": "musubi-lp-hotels",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "hotel_1": {
+          "type": "hotel_card",
+          "settings": {
+            "name": "古民家宿 るうふ",
+            "type": "一棟貸し古民家宿",
+            "detail": "時が刻まれた壮麗な空間で、地域に伝わる食と自然の恵みを味わう"
+          }
+        },
+        "hotel_2": {
+          "type": "hotel_card",
+          "settings": {
+            "name": "オーベルジュ エルバステラ",
+            "type": "全3室の小さな宿",
+            "detail": "野菜ソムリエプロ夫婦が営む滞在型リトリート"
+          }
+        },
+        "hotel_3": {
+          "type": "hotel_card",
+          "settings": {
+            "name": "TACTILE HOUSE",
+            "type": "工芸建材の体験宿",
+            "detail": "産地の工芸・建材を空間で体験できる宿泊施設"
+          }
+        }
+      },
+      "block_order": [
+        "hotel_1",
+        "hotel_2",
+        "hotel_3"
+      ]
     },
     "gift": {
       "type": "musubi-lp-gift",
@@ -55,11 +387,88 @@
     },
     "faq": {
       "type": "musubi-lp-faq",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "リビングで利用できますか？",
+            "answer": "<p>はい。Nap Size(M)はソファでの使用を想定して設計されています。日本のソファの平均奥行き70cmに基づくサイズです。</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "起きたらブランケットが落ちています。合っていないのでしょうか？",
+            "answer": "<p>寝返りの際に落ちることはございますが、寝入りの際に心地よい重さを感じていれば、十分にお使いいただけています。</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "2人で使えますか？",
+            "answer": "<p>Sleep Size(L)は150×100cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "洗濯は可能でしょうか？",
+            "answer": "<p>ご家庭での手洗いが可能です。詳しくは付属の取扱説明書をご確認ください。</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "夏でも使えますか？",
+            "answer": "<p>はい。あみあみ構造による通気性で、夏でも蒸れを気にせず365日お使いいただけます。</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "次の販売はいつごろですか？",
+            "answer": "<p>次回販売の情報は公式LINEにて最速でお届けいたします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ]
     },
     "closing": {
       "type": "musubi-lp-closing",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "proof_line_1": {
+          "type": "proof_line",
+          "settings": {
+            "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>"
+          }
+        },
+        "proof_line_2": {
+          "type": "proof_line",
+          "settings": {
+            "text": "<p>Makuake <strong>408名</strong>支援</p>"
+          }
+        },
+        "proof_line_3": {
+          "type": "proof_line",
+          "settings": {
+            "text": "<p>レビュー <strong>★4.1</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "proof_line_1",
+        "proof_line_2",
+        "proof_line_3"
+      ]
     }
   },
   "order": [
