@@ -1,0 +1,64 @@
+<section class="faq" id="faq">
+  <div class="container--narrow">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'よくあるご質問' }}</h2>
+
+    <div class="faq__list">
+      {% for block in section.blocks %}
+        <details class="faq__item" data-reveal {{ block.shopify_attributes }}>
+          <summary class="faq__question">
+            <span>{{ block.settings.question }}</span>
+            <span class="faq__icon">+</span>
+          </summary>
+          <div class="faq__answer">
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "よくあるご質問"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ項目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "質問"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "回答"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI FAQ",
+      "blocks": [
+        { "type": "faq_item", "settings": { "question": "リビングで利用できますか？", "answer": "<p>はい。Nap Size(M)はソファでの使用を想定して設計されています。日本のソファの平均奥行き70cmに基づくサイズです。</p>" } },
+        { "type": "faq_item", "settings": { "question": "起きたらブランケットが落ちています。合っていないのでしょうか？", "answer": "<p>寝返りの際に落ちることはございますが、寝入りの際に心地よい重さを感じていれば、十分にお使いいただけています。</p>" } },
+        { "type": "faq_item", "settings": { "question": "2人で使えますか？", "answer": "<p>Sleep Size(L)は150×100cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。</p>" } },
+        { "type": "faq_item", "settings": { "question": "洗濯は可能でしょうか？", "answer": "<p>ご家庭での手洗いが可能です。詳しくは付属の取扱説明書をご確認ください。</p>" } },
+        { "type": "faq_item", "settings": { "question": "夏でも使えますか？", "answer": "<p>はい。あみあみ構造による通気性で、夏でも蒸れを気にせず365日お使いいただけます。</p>" } },
+        { "type": "faq_item", "settings": { "question": "次の販売はいつごろですか？", "answer": "<p>次回販売の情報は<a href=\"https://page.line.me/392neovl\" target=\"_blank\" rel=\"noopener\">公式LINE</a>にて最速でお届けいたします。</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

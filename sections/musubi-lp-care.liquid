@@ -1,0 +1,83 @@
+<section class="care" id="care">
+  <div class="container--narrow">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '「重い＝手入れが大変」<br>その常識を変えます' }}</h2>
+
+    <div class="care__layout" data-reveal>
+      <div class="care__img">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=800" alt="日常のケア" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="care__content">
+        {% for block in section.blocks %}
+          <div class="care__point" {{ block.shopify_attributes }}>
+            <span class="care__icon">{{ block.settings.icon }}</span>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI ケア",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>「重い＝手入れが大変」<br>その常識を変えます</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "メイン画像"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "画像alt",
+      "default": "日常のケア"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "care_point",
+      "name": "ケアポイント",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "アイコン（絵文字）",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "タイトル",
+          "default": "日常はシュッとひとふきで完結"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "説明文"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI ケア",
+      "blocks": [
+        { "type": "care_point", "settings": { "icon": "✨", "title": "日常はシュッとひとふきで完結", "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。" } },
+        { "type": "care_point", "settings": { "icon": "🫧", "title": "本気のケアは「ご家庭で手洗い」", "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

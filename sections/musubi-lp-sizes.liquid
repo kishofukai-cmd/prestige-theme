@@ -1,0 +1,146 @@
+<section class="sizes" id="sizes">
+  <div class="container">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'あなたに合うサイズは？' }}</h2>
+
+    <!-- タブUI -->
+    <div class="sizes__tabs" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'size_panel' %}
+          <button class="sizes__tab{% if forloop.first %} sizes__tab--active{% endif %}" data-tab="size-{{ forloop.index }}" id="tab-size-{{ forloop.index }}">{{ block.settings.tab_label }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- パネル -->
+    {% for block in section.blocks %}
+      {% if block.type == 'size_panel' %}
+        <div class="sizes__panel{% if forloop.first %} sizes__panel--active{% endif %}" id="panel-size-{{ forloop.index }}" data-reveal {{ block.shopify_attributes }}>
+          <div class="sizes__panel-img">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="sizes__panel-content">
+            <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">{{ block.settings.badge }}</div>
+            <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
+            <p class="sizes__panel-price">{{ block.settings.price }} <span>{{ block.settings.price_note }}</span></p>
+            <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
+            <ul class="sizes__panel-features">
+              {% assign features = block.settings.features | split: ',' %}
+              {% for feature in features %}
+                <li>{{ feature | strip }}</li>
+              {% endfor %}
+            </ul>
+            <p class="sizes__panel-note">{{ block.settings.note }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <!-- 比較画像 -->
+    {% if section.settings.compare_image != blank %}
+      <div class="sizes__compare" data-reveal>
+        <img src="{{ section.settings.compare_image | img_url: '1000x' }}" alt="サイズ比較" loading="lazy">
+      </div>
+    {% else %}
+      <div class="sizes__compare" data-reveal>
+        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1000" alt="M/Lサイズ比較" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI サイズ選び",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "あなたに合うサイズは？"
+    },
+    {
+      "type": "image_picker",
+      "id": "compare_image",
+      "label": "比較画像"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "size_panel",
+      "name": "サイズパネル",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "タブラベル",
+          "default": "Nap Size (M)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "バッジテキスト",
+          "default": "ソファにおすすめ"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "強調バッジ",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "サイズ名",
+          "default": "Nap Size (M)"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "価格",
+          "default": "¥29,800"
+        },
+        {
+          "type": "text",
+          "id": "price_note",
+          "label": "価格補足",
+          "default": "(税込)"
+        },
+        {
+          "type": "text",
+          "id": "dimensions",
+          "label": "サイズ",
+          "default": "100 × 70 cm"
+        },
+        {
+          "type": "text",
+          "id": "features",
+          "label": "特徴（カンマ区切り）",
+          "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方"
+        },
+        {
+          "type": "textarea",
+          "id": "note",
+          "label": "補足テキスト",
+          "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI サイズ選び",
+      "blocks": [
+        { "type": "size_panel", "settings": { "tab_label": "Nap Size (M)", "badge": "ソファにおすすめ", "featured": false, "name": "Nap Size (M)", "price": "¥29,800", "price_note": "(税込)", "dimensions": "100 × 70 cm", "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方", "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" } },
+        { "type": "size_panel", "settings": { "tab_label": "Sleep Size (L)", "badge": "ベッドにおすすめ", "featured": true, "name": "Sleep Size (L)", "price": "¥39,800", "price_note": "(税込)", "dimensions": "150 × 100 cm", "features": "ベッド利用, 重い布団が好き, 包まれたい方", "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

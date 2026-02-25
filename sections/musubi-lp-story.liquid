@@ -1,0 +1,53 @@
+<section class="story" id="story">
+  <div class="container--narrow">
+    <h2 class="story__title" data-reveal>{{ section.settings.heading | default: '眠りには「導入スイッチ」が必要だった' }}</h2>
+    <div class="story__content" data-reveal>
+      <p class="story__lead">{{ section.settings.lead_text | default: '現代の睡眠課題。<br>瞑想やフレグランスだけでは、どこか物足りない。' }}</p>
+      {% for block in section.blocks %}
+        <p {{ block.shopify_attributes }}>{{ block.settings.paragraph }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI ストーリー",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "眠りには「導入スイッチ」が必要だった"
+    },
+    {
+      "type": "richtext",
+      "id": "lead_text",
+      "label": "リード文",
+      "default": "<p>現代の睡眠課題。<br>瞑想やフレグランスだけでは、どこか物足りない。</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "name": "本文パラグラフ",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "テキスト"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI ストーリー",
+      "blocks": [
+        { "type": "paragraph", "settings": { "paragraph": "<p>「早くスマホを手放した方がいい」<br>頭ではそう分かっていても、ギリギリまでSNSのタイムラインを見つめてしまう夜。</p>" } },
+        { "type": "paragraph", "settings": { "paragraph": "<p>だからこそ、強制的に休息へと切り替える<strong>物理的な「入り口（導入スイッチ）」</strong>がカギになると私たちは考えました。</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

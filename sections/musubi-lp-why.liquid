@@ -1,0 +1,77 @@
+<section class="why" id="why">
+  <div class="container">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'なぜMUSUBIは<br>選ばれているのか？' }}</h2>
+
+    <div class="why__cards">
+      {% for block in section.blocks %}
+        <div class="why__card" data-reveal {{ block.shopify_attributes }}>
+          <div class="why__card-img">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="why__card-content">
+            <span class="why__card-num">{{ block.settings.number | default: forloop.index | prepend: '0' }}</span>
+            <h3 class="why__card-title">{{ block.settings.title }}</h3>
+            <p class="why__card-desc">{{ block.settings.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 選ばれる理由",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "セクション見出し",
+      "default": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason_card",
+      "name": "理由カード",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "番号",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "タイトル",
+          "default": "やさしい重み設計"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "説明文",
+          "default": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI 選ばれる理由",
+      "blocks": [
+        { "type": "reason_card", "settings": { "number": "01", "title": "やさしい重み設計", "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" } },
+        { "type": "reason_card", "settings": { "number": "02", "title": "あみあみ構造", "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。" } },
+        { "type": "reason_card", "settings": { "number": "03", "title": "日本の暮らし基準サイズ", "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

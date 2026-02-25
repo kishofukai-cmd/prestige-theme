@@ -1,0 +1,105 @@
+<section class="closing" id="closing">
+  <div class="closing__bg">
+    {% if section.settings.bg_image != blank %}
+      <img src="{{ section.settings.bg_image | img_url: '1800x' }}" alt="{{ section.settings.bg_image_alt }}" loading="lazy">
+    {% else %}
+      <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1800" alt="MUSUBI -en- カラーバリエーション" loading="lazy">
+    {% endif %}
+    <div class="closing__overlay"></div>
+  </div>
+  <div class="closing__content" data-reveal>
+    <p class="closing__label">{{ section.settings.label | default: 'Recovery Weighted Blanket' }}</p>
+    <h2 class="closing__title">"MUSUBI" <span class="closing__en">{{ section.settings.product_suffix | default: '-en-' }}</span></h2>
+
+    <!-- ソーシャルプルーフ -->
+    <div class="closing__proof">
+      {% for block in section.blocks %}
+        <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+      {% endfor %}
+    </div>
+
+    <p class="closing__price">{{ section.settings.price_text | default: 'Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800' }} <span>{{ section.settings.price_note | default: '(税込)' }}</span></p>
+    <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="closing__cta" target="_blank" rel="noopener" id="cta-closing">
+      {{ section.settings.cta_text | default: '商品ページを見る →' }}
+    </a>
+  </div>
+</section>
+
+{% render 'musubi-lp-scripts' %}
+
+{% schema %}
+{
+  "name": "MUSUBI クロージング",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "背景画像"
+    },
+    {
+      "type": "text",
+      "id": "bg_image_alt",
+      "label": "背景画像alt",
+      "default": "MUSUBI -en- カラーバリエーション"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "Recovery Weighted Blanket"
+    },
+    {
+      "type": "text",
+      "id": "product_suffix",
+      "label": "商品名サフィックス",
+      "default": "-en-"
+    },
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "価格テキスト",
+      "default": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800"
+    },
+    {
+      "type": "text",
+      "id": "price_note",
+      "label": "価格補足",
+      "default": "(税込)"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTAリンク先"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTAボタンテキスト",
+      "default": "商品ページを見る →"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "proof_line",
+      "name": "実績テキスト",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "テキスト"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI クロージング",
+      "blocks": [
+        { "type": "proof_line", "settings": { "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>" } },
+        { "type": "proof_line", "settings": { "text": "<p>Makuake <strong>408名</strong>支援</p>" } },
+        { "type": "proof_line", "settings": { "text": "<p>レビュー <strong>★4.1</strong></p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

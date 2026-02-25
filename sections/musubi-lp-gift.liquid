@@ -1,0 +1,56 @@
+<section class="gift" id="gift">
+  <div class="container--narrow">
+    <div class="gift__card" data-reveal>
+      <div class="gift__img">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0885.jpg?v=1771395913" alt="ギフトイメージ" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="gift__content">
+        <h3 class="gift__title">{{ section.settings.title | default: '大切なあの人へ、<br>極上の「休息」を贈る。' }}</h3>
+        <p class="gift__desc">{{ section.settings.description | default: 'いつも頑張っているご家族やパートナーへ。<br>専用のギフトボックス（ラッピング）を追加で手配可能です。' }}</p>
+        <span class="gift__note">{{ section.settings.note | default: '※カート画面でギフトオプションをご選択ください' }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI ギフト",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "画像alt",
+      "default": "ギフトイメージ"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "タイトル",
+      "default": "<p>大切なあの人へ、<br>極上の「休息」を贈る。</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>いつも頑張っているご家族やパートナーへ。<br>専用のギフトボックス（ラッピング）を追加で手配可能です。</p>"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "注記",
+      "default": "※カート画面でギフトオプションをご選択ください"
+    }
+  ],
+  "presets": [{ "name": "MUSUBI ギフト" }]
+}
+{% endschema %}

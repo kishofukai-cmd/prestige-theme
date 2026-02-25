@@ -1,0 +1,49 @@
+<section class="video-loop" id="video-loop">
+  <div class="video-loop__bg">
+    {% if section.settings.video_url != blank %}
+      <video autoplay loop muted playsinline class="video-loop__video">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+    {% if section.settings.bg_image != blank %}
+      <img src="{{ section.settings.bg_image | img_url: '1600x' }}" alt="{{ section.settings.bg_image_alt }}" loading="lazy">
+    {% else %}
+      <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913" alt="MUSUBIの安心感" loading="lazy">
+    {% endif %}
+    <div class="video-loop__overlay"></div>
+  </div>
+  <div class="video-loop__content" data-reveal>
+    <h2>{{ section.settings.heading | default: 'やさしい安心感が、<br>あなたを深い眠りへ<br>いざなう。' }}</h2>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI Video Loop",
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "動画URL（mp4）"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "背景画像（動画がない場合）"
+    },
+    {
+      "type": "text",
+      "id": "bg_image_alt",
+      "label": "背景画像alt",
+      "default": "MUSUBIの安心感"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>やさしい安心感が、<br>あなたを深い眠りへ<br>いざなう。</p>"
+    }
+  ],
+  "presets": [{ "name": "MUSUBI Video Loop" }]
+}
+{% endschema %}

@@ -1,0 +1,134 @@
+<section class="science" id="science">
+  <div class="container">
+    <h2 class="section-title section-title--light" data-reveal>{{ section.settings.heading | default: 'なぜ"重み"が<br>安心感につながるのか？' }}</h2>
+
+    <!-- 図解 -->
+    <div class="science__diagram" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'step' %}
+          {% unless forloop.first %}
+            <div class="science__connector" data-reveal></div>
+          {% endunless %}
+          <div class="science__step" data-reveal {{ block.shopify_attributes }}>
+            <div class="science__step-circle">
+              {{ block.settings.icon_svg }}
+            </div>
+            <div class="science__step-label">{{ block.settings.label }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="science__img" data-reveal>
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: '1000x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+      {% else %}
+        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1000" alt="MUSUBIの使用シーン" loading="lazy">
+      {% endif %}
+    </div>
+
+    <div class="science__text" data-reveal>
+      <p>{{ section.settings.description | default: '体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。' }}</p>
+    </div>
+
+    <!-- 参考論文 -->
+    <div class="science__papers" data-reveal>
+      <p class="science__papers-title">📚 参考文献</p>
+      <ul class="science__papers-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'paper' %}
+            <li {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p class="science__papers-note">{{ section.settings.papers_note | default: '※すべて「効果が示唆された」「可能性がある」との結論です' }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 科学根拠",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "メイン画像"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "画像alt",
+      "default": "MUSUBIの使用シーン"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>"
+    },
+    {
+      "type": "text",
+      "id": "papers_note",
+      "label": "論文注記",
+      "default": "※すべて「効果が示唆された」「可能性がある」との結論です"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "ステップ",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "アイコンSVG"
+        },
+        {
+          "type": "richtext",
+          "id": "label",
+          "label": "ラベル",
+          "default": "<p>均一な重み</p>"
+        }
+      ]
+    },
+    {
+      "type": "paper",
+      "name": "参考文献",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "論文タイトル"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "論文URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI 科学根拠",
+      "blocks": [
+        { "type": "step", "settings": { "label": "<p>均一な重み</p>" } },
+        { "type": "step", "settings": { "label": "<p>深部圧刺激<br><small>Deep Pressure Touch</small></p>" } },
+        { "type": "step", "settings": { "label": "<p>深いリラックス<br>状態の促進</p>" } },
+        { "type": "paper", "settings": { "title": "Chen et al., 2013 — \"Weighted blankets and sleep in insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/24027326/" } },
+        { "type": "paper", "settings": { "title": "Ackerley et al., 2015 — \"Positive effects of a weighted blanket on insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/25692862/" } },
+        { "type": "paper", "settings": { "title": "Ekholm et al., 2020 — \"Weighted blankets in psychiatric care\"", "url": "https://pubmed.ncbi.nlm.nih.gov/32357390/" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

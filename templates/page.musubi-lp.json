@@ -1,12 +1,82 @@
 {
-  "layout": "theme",
+  "layout": "theme.musubi-lp",
   "sections": {
-    "musubi-lp": {
-      "type": "musubi-lp",
+    "hero": {
+      "type": "musubi-lp-hero",
+      "settings": {}
+    },
+    "video-loop": {
+      "type": "musubi-lp-video-loop",
+      "settings": {}
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "settings": {}
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "settings": {}
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {}
+    },
+    "science": {
+      "type": "musubi-lp-science",
+      "settings": {}
+    },
+    "sizes": {
+      "type": "musubi-lp-sizes",
+      "settings": {}
+    },
+    "colors": {
+      "type": "musubi-lp-colors",
+      "settings": {}
+    },
+    "care": {
+      "type": "musubi-lp-care",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "musubi-lp-reviews",
+      "settings": {}
+    },
+    "hotels": {
+      "type": "musubi-lp-hotels",
+      "settings": {}
+    },
+    "gift": {
+      "type": "musubi-lp-gift",
+      "settings": {}
+    },
+    "trial": {
+      "type": "musubi-lp-trial",
+      "settings": {}
+    },
+    "faq": {
+      "type": "musubi-lp-faq",
+      "settings": {}
+    },
+    "closing": {
+      "type": "musubi-lp-closing",
       "settings": {}
     }
   },
   "order": [
-    "musubi-lp"
+    "hero",
+    "video-loop",
+    "why",
+    "empathy",
+    "story",
+    "science",
+    "sizes",
+    "colors",
+    "care",
+    "reviews",
+    "hotels",
+    "gift",
+    "trial",
+    "faq",
+    "closing"
   ]
 }

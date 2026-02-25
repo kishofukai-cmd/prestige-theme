@@ -1,0 +1,169 @@
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '実際の声' }}</h2>
+
+    <!-- 星分布グラフ -->
+    <div class="reviews__graph" data-reveal>
+      <div class="reviews__graph-summary">
+        <span class="reviews__graph-score">{{ section.settings.avg_score | default: '4.1' }}</span>
+        <div class="reviews__graph-stars">{{ section.settings.avg_stars | default: '★★★★☆' }}</div>
+        <span class="reviews__graph-count">{{ section.settings.review_count | default: '27件のレビュー' }}</span>
+      </div>
+      <div class="reviews__graph-bars">
+        <div class="reviews__graph-row">
+          <span class="reviews__graph-label">★5</span>
+          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star5_pct | default: 52 }}"></div></div>
+          <span class="reviews__graph-pct">{{ section.settings.star5_pct | default: 52 }}%</span>
+        </div>
+        <div class="reviews__graph-row">
+          <span class="reviews__graph-label">★4</span>
+          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star4_pct | default: 30 }}"></div></div>
+          <span class="reviews__graph-pct">{{ section.settings.star4_pct | default: 30 }}%</span>
+        </div>
+        <div class="reviews__graph-row">
+          <span class="reviews__graph-label">★3</span>
+          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star3_pct | default: 4 }}"></div></div>
+          <span class="reviews__graph-pct">{{ section.settings.star3_pct | default: 4 }}%</span>
+        </div>
+        <div class="reviews__graph-row">
+          <span class="reviews__graph-label">★2</span>
+          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star2_pct | default: 7 }}"></div></div>
+          <span class="reviews__graph-pct">{{ section.settings.star2_pct | default: 7 }}%</span>
+        </div>
+        <div class="reviews__graph-row">
+          <span class="reviews__graph-label">★1</span>
+          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star1_pct | default: 7 }}"></div></div>
+          <span class="reviews__graph-pct">{{ section.settings.star1_pct | default: 7 }}%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- レビューカード -->
+    <div class="reviews__cards">
+      {% for block in section.blocks %}
+        <div class="reviews__card" data-reveal {{ block.shopify_attributes }}>
+          <div class="reviews__card-stars">{{ block.settings.stars | default: '★★★★★' }}</div>
+          <h4 class="reviews__card-title">{{ block.settings.title }}</h4>
+          <p class="reviews__card-text">{{ block.settings.text }}</p>
+          <div class="reviews__card-meta">
+            <span>{{ block.settings.meta }}</span>
+          </div>
+          <div class="reviews__card-tags">
+            {% assign tags = block.settings.tags | split: ',' %}
+            {% for tag in tags %}
+              <span class="reviews__tag">{{ tag | strip }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI レビュー",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "実際の声"
+    },
+    {
+      "type": "text",
+      "id": "avg_score",
+      "label": "平均評価スコア",
+      "default": "4.1"
+    },
+    {
+      "type": "text",
+      "id": "avg_stars",
+      "label": "平均星表示",
+      "default": "★★★★☆"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "レビュー数テキスト",
+      "default": "27件のレビュー"
+    },
+    {
+      "type": "range",
+      "id": "star5_pct",
+      "label": "★5 パーセント",
+      "min": 0, "max": 100, "step": 1, "default": 52
+    },
+    {
+      "type": "range",
+      "id": "star4_pct",
+      "label": "★4 パーセント",
+      "min": 0, "max": 100, "step": 1, "default": 30
+    },
+    {
+      "type": "range",
+      "id": "star3_pct",
+      "label": "★3 パーセント",
+      "min": 0, "max": 100, "step": 1, "default": 4
+    },
+    {
+      "type": "range",
+      "id": "star2_pct",
+      "label": "★2 パーセント",
+      "min": 0, "max": 100, "step": 1, "default": 7
+    },
+    {
+      "type": "range",
+      "id": "star1_pct",
+      "label": "★1 パーセント",
+      "min": 0, "max": 100, "step": 1, "default": 7
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_card",
+      "name": "レビュー",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stars",
+          "label": "星表示",
+          "default": "★★★★★"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "タイトル"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "レビュー本文"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "レビュアー情報",
+          "default": "30代女性"
+        },
+        {
+          "type": "text",
+          "id": "tags",
+          "label": "タグ（カンマ区切り）",
+          "default": "#安心感, #よく眠れた気がする"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI レビュー",
+      "blocks": [
+        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "重さに驚き！", "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！", "meta": "50代男性 / 商社勤務", "tags": "#安心感, #よく眠れた気がする" } },
+        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "新しいジャンルでときめいた！", "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！", "meta": "30代女性 / アパレルメーカー勤務", "tags": "#ソファ時間, #蒸れにくい" } },
+        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "一度も起きることなく…快眠！", "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！", "meta": "50代女性 / 主婦", "tags": "#よく眠れた気がする, #安心感" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
