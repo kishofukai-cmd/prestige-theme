@@ -1,10 +1,12 @@
 {
-  "layout": "theme.musubi-lp",
+  "layout": "theme",
   "sections": {
     "musubi-lp": {
       "type": "musubi-lp",
       "settings": {}
     }
   },
-  "order": ["musubi-lp"]
+  "order": [
+    "musubi-lp"
+  ]
 }
