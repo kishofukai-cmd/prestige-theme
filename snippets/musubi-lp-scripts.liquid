@@ -18,31 +18,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // === Sticky Header ===
   const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 10);
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
 
   // === Sticky CTA ===
   const stickyCta = document.getElementById('sticky-cta');
   const hero = document.getElementById('hero');
   const closingSection = document.getElementById('closing');
-  const stickyObserver = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) {
-      stickyCta.classList.add('visible');
-    } else {
-      stickyCta.classList.remove('visible');
-    }
-  }, { threshold: 0 });
-  if (hero) stickyObserver.observe(hero);
-
-  // Hide sticky CTA when closing section is in view
-  if (closingSection) {
-    const closingObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
+  if (stickyCta && hero) {
+    const stickyObserver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        stickyCta.classList.add('visible');
+      } else {
         stickyCta.classList.remove('visible');
       }
-    }, { threshold: 0.3 });
-    closingObserver.observe(closingSection);
+    }, { threshold: 0 });
+    stickyObserver.observe(hero);
+
+    // Hide sticky CTA when closing section is in view
+    if (closingSection) {
+      const closingObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          stickyCta.classList.remove('visible');
+        }
+      }, { threshold: 0.3 });
+      closingObserver.observe(closingSection);
+    }
   }
 
   // === Hamburger Menu ===
@@ -189,5 +193,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
 </script>
