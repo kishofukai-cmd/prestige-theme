@@ -2219,4 +2219,87 @@ button {
 .makuake__link:hover {
   border-color: var(--color-gold);
 }
+
+/* ============================================================
+   UGC - Instagram Reels
+   ============================================================ */
+.ugc {
+  padding: var(--section-gap) 0;
+  background: var(--color-bg);
+}
+
+.ugc__sub {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  margin-top: -32px;
+  margin-bottom: 48px;
+  letter-spacing: 0.03em;
+}
+
+.ugc__carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * var(--side-pad));
+  padding: 0 var(--side-pad);
+}
+
+.ugc__carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.ugc__track {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.ugc__item {
+  flex: 0 0 300px;
+  scroll-snap-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.ugc__iframe {
+  width: 300px;
+  height: 535px;
+  border: none;
+}
+
+.ugc__follow {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.ugc__follow-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--color-accent-light);
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.ugc__follow-link:hover {
+  border-color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .ugc__item {
+    flex: 0 0 340px;
+  }
+
+  .ugc__iframe {
+    width: 340px;
+    height: 600px;
+  }
+}
 </style>

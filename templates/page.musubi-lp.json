@@ -377,6 +377,62 @@
         "care_2"
       ]
     },
+    "ugc": {
+      "type": "musubi-lp-ugc",
+      "settings": {},
+      "blocks": {
+        "reel_1": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP5PSqAEg0b",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_2": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DR6vqKrksq6",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_3": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP9zolIk9E0",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_4": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DSCaFUGj6OR",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_5": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DSHPDRyEzfF",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_6": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "C93rW7dvKWP",
+            "caption": "MUSUBI使用レビュー"
+          }
+        }
+      },
+      "block_order": [
+        "reel_1",
+        "reel_2",
+        "reel_3",
+        "reel_4",
+        "reel_5",
+        "reel_6"
+      ]
+    },
     "reviews": {
       "type": "musubi-lp-reviews",
       "settings": {},
@@ -590,6 +646,7 @@
     "cta-after-colors",
     "care",
     "cta-after-care",
+    "ugc",
     "reviews",
     "cta-after-reviews",
     "hotels",

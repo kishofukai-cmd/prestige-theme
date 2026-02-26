@@ -1,0 +1,97 @@
+<section class="ugc" id="ugc">
+  <div class="container">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'たくさんの方に選ばれています' }}</h2>
+    {% if section.settings.subheading != blank %}
+      <p class="ugc__sub" data-reveal>{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    <div class="ugc__carousel" data-reveal>
+      <div class="ugc__track">
+        {% for block in section.blocks %}
+          <div class="ugc__item" {{ block.shopify_attributes }}>
+            <iframe
+              src="https://www.instagram.com/reel/{{ block.settings.reel_id }}/embed/"
+              class="ugc__iframe"
+              frameborder="0"
+              scrolling="no"
+              allowtransparency="true"
+              loading="lazy"
+              title="{{ block.settings.caption | default: 'Instagram Reel' }}">
+            </iframe>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.settings.instagram_url != blank %}
+      <div class="ugc__follow" data-reveal>
+        <a href="{{ section.settings.instagram_url }}" class="ugc__follow-link" target="_blank" rel="noopener">
+          {{ section.settings.follow_text | default: '@kapokknot をフォロー →' }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI UGC・Instagram",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "たくさんの方に選ばれています"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "サブ見出し（省略可）",
+      "default": "実際にMUSUBIを体験した皆さまの声をご紹介します"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "InstagramプロフィールURL"
+    },
+    {
+      "type": "text",
+      "id": "follow_text",
+      "label": "フォローリンクテキスト",
+      "default": "@kapokknot をフォロー →"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reel",
+      "name": "Instagram Reel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reel_id",
+          "label": "Reel ID",
+          "info": "Instagram URLの/reel/以降のIDを入力（例: DP5PSqAEg0b）"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "キャプション（省略可）"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI UGC・Instagram",
+      "blocks": [
+        { "type": "reel", "settings": { "reel_id": "DP5PSqAEg0b", "caption": "MUSUBI使用レビュー" } },
+        { "type": "reel", "settings": { "reel_id": "DR6vqKrksq6", "caption": "MUSUBI使用レビュー" } },
+        { "type": "reel", "settings": { "reel_id": "DP9zolIk9E0", "caption": "MUSUBI使用レビュー" } },
+        { "type": "reel", "settings": { "reel_id": "DSCaFUGj6OR", "caption": "MUSUBI使用レビュー" } },
+        { "type": "reel", "settings": { "reel_id": "DSHPDRyEzfF", "caption": "MUSUBI使用レビュー" } },
+        { "type": "reel", "settings": { "reel_id": "C93rW7dvKWP", "caption": "MUSUBI使用レビュー" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
