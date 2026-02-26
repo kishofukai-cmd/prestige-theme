@@ -5,14 +5,15 @@
    ============================================================ */
 
 :root {
-  /* Colors - 強いコントラストのカラーパレット */
-  --color-bg: #ffffff;
-  --color-bg-warm: #f7f5f0;
-  --color-bg-dark: #121212;
-  --color-bg-dark-soft: #232220;
-  --color-text: #1a1a1a;
-  --color-text-sub: #555555;
-  --color-text-light: #f7f5f0;
+  /* Colors - 温かみのあるプレミアムパレット（売れるLP配色） */
+  --color-bg: #faf8f5;
+  --color-bg-warm: #f2ede5;
+  --color-bg-cream: #f7f3ec;
+  --color-bg-dark: #3a3530;
+  --color-bg-dark-soft: #4a4540;
+  --color-text: #2c2825;
+  --color-text-sub: #6b635a;
+  --color-text-light: #faf8f5;
   --color-accent: #a88a64;
   --color-accent-light: #d4c2ab;
   --color-gold: #c29d66;
@@ -424,7 +425,7 @@ button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-warm);
 }
 
 .video-loop__bg {
@@ -583,9 +584,9 @@ button {
    ============================================================ */
 .empathy {
   padding: var(--section-gap) 0;
-  background: var(--color-bg-dark);
-  /* ダーク反転で画面を一変 */
-  color: var(--color-text-light);
+  background: var(--color-bg-warm);
+  /* 温かいベージュで共感を演出 */
+  color: var(--color-text);
 }
 
 .empathy__title {
@@ -609,8 +610,8 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(194, 157, 102, 0.08);
+  border: 1px solid rgba(194, 157, 102, 0.2);
   border-radius: 16px;
   /* 丸み強化 */
   padding: 24px;
@@ -627,7 +628,7 @@ button {
 .empathy__item p {
   font-size: 1.05rem;
   font-weight: 400;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .empathy__arrow {
@@ -933,10 +934,10 @@ button {
 }
 
 .sizes__tab--active {
-  background: var(--color-bg-dark);
+  background: var(--color-accent);
   color: #fff;
-  border-color: var(--color-bg-dark);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(168, 138, 100, 0.3);
 }
 
 /* Panel - カードの枠を外し画像フルサイズ */
@@ -1082,8 +1083,8 @@ button {
    ============================================================ */
 .colors {
   padding: var(--section-gap) 0;
-  background: var(--color-bg-dark);
-  color: var(--color-text-light);
+  background: var(--color-bg-cream);
+  color: var(--color-text);
 }
 
 .colors__showcase {
@@ -1539,15 +1540,15 @@ button {
    ============================================================ */
 .gift {
   padding: var(--section-gap) 0;
-  background: var(--color-bg-dark);
-  color: #fff;
+  background: var(--color-bg-cream);
+  color: var(--color-text);
 }
 
 .gift__card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(194, 157, 102, 0.06);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -1676,7 +1677,7 @@ button {
 .trial__btn {
   display: inline-block;
   padding: 16px 40px;
-  background: var(--color-bg-dark);
+  background: var(--color-accent);
   color: #fff;
   font-weight: 600;
   border-radius: 100px;
