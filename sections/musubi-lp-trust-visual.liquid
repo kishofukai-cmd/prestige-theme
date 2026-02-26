@@ -1,0 +1,52 @@
+<section class="trust-visual" id="trust-visual">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-title" data-reveal>{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="trust-visual__image" data-reveal>
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url: '1600x' }}" alt="{{ section.settings.image_alt | default: '加重設計の図解' }}" loading="lazy">
+      {% elsif section.settings.image_url != blank %}
+        <img src="{{ section.settings.image_url }}" alt="{{ section.settings.image_alt | default: '加重設計の図解' }}" loading="lazy">
+      {% endif %}
+    </div>
+    {% if section.settings.caption != blank %}
+      <p class="trust-visual__caption" data-reveal>{{ section.settings.caption }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 信頼性ビジュアル",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し（省略可）"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "画像URL（image_pickerが空の場合に使用）"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "画像alt",
+      "default": "加重設計の図解"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "キャプション（省略可）"
+    }
+  ],
+  "presets": [{ "name": "MUSUBI 信頼性ビジュアル" }]
+}
+{% endschema %}

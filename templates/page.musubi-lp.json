@@ -123,6 +123,10 @@
         "para_2"
       ]
     },
+    "trust-visual": {
+      "type": "musubi-lp-trust-visual",
+      "settings": {}
+    },
     "science": {
       "type": "musubi-lp-science",
       "settings": {},
@@ -506,6 +510,7 @@
     "why",
     "empathy",
     "story",
+    "trust-visual",
     "science",
     "sizes",
     "colors",
