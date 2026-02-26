@@ -118,7 +118,8 @@
           "settings": {
             "number": "01",
             "title": "やさしい重み設計",
-            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0885.jpg?v=1771395913&width=800"
           }
         },
         "reason_2": {
@@ -126,7 +127,8 @@
           "settings": {
             "number": "02",
             "title": "あみあみ構造",
-            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800"
           }
         },
         "reason_3": {
@@ -134,7 +136,8 @@
           "settings": {
             "number": "03",
             "title": "日本の暮らし基準サイズ",
-            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800"
           }
         }
       },
@@ -264,7 +267,8 @@
             "price_note": "(税込)",
             "dimensions": "100 × 70 cm",
             "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
-            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800"
           }
         },
         "size_sleep": {
@@ -278,7 +282,8 @@
             "price_note": "(税込)",
             "dimensions": "150 × 100 cm",
             "features": "ベッド利用, 重い布団が好き, 包まれたい方",
-            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800"
           }
         }
       },
@@ -295,49 +300,56 @@
           "type": "color_variant",
           "settings": {
             "name": "Powder Beige",
-            "color_code": "#d9cfc4"
+            "color_code": "#d9cfc4",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200"
           }
         },
         "color_2": {
           "type": "color_variant",
           "settings": {
             "name": "Dusty Navy",
-            "color_code": "#3d4259"
+            "color_code": "#3d4259",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0271.jpg?v=1771395913&width=1200"
           }
         },
         "color_3": {
           "type": "color_variant",
           "settings": {
             "name": "Calm Brown",
-            "color_code": "#8b6b50"
+            "color_code": "#8b6b50",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1297.jpg?v=1771395913&width=1200"
           }
         },
         "color_4": {
           "type": "color_variant",
           "settings": {
             "name": "Cloud White",
-            "color_code": "#e8e4de"
+            "color_code": "#e8e4de",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=1200"
           }
         },
         "color_5": {
           "type": "color_variant",
           "settings": {
             "name": "Blossom Peach",
-            "color_code": "#d4a5a0"
+            "color_code": "#d4a5a0",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200"
           }
         },
         "color_6": {
           "type": "color_variant",
           "settings": {
             "name": "Earth Green",
-            "color_code": "#5e7a5a"
+            "color_code": "#5e7a5a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0408.jpg?v=1771395913&width=1200"
           }
         },
         "color_7": {
           "type": "color_variant",
           "settings": {
             "name": "Moon Purple",
-            "color_code": "#7b6b8a"
+            "color_code": "#7b6b8a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=1200"
           }
         }
       },
