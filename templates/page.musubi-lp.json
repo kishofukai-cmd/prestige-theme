@@ -252,7 +252,7 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>頭のなかが<br>ぐるぐる休まらない</p>"
+            "text": "<p>頭のなかが<br/>ぐるぐる休まらない</p>"
           }
         },
         "worry_2": {
@@ -613,6 +613,7 @@
         "hotel_1": {
           "type": "hotel_card",
           "settings": {
+            "image": "shopify://shop_images/ruufu.jpg",
             "image_url": "",
             "name": "古民家宿 るうふ",
             "type": "一棟貸し古民家宿",
@@ -622,6 +623,7 @@
         "hotel_2": {
           "type": "hotel_card",
           "settings": {
+            "image": "shopify://shop_images/erbastella.jpg",
             "image_url": "",
             "name": "オーベルジュ エルバステラ",
             "type": "全3室の小さな宿",
@@ -631,6 +633,7 @@
         "hotel_3": {
           "type": "hotel_card",
           "settings": {
+            "image": "shopify://shop_images/tactile.jpg",
             "image_url": "",
             "name": "TACTILE HOUSE",
             "type": "工芸建材の体験宿",
