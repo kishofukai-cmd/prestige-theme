@@ -5,7 +5,7 @@
     <div class="colors__showcase" data-reveal>
       {% assign first_block = section.blocks | first %}
       <img id="colors-main-img"
-        src="{% if first_block.settings.image != blank %}{{ first_block.settings.image | img_url: '1200x' }}{% else %}https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200{% endif %}"
+        src="{% if first_block.settings.image != blank %}{{ first_block.settings.image | img_url: '1200x' }}{% elsif first_block.settings.image_url != blank %}{{ first_block.settings.image_url }}{% else %}https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200{% endif %}"
         alt="{{ first_block.settings.name | default: 'Powder Beige' }}" loading="lazy">
     </div>
     <!-- カラー名表示 -->
@@ -16,7 +16,7 @@
         <div class="colors__swatch{% if forloop.first %} colors__swatch--active{% endif %}"
           style="background: {{ block.settings.color_code }};"
           data-color="{{ block.settings.name }}"
-          data-img="{% if block.settings.image != blank %}{{ block.settings.image | img_url: '1200x' }}{% endif %}"
+          data-img="{% if block.settings.image != blank %}{{ block.settings.image | img_url: '1200x' }}{% elsif block.settings.image_url != blank %}{{ block.settings.image_url }}{% endif %}"
           {{ block.shopify_attributes }}>
         </div>
       {% endfor %}
@@ -27,7 +27,7 @@
       <div class="colors__carousel-track">
         {% for block in section.blocks %}
           <div class="colors__carousel-item{% if forloop.first %} colors__carousel-item--active{% endif %}" data-color="{{ block.settings.name }}">
-            <img src="{% if block.settings.thumbnail != blank %}{{ block.settings.thumbnail | img_url: '400x' }}{% elsif block.settings.image != blank %}{{ block.settings.image | img_url: '400x' }}{% endif %}"
+            <img src="{% if block.settings.thumbnail != blank %}{{ block.settings.thumbnail | img_url: '400x' }}{% elsif block.settings.image != blank %}{{ block.settings.image | img_url: '400x' }}{% elsif block.settings.image_url != blank %}{{ block.settings.image_url }}{% endif %}"
               alt="{{ block.settings.name }}" loading="lazy">
             <span>{{ block.settings.name }}</span>
           </div>
@@ -70,6 +70,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "メイン画像"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "画像URL（image_pickerが空の場合に使用）"
         },
         {
           "type": "image_picker",

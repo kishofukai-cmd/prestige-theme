@@ -8,6 +8,8 @@
           <div class="why__card-img">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% elsif block.settings.image_url != blank %}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% endif %}
           </div>
           <div class="why__card-content">
@@ -41,6 +43,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "画像URL（image_pickerが空の場合に使用）"
         },
         {
           "type": "text",

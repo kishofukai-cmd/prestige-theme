@@ -18,6 +18,8 @@
           <div class="sizes__panel-img">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% elsif block.settings.image_url != blank %}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
             {% endif %}
           </div>
           <div class="sizes__panel-content">
@@ -81,6 +83,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "画像URL（image_pickerが空の場合に使用）"
         },
         {
           "type": "text",

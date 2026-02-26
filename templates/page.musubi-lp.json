@@ -381,10 +381,6 @@
       "type": "musubi-lp-gift",
       "settings": {}
     },
-    "trial": {
-      "type": "musubi-lp-trial",
-      "settings": {}
-    },
     "faq": {
       "type": "musubi-lp-faq",
       "settings": {},
@@ -484,7 +480,6 @@
     "reviews",
     "hotels",
     "gift",
-    "trial",
     "faq",
     "closing"
   ]
