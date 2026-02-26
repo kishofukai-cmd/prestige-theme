@@ -376,6 +376,10 @@
         "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です"
       }
     },
+    "comparison": {
+      "type": "musubi-lp-comparison",
+      "settings": {}
+    },
     "sizes": {
       "type": "musubi-lp-sizes",
       "blocks": {
@@ -766,6 +770,7 @@
     "story",
     "trust-visual",
     "science",
+    "comparison",
     "sizes",
     "colors",
     "cta-after-colors",

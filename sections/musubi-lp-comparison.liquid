@@ -1,0 +1,121 @@
+{% comment %} MUSUBI LP - 検証データ比較セクション {% endcomment %}
+<section class="comparison" id="comparison">
+  <div class="container">
+    <p class="comparison__label" data-reveal>{{ section.settings.label | default: 'LABORATORY TEST' }}</p>
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '検証データが証明する<br>MUSUBIの快適性' }}</h2>
+
+    <!-- 比較ハイライト -->
+    <div class="comparison__highlights" data-reveal>
+      <div class="comparison__card comparison__card--musubi">
+        <p class="comparison__card-badge">MUSUBI -en-</p>
+        <p class="comparison__card-value">{{ section.settings.musubi_value | default: '約47〜48%' }}</p>
+        <p class="comparison__card-desc">{{ section.settings.musubi_desc | default: '60分間ほぼ一定で推移' }}</p>
+        <p class="comparison__card-verdict comparison__card-verdict--good">✓ 理想的な範囲内</p>
+      </div>
+      <div class="comparison__vs" data-reveal>VS</div>
+      <div class="comparison__card comparison__card--other">
+        <p class="comparison__card-badge">他社加重ブランケット</p>
+        <p class="comparison__card-value">{{ section.settings.other_value | default: '55% → 70%' }}</p>
+        <p class="comparison__card-desc">{{ section.settings.other_desc | default: '時間経過とともに上昇' }}</p>
+        <p class="comparison__card-verdict comparison__card-verdict--bad">✗ ムレやすい</p>
+      </div>
+    </div>
+
+    <!-- グラフ画像 -->
+    <div class="comparison__chart" data-reveal>
+      <p class="comparison__chart-title">寝床内湿度（空間）比較データ</p>
+      {% if section.settings.chart_image != blank %}
+        <img src="{{ section.settings.chart_image | img_url: '1200x' }}" alt="{{ section.settings.chart_alt | default: '寝床内湿度比較グラフ' }}" loading="lazy">
+      {% elsif section.settings.chart_image_url != blank %}
+        <img src="{{ section.settings.chart_image_url }}" alt="{{ section.settings.chart_alt | default: '寝床内湿度比較グラフ' }}" loading="lazy">
+      {% else %}
+        <!-- テーマエディタで画像を設定してください -->
+        <div class="comparison__chart-placeholder">
+          <p>📊 検証グラフ画像をテーマエディタで設定してください</p>
+        </div>
+      {% endif %}
+      <p class="comparison__chart-note">※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測</p>
+    </div>
+
+    <!-- 結論 -->
+    <div class="comparison__conclusion" data-reveal>
+      <div class="comparison__conclusion-icon">💡</div>
+      <div class="comparison__conclusion-content">
+        <p class="comparison__conclusion-label">理想的な寝床内湿度：<strong>50% ± 5%</strong></p>
+        <p class="comparison__conclusion-text">{{ section.settings.conclusion | default: 'MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong>' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 検証データ比較",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "LABORATORY TEST"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "検証データが証明する<br>MUSUBIの快適性"
+    },
+    {
+      "type": "text",
+      "id": "musubi_value",
+      "label": "MUSUBI 数値",
+      "default": "約47〜48%"
+    },
+    {
+      "type": "text",
+      "id": "musubi_desc",
+      "label": "MUSUBI 説明",
+      "default": "60分間ほぼ一定で推移"
+    },
+    {
+      "type": "text",
+      "id": "other_value",
+      "label": "他社 数値",
+      "default": "55% → 70%"
+    },
+    {
+      "type": "text",
+      "id": "other_desc",
+      "label": "他社 説明",
+      "default": "時間経過とともに上昇"
+    },
+    {
+      "type": "image_picker",
+      "id": "chart_image",
+      "label": "グラフ画像"
+    },
+    {
+      "type": "text",
+      "id": "chart_image_url",
+      "label": "グラフ画像URL（代替）",
+      "info": "image_pickerが使えない場合はURLを指定"
+    },
+    {
+      "type": "text",
+      "id": "chart_alt",
+      "label": "グラフ画像alt",
+      "default": "寝床内湿度比較グラフ"
+    },
+    {
+      "type": "richtext",
+      "id": "conclusion",
+      "label": "結論テキスト",
+      "default": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI 検証データ比較"
+    }
+  ]
+}
+{% endschema %}
