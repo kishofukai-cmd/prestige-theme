@@ -381,6 +381,39 @@
       "type": "musubi-lp-gift",
       "settings": {}
     },
+    "cta-after-reviews": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "section_id": "cta-after-reviews",
+        "heading": "体験した人だけが知る、この安心感。",
+        "cta_text": "今すぐMUSUBIを手に入れる",
+        "micro_1": "✓ 送料無料",
+        "micro_2": "✓ 14日間返品OK",
+        "micro_3": "✓ ギフトラッピング対応"
+      }
+    },
+    "cta-after-colors": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "section_id": "cta-after-colors",
+        "heading": "あなたにぴったりの一枚を。",
+        "cta_text": "サイズ・カラーを選ぶ",
+        "micro_1": "✓ 送料無料",
+        "micro_2": "✓ 14日間返品OK",
+        "micro_3": ""
+      }
+    },
+    "cta-after-care": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "section_id": "cta-after-care",
+        "heading": "毎日の休息が、変わる。",
+        "cta_text": "今すぐMUSUBIを手に入れる",
+        "micro_1": "✓ 送料無料",
+        "micro_2": "✓ 家庭で手洗いOK",
+        "micro_3": "✓ 365日オールシーズン"
+      }
+    },
     "faq": {
       "type": "musubi-lp-faq",
       "settings": {},
@@ -476,8 +509,11 @@
     "science",
     "sizes",
     "colors",
+    "cta-after-colors",
     "care",
+    "cta-after-care",
     "reviews",
+    "cta-after-reviews",
     "hotels",
     "gift",
     "faq",
