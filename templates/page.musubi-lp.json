@@ -33,6 +33,78 @@
         "proof_3"
       ]
     },
+    "makuake": {
+      "type": "musubi-lp-makuake",
+      "settings": {},
+      "blocks": {
+        "sold_1": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        "sold_2": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年11月 先行予約",
+            "status": "完売"
+          }
+        },
+        "sold_3": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年1月 一般販売",
+            "status": "完売"
+          }
+        },
+        "sold_4": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年5月 先行予約",
+            "status": "完売"
+          }
+        },
+        "sold_5": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年6月 先行予約",
+            "status": "完売"
+          }
+        },
+        "sold_6": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年7月 先行予約",
+            "status": "完売"
+          }
+        },
+        "sold_7": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年9月 一般販売",
+            "status": "完売"
+          }
+        },
+        "sold_8": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年10月 先行予約",
+            "status": "完売"
+          }
+        }
+      },
+      "block_order": [
+        "sold_1",
+        "sold_2",
+        "sold_3",
+        "sold_4",
+        "sold_5",
+        "sold_6",
+        "sold_7",
+        "sold_8"
+      ]
+    },
     "video-loop": {
       "type": "musubi-lp-video-loop",
       "settings": {}
@@ -506,6 +578,7 @@
   },
   "order": [
     "hero",
+    "makuake",
     "video-loop",
     "why",
     "empathy",

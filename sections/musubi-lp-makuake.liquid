@@ -1,0 +1,151 @@
+<section class="makuake" id="makuake">
+  <div class="container--narrow">
+    <div class="makuake__box" data-reveal>
+      <!-- ヘッダー -->
+      <div class="makuake__header">
+        <span class="makuake__badge">Makuake Success</span>
+        <h2 class="makuake__title">{{ section.settings.heading | default: 'クラウドファンディングで<br>圧倒的支持を獲得' }}</h2>
+      </div>
+
+      <!-- 実績数字 -->
+      <div class="makuake__stats" data-reveal>
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">{{ section.settings.amount | default: '1,300万円' }}</span>
+          <span class="makuake__stat-label">{{ section.settings.amount_label | default: '応援購入総額' }}</span>
+        </div>
+        <div class="makuake__stat-divider"></div>
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">{{ section.settings.supporters | default: '408名' }}</span>
+          <span class="makuake__stat-label">{{ section.settings.supporters_label | default: 'サポーター' }}</span>
+        </div>
+        <div class="makuake__stat-divider"></div>
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">{{ section.settings.percent | default: '2,698%' }}</span>
+          <span class="makuake__stat-label">{{ section.settings.percent_label | default: '達成率' }}</span>
+        </div>
+      </div>
+
+      <!-- 完売履歴 -->
+      <div class="makuake__soldout" data-reveal>
+        <p class="makuake__soldout-title">{{ section.settings.soldout_heading | default: '販売するたびに即完売' }}</p>
+        <div class="makuake__soldout-list">
+          {% for block in section.blocks %}
+            <div class="makuake__soldout-item" {{ block.shopify_attributes }}>
+              <span class="makuake__soldout-date">{{ block.settings.date }}</span>
+              <span class="makuake__soldout-tag">{{ block.settings.status | default: '完売' }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Makuakeリンク -->
+      {% if section.settings.makuake_url != blank %}
+        <a href="{{ section.settings.makuake_url }}" class="makuake__link" target="_blank" rel="noopener">
+          {{ section.settings.link_text | default: 'Makuakeプロジェクトページを見る →' }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI Makuake実績",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>クラウドファンディングで<br>圧倒的支持を獲得</p>"
+    },
+    {
+      "type": "text",
+      "id": "amount",
+      "label": "支援総額",
+      "default": "1,300万円"
+    },
+    {
+      "type": "text",
+      "id": "amount_label",
+      "label": "支援総額ラベル",
+      "default": "応援購入総額"
+    },
+    {
+      "type": "text",
+      "id": "supporters",
+      "label": "サポーター数",
+      "default": "408名"
+    },
+    {
+      "type": "text",
+      "id": "supporters_label",
+      "label": "サポーターラベル",
+      "default": "サポーター"
+    },
+    {
+      "type": "text",
+      "id": "percent",
+      "label": "達成率",
+      "default": "2,698%"
+    },
+    {
+      "type": "text",
+      "id": "percent_label",
+      "label": "達成率ラベル",
+      "default": "達成率"
+    },
+    {
+      "type": "text",
+      "id": "soldout_heading",
+      "label": "完売履歴見出し",
+      "default": "販売するたびに即完売"
+    },
+    {
+      "type": "url",
+      "id": "makuake_url",
+      "label": "MakuakeプロジェクトURL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "リンクテキスト",
+      "default": "Makuakeプロジェクトページを見る →"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "soldout_record",
+      "name": "販売/完売記録",
+      "settings": [
+        {
+          "type": "text",
+          "id": "date",
+          "label": "日付・内容",
+          "default": "2024年10月 先行予約"
+        },
+        {
+          "type": "text",
+          "id": "status",
+          "label": "ステータス",
+          "default": "完売"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI Makuake実績",
+      "blocks": [
+        { "type": "soldout_record", "settings": { "date": "2024年10月 先行予約", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2024年11月 先行予約", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年1月 一般販売", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年5月 先行予約", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年6月 先行予約", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年7月 先行予約", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年9月 一般販売", "status": "完売" } },
+        { "type": "soldout_record", "settings": { "date": "2025年10月 先行予約", "status": "完売" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
