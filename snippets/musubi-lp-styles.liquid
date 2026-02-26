@@ -691,14 +691,18 @@ button {
   object-fit: cover;
 }
 
-/* テキストを画像下に配置して読みやすく */
+/* ワンノバ風：画像上にテキストを大きく重ねる（読みやすいバンド付き） */
 .empathy__solution-text {
-  position: relative;
-  padding: 32px 20px;
-  background: var(--color-bg-cream);
-  border-radius: 0 0 16px 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 20px 36px;
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.4rem, 5vw, 2rem);
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.05em;
@@ -708,9 +712,9 @@ button {
 
 .empathy__solution-text strong {
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 700;
   display: block;
-  font-size: 1.15em;
+  font-size: 1.2em;
   margin-top: 4px;
 }
 
