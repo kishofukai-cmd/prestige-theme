@@ -1,0 +1,99 @@
+{% comment %} MUSUBI LP - 素材ストーリーセクション (Material) {% endcomment %}
+<section class="material" id="material">
+  <div class="container--narrow">
+    <div class="material__inner" data-reveal>
+      <div class="material__img">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.title }}" loading="lazy">
+        {% else %}
+          <div class="material__img-placeholder">
+            <p>📸 カポック素材の画像を<br>設定してください</p>
+          </div>
+        {% endif %}
+      </div>
+      <div class="material__content">
+        <p class="material__label">{{ section.settings.label | default: 'ABOUT MATERIAL' }}</p>
+        <h2 class="material__title">{{ section.settings.title | default: 'ただ重いだけじゃない。<br>植物由来素材「カポック」' }}</h2>
+        <div class="material__desc">
+          {{ section.settings.description | default: '<p>MUSUBIの中綿には、木の実から採れるサステナブル素材「カポック」を配合しています。</p><p>コットンの1/8の軽さと言われるカポックを使用することで、ずっしりとした安心感のある重みを保ちながらも、<strong>通気性が良く、息苦しさを感じさせない</strong>絶妙なバランスを実現しました。</p>' }}
+        </div>
+        <ul class="material__features">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <li>✓ {{ block.settings.text }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 素材ストーリー",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "素材画像"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "ABOUT MATERIAL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "見出し",
+      "default": "ただ重いだけじゃない。<br>植物由来素材「カポック」"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>MUSUBIの中綿には、木の実から採れるサステナブル素材「カポック」を配合しています。</p><p>コットンの1/8の軽さと言われるカポックを使用することで、ずっしりとした安心感のある重みを保ちながらも、<strong>通気性が良く、息苦しさを感じさせない</strong>絶妙なバランスを実現しました。</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "特徴リスト",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "テキスト"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI 素材ストーリー",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text": "樹木を伐採しないサステナブル素材"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "湿気を逃がし、ムレにくい"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "アニマルフリーで環境にやさしい"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

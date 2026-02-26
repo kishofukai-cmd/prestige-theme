@@ -780,6 +780,105 @@ button {
 }
 
 /* ============================================================
+   MATERIAL - カポック素材ストーリー
+   ============================================================ */
+.material {
+  padding: var(--section-gap) 0;
+  background: var(--color-bg);
+}
+
+.material__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.material__img {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+}
+
+.material__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.material__img-placeholder {
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--color-text-sub);
+  font-size: 0.9rem;
+}
+
+.material__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.material__label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.material__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.material__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  margin-bottom: 32px;
+}
+
+.material__desc p {
+  margin-bottom: 16px;
+}
+
+.material__desc strong {
+  font-weight: 600;
+  color: var(--color-text);
+  background: linear-gradient(transparent 60%, rgba(194, 157, 102, 0.3) 60%);
+}
+
+.material__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.material__features li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .material__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .material__img, .material__content {
+    flex: 1;
+  }
+}
+
+/* ============================================================
    STORY - ストーリーテリング
    ============================================================ */
 .story {
