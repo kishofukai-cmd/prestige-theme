@@ -1,0 +1,78 @@
+{% comment %} MUSUBI LP - 安心保証バナー (Guarantee) {% endcomment %}
+<section class="guarantee" id="guarantee">
+  <div class="container--narrow">
+    <div class="guarantee__list" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'badge' %}
+          <div class="guarantee__item" {{ block.shopify_attributes }}>
+            <div class="guarantee__icon">
+              <!-- アイコンSVGはテーマエディタで設定可能に -->
+              {% if block.settings.icon_svg != blank %}
+                {{ block.settings.icon_svg }}
+              {% else %}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              {% endif %}
+            </div>
+            <p class="guarantee__text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI 安心保証バナー",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "保証バッチ",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "アイコンSVG"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "テキスト",
+          "default": "14日間返品保証"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI 安心保証バナー",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "text": "14日間返品・交換OK",
+            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'></path><polyline points='9 22 9 12 15 12 15 22'></polyline></svg>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "text": "ギフトラッピング",
+            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 12 20 22 4 22 4 12'></polyline><rect x='2' y='7' width='20' height='5'></rect><line x1='12' y1='22' x2='12' y2='7'></line><path d='M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z'></path><path d='M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z'></path></svg>"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "text": "カポックで軽く暖か",
+            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'></path></svg>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

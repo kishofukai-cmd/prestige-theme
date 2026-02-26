@@ -52,6 +52,10 @@
         "price_tax": "(税込)"
       }
     },
+    "guarantee": {
+      "type": "musubi-lp-guarantee",
+      "settings": {}
+    },
     "makuake": {
       "type": "musubi-lp-makuake",
       "blocks": {
@@ -762,6 +766,7 @@
   },
   "order": [
     "hero",
+    "guarantee",
     "makuake",
     "video-loop",
     "ugc",
