@@ -41,10 +41,11 @@
         "proof_3"
       ],
       "settings": {
+        "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
         "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>やさしい重みで、<br>休息のスイッチを入れる。</p>",
-        "hero_subtitle": "<p>植物由来素材 × 通気構造の<br>リカバリー加重ブランケット</p>",
+        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを入れる。</p>",
+        "hero_subtitle": "<p>植物由来素材 × 通気構造の<br/>リカバリー加重ブランケット</p>",
         "cta_url": "",
         "cta_text": "今すぐMUSUBIを手に入れる",
         "price_text": "¥29,800〜",
