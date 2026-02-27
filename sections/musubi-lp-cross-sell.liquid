@@ -1,0 +1,90 @@
+{% comment %} MUSUBI LP - クロスセル (Cross Sell / Set Recommendation) {% endcomment %}
+<section class="cross-sell" id="cross-sell">
+  <div class="container--narrow">
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '一緒に使うとさらに快適。<br>おすすめのセットアイテム' }}</h2>
+    <div class="cross-sell__grid" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'product' %}
+          <a href="{{ block.settings.url }}" class="cross-sell__card" {{ block.shopify_attributes }}>
+            <div class="cross-sell__img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% else %}
+                <div class="cross-sell__img-placeholder">Image</div>
+              {% endif %}
+            </div>
+            <div class="cross-sell__info">
+              <h3 class="cross-sell__title">{{ block.settings.title }}</h3>
+              <p class="cross-sell__price">{{ block.settings.price }}</p>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MUSUBI おすすめセット",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "おすすめ商品",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "商品画像"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "商品名",
+          "default": "MUSUBI ピローケース"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "価格テキスト",
+          "default": "¥4,500 (税込)"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "リンクURL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI おすすめセット",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "title": "KAPOK KNOT パジャマ",
+            "price": "¥18,000 (税込)"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "MUSUBI ピローケース",
+            "price": "¥4,500 (税込)"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

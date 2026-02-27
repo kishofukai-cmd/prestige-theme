@@ -662,6 +662,9 @@
         "description": "全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。"
       }
     },
+    "cross-sell": {
+      "type": "musubi-lp-cross-sell"
+    },
     "gift": {
       "type": "musubi-lp-gift",
       "settings": {
@@ -788,6 +791,7 @@
     "reviews",
     "cta-after-reviews",
     "hotels",
+    "cross-sell",
     "gift",
     "faq",
     "closing"
