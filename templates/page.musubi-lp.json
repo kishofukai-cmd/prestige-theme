@@ -43,9 +43,9 @@
       "settings": {
         "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "brand_name": "KAPOK KNOT HOME",
+        "brand_name": "",
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを入れる。</p>",
-        "hero_subtitle": "<p>植物由来素材 × 通気構造の<br/>リカバリー加重ブランケット</p>",
+        "hero_subtitle": "<p>単一素材 × 通気構造の<br/>リカバリー加重ブランケット</p>",
         "cta_url": "",
         "cta_text": "今すぐMUSUBIを手に入れる",
         "price_text": "¥29,800〜",
@@ -311,7 +311,12 @@
       }
     },
     "material": {
-      "type": "musubi-lp-material"
+      "type": "musubi-lp-material",
+      "settings": {
+        "label": "ABOUT MATERIAL",
+        "title": "ただ重いだけじゃない。<br>植物由来素材「カポック」",
+        "description": "<p>MUSUBIの中綿には、木の実から採れるサステナブル素材「カポック」を配合しています。</p><p>コットンの1/8の軽さと言われるカポックを使用することで、ずっしりとした安心感のある重みを保ちながらも、<strong>通気性が良く、息苦しさを感じさせない</strong>絶妙なバランスを実現しました。</p>"
+      }
     },
     "trust-visual": {
       "type": "musubi-lp-trust-visual",
@@ -385,7 +390,17 @@
     },
     "comparison": {
       "type": "musubi-lp-comparison",
-      "settings": {}
+      "settings": {
+        "label": "LABORATORY TEST",
+        "heading": "検証データが証明する<br>MUSUBIの快適性",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "other_value": "55% → 70%",
+        "other_desc": "時間経過とともに上昇",
+        "chart_image_url": "",
+        "chart_alt": "寝床内湿度比較グラフ",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+      }
     },
     "sizes": {
       "type": "musubi-lp-sizes",
@@ -663,7 +678,10 @@
       }
     },
     "cross-sell": {
-      "type": "musubi-lp-cross-sell"
+      "type": "musubi-lp-cross-sell",
+      "settings": {
+        "heading": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+      }
     },
     "gift": {
       "type": "musubi-lp-gift",
