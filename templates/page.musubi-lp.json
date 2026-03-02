@@ -56,36 +56,6 @@
       "type": "musubi-lp-guarantee",
       "settings": {}
     },
-    "image_with_text_overlay_RiwFyU": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "heading_tXYfgp": {
-          "type": "heading",
-          "settings": {
-            "text": "",
-            "heading_tag": "h4"
-          }
-        }
-      },
-      "block_order": [
-        "heading_tXYfgp"
-      ],
-      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
-      "settings": {
-        "color_scheme": "",
-        "image_size": "auto",
-        "image": "shopify://shop_images/Makuake_MUSUBI.png",
-        "mobile_image": "shopify://shop_images/Makuake_MUSUBI.png",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "md",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
     "makuake": {
       "type": "musubi-lp-makuake",
       "blocks": {
@@ -164,9 +134,39 @@
         "supporters_label": "サポーター",
         "percent": "2,698%",
         "percent_label": "達成率",
-        "soldout_heading": "販売するたびに即完売",
+        "soldout_heading": "オンラインストア販売実績",
         "makuake_url": "",
         "link_text": "Makuakeプロジェクトページを見る →"
+      }
+    },
+    "image_with_text_overlay_RiwFyU": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_tXYfgp": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h4"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tXYfgp"
+      ],
+      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "image": "shopify://shop_images/Makuake_MUSUBI.png",
+        "mobile_image": "shopify://shop_images/Makuake_MUSUBI.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "xl",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
       }
     },
     "video-loop": {
