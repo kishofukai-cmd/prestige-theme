@@ -148,6 +148,35 @@
         "heading": "<p>やさしい安心感が、<br/>あなたを深い眠りへ<br/>いざなう。</p>"
       }
     },
+    "image_with_text_overlay_RiwFyU": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_tXYfgp": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h4"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tXYfgp"
+      ],
+      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "image": "shopify://shop_images/Makuake_MUSUBI.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
@@ -793,6 +822,7 @@
     "guarantee",
     "makuake",
     "video-loop",
+    "image_with_text_overlay_RiwFyU",
     "ugc",
     "why",
     "empathy",
