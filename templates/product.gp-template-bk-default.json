@@ -71,12 +71,6 @@
             "text_color": "#ffffff"
           }
         },
-        "7f1426fb-e78e-4e65-b00e-296bb07d6e83": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div id=\"unisize_tag\" data-cid=\"j4PJ9ilYvCr5kI\" data-cuid=\"{{ customer.id }}\" data-itm=\"{{ product.handle }}\"></div>\n <style>\n#unisizeBnr svg{\ndisplay:initial;\n}\n</style>"
-          }
-        },
         "separator": {
           "type": "separator",
           "disabled": true,
@@ -92,12 +86,6 @@
         "6ce7ed4b-a9b3-4494-a56a-fa582423f872": {
           "type": "structure",
           "settings": {}
-        },
-        "566a46c4-b850-4b76-bb78-52aa30f3f1a9": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<!-- UNISIZEcode -->\n<div id=\"unisize_1000\"></div>\n<script type=\"text/javascript\" src=\"https://bnr.cl.unisize.makip.co.jp/tag/unisize.js\"></script>"
-          }
         },
         "926ba012-18fb-4165-b230-02ff7116a302": {
           "type": "button",
@@ -170,11 +158,9 @@
         "quantity_selector",
         "buy_buttons",
         "button_8DHeMD",
-        "7f1426fb-e78e-4e65-b00e-296bb07d6e83",
         "separator",
         "description",
         "6ce7ed4b-a9b3-4494-a56a-fa582423f872",
-        "566a46c4-b850-4b76-bb78-52aa30f3f1a9",
         "926ba012-18fb-4165-b230-02ff7116a302",
         "c4dc4d29-3cf6-4fc3-99f8-ed00028b0fc6",
         "c5a5fa44-a0a3-4e8c-a05c-d0507553fa8c",
@@ -349,7 +335,12 @@
         },
         "eeeaac1f-2bf3-4c88-94bb-6abc516d684b": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
         }
       },
       "block_order": [
