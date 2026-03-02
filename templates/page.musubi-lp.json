@@ -139,15 +139,6 @@
         "link_text": "Makuakeプロジェクトページを見る →"
       }
     },
-    "video-loop": {
-      "type": "musubi-lp-video-loop",
-      "disabled": true,
-      "settings": {
-        "video_url": "",
-        "bg_image_alt": "MUSUBIの安心感",
-        "heading": "<p>やさしい安心感が、<br/>あなたを深い眠りへ<br/>いざなう。</p>"
-      }
-    },
     "image_with_text_overlay_RiwFyU": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -175,6 +166,15 @@
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "overlay_color": "#000000",
         "overlay_opacity": 30
+      }
+    },
+    "video-loop": {
+      "type": "musubi-lp-video-loop",
+      "disabled": true,
+      "settings": {
+        "video_url": "",
+        "bg_image_alt": "MUSUBIの安心感",
+        "heading": "<p>やさしい安心感が、<br/>あなたを深い眠りへ<br/>いざなう。</p>"
       }
     },
     "ugc": {
@@ -820,9 +820,9 @@
   "order": [
     "hero",
     "guarantee",
+    "image_with_text_overlay_RiwFyU",
     "makuake",
     "video-loop",
-    "image_with_text_overlay_RiwFyU",
     "ugc",
     "why",
     "empathy",
