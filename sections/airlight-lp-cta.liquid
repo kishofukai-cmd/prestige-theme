@@ -1,0 +1,52 @@
+{% comment %} Air Light Jacket LP — Mid-page CTA Section {% endcomment %}
+
+<section class="al-cta-section{% if section.settings.dark_mode %} al-cta-section--dark{% endif %}">
+  <div class="al-cta-section__inner">
+    <p class="al-section-label" data-reveal>{{ section.settings.label | default: 'Ready to feel the difference?' }}</p>
+    <h2 class="al-cta-section__title" data-reveal>{{ section.settings.heading | default: 'Your lightest layer awaits.' }}</h2>
+
+    <a href="{{ section.settings.cta_url | default: '#' }}" class="al-btn al-btn--green" data-reveal>
+      {{ section.settings.cta_text | default: 'Shop the Air Light Jacket' }}
+    </a>
+
+    <div class="al-cta-section__micros" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'micro' %}
+          <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP CTA",
+  "settings": [
+    { "type": "checkbox", "id": "dark_mode", "label": "Dark background",  "default": false },
+    { "type": "text",     "id": "label",     "label": "Section label",    "default": "Ready to feel the difference?" },
+    { "type": "richtext", "id": "heading",   "label": "Heading",          "default": "<p>Your lightest layer awaits.</p>" },
+    { "type": "url",      "id": "cta_url",   "label": "CTA link" },
+    { "type": "text",     "id": "cta_text",  "label": "CTA button text",  "default": "Shop the Air Light Jacket" }
+  ],
+  "blocks": [
+    {
+      "type": "micro",
+      "name": "Micro Copy",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "✓ Free Shipping" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP CTA",
+      "blocks": [
+        { "type": "micro", "settings": { "text": "✓ Free Worldwide Shipping" } },
+        { "type": "micro", "settings": { "text": "✓ 30-Day Free Returns" } },
+        { "type": "micro", "settings": { "text": "✓ 2-Year Quality Guarantee" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

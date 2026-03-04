@@ -1,0 +1,100 @@
+{% comment %} Air Light Jacket LP — FAQ Section {% endcomment %}
+
+<section class="al-faq">
+  <div class="al-container--narrow" style="max-width:720px;margin:0 auto;padding:0 var(--al-side-pad);">
+    <div class="al-faq__header" data-reveal>
+      <p class="al-section-label">{{ section.settings.label | default: 'Got Questions?' }}</p>
+      <h2 class="al-section-title">{{ section.settings.heading | default: 'Frequently Asked Questions' }}</h2>
+    </div>
+
+    <div class="al-faq__list" data-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_item' %}
+          <details class="al-faq__item" {{ block.shopify_attributes }}>
+            <summary>
+              {{ block.settings.question }}
+              <span class="al-faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <p class="al-faq__answer">{{ block.settings.answer }}</p>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP FAQ",
+  "settings": [
+    { "type": "text",     "id": "label",   "label": "Section label", "default": "Got Questions?" },
+    { "type": "richtext", "id": "heading", "label": "Heading",       "default": "<p>Frequently Asked Questions</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text",     "id": "question", "label": "Question", "default": "Is kapok as warm as down?" },
+        { "type": "textarea", "id": "answer",   "label": "Answer",   "default": "Yes — kapok has a similar warmth-to-weight ratio as down. Its naturally hollow structure traps air efficiently, providing excellent insulation in temperatures from 5°C to 15°C (40°F to 60°F)." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is kapok as warm as down?",
+            "answer": "Yes — kapok has a similar warmth-to-weight ratio as down. Its naturally hollow fiber structure traps air efficiently, providing excellent insulation in temperatures from 5°C to 15°C (40°F to 60°F)."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I wash the Air Light Jacket?",
+            "answer": "The Air Light Jacket is machine washable on a gentle cycle with cold water. Tumble dry on low with a few clean tennis balls to keep the kapok fill fluffy. Air drying also works great — just give it a shake when dry."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How small does it pack?",
+            "answer": "The Air Light Jacket stuffs into its own inner pocket to roughly the size of a closed fist — about the size of a large apple. It weighs approximately 150g (size S/M), making it ideal for travel, hiking, or daily commuting."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for people with down allergies?",
+            "answer": "Absolutely. Kapok is 100% plant-based and naturally hypoallergenic, making it a perfect choice for those allergic to down or feathers. There are no animal products whatsoever in the Air Light Jacket."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes! We ship to 30+ countries worldwide. Free shipping is available for all orders. Delivery times vary by region: USA/Europe 7–10 business days, Asia/Pacific 5–7 business days."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day free returns policy. If for any reason you're not fully satisfied, contact us within 30 days of delivery and we'll arrange a free return — no questions asked."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is kapok sustainable?",
+            "answer": "Kapok is one of the world's most sustainable fibers. The Ceiba tree grows without pesticides or irrigation, produces fiber naturally without chemicals, and kapok itself is 100% biodegradable. Our shell fabric also uses recycled nylon to further reduce our environmental footprint."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

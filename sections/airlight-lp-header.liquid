@@ -1,0 +1,38 @@
+{% comment %} Air Light Jacket LP — Sticky Header {% endcomment %}
+{% render 'airlight-lp-styles' %}
+
+<header class="al-header" id="al-header">
+  <a href="{{ section.settings.logo_url | default: '/' }}" class="al-header__logo">
+    {{ section.settings.logo_text | default: 'KAPOK KNOT' }}
+  </a>
+  <button class="al-header__cta" aria-label="Shop Now">
+    {{ section.settings.header_cta | default: 'Shop Now' }}
+  </button>
+</header>
+
+<!-- Sticky Bottom CTA -->
+<div class="al-sticky-cta" id="al-sticky-cta">
+  <a href="{{ section.settings.cta_url | default: '#' }}" class="al-sticky-cta__btn">
+    {{ section.settings.sticky_cta_text | default: 'Shop the Air Light Jacket' }}
+  </a>
+  <span class="al-sticky-cta__micro">
+    {{ section.settings.sticky_micro | default: '✓ Free Shipping  ✓ 30-Day Returns' }}
+  </span>
+</div>
+
+{% render 'airlight-lp-scripts' %}
+
+{% schema %}
+{
+  "name": "Air Light LP Header",
+  "settings": [
+    { "type": "url",  "id": "logo_url",        "label": "Logo link" },
+    { "type": "text", "id": "logo_text",        "label": "Logo text",        "default": "KAPOK KNOT" },
+    { "type": "text", "id": "header_cta",       "label": "Header CTA text",  "default": "Shop Now" },
+    { "type": "url",  "id": "cta_url",          "label": "CTA link" },
+    { "type": "text", "id": "sticky_cta_text",  "label": "Sticky CTA text",  "default": "Shop the Air Light Jacket" },
+    { "type": "text", "id": "sticky_micro",     "label": "Sticky micro copy", "default": "✓ Free Shipping  ✓ 30-Day Returns" }
+  ],
+  "presets": [{ "name": "Air Light LP Header" }]
+}
+{% endschema %}

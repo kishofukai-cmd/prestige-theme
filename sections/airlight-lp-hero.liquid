@@ -1,0 +1,85 @@
+{% comment %} Air Light Jacket LP — Hero Section {% endcomment %}
+
+<section class="al-hero" id="al-hero">
+  <div class="al-hero__bg">
+    {% if section.settings.hero_image != blank %}
+      <img src="{{ section.settings.hero_image | img_url: '1800x' }}"
+           alt="{{ section.settings.hero_image_alt | default: 'Kapok Knot Air Light Jacket' }}"
+           fetchpriority="high">
+    {% else %}
+      <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-jacket-hero.jpg"
+           alt="Kapok Knot Air Light Jacket" fetchpriority="high">
+    {% endif %}
+  </div>
+
+  <div class="al-hero__content">
+    <div class="al-hero__tag">{{ section.settings.tag | default: 'Air Light Jacket — By Kapok Knot' }}</div>
+
+    <h1 class="al-hero__title">
+      {{ section.settings.title | default: 'Light as <em>Air.</em><br>Warm as Nature.' }}
+    </h1>
+
+    <p class="al-hero__subtitle">
+      {{ section.settings.subtitle | default: 'The ultra-lightweight jacket filled with kapok — nature\'s original insulator. Sustainable, hypoallergenic, and remarkably packable.' }}
+    </p>
+
+    <!-- Social Proof -->
+    <div class="al-hero__proof">
+      {% for block in section.blocks %}
+        {% if block.type == 'proof_item' %}
+          {% unless forloop.first %}<div style="width:1px;height:36px;background:rgba(255,255,255,0.25);"></div>{% endunless %}
+          <div class="al-hero__proof-item" {{ block.shopify_attributes }}>
+            <span class="al-hero__proof-num">{{ block.settings.number }}</span>
+            <span class="al-hero__proof-label">{{ block.settings.label }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- CTA -->
+    <div class="al-hero__cta">
+      <a href="{{ section.settings.cta_url | default: '#' }}" class="al-btn al-btn--green">
+        {{ section.settings.cta_text | default: 'Shop Now — Free Shipping' }}
+      </a>
+      <p class="al-hero__price">{{ section.settings.price_text | default: 'From $198 USD' }}</p>
+      <p class="al-hero__micros">{{ section.settings.micros | default: '✓ 30-Day Free Returns  ✓ Ships Worldwide' }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Hero",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image",     "label": "Hero image" },
+    { "type": "text",         "id": "hero_image_alt", "label": "Image alt text", "default": "Kapok Knot Air Light Jacket" },
+    { "type": "text",         "id": "tag",            "label": "Tag label",      "default": "Air Light Jacket — By Kapok Knot" },
+    { "type": "richtext",     "id": "title",          "label": "Headline",       "default": "<p>Light as Air.<br>Warm as Nature.</p>" },
+    { "type": "textarea",     "id": "subtitle",       "label": "Subtitle",       "default": "The ultra-lightweight jacket filled with kapok — nature's original insulator. Sustainable, hypoallergenic, and remarkably packable." },
+    { "type": "url",          "id": "cta_url",        "label": "CTA link" },
+    { "type": "text",         "id": "cta_text",       "label": "CTA button text","default": "Shop Now — Free Shipping" },
+    { "type": "text",         "id": "price_text",     "label": "Price text",     "default": "From $198 USD" },
+    { "type": "text",         "id": "micros",         "label": "Micro copy",     "default": "✓ 30-Day Free Returns  ✓ Ships Worldwide" }
+  ],
+  "blocks": [
+    {
+      "type": "proof_item",
+      "name": "Proof Number",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number",  "default": "★ 4.8" },
+        { "type": "text", "id": "label",  "label": "Label",   "default": "Avg Rating" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Hero",
+      "blocks": [
+        { "type": "proof_item", "settings": { "number": "★ 4.8",  "label": "Avg Rating" } },
+        { "type": "proof_item", "settings": { "number": "10,000+","label": "Happy Customers" } },
+        { "type": "proof_item", "settings": { "number": "30+",    "label": "Countries" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

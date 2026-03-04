@@ -1,0 +1,85 @@
+{% comment %} Air Light Jacket LP — Features / Why Section {% endcomment %}
+
+<section class="al-features">
+  <div class="al-container">
+    <div class="al-features__header" data-reveal>
+      <p class="al-section-label">{{ section.settings.label | default: 'Why Air Light?' }}</p>
+      <h2 class="al-section-title">{{ section.settings.heading | default: 'Engineered for the modern explorer.' }}</h2>
+    </div>
+
+    <div class="al-features__cards">
+      {% for block in section.blocks %}
+        {% if block.type == 'feature_card' %}
+          <div class="al-features__card" data-reveal {{ block.shopify_attributes }}>
+            <div class="al-features__card-img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '900x' }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% elsif block.settings.image_url != blank %}
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="al-features__card-body">
+              <span class="al-features__card-num">{{ block.settings.number | default: forloop.index | prepend: '0' }}</span>
+              <h3 class="al-features__card-title">{{ block.settings.title }}</h3>
+              <p class="al-features__card-desc">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Features",
+  "settings": [
+    { "type": "text",     "id": "label",   "label": "Section label", "default": "Why Air Light?" },
+    { "type": "richtext", "id": "heading", "label": "Heading",       "default": "<p>Engineered for the modern explorer.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "settings": [
+        { "type": "image_picker", "id": "image",       "label": "Feature image" },
+        { "type": "text",         "id": "image_url",   "label": "Image URL (fallback)" },
+        { "type": "text",         "id": "number",      "label": "Number",      "default": "01" },
+        { "type": "text",         "id": "title",       "label": "Title",       "default": "Ultra Lightweight" },
+        { "type": "textarea",     "id": "description", "label": "Description", "default": "At just 150g, the Air Light Jacket weighs less than a smartphone. Wear it all day without ever feeling weighed down." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Features",
+      "blocks": [
+        {
+          "type": "feature_card",
+          "settings": {
+            "number": "01",
+            "title": "Ultra Lightweight",
+            "description": "At just 150g, the Air Light Jacket weighs less than a smartphone. Wear it all day without ever feeling weighed down — or pack it into its own pocket in seconds."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "number": "02",
+            "title": "Kapok Natural Fill",
+            "description": "Filled with kapok fiber — a silky, plant-based insulator that's 5x lighter than cotton, naturally hypoallergenic, and requires zero pesticides to grow."
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "number": "03",
+            "title": "Japanese Craftsmanship",
+            "description": "Designed and crafted in Japan with precision Japanese tailoring. Clean lines, premium finishing, and a fit that flatters every silhouette."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

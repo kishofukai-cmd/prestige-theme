@@ -1,0 +1,136 @@
+<script>
+/* ============================================================
+   KAPOK KNOT | Air Light Jacket — International LP Script
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // === Scroll Reveal ===
+  const reveals = document.querySelectorAll('[data-reveal]');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // === Sticky Header ===
+  const header = document.getElementById('al-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  }
+
+  // === Sticky Bottom CTA ===
+  const stickyCta = document.getElementById('al-sticky-cta');
+  const hero = document.getElementById('al-hero');
+  const closing = document.getElementById('al-closing');
+  if (stickyCta && hero) {
+    const heroObs = new IntersectionObserver(([entry]) => {
+      stickyCta.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    heroObs.observe(hero);
+
+    if (closing) {
+      const closingObs = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) stickyCta.classList.remove('visible');
+      }, { threshold: 0.3 });
+      closingObs.observe(closing);
+    }
+  }
+
+  // === Smooth Scroll ===
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = header ? header.offsetHeight + 8 : 68;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    });
+  });
+
+  // === Size Tab Switching ===
+  const sizeTabs   = document.querySelectorAll('.al-sizing__tab');
+  const sizePanels = document.querySelectorAll('.al-sizing__panel');
+  sizeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      sizeTabs.forEach(t => t.classList.remove('al-sizing__tab--active'));
+      tab.classList.add('al-sizing__tab--active');
+      sizePanels.forEach(p => {
+        p.classList.remove('al-sizing__panel--active');
+        p.style.display = 'none';
+        if (p.id === `al-panel-${target}`) {
+          p.classList.add('al-sizing__panel--active');
+          p.style.display = window.innerWidth >= 640 ? 'grid' : 'grid';
+        }
+      });
+    });
+  });
+
+  // === Review Graph Animation ===
+  const fills = document.querySelectorAll('.al-reviews__graph-fill');
+  const graphEl = document.querySelector('.al-reviews__graph');
+  if (graphEl && fills.length) {
+    const graphObs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        fills.forEach(fill => {
+          setTimeout(() => { fill.style.width = fill.dataset.width + '%'; }, 200);
+        });
+        graphObs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    graphObs.observe(graphEl);
+  }
+
+  // === Color Swatch Switching ===
+  const colorMainImg  = document.getElementById('al-colors-main-img');
+  const colorNameEl   = document.getElementById('al-colors-name');
+  const swatches      = document.querySelectorAll('.al-colors__swatch');
+  const carouselItems = document.querySelectorAll('.al-colors__carousel-item');
+  const carouselTrack = document.querySelector('.al-colors__carousel-track');
+
+  function setActiveColor(colorValue) {
+    const swatch = document.querySelector(`.al-colors__swatch[data-color="${colorValue}"]`);
+    if (swatch && colorMainImg) {
+      colorMainImg.style.opacity = '0';
+      setTimeout(() => {
+        colorMainImg.src = swatch.dataset.img;
+        colorMainImg.alt = colorValue;
+        colorMainImg.style.opacity = '1';
+      }, 250);
+    }
+    if (colorNameEl) colorNameEl.textContent = colorValue;
+    swatches.forEach(s => s.classList.toggle('al-colors__swatch--active', s.dataset.color === colorValue));
+    carouselItems.forEach(item => {
+      item.classList.toggle('al-colors__carousel-item--active', item.dataset.color === colorValue);
+      if (item.dataset.color === colorValue && carouselTrack) {
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  }
+
+  swatches.forEach(s => s.addEventListener('click', () => setActiveColor(s.dataset.color)));
+  carouselItems.forEach(item => item.addEventListener('click', () => setActiveColor(item.dataset.color)));
+
+  const arrowL = document.querySelector('.al-colors__carousel-arrow--left');
+  const arrowR = document.querySelector('.al-colors__carousel-arrow--right');
+  if (arrowL && carouselTrack) arrowL.addEventListener('click', () => carouselTrack.scrollBy({ left: -180, behavior: 'smooth' }));
+  if (arrowR && carouselTrack) arrowR.addEventListener('click', () => carouselTrack.scrollBy({ left: 180, behavior: 'smooth' }));
+
+  // === Header CTA click → hero CTA ===
+  const headerCtaBtn = document.querySelector('.al-header__cta');
+  if (headerCtaBtn) {
+    headerCtaBtn.addEventListener('click', () => {
+      const heroCtaBtn = document.querySelector('.al-hero__cta a');
+      if (heroCtaBtn) window.location.href = heroCtaBtn.href;
+    });
+  }
+
+});
+</script>

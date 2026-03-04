@@ -1,0 +1,553 @@
+{
+  "layout": "theme.airlight-lp",
+  "sections": {
+    "header": {
+      "type": "airlight-lp-header",
+      "settings": {
+        "logo_text": "KAPOK KNOT",
+        "header_cta": "Shop Now",
+        "sticky_cta_text": "Shop the Air Light Jacket",
+        "sticky_micro": "✓ Free Shipping  ✓ 30-Day Returns"
+      }
+    },
+    "hero": {
+      "type": "airlight-lp-hero",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★ 4.8",
+            "label": "Avg Rating"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "10,000+",
+            "label": "Happy Customers"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "30+",
+            "label": "Countries"
+          }
+        }
+      },
+      "block_order": ["proof_1", "proof_2", "proof_3"],
+      "settings": {
+        "hero_image_alt": "Kapok Knot Air Light Jacket",
+        "tag": "Air Light Jacket — By Kapok Knot",
+        "title": "<p>Light as Air.<br>Warm as Nature.</p>",
+        "subtitle": "The ultra-lightweight jacket filled with kapok — nature's original insulator. Sustainable, hypoallergenic, and remarkably packable.",
+        "cta_text": "Shop Now — Free Shipping",
+        "price_text": "From $198 USD",
+        "micros": "✓ 30-Day Free Returns  ✓ Ships Worldwide"
+      }
+    },
+    "proof-bar": {
+      "type": "airlight-lp-proof-bar",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "10,000+",
+            "label": "Happy Customers"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "30+",
+            "label": "Countries Shipped"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★ 4.8",
+            "label": "Average Rating"
+          }
+        },
+        "guarantee_1": {
+          "type": "guarantee_item",
+          "settings": {
+            "icon": "🌿",
+            "text": "100% Plant-Based Fill"
+          }
+        },
+        "guarantee_2": {
+          "type": "guarantee_item",
+          "settings": {
+            "icon": "🪶",
+            "text": "Lighter Than Down"
+          }
+        },
+        "guarantee_3": {
+          "type": "guarantee_item",
+          "settings": {
+            "icon": "🔄",
+            "text": "30-Day Free Returns"
+          }
+        },
+        "guarantee_4": {
+          "type": "guarantee_item",
+          "settings": {
+            "icon": "✈️",
+            "text": "Free Worldwide Shipping"
+          }
+        },
+        "guarantee_5": {
+          "type": "guarantee_item",
+          "settings": {
+            "icon": "🤝",
+            "text": "2-Year Quality Guarantee"
+          }
+        }
+      },
+      "block_order": ["proof_1", "proof_2", "proof_3", "guarantee_1", "guarantee_2", "guarantee_3", "guarantee_4", "guarantee_5"]
+    },
+    "empathy": {
+      "type": "airlight-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon": "😓",
+            "text": "Heavy, bulky jackets that make every bag feel like a gym bag"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon": "🌡️",
+            "text": "Synthetic fills that overheat you — then leave you cold"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon": "♻️",
+            "text": "Petroleum-based insulation harming the planet you love to explore"
+          }
+        },
+        "worry_4": {
+          "type": "worry_item",
+          "settings": {
+            "icon": "😤",
+            "text": "Premium price tags on jackets that lose their loft after a few washes"
+          }
+        }
+      },
+      "block_order": ["worry_1", "worry_2", "worry_3", "worry_4"],
+      "settings": {
+        "label": "Does This Sound Familiar?",
+        "title": "<p>Your jacket shouldn't feel like a workout.</p>",
+        "solution_image_alt": "Air Light Jacket lifestyle",
+        "solution_text": "<p>There is a better way.<br><strong>Weightless warmth, finally.</strong></p>"
+      }
+    },
+    "features": {
+      "type": "airlight-lp-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_card",
+          "settings": {
+            "number": "01",
+            "title": "Ultra Lightweight",
+            "description": "At just 150g, the Air Light Jacket weighs less than a smartphone. Wear it all day without ever feeling weighed down — or pack it into its own pocket in seconds."
+          }
+        },
+        "feature_2": {
+          "type": "feature_card",
+          "settings": {
+            "number": "02",
+            "title": "Kapok Natural Fill",
+            "description": "Filled with kapok fiber — a silky, plant-based insulator that's 5x lighter than cotton, naturally hypoallergenic, and requires zero pesticides to grow."
+          }
+        },
+        "feature_3": {
+          "type": "feature_card",
+          "settings": {
+            "number": "03",
+            "title": "Japanese Craftsmanship",
+            "description": "Designed and crafted in Japan with precision tailoring. Clean lines, premium finishing, and a fit that flatters every silhouette — season after season."
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3"],
+      "settings": {
+        "label": "Why Air Light?",
+        "heading": "<p>Engineered for the modern explorer.</p>"
+      }
+    },
+    "material": {
+      "type": "airlight-lp-material",
+      "blocks": {
+        "spec_1": {
+          "type": "spec_item",
+          "settings": { "key": "Fill Material",   "value": "100% Kapok Fiber" }
+        },
+        "spec_2": {
+          "type": "spec_item",
+          "settings": { "key": "Shell",           "value": "Recycled Nylon" }
+        },
+        "spec_3": {
+          "type": "spec_item",
+          "settings": { "key": "Weight (S/M)",    "value": "approx. 150g" }
+        },
+        "spec_4": {
+          "type": "spec_item",
+          "settings": { "key": "Packability",     "value": "Packs to fist-size" }
+        },
+        "spec_5": {
+          "type": "spec_item",
+          "settings": { "key": "Allergen-Free",   "value": "Vegan & Hypoallergenic" }
+        },
+        "spec_6": {
+          "type": "spec_item",
+          "settings": { "key": "Care",            "value": "Machine Washable" }
+        }
+      },
+      "block_order": ["spec_1", "spec_2", "spec_3", "spec_4", "spec_5", "spec_6"],
+      "settings": {
+        "image_alt": "Kapok fiber close-up",
+        "badge_text": "100% Natural Fill",
+        "label": "The Material Story",
+        "title": "<p>Kapok: Nature's gift, rediscovered.</p>",
+        "description": "Kapok is a silky fiber harvested from the tropical Ceiba tree — one of Earth's most ancient insulators. Revered in Asia for centuries, kapok is naturally hollow, trapping air like tiny insulating bubbles. The result: extraordinary warmth with almost no weight.\n\nUnlike down, kapok is vegan and hypoallergenic. Unlike synthetic fills, kapok is 100% biodegradable and requires no chemicals to grow. It's warmth the planet actually approves of."
+      }
+    },
+    "cta-1": {
+      "type": "airlight-lp-cta",
+      "blocks": {
+        "micro_1": { "type": "micro", "settings": { "text": "✓ Free Worldwide Shipping" } },
+        "micro_2": { "type": "micro", "settings": { "text": "✓ 30-Day Free Returns" } },
+        "micro_3": { "type": "micro", "settings": { "text": "✓ 2-Year Quality Guarantee" } }
+      },
+      "block_order": ["micro_1", "micro_2", "micro_3"],
+      "settings": {
+        "dark_mode": false,
+        "label": "Ready to feel the difference?",
+        "heading": "<p>Your lightest layer awaits.</p>",
+        "cta_text": "Shop the Air Light Jacket"
+      }
+    },
+    "sustainability": {
+      "type": "airlight-lp-sustainability",
+      "blocks": {
+        "point_1": {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "🌱",
+            "title": "Plant-Based Fill",
+            "description": "Kapok fiber is harvested without harming the tree. Zero chemicals, zero cruelty — pure nature."
+          }
+        },
+        "point_2": {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "♻️",
+            "title": "Recycled Shell",
+            "description": "The outer shell uses recycled nylon, diverting plastic waste from landfill without compromising performance."
+          }
+        },
+        "point_3": {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "🧵",
+            "title": "Built to Last",
+            "description": "Japanese precision construction means your Air Light Jacket is designed for years, not seasons. Less waste, more value."
+          }
+        }
+      },
+      "block_order": ["point_1", "point_2", "point_3"],
+      "settings": {
+        "label": "Our Commitment",
+        "title": "<p>Good for you.<br>Better for the planet.</p>",
+        "description": "At Kapok Knot, we believe exceptional performance and environmental responsibility aren't opposites — they're inseparable. Every Air Light Jacket is built to last, made to reduce waste, and designed to give back."
+      }
+    },
+    "sizing": {
+      "type": "airlight-lp-sizing",
+      "blocks": {
+        "size_xs": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "XS / S",
+            "badge": "Most Popular",
+            "name": "XS / S",
+            "price": "$198 USD",
+            "dimensions": "Chest 88–96cm / Length 62cm",
+            "best_for": "Slim fit, layering under heavy coats",
+            "note": "Designed for a modern slim silhouette. If between sizes, size up for a looser, more layered feel.",
+            "cta_text": "Shop XS / S"
+          }
+        },
+        "size_ml": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "M / L",
+            "badge": "Versatile Pick",
+            "name": "M / L",
+            "price": "$198 USD",
+            "dimensions": "Chest 100–108cm / Length 65cm",
+            "best_for": "Regular fit, everyday all-day wear",
+            "note": "The most versatile fit — comfortable enough for all-day wear, slim enough for a polished look.",
+            "cta_text": "Shop M / L"
+          }
+        },
+        "size_xl": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "XL / XXL",
+            "badge": "Relaxed Fit",
+            "name": "XL / XXL",
+            "price": "$198 USD",
+            "dimensions": "Chest 112–120cm / Length 68cm",
+            "best_for": "Relaxed fit, heavy layering, broader builds",
+            "note": "Generous cut for maximum layering and freedom of movement. Great as an outer layer in colder climates.",
+            "cta_text": "Shop XL / XXL"
+          }
+        }
+      },
+      "block_order": ["size_xs", "size_ml", "size_xl"],
+      "settings": {
+        "label": "Find Your Fit",
+        "heading": "<p>Which size is right for you?</p>"
+      }
+    },
+    "colors": {
+      "type": "airlight-lp-colors",
+      "blocks": {
+        "color_1": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Forest Green",
+            "color_code": "#3d5a47",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-forest-green.jpg"
+          }
+        },
+        "color_2": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Midnight Navy",
+            "color_code": "#1e2d45",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-midnight-navy.jpg"
+          }
+        },
+        "color_3": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Stone Beige",
+            "color_code": "#c8b89a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-stone-beige.jpg"
+          }
+        },
+        "color_4": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Cloud White",
+            "color_code": "#e8e4de",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-cloud-white.jpg"
+          }
+        },
+        "color_5": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Charcoal",
+            "color_code": "#3a3a3a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-charcoal.jpg"
+          }
+        },
+        "color_6": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Dusty Rose",
+            "color_code": "#c49a8c",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-dusty-rose.jpg"
+          }
+        }
+      },
+      "block_order": ["color_1", "color_2", "color_3", "color_4", "color_5", "color_6"],
+      "settings": {
+        "label": "Color Collection",
+        "heading": "Find your color.",
+        "swatches_label": "Available Colors",
+        "cta_text": "Shop All Colors"
+      }
+    },
+    "cta-2": {
+      "type": "airlight-lp-cta",
+      "blocks": {
+        "micro_1": { "type": "micro", "settings": { "text": "✓ Free Worldwide Shipping" } },
+        "micro_2": { "type": "micro", "settings": { "text": "✓ 30-Day Free Returns" } },
+        "micro_3": { "type": "micro", "settings": { "text": "✓ Gift Wrapping Available" } }
+      },
+      "block_order": ["micro_1", "micro_2", "micro_3"],
+      "settings": {
+        "dark_mode": false,
+        "label": "6 colors. One perfect jacket.",
+        "heading": "<p>Find the one that speaks to you.</p>",
+        "cta_text": "Shop All Colors & Sizes"
+      }
+    },
+    "reviews": {
+      "type": "airlight-lp-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "The only jacket I'll ever need.",
+            "text": "I travel 200+ days a year. The Air Light Jacket is the first thing I pack and the last thing I take out. It weighs nothing, folds into a tiny ball, and keeps me warm from Tokyo to Toronto.",
+            "meta": "James T. — London, UK",
+            "tags": "#travel #packable #lightweight"
+          }
+        },
+        "review_2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Finally — a sustainable jacket that actually performs.",
+            "text": "I was skeptical that kapok could replace my down jacket, but I was wrong. Just as warm, so much lighter, and I feel great knowing it's plant-based. Switching permanently.",
+            "meta": "Mia K. — Berlin, Germany",
+            "tags": "#sustainable #kapok #warm"
+          }
+        },
+        "review_3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "Worth every penny — and then some.",
+            "text": "The Japanese quality is immediately obvious. The seams, the stitching, the way it fits — you can tell this was made with intention. I wear it every day in fall and spring.",
+            "meta": "Chen W. — Singapore",
+            "tags": "#quality #japanmade #everyday"
+          }
+        }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": {
+        "label": "Customer Reviews",
+        "heading": "<p>Real people. Real warmth.</p>",
+        "avg_score": "4.8",
+        "avg_stars": "★★★★★",
+        "review_count": "Based on 312 reviews",
+        "star5_pct": 72,
+        "star4_pct": 20,
+        "star3_pct": 5,
+        "star2_pct": 2,
+        "star1_pct": 1
+      }
+    },
+    "cta-3": {
+      "type": "airlight-lp-cta",
+      "blocks": {
+        "micro_1": { "type": "micro", "settings": { "text": "✓ Free Worldwide Shipping" } },
+        "micro_2": { "type": "micro", "settings": { "text": "✓ 30-Day Free Returns" } },
+        "micro_3": { "type": "micro", "settings": { "text": "✓ 2-Year Quality Guarantee" } }
+      },
+      "block_order": ["micro_1", "micro_2", "micro_3"],
+      "settings": {
+        "dark_mode": true,
+        "label": "Join 10,000+ happy customers",
+        "heading": "<p>Experience the feeling for yourself.</p>",
+        "cta_text": "Shop the Air Light Jacket"
+      }
+    },
+    "faq": {
+      "type": "airlight-lp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is kapok as warm as down?",
+            "answer": "Yes — kapok has a similar warmth-to-weight ratio as down. Its naturally hollow fiber structure traps air efficiently, providing excellent insulation in temperatures from 5°C to 15°C (40°F to 60°F)."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I wash the Air Light Jacket?",
+            "answer": "The Air Light Jacket is machine washable on a gentle cycle with cold water. Tumble dry on low with a few clean tennis balls to keep the kapok fill fluffy. Air drying also works great — just give it a shake when dry."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How small does it pack?",
+            "answer": "The Air Light Jacket stuffs into its own inner pocket to roughly the size of a closed fist — about the size of a large apple. It weighs approximately 150g (size S/M), making it ideal for travel, hiking, or daily commuting."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it suitable for people with down allergies?",
+            "answer": "Absolutely. Kapok is 100% plant-based and naturally hypoallergenic, making it a perfect choice for those allergic to down or feathers. There are no animal products whatsoever in the Air Light Jacket."
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "Yes! We ship to 30+ countries worldwide. Free shipping is available for all orders. Delivery times vary by region: USA/Europe 7–10 business days, Asia/Pacific 5–7 business days."
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day free returns policy. If for any reason you're not fully satisfied, contact us within 30 days of delivery and we'll arrange a free return — no questions asked."
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is kapok sustainable?",
+            "answer": "Kapok is one of the world's most sustainable fibers. The Ceiba tree grows without pesticides or irrigation, produces fiber naturally without chemicals, and kapok itself is 100% biodegradable. Our shell fabric also uses recycled nylon to further reduce our environmental footprint."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6", "faq_7"],
+      "settings": {
+        "label": "Got Questions?",
+        "heading": "<p>Frequently Asked Questions</p>"
+      }
+    },
+    "closing": {
+      "type": "airlight-lp-closing",
+      "blocks": {
+        "proof_1": { "type": "proof_line", "settings": { "text": "★ 4.8 Average Rating" } },
+        "proof_2": { "type": "proof_line", "settings": { "text": "10,000+ Happy Customers" } },
+        "proof_3": { "type": "proof_line", "settings": { "text": "Ships to 30+ Countries" } }
+      },
+      "block_order": ["proof_1", "proof_2", "proof_3"],
+      "settings": {
+        "bg_image_alt": "Air Light Jacket",
+        "label": "Air Light Jacket — by Kapok Knot",
+        "title": "<p>Wear less.<br>Feel more.</p>",
+        "price_text": "From $198 USD — Free Worldwide Shipping",
+        "cta_text": "Shop the Air Light Jacket →",
+        "micros": "✓ 30-Day Free Returns  ✓ 2-Year Guarantee  ✓ Sustainable Materials"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "hero",
+    "proof-bar",
+    "empathy",
+    "features",
+    "material",
+    "cta-1",
+    "sustainability",
+    "sizing",
+    "colors",
+    "cta-2",
+    "reviews",
+    "cta-3",
+    "faq",
+    "closing"
+  ]
+}

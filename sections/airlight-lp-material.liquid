@@ -1,0 +1,76 @@
+{% comment %} Air Light Jacket LP — Material / Kapok Story Section {% endcomment %}
+
+<section class="al-material">
+  <div class="al-material__inner">
+    <div class="al-material__layout">
+
+      <div class="al-material__visual" data-reveal>
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '900x' }}"
+               alt="{{ section.settings.image_alt | default: 'Kapok fiber close-up' }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/kapok-fiber.jpg"
+               alt="Kapok fiber close-up" loading="lazy">
+        {% endif %}
+        <div class="al-material__badge">
+          <span class="al-material__badge-text">{{ section.settings.badge_text | default: '100%\nNatural\nFill' }}</span>
+        </div>
+      </div>
+
+      <div class="al-material__content" data-reveal>
+        <p class="al-section-label al-material__label">{{ section.settings.label | default: 'The Material Story' }}</p>
+        <h2 class="al-material__title">{{ section.settings.title | default: 'Kapok: Nature\'s gift, rediscovered.' }}</h2>
+        <p class="al-material__desc">{{ section.settings.description | default: "Kapok is a silky fiber harvested from the tropical Ceiba tree — one of Earth's most ancient insulators. Revered in Asia for centuries, kapok is naturally hollow, trapping air like tiny insulating bubbles. The result: extraordinary warmth with almost no weight.\n\nUnlike down, kapok is vegan and hypoallergenic. Unlike synthetic fills, kapok is 100% biodegradable and requires no chemicals to grow. It's warmth the planet actually approves of." }}</p>
+
+        <div class="al-material__specs">
+          {% for block in section.blocks %}
+            {% if block.type == 'spec_item' %}
+              <div class="al-material__spec" {{ block.shopify_attributes }}>
+                <span class="al-material__spec-key">{{ block.settings.key }}</span>
+                <span class="al-material__spec-val">{{ block.settings.value }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Material",
+  "settings": [
+    { "type": "image_picker", "id": "image",       "label": "Material image" },
+    { "type": "text",         "id": "image_alt",   "label": "Image alt text", "default": "Kapok fiber close-up" },
+    { "type": "text",         "id": "badge_text",  "label": "Badge text",     "default": "100% Natural Fill" },
+    { "type": "text",         "id": "label",       "label": "Section label",  "default": "The Material Story" },
+    { "type": "richtext",     "id": "title",       "label": "Heading",        "default": "<p>Kapok: Nature's gift, rediscovered.</p>" },
+    { "type": "textarea",     "id": "description", "label": "Description",    "default": "Kapok is a silky fiber harvested from the tropical Ceiba tree — one of Earth's most ancient insulators. Naturally hollow, it traps air like tiny insulating bubbles, delivering extraordinary warmth at almost no weight. Unlike down, kapok is vegan and hypoallergenic. Unlike synthetic fills, it's 100% biodegradable and grows without chemicals." }
+  ],
+  "blocks": [
+    {
+      "type": "spec_item",
+      "name": "Spec",
+      "settings": [
+        { "type": "text", "id": "key",   "label": "Spec key",   "default": "Fill Material" },
+        { "type": "text", "id": "value", "label": "Spec value", "default": "100% Kapok Fiber" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Material",
+      "blocks": [
+        { "type": "spec_item", "settings": { "key": "Fill Material",   "value": "100% Kapok Fiber" } },
+        { "type": "spec_item", "settings": { "key": "Shell",           "value": "Recycled Nylon" } },
+        { "type": "spec_item", "settings": { "key": "Weight (S)",      "value": "approx. 150g" } },
+        { "type": "spec_item", "settings": { "key": "Packability",     "value": "Packs to fist-size" } },
+        { "type": "spec_item", "settings": { "key": "Allergen-Free",   "value": "Yes — Vegan & Hypoallergenic" } },
+        { "type": "spec_item", "settings": { "key": "Care",            "value": "Machine Washable" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

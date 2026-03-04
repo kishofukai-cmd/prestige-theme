@@ -1,0 +1,72 @@
+{% comment %} Air Light Jacket LP — Closing / Final CTA Section {% endcomment %}
+
+<section class="al-closing" id="al-closing">
+  <div class="al-closing__bg">
+    {% if section.settings.bg_image != blank %}
+      <img src="{{ section.settings.bg_image | img_url: '1800x' }}"
+           alt="{{ section.settings.bg_image_alt | default: 'Air Light Jacket' }}" loading="lazy">
+    {% else %}
+      <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-closing.jpg"
+           alt="Air Light Jacket" loading="lazy">
+    {% endif %}
+  </div>
+
+  <div class="al-closing__content">
+    <span class="al-closing__label">{{ section.settings.label | default: 'Air Light Jacket — by Kapok Knot' }}</span>
+
+    <h2 class="al-closing__title">
+      {{ section.settings.title | default: 'Wear less.<br>Feel more.' }}
+    </h2>
+
+    <div class="al-closing__proofs">
+      {% for block in section.blocks %}
+        {% if block.type == 'proof_line' %}
+          <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="al-closing__price">{{ section.settings.price_text | default: 'From $198 USD — Free Worldwide Shipping' }}</p>
+
+    <a href="{{ section.settings.cta_url | default: '#' }}" class="al-btn al-btn--green" style="max-width:360px;font-size:1rem;">
+      {{ section.settings.cta_text | default: 'Shop the Air Light Jacket →' }}
+    </a>
+
+    <p class="al-closing__micros">{{ section.settings.micros | default: '✓ 30-Day Free Returns  ✓ 2-Year Guarantee  ✓ Sustainable Materials' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Closing",
+  "settings": [
+    { "type": "image_picker", "id": "bg_image",     "label": "Background image" },
+    { "type": "text",         "id": "bg_image_alt", "label": "Image alt text",    "default": "Air Light Jacket" },
+    { "type": "text",         "id": "label",        "label": "Label text",        "default": "Air Light Jacket — by Kapok Knot" },
+    { "type": "richtext",     "id": "title",        "label": "Closing headline",  "default": "<p>Wear less.<br>Feel more.</p>" },
+    { "type": "text",         "id": "price_text",   "label": "Price display",     "default": "From $198 USD — Free Worldwide Shipping" },
+    { "type": "url",          "id": "cta_url",      "label": "CTA link" },
+    { "type": "text",         "id": "cta_text",     "label": "CTA button text",   "default": "Shop the Air Light Jacket →" },
+    { "type": "text",         "id": "micros",       "label": "Micro copy",        "default": "✓ 30-Day Free Returns  ✓ 2-Year Guarantee  ✓ Sustainable Materials" }
+  ],
+  "blocks": [
+    {
+      "type": "proof_line",
+      "name": "Proof Line",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "10,000+ Happy Customers" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Closing",
+      "blocks": [
+        { "type": "proof_line", "settings": { "text": "★ 4.8 Average Rating" } },
+        { "type": "proof_line", "settings": { "text": "10,000+ Happy Customers" } },
+        { "type": "proof_line", "settings": { "text": "Ships to 30+ Countries" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
