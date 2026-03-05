@@ -710,6 +710,28 @@
     },
     "cross-sell": {
       "type": "musubi-lp-cross-sell",
+      "blocks": {
+        "product_tcLAYP": {
+          "type": "product",
+          "settings": {
+            "title": "MUSUBI ピローケース",
+            "price": "¥4,500 (税込)",
+            "url": ""
+          }
+        },
+        "product_KpEKmy": {
+          "type": "product",
+          "settings": {
+            "title": "MUSUBI ピローケース",
+            "price": "¥4,500 (税込)",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tcLAYP",
+        "product_KpEKmy"
+      ],
       "settings": {
         "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
       }
