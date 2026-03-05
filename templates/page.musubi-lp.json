@@ -343,9 +343,10 @@
     "material": {
       "type": "musubi-lp-material",
       "settings": {
+        "image": "shopify://shop_images/KK_LINE_-_2026-02-27T160925.046.png",
         "label": "ABOUT MATERIAL",
         "title": "ただ重いだけじゃない。ポリエステルで単一素材でサステナブルに。",
-        "description": "<p>内容記載必須</p><p>手編み追加</p>"
+        "description": "<p>編みならではの柔らかさに包まれる</p>"
       }
     },
     "trust-visual": {
@@ -710,7 +711,7 @@
     "cross-sell": {
       "type": "musubi-lp-cross-sell",
       "settings": {
-        "heading": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+        "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
       }
     },
     "gift": {
@@ -718,8 +719,8 @@
       "settings": {
         "image_alt": "ギフトイメージ",
         "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。</p>",
-        "note": "※メッセージカードの同梱も可能です"
+        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>プレゼントのメッセージカードも可能です</p>",
+        "note": ""
       }
     },
     "faq": {
