@@ -421,16 +421,17 @@
     },
     "comparison": {
       "type": "musubi-lp-comparison",
+      "disabled": true,
       "settings": {
         "label": "LABORATORY TEST",
-        "heading": "検証データが証明する<br>MUSUBIの快適性",
+        "heading": "検証データが証明するMUSUBIの快適性",
         "musubi_value": "約47〜48%",
         "musubi_desc": "60分間ほぼ一定で推移",
         "other_value": "55% → 70%",
         "other_desc": "時間経過とともに上昇",
         "chart_image_url": "",
         "chart_alt": "寝床内湿度比較グラフ",
-        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
       }
     },
     "sizes": {
@@ -591,12 +592,13 @@
     },
     "cta-after-care": {
       "type": "musubi-lp-cta",
+      "disabled": true,
       "settings": {
         "section_id": "cta-after-care",
         "heading": "毎日の休息が、変わる。",
         "cta_url": "",
         "cta_text": "今すぐMUSUBIを手に入れる",
-        "micro_1": "✓ 送料無料",
+        "micro_1": "",
         "micro_2": "✓ 家庭で手洗いOK",
         "micro_3": "✓ 365日オールシーズン"
       }
@@ -732,6 +734,7 @@
         "product_tcLAYP",
         "product_KpEKmy"
       ],
+      "disabled": true,
       "settings": {
         "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
       }
