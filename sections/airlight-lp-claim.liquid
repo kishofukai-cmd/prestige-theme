@@ -1,0 +1,123 @@
+{% comment %} Air Light Jacket LP — Single Claim Section (reusable for ①②③④) {% endcomment %}
+
+{% assign img_right = section.settings.image_position == 'right' %}
+
+<section class="alc" style="--alc-bg:{{ section.settings.bg_color | default: '#f8f7f4' }};">
+  <style>
+    .alc {
+      background: var(--alc-bg);
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+    }
+    .alc__inner {
+      display: grid;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .alc__inner {
+        grid-template-columns: 1fr 1fr;
+        min-height: 100svh;
+      }
+      .alc__inner--img-right .alc__img  { order: 2; }
+      .alc__inner--img-right .alc__body { order: 1; }
+    }
+    .alc__img {
+      position: relative;
+      overflow: hidden;
+    }
+    .alc__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 50vw;
+    }
+    @media (min-width: 768px) {
+      .alc__img img { min-height: 100svh; }
+    }
+    .alc__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(40px, 8vw, 100px) clamp(24px, 6vw, 80px);
+      gap: 1.2rem;
+    }
+    .alc__num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 1;
+      color: #e8e6e0;
+      letter-spacing: -0.02em;
+    }
+    .alc__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #3d5a47;
+    }
+    .alc__headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: #1e2421;
+    }
+    .alc__sub {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #5a6358;
+      line-height: 1.6;
+      max-width: 360px;
+    }
+  </style>
+
+  <div class="alc__inner{% if img_right %} alc__inner--img-right{% endif %}">
+
+    {% if section.settings.image != blank or section.settings.image_url != blank %}
+      <div class="alc__img">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '1200x' }}"
+               alt="{{ section.settings.label }}" loading="lazy">
+        {% else %}
+          <img src="{{ section.settings.image_url }}"
+               alt="{{ section.settings.label }}" loading="lazy">
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="alc__body" data-reveal>
+      <div class="alc__num">{{ section.settings.number }}</div>
+      <p class="alc__label">{{ section.settings.label }}</p>
+      <h2 class="alc__headline">{{ section.settings.headline }}</h2>
+      <p class="alc__sub">{{ section.settings.sub }}</p>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light — Claim",
+  "settings": [
+    { "type": "text",         "id": "number",         "label": "Number (①②…)",   "default": "①" },
+    { "type": "text",         "id": "label",          "label": "Label (EN)",       "default": "Ultra Lightweight" },
+    { "type": "richtext",     "id": "headline",       "label": "Headline",         "default": "<p>Only 500g.</p>" },
+    { "type": "text",         "id": "sub",            "label": "Support text",     "default": "Lighter than most sweaters." },
+    { "type": "image_picker", "id": "image",          "label": "Image" },
+    { "type": "text",         "id": "image_url",      "label": "Image URL (fallback)" },
+    { "type": "select",       "id": "image_position", "label": "Image side",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#f8f7f4" }
+  ],
+  "presets": [{ "name": "Air Light — Claim" }]
+}
+{% endschema %}

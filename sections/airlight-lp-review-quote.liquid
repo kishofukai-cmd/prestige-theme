@@ -1,0 +1,74 @@
+{% comment %} Air Light Jacket LP — Single Review Quote (⑤) {% endcomment %}
+
+<section class="alrq">
+  <style>
+    .alrq {
+      background: #1e2421;
+      min-height: 60svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 12vw, 120px) clamp(24px, 6vw, 80px);
+      text-align: center;
+    }
+    .alrq__inner {
+      max-width: 760px;
+    }
+    .alrq__stars {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: #c4a96a;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+    .alrq__quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.35;
+      color: #f8f7f4;
+      margin-bottom: 2rem;
+    }
+    .alrq__quote::before { content: '\201C'; }
+    .alrq__quote::after  { content: '\201D'; }
+    .alrq__meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(248,247,244,0.45);
+    }
+    .alrq__product {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.3rem 1rem;
+      border: 1px solid rgba(248,247,244,0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(248,247,244,0.5);
+    }
+  </style>
+
+  <div class="alrq__inner" data-reveal>
+    <div class="alrq__stars">{{ section.settings.stars | default: '★★★★★' }}</div>
+    <p class="alrq__quote">{{ section.settings.quote | default: 'Warmer than my Patagonia Nano Puff' }}</p>
+    <p class="alrq__meta">{{ section.settings.meta | default: 'Verified Buyer — New York, USA' }}</p>
+    <span class="alrq__product">{{ section.settings.product_tag | default: 'Air Light Jacket — Forest Green / M' }}</span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light — Review Quote",
+  "settings": [
+    { "type": "text",     "id": "stars",       "label": "Stars",       "default": "★★★★★" },
+    { "type": "textarea", "id": "quote",       "label": "Quote",       "default": "Warmer than my Patagonia Nano Puff" },
+    { "type": "text",     "id": "meta",        "label": "Reviewer",    "default": "Verified Buyer — New York, USA" },
+    { "type": "text",     "id": "product_tag", "label": "Product tag", "default": "Air Light Jacket — Forest Green / M" }
+  ],
+  "presets": [{ "name": "Air Light — Review Quote" }]
+}
+{% endschema %}
