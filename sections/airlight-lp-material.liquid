@@ -4,21 +4,21 @@
   <div class="al-material__inner" data-al-reveal>
     <div class="al-material__img">
       {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image_alt | default: 'Kapok fiber — the plant-based down alternative' }}" loading="lazy">
+        <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
       {% else %}
         <div class="al-material__img--placeholder">🌿</div>
       {% endif %}
     </div>
 
     <div class="al-material__content">
-      <p class="al-label al-label--light">{{ section.settings.label | default: 'ABOUT THE MATERIAL' }}</p>
+      <p class="al-label al-label--light">{{ section.settings.label }}</p>
 
       <h2 class="al-material__heading">
-        {{ section.settings.heading | default: '"Wood-born down"<br><em>has arrived.</em>' }}
+        {{ section.settings.heading }}
       </h2>
 
       <div class="al-material__body">
-        {{ section.settings.body | default: '<p>Kapok is a seed fiber that grows inside the pods of the kapok tree across Southeast Asia. KAPOK KNOT's breakthrough was transforming this centuries-old natural material into a high-performance insulation sheet — a first in the fashion industry.</p><p>The result: a fiber that is <strong>1/8th the weight of cotton</strong>, breathes naturally, generates warmth as it absorbs moisture, and leaves no animal or environmental harm in its wake.</p>' }}
+        {{ section.settings.body }}
       </div>
 
       <ul class="al-material__features">
