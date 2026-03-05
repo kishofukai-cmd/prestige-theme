@@ -14,6 +14,8 @@
           <div class="al-feature-card__img">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% elsif block.settings.fallback_url != blank %}
+              <img src="{{ block.settings.fallback_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
               <div class="al-feature-card__img--placeholder">{{ block.settings.placeholder_emoji | default: '🧥' }}</div>
             {% endif %}
@@ -48,6 +50,7 @@
       "name": "Feature Card",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Feature Image" },
+        { "type": "url", "id": "fallback_url", "label": "External Image URL (Fallback)" },
         { "type": "text", "id": "placeholder_emoji", "label": "Placeholder Emoji", "default": "🧥" },
         { "type": "text", "id": "tag", "label": "Tag Label", "default": "ULTRALIGHT" },
         { "type": "text", "id": "title", "label": "Feature Title", "default": "Lighter Than a Sweater" },

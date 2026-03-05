@@ -4,6 +4,8 @@
   <div class="al-closing__bg">
     {% if section.settings.bg_image != blank %}
       <img src="{{ section.settings.bg_image | img_url: '1600x' }}" alt="" loading="lazy">
+    {% elsif section.settings.fallback_url != blank %}
+      <img src="{{ section.settings.fallback_url }}" alt="" loading="lazy">
     {% endif %}
   </div>
 
@@ -39,6 +41,7 @@
   "name": "AirLight Closing",
   "settings": [
     { "type": "image_picker", "id": "bg_image", "label": "Background Image" },
+    { "type": "url", "id": "fallback_url", "label": "External Image URL (Fallback)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KAPOK KNOT" },
     { "type": "richtext", "id": "title", "label": "Closing Title", "default": "<p>The jacket that changes<br><em>what warmth means.</em></p>" },
     { "type": "url", "id": "cta_url", "label": "CTA Link" },
