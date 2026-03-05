@@ -1,0 +1,83 @@
+{% comment %} AirLight Jacket LP — Reviews Section {% endcomment %}
+
+<section class="al-reviews" id="al-reviews">
+  <div class="al-container">
+    <h2 class="al-reviews__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'What people are saying' }}
+    </h2>
+    <p class="al-reviews__stars-avg" data-al-reveal>
+      {{ section.settings.avg_stars | default: '★★★★★' }}
+      <span style="font-size:0.9rem; color:var(--al-text-sub); font-family:var(--al-font-body); font-weight:400; margin-left:8px;">{{ section.settings.avg_label | default: '4.8 / 5 — Verified Buyers' }}</span>
+    </p>
+
+    <div class="al-reviews__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'review_card' %}
+          <div class="al-review-card" {{ block.shopify_attributes }} data-al-reveal>
+            <div class="al-review-card__stars">{{ block.settings.stars | default: '★★★★★' }}</div>
+            <p class="al-review-card__headline">"{{ block.settings.headline }}"</p>
+            <p class="al-review-card__text">{{ block.settings.text }}</p>
+            <p class="al-review-card__meta">{{ block.settings.meta }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Reviews",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Section Heading", "default": "What people are saying" },
+    { "type": "text", "id": "avg_stars", "label": "Avg Stars Display", "default": "★★★★★" },
+    { "type": "text", "id": "avg_label", "label": "Avg Score Label", "default": "4.8 / 5 — Verified Buyers" }
+  ],
+  "blocks": [
+    {
+      "type": "review_card",
+      "name": "Review Card",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "text", "id": "headline", "label": "Pull Quote / Headline" },
+        { "type": "textarea", "id": "text", "label": "Review Body" },
+        { "type": "text", "id": "meta", "label": "Reviewer Meta (name, country)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Reviews",
+      "blocks": [
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Warmer than my Patagonia Nano Puff",
+            "text": "I was skeptical — how could a plant-based jacket compete with my down? After a week in Oslo, I barely touched my Nano Puff. The AirLight is lighter, just as warm, and I can throw it in the washing machine. Sold.",
+            "meta": "James R. — Oslo, Norway"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Finally, a jacket I feel good about wearing",
+            "text": "I've been avoiding down for years for ethical reasons but synthetic jackets always feel plasticky. This is completely different — incredibly soft, warm, and the lightest thing I own. Proud to wear it.",
+            "meta": "Sophie L. — London, UK"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Got caught in the rain — still warm",
+            "text": "It rained hard in Copenhagen and I forgot my umbrella. My last down jacket would have been ruined. The AirLight just shook it off. This is my new everyday jacket, full stop.",
+            "meta": "Mikkel H. — Copenhagen, Denmark"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

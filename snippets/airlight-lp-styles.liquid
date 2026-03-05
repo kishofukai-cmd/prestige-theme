@@ -1,0 +1,1064 @@
+<style>
+/* ============================================================
+   KAPOK KNOT — AirLight Jacket | 海外LP Stylesheet
+   Mobile-first / English overseas market
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  /* Colors — Forest premium palette */
+  --al-bg:          #f8f6f2;
+  --al-bg-warm:     #f0ece4;
+  --al-bg-dark:     #1a2018;
+  --al-bg-dark2:    #232b21;
+  --al-text:        #1a2018;
+  --al-text-sub:    #5a6356;
+  --al-text-light:  #f8f6f2;
+  --al-accent:      #3a5c38;   /* deep forest green */
+  --al-accent2:     #7aab74;   /* light leaf green */
+  --al-gold:        #c5a44d;
+  --al-border:      #d8d2c4;
+  --al-tag-bg:      #e8f0e6;
+  --al-tag-text:    #2e5432;
+
+  /* Typography */
+  --al-font-head:   'Outfit', 'Helvetica Neue', sans-serif;
+  --al-font-display:'Cormorant Garamond', Georgia, serif;
+  --al-font-body:   'Outfit', 'Helvetica Neue', sans-serif;
+
+  /* Spacing */
+  --al-section-gap: clamp(80px, 14vw, 140px);
+  --al-gap-tight:   clamp(40px, 8vw, 80px);
+  --al-max:         960px;
+  --al-narrow:      680px;
+  --al-pad:         clamp(20px, 5vw, 48px);
+
+  /* Motion */
+  --al-ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --al-dur:   0.7s;
+}
+
+/* === Reset === */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--al-font-body);
+  color: var(--al-text);
+  background: var(--al-bg);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+img { max-width:100%; height:auto; display:block; }
+a { color:inherit; text-decoration:none; }
+button { font-family:inherit; }
+
+/* === Scrollbar === */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-thumb { background:var(--al-accent2); border-radius:2px; }
+
+/* === Container === */
+.al-container {
+  max-width: var(--al-max);
+  margin: 0 auto;
+  padding: 0 var(--al-pad);
+}
+.al-container--narrow {
+  max-width: var(--al-narrow);
+  margin: 0 auto;
+  padding: 0 var(--al-pad);
+}
+
+/* === Reveal animation === */
+[data-al-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--al-dur) var(--al-ease), transform var(--al-dur) var(--al-ease);
+}
+[data-al-reveal].al-revealed { opacity:1; transform:translateY(0); }
+[data-al-reveal].al-delay-1 { transition-delay: 0.1s; }
+[data-al-reveal].al-delay-2 { transition-delay: 0.2s; }
+[data-al-reveal].al-delay-3 { transition-delay: 0.3s; }
+
+/* === Section Label === */
+.al-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--al-accent);
+  background: var(--al-tag-bg);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.al-label--light {
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.12);
+}
+
+/* ============================================================
+   AL-HERO
+   ============================================================ */
+.al-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+  overflow: hidden;
+}
+.al-hero__img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.al-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.75;
+}
+.al-hero__img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15,22,14,0.92) 0%,
+    rgba(15,22,14,0.5) 50%,
+    rgba(15,22,14,0.15) 100%
+  );
+}
+.al-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--al-pad) clamp(40px, 10vw, 80px);
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.al-hero__eyebrow {
+  font-family: var(--al-font-head);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--al-gold);
+  margin-bottom: 20px;
+}
+.al-hero__title {
+  font-family: var(--al-font-display);
+  font-size: clamp(2.4rem, 9vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+.al-hero__title em {
+  font-style: italic;
+  color: var(--al-accent2);
+}
+.al-hero__sub {
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  color: rgba(248,246,242,0.85);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+/* Proof bar */
+.al-hero__proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  padding: 18px 0;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+.al-hero__proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 12px;
+}
+.al-hero__proof-num {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.al-hero__proof-label {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+.al-hero__proof-div {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.18);
+}
+/* CTA */
+.al-hero__cta-wrap { text-align: center; }
+.al-hero__cta-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  font-family: var(--al-font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--al-accent) 0%, #2a4828 100%);
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(58,92,56,0.45);
+  transition: all 0.3s var(--al-ease);
+}
+.al-hero__cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(58,92,56,0.55);
+}
+.al-hero__cta-note {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+}
+.al-hero__cta-note strong { color: rgba(255,255,255,0.85); font-weight:500; }
+
+/* ============================================================
+   AL-TRUST-BAR
+   ============================================================ */
+.al-trust-bar {
+  background: var(--al-bg);
+  border-bottom: 1px solid var(--al-border);
+  padding: 22px 0;
+}
+.al-trust-bar__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+.al-trust-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.al-trust-bar__icon {
+  color: var(--al-accent);
+  flex-shrink: 0;
+}
+.al-trust-bar__icon svg { width:20px; height:20px; }
+.al-trust-bar__text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--al-text);
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .al-trust-bar { padding: 28px 0; }
+  .al-trust-bar__icon svg { width:22px; height:22px; }
+  .al-trust-bar__text { font-size: 0.9rem; }
+}
+
+/* ============================================================
+   AL-BRAND (ブランドストーリー / Launch Statement)
+   ============================================================ */
+.al-brand {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+  text-align: center;
+}
+.al-brand__kicker {
+  font-family: var(--al-font-head);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--al-gold);
+  margin-bottom: 24px;
+}
+.al-brand__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 32px;
+}
+.al-brand__heading em { font-style:italic; color:var(--al-accent2); }
+.al-brand__body {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: rgba(248,246,242,0.75);
+  line-height: 1.9;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  font-weight: 300;
+}
+/* Awards / Credibility tags */
+.al-brand__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.al-brand__tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 18px;
+  border-radius: 100px;
+}
+
+/* ============================================================
+   AL-PAIN (共感・問いかけ)
+   ============================================================ */
+.al-pain {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg-warm);
+}
+.al-pain__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
+.al-pain__items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 520px;
+  margin: 0 auto 48px;
+}
+.al-pain__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(200,190,175,0.5);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.al-pain__item-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.al-pain__item-text {
+  font-size: 1rem;
+  color: var(--al-text);
+  line-height: 1.65;
+}
+.al-pain__bridge {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.al-pain__bridge-line {
+  font-size: 2rem;
+  color: var(--al-accent);
+  margin-bottom: 28px;
+  animation: al-bounce 2s infinite;
+}
+@keyframes al-bounce {
+  0%,100%{transform:translateY(0)}
+  40%{transform:translateY(-10px)}
+  60%{transform:translateY(-5px)}
+}
+.al-pain__bridge-text {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--al-text);
+}
+.al-pain__bridge-text strong {
+  color: var(--al-accent);
+  display: block;
+  font-size: 1.2em;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   AL-FEATURES (5大特徴)
+   ============================================================ */
+.al-features {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg);
+}
+.al-features__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: clamp(48px, 8vw, 72px);
+  line-height: 1.4;
+}
+.al-features__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--al-section-gap);
+}
+.al-feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.al-feature-card__img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--al-bg-warm);
+  margin-bottom: 32px;
+}
+.al-feature-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--al-ease);
+}
+.al-feature-card__img:hover img { transform: scale(1.03); }
+.al-feature-card__img--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--al-bg-warm);
+  font-size: 3rem;
+}
+.al-feature-card__body {
+  padding: 0 var(--al-pad);
+  max-width: var(--al-narrow);
+  margin: 0 auto;
+  width: 100%;
+}
+.al-feature-card__num {
+  font-family: var(--al-font-display);
+  font-size: clamp(3rem, 10vw, 5rem);
+  line-height: 1;
+  color: var(--al-accent);
+  opacity: 0.2;
+  display: block;
+  margin-left: -4px;
+}
+.al-feature-card__title {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  font-weight: 500;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.al-feature-card__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--al-accent);
+  background: var(--al-tag-bg);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.al-feature-card__desc {
+  font-size: 1rem;
+  color: var(--al-text-sub);
+  line-height: 1.9;
+}
+.al-feature-card__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 20px;
+  background: var(--al-tag-bg);
+  border-radius: 12px;
+  padding: 14px 20px;
+}
+.al-feature-card__stat-num {
+  font-family: var(--al-font-display);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--al-accent);
+  line-height: 1;
+}
+.al-feature-card__stat-label {
+  font-size: 0.8rem;
+  color: var(--al-text-sub);
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .al-feature-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    max-width: var(--al-max);
+    margin: 0 auto;
+    padding: 0 var(--al-pad);
+  }
+  .al-feature-card:nth-child(even) { flex-direction: row-reverse; }
+  .al-feature-card__img {
+    flex: 1;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    margin-bottom: 0;
+  }
+  .al-feature-card__body {
+    flex: 1;
+    padding: 0;
+  }
+}
+
+/* ============================================================
+   AL-MATERIAL (カポック素材ストーリー)
+   ============================================================ */
+.al-material {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+}
+.al-material__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.al-material__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--al-bg-dark2);
+}
+.al-material__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.al-material__img--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: rgba(255,255,255,0.2);
+}
+.al-material__content { padding: 0 var(--al-pad); }
+.al-material__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+.al-material__heading em { font-style:italic; color:var(--al-accent2); }
+.al-material__body {
+  font-size: 1rem;
+  color: rgba(248,246,242,0.75);
+  line-height: 1.9;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.al-material__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.al-material__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: rgba(248,246,242,0.85);
+}
+.al-material__features li::before {
+  content: '✓';
+  color: var(--al-accent2);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+@media (min-width: 768px) {
+  .al-material__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    max-width: var(--al-max);
+    margin: 0 auto;
+    padding: 0 var(--al-pad);
+  }
+  .al-material__img {
+    flex: 1;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+  }
+  .al-material__content { flex: 1; padding: 0; }
+}
+
+/* ============================================================
+   AL-COMPARISON (比較表)
+   ============================================================ */
+.al-comparison {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg-warm);
+}
+.al-comparison__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: clamp(36px, 6vw, 56px);
+  line-height: 1.4;
+}
+.al-comparison__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+}
+.al-comparison__table {
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26,32,24,0.08);
+}
+.al-comparison__table thead tr {
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+}
+.al-comparison__table th {
+  padding: 18px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.al-comparison__table th:first-child { text-align: left; }
+.al-comparison__table th.al-comparison__th--hero {
+  background: var(--al-accent);
+  color: #fff;
+  position: relative;
+}
+.al-comparison__table th.al-comparison__th--hero::after {
+  content: '★ OUR PICK';
+  display: block;
+  font-size: 0.6rem;
+  color: var(--al-accent2);
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+}
+.al-comparison__table td {
+  padding: 16px;
+  font-size: 0.88rem;
+  text-align: center;
+  border-bottom: 1px solid #f0ece4;
+  color: var(--al-text);
+}
+.al-comparison__table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--al-text);
+}
+.al-comparison__table tr:last-child td { border-bottom: none; }
+.al-comparison__table tr:nth-child(even) td { background: #faf8f5; }
+.al-comparison__table td.al-comparison__td--hero {
+  background: rgba(122,171,116,0.1);
+  font-weight: 600;
+  color: var(--al-accent);
+}
+.al-comparison__table tr:nth-child(even) td.al-comparison__td--hero {
+  background: rgba(122,171,116,0.15);
+}
+.al-check { color: var(--al-accent); font-size:1.1rem; font-weight:700; }
+.al-cross { color: #c0392b; font-size:1rem; }
+.al-neutral { color: var(--al-text-sub); }
+
+/* ============================================================
+   AL-REVIEWS (レビュー)
+   ============================================================ */
+.al-reviews {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg);
+}
+.al-reviews__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.al-reviews__stars-avg {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--al-gold);
+  margin-bottom: 48px;
+  letter-spacing: 0.06em;
+}
+.al-reviews__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .al-reviews__grid { grid-template-columns: repeat(3, 1fr); }
+}
+.al-review-card {
+  background: #fff;
+  border: 1px solid var(--al-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 12px rgba(26,32,24,0.05);
+  transition: transform 0.3s var(--al-ease), box-shadow 0.3s ease;
+}
+.al-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(26,32,24,0.1);
+}
+.al-review-card__stars { color: var(--al-gold); font-size: 1rem; letter-spacing: 0.05em; }
+.al-review-card__headline {
+  font-family: var(--al-font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--al-text);
+}
+.al-review-card__text {
+  font-size: 0.92rem;
+  color: var(--al-text-sub);
+  line-height: 1.8;
+  flex: 1;
+}
+.al-review-card__meta {
+  font-size: 0.75rem;
+  color: rgba(90,99,86,0.7);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--al-border);
+  padding-top: 14px;
+}
+
+/* ============================================================
+   AL-FAQ
+   ============================================================ */
+.al-faq {
+  padding: var(--al-section-gap) 0;
+  background: var(--al-bg-warm);
+}
+.al-faq__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: clamp(36px, 6vw, 56px);
+  line-height: 1.4;
+}
+.al-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--al-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(26,32,24,0.06);
+}
+.al-faq__item {
+  border-bottom: 1px solid var(--al-border);
+}
+.al-faq__item:last-child { border-bottom: none; }
+.al-faq__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--al-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--al-text);
+  gap: 16px;
+  transition: background 0.2s ease;
+}
+.al-faq__question:hover { background: rgba(248,246,242,0.8); }
+.al-faq__question.active { color: var(--al-accent); }
+.al-faq__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--al-tag-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--al-accent);
+  transition: transform 0.3s var(--al-ease);
+}
+.al-faq__question.active .al-faq__icon { transform: rotate(45deg); }
+.al-faq__answer {
+  display: none;
+  padding: 0 24px 22px;
+  font-size: 0.92rem;
+  color: var(--al-text-sub);
+  line-height: 1.85;
+}
+.al-faq__answer.open { display: block; }
+
+/* ============================================================
+   AL-CTA (中間・最終CTA)
+   ============================================================ */
+.al-cta {
+  padding: var(--al-section-gap) 0;
+  text-align: center;
+}
+.al-cta--dark {
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+}
+.al-cta--light { background: var(--al-bg); }
+.al-cta__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--al-gold);
+  margin-bottom: 18px;
+}
+.al-cta__heading {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+.al-cta--light .al-cta__heading { color: var(--al-text); }
+.al-cta__sub {
+  font-size: 1rem;
+  color: rgba(248,246,242,0.7);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.al-cta--light .al-cta__sub { color: var(--al-text-sub); }
+/* Offer box */
+.al-cta__offer-box {
+  display: inline-block;
+  background: rgba(197,164,77,0.12);
+  border: 1.5px solid var(--al-gold);
+  border-radius: 16px;
+  padding: 20px 36px;
+  margin-bottom: 36px;
+}
+.al-cta__offer-main {
+  font-family: var(--al-font-display);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 500;
+  color: var(--al-gold);
+  line-height: 1.4;
+}
+.al-cta__offer-note {
+  font-size: 0.78rem;
+  color: rgba(197,164,77,0.8);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+/* Progress bar (緊急性) */
+.al-cta__progress-wrap {
+  max-width: 380px;
+  margin: 0 auto 32px;
+}
+.al-cta__progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 8px;
+}
+.al-cta--light .al-cta__progress-label { color: var(--al-text-sub); }
+.al-cta__progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.al-cta--light .al-cta__progress-bar { background: var(--al-border); }
+.al-cta__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--al-accent), var(--al-accent2));
+  border-radius: 100px;
+  transition: width 1.5s var(--al-ease);
+}
+/* CTA button */
+.al-cta__btn {
+  display: inline-block;
+  padding: 18px 60px;
+  font-family: var(--al-font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--al-accent) 0%, #2a4828 100%);
+  border-radius: 100px;
+  box-shadow: 0 4px 28px rgba(58,92,56,0.5);
+  transition: all 0.3s var(--al-ease);
+}
+.al-cta__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(58,92,56,0.6);
+}
+.al-cta__micros {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+}
+.al-cta--light .al-cta__micros { color: var(--al-text-sub); }
+
+/* ============================================================
+   AL-CLOSING (最終ページ締め)
+   ============================================================ */
+.al-closing {
+  position: relative;
+  padding: var(--al-section-gap) var(--al-pad);
+  text-align: center;
+  background: var(--al-bg-dark);
+  color: var(--al-text-light);
+  overflow: hidden;
+}
+.al-closing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.al-closing__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+.al-closing__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.al-closing__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--al-gold);
+  margin-bottom: 20px;
+}
+.al-closing__title {
+  font-family: var(--al-font-display);
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.al-closing__title em { font-style:italic; color:var(--al-accent2); }
+.al-closing__proofs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 40px;
+}
+.al-closing__proof-item {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 18px;
+  border-radius: 100px;
+}
+
+/* ============================================================
+   JavaScript Reveal Script
+   ============================================================ */
+</style>
+
+<script>
+(function() {
+  /* Intersection Observer for reveal */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('al-revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-al-reveal]').forEach(el => observer.observe(el));
+
+  /* FAQ accordion */
+  document.querySelectorAll('.al-faq__question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      // close all
+      document.querySelectorAll('.al-faq__answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.al-faq__question').forEach(b => b.classList.remove('active'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        this.classList.add('active');
+      }
+    });
+  });
+
+  /* Progress bar animate */
+  const fills = document.querySelectorAll('.al-cta__progress-fill');
+  const progObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.pct + '%';
+        progObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  fills.forEach(f => { f.style.width = '0'; progObs.observe(f); });
+})();
+</script>

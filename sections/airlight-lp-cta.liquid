@@ -1,0 +1,92 @@
+{% comment %} AirLight Jacket LP — CTA Section (Mid & Final) {% endcomment %}
+
+<section class="al-cta al-cta--dark" id="{{ section.settings.section_id | default: 'al-cta' }}">
+  <div class="al-container--narrow">
+    <p class="al-cta__eyebrow" data-al-reveal>{{ section.settings.eyebrow | default: 'Limited Launch Offer' }}</p>
+
+    <h2 class="al-cta__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Join the first 100 people<br>to own an AirLight Jacket.' }}
+    </h2>
+
+    <p class="al-cta__sub" data-al-reveal>
+      {{ section.settings.subheading | default: "When they're gone, free shipping ends." }}
+    </p>
+
+    <!-- Offer Box -->
+    {% if section.settings.offer_main != blank %}
+      <div class="al-cta__offer-box" data-al-reveal>
+        <p class="al-cta__offer-main">{{ section.settings.offer_main }}</p>
+        {% if section.settings.offer_note != blank %}
+          <p class="al-cta__offer-note">{{ section.settings.offer_note }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <!-- Progress bar (urgency) -->
+    {% if section.settings.show_progress %}
+      <div class="al-cta__progress-wrap" data-al-reveal>
+        <div class="al-cta__progress-label">
+          <span>🔥 {{ section.settings.progress_taken | default: '73' }} / 100 claimed</span>
+          <span>{{ section.settings.progress_remaining | default: '27 remaining' }}</span>
+        </div>
+        <div class="al-cta__progress-bar">
+          <div class="al-cta__progress-fill" data-pct="{{ section.settings.progress_pct | default: 73 }}" style="width:0"></div>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Button -->
+    <a href="{{ section.settings.cta_url | default: '#' }}" class="al-cta__btn" data-al-reveal>
+      {{ section.settings.cta_text | default: 'Shop Now — Free Shipping' }}
+    </a>
+
+    <!-- Micro guarantees -->
+    <div class="al-cta__micros" data-al-reveal>
+      {% if section.settings.micro_1 != blank %}<span>{{ section.settings.micro_1 }}</span>{% endif %}
+      {% if section.settings.micro_2 != blank %}<span>{{ section.settings.micro_2 }}</span>{% endif %}
+      {% if section.settings.micro_3 != blank %}<span>{{ section.settings.micro_3 }}</span>{% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight CTA",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "Section ID (unique)", "default": "al-cta" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Limited Launch Offer" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Join the first 100 people<br>to own an AirLight Jacket.</p>" },
+    { "type": "text", "id": "subheading", "label": "Sub Text", "default": "When they're gone, free shipping ends." },
+    { "type": "text", "id": "offer_main", "label": "Offer Main Text", "default": "🌍 Free Worldwide Shipping — First 100 Orders" },
+    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "No code needed. Applied automatically at checkout." },
+    { "type": "checkbox", "id": "show_progress", "label": "Show Progress Bar", "default": true },
+    { "type": "text", "id": "progress_taken", "label": "Orders Claimed", "default": "73" },
+    { "type": "text", "id": "progress_remaining", "label": "Remaining Label", "default": "27 remaining" },
+    { "type": "number", "id": "progress_pct", "label": "Progress % (0–100)", "default": 73 },
+    { "type": "url", "id": "cta_url", "label": "CTA Link" },
+    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Shop Now — Free Shipping" },
+    { "type": "text", "id": "micro_1", "label": "Micro Text 1", "default": "✓ Free worldwide shipping" },
+    { "type": "text", "id": "micro_2", "label": "Micro Text 2", "default": "✓ First 100 orders only" },
+    { "type": "text", "id": "micro_3", "label": "Micro Text 3", "default": "✓ Secure checkout" }
+  ],
+  "presets": [
+    {
+      "name": "AirLight CTA",
+      "settings": {
+        "section_id": "al-cta-main",
+        "eyebrow": "Limited Launch Offer",
+        "offer_main": "🌍 Free Worldwide Shipping — First 100 Orders",
+        "offer_note": "No code needed. Applied automatically at checkout.",
+        "show_progress": true,
+        "progress_taken": "73",
+        "progress_remaining": "27 remaining",
+        "progress_pct": 73,
+        "cta_text": "Shop Now — Free Shipping",
+        "micro_1": "✓ Free worldwide shipping",
+        "micro_2": "✓ First 100 orders only",
+        "micro_3": "✓ Secure checkout"
+      }
+    }
+  ]
+}
+{% endschema %}

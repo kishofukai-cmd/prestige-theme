@@ -1,0 +1,93 @@
+{% comment %} AirLight Jacket LP — FAQ Section {% endcomment %}
+
+<section class="al-faq" id="al-faq">
+  <div class="al-container--narrow">
+    <h2 class="al-faq__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Your questions, answered.' }}
+    </h2>
+
+    <div class="al-faq__list" data-al-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_item' %}
+          <div class="al-faq__item" {{ block.shopify_attributes }}>
+            <button class="al-faq__question" aria-expanded="false">
+              {{ block.settings.question }}
+              <span class="al-faq__icon">+</span>
+            </button>
+            <div class="al-faq__answer">
+              {{ block.settings.answer }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight FAQ",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Section Heading", "default": "Your questions, answered." }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How warm is the AirLight Jacket exactly?",
+            "answer": "<p>Thermographic testing at 3°C shows the AirLight Jacket reaches the same surface temperature as a traditional down jacket within 1 minute of wear. It's designed to cover you comfortably from around 0°C to 15°C depending on your activity level.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly is kapok fiber?",
+            "answer": "<p>Kapok (pronounced kah-pok) is a natural fiber harvested from the seed pods of the kapok tree, native to Southeast Asia. Unlike cotton, no tree cutting is required — the pods simply fall and the fluff is collected. The fiber is hollow, making it naturally lightweight and thermally efficient. KAPOK KNOT has patented a process to transform this fiber into a high-performance insulation sheet called EthicalDown Kapok™.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it machine washable?",
+            "answer": "<p>Yes. Unlike down jackets that require dry cleaning, the AirLight Jacket can be machine washed on a gentle, cold-water cycle. The kapok fiber does not clump or degrade with repeated washing. Please follow the care label instructions.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your shipping and return policy?",
+            "answer": "<p>We offer <strong>free worldwide shipping</strong> for this launch offer (first 100 orders). Orders are dispatched within 3–5 business days from Japan. Please note that due to international shipping costs, we are unable to accept returns — but if there is any issue with your order, please contact us and we will make it right.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does sizing work?",
+            "answer": "<p>The AirLight Jacket is designed with a relaxed, slightly oversized fit — Japanese streetwear-inspired silhouette. If you prefer a fitted look, we recommend sizing down. Detailed size charts with chest and length measurements are available on the product page.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is KAPOK KNOT really sustainable?",
+            "answer": "<p>Yes, on multiple levels. Kapok fiber requires no irrigation, no pesticides, and no tree cutting. Our founder personally visits and maintains direct contracts with kapok farms and processing facilities in Southeast Asia, ensuring fair wages and transparency. Increased demand for kapok also drives reforestation in the region — a true positive-loop for the environment.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
