@@ -15,7 +15,8 @@
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
             {% elsif block.settings.fallback_url != blank %}
-              <img src="{{ block.settings.fallback_url }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% assign raw_url = block.settings.fallback_url %}
+              <img src="{{ raw_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
               <div class="al-feature-card__img--placeholder">{{ block.settings.placeholder_emoji | default: '🧥' }}</div>
             {% endif %}

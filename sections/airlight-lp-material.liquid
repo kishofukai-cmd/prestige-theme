@@ -6,7 +6,8 @@
       {% if section.settings.image != blank %}
         <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
       {% elsif section.settings.fallback_url != blank %}
-        <img src="{{ section.settings.fallback_url }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% assign raw_url = section.settings.fallback_url %}
+        <img src="{{ raw_url }}" alt="{{ section.settings.image_alt }}" loading="lazy">
       {% else %}
         <div class="al-material__img--placeholder">🌿</div>
       {% endif %}
