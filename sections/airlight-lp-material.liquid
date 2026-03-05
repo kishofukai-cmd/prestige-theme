@@ -5,11 +5,8 @@
     <div class="al-material__img">
       {% if section.settings.image != blank %}
         <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
-      {% elsif section.settings.fallback_url != blank %}
-        {% assign raw_url = section.settings.fallback_url %}
-        <img src="{{ raw_url }}" alt="{{ section.settings.image_alt }}" loading="lazy">
       {% else %}
-        <div class="al-material__img--placeholder">🌿</div>
+        <img src="https://ucarecdn.com/3d4d43f8-bafb-40f6-8326-71190a3f0abd/-/format/auto/-/preview/3000x3000/-/quality/lighter/IMG_3993.jpeg" alt="Kapok fiber — the plant-based down alternative" loading="lazy">
       {% endif %}
     </div>
 
@@ -40,7 +37,6 @@
   "name": "AirLight Material Story",
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Kapok Material Image" },
-    { "type": "text", "id": "fallback_url", "label": "External Image URL (Fallback)" },
     { "type": "text", "id": "image_alt", "label": "Image Alt", "default": "Kapok fiber — the plant-based down alternative" },
     { "type": "text", "id": "label", "label": "Section Label", "default": "ABOUT THE MATERIAL" },
     { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>\"Wood-born down\"<br><em>has arrived.</em></p>" },

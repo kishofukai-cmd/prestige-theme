@@ -1,5 +1,10 @@
 {% comment %} AirLight Jacket LP — Features Section (5大特徴) {% endcomment %}
 
+{% comment %}
+  Hardcoded fallback image URLs for each feature card (by forloop.index).
+  These load when no Shopify image is selected via image_picker.
+{% endcomment %}
+
 <section class="al-features" id="al-features">
   <div class="al-container">
     <h2 class="al-features__heading" data-al-reveal>
@@ -14,11 +19,22 @@
           <div class="al-feature-card__img">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
-            {% elsif block.settings.fallback_url != blank %}
-              {% assign raw_url = block.settings.fallback_url %}
-              <img src="{{ raw_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
-              <div class="al-feature-card__img--placeholder">{{ block.settings.placeholder_emoji | default: '🧥' }}</div>
+              {% comment %} Hardcoded fallback images by position {% endcomment %}
+              {% case forloop.index %}
+                {% when 1 %}
+                  <img src="https://ucarecdn.com/1573de7b-7ae4-497e-b340-1970bc5ca977/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2068.png" alt="{{ block.settings.title }}" loading="lazy">
+                {% when 2 %}
+                  <img src="https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png" alt="{{ block.settings.title }}" loading="lazy">
+                {% when 3 %}
+                  <img src="https://ucarecdn.com/f148b57b-451b-4a46-97ba-252553f75304/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_1_.jpg" alt="{{ block.settings.title }}" loading="lazy">
+                {% when 4 %}
+                  <img src="https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png" alt="{{ block.settings.title }}" loading="lazy">
+                {% when 5 %}
+                  <img src="https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png" alt="{{ block.settings.title }}" loading="lazy">
+                {% else %}
+                  <div class="al-feature-card__img--placeholder">{{ block.settings.placeholder_emoji | default: '🧥' }}</div>
+              {% endcase %}
             {% endif %}
           </div>
           <div class="al-feature-card__body">
@@ -51,7 +67,6 @@
       "name": "Feature Card",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Feature Image" },
-        { "type": "text", "id": "fallback_url", "label": "External Image URL (Fallback)" },
         { "type": "text", "id": "placeholder_emoji", "label": "Placeholder Emoji", "default": "🧥" },
         { "type": "text", "id": "tag", "label": "Tag Label", "default": "ULTRALIGHT" },
         { "type": "text", "id": "title", "label": "Feature Title", "default": "Lighter Than a Sweater" },
