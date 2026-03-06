@@ -3,8 +3,9 @@
 <section class="al-material" id="al-material">
   <div class="al-material__inner" data-al-reveal>
     <div class="al-material__img">
-      {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+      {% assign material_img_src = section.settings.image | img_url: '900x' %}
+      {% if material_img_src != blank %}
+        <img src="{{ material_img_src }}" alt="{{ section.settings.image_alt }}" loading="lazy">
       {% else %}
         <img src="https://ucarecdn.com/3d4d43f8-bafb-40f6-8326-71190a3f0abd/-/format/auto/-/preview/3000x3000/-/quality/lighter/IMG_3993.jpeg" alt="Kapok fiber — the plant-based down alternative" loading="lazy">
       {% endif %}

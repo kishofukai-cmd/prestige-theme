@@ -2,8 +2,9 @@
 
 <section class="al-closing" id="al-closing">
   <div class="al-closing__bg">
-    {% if section.settings.bg_image != blank %}
-      <img src="{{ section.settings.bg_image | img_url: '1600x' }}" alt="" loading="lazy">
+    {% assign closing_img_src = section.settings.bg_image | img_url: '1600x' %}
+    {% if closing_img_src != blank %}
+      <img src="{{ closing_img_src }}" alt="" loading="lazy">
     {% else %}
       <img src="https://ucarecdn.com/d7a640a6-76bb-47b6-8fd8-9fe27a5ce497/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2156-2.jpg" alt="" loading="lazy">
     {% endif %}

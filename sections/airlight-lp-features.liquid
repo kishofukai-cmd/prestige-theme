@@ -17,8 +17,9 @@
       {% if block.type == 'feature_card' %}
         <div class="al-feature-card" {{ block.shopify_attributes }} data-al-reveal>
           <div class="al-feature-card__img">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% assign feat_img_src = block.settings.image | img_url: '800x' %}
+            {% if feat_img_src != blank %}
+              <img src="{{ feat_img_src }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
               {% comment %} Hardcoded fallback images by position {% endcomment %}
               {% case forloop.index %}
