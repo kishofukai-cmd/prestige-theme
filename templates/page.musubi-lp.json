@@ -343,9 +343,10 @@
     "material": {
       "type": "musubi-lp-material",
       "settings": {
+        "image": "shopify://shop_images/KK_LINE_-_2026-02-27T160925.046.png",
         "label": "ABOUT MATERIAL",
         "title": "ただ重いだけじゃない。ポリエステルで単一素材でサステナブルに。",
-        "description": "<p>内容記載必須</p><p>手編み追加</p>"
+        "description": "<p>編みならではの柔らかさに包まれる</p>"
       }
     },
     "trust-visual": {
@@ -420,16 +421,17 @@
     },
     "comparison": {
       "type": "musubi-lp-comparison",
+      "disabled": true,
       "settings": {
         "label": "LABORATORY TEST",
-        "heading": "検証データが証明する<br>MUSUBIの快適性",
+        "heading": "検証データが証明するMUSUBIの快適性",
         "musubi_value": "約47〜48%",
         "musubi_desc": "60分間ほぼ一定で推移",
         "other_value": "55% → 70%",
         "other_desc": "時間経過とともに上昇",
         "chart_image_url": "",
         "chart_alt": "寝床内湿度比較グラフ",
-        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
       }
     },
     "sizes": {
@@ -590,12 +592,13 @@
     },
     "cta-after-care": {
       "type": "musubi-lp-cta",
+      "disabled": true,
       "settings": {
         "section_id": "cta-after-care",
         "heading": "毎日の休息が、変わる。",
         "cta_url": "",
         "cta_text": "今すぐMUSUBIを手に入れる",
-        "micro_1": "✓ 送料無料",
+        "micro_1": "",
         "micro_2": "✓ 家庭で手洗いOK",
         "micro_3": "✓ 365日オールシーズン"
       }
@@ -709,8 +712,31 @@
     },
     "cross-sell": {
       "type": "musubi-lp-cross-sell",
+      "blocks": {
+        "product_tcLAYP": {
+          "type": "product",
+          "settings": {
+            "title": "MUSUBI ピローケース",
+            "price": "¥4,500 (税込)",
+            "url": ""
+          }
+        },
+        "product_KpEKmy": {
+          "type": "product",
+          "settings": {
+            "title": "MUSUBI ピローケース",
+            "price": "¥4,500 (税込)",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tcLAYP",
+        "product_KpEKmy"
+      ],
+      "disabled": true,
       "settings": {
-        "heading": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+        "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
       }
     },
     "gift": {
@@ -718,8 +744,8 @@
       "settings": {
         "image_alt": "ギフトイメージ",
         "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。</p>",
-        "note": "※メッセージカードの同梱も可能です"
+        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>プレゼントのメッセージカードも可能です</p>",
+        "note": ""
       }
     },
     "faq": {

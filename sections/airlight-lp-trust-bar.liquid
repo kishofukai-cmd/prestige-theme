@@ -1,0 +1,52 @@
+{% comment %} AirLight Jacket LP — Trust Bar Section {% endcomment %}
+
+<section class="al-trust-bar" id="al-trust-bar">
+  <div class="al-container">
+    <ul class="al-trust-bar__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'item' %}
+          <li class="al-trust-bar__item" {{ block.shopify_attributes }}>
+            <span class="al-trust-bar__icon">
+              {% if block.settings.icon_svg != blank %}
+                {{ block.settings.icon_svg }}
+              {% else %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              {% endif %}
+            </span>
+            <span class="al-trust-bar__text">{{ block.settings.text }}</span>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Trust Bar",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text" },
+        { "type": "html", "id": "icon_svg", "label": "Icon SVG (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Trust Bar",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Free Worldwide Shipping" } },
+        { "type": "item", "settings": { "text": "30-Day Returns" } },
+        { "type": "item", "settings": { "text": "100% Plant-Based Fill" } },
+        { "type": "item", "settings": { "text": "Japan Quality Crafted" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

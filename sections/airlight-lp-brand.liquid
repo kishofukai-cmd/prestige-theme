@@ -1,0 +1,55 @@
+{% comment %} AirLight Jacket LP — Brand Statement Section {% endcomment %}
+
+<section class="al-brand" id="al-brand">
+  <div class="al-container">
+    <p class="al-brand__kicker" data-al-reveal>{{ section.settings.kicker }}</p>
+
+    <h2 class="al-brand__heading" data-al-reveal class="al-delay-1">
+      {{ section.settings.heading }}
+    </h2>
+
+    <p class="al-brand__body" data-al-reveal class="al-delay-2">
+      {{ section.settings.body }}
+    </p>
+
+    <div class="al-brand__tags" data-al-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'tag_item' %}
+          <span class="al-brand__tag" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Brand Statement",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Japan's Most Awarded Sustainable Outerwear Brand" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>A material revolution,<br><em>finally going global.</em></p>" },
+    { "type": "textarea", "id": "body", "label": "Body Text", "default": "KAPOK KNOT has obsessed over one mission since day one: replace down with something better. After ¥50M+ raised on crowdfunding, 10 design awards, and a debut at Milano Unica — the world's leading fabric fair — we're bringing Japan's most talked-about jacket to you." }
+  ],
+  "blocks": [
+    {
+      "type": "tag_item",
+      "name": "Credential Tag",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Tag Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Brand Statement",
+      "blocks": [
+        { "type": "tag_item", "settings": { "text": "🏆 10+ Design Awards" } },
+        { "type": "tag_item", "settings": { "text": "🇯🇵 Made in Japan Innovation" } },
+        { "type": "tag_item", "settings": { "text": "🌿 Milano Unica Exhibitor" } },
+        { "type": "tag_item", "settings": { "text": "⭐ Collab: Fumi Nikaido" } },
+        { "type": "tag_item", "settings": { "text": "💴 ¥50M+ Crowdfunded" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

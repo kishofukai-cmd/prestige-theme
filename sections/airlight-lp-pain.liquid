@@ -1,0 +1,60 @@
+{% comment %} AirLight Jacket LP — Pain / Empathy Section {% endcomment %}
+
+<section class="al-pain" id="al-pain">
+  <div class="al-container--narrow">
+    <h2 class="al-pain__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Sound familiar?' }}
+    </h2>
+
+    <div class="al-pain__items" data-al-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'pain_item' %}
+          <div class="al-pain__item" {{ block.shopify_attributes }}>
+            <span class="al-pain__item-icon">{{ block.settings.emoji | default: '😞' }}</span>
+            <p class="al-pain__item-text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="al-pain__bridge" data-al-reveal>
+      <div class="al-pain__bridge-line">↓</div>
+      <p class="al-pain__bridge-text">
+        {{ section.settings.bridge_text | default: 'There had to be a better way.' }}
+        <strong>{{ section.settings.bridge_strong | default: 'Now there is.' }}</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Pain",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Sound familiar?" },
+    { "type": "text", "id": "bridge_text", "label": "Bridge Text", "default": "There had to be a better way." },
+    { "type": "text", "id": "bridge_strong", "label": "Bridge Strong (highlighted)", "default": "Now there is." }
+  ],
+  "blocks": [
+    {
+      "type": "pain_item",
+      "name": "Pain Point",
+      "settings": [
+        { "type": "text", "id": "emoji", "label": "Emoji Icon", "default": "😞" },
+        { "type": "text", "id": "text", "label": "Pain Point Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Pain",
+      "blocks": [
+        { "type": "pain_item", "settings": { "emoji": "🏋️", "text": "Your down jacket weighs as much as a wine bottle — a constant burden you feel on your shoulders." } },
+        { "type": "pain_item", "settings": { "emoji": "🌧️", "text": "One rain shower and it's ruined for days. Down collapses the moment it gets wet." } },
+        { "type": "pain_item", "settings": { "emoji": "🦆", "text": "You've thought about where those feathers came from — and it doesn't feel great." } },
+        { "type": "pain_item", "settings": { "emoji": "🧺", "text": "Dry-clean only. Every. Single. Time." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
