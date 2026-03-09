@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "layout": "theme",
   "sections": {
@@ -133,6 +124,90 @@
         "body": "KAPOK KNOT has obsessed over one mission since day one: replace down with something better. After ¥50M+ raised on crowdfunding, 10 design awards, and a debut at Milano Unica — the world's leading fabric fair — we're bringing Japan's most talked-about jacket to you."
       }
     },
+    "awards": {
+      "type": "airlight-lp-awards",
+      "blocks": {
+        "aw_1": {
+          "type": "award_item",
+          "settings": {
+            "meta": "METI · JETRO — Shido Next Innovator 2019",
+            "title": "🏆 Silicon Valley Selection — Grand Prize"
+          }
+        },
+        "aw_2": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2021",
+            "title": "🏆 Grand Prix (Crafted Catapult)"
+          }
+        },
+        "aw_3": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Nikkei Shimbun — Star★Startup Japan 2021",
+            "title": "🏆 Next-Generation Venture Award"
+          }
+        },
+        "aw_4": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Ministry of Environment — Startup Award 2021",
+            "title": "🏆 Outstanding Startup"
+          }
+        },
+        "aw_5": {
+          "type": "award_item",
+          "settings": {
+            "meta": "J-Startup Impact 2023",
+            "title": "🏆 Selected (Top 30 of 500 applicants)"
+          }
+        },
+        "aw_6": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Dell Startup Challenge 2025",
+            "title": "🏆 Runner-up"
+          }
+        },
+        "aw_7": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2022",
+            "title": "🏆 Catapult Grand Prix — Runner-up"
+          }
+        },
+        "aw_8": {
+          "type": "award_item",
+          "settings": {
+            "meta": "SME SDGs ACTION! AWARDS 2022",
+            "title": "🏆 Runner-up Grand Prix"
+          }
+        },
+        "aw_9": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Kansai Business Plan Contest 2022",
+            "title": "🏆 Grand Prize"
+          }
+        }
+      },
+      "block_order": [
+        "aw_1",
+        "aw_2",
+        "aw_3",
+        "aw_4",
+        "aw_5",
+        "aw_6",
+        "aw_7",
+        "aw_8",
+        "aw_9"
+      ],
+      "settings": {
+        "label": "Recognition",
+        "heading": "10+ International Awards.",
+        "subtext": "KAPOK KNOT has been recognized by governments, investors, and innovation bodies across Japan and the world."
+      }
+    },
     "pain": {
       "type": "airlight-lp-pain",
       "blocks": {
@@ -175,6 +250,14 @@
         "heading": "Sound familiar?",
         "bridge_text": "There had to be a better way.",
         "bridge_strong": "Now there is."
+      }
+    },
+    "video": {
+      "type": "airlight-lp-video",
+      "settings": {
+        "label": "Watch",
+        "heading": "See it in action.",
+        "youtube_id": "PFN0XzG3vdo"
       }
     },
     "features": {
@@ -252,6 +335,82 @@
         "heading": "<p>Everything down promises.<br>Finally delivered.</p>"
       }
     },
+    "products": {
+      "type": "airlight-lp-products",
+      "blocks": {
+        "prod_men": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "price": "¥39,800",
+            "description": "As light as air, as warm as a thick coat. With a fleece-lined hood and pockets, the AirLight feels effortlessly relaxed — your new cold-weather default.",
+            "cta_text": "Shop Men's →",
+            "color_labels": "[New] Navy,[New] Beige,Olive,Greige,Black",
+            "fallback_url_1": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
+            "fallback_url_2": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
+            "fallback_url_3": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
+            "fallback_url_4": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
+            "fallback_url_5": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg"
+          }
+        },
+        "prod_women": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "price": "¥39,800",
+            "description": "All the warmth of the Men's — with an adjustable waist spindle so you can shape your silhouette or wear it relaxed.",
+            "cta_text": "Shop Women's →",
+            "color_labels": "[New] Navy,[New] Beige,Black,Olive,Greige",
+            "fallback_url_1": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
+            "fallback_url_2": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
+            "fallback_url_3": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
+            "fallback_url_4": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
+            "fallback_url_5": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg"
+          }
+        },
+        "prod_peplum": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's — Peplum",
+            "product_name": "AirLight Peplum Jacket",
+            "colors": "4 Colors: White / Ice Blue / Black / Khaki",
+            "price": "¥49,800",
+            "description": "The peplum hem covers the hips, keeping warmth where you need it. The waist spindle lets you cinch or loosen — a feminine silhouette that works for any day.",
+            "cta_text": "Shop Peplum →",
+            "color_labels": "White,Ice Blue,Black,Khaki",
+            "fallback_url_1": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
+            "fallback_url_2": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
+            "fallback_url_3": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
+            "fallback_url_4": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png"
+          }
+        }
+      },
+      "block_order": [
+        "prod_men",
+        "prod_women",
+        "prod_peplum"
+      ],
+      "settings": {
+        "label": "The Collection",
+        "heading": "Find your AirLight Jacket."
+      }
+    },
+    "makuake": {
+      "type": "airlight-lp-makuake",
+      "settings": {
+        "label": "Proven by Japan",
+        "heading": "<p>4 years. 2,000+ backers.<br>¥50M+ raised on Makuake.</p>",
+        "body": "\"Thin, light, and warm\" — the AirLight Jacket has been supported by over 2,000 backers, totalling more than ¥50M on Makuake over 4 years. Now launching globally.",
+        "makuake_fallback": "https://ucarecdn.com/a165d4cb-d574-462e-9e44-4961919688f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-18%2010.59.00.png",
+        "makuake_banner_fallback": "https://ucarecdn.com/9666cc7a-e62c-43cd-95ee-4744d802ab6f/-/format/auto/-/preview/2560x2560/-/quality/lighter/2.jpg",
+        "show_media_banner": true,
+        "media_banner_fallback": "https://ucarecdn.com/c8a1c3cc-74ce-4af7-b5f4-752171093895/-/format/auto/-/preview/3000x3000/-/quality/lighter/Blurtheline-8%201.png"
+      }
+    },
     "material": {
       "type": "airlight-lp-material",
       "blocks": {
@@ -298,6 +457,63 @@
         "heading": "<p>\"Wood-born down\"<br><em>has arrived.</em></p>",
         "body": "<p>Kapok is a seed fiber harvested from the pods of the kapok tree, native to Southeast Asia. KAPOK KNOT's breakthrough was transforming this centuries-old natural material into a high-performance insulation sheet — a first in the fashion industry.</p><p>The result: a fiber that is <strong>1/8th the weight of cotton</strong>, breathes naturally, generates warmth as it absorbs moisture, and leaves no animal or environmental harm in its wake.</p>",
         "fallback_url": "https://ucarecdn.com/3d4d43f8-bafb-40f6-8326-71190a3f0abd/-/format/auto/-/preview/3000x3000/-/quality/lighter/IMG_3993.jpeg"
+      }
+    },
+    "ethics": {
+      "type": "airlight-lp-ethics",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "97%",
+            "label": "Less CO₂ vs Down"
+          }
+        },
+        "stat_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "30",
+            "label": "Geese saved / jacket"
+          }
+        },
+        "stat_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "80%",
+            "label": "Hollow fiber structure"
+          }
+        },
+        "stat_4": {
+          "type": "stat_item",
+          "settings": {
+            "number": "1/8",
+            "label": "Weight of cotton"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "label": "Ethics & Environment",
+        "heading": "<p>Kind to animals.<br>Kind to the planet.</p>",
+        "fallback_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
+        "subheading": "No feathers. No compromise.",
+        "body": "<p>A single down jacket uses feathers from approximately <strong>30 birds</strong>. Kapok grows inside a tree pod. No animal is touched. Full stop.</p><p>According to our in-house analysis, each AirLight Jacket saves the equivalent of <strong>30 geese</strong> and reduces CO₂ emissions by <strong>97%</strong> compared to a conventional down jacket.</p>",
+        "footnote": "*Source: KAPOK JAPAN internal data"
+      }
+    },
+    "founders": {
+      "type": "airlight-lp-founders",
+      "settings": {
+        "label": "Message from the Founder",
+        "fallback_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
+        "role": "Founder & CEO, KAPOK JAPAN / KAPOK KNOT",
+        "name": "Kishow Fukai",
+        "message": "<p>Born in Osaka, Japan. The 4th-generation successor of Futaba Shoji, a 79-year-old apparel manufacturer. Previously worked at Asahi Kasei — one of Japan's largest textile companies — as a Textiles Evaluation Specialist.</p><p>Growing up surrounded by textiles (father's family: cashmere; mother's family: wool; cousin: kimono), he saw firsthand the apparel industry's cycle of overproduction and waste. Upon encountering kapok, he founded KAPOK JAPAN in 2020 with a clear mission: <strong>to bring sustainable and functional materials to the world.</strong></p><p>Selected as one of 30 companies (from 500 applicants) in the Japanese government's prestigious <em>J-Startup Impact</em> program.</p>"
       }
     },
     "cta-mid": {
@@ -397,6 +613,45 @@
       ],
       "settings": {
         "heading": "How does it compare?"
+      }
+    },
+    "milano": {
+      "type": "airlight-lp-milano",
+      "blocks": {
+        "mil_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Milan",
+            "label": "Exhibition City"
+          }
+        },
+        "mil_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Milano Unica",
+            "label": "World's Leading Textile Fair"
+          }
+        },
+        "mil_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Global",
+            "label": "Launch Destination"
+          }
+        }
+      },
+      "block_order": [
+        "mil_1",
+        "mil_2",
+        "mil_3"
+      ],
+      "settings": {
+        "label": "Global Presence",
+        "heading": "<p>Now at Milano Unica.</p>",
+        "body": "KAPOK KNOT has been selected to exhibit at Milano Unica — the world's premier textile and fashion innovation fair held in Milan, Italy. We are proud to bring Japan's material innovation to the global stage.",
+        "card_label": "Exhibiting Brand",
+        "card_name": "KAPOK KNOT by KAPOK JAPAN",
+        "card_desc": "The world's first kapok-specialized fashion brand, bringing EthicalDown Kapok™ technology from Japan to international buyers, press, and collaborators."
       }
     },
     "reviews": {
@@ -548,11 +803,18 @@
     "hero",
     "trust-bar",
     "brand",
+    "awards",
     "pain",
+    "video",
     "features",
+    "products",
+    "makuake",
     "material",
+    "ethics",
+    "founders",
     "cta-mid",
     "comparison",
+    "milano",
     "reviews",
     "faq",
     "closing"
