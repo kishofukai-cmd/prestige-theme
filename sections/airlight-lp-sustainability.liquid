@@ -1,0 +1,74 @@
+{% comment %} Air Light Jacket LP — Sustainability Section {% endcomment %}
+
+<section class="al-sustain">
+  <div class="al-sustain__inner">
+    <p class="al-section-label al-sustain__label" data-reveal>{{ section.settings.label | default: 'Our Commitment' }}</p>
+    <h2 class="al-sustain__title" data-reveal>{{ section.settings.title | default: 'Good for you.<br>Better for the planet.' }}</h2>
+    <p class="al-sustain__desc" data-reveal>{{ section.settings.description | default: "At Kapok Knot, we believe exceptional performance and environmental responsibility aren't opposites — they're inseparable. Every Air Light Jacket is built to last, made to reduce waste, and designed to give back." }}</p>
+
+    <div class="al-sustain__points">
+      {% for block in section.blocks %}
+        {% if block.type == 'sustain_point' %}
+          <div class="al-sustain__point" data-reveal {{ block.shopify_attributes }}>
+            <div class="al-sustain__point-icon">{{ block.settings.icon }}</div>
+            <h3 class="al-sustain__point-title">{{ block.settings.title }}</h3>
+            <p class="al-sustain__point-desc">{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Sustainability",
+  "settings": [
+    { "type": "text",     "id": "label",       "label": "Section label", "default": "Our Commitment" },
+    { "type": "richtext", "id": "title",       "label": "Heading",       "default": "<p>Good for you. Better for the planet.</p>" },
+    { "type": "textarea", "id": "description", "label": "Description",   "default": "At Kapok Knot, we believe exceptional performance and environmental responsibility aren't opposites — they're inseparable." }
+  ],
+  "blocks": [
+    {
+      "type": "sustain_point",
+      "name": "Sustainability Point",
+      "settings": [
+        { "type": "text",     "id": "icon",        "label": "Icon (emoji)", "default": "🌿" },
+        { "type": "text",     "id": "title",       "label": "Title",        "default": "Plant-Based Fill" },
+        { "type": "textarea", "id": "description", "label": "Description",  "default": "Kapok fiber is harvested without harming trees. No chemicals, no cruelty — just nature at its finest." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Sustainability",
+      "blocks": [
+        {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "🌱",
+            "title": "Plant-Based Fill",
+            "description": "Kapok fiber is harvested without harming the tree. Zero chemicals, zero cruelty — pure nature."
+          }
+        },
+        {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "♻️",
+            "title": "Recycled Shell",
+            "description": "The outer shell uses recycled nylon, diverting plastic waste from landfill without compromising performance."
+          }
+        },
+        {
+          "type": "sustain_point",
+          "settings": {
+            "icon": "🧵",
+            "title": "Built to Last",
+            "description": "Japanese precision construction means your Air Light Jacket is designed for years, not seasons. Less waste, more value."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,35 +1,33 @@
-{% comment %} AirLight Jacket LP — Hero Section {% endcomment %}
-{% render 'airlight-lp-styles' %}
+{% comment %} Air Light Jacket LP — Hero Section {% endcomment %}
 
 <section class="al-hero" id="al-hero">
-  <div class="al-hero__img-wrapper">
+  <div class="al-hero__bg">
     {% if section.settings.hero_image != blank %}
-      <img src="{{ section.settings.hero_image | img_url: '1600x' }}"
-           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
-           class="al-hero__img" fetchpriority="high">
+      <img src="{{ section.settings.hero_image | img_url: '1800x' }}"
+           alt="{{ section.settings.hero_image_alt | default: 'Kapok Knot Air Light Jacket' }}"
+           fetchpriority="high">
     {% else %}
-      <img src="https://ucarecdn.com/d7a640a6-76bb-47b6-8fd8-9fe27a5ce497/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2156-2.jpg"
-           alt="AirLight Jacket — KAPOK KNOT"
-           class="al-hero__img" fetchpriority="high">
+      <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-jacket-hero.jpg"
+           alt="Kapok Knot Air Light Jacket" fetchpriority="high">
     {% endif %}
   </div>
 
   <div class="al-hero__content">
-    <p class="al-hero__eyebrow">{{ section.settings.eyebrow | default: 'KAPOK KNOT — First Global Launch' }}</p>
+    <div class="al-hero__tag">{{ section.settings.tag | default: 'Air Light Jacket — By Kapok Knot' }}</div>
 
     <h1 class="al-hero__title">
-      {{ section.settings.hero_title | default: 'Down Warmth.<br><em>Without Down.</em>' }}
+      {{ section.settings.title | default: 'Light as <em>Air.</em><br>Warm as Nature.' }}
     </h1>
 
-    <p class="al-hero__sub">
-      {{ section.settings.hero_sub | default: '500g plant-based jacket from Japan.<br>Ethical insulation. Zero compromise.' }}
+    <p class="al-hero__subtitle">
+      {{ section.settings.subtitle | default: 'The ultra-lightweight jacket filled with kapok — nature\'s original insulator. Sustainable, hypoallergenic, and remarkably packable.' }}
     </p>
 
-    <!-- Proof Bar -->
+    <!-- Social Proof -->
     <div class="al-hero__proof">
       {% for block in section.blocks %}
         {% if block.type == 'proof_item' %}
-          {% unless forloop.first %}<div class="al-hero__proof-div"></div>{% endunless %}
+          {% unless forloop.first %}<div style="width:1px;height:36px;background:rgba(255,255,255,0.25);"></div>{% endunless %}
           <div class="al-hero__proof-item" {{ block.shopify_attributes }}>
             <span class="al-hero__proof-num">{{ block.settings.number }}</span>
             <span class="al-hero__proof-label">{{ block.settings.label }}</span>
@@ -39,50 +37,47 @@
     </div>
 
     <!-- CTA -->
-    <div class="al-hero__cta-wrap">
-      <a href="{{ section.settings.cta_url | default: '#al-cta' }}"
-         class="al-hero__cta-btn">
-        {{ section.settings.cta_text | default: 'Shop Now' }}
+    <div class="al-hero__cta">
+      <a href="{{ section.settings.cta_url | default: '#' }}" class="al-btn al-btn--green">
+        {{ section.settings.cta_text | default: 'Shop Now — Free Shipping' }}
       </a>
-      <p class="al-hero__cta-note">
-        <strong>{{ section.settings.offer_main | default: 'Free worldwide shipping' }}</strong>
-        {{ section.settings.offer_note | default: '· First 100 orders only' }}
-      </p>
+      <p class="al-hero__price">{{ section.settings.price_text | default: 'From $198 USD' }}</p>
+      <p class="al-hero__micros">{{ section.settings.micros | default: '✓ 30-Day Free Returns  ✓ Ships Worldwide' }}</p>
     </div>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "AirLight Hero",
+  "name": "Air Light LP Hero",
   "settings": [
-    { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
-    { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket — KAPOK KNOT" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "KAPOK KNOT — First Global Launch" },
-    { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>Down Warmth.<br><em>Without Down.</em></p>" },
-    { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g plant-based jacket from Japan.<br>Ethical insulation. Zero compromise.</p>" },
-    { "type": "url", "id": "cta_url", "label": "CTA Link" },
-    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Shop Now" },
-    { "type": "text", "id": "offer_main", "label": "Offer Line (Bold)", "default": "Free worldwide shipping" },
-    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "· First 100 orders only" }
+    { "type": "image_picker", "id": "hero_image",     "label": "Hero image" },
+    { "type": "text",         "id": "hero_image_alt", "label": "Image alt text", "default": "Kapok Knot Air Light Jacket" },
+    { "type": "text",         "id": "tag",            "label": "Tag label",      "default": "Air Light Jacket — By Kapok Knot" },
+    { "type": "richtext",     "id": "title",          "label": "Headline",       "default": "<p>Light as Air.<br>Warm as Nature.</p>" },
+    { "type": "textarea",     "id": "subtitle",       "label": "Subtitle",       "default": "The ultra-lightweight jacket filled with kapok — nature's original insulator. Sustainable, hypoallergenic, and remarkably packable." },
+    { "type": "url",          "id": "cta_url",        "label": "CTA link" },
+    { "type": "text",         "id": "cta_text",       "label": "CTA button text","default": "Shop Now — Free Shipping" },
+    { "type": "text",         "id": "price_text",     "label": "Price text",     "default": "From $198 USD" },
+    { "type": "text",         "id": "micros",         "label": "Micro copy",     "default": "✓ 30-Day Free Returns  ✓ Ships Worldwide" }
   ],
   "blocks": [
     {
       "type": "proof_item",
       "name": "Proof Number",
       "settings": [
-        { "type": "text", "id": "number", "label": "Number", "default": "¥50M+" },
-        { "type": "text", "id": "label", "label": "Label", "default": "Crowdfunded in Japan" }
+        { "type": "text", "id": "number", "label": "Number",  "default": "★ 4.8" },
+        { "type": "text", "id": "label",  "label": "Label",   "default": "Avg Rating" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "AirLight Hero",
+      "name": "Air Light LP Hero",
       "blocks": [
-        { "type": "proof_item", "settings": { "number": "¥50M+", "label": "Crowdfunded" } },
-        { "type": "proof_item", "settings": { "number": "10+", "label": "Awards Won" } },
-        { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Review Score" } }
+        { "type": "proof_item", "settings": { "number": "★ 4.8",  "label": "Avg Rating" } },
+        { "type": "proof_item", "settings": { "number": "10,000+","label": "Happy Customers" } },
+        { "type": "proof_item", "settings": { "number": "30+",    "label": "Countries" } }
       ]
     }
   ]

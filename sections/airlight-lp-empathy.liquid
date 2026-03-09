@@ -1,0 +1,72 @@
+{% comment %} Air Light Jacket LP — Empathy / Pain Points Section {% endcomment %}
+
+<section class="al-empathy">
+  <div class="al-empathy__inner">
+
+    <div class="al-empathy__header" data-reveal>
+      <p class="al-section-label al-empathy__tag">{{ section.settings.label | default: 'Does This Sound Familiar?' }}</p>
+      <h2 class="al-empathy__title">{{ section.settings.title | default: 'Your jacket shouldn\'t feel like a workout.' }}</h2>
+
+      <div class="al-empathy__worries">
+        {% for block in section.blocks %}
+          {% if block.type == 'worry_item' %}
+            <div class="al-empathy__worry" {{ block.shopify_attributes }}>
+              <span class="al-empathy__worry-icon">{{ block.settings.icon | default: '✗' }}</span>
+              <span>{{ block.settings.text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="al-empathy__solution" data-reveal>
+      <div class="al-empathy__solution-img">
+        {% if section.settings.solution_image != blank %}
+          <img src="{{ section.settings.solution_image | img_url: '900x' }}"
+               alt="{{ section.settings.solution_image_alt | default: 'Air Light Jacket lifestyle' }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-lifestyle.jpg"
+               alt="Air Light Jacket lifestyle" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="al-empathy__solution-caption">
+        {{ section.settings.solution_text | default: 'There is a better way.<br><strong>Weightless warmth, finally.</strong>' }}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Empathy",
+  "settings": [
+    { "type": "text",         "id": "label",              "label": "Section label",    "default": "Does This Sound Familiar?" },
+    { "type": "richtext",     "id": "title",              "label": "Heading",          "default": "<p>Your jacket shouldn't feel like a workout.</p>" },
+    { "type": "image_picker", "id": "solution_image",     "label": "Solution image" },
+    { "type": "text",         "id": "solution_image_alt", "label": "Image alt",        "default": "Air Light Jacket lifestyle" },
+    { "type": "richtext",     "id": "solution_text",      "label": "Solution caption", "default": "<p>There is a better way.<br><strong>Weightless warmth, finally.</strong></p>" }
+  ],
+  "blocks": [
+    {
+      "type": "worry_item",
+      "name": "Pain Point",
+      "settings": [
+        { "type": "text",     "id": "icon", "label": "Icon (emoji)", "default": "✗" },
+        { "type": "textarea", "id": "text", "label": "Pain point text", "default": "Heavy, bulky jackets that make you look like a marshmallow" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Empathy",
+      "blocks": [
+        { "type": "worry_item", "settings": { "icon": "😓", "text": "Heavy, bulky jackets that make every bag feel like a gym bag" } },
+        { "type": "worry_item", "settings": { "icon": "🌡️", "text": "Synthetic fills that overheat you — then leave you cold" } },
+        { "type": "worry_item", "settings": { "icon": "♻️", "text": "Petroleum-based insulation harming the planet you love to explore" } },
+        { "type": "worry_item", "settings": { "icon": "😤", "text": "Premium price tags on jackets that lose their loft after a few washes" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

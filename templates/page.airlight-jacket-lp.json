@@ -1,0 +1,111 @@
+{
+  "layout": "theme.airlight-lp",
+  "sections": {
+    "header": {
+      "type": "airlight-lp-header",
+      "settings": {
+        "logo_text": "KAPOK KNOT",
+        "header_cta": "Shop Now",
+        "sticky_cta_text": "Shop the Air Light Jacket",
+        "sticky_micro": "Free worldwide shipping · Limited offer"
+      }
+    },
+    "hero": {
+      "type": "airlight-lp-hero",
+      "blocks": {
+        "proof_1": { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Rating" } },
+        "proof_2": { "type": "proof_item", "settings": { "number": "500g",  "label": "Total weight" } },
+        "proof_3": { "type": "proof_item", "settings": { "number": "30+",   "label": "Countries" } }
+      },
+      "block_order": ["proof_1", "proof_2", "proof_3"],
+      "settings": {
+        "tag": "Air Light Jacket — by Kapok Knot",
+        "title": "<p>Down Warmth.<br>Without Down.</p>",
+        "subtitle": "500g plant-based jacket from Japan.",
+        "cta_text": "Shop Now",
+        "price_text": "$198 USD · Free worldwide shipping",
+        "micros": "Limited launch offer"
+      }
+    },
+    "claim-1": {
+      "type": "airlight-lp-claim",
+      "settings": {
+        "number": "①",
+        "label": "Ultra Lightweight",
+        "headline": "<p>Only 500g.</p>",
+        "sub": "Lighter than most sweaters.",
+        "image_position": "left",
+        "bg_color": "#f8f7f4"
+      }
+    },
+    "claim-2": {
+      "type": "airlight-lp-claim",
+      "settings": {
+        "number": "②",
+        "label": "As Warm as Down",
+        "headline": "<p>As warm<br>as down.</p>",
+        "sub": "Kapok fiber traps heat naturally.",
+        "image_position": "right",
+        "bg_color": "#efece6"
+      }
+    },
+    "claim-3": {
+      "type": "airlight-lp-claim",
+      "settings": {
+        "number": "③",
+        "label": "Vegan Material",
+        "headline": "<p>No animals.<br>No feathers.</p>",
+        "sub": "Plant-based insulation.",
+        "image_position": "left",
+        "bg_color": "#f8f7f4"
+      }
+    },
+    "claim-4": {
+      "type": "airlight-lp-claim",
+      "settings": {
+        "number": "④",
+        "label": "Made in Japan",
+        "headline": "<p>Material innovation<br>from Japan.</p>",
+        "sub": "Developed for sustainable outerwear.",
+        "image_position": "right",
+        "bg_color": "#efece6"
+      }
+    },
+    "review-quote": {
+      "type": "airlight-lp-review-quote",
+      "settings": {
+        "stars": "★★★★★",
+        "quote": "Warmer than my Patagonia Nano Puff",
+        "meta": "Verified Buyer — New York, USA",
+        "product_tag": "Air Light Jacket — Forest Green / M"
+      }
+    },
+    "offer": {
+      "type": "airlight-lp-offer",
+      "blocks": {
+        "perk_1": { "type": "perk", "settings": { "text": "Free worldwide shipping" } },
+        "perk_2": { "type": "perk", "settings": { "text": "Limited launch offer" } },
+        "perk_3": { "type": "perk", "settings": { "text": "30-day free returns" } }
+      },
+      "block_order": ["perk_1", "perk_2", "perk_3"],
+      "settings": {
+        "badge": "Limited Launch Offer",
+        "headline": "<p>Down Warmth.<br>Without Down.</p>",
+        "price": "$198 USD",
+        "price_sub": "free worldwide shipping",
+        "cta_text": "Shop Now",
+        "micro": "30-Day Returns · 2-Year Guarantee"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "hero",
+    "claim-1",
+    "claim-2",
+    "claim-3",
+    "claim-4",
+    "review-quote",
+    "offer"
+  ]
+}
