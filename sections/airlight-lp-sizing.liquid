@@ -1,0 +1,140 @@
+{% comment %} Air Light Jacket LP — Sizing Guide Section {% endcomment %}
+
+<section class="al-sizing">
+  <div class="al-sizing__inner">
+    <div class="al-sizing__header" data-reveal>
+      <p class="al-section-label">{{ section.settings.label | default: 'Find Your Fit' }}</p>
+      <h2 class="al-section-title">{{ section.settings.heading | default: 'Which size is right for you?' }}</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="al-sizing__tabs">
+      {% assign first_tab = true %}
+      {% for block in section.blocks %}
+        {% if block.type == 'size_panel' %}
+          <button
+            class="al-sizing__tab{% if first_tab %} al-sizing__tab--active{% endif %}"
+            data-tab="{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.tab_label | default: block.settings.name }}
+          </button>
+          {% assign first_tab = false %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Panels -->
+    {% assign first_panel = true %}
+    {% for block in section.blocks %}
+      {% if block.type == 'size_panel' %}
+        <div
+          class="al-sizing__panel{% if first_panel %} al-sizing__panel--active{% endif %}"
+          id="al-panel-{{ block.id }}"
+          {% unless first_panel %}style="display:none;"{% endunless %}
+          {{ block.shopify_attributes }}
+        >
+          <div class="al-sizing__panel-img">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '900x' }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% elsif block.settings.image_url != blank %}
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="al-sizing__panel-info">
+            {% if block.settings.badge != blank %}
+              <span class="al-sizing__panel-badge">{{ block.settings.badge }}</span>
+            {% endif %}
+            <h3 class="al-sizing__panel-name">{{ block.settings.name }}</h3>
+            <p class="al-sizing__panel-price">{{ block.settings.price }}</p>
+            <p class="al-sizing__panel-dims">Measurements: {{ block.settings.dimensions }}</p>
+            <p class="al-sizing__panel-fits">Best for: {{ block.settings.best_for }}</p>
+            <p class="al-sizing__panel-note">{{ block.settings.note }}</p>
+            <div class="al-sizing__panel-cta">
+              <a href="{{ block.settings.cta_url | default: '#' }}" class="al-btn al-btn--green">
+                {{ block.settings.cta_text | default: 'Shop This Size' }}
+              </a>
+            </div>
+          </div>
+        </div>
+        {% assign first_panel = false %}
+      {% endif %}
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light LP Sizing",
+  "settings": [
+    { "type": "text",     "id": "label",   "label": "Section label", "default": "Find Your Fit" },
+    { "type": "richtext", "id": "heading", "label": "Heading",       "default": "<p>Which size is right for you?</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "size_panel",
+      "name": "Size Option",
+      "settings": [
+        { "type": "text",         "id": "tab_label",   "label": "Tab label",           "default": "XS / S" },
+        { "type": "image_picker", "id": "image",       "label": "Size image" },
+        { "type": "text",         "id": "image_url",   "label": "Image URL (fallback)" },
+        { "type": "text",         "id": "badge",       "label": "Badge text",          "default": "Best Seller" },
+        { "type": "text",         "id": "name",        "label": "Size name",           "default": "XS / S" },
+        { "type": "text",         "id": "price",       "label": "Price",               "default": "$198 USD" },
+        { "type": "text",         "id": "dimensions",  "label": "Measurements",        "default": "Chest 88–96cm / Length 62cm" },
+        { "type": "text",         "id": "best_for",    "label": "Best for",            "default": "Slim fit, layering under heavy coats" },
+        { "type": "textarea",     "id": "note",        "label": "Size note",           "default": "Designed for a modern slim silhouette. If between sizes, size up for a looser, more layered feel." },
+        { "type": "url",          "id": "cta_url",     "label": "CTA link" },
+        { "type": "text",         "id": "cta_text",    "label": "CTA text",            "default": "Shop XS / S" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light LP Sizing",
+      "blocks": [
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label":  "XS / S",
+            "badge":      "Most Popular",
+            "name":       "XS / S",
+            "price":      "$198 USD",
+            "dimensions": "Chest 88–96cm / Length 62cm",
+            "best_for":   "Slim fit, layering under heavy coats",
+            "note":       "Designed for a modern slim silhouette. If between sizes, size up for a looser, more layered feel.",
+            "cta_text":   "Shop XS / S"
+          }
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label":  "M / L",
+            "badge":      "Versatile Pick",
+            "name":       "M / L",
+            "price":      "$198 USD",
+            "dimensions": "Chest 100–108cm / Length 65cm",
+            "best_for":   "Regular fit, everyday all-day wear",
+            "note":       "The most versatile fit — comfortable enough for all-day wear, slim enough for a polished look.",
+            "cta_text":   "Shop M / L"
+          }
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label":  "XL / XXL",
+            "badge":      "Relaxed Fit",
+            "name":       "XL / XXL",
+            "price":      "$198 USD",
+            "dimensions": "Chest 112–120cm / Length 68cm",
+            "best_for":   "Relaxed fit, heavy layering, broader builds",
+            "note":       "Generous cut for maximum layering and freedom of movement. Great as an outer layer in colder climates.",
+            "cta_text":   "Shop XL / XXL"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

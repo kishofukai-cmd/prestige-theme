@@ -1,0 +1,179 @@
+{% comment %} Air Light Jacket LP — Offer / Final CTA (⑥) {% endcomment %}
+
+<section class="alo" id="al-closing">
+  <style>
+    .alo {
+      background: #3d5a47;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 12vw, 120px) clamp(24px, 6vw, 60px);
+      text-align: center;
+      position: relative;
+    }
+    .alo__bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .alo__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+    }
+    .alo__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+      max-width: 560px;
+    }
+    .alo__badge {
+      display: inline-block;
+      padding: 0.35rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+    .alo__headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: #fff;
+    }
+    .alo__perks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .alo__perk {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .alo__perk::before {
+      content: '✓';
+      font-weight: 700;
+      color: #a8d5b5;
+    }
+    .alo__price {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .alo__price-sub {
+      font-size: 0.8rem;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-left: 0.4rem;
+    }
+    .alo__btn {
+      display: block;
+      width: 100%;
+      max-width: 380px;
+      padding: 1.1rem 2rem;
+      background: #fff;
+      color: #1e2421;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .alo__btn:hover {
+      background: #f0ede8;
+      transform: translateY(-2px);
+    }
+    .alo__micro {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+    }
+  </style>
+
+  {% if section.settings.bg_image != blank %}
+    <div class="alo__bg">
+      <img src="{{ section.settings.bg_image | img_url: '1800x' }}" alt="" loading="lazy">
+    </div>
+  {% endif %}
+
+  <div class="alo__inner" data-reveal>
+    <span class="alo__badge">{{ section.settings.badge | default: 'Limited Launch Offer' }}</span>
+
+    <h2 class="alo__headline">{{ section.settings.headline | default: 'Down Warmth.<br>Without Down.' }}</h2>
+
+    <div class="alo__perks">
+      {% for block in section.blocks %}
+        {% if block.type == 'perk' %}
+          <p class="alo__perk" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="alo__price">
+      {{ section.settings.price }}
+      <span class="alo__price-sub">{{ section.settings.price_sub }}</span>
+    </p>
+
+    <a href="{{ section.settings.cta_url | default: '#' }}" class="alo__btn">
+      {{ section.settings.cta_text | default: 'Shop Now' }}
+    </a>
+
+    <p class="alo__micro">{{ section.settings.micro | default: '30-Day Returns · 2-Year Guarantee' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Air Light — Offer",
+  "settings": [
+    { "type": "image_picker", "id": "bg_image",  "label": "Background image" },
+    { "type": "text",         "id": "badge",     "label": "Badge text",  "default": "Limited Launch Offer" },
+    { "type": "richtext",     "id": "headline",  "label": "Headline",    "default": "<p>Down Warmth.<br>Without Down.</p>" },
+    { "type": "text",         "id": "price",     "label": "Price",       "default": "$198 USD" },
+    { "type": "text",         "id": "price_sub", "label": "Price sub",   "default": "free worldwide shipping" },
+    { "type": "url",          "id": "cta_url",   "label": "CTA link" },
+    { "type": "text",         "id": "cta_text",  "label": "CTA text",    "default": "Shop Now" },
+    { "type": "text",         "id": "micro",     "label": "Micro copy",  "default": "30-Day Returns · 2-Year Guarantee" }
+  ],
+  "blocks": [
+    {
+      "type": "perk",
+      "name": "Perk",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Perk text", "default": "Free worldwide shipping" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Air Light — Offer",
+      "blocks": [
+        { "type": "perk", "settings": { "text": "Free worldwide shipping" } },
+        { "type": "perk", "settings": { "text": "Limited launch pricing" } },
+        { "type": "perk", "settings": { "text": "30-day free returns" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
