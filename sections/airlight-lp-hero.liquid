@@ -7,6 +7,10 @@
       <img src="{{ section.settings.hero_image | img_url: '1600x' }}"
            alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
            class="al-hero__img" fetchpriority="high">
+    {% elsif section.settings.fallback_url != blank %}
+      <img src="{{ section.settings.fallback_url }}"
+           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
+           class="al-hero__img" fetchpriority="high">
     {% else %}
       <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight_hero_placeholder.jpg?v=1"
            alt="AirLight Jacket — KAPOK KNOT" class="al-hero__img" fetchpriority="high">
@@ -57,6 +61,7 @@
   "settings": [
     { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
     { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket — KAPOK KNOT" },
+    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "KAPOK KNOT — First Global Launch" },
     { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>Down Warmth.<br><em>Without Down.</em></p>" },
     { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g plant-based jacket from Japan.<br>Ethical insulation. Zero compromise.</p>" },

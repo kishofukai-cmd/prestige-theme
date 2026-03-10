@@ -2,8 +2,11 @@
 
 <section class="al-closing" id="al-closing">
   <div class="al-closing__bg">
+    {% assign closing_img_src = section.settings.bg_image | img_url: '1600x' %}
     {% if section.settings.bg_image != blank %}
-      <img src="{{ section.settings.bg_image | img_url: '1600x' }}" alt="" loading="lazy">
+      <img src="{{ closing_img_src }}" alt="" loading="lazy">
+    {% elsif section.settings.fallback_url != blank %}
+      <img src="{{ section.settings.fallback_url }}" alt="" loading="lazy">
     {% endif %}
   </div>
 
@@ -39,6 +42,7 @@
   "name": "AirLight Closing",
   "settings": [
     { "type": "image_picker", "id": "bg_image", "label": "Background Image" },
+    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KAPOK KNOT" },
     { "type": "richtext", "id": "title", "label": "Closing Title", "default": "<p>The jacket that changes<br><em>what warmth means.</em></p>" },
     { "type": "url", "id": "cta_url", "label": "CTA Link" },

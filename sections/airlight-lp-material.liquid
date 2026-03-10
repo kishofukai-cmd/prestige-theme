@@ -8,6 +8,9 @@
         {% if section.settings.image != blank %}
           <img src="{{ section.settings.image | img_url: '900x' }}"
                alt="{{ section.settings.image_alt | default: 'Kapok fiber close-up' }}" loading="lazy">
+        {% elsif section.settings.fallback_url != blank %}
+          <img src="{{ section.settings.fallback_url }}"
+               alt="{{ section.settings.image_alt | default: 'Kapok fiber close-up' }}" loading="lazy">
         {% else %}
           <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/kapok-fiber.jpg"
                alt="Kapok fiber close-up" loading="lazy">
@@ -43,6 +46,7 @@
   "name": "Air Light LP Material",
   "settings": [
     { "type": "image_picker", "id": "image",       "label": "Material image" },
+    { "type": "text",         "id": "fallback_url", "label": "Fallback Image URL" },
     { "type": "text",         "id": "image_alt",   "label": "Image alt text", "default": "Kapok fiber close-up" },
     { "type": "text",         "id": "badge_text",  "label": "Badge text",     "default": "100% Natural Fill" },
     { "type": "text",         "id": "label",       "label": "Section label",  "default": "The Material Story" },
