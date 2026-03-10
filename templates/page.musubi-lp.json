@@ -310,10 +310,6 @@
         "lead_text": "<p>現代の睡眠課題。<br>瞑想やフレグランスだけでは、どこか物足りない。</p>"
       }
     },
-    "material": {
-      "type": "musubi-lp-material",
-      "settings": {}
-    },
     "trust-visual": {
       "type": "musubi-lp-trust-visual",
       "settings": {
@@ -781,7 +777,6 @@
     "why",
     "empathy",
     "story",
-    "material",
     "trust-visual",
     "science",
     "comparison",
