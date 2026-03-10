@@ -8,50 +8,50 @@
  * ------------------------------------------------------------
  */
 {
-  "order": [
-    "collection-banner",
-    "main"
-  ],
   "sections": {
     "collection-banner": {
+      "type": "collection-banner",
       "settings": {
-        "allow_transparent_header": true,
         "color_scheme": "",
-        "content_width": "xs",
-        "enable_parallax": true,
         "image_size": "auto",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "allow_transparent_header": true,
         "reveal": true,
-        "show_breadcrumb": true,
-        "show_collection_description": true,
+        "enable_parallax": true,
+        "show_image": true,
         "show_collection_title": true,
-        "show_image": true
-      },
-      "type": "collection-banner"
+        "show_collection_description": true,
+        "show_breadcrumb": true,
+        "content_width": "xs",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
     },
     "main": {
+      "type": "main-collection",
       "settings": {
         "color_scheme": "",
-        "filter_layout": "drawer",
         "hide_product_information": false,
-        "horizontal_spacing_factor": 1,
-        "open_filters_by_default": false,
         "products_per_page": 19,
         "products_per_row_mobile": "2",
         "products_size_desktop": "medium",
-        "quick_links_menu": "",
-        "show_color_swatch": true,
-        "show_empty_filter_values": false,
-        "show_filter_group_name": false,
-        "show_filter_values_count": true,
-        "show_filters": true,
         "show_grid_mode_selector": true,
-        "show_results_count": true,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "filter_layout": "drawer",
+        "quick_links_menu": "",
         "show_sort_by": false,
-        "vertical_spacing_factor": 1
-      },
-      "type": "main-collection"
+        "show_filters": true,
+        "show_results_count": true,
+        "show_filter_group_name": false,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "show_color_swatch": true,
+        "open_filters_by_default": false
+      }
     }
-  }
+  },
+  "order": [
+    "collection-banner",
+    "main"
+  ]
 }
