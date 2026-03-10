@@ -8,17 +8,119 @@
  * ------------------------------------------------------------
  */
 {
+  "layout": "theme.musubi-lp",
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "color_scheme": "",
-        "show_title": true,
-        "page_width": "xs"
-      }
+    "hero": {
+      "type": "musubi-lp-hero",
+      "settings": {}
+    },
+    "trust_visual": {
+      "type": "musubi-lp-trust-visual",
+      "settings": {}
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "settings": {}
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "settings": {}
+    },
+    "material": {
+      "type": "musubi-lp-material",
+      "settings": {}
+    },
+    "science": {
+      "type": "musubi-lp-science",
+      "settings": {}
+    },
+    "video_loop": {
+      "type": "musubi-lp-video-loop",
+      "settings": {}
+    },
+    "comparison": {
+      "type": "musubi-lp-comparison",
+      "settings": {}
+    },
+    "colors": {
+      "type": "musubi-lp-colors",
+      "settings": {}
+    },
+    "sizes": {
+      "type": "musubi-lp-sizes",
+      "settings": {}
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {}
+    },
+    "makuake": {
+      "type": "musubi-lp-makuake",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "musubi-lp-reviews",
+      "settings": {}
+    },
+    "ugc": {
+      "type": "musubi-lp-ugc",
+      "settings": {}
+    },
+    "hotels": {
+      "type": "musubi-lp-hotels",
+      "settings": {}
+    },
+    "gift": {
+      "type": "musubi-lp-gift",
+      "settings": {}
+    },
+    "care": {
+      "type": "musubi-lp-care",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "musubi-lp-guarantee",
+      "settings": {}
+    },
+    "faq": {
+      "type": "musubi-lp-faq",
+      "settings": {}
+    },
+    "cta": {
+      "type": "musubi-lp-cta",
+      "settings": {}
+    },
+    "cross_sell": {
+      "type": "musubi-lp-cross-sell",
+      "settings": {}
+    },
+    "closing": {
+      "type": "musubi-lp-closing",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "hero",
+    "trust_visual",
+    "empathy",
+    "why",
+    "material",
+    "science",
+    "video_loop",
+    "comparison",
+    "colors",
+    "sizes",
+    "story",
+    "makuake",
+    "reviews",
+    "ugc",
+    "hotels",
+    "gift",
+    "care",
+    "guarantee",
+    "faq",
+    "cta",
+    "cross_sell",
+    "closing"
   ]
 }
