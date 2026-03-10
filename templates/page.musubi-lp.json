@@ -382,7 +382,10 @@
     },
     "comparison": {
       "type": "musubi-lp-comparison",
-      "settings": {}
+      "settings": {
+        "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
+        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持"
+      }
     },
     "sizes": {
       "type": "musubi-lp-sizes",
