@@ -22,8 +22,8 @@
 
       <div class="al-material__content" data-reveal>
         <p class="al-section-label al-material__label">{{ section.settings.label | default: 'The Material Story' }}</p>
-        <h2 class="al-material__title">{{ section.settings.title | default: 'Kapok: Nature\'s gift, rediscovered.' }}</h2>
-        <p class="al-material__desc">{{ section.settings.description | default: "Kapok is a silky fiber harvested from the tropical Ceiba tree — one of Earth's most ancient insulators. Revered in Asia for centuries, kapok is naturally hollow, trapping air like tiny insulating bubbles. The result: extraordinary warmth with almost no weight.\n\nUnlike down, kapok is vegan and hypoallergenic. Unlike synthetic fills, kapok is 100% biodegradable and requires no chemicals to grow. It's warmth the planet actually approves of." }}</p>
+        <h2 class="al-material__title">{{ section.settings.title }}</h2>
+        <p class="al-material__desc">{{ section.settings.description }}</p>
 
         <div class="al-material__specs">
           {% for block in section.blocks %}
