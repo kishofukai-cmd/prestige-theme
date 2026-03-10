@@ -1,81 +1,119 @@
-{% comment %} Air Light Jacket LP — Features / Why Section {% endcomment %}
+{% comment %} AirLight Jacket LP — Features Section (5大特徴) {% endcomment %}
 
-<section class="al-features">
+<section class="al-features" id="al-features">
   <div class="al-container">
-    <div class="al-features__header" data-reveal>
-      <p class="al-section-label">{{ section.settings.label | default: 'Why Air Light?' }}</p>
-      <h2 class="al-section-title">{{ section.settings.heading | default: 'Engineered for the modern explorer.' }}</h2>
-    </div>
+    <h2 class="al-features__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Everything down promises.<br>Finally delivered.' }}
+    </h2>
+  </div>
 
-    <div class="al-features__cards">
-      {% for block in section.blocks %}
-        {% if block.type == 'feature_card' %}
-          <div class="al-features__card" data-reveal {{ block.shopify_attributes }}>
-            <div class="al-features__card-img">
-              {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | img_url: '900x' }}" alt="{{ block.settings.title }}" loading="lazy">
-              {% elsif block.settings.image_url != blank %}
-                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }}" loading="lazy">
-              {% endif %}
-            </div>
-            <div class="al-features__card-body">
-              <span class="al-features__card-num">{{ block.settings.number | default: forloop.index | prepend: '0' }}</span>
-              <h3 class="al-features__card-title">{{ block.settings.title }}</h3>
-              <p class="al-features__card-desc">{{ block.settings.description }}</p>
-            </div>
+  <div class="al-features__cards">
+    {% for block in section.blocks %}
+      {% if block.type == 'feature_card' %}
+        <div class="al-feature-card" {{ block.shopify_attributes }} data-al-reveal>
+          <div class="al-feature-card__img">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+            {% else %}
+              <div class="al-feature-card__img--placeholder">{{ block.settings.placeholder_emoji | default: '🧥' }}</div>
+            {% endif %}
           </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+          <div class="al-feature-card__body">
+            <span class="al-feature-card__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="al-feature-card__tag">{{ block.settings.tag }}</span>
+            <h3 class="al-feature-card__title">{{ block.settings.title }}</h3>
+            <p class="al-feature-card__desc">{{ block.settings.description }}</p>
+            {% if block.settings.stat_num != blank %}
+              <div class="al-feature-card__stat">
+                <span class="al-feature-card__stat-num">{{ block.settings.stat_num }}</span>
+                <span class="al-feature-card__stat-label">{{ block.settings.stat_label }}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Air Light LP Features",
+  "name": "AirLight Features",
   "settings": [
-    { "type": "text",     "id": "label",   "label": "Section label", "default": "Why Air Light?" },
-    { "type": "richtext", "id": "heading", "label": "Heading",       "default": "<p>Engineered for the modern explorer.</p>" }
+    { "type": "richtext", "id": "heading", "label": "Section Heading", "default": "<p>Everything down promises.<br>Finally delivered.</p>" }
   ],
   "blocks": [
     {
       "type": "feature_card",
       "name": "Feature Card",
       "settings": [
-        { "type": "image_picker", "id": "image",       "label": "Feature image" },
-        { "type": "text",         "id": "image_url",   "label": "Image URL (fallback)" },
-        { "type": "text",         "id": "number",      "label": "Number",      "default": "01" },
-        { "type": "text",         "id": "title",       "label": "Title",       "default": "Ultra Lightweight" },
-        { "type": "textarea",     "id": "description", "label": "Description", "default": "At just 150g, the Air Light Jacket weighs less than a smartphone. Wear it all day without ever feeling weighed down." }
+        { "type": "image_picker", "id": "image", "label": "Feature Image" },
+        { "type": "text", "id": "placeholder_emoji", "label": "Placeholder Emoji", "default": "🧥" },
+        { "type": "text", "id": "tag", "label": "Tag Label", "default": "ULTRALIGHT" },
+        { "type": "text", "id": "title", "label": "Feature Title", "default": "Lighter Than a Sweater" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "stat_num", "label": "Stat Number (optional)", "default": "500g" },
+        { "type": "text", "id": "stat_label", "label": "Stat Label", "default": "Total weight" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Air Light LP Features",
+      "name": "AirLight Features",
       "blocks": [
         {
           "type": "feature_card",
           "settings": {
-            "number": "01",
-            "title": "Ultra Lightweight",
-            "description": "At just 150g, the Air Light Jacket weighs less than a smartphone. Wear it all day without ever feeling weighed down — or pack it into its own pocket in seconds."
+            "placeholder_emoji": "🪶",
+            "tag": "ULTRALIGHT",
+            "title": "Lighter Than a Sweater",
+            "description": "Traditional down jackets weigh 800g–1kg. The AirLight Jacket weighs just 500g — the same as a water bottle. You'll forget you're wearing it.",
+            "stat_num": "500g",
+            "stat_label": "vs 800–1000g for down"
           }
         },
         {
           "type": "feature_card",
           "settings": {
-            "number": "02",
-            "title": "Kapok Natural Fill",
-            "description": "Filled with kapok fiber — a silky, plant-based insulator that's 5x lighter than cotton, naturally hypoallergenic, and requires zero pesticides to grow."
+            "placeholder_emoji": "🌡️",
+            "tag": "DOWN-LEVEL WARMTH",
+            "title": "As Warm as Down. Proven.",
+            "description": "Thermographic testing at 3°C confirms identical heat retention to traditional down — just 1 minute after putting it on. Kapok's hollow fiber structure traps heat naturally.",
+            "stat_num": "3°C",
+            "stat_label": "Test environment — matches down"
           }
         },
         {
           "type": "feature_card",
           "settings": {
-            "number": "03",
-            "title": "Japanese Craftsmanship",
-            "description": "Designed and crafted in Japan with precision Japanese tailoring. Clean lines, premium finishing, and a fit that flatters every silhouette."
+            "placeholder_emoji": "🌿",
+            "tag": "100% VEGAN",
+            "title": "No Animals. No Feathers. Ever.",
+            "description": "One down jacket uses feathers from ~30 birds. Ours uses zero. Kapok fiber grows on trees, harvested from seed pods — no cutting, no cruelty, no compromise.",
+            "stat_num": "0",
+            "stat_label": "Animals involved"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "☂️",
+            "tag": "ALL-WEATHER",
+            "title": "Rain? No Problem.",
+            "description": "Plant-based DWR coating delivers 20× the water resistance of a standard umbrella. Down collapses when wet and takes days to dry. The AirLight keeps performing — and washes easily at home.",
+            "stat_num": "20×",
+            "stat_label": "Water resistance vs umbrella"
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🏭",
+            "tag": "FARM TO FASHION",
+            "title": "Transparent from Field to You",
+            "description": "Our founder personally visits the kapok farms, processing factories, and garment makers in Southeast Asia — cutting out middlemen to guarantee quality and fair pricing. We call it Farm to Fashion.",
+            "stat_num": "3",
+            "stat_label": "Direct partnerships"
           }
         }
       ]

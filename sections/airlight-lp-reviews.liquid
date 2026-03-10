@@ -1,59 +1,23 @@
-{% comment %} Air Light Jacket LP — Reviews Section {% endcomment %}
+{% comment %} AirLight Jacket LP — Reviews Section {% endcomment %}
 
-<section class="al-reviews">
+<section class="al-reviews" id="al-reviews">
   <div class="al-container">
-    <div class="al-reviews__header" data-reveal>
-      <p class="al-section-label">{{ section.settings.label | default: 'Customer Reviews' }}</p>
-      <h2 class="al-section-title">{{ section.settings.heading | default: 'Real people. Real warmth.' }}</h2>
+    <h2 class="al-reviews__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'What people are saying' }}
+    </h2>
+    <p class="al-reviews__stars-avg" data-al-reveal>
+      {{ section.settings.avg_stars | default: '★★★★★' }}
+      <span style="font-size:0.9rem; color:var(--al-text-sub); font-family:var(--al-font-body); font-weight:400; margin-left:8px;">{{ section.settings.avg_label | default: '4.8 / 5 — Verified Buyers' }}</span>
+    </p>
 
-      <div class="al-reviews__summary">
-        <span class="al-reviews__avg-score">{{ section.settings.avg_score | default: '4.8' }}</span>
-        <div class="al-reviews__avg-right">
-          <span class="al-reviews__stars">{{ section.settings.avg_stars | default: '★★★★★' }}</span>
-          <span class="al-reviews__count">{{ section.settings.review_count | default: 'Based on 312 reviews' }}</span>
-        </div>
-      </div>
-
-      <div class="al-reviews__graph">
-        <div class="al-reviews__graph-row">
-          <span class="al-reviews__graph-label">5 ★</span>
-          <div class="al-reviews__graph-track"><div class="al-reviews__graph-fill" data-width="{{ section.settings.star5_pct | default: 72 }}"></div></div>
-          <span class="al-reviews__graph-pct">{{ section.settings.star5_pct | default: 72 }}%</span>
-        </div>
-        <div class="al-reviews__graph-row">
-          <span class="al-reviews__graph-label">4 ★</span>
-          <div class="al-reviews__graph-track"><div class="al-reviews__graph-fill" data-width="{{ section.settings.star4_pct | default: 20 }}"></div></div>
-          <span class="al-reviews__graph-pct">{{ section.settings.star4_pct | default: 20 }}%</span>
-        </div>
-        <div class="al-reviews__graph-row">
-          <span class="al-reviews__graph-label">3 ★</span>
-          <div class="al-reviews__graph-track"><div class="al-reviews__graph-fill" data-width="{{ section.settings.star3_pct | default: 5 }}"></div></div>
-          <span class="al-reviews__graph-pct">{{ section.settings.star3_pct | default: 5 }}%</span>
-        </div>
-        <div class="al-reviews__graph-row">
-          <span class="al-reviews__graph-label">2 ★</span>
-          <div class="al-reviews__graph-track"><div class="al-reviews__graph-fill" data-width="{{ section.settings.star2_pct | default: 2 }}"></div></div>
-          <span class="al-reviews__graph-pct">{{ section.settings.star2_pct | default: 2 }}%</span>
-        </div>
-        <div class="al-reviews__graph-row">
-          <span class="al-reviews__graph-label">1 ★</span>
-          <div class="al-reviews__graph-track"><div class="al-reviews__graph-fill" data-width="{{ section.settings.star1_pct | default: 1 }}"></div></div>
-          <span class="al-reviews__graph-pct">{{ section.settings.star1_pct | default: 1 }}%</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="al-reviews__cards">
+    <div class="al-reviews__grid">
       {% for block in section.blocks %}
         {% if block.type == 'review_card' %}
-          <div class="al-reviews__card" data-reveal {{ block.shopify_attributes }}>
-            <div class="al-reviews__card-stars">{{ block.settings.stars | default: '★★★★★' }}</div>
-            <h3 class="al-reviews__card-title">{{ block.settings.title }}</h3>
-            <p class="al-reviews__card-text">{{ block.settings.text }}</p>
-            <div class="al-reviews__card-meta">{{ block.settings.meta }}</div>
-            {% if block.settings.tags != blank %}
-              <div class="al-reviews__card-tags">{{ block.settings.tags }}</div>
-            {% endif %}
+          <div class="al-review-card" {{ block.shopify_attributes }} data-al-reveal>
+            <div class="al-review-card__stars">{{ block.settings.stars | default: '★★★★★' }}</div>
+            <p class="al-review-card__headline">"{{ block.settings.headline }}"</p>
+            <p class="al-review-card__text">{{ block.settings.text }}</p>
+            <p class="al-review-card__meta">{{ block.settings.meta }}</p>
           </div>
         {% endif %}
       {% endfor %}
@@ -63,64 +27,53 @@
 
 {% schema %}
 {
-  "name": "Air Light LP Reviews",
+  "name": "AirLight Reviews",
   "settings": [
-    { "type": "text",    "id": "label",        "label": "Section label",   "default": "Customer Reviews" },
-    { "type": "richtext","id": "heading",       "label": "Heading",         "default": "<p>Real people. Real warmth.</p>" },
-    { "type": "text",    "id": "avg_score",     "label": "Average score",   "default": "4.8" },
-    { "type": "text",    "id": "avg_stars",     "label": "Star display",    "default": "★★★★★" },
-    { "type": "text",    "id": "review_count",  "label": "Review count",    "default": "Based on 312 reviews" },
-    { "type": "range",   "id": "star5_pct",     "label": "5-star %",        "min": 0, "max": 100, "step": 1, "default": 72 },
-    { "type": "range",   "id": "star4_pct",     "label": "4-star %",        "min": 0, "max": 100, "step": 1, "default": 20 },
-    { "type": "range",   "id": "star3_pct",     "label": "3-star %",        "min": 0, "max": 100, "step": 1, "default": 5 },
-    { "type": "range",   "id": "star2_pct",     "label": "2-star %",        "min": 0, "max": 100, "step": 1, "default": 2 },
-    { "type": "range",   "id": "star1_pct",     "label": "1-star %",        "min": 0, "max": 100, "step": 1, "default": 1 }
+    { "type": "text", "id": "heading", "label": "Section Heading", "default": "What people are saying" },
+    { "type": "text", "id": "avg_stars", "label": "Avg Stars Display", "default": "★★★★★" },
+    { "type": "text", "id": "avg_label", "label": "Avg Score Label", "default": "4.8 / 5 — Verified Buyers" }
   ],
   "blocks": [
     {
       "type": "review_card",
-      "name": "Review",
+      "name": "Review Card",
       "settings": [
-        { "type": "text",     "id": "stars", "label": "Stars",        "default": "★★★★★" },
-        { "type": "text",     "id": "title", "label": "Review title", "default": "Absolutely love it!" },
-        { "type": "textarea", "id": "text",  "label": "Review text",  "default": "I've tried so many lightweight jackets and nothing compares. The kapok fill is incredible — warm, light, and it doesn't make me sneeze like down does." },
-        { "type": "text",     "id": "meta",  "label": "Meta (name/location)", "default": "Sarah M. — New York, USA" },
-        { "type": "text",     "id": "tags",  "label": "Tags",         "default": "#lightweight #sustainable" }
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "text", "id": "headline", "label": "Pull Quote / Headline" },
+        { "type": "textarea", "id": "text", "label": "Review Body" },
+        { "type": "text", "id": "meta", "label": "Reviewer Meta (name, country)" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Air Light LP Reviews",
+      "name": "AirLight Reviews",
       "blocks": [
         {
           "type": "review_card",
           "settings": {
             "stars": "★★★★★",
-            "title": "The only jacket I'll ever need.",
-            "text": "I travel 200+ days a year. The Air Light Jacket is the first thing I pack and the last thing I take out. It weighs nothing, folds into a tiny ball, and keeps me warm from Tokyo to Toronto.",
-            "meta": "James T. — London, UK",
-            "tags": "#travel #packable #lightweight"
+            "headline": "Warmer than my Patagonia Nano Puff",
+            "text": "I was skeptical — how could a plant-based jacket compete with my down? After a week in Oslo, I barely touched my Nano Puff. The AirLight is lighter, just as warm, and I can throw it in the washing machine. Sold.",
+            "meta": "James R. — Oslo, Norway"
           }
         },
         {
           "type": "review_card",
           "settings": {
             "stars": "★★★★★",
-            "title": "Finally — a sustainable jacket that actually performs.",
-            "text": "I was skeptical that kapok could replace my down jacket, but I was wrong. Just as warm, so much lighter, and I feel great knowing it's plant-based. Switching permanently.",
-            "meta": "Mia K. — Berlin, Germany",
-            "tags": "#sustainable #kapok #warm"
+            "headline": "Finally, a jacket I feel good about wearing",
+            "text": "I've been avoiding down for years for ethical reasons but synthetic jackets always feel plasticky. This is completely different — incredibly soft, warm, and the lightest thing I own. Proud to wear it.",
+            "meta": "Sophie L. — London, UK"
           }
         },
         {
           "type": "review_card",
           "settings": {
             "stars": "★★★★★",
-            "title": "Worth every penny — and then some.",
-            "text": "The Japanese quality is immediately obvious. The seams, the stitching, the way it fits — you can tell this was made with intention. I wear it every day in fall and spring.",
-            "meta": "Chen W. — Singapore",
-            "tags": "#quality #japanmade #everyday"
+            "headline": "Got caught in the rain — still warm",
+            "text": "It rained hard in Copenhagen and I forgot my umbrella. My last down jacket would have been ruined. The AirLight just shook it off. This is my new everyday jacket, full stop.",
+            "meta": "Mikkel H. — Copenhagen, Denmark"
           }
         }
       ]
