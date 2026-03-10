@@ -672,8 +672,9 @@
     },
     "cross-sell": {
       "type": "musubi-lp-cross-sell",
+      "disabled": true,
       "settings": {
-        "heading": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+        "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
       }
     },
     "gift": {
@@ -682,7 +683,7 @@
         "image_alt": "ギフトイメージ",
         "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
         "description": "<p>いつも頑張っているご家族やパートナーへ。</p>",
-        "note": "※メッセージカードの同梱も可能です"
+        "note": ""
       }
     },
     "faq": {
