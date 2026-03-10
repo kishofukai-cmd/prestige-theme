@@ -1,0 +1,75 @@
+{% comment %} AirLight Jacket LP — Makuake / Trust / Media Section {% endcomment %}
+
+<section class="al-makuake" id="al-makuake">
+  <div class="al-container al-text-center">
+    <p class="al-makuake__label" data-al-reveal>{{ section.settings.label | default: 'Proven by Japan' }}</p>
+    <h2 class="al-makuake__heading" data-al-reveal>
+      {{ section.settings.heading | default: '4 years. 2,000+ backers.<br>¥50M+ raised on Makuake.' }}
+    </h2>
+    <p class="al-makuake__body" data-al-reveal>
+      {{ section.settings.body | default: '"Thin, light, and warm" — the AirLight Jacket has been supported by over 2,000 backers, totalling more than ¥50M on Makuake over 4 years. Now launching globally.' }}
+    </p>
+
+    {% if section.settings.makuake_image != blank %}
+      <div class="al-makuake__img" data-al-reveal>
+        <img src="{{ section.settings.makuake_image | img_url: '1200x' }}"
+             alt="Makuake crowdfunding results" loading="lazy">
+      </div>
+    {% elsif section.settings.makuake_fallback != blank %}
+      <div class="al-makuake__img" data-al-reveal>
+        <img src="{{ section.settings.makuake_fallback }}"
+             alt="Makuake crowdfunding results" loading="lazy">
+      </div>
+    {% endif %}
+
+    {% if section.settings.makuake_banner != blank %}
+      <div class="al-makuake__banner" data-al-reveal>
+        <img src="{{ section.settings.makuake_banner | img_url: '1200x' }}"
+             alt="Makuake campaign banner" loading="lazy">
+      </div>
+    {% elsif section.settings.makuake_banner_fallback != blank %}
+      <div class="al-makuake__banner" data-al-reveal>
+        <img src="{{ section.settings.makuake_banner_fallback }}"
+             alt="Makuake campaign banner" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if section.settings.show_media_banner %}
+  <div class="al-media-banner" data-al-reveal>
+    {% if section.settings.media_banner_image != blank %}
+      <img src="{{ section.settings.media_banner_image | img_url: '1600x' }}"
+           alt="As featured in" loading="lazy">
+    {% elsif section.settings.media_banner_fallback != blank %}
+      <img src="{{ section.settings.media_banner_fallback }}"
+           alt="As featured in" loading="lazy">
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "AirLight Makuake + Media",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Proven by Japan" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>4 years. 2,000+ backers.<br>¥50M+ raised on Makuake.</p>" },
+    { "type": "textarea", "id": "body", "label": "Body Text", "default": "\"Thin, light, and warm\" — the AirLight Jacket has been supported by over 2,000 backers, totalling more than ¥50M on Makuake over 4 years. Now launching globally." },
+    { "type": "image_picker", "id": "makuake_image", "label": "Makuake Screenshot Image" },
+    { "type": "text", "id": "makuake_fallback", "label": "Makuake Image Fallback URL", "default": "https://ucarecdn.com/a165d4cb-d574-462e-9e44-4961919688f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-18%2010.59.00.png" },
+    { "type": "image_picker", "id": "makuake_banner", "label": "Makuake Banner Image" },
+    { "type": "text", "id": "makuake_banner_fallback", "label": "Makuake Banner Fallback URL", "default": "https://ucarecdn.com/9666cc7a-e62c-43cd-95ee-4744d802ab6f/-/format/auto/-/preview/2560x2560/-/quality/lighter/2.jpg" },
+    { "type": "checkbox", "id": "show_media_banner", "label": "Show Media Banner", "default": true },
+    { "type": "image_picker", "id": "media_banner_image", "label": "Media Banner Image" },
+    { "type": "text", "id": "media_banner_fallback", "label": "Media Banner Fallback URL", "default": "https://ucarecdn.com/c8a1c3cc-74ce-4af7-b5f4-752171093895/-/format/auto/-/preview/3000x3000/-/quality/lighter/Blurtheline-8%201.png" }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Makuake + Media",
+      "settings": {
+        "show_media_banner": true
+      }
+    }
+  ]
+}
+{% endschema %}

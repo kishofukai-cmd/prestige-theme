@@ -1,0 +1,45 @@
+{% comment %} AirLight Jacket LP — Video Section {% endcomment %}
+
+<section class="al-video" id="al-video">
+  <div class="al-container al-container--narrow al-text-center">
+    <p class="al-video__label" data-al-reveal>{{ section.settings.label | default: 'Watch' }}</p>
+    <h2 class="al-video__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'See it in action.' }}
+    </h2>
+    {% if section.settings.youtube_id != blank %}
+      <div class="al-video__wrap" data-al-reveal>
+        <iframe
+          src="https://www.youtube.com/embed/{{ section.settings.youtube_id }}?mute=1"
+          allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    {% endif %}
+    {% if section.settings.caption != blank %}
+      <p class="al-video__caption">{{ section.settings.caption }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Video",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Watch" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "See it in action." },
+    { "type": "text", "id": "youtube_id", "label": "YouTube Video ID", "default": "PFN0XzG3vdo" },
+    { "type": "text", "id": "caption", "label": "Caption (optional)" }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Video",
+      "settings": {
+        "label": "Watch",
+        "heading": "See it in action.",
+        "youtube_id": "PFN0XzG3vdo"
+      }
+    }
+  ]
+}
+{% endschema %}

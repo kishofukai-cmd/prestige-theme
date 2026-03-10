@@ -1,0 +1,61 @@
+{% comment %} AirLight Jacket LP — Awards Section {% endcomment %}
+
+<section class="al-awards" id="al-awards">
+  <div class="al-container">
+    <p class="al-awards__label" data-al-reveal>{{ section.settings.label | default: 'Recognition' }}</p>
+    <h2 class="al-awards__heading" data-al-reveal>
+      {{ section.settings.heading | default: '10+ International Awards.' }}
+    </h2>
+    <p class="al-awards__subtext" data-al-reveal>
+      {{ section.settings.subtext | default: 'KAPOK KNOT has been recognized by governments, investors, and innovation bodies across Japan and the world.' }}
+    </p>
+
+    <div class="al-awards__grid" data-al-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'award_item' %}
+          <div class="al-awards__card" {{ block.shopify_attributes }}>
+            <p class="al-awards__card-meta">{{ block.settings.meta }}</p>
+            <p class="al-awards__card-title">{{ block.settings.title }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Awards",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Recognition" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "10+ International Awards." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "KAPOK KNOT has been recognized by governments, investors, and innovation bodies across Japan and the world." }
+  ],
+  "blocks": [
+    {
+      "type": "award_item",
+      "name": "Award",
+      "settings": [
+        { "type": "text", "id": "meta", "label": "Organizer / Year" },
+        { "type": "text", "id": "title", "label": "Award Title" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Awards",
+      "blocks": [
+        { "type": "award_item", "settings": { "meta": "METI · JETRO — Shido Next Innovator 2019", "title": "🏆 Silicon Valley Selection — Grand Prize" } },
+        { "type": "award_item", "settings": { "meta": "Industry Co-Creation Summit 2021", "title": "🏆 Grand Prix (Crafted Catapult)" } },
+        { "type": "award_item", "settings": { "meta": "Nikkei Shimbun — Star★Startup Japan 2021", "title": "🏆 Next-Generation Venture Award" } },
+        { "type": "award_item", "settings": { "meta": "Ministry of Environment — Startup Award 2021", "title": "🏆 Outstanding Startup" } },
+        { "type": "award_item", "settings": { "meta": "J-Startup Impact 2023", "title": "🏆 Selected (Top 30 of 500 applicants)" } },
+        { "type": "award_item", "settings": { "meta": "Dell Startup Challenge 2025", "title": "🏆 Runner-up" } },
+        { "type": "award_item", "settings": { "meta": "Industry Co-Creation Summit 2022", "title": "🏆 Catapult Grand Prix — Runner-up" } },
+        { "type": "award_item", "settings": { "meta": "SME SDGs ACTION! AWARDS 2022", "title": "🏆 Runner-up Grand Prix" } },
+        { "type": "award_item", "settings": { "meta": "Kansai Business Plan Contest 2022", "title": "🏆 Grand Prize" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

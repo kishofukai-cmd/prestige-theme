@@ -1,0 +1,146 @@
+{% comment %} AirLight Jacket LP — Products Section {% endcomment %}
+
+<section class="al-products" id="al-products">
+  <div class="al-container">
+    <p class="al-products__label" data-al-reveal>{{ section.settings.label | default: 'The Collection' }}</p>
+    <h2 class="al-products__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Find your AirLight Jacket.' }}
+    </h2>
+  </div>
+
+  {% for block in section.blocks %}
+    {% if block.type == 'product_line' %}
+      <div class="al-products__line {% cycle 'al-products__line--light', 'al-products__line--gray' %}" {{ block.shopify_attributes }}>
+        <div class="al-container">
+          <div class="al-products__info">
+            <p class="al-products__line-label">{{ block.settings.gender_label }}</p>
+            <h3 class="al-products__line-name">{{ block.settings.product_name }}</h3>
+            {% if block.settings.colors != blank %}
+              <p class="al-products__colors">{{ block.settings.colors }}</p>
+            {% endif %}
+            <p class="al-products__price">{{ block.settings.price }}</p>
+            <p class="al-products__desc">{{ block.settings.description }}</p>
+            <a href="{{ block.settings.cta_url }}" class="al-btn al-btn--navy" target="_blank">
+              {{ block.settings.cta_text | default: 'Shop Now →' }}
+            </a>
+          </div>
+        </div>
+        {% if block.settings.image_1 != blank or block.settings.fallback_url_1 != blank %}
+          <div class="al-products__carousel">
+            {% assign images = 'image_1,image_2,image_3,image_4,image_5' | split: ',' %}
+            {% assign labels = block.settings.color_labels | split: ',' %}
+            {% for img_key in images %}
+              {% assign img = block.settings[img_key] %}
+              {% assign fallback_key = 'fallback_url_' | append: forloop.index %}
+              {% assign fallback = block.settings[fallback_key] %}
+              {% assign lbl = labels[forloop.index0] %}
+              {% if img != blank or fallback != blank %}
+                <div class="al-products__slide">
+                  {% if img != blank %}
+                    <img src="{{ img | img_url: '480x' }}" alt="{{ lbl }}" loading="lazy">
+                  {% elsif fallback != blank %}
+                    <img src="{{ fallback }}" alt="{{ lbl }}" loading="lazy">
+                  {% endif %}
+                  {% if lbl != blank %}<p>{{ lbl | strip }}</p>{% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Products",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section Label", "default": "The Collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find your AirLight Jacket." }
+  ],
+  "blocks": [
+    {
+      "type": "product_line",
+      "name": "Product Line",
+      "settings": [
+        { "type": "text", "id": "gender_label", "label": "Gender Label (e.g. Men's)" },
+        { "type": "text", "id": "product_name", "label": "Product Name" },
+        { "type": "text", "id": "colors", "label": "Available Colors text" },
+        { "type": "text", "id": "price", "label": "Price" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "url", "id": "cta_url", "label": "CTA Link" },
+        { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Shop Now →" },
+        { "type": "text", "id": "color_labels", "label": "Color Labels (comma-separated)", "info": "e.g. [New] Navy,[New] Beige,Olive,Greige,Black" },
+        { "type": "image_picker", "id": "image_1", "label": "Color Image 1" },
+        { "type": "text", "id": "fallback_url_1", "label": "Fallback URL 1" },
+        { "type": "image_picker", "id": "image_2", "label": "Color Image 2" },
+        { "type": "text", "id": "fallback_url_2", "label": "Fallback URL 2" },
+        { "type": "image_picker", "id": "image_3", "label": "Color Image 3" },
+        { "type": "text", "id": "fallback_url_3", "label": "Fallback URL 3" },
+        { "type": "image_picker", "id": "image_4", "label": "Color Image 4" },
+        { "type": "text", "id": "fallback_url_4", "label": "Fallback URL 4" },
+        { "type": "image_picker", "id": "image_5", "label": "Color Image 5" },
+        { "type": "text", "id": "fallback_url_5", "label": "Fallback URL 5" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Products",
+      "blocks": [
+        {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "price": "¥39,800",
+            "description": "As light as air, as warm as a thick coat. With a fleece-lined hood and pockets, the AirLight feels effortlessly relaxed — your new cold-weather default.",
+            "cta_text": "Shop Men's →",
+            "color_labels": "[New] Navy,[New] Beige,Olive,Greige,Black",
+            "fallback_url_1": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
+            "fallback_url_2": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
+            "fallback_url_3": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
+            "fallback_url_4": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
+            "fallback_url_5": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg"
+          }
+        },
+        {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "price": "¥39,800",
+            "description": "All the warmth of the Men's — with an adjustable waist spindle so you can shape your silhouette or wear it relaxed.",
+            "cta_text": "Shop Women's →",
+            "color_labels": "[New] Navy,[New] Beige,Black,Olive,Greige",
+            "fallback_url_1": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
+            "fallback_url_2": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
+            "fallback_url_3": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
+            "fallback_url_4": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
+            "fallback_url_5": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg"
+          }
+        },
+        {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's — Peplum",
+            "product_name": "AirLight Peplum Jacket",
+            "colors": "4 Colors: White / Ice Blue / Black / Khaki",
+            "price": "¥49,800",
+            "description": "The peplum hem covers the hips, keeping warmth where you need it. The waist spindle lets you cinch or loosen — a feminine silhouette that works for any day.",
+            "cta_text": "Shop Peplum →",
+            "color_labels": "White,Ice Blue,Black,Khaki",
+            "fallback_url_1": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
+            "fallback_url_2": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
+            "fallback_url_3": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
+            "fallback_url_4": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

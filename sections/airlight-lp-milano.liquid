@@ -1,0 +1,66 @@
+{% comment %} AirLight Jacket LP — Milano Unica Section {% endcomment %}
+
+<section class="al-milano" id="al-milano">
+  <div class="al-container al-text-center">
+    <p class="al-milano__label" data-al-reveal>{{ section.settings.label | default: 'Global Presence' }}</p>
+    <h2 class="al-milano__heading" data-al-reveal>
+      {{ section.settings.heading | default: 'Now at Milano Unica.' }}
+    </h2>
+    <p class="al-milano__body" data-al-reveal>
+      {{ section.settings.body | default: 'KAPOK KNOT has been selected to exhibit at Milano Unica — the world\'s premier textile and fashion innovation fair held in Milan, Italy. We are proud to bring Japan\'s material innovation to the global stage.' }}
+    </p>
+
+    <div class="al-milano__stats" data-al-reveal>
+      {% for block in section.blocks %}
+        {% if block.type == 'stat_item' %}
+          <div class="al-milano__stat" {{ block.shopify_attributes }}>
+            <p class="al-milano__stat-num">{{ block.settings.number }}</p>
+            <p class="al-milano__stat-label">{{ block.settings.label }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.card_label != blank %}
+      <div class="al-milano__card" data-al-reveal>
+        <p class="al-milano__card-eyebrow">{{ section.settings.card_label }}</p>
+        <p class="al-milano__card-name">{{ section.settings.card_name | default: 'KAPOK KNOT by KAPOK JAPAN' }}</p>
+        <p class="al-milano__card-desc">{{ section.settings.card_desc }}</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Milano Unica",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Global Presence" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Now at Milano Unica.</p>" },
+    { "type": "textarea", "id": "body", "label": "Body Text", "default": "KAPOK KNOT has been selected to exhibit at Milano Unica — the world's premier textile and fashion innovation fair held in Milan, Italy. We are proud to bring Japan's material innovation to the global stage." },
+    { "type": "text", "id": "card_label", "label": "Card Eyebrow", "default": "Exhibiting Brand" },
+    { "type": "text", "id": "card_name", "label": "Card Brand Name", "default": "KAPOK KNOT by KAPOK JAPAN" },
+    { "type": "textarea", "id": "card_desc", "label": "Card Description", "default": "The world's first kapok-specialized fashion brand, bringing EthicalDown Kapok™ technology from Japan to international buyers, press, and collaborators." }
+  ],
+  "blocks": [
+    {
+      "type": "stat_item",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number / Label" },
+        { "type": "text", "id": "label", "label": "Sub-label" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Milano Unica",
+      "blocks": [
+        { "type": "stat_item", "settings": { "number": "Milan", "label": "Exhibition City" } },
+        { "type": "stat_item", "settings": { "number": "Milano Unica", "label": "World's Leading Textile Fair" } },
+        { "type": "stat_item", "settings": { "number": "Global", "label": "Launch Destination" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

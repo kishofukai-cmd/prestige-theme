@@ -1,0 +1,51 @@
+{% comment %} AirLight Jacket LP — Founders Section {% endcomment %}
+
+<section class="al-founders" id="al-founders">
+  <div class="al-container">
+    <p class="al-founders__label" data-al-reveal>{{ section.settings.label | default: 'Message from the Founder' }}</p>
+
+    <div class="al-founders__body-wrap" data-al-reveal>
+      <div class="al-founders__img-col">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '800x' }}"
+               alt="{{ section.settings.image_alt | default: 'Founder — KAPOK KNOT' }}"
+               loading="lazy">
+        {% elsif section.settings.fallback_url != blank %}
+          <img src="{{ section.settings.fallback_url }}"
+               alt="{{ section.settings.image_alt | default: 'Founder — KAPOK KNOT' }}"
+               loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="al-founders__text-col">
+        {% if section.settings.role != blank %}
+          <p class="al-founders__role">{{ section.settings.role }}</p>
+        {% endif %}
+        <h2 class="al-founders__name">{{ section.settings.name | default: 'Kishow Fukai' }}</h2>
+        <div class="al-founders__message">
+          {{ section.settings.message }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AirLight Founders",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section Label", "default": "Message from the Founder" },
+    { "type": "image_picker", "id": "image", "label": "Founder Photo" },
+    { "type": "text", "id": "image_alt", "label": "Image Alt Text", "default": "Kishow Fukai — Founder, KAPOK KNOT" },
+    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL", "default": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png" },
+    { "type": "text", "id": "role", "label": "Role / Title", "default": "Founder & CEO, KAPOK JAPAN / KAPOK KNOT" },
+    { "type": "text", "id": "name", "label": "Name", "default": "Kishow Fukai" },
+    { "type": "richtext", "id": "message", "label": "Message", "default": "<p>Born in Osaka, Japan. The 4th-generation successor of Futaba Shoji, a 79-year-old apparel manufacturer. Previously worked at Asahi Kasei — one of Japan's largest textile companies — as a Textiles Evaluation Specialist.</p><p>Growing up surrounded by textiles, he saw firsthand the apparel industry's cycle of overproduction and waste. Upon encountering kapok, he founded KAPOK JAPAN in 2020 with a clear mission: <strong>to bring sustainable and functional materials to the world.</strong></p><p>Selected as one of 30 companies (from 500 applicants) in the Japanese government's prestigious <em>J-Startup Impact</em> program.</p>" }
+  ],
+  "presets": [
+    {
+      "name": "AirLight Founders"
+    }
+  ]
+}
+{% endschema %}
