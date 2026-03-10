@@ -6,11 +6,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // === Scroll Reveal ===
-  const reveals = document.querySelectorAll('[data-reveal]');
+  const reveals = document.querySelectorAll('[data-al-reveal]');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
+        entry.target.classList.add('al-revealed');
         revealObs.unobserve(entry.target);
       }
     });
