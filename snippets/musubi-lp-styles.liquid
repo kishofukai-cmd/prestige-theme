@@ -730,7 +730,7 @@ button {
 
 .empathy__solution-img {
   width: 100%;
-  aspect-ratio: 4/5;
+  overflow: hidden;
   margin-bottom: 0;
 }
 
@@ -748,8 +748,15 @@ button {
 
 .empathy__solution-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .empathy__solution-img img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /* ワンノバ風：画像上にテキストを大きく重ねる（読みやすいバンド付き） */
