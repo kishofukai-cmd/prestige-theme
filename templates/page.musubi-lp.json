@@ -281,8 +281,9 @@
       ],
       "settings": {
         "heading": "こんな夜、ありませんか？",
+        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
         "solution_image_alt": "MUSUBIに包まれて休息",
-        "solution_text": "<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>"
+        "solution_text": "<p>包まれる感覚が、<br/><strong>休息モードへ導く。</strong></p>"
       }
     },
     "story": {
@@ -383,8 +384,15 @@
     "comparison": {
       "type": "musubi-lp-comparison",
       "settings": {
+        "label": "LABORATORY TEST",
+        "heading": "検証データが証明する<br>MUSUBIの快適性",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "other_value": "55% → 70%",
+        "other_desc": "時間経過とともに上昇",
         "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
-        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持"
+        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
       }
     },
     "sizes": {
@@ -664,7 +672,9 @@
     },
     "cross-sell": {
       "type": "musubi-lp-cross-sell",
-      "settings": {}
+      "settings": {
+        "heading": "一緒に使うとさらに快適。<br>おすすめのセットアイテム"
+      }
     },
     "gift": {
       "type": "musubi-lp-gift",
