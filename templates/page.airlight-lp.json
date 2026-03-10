@@ -542,18 +542,254 @@
         "micro_3": "✓ Secure checkout",
         "fallback_url": "https://ucarecdn.com/d7a640a6-76bb-47b6-8fd8-9fe27a5ce497/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2156-2.jpg"
       }
+    },
+    "awards": {
+      "type": "airlight-lp-awards",
+      "blocks": {
+        "award_1": {
+          "type": "award_item",
+          "settings": {
+            "meta": "METI · JETRO — Shido Next Innovator 2019",
+            "title": "🏆 Silicon Valley Selection — Grand Prize"
+          }
+        },
+        "award_2": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2021",
+            "title": "🏆 Grand Prix (Crafted Catapult)"
+          }
+        },
+        "award_3": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Nikkei Shimbun — Star★Startup Japan 2021",
+            "title": "🏆 Next-Generation Venture Award"
+          }
+        },
+        "award_4": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Ministry of Environment — Startup Award 2021",
+            "title": "🏆 Outstanding Startup"
+          }
+        },
+        "award_5": {
+          "type": "award_item",
+          "settings": {
+            "meta": "J-Startup Impact 2023",
+            "title": "🏆 Selected (Top 30 of 500 applicants)"
+          }
+        },
+        "award_6": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Dell Startup Challenge 2025",
+            "title": "🏆 Runner-up"
+          }
+        },
+        "award_7": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2022",
+            "title": "🏆 Catapult Grand Prix — Runner-up"
+          }
+        },
+        "award_8": {
+          "type": "award_item",
+          "settings": {
+            "meta": "SME SDGs ACTION! AWARDS 2022",
+            "title": "🏆 Runner-up Grand Prix"
+          }
+        },
+        "award_9": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Kansai Business Plan Contest 2022",
+            "title": "🏆 Grand Prize"
+          }
+        }
+      },
+      "block_order": [
+        "award_1",
+        "award_2",
+        "award_3",
+        "award_4",
+        "award_5",
+        "award_6",
+        "award_7",
+        "award_8",
+        "award_9"
+      ],
+      "settings": {
+        "label": "Recognition",
+        "heading": "10+ International Awards.",
+        "subtext": "KAPOK KNOT has been recognized by governments, investors, and innovation bodies across Japan and the world."
+      }
+    },
+    "video": {
+      "type": "airlight-lp-video",
+      "settings": {
+        "label": "Watch",
+        "heading": "See it in action.",
+        "youtube_id": "PFN0XzG3vdo"
+      }
+    },
+    "ethics": {
+      "type": "airlight-lp-ethics",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "97%",
+            "label": "Less CO₂ vs Down"
+          }
+        },
+        "stat_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "30",
+            "label": "Geese saved / jacket"
+          }
+        },
+        "stat_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "80%",
+            "label": "Hollow fiber structure"
+          }
+        },
+        "stat_4": {
+          "type": "stat_item",
+          "settings": {
+            "number": "1/8",
+            "label": "Weight of cotton"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {}
+    },
+    "makuake": {
+      "type": "airlight-lp-makuake",
+      "settings": {
+        "show_media_banner": true
+      }
+    },
+    "milano": {
+      "type": "airlight-lp-milano",
+      "blocks": {
+        "milano_stat_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Milan",
+            "label": "Exhibition City"
+          }
+        },
+        "milano_stat_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Milano Unica",
+            "label": "World's Leading Textile Fair"
+          }
+        },
+        "milano_stat_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "Global",
+            "label": "Launch Destination"
+          }
+        }
+      },
+      "block_order": [
+        "milano_stat_1",
+        "milano_stat_2",
+        "milano_stat_3"
+      ],
+      "settings": {}
+    },
+    "founders": {
+      "type": "airlight-lp-founders",
+      "settings": {}
+    },
+    "products": {
+      "type": "airlight-lp-products",
+      "blocks": {
+        "product_men": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/0fd37cb2-ccc2-4e42-b90b-cb33f4bcf6f1/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2157_re-2.jpg",
+            "fallback_url_2": "https://ucarecdn.com/12dc1b92-7e4a-42ce-9e86-48d4caec8714/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-OLV-02_re%20_1_.jpg",
+            "fallback_url_3": "https://ucarecdn.com/75f0d6f6-5cd4-4dd8-aa61-e3a2ff444a7e/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-BE-01_re.jpg",
+            "fallback_url_4": "https://ucarecdn.com/6a6e8284-d9e0-41f8-a8a7-9f93f5a3d20b/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-BK-02_re.jpg",
+            "fallback_url_5": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg"
+          }
+        },
+        "product_women": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/02da554e-7c2c-4f0c-a32d-14aaa9b3202e/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2128-2.jpg",
+            "fallback_url_2": "https://ucarecdn.com/a68f3d6a-bfaf-4ffa-bb85-1b47f2d65e04/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-OLV-02_re%20_1_.jpg",
+            "fallback_url_3": "https://ucarecdn.com/36bbf32f-6bb4-4ba1-8a73-1aabfc8e2fde/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-BE-01_re%20_1_.jpg",
+            "fallback_url_4": "https://ucarecdn.com/e3b37b4b-51cd-4aab-ae3c-5e29f121f5a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-BK-02_re%20_1_.jpg",
+            "fallback_url_5": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg"
+          }
+        },
+        "product_peplum": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's — Peplum",
+            "product_name": "AirLight Peplum Jacket",
+            "colors": "4 Colors: White / Ice Blue / Black / Khaki",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/fc4adef2-fd18-43b5-b720-7b78e9e9b3e7/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_2_.jpg",
+            "fallback_url_2": "https://ucarecdn.com/93f8f07e-0403-4dba-ab31-e1b2e38e8d4b/-/format/auto/-/preview/3000x3000/-/quality/lighter/_FFA3-3.jpg",
+            "fallback_url_3": "https://ucarecdn.com/2a1bb7a3-1b72-49a8-a00d-36b5b2f05d5a/-/format/auto/-/preview/3000x3000/-/quality/lighter/514.png",
+            "fallback_url_4": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png"
+          }
+        }
+      },
+      "block_order": [
+        "product_men",
+        "product_women",
+        "product_peplum"
+      ],
+      "settings": {
+        "label": "The Collection",
+        "heading": "Find your AirLight Jacket."
+      }
     }
   },
   "order": [
     "hero",
     "trust-bar",
     "brand",
+    "awards",
     "pain",
     "features",
     "material",
+    "video",
     "cta-mid",
+    "ethics",
     "comparison",
+    "makuake",
+    "milano",
     "reviews",
+    "products",
+    "founders",
     "faq",
     "closing"
   ]
