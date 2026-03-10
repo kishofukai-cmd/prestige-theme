@@ -681,38 +681,6 @@
         "show_media_banner": true
       }
     },
-    "milano": {
-      "type": "airlight-lp-milano",
-      "blocks": {
-        "milano_stat_1": {
-          "type": "stat_item",
-          "settings": {
-            "number": "Milan",
-            "label": "Exhibition City"
-          }
-        },
-        "milano_stat_2": {
-          "type": "stat_item",
-          "settings": {
-            "number": "Milano Unica",
-            "label": "World's Leading Textile Fair"
-          }
-        },
-        "milano_stat_3": {
-          "type": "stat_item",
-          "settings": {
-            "number": "Global",
-            "label": "Launch Destination"
-          }
-        }
-      },
-      "block_order": [
-        "milano_stat_1",
-        "milano_stat_2",
-        "milano_stat_3"
-      ],
-      "settings": {}
-    },
     "founders": {
       "type": "airlight-lp-founders",
       "settings": {}
@@ -786,7 +754,6 @@
     "ethics",
     "comparison",
     "makuake",
-    "milano",
     "reviews",
     "products",
     "founders",
