@@ -256,33 +256,38 @@
       "type": "airlight-lp-material",
       "blocks": {
         "mf_1": {
-          "type": "feature",
+          "type": "spec_item",
           "settings": {
-            "text": "1/8th the weight of cotton fiber"
+            "key": "Fill Material",
+            "value": "100% Kapok Fiber"
           }
         },
         "mf_2": {
-          "type": "feature",
+          "type": "spec_item",
           "settings": {
-            "text": "Moisture-activated warmth (hygroscopic heating)"
+            "key": "Shell",
+            "value": "Recycled Nylon"
           }
         },
         "mf_3": {
-          "type": "feature",
+          "type": "spec_item",
           "settings": {
-            "text": "No tree cutting — harvested from seed pods only"
+            "key": "Weight (S)",
+            "value": "approx. 150g"
           }
         },
         "mf_4": {
-          "type": "feature",
+          "type": "spec_item",
           "settings": {
-            "text": "Supports reforestation and jobs in SE Asia"
+            "key": "Packability",
+            "value": "Packs to fist-size"
           }
         },
         "mf_5": {
-          "type": "feature",
+          "type": "spec_item",
           "settings": {
-            "text": "Patent-pending EthicalDown Kapok™ sheet process"
+            "key": "Care",
+            "value": "Machine Washable"
           }
         }
       },
@@ -295,8 +300,6 @@
       ],
       "settings": {
         "label": "ABOUT THE MATERIAL",
-        "heading": "<p>\"Wood-born down\"<br><em>has arrived.</em></p>",
-        "body": "<p>Kapok is a seed fiber harvested from the pods of the kapok tree, native to Southeast Asia. KAPOK KNOT's breakthrough was transforming this centuries-old natural material into a high-performance insulation sheet — a first in the fashion industry.</p><p>The result: a fiber that is <strong>1/8th the weight of cotton</strong>, breathes naturally, generates warmth as it absorbs moisture, and leaves no animal or environmental harm in its wake.</p>",
         "fallback_url": "https://ucarecdn.com/3d4d43f8-bafb-40f6-8326-71190a3f0abd/-/format/auto/-/preview/3000x3000/-/quality/lighter/IMG_3993.jpeg"
       }
     },
