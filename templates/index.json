@@ -71,8 +71,8 @@
           "settings": {
             "image": "shopify://shop_images/EC_PC_7.png",
             "mobile_image": "shopify://shop_images/KVSP_1_90d2fee6-af7d-4885-aa82-10bc2d46436f.png",
-            "subheading": "Tell your story",
-            "title": "Image slide",
+            "subheading": "",
+            "title": "",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "content_max_width": 780,
