@@ -479,22 +479,6 @@
             "color_code": "#d4a5a0",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200"
           }
-        },
-        "color_6": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Earth Green",
-            "color_code": "#5e7a5a",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0408.jpg?v=1771395913&width=1200"
-          }
-        },
-        "color_7": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Moon Purple",
-            "color_code": "#7b6b8a",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=1200"
-          }
         }
       },
       "block_order": [
@@ -502,9 +486,7 @@
         "color_2",
         "color_3",
         "color_4",
-        "color_5",
-        "color_6",
-        "color_7"
+        "color_5"
       ],
       "settings": {
         "heading": "カラーバリエーション"
