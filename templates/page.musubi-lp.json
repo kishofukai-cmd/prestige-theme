@@ -20,6 +20,13 @@
             "label": "枚突破"
           }
         },
+        "proof_item_EKFgXW": {
+          "type": "proof_item",
+          "settings": {
+            "number": "2,000",
+            "label": "枚突破"
+          }
+        },
         "proof_2": {
           "type": "proof_item",
           "settings": {
@@ -37,6 +44,7 @@
       },
       "block_order": [
         "proof_1",
+        "proof_item_EKFgXW",
         "proof_2",
         "proof_3"
       ],
@@ -47,7 +55,7 @@
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
         "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
         "cta_url": "",
-        "cta_text": "今すぐMUSUBIを手に入れる",
+        "cta_text": "MUSUBI詳しく見る",
         "price_text": "¥29,800〜",
         "price_tax": "(税込)"
       }
@@ -151,6 +159,13 @@
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
+        "reel_4B6Vgf": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP6KXQLk0oC",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
         "reel_1": {
           "type": "reel",
           "settings": {
@@ -163,6 +178,13 @@
           "settings": {
             "reel_id": "DR6vqKrksq6",
             "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_YPURFb": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "",
+            "caption": ""
           }
         },
         "reel_3": {
@@ -195,8 +217,10 @@
         }
       },
       "block_order": [
+        "reel_4B6Vgf",
         "reel_1",
         "reel_2",
+        "reel_YPURFb",
         "reel_3",
         "reel_4",
         "reel_5",
@@ -517,8 +541,8 @@
         "heading": "あなたにぴったりの一枚を。",
         "cta_url": "",
         "cta_text": "サイズ・カラーを選ぶ",
-        "micro_1": "✓ 14日間返品OK",
-        "micro_2": "✓ ギフトラッピング対応",
+        "micro_1": "",
+        "micro_2": "",
         "micro_3": ""
       }
     },
