@@ -75,7 +75,7 @@
             "title": "",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 680,
+            "content_max_width": 780,
             "button_1_text": "",
             "button_1_link": "https://kapok-knot.com/pages/kapokknot-ss-collection",
             "button_1_style": "solid",
