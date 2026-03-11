@@ -180,30 +180,6 @@
             "caption": ""
           }
         },
-        "reel_2": {
-          "type": "reel",
-          "disabled": true,
-          "settings": {
-            "reel_id": "DR6vqKrksq6",
-            "caption": "MUSUBI使用レビュー"
-          }
-        },
-        "reel_YPURFb": {
-          "type": "reel",
-          "disabled": true,
-          "settings": {
-            "reel_id": "",
-            "caption": ""
-          }
-        },
-        "reel_3": {
-          "type": "reel",
-          "disabled": true,
-          "settings": {
-            "reel_id": "DP9zolIk9E0",
-            "caption": "MUSUBI使用レビュー"
-          }
-        },
         "reel_4": {
           "type": "reel",
           "settings": {
@@ -230,9 +206,6 @@
         "reel_4B6Vgf",
         "reel_1",
         "reel_ehrVg9",
-        "reel_2",
-        "reel_YPURFb",
-        "reel_3",
         "reel_4",
         "reel_5",
         "reel_6"
