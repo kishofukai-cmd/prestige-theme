@@ -67,18 +67,26 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .empathy__solution-img {
+    width: 100%;
+    overflow: hidden;
   }
   .empathy__solution-img img {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
   }
   .empathy__solution-text {
-    padding: 24px 20px;
+    padding: 20px 24px 24px;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
     margin: 0;
+    text-align: center;
   }
   .empathy__solution-text strong {
     color: #1a1a1a;
@@ -104,8 +112,13 @@
       height: 40px;
       flex-shrink: 0;
     }
+    .empathy__solution {
+      max-width: 100%;
+      border-radius: 12px;
+    }
     .empathy__solution-text {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      padding: 16px;
     }
   }
 </style>
