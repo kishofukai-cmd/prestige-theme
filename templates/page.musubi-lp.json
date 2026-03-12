@@ -54,6 +54,7 @@
     },
     "guarantee": {
       "type": "musubi-lp-guarantee",
+      "disabled": true,
       "settings": {}
     },
     "makuake": {
