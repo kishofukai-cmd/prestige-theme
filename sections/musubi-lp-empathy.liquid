@@ -88,6 +88,9 @@
     margin: 0;
     text-align: center;
   }
+  .empathy__solution-text p {
+    margin: 0;
+  }
   .empathy__solution-text strong {
     color: #1a1a1a;
     font-size: 1.2rem;
@@ -147,7 +150,7 @@
           <img src="https://static.makuake.com/upload/project/41782/detail_41782_17212095920957.png" alt="毎日心から休めていますか" loading="lazy">
         {% endif %}
       </div>
-      <p class="empathy__solution-text">{{ section.settings.solution_text | default: '包まれる感覚が、<br><strong>休息モードへ導く。</strong>' }}</p>
+      <div class="empathy__solution-text">{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
     </div>
   </div>
 </section>
