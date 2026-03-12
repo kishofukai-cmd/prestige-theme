@@ -1,6 +1,143 @@
+{% doc %}
+  @prompt
+    MUSUBI Heroセクション（sections/musubi-hero.liquid）のカスタマイズ:
+    
+    現在、価格の下に「✓ギフトラッピング対応」というテキストがLiquidファイルに直接ハードコードされています。これを以下のように変更してください:
+    
+    1. セクション設定に「特徴リスト」というブロックタイプを追加
+    2. 各ブロックには「テキスト」フィールドを持たせる
+    3. デフォルトで以下の4つのブロックを作成:
+       - ギフトラッピング対応
+       - オールシーズン対応
+       - ビーズレス
+       - アニマルフリー
+    4. 表示位置は価格「¥２９，８００〜（税込）」の直下
+    5. 各項目の前に「✓」マークを自動で表示
+    6. 現在のスタイルを維持（フォントサイズ、色、配置など）
+    7. 管理画面から項目の追加・削除・編集が可能にする
+    
+    現在ハードコードされている「✓ギフトラッピング対応」のテキスト部分を、このブロックループに置き換えてください。
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-feature-list-{{ ai_gen_id }} {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-feature-item-{{ ai_gen_id }} {
+    font-size: 14px;
+    color: #1c1c1c;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .ai-feature-checkmark-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ai-feature-text-{{ ai_gen_id }} {
+    flex: 1;
+  }
+{% endstyle %}
+
+<div class="ai-feature-list-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.feature_1 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_1 }}</span>
+    </div>
+  {% endif %}
+  
+  {% if block.settings.feature_2 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_2 }}</span>
+    </div>
+  {% endif %}
+  
+  {% if block.settings.feature_3 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_3 }}</span>
+    </div>
+  {% endif %}
+  
+  {% if block.settings.feature_4 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_4 }}</span>
+    </div>
+  {% endif %}
+  
+  {% if block.settings.feature_5 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_5 }}</span>
+    </div>
+  {% endif %}
+  
+  {% if block.settings.feature_6 != blank %}
+    <div class="ai-feature-item-{{ ai_gen_id }}">
+      <span class="ai-feature-checkmark-{{ ai_gen_id }}">✓</span>
+      <span class="ai-feature-text-{{ ai_gen_id }}">{{ block.settings.feature_6 }}</span>
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "商品特徴リスト",
+  "settings": [
+    {
+      "type": "header",
+      "content": "特徴項目"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "特徴 1",
+      "default": "ギフトラッピング対応"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "特徴 2",
+      "default": "オールシーズン対応"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "特徴 3",
+      "default": "ビーズレス"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "特徴 4",
+      "default": "アニマルフリー"
+    },
+    {
+      "type": "text",
+      "id": "feature_5",
+      "label": "特徴 5"
+    },
+    {
+      "type": "text",
+      "id": "feature_6",
+      "label": "特徴 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "商品特徴リスト"
+    }
+  ]
+}
 {% endschema %}
