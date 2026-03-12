@@ -13,13 +13,6 @@
     "hero": {
       "type": "musubi-lp-hero",
       "blocks": {
-        "proof_1": {
-          "type": "proof_item",
-          "settings": {
-            "number": "2,000",
-            "label": "枚突破"
-          }
-        },
         "proof_item_EKFgXW": {
           "type": "proof_item",
           "settings": {
@@ -43,7 +36,6 @@
         }
       },
       "block_order": [
-        "proof_1",
         "proof_item_EKFgXW",
         "proof_2",
         "proof_3"
@@ -388,7 +380,7 @@
         "heading": "検証データが証明するMUSUBIの快適性",
         "musubi_value": "約47〜48%",
         "musubi_desc": "60分間ほぼ一定で推移",
-        "other_value": "55% → 70%",
+        "other_value": "約55% → 70%",
         "other_desc": "時間経過とともに上昇",
         "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
         "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
