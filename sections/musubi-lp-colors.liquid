@@ -1,16 +1,147 @@
+<style>
+  .colors {
+    padding: 80px 20px;
+    background: #faf5ef;
+    text-align: center;
+  }
+  .colors .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .colors .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+  }
+  .colors__showcase {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .colors__showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .colors__name {
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.05em;
+    margin: 0 0 20px;
+  }
+  .colors__swatches {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .colors__swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .colors__swatch:hover {
+    transform: scale(1.1);
+  }
+  .colors__swatch--active {
+    border-color: #b8a78a;
+    box-shadow: 0 0 0 2px #b8a78a;
+  }
+  .colors__carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .colors__carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    padding: 4px 8px;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+  .colors__carousel-arrow:hover {
+    color: #333;
+  }
+  .colors__carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+  }
+  .colors__carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .colors__carousel-item {
+    flex: 0 0 auto;
+    width: 90px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .colors__carousel-item--active {
+    border-color: #b8a78a;
+  }
+  .colors__carousel-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+  .colors__carousel-item span {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    padding: 6px 4px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 768px) {
+    .colors {
+      padding: 60px 16px;
+    }
+    .colors .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+    }
+    .colors__swatch {
+      width: 36px;
+      height: 36px;
+    }
+    .colors__carousel-item {
+      width: 80px;
+    }
+  }
+</style>
+
 <section class="colors" id="colors">
   <div class="container">
     <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'カラーバリエーション' }}</h2>
-    <!-- メインショーケース画像 -->
     <div class="colors__showcase" data-reveal>
       {% assign first_block = section.blocks | first %}
       <img id="colors-main-img"
         src="{% if first_block.settings.image != blank %}{{ first_block.settings.image | img_url: '1200x' }}{% elsif first_block.settings.image_url != blank %}{{ first_block.settings.image_url }}{% else %}https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200{% endif %}"
         alt="{{ first_block.settings.name | default: 'Powder Beige' }}" loading="lazy">
     </div>
-    <!-- カラー名表示 -->
     <p class="colors__name" id="colors-name" data-reveal>{{ first_block.settings.name | default: 'Powder Beige' }}</p>
-    <!-- スウォッチ -->
     <div class="colors__swatches" data-reveal>
       {% for block in section.blocks %}
         <div class="colors__swatch{% if forloop.first %} colors__swatch--active{% endif %}"
@@ -21,7 +152,6 @@
         </div>
       {% endfor %}
     </div>
-    <!-- カラー別カルーセル -->
     <div class="colors__carousel" data-reveal>
       <button class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
       <div class="colors__carousel-track">
@@ -37,6 +167,40 @@
     </div>
   </div>
 </section>
+
+<script>
+  (function() {
+    const section = document.querySelector('.colors');
+    if (!section) return;
+    const mainImg = section.querySelector('#colors-main-img');
+    const nameEl = section.querySelector('#colors-name');
+    const swatches = section.querySelectorAll('.colors__swatch');
+    const items = section.querySelectorAll('.colors__carousel-item');
+
+    function setActive(colorName) {
+      swatches.forEach(s => {
+        s.classList.toggle('colors__swatch--active', s.dataset.color === colorName);
+        if (s.dataset.color === colorName && s.dataset.img) {
+          mainImg.src = s.dataset.img;
+          mainImg.alt = colorName;
+        }
+      });
+      items.forEach(i => i.classList.toggle('colors__carousel-item--active', i.dataset.color === colorName));
+      if (nameEl) nameEl.textContent = colorName;
+    }
+
+    swatches.forEach(s => s.addEventListener('click', () => setActive(s.dataset.color)));
+    items.forEach(i => i.addEventListener('click', () => setActive(i.dataset.color)));
+
+    const track = section.querySelector('.colors__carousel-track');
+    section.querySelector('.colors__carousel-arrow--left').addEventListener('click', () => {
+      track.scrollBy({ left: -100, behavior: 'smooth' });
+    });
+    section.querySelector('.colors__carousel-arrow--right').addEventListener('click', () => {
+      track.scrollBy({ left: 100, behavior: 'smooth' });
+    });
+  })();
+</script>
 
 {% schema %}
 {
