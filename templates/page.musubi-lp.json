@@ -377,7 +377,7 @@
       "type": "musubi-lp-comparison",
       "settings": {
         "label": "LABORATORY TEST",
-        "heading": "検証データが証明するMUSUBIの快適性",
+        "heading": "検証データが証明するMUSUBIの快適な湿度コントロール",
         "musubi_value": "約47〜48%",
         "musubi_desc": "60分間ほぼ一定で推移",
         "other_value": "約55% → 70%",
