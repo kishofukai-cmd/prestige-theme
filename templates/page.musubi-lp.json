@@ -249,21 +249,21 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>頭のなかが<br/>ぐるぐる休まらない</p>"
+            "text": "<p>頭のなかが<br/>ぐるぐる<br/>休まらない</p>"
           }
         },
         "worry_2": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>波立つように<br>心が落ち着かない</p>"
+            "text": "<p>波立つように<br/>心が落ち着かない</p>"
           }
         },
         "worry_3": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>リラックスする<br>習慣が続かない</p>"
+            "text": "<p>リラックスする<br/>習慣が続かない</p>"
           }
         }
       },
