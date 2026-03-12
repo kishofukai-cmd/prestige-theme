@@ -1,6 +1,191 @@
+{% doc %}
+  @prompt
+    MUSUBI Heroセクションに、価格の下に表示される特徴リスト（マイクロコピー）を管理するための入力フィールドを追加してください。
+    
+    要件:
+    - 複数の特徴を入力できるリスト形式のフィールド
+    - 各項目の前に「✓」マークが自動で表示される
+    - 現在表示されている「✓ギフトラッピング対応」と同じスタイルで表示
+    - デフォルト値として以下を設定:
+      - ギフトラッピング対応
+      - オールシーズン対応
+      - ビーズレス
+      - アニマルフリー
+    - 価格「¥２９，８００〜（税込）」の直下に表示される位置に配置
+    - 管理画面で簡単に追加・削除・編集できるようにする
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-features-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+  }
+
+  .ai-hero-features__list-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-hero-features__item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: {{ block.settings.font_size }}px;
+    color: {{ block.settings.text_color }};
+    font-family: {{ block.settings.text_font.family }}, {{ block.settings.text_font.fallback_families }};
+    font-weight: {{ block.settings.text_font.weight }};
+    line-height: 1.5;
+  }
+
+  .ai-hero-features__checkmark-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.checkmark_size }}px;
+    height: {{ block.settings.checkmark_size }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ block.settings.checkmark_color }};
+    font-size: {{ block.settings.checkmark_size }}px;
+    line-height: 1;
+  }
+
+  .ai-hero-features__text-{{ ai_gen_id }} {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-features__item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+    }
+
+    .ai-hero-features__checkmark-{{ ai_gen_id }} {
+      width: {{ block.settings.checkmark_size | times: 0.9 }}px;
+      height: {{ block.settings.checkmark_size | times: 0.9 }}px;
+      font-size: {{ block.settings.checkmark_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-features-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <ul class="ai-hero-features__list-{{ ai_gen_id }}">
+    {% for i in (1..8) %}
+      {% assign feature_key = 'feature_' | append: i %}
+      {% assign feature_text = block.settings[feature_key] %}
+      
+      {% if feature_text != blank %}
+        <li class="ai-hero-features__item-{{ ai_gen_id }}">
+          <span class="ai-hero-features__checkmark-{{ ai_gen_id }}" aria-hidden="true">✓</span>
+          <span class="ai-hero-features__text-{{ ai_gen_id }}">{{ feature_text }}</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "特徴リスト",
+  "settings": [
+    {
+      "type": "header",
+      "content": "特徴項目"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "特徴 1",
+      "default": "ギフトラッピング対応"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "特徴 2",
+      "default": "オールシーズン対応"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "特徴 3",
+      "default": "ビーズレス"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "特徴 4",
+      "default": "アニマルフリー"
+    },
+    {
+      "type": "text",
+      "id": "feature_5",
+      "label": "特徴 5"
+    },
+    {
+      "type": "text",
+      "id": "feature_6",
+      "label": "特徴 6"
+    },
+    {
+      "type": "text",
+      "id": "feature_7",
+      "label": "特徴 7"
+    },
+    {
+      "type": "text",
+      "id": "feature_8",
+      "label": "特徴 8"
+    },
+    {
+      "type": "header",
+      "content": "スタイル"
+    },
+    {
+      "type": "font_picker",
+      "id": "text_font",
+      "label": "フォント",
+      "default": "optima_nova_n4"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "フォントサイズ",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "テキストカラー",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "checkmark_size",
+      "label": "チェックマークサイズ",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "チェックマークカラー",
+      "default": "#04358d"
+    }
+  ],
+  "presets": [
+    {
+      "name": "特徴リスト"
+    }
+  ]
+}
 {% endschema %}
