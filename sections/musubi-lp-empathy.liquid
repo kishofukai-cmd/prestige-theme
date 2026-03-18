@@ -84,14 +84,17 @@
     object-fit: cover;
   }
   .empathy__solution-text {
-    padding: 24px 24px 28px;
+    margin: 20px auto 0;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px 24px;
     font-size: 1.15rem;
     line-height: 1.8;
     color: #333;
-    margin: 0;
     text-align: center;
     background: #fff;
-    border-top: 1px solid #f0ece6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   .empathy__solution-text p {
     margin: 0;
@@ -129,6 +132,7 @@
     .empathy__solution-text {
       font-size: 0.95rem;
       padding: 16px;
+      max-width: 100%;
     }
   }
 </style>
@@ -168,8 +172,8 @@
           <img src="https://static.makuake.com/upload/project/41782/detail_41782_17212095920957.png" alt="毎日心から休めていますか" loading="lazy">
         {% endif %}
       </div>
-      <div class="empathy__solution-text">{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
     </div>
+    <div class="empathy__solution-text" data-reveal>{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
   </div>
 </section>
 
