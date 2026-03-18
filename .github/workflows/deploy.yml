@@ -16,28 +16,34 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli @shopify/theme
+        run: npm install -g @shopify/cli
+
+      - name: Verify Shopify CLI
+        run: shopify version
 
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/staging'
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          CI: true
         run: |
           shopify theme push \
             --store ${{ secrets.SHOPIFY_STORE }} \
             --theme ${{ secrets.SHOPIFY_STAGING_THEME_ID }} \
-            --no-color
+            --no-color \
+            --nodelete
 
       - name: Deploy to Production
         if: github.ref == 'refs/heads/main'
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+          CI: true
         run: |
           shopify theme push \
             --store ${{ secrets.SHOPIFY_STORE }} \
             --theme ${{ secrets.SHOPIFY_MAIN_THEME_ID }} \
-            --no-color
-
+            --no-color \
+            --nodelete
