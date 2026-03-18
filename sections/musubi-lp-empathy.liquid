@@ -4,10 +4,7 @@
     background: #faf9f7;
     text-align: center;
   }
-  .container--narrow {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+
   .empathy__title {
     font-size: 1.6rem;
     font-weight: 700;
@@ -18,7 +15,8 @@
   .empathy__list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 720px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,24 +78,7 @@
     display: block;
     object-fit: cover;
   }
-  .empathy__solution-text {
-    padding: 20px 24px 24px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    margin: 0;
-    text-align: center;
-    background: #fff;
-    position: relative;
-    z-index: 1;
-  }
-  .empathy__solution-text p {
-    margin: 0;
-  }
-  .empathy__solution-text strong {
-    color: #1a1a1a;
-    font-size: 1.2rem;
-  }
+
 
   @media (max-width: 768px) {
     .empathy {
@@ -130,7 +111,7 @@
 </style>
 
 <section class="empathy" id="empathy">
-  <div class="container--narrow">
+  <div class="container">
     <h2 class="empathy__title" data-reveal>{{ section.settings.heading | default: 'こんな夜、ありませんか？' }}</h2>
     <ul class="empathy__list" data-reveal>
       {% for block in section.blocks %}
@@ -164,7 +145,6 @@
           <img src="https://static.makuake.com/upload/project/41782/detail_41782_17212095920957.png" alt="毎日心から休めていますか" loading="lazy">
         {% endif %}
       </div>
-      <div class="empathy__solution-text">{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
     </div>
   </div>
 </section>
