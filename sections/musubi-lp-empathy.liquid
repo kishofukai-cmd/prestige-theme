@@ -4,12 +4,9 @@
     background: #faf9f7;
     text-align: center;
   }
-  .empathy__container {
+  .container--narrow {
     max-width: 720px;
     margin: 0 auto;
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
   }
   .empathy__title {
     font-size: 1.6rem;
@@ -66,13 +63,11 @@
     50% { transform: translateY(8px); }
   }
   .empathy__solution {
-    display: block;
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    max-width: 400px;
-    width: 100%;
+    max-width: 480px;
     margin: 0 auto;
   }
   .empathy__solution-img {
@@ -86,24 +81,22 @@
     object-fit: cover;
   }
   .empathy__solution-text {
-    margin: 20px auto 0;
-    max-width: 400px;
-    width: 100%;
-    padding: 20px 24px;
-    font-size: 1.15rem;
+    padding: 20px 24px 24px;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
+    margin: 0;
     text-align: center;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 1;
   }
   .empathy__solution-text p {
     margin: 0;
   }
   .empathy__solution-text strong {
     color: #1a1a1a;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   @media (max-width: 768px) {
@@ -127,20 +120,17 @@
     }
     .empathy__solution {
       max-width: 100%;
-      width: 100%;
-      margin: 0 auto;
       border-radius: 12px;
     }
     .empathy__solution-text {
       font-size: 0.95rem;
       padding: 16px;
-      max-width: 100%;
     }
   }
 </style>
 
 <section class="empathy" id="empathy">
-  <div class="empathy__container">
+  <div class="container--narrow">
     <h2 class="empathy__title" data-reveal>{{ section.settings.heading | default: 'こんな夜、ありませんか？' }}</h2>
     <ul class="empathy__list" data-reveal>
       {% for block in section.blocks %}
@@ -174,14 +164,7 @@
           <img src="https://static.makuake.com/upload/project/41782/detail_41782_17212095920957.png" alt="毎日心から休めていますか" loading="lazy">
         {% endif %}
       </div>
-    </div>
-    <div class="empathy__solution-text" data-reveal>
-      {% assign stripped_text = section.settings.solution_text | strip_html | strip %}
-      {% if stripped_text != blank %}
-        {{ section.settings.solution_text }}
-      {% else %}
-        <p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>
-      {% endif %}
+      <div class="empathy__solution-text">{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
     </div>
   </div>
 </section>
