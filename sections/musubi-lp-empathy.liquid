@@ -173,7 +173,13 @@
         {% endif %}
       </div>
     </div>
-    <div class="empathy__solution-text" data-reveal>{{ section.settings.solution_text | default: '<p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>' }}</div>
+    <div class="empathy__solution-text" data-reveal>
+      {% if section.settings.solution_text != blank %}
+        {{ section.settings.solution_text }}
+      {% else %}
+        <p>包まれる感覚が、<br><strong>休息モードへ導く。</strong></p>
+      {% endif %}
+    </div>
   </div>
 </section>
 
