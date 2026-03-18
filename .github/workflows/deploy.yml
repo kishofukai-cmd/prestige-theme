@@ -34,7 +34,8 @@ jobs:
             --store ${{ secrets.SHOPIFY_STORE }} \
             --theme ${{ secrets.SHOPIFY_STAGING_THEME_ID }} \
             --no-color \
-            --nodelete
+            --nodelete \
+            --allow-live
 
       - name: Deploy to Production
         if: github.ref == 'refs/heads/main'
@@ -46,4 +47,5 @@ jobs:
             --store ${{ secrets.SHOPIFY_STORE }} \
             --theme ${{ secrets.SHOPIFY_MAIN_THEME_ID }} \
             --no-color \
-            --nodelete
+            --nodelete \
+            --allow-live
