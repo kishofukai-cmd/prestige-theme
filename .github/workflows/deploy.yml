@@ -23,12 +23,21 @@ jobs:
 
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/staging'
-        run: shopify theme push --store ${{ secrets.SHOPIFY_STORE }} --theme ${{ secrets.SHOPIFY_STAGING_THEME_ID }} --allow-live
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          shopify theme push \
+            --store ${{ secrets.SHOPIFY_STORE }} \
+            --theme ${{ secrets.SHOPIFY_STAGING_THEME_ID }} \
+            --no-color
 
       - name: Deploy to Production
         if: github.ref == 'refs/heads/main'
-        run: shopify theme push --store ${{ secrets.SHOPIFY_STORE }} --theme ${{ secrets.SHOPIFY_MAIN_THEME_ID }} --allow-live
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          shopify theme push \
+            --store ${{ secrets.SHOPIFY_STORE }} \
+            --theme ${{ secrets.SHOPIFY_MAIN_THEME_ID }} \
+            --no-color
+
