@@ -4,15 +4,7 @@
     background: #faf9f7;
     text-align: center;
   }
-  .empathy .container--narrow {
-    max-width: 720px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
+
   .empathy__title {
     font-size: 1.6rem;
     font-weight: 700;
@@ -23,7 +15,8 @@
   .empathy__list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 720px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -135,7 +128,7 @@
 </style>
 
 <section class="empathy" id="empathy">
-  <div class="container--narrow">
+  <div class="container">
     <h2 class="empathy__title" data-reveal>{{ section.settings.heading | default: 'こんな夜、ありませんか？' }}</h2>
     <ul class="empathy__list" data-reveal>
       {% for block in section.blocks %}
