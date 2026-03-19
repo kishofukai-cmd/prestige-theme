@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -149,6 +158,16 @@
             "content": "<p>予約および受注生産品につきましては、キャンセル・サイズ・カラーの変更はできません。</p><p>※他通常商品と一緒に購入される場合、配送時期は本アイテムの時期に準じますのでご了承ください。</p><p>他商品の通常配送をご希望の方は個別の決済をお願いいたします。</p>",
             "page": ""
           }
+        },
+        "accordion_RgGzdN": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "picto-love",
+            "title": "<strong>春の夜に、やさしい重みとぬくもりを。</strong>",
+            "content": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p><p>リカバリー加重ブランケット “MUSUBI -en-” は、体全体に心地よい重みを感じることで、静かなリラックス感をもたらす機能性ブランケットです。</p><p>さらに、シンプルで洗練されたデザインはインテリアに溶け込みながらも、一日の疲れをほどく特別な時間を演出します。</p><p>日常のリフレッシュや自分だけのリラックス空間をより豊かにするアイテムとしておすすめです。</p><h4><strong>1.その重さがもたらす新しい感覚。眠りが変わる。</strong></h4><h4><strong>2.編みがもたらす、その柔らかさ。包こまれる感覚。</strong></h4><h4><strong>3.日常使いにイージーケアの快適な毎日。</strong></h4><h4><strong>4.リサイクルでつながる新しいサイクル。</strong></h4><p><strong>※ご注文いただいた商品は1週間程度でお届けいたします。</strong></p><p>----------------------------------------</p><h3><strong>寒い夜にも最適、プレミアムフランネル生地を使用<br/>ブランケット<br/></strong><a href=\"https://kapok-knot.com/products/musubi-on\"><strong>MUSUBI-ON-はこちらから</strong></a></h3><h3><strong>まるクッション<br/></strong><a href=\"https://kapok-knot.com/products/musubi-pon\"><strong>MUSUBI-pon-はこちらから</strong></a></h3><p>----------------------------------------</p><p>【現在までの販売実績】<br/>2025年10月17日先行予約/完売<br/>2025年9月12日一般販売/完売<br/>2025年7月25日先行予約/完売<br/>2025年6月27日先行予約/完売<br/>2025年5月23日先行予約/完売<br/>2025年1月一般販売/完売<br/>2024年11月先行予約/完売<br/>2024年10月先行予約/完売<br/>----------------------------------------</p><p>※たくさんの再販リクエストをいただき、現在は数量限定でご用意しております。</p><h5><a href=\"https://kapok-knot.com/pages/recovery-weighted-blanket-musubi-en\"><strong>特設サイトはこちら</strong></a></h5><h5><a href=\"https://kapok-knot.com/pages/musubi-en-operating-instructions\"><strong>MUSUBIのお手入れ方法はこちら</strong></a></h5><p> </p><p>前シリーズの“MUSUBI”はたくさんの方にご愛顧していただき誠にありがとうございます。<br/></p><p>・・・・・・・・・・・・・・・・・<br/>透け感：なし<br/>伸縮性：あり<br/>生地の厚さ：普通<br/>洗濯：手洗い可<br/>Made in China<br/>・・・・・・・・・・・・・・・・・</p><p>※表示される画像の色は、モニターやブラウザ等によって実際の商品と若干異なる場合がございます。<br/>※モデル画像はサンプルを使用しています。<br/>※生地寄り画像を正規の商品の色味に近づけております</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -169,7 +188,8 @@
         "c5a5fa44-a0a3-4e8c-a05c-d0507553fa8c",
         "3c9a6d8c-00bf-46b1-845d-f137c5a676d7",
         "6cb9a9f6-89a5-438e-8426-9ceae0412002",
-        "01b1ccc4-09e2-41aa-971f-e116272ac242"
+        "01b1ccc4-09e2-41aa-971f-e116272ac242",
+        "accordion_RgGzdN"
       ],
       "custom_css": [
         "ul {margin: 0;}"
