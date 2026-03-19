@@ -28,6 +28,12 @@
             "show_taxes_notice": false
           }
         },
+        "text_QNtz78": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
+          }
+        },
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7": {
           "type": "inventory",
           "disabled": true,
@@ -110,12 +116,6 @@
             "text_color": "#04358d"
           }
         },
-        "text_QNtz78": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
-          }
-        },
         "accordion_RgGzdN": {
           "type": "accordion",
           "settings": {
@@ -181,6 +181,7 @@
         "vendor",
         "title",
         "price",
+        "text_QNtz78",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
         "quantity_selector",
@@ -191,7 +192,6 @@
         "description",
         "6ce7ed4b-a9b3-4494-a56a-fa582423f872",
         "926ba012-18fb-4165-b230-02ff7116a302",
-        "text_QNtz78",
         "accordion_RgGzdN",
         "c4dc4d29-3cf6-4fc3-99f8-ed00028b0fc6",
         "c5a5fa44-a0a3-4e8c-a05c-d0507553fa8c",
