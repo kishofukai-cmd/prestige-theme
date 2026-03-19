@@ -57,7 +57,7 @@
           "type": "button",
           "settings": {
             "link": "shopify://blogs/news/musubi",
-            "text": "窶廴USUBI窶昴・縺雁叙謇ｱ縺・婿豕輔・縺薙■繧・,
+            "text": "“MUSUBI”のお取扱い方法はこちら",
             "stretch": true,
             "background": "#04358d",
             "text_color": "#ffffff"
@@ -67,7 +67,7 @@
           "type": "button",
           "settings": {
             "link": "https://lin.ee/J0oBtlT",
-            "text": "LINE逋ｻ骭ｲ縺ｧ縺雁ｾ励↑繧ｯ繝ｼ繝昴Φ驟榊ｸ・ｸｭ・・,
+            "text": "LINE登録でお得なクーポン配布中！",
             "stretch": true,
             "background": "#00b900",
             "text_color": "#ffffff"
@@ -94,7 +94,7 @@
           "disabled": true,
           "settings": {
             "link": "https://kapok-knot.com/products/miyashitaparkshowroom",
-            "text": "蠎鈴ｭ縺ｧ縺ｮ隧ｦ逹縺ｫ縺､縺・※縺ｯ縺薙■繧・,
+            "text": "店頭での試着についてはこちら",
             "stretch": true,
             "background": "#cfe0ff",
             "text_color": "#04358d"
@@ -105,7 +105,7 @@
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-pin",
-            "title": "<strong>繧ｵ繧､繧ｺ隧ｳ邏ｰ</strong>",
+            "title": "<strong>サイズ詳細</strong>",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -115,7 +115,7 @@
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-recycle",
-            "title": "<strong>邏譚・/strong>",
+            "title": "<strong>素材</strong>",
             "content": "<p>{{ product.metafields.custom.detail_fabric | metafield_tag }}</p>",
             "page": ""
           }
@@ -125,7 +125,7 @@
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-love",
-            "title": "<strong>縺頑焔蜈･繧梧婿豕・/strong>",
+            "title": "<strong>お手入れ方法</strong>",
             "content": "<p>Share some content to your customers about your products.</p>",
             "page": ""
           }
@@ -135,7 +135,7 @@
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-leaf",
-            "title": "<strong>繧ｫ繝ｼ繝懊Φ繝輔ャ繝医・繝ｪ繝ｳ繝・/strong>",
+            "title": "<strong>カーボンフットプリント</strong>",
             "content": "<p>{{ product.metafields.custom.cfp.value }}</p>",
             "page": ""
           }
@@ -145,8 +145,8 @@
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-delivery-truck",
-            "title": "<strong>驟埼√→霑泌刀</strong>",
-            "content": "<p>莠育ｴ・♀繧医・蜿玲ｳｨ逕溽肇蜩√↓縺､縺阪∪縺励※縺ｯ縲√く繝｣繝ｳ繧ｻ繝ｫ繝ｻ繧ｵ繧､繧ｺ繝ｻ繧ｫ繝ｩ繝ｼ縺ｮ螟画峩縺ｯ縺ｧ縺阪∪縺帙ｓ縲・/p><p>窶ｻ莉夜壼ｸｸ蝠・刀縺ｨ荳邱偵↓雉ｼ蜈･縺輔ｌ繧句ｴ蜷医・・騾∵凾譛溘・譛ｬ繧｢繧､繝・Β縺ｮ譎よ悄縺ｫ貅悶§縺ｾ縺吶・縺ｧ縺比ｺ・価縺上□縺輔＞縲・/p><p>莉門膚蜩√・騾壼ｸｸ驟埼√ｒ縺泌ｸ梧悍縺ｮ譁ｹ縺ｯ蛟句挨縺ｮ豎ｺ貂医ｒ縺企｡倥＞縺・◆縺励∪縺吶・/p>",
+            "title": "<strong>配送と返品</strong>",
+            "content": "<p>予約および受注生産品につきましては、キャンセル・サイズ・カラーの変更はできません。</p><p>※他通常商品と一緒に購入される場合、配送時期は本アイテムの時期に準じますのでご了承ください。</p><p>他商品の通常配送をご希望の方は個別の決済をお願いいたします。</p>",
             "page": ""
           }
         }
@@ -189,71 +189,28 @@
         "max_image_zoom_level": 3
       }
     },
-    "hero": {
-      "type": "musubi-lp-hero",
-      "blocks": {
-        "proof_item_EKFgXW": {
-          "type": "proof_item",
-          "settings": {
-            "number": "2,000",
-            "label": "譫夂ｪ∫ｴ"
-          }
-        },
-        "proof_2": {
-          "type": "proof_item",
-          "settings": {
-            "number": "408",
-            "label": "蜷肴髪謠ｴ"
-          }
-        },
-        "proof_3": {
-          "type": "proof_item",
-          "settings": {
-            "number": "笘・.1",
-            "label": "繝ｬ繝薙Η繝ｼ"
-          }
-        }
-      },
-      "block_order": [
-        "proof_item_EKFgXW",
-        "proof_2",
-        "proof_3"
-      ],
-      "settings": {
-        "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
-        "hero_image_alt": "MUSUBI繝悶Λ繝ｳ繧ｱ繝・ヨ縺ｫ蛹・∪繧後ｋ螂ｳ諤ｧ",
-        "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>繧・＆縺励＞驥阪∩縺ｧ縲・br/>莨第・縺ｮ繧ｹ繧､繝・メ繧・br/>蜈･繧後ｋ縲・/p>",
-        "hero_subtitle": "<p>縺ゅ∩縺ゅ∩縺ｫ繧医ｋ騾壽ｰ玲ｧ矩<br/>繝ｪ繧ｫ繝舌Μ繝ｼ蜉驥阪ヶ繝ｩ繝ｳ繧ｱ繝・ヨ</p>",
-        "cta_url": "",
-        "cta_text": "MUSUBI隧ｳ縺励￥隕九ｋ",
-        "price_text": "ﾂ･29,800縲・,
-        "price_tax": "(遞手ｾｼ)"
-      }
-    },
     "guarantee": {
       "type": "musubi-lp-guarantee",
-      "settings": {},
       "blocks": {
         "badge_1": {
           "type": "badge",
           "settings": {
-            "text": "繧ｮ繝輔ヨ繝ｩ繝・ヴ繝ｳ繧ｰ蟇ｾ蠢・,
-            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 12 20 22 4 22 4 12'></polyline><rect x='2' y='7' width='20' height='5'></rect><line x1='12' y1='22' x2='12' y2='7'></line></svg>"
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 12 20 22 4 22 4 12\"></polyline><rect x=\"2\" y=\"7\" width=\"20\" height=\"5\"></rect><line x1=\"12\" y1=\"22\" x2=\"12\" y2=\"7\"></line></svg>",
+            "text": "ギフトラッピング対応"
           }
         },
         "badge_2": {
           "type": "badge",
           "settings": {
-            "text": "讀咲黄逕ｱ譚･縺ｮ繧ｫ繝昴ャ繧ｯ邏譚・,
-            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'></path></svg>"
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"></path></svg>",
+            "text": "植物由来のカポック素材"
           }
         },
         "badge_3": {
           "type": "badge",
           "settings": {
-            "text": "2,000譫夂ｪ∫ｴ縺ｮ螳溽ｸｾ",
-            "icon_svg": "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'></polyline></svg>"
+            "icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg>",
+            "text": "2,000枚突破の実績"
           }
         }
       },
@@ -262,7 +219,220 @@
         "badge_2",
         "badge_3"
       ],
-      "disabled": true
+      "disabled": true,
+      "settings": {}
+    },
+    "ugc": {
+      "type": "musubi-lp-ugc",
+      "blocks": {
+        "reel_4B6Vgf": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP6KXQLk0oC",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_1": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP5PSqAEg0b",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_ehrVg9": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DVIng-EDw6_",
+            "caption": ""
+          }
+        },
+        "reel_5": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DSHPDRyEzfF",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_6": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "C93rW7dvKWP",
+            "caption": "MUSUBI使用レビュー"
+          }
+        }
+      },
+      "block_order": [
+        "reel_4B6Vgf",
+        "reel_1",
+        "reel_ehrVg9",
+        "reel_5",
+        "reel_6"
+      ],
+      "settings": {
+        "heading": "たくさんの方に<br>選ばれています",
+        "subheading": "実際にMUSUBIを体験した皆さまの声をご紹介します",
+        "instagram_url": "",
+        "follow_text": "@kapokknot をフォロー →"
+      }
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>頭のなかが<br/>ぐるぐる休まらない</p>"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>波立つように<br>心が落ち着かない</p>"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>リラックスする<br>習慣が続かない</p>"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ],
+      "settings": {
+        "heading": "こんな夜、ありませんか？",
+        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
+        "solution_image_alt": "MUSUBIに包まれて休息",
+        "solution_text": ""
+      }
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {
+        "heading": "<p>眠りには「導入スイッチ」が必要だった</p>",
+        "body": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
+      }
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
+            "number": "01",
+            "title": "やさしい重み設計",
+            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
+            "number": "02",
+            "title": "あみあみ構造",
+            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
+            "number": "03",
+            "title": "日本の暮らし基準サイズ",
+            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
+      "settings": {
+        "heading": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
+      }
+    },
+    "science": {
+      "type": "musubi-lp-science",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
+            "label": "<p>均一な重み</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
+            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
+            "label": "<p>深いリラックス<br>状態の促進</p>"
+          }
+        },
+        "paper_1": {
+          "type": "paper",
+          "settings": {
+            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
+            "url": ""
+          }
+        },
+        "paper_2": {
+          "type": "paper",
+          "settings": {
+            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
+            "url": ""
+          }
+        },
+        "paper_3": {
+          "type": "paper",
+          "settings": {
+            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "paper_1",
+        "paper_2",
+        "paper_3"
+      ],
+      "settings": {
+        "heading": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>",
+        "image_alt": "MUSUBIの使用シーン",
+        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
+        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です"
+      }
+    },
+    "comparison": {
+      "type": "musubi-lp-comparison",
+      "settings": {
+        "label": "LABORATORY TEST",
+        "heading": "検証データが証明するMUSUBIの快適性",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "other_value": "約55% → 70%",
+        "other_desc": "時間経過とともに上昇",
+        "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
+        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+      }
     },
     "makuake": {
       "type": "musubi-lp-makuake",
@@ -270,57 +440,57 @@
         "sold_1": {
           "type": "soldout_record",
           "settings": {
-            "date": "2024蟷ｴ10譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2024年10月 先行予約",
+            "status": "完売"
           }
         },
         "sold_2": {
           "type": "soldout_record",
           "settings": {
-            "date": "2024蟷ｴ11譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2024年11月 先行予約",
+            "status": "完売"
           }
         },
         "sold_3": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ1譛・荳闊ｬ雋ｩ螢ｲ",
-            "status": "螳悟｣ｲ"
+            "date": "2025年1月 一般販売",
+            "status": "完売"
           }
         },
         "sold_4": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ5譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2025年5月 先行予約",
+            "status": "完売"
           }
         },
         "sold_5": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ6譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2025年6月 先行予約",
+            "status": "完売"
           }
         },
         "sold_6": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ7譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2025年7月 先行予約",
+            "status": "完売"
           }
         },
         "sold_7": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ9譛・荳闊ｬ雋ｩ螢ｲ",
-            "status": "螳悟｣ｲ"
+            "date": "2025年9月 一般販売",
+            "status": "完売"
           }
         },
         "sold_8": {
           "type": "soldout_record",
           "settings": {
-            "date": "2025蟷ｴ10譛・蜈郁｡御ｺ育ｴ・,
-            "status": "螳悟｣ｲ"
+            "date": "2025年10月 先行予約",
+            "status": "完売"
           }
         }
       },
@@ -335,255 +505,79 @@
         "sold_8"
       ],
       "settings": {
-        "heading": "<p>繧ｯ繝ｩ繧ｦ繝峨ヵ繧｡繝ｳ繝・ぅ繝ｳ繧ｰ縺ｧ<br/>蝨ｧ蛟堤噪謾ｯ謖√ｒ迯ｲ蠕・/p>",
-        "amount": "1,349荳・・",
-        "amount_label": "蠢懈抄雉ｼ蜈･邱城｡・,
-        "supporters": "408蜷・,
-        "supporters_label": "繧ｵ繝昴・繧ｿ繝ｼ",
+        "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
+        "amount": "1,349万円",
+        "amount_label": "応援購入総額",
+        "supporters": "408名",
+        "supporters_label": "サポーター",
         "percent": "2,698%",
-        "percent_label": "驕疲・邇・,
-        "soldout_heading": "雋ｩ螢ｲ縺吶ｋ縺溘・縺ｫ蜊ｳ螳悟｣ｲ",
+        "percent_label": "達成率",
+        "soldout_heading": "販売するたびに即完売",
         "makuake_url": "",
-        "link_text": "Makuake繝励Ο繧ｸ繧ｧ繧ｯ繝医・繝ｼ繧ｸ繧定ｦ九ｋ 竊・
+        "link_text": "Makuakeプロジェクトページを見る →"
       }
     },
-    "video-loop": {
-      "type": "musubi-lp-video-loop",
-      "disabled": true,
-      "settings": {
-        "video_url": "",
-        "bg_image_alt": "MUSUBI縺ｮ螳牙ｿ・─",
-        "heading": "<p>繧・＆縺励＞螳牙ｿ・─縺後・br/>縺ゅ↑縺溘ｒ豺ｱ縺・悛繧翫∈<br/>縺・＊縺ｪ縺・・/p>"
-      }
-    },
-    "ugc": {
-      "type": "musubi-lp-ugc",
+    "reviews": {
+      "type": "musubi-lp-reviews",
       "blocks": {
-        "reel_4B6Vgf": {
-          "type": "reel",
+        "review_1": {
+          "type": "review_card",
           "settings": {
-            "reel_id": "DP6KXQLk0oC",
-            "caption": "MUSUBI菴ｿ逕ｨ繝ｬ繝薙Η繝ｼ"
+            "stars": "★★★★★",
+            "title": "重さに驚き！",
+            "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！",
+            "meta": "50代男性 / 商社勤務",
+            "tags": "#安心感, #よく眠れた気がする"
           }
         },
-        "reel_1": {
-          "type": "reel",
+        "review_2": {
+          "type": "review_card",
           "settings": {
-            "reel_id": "DP5PSqAEg0b",
-            "caption": "MUSUBI菴ｿ逕ｨ繝ｬ繝薙Η繝ｼ"
+            "stars": "★★★★★",
+            "title": "新しいジャンルでときめいた！",
+            "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！",
+            "meta": "30代女性 / アパレルメーカー勤務",
+            "tags": "#ソファ時間, #蒸れにくい"
           }
         },
-        "reel_ehrVg9": {
-          "type": "reel",
+        "review_3": {
+          "type": "review_card",
           "settings": {
-            "reel_id": "DVIng-EDw6_",
-            "caption": ""
-          }
-        },
-        "reel_5": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DSHPDRyEzfF",
-            "caption": "MUSUBI菴ｿ逕ｨ繝ｬ繝薙Η繝ｼ"
-          }
-        },
-        "reel_6": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "C93rW7dvKWP",
-            "caption": "MUSUBI菴ｿ逕ｨ繝ｬ繝薙Η繝ｼ"
+            "stars": "★★★★★",
+            "title": "一度も起きることなく…快眠！",
+            "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！",
+            "meta": "50代女性 / 主婦",
+            "tags": "#よく眠れた気がする, #安心感"
           }
         }
       },
       "block_order": [
-        "reel_4B6Vgf",
-        "reel_1",
-        "reel_ehrVg9",
-        "reel_5",
-        "reel_6"
+        "review_1",
+        "review_2",
+        "review_3"
       ],
       "settings": {
-        "heading": "縺溘￥縺輔ｓ縺ｮ譁ｹ縺ｫ<br>驕ｸ縺ｰ繧後※縺・∪縺・,
-        "subheading": "螳滄圀縺ｫMUSUBI繧剃ｽ馴ｨ薙＠縺溽嚀縺輔∪縺ｮ螢ｰ繧偵＃邏ｹ莉九＠縺ｾ縺・,
-        "instagram_url": "",
-        "follow_text": "@kapokknot 繧偵ヵ繧ｩ繝ｭ繝ｼ 竊・
+        "heading": "実際の声",
+        "avg_score": "4.1",
+        "avg_stars": "★★★★☆",
+        "review_count": "27件のレビュー",
+        "star5_pct": 52,
+        "star4_pct": 30,
+        "star3_pct": 4,
+        "star2_pct": 7,
+        "star1_pct": 7
       }
     },
-    "why": {
-      "type": "musubi-lp-why",
-      "blocks": {
-        "reason_1": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
-            "number": "01",
-            "title": "繧・＆縺励＞驥阪∩險ｭ險・,
-            "description": "菴馴㍾縺ｮ邏・縲・2%縺悟ｿ・慍繧医＞縺ｨ縺輔ｌ繧句刈驥崎ｨｭ險医ょ桁縺ｿ霎ｼ縺ｾ繧後ｋ諢溯ｦ壹′螳牙ｿ・─繧堤函縺ｿ蜃ｺ縺励∪縺吶・
-          }
-        },
-        "reason_2": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
-            "number": "02",
-            "title": "縺ゅ∩縺ゅ∩讒矩",
-            "description": "遨ｺ豌励′謚懊￠繧狗ｫ倶ｽ鍋ｷｨ縺ｿ讒矩縺ｧ闥ｸ繧後↓縺上＞縲・65譌･繧ｪ繝ｼ繝ｫ繧ｷ繝ｼ繧ｺ繝ｳ蠢ｫ驕ｩ縺ｫ縺贋ｽｿ縺・＞縺溘□縺代∪縺吶・
-          }
-        },
-        "reason_3": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
-            "number": "03",
-            "title": "譌･譛ｬ縺ｮ證ｮ繧峨＠蝓ｺ貅悶し繧､繧ｺ",
-            "description": "繧ｽ繝輔ぃ縺ｫ繧ゅ・繝・ラ縺ｫ繧ゅヵ繧｣繝・ヨ縺吶ｋ險ｭ險医よ律譛ｬ縺ｮ逕滓ｴｻ繧ｷ繝ｼ繝ｳ繧貞ｾｹ蠎募・譫舌＠縺溘し繧､繧ｺ螻暮幕縲・
-          }
-        }
-      },
-      "block_order": [
-        "reason_1",
-        "reason_2",
-        "reason_3"
-      ],
+    "cta-after-reviews": {
+      "type": "musubi-lp-cta",
       "settings": {
-        "heading": "<p>縺ｪ縺廴USUBI縺ｯ<br>驕ｸ縺ｰ繧後※縺・ｋ縺ｮ縺具ｼ・/p>"
-      }
-    },
-    "empathy": {
-      "type": "musubi-lp-empathy",
-      "blocks": {
-        "worry_1": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>鬆ｭ縺ｮ縺ｪ縺九′<br/>縺舌ｋ縺舌ｋ莨代∪繧峨↑縺・/p>"
-          }
-        },
-        "worry_2": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>豕｢遶九▽繧医≧縺ｫ<br>蠢・′關ｽ縺｡逹縺九↑縺・/p>"
-          }
-        },
-        "worry_3": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>繝ｪ繝ｩ繝・け繧ｹ縺吶ｋ<br>鄙呈・縺檎ｶ壹°縺ｪ縺・/p>"
-          }
-        }
-      },
-      "block_order": [
-        "worry_1",
-        "worry_2",
-        "worry_3"
-      ],
-      "settings": {
-        "heading": "縺薙ｓ縺ｪ螟懊√≠繧翫∪縺帙ｓ縺具ｼ・,
-        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
-        "solution_image_alt": "MUSUBI縺ｫ蛹・∪繧後※莨第・",
-        "solution_text": "<p>蛹・∪繧後ｋ諢溯ｦ壹′縲・br/><strong>莨第・繝｢繝ｼ繝峨∈蟆弱￥縲・/strong></p>"
-      }
-    },
-    "story": {
-      "type": "musubi-lp-story",
-      "blocks": {
-        "para_1": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>縲梧掠縺上せ繝槭・繧呈焔謾ｾ縺励◆譁ｹ縺後＞縺・・br>鬆ｭ縺ｧ縺ｯ縺昴≧蛻・°縺｣縺ｦ縺・※繧ゅ√ぐ繝ｪ繧ｮ繝ｪ縺ｾ縺ｧSNS縺ｮ繧ｿ繧､繝繝ｩ繧､繝ｳ繧定ｦ九▽繧√※縺励∪縺・､懊・/p>"
-          }
-        },
-        "para_2": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>縺縺九ｉ縺薙◎縲∝ｼｷ蛻ｶ逧・↓莨第・縺ｸ縺ｨ蛻・ｊ譖ｿ縺医ｋ<strong>迚ｩ逅・噪縺ｪ縲悟・繧雁哨・亥ｰ主・繧ｹ繧､繝・メ・峨・/strong>縺後き繧ｮ縺ｫ縺ｪ繧九→遘√◆縺｡縺ｯ閠・∴縺ｾ縺励◆縲・/p>"
-          }
-        }
-      },
-      "block_order": [
-        "para_1",
-        "para_2"
-      ],
-      "settings": {
-        "heading": "逵繧翫↓縺ｯ縲悟ｰ主・繧ｹ繧､繝・メ縲阪′蠢・ｦ√□縺｣縺・,
-        "lead_text": "<p>迴ｾ莉｣縺ｮ逹｡逵隱ｲ鬘後・br>迸第Φ繧・ヵ繝ｬ繧ｰ繝ｩ繝ｳ繧ｹ縺縺代〒縺ｯ縲√←縺薙°迚ｩ雜ｳ繧翫↑縺・・/p>"
-      }
-    },
-    "science": {
-      "type": "musubi-lp-science",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
-            "label": "<p>蝮・ｸ縺ｪ驥阪∩</p>"
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
-            "label": "<p>豺ｱ驛ｨ蝨ｧ蛻ｺ豼<br>Deep Pressure Touch</p>"
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
-            "label": "<p>豺ｱ縺・Μ繝ｩ繝・け繧ｹ<br>迥ｶ諷九・菫・ｲ</p>"
-          }
-        },
-        "paper_1": {
-          "type": "paper",
-          "settings": {
-            "title": "Chen et al., 2013 窶・Weighted blankets and sleep in insomnia",
-            "url": ""
-          }
-        },
-        "paper_2": {
-          "type": "paper",
-          "settings": {
-            "title": "Ackerley et al., 2015 窶・Positive effects of a weighted blanket on insomnia",
-            "url": ""
-          }
-        },
-        "paper_3": {
-          "type": "paper",
-          "settings": {
-            "title": "Ekholm et al., 2020 窶・Weighted blankets in psychiatric care",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "paper_1",
-        "paper_2",
-        "paper_3"
-      ],
-      "settings": {
-        "heading": "<p>縺ｪ縺彌"驥阪∩\"縺・br>螳牙ｿ・─縺ｫ縺､縺ｪ縺後ｋ縺ｮ縺具ｼ・/p>",
-        "image_alt": "MUSUBI縺ｮ菴ｿ逕ｨ繧ｷ繝ｼ繝ｳ",
-        "description": "<p>菴馴㍾縺ｮ邏・縲・2%縺ｮ驥阪＆縺悟・霄ｫ縺ｫ蝮・ｸ縺ｫ縺九°繧九％縺ｨ縺ｧ縲・strong>豺ｱ驛ｨ蝨ｧ蛻ｺ豼・・eep Pressure Touch・・/strong>縺檎函縺倥√Μ繝ｩ繝・け繧ｹ蜿榊ｿ懊′菫・＆繧後ｋ縺薙→縺瑚､・焚縺ｮ遐皮ｩｶ縺ｧ遉ｺ蜚・＆繧後※縺・∪縺吶・/p>",
-        "papers_note": "窶ｻ縺吶∋縺ｦ縲悟柑譫懊′遉ｺ蜚・＆繧後◆縲阪悟庄閭ｽ諤ｧ縺後≠繧九阪→縺ｮ邨占ｫ悶〒縺・
-      }
-    },
-    "comparison": {
-      "type": "musubi-lp-comparison",
-      "settings": {
-        "label": "LABORATORY TEST",
-        "heading": "讀懆ｨｼ繝・・繧ｿ縺瑚ｨｼ譏弱☆繧貴USUBI縺ｮ蠢ｫ驕ｩ諤ｧ",
-        "musubi_value": "邏・7縲・8%",
-        "musubi_desc": "60蛻・俣縺ｻ縺ｼ荳螳壹〒謗ｨ遘ｻ",
-        "other_value": "邏・5% 竊・70%",
-        "other_desc": "譎る俣邨碁℃縺ｨ縺ｨ繧ゅ↓荳頑・",
-        "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
-        "chart_alt": "蟇晏ｺ雁・貉ｿ蠎ｦ豈碑ｼ・げ繝ｩ繝・- MUSUBI縺ｯ60蛻・俣蠢ｫ驕ｩ縺ｪ貉ｿ蠎ｦ繧堤ｶｭ謖・,
-        "conclusion": "<p>MUSUBI縺ｮ縲後≠縺ｿ縺ゅ∩讒矩縲阪・驥阪∩縺ｫ繧医ｋ繝繝ｬ繧定ｧ｣豸医・br/>蠢ｫ驕ｩ縺ｪ貉ｿ蠎ｦ繧剃ｿ昴▽縺九ｉ縲・strong>365譌･繝ｻ繧ｪ繝ｼ繝ｫ繧ｷ繝ｼ繧ｺ繝ｳ豢ｻ霄阪＠縺ｾ縺吶・/strong></p>"
+        "section_id": "cta-after-reviews",
+        "heading": "体験した人だけが知る、この安心感。",
+        "cta_url": "",
+        "cta_text": "MUSUBIを詳しく見る",
+        "micro_1": "",
+        "micro_2": "✓ オールシーズン対応",
+        "micro_3": ""
       }
     },
     "sizes": {
@@ -594,14 +588,14 @@
           "settings": {
             "tab_label": "Nap Size (M)",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800",
-            "badge": "繧ｽ繝輔ぃ縺ｫ縺翫☆縺吶ａ",
+            "badge": "ソファにおすすめ",
             "featured": false,
             "name": "Nap Size (M)",
-            "price": "ﾂ･29,800",
-            "price_note": "(遞手ｾｼ)",
-            "dimensions": "邏・35 ﾃ・70 cm",
-            "features": "繧ｽ繝輔ぃ蛻ｩ逕ｨ荳ｭ蠢・ 譏ｼ蟇晏髄縺・ 霆ｽ繧√′螂ｽ縺ｿ縺ｮ譁ｹ",
-            "note": "譌･譛ｬ縺ｮ繧ｽ繝輔ぃ縺ｮ蟷ｳ蝮・･･陦後″70cm縺ｫ蝓ｺ縺･縺崎ｨｭ險医よ律荳ｭ縺ｮ譚溘・髢薙・莨第・繧・ｻｮ逵縺ｫ縲・
+            "price": "¥29,800",
+            "price_note": "(税込)",
+            "dimensions": "約135 × 70 cm",
+            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
           }
         },
         "size_sleep": {
@@ -609,14 +603,14 @@
           "settings": {
             "tab_label": "Sleep Size (L)",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800",
-            "badge": "繝吶ャ繝峨↓縺翫☆縺吶ａ",
+            "badge": "ベッドにおすすめ",
             "featured": true,
             "name": "Sleep Size (L)",
-            "price": "ﾂ･39,800",
-            "price_note": "(遞手ｾｼ)",
-            "dimensions": "邏・75 ﾃ・105 cm",
-            "features": "繝吶ャ繝牙茜逕ｨ, 驥阪＞蟶・屮縺悟･ｽ縺・ 蛹・∪繧後◆縺・婿",
-            "note": "1譌･縺ｮ邨ゅｏ繧翫↓蜈ｨ霄ｫ繧貞桁繧螳牙ｿ・─縲ゅ・繝・ラ縺ｫ豐医ｓ縺ｧ縺・￥繧医≧縺ｪ蠢ｫ驕ｩ縺輔ｒ縺雁ｱ翫￠縺励∪縺吶・
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "約175 × 105 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
         }
       },
@@ -625,7 +619,7 @@
         "size_sleep"
       ],
       "settings": {
-        "heading": "縺ゅ↑縺溘↓蜷医≧繧ｵ繧､繧ｺ縺ｯ・・
+        "heading": "あなたに合うサイズは？"
       }
     },
     "colors": {
@@ -680,18 +674,18 @@
         "color_5"
       ],
       "settings": {
-        "heading": "繧ｫ繝ｩ繝ｼ繝舌Μ繧ｨ繝ｼ繧ｷ繝ｧ繝ｳ"
+        "heading": "カラーバリエーション"
       }
     },
     "cta-after-colors": {
       "type": "musubi-lp-cta",
       "settings": {
         "section_id": "cta-after-colors",
-        "heading": "縺ゅ↑縺溘↓縺ｴ縺｣縺溘ｊ縺ｮ荳譫壹ｒ縲・,
+        "heading": "あなたにぴったりの一枚を。",
         "cta_url": "",
-        "cta_text": "繧ｵ繧､繧ｺ繝ｻ繧ｫ繝ｩ繝ｼ繧帝∈縺ｶ",
+        "cta_text": "サイズ・カラーを選ぶ",
         "micro_1": "",
-        "micro_2": "",
+        "micro_2": "✓ オールシーズン対応",
         "micro_3": ""
       }
     },
@@ -701,17 +695,17 @@
         "care_1": {
           "type": "care_point",
           "settings": {
-            "icon": "笨ｨ",
-            "title": "譌･蟶ｸ縺ｯ繧ｷ繝･繝・→縺ｲ縺ｨ縺ｵ縺阪〒螳檎ｵ・,
-            "description": "豈取律豌苓ｲ縺｣縺ｦ豢励≧蠢・ｦ√・縺ゅｊ縺ｾ縺帙ｓ縲よ勸谿ｵ縺ｯ繝輔Ξ繧ｰ繝ｩ繝ｳ繧ｹ繧・ｶ郁・繧ｹ繝励Ξ繝ｼ縺ｧ豌苓ｻｽ縺ｪ繧ｱ繧｢繧偵ゅ≠縺ｿ縺ゅ∩讒矩縺ｧ鬚ｨ騾壹＠縺瑚憶縺上√ル繧ｪ繧､縺後％繧ゅｊ縺ｫ縺上＞險ｭ險医〒縺吶・
+            "icon": "✨",
+            "title": "日常はシュッとひとふきで完結",
+            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
           }
         },
         "care_2": {
           "type": "care_point",
           "settings": {
-            "icon": "ｫｧ",
-            "title": "譛ｬ豌励・繧ｱ繧｢縺ｯ縲後＃螳ｶ蠎ｭ縺ｧ謇区ｴ励＞縲・,
-            "description": "縲梧ｱ励ｄ豎壹ｌ縺梧ｰ励↓縺ｪ縺｣縺ｦ縲√＠縺｣縺九ｊ豢励＞縺溘＞譎ゅ・・溘阪ｂ縺｡繧阪ｓ縺泌ｮｶ蠎ｭ縺ｧ縺ｮ謇区ｴ励＞縺悟庄閭ｽ縺ｧ縺吶り｡帷函髱｢縺梧ｰ励↓縺ｪ繧区婿縺ｧ繧ゅ∝ｮ牙ｿ・＠縺ｦ髟ｷ縺上♀菴ｿ縺・＞縺溘□縺代∪縺吶・
+            "icon": "🫧",
+            "title": "本気のケアは「ご家庭で手洗い」",
+            "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。"
           }
         }
       },
@@ -720,82 +714,19 @@
         "care_2"
       ],
       "settings": {
-        "heading": "<p>縲碁㍾縺・ｼ晄焔蜈･繧後′螟ｧ螟峨・br>縺昴・蟶ｸ隴倥ｒ螟峨∴縺ｾ縺・/p>",
-        "image_alt": "譌･蟶ｸ縺ｮ繧ｱ繧｢"
+        "heading": "<p>「重い＝手入れが大変」<br>その常識を変えます</p>",
+        "image_alt": "日常のケア"
       }
     },
     "cta-after-care": {
       "type": "musubi-lp-cta",
       "settings": {
         "section_id": "cta-after-care",
-        "heading": "豈取律縺ｮ莨第・縺後∝､峨ｏ繧九・,
+        "heading": "毎日の休息が、変わる。",
         "cta_url": "",
-        "cta_text": "MUSUBI繧定ｩｳ縺励￥隕九∴繧・,
-        "micro_1": "笨・螳ｶ蠎ｭ縺ｧ謇区ｴ励＞OK",
-        "micro_2": "笨・365譌･繧ｪ繝ｼ繝ｫ繧ｷ繝ｼ繧ｺ繝ｳ",
-        "micro_3": ""
-      }
-    },
-    "reviews": {
-      "type": "musubi-lp-reviews",
-      "blocks": {
-        "review_1": {
-          "type": "review_card",
-          "settings": {
-            "stars": "笘・・笘・・笘・,
-            "title": "驥阪＆縺ｫ鬩壹″・・,
-            "text": "縺・▽繧りｻｽ縺・い繧ｦ繧ｿ繝ｼ縺ｧ縺贋ｸ冶ｩｱ縺ｫ縺ｪ縺｣縺ｦ縺・ｋ縺ｮ縺ｧ驥阪＆縺ｫ鬩壹″縺ｾ縺励◆・∝・縲・∝ｸ・屮縺ｯ驥阪＞縺ｻ縺・′螂ｽ縺阪↑縺ｮ縺ｧ縲ヾleep繧ｵ繧､繧ｺ縺ｧ蟇昴ｋ縺ｮ縺梧･ｽ縺励∩縺ｧ縺呻ｼ・,
-            "meta": "50莉｣逕ｷ諤ｧ / 蝠・､ｾ蜍､蜍・,
-            "tags": "#螳牙ｿ・─, #繧医￥逵繧後◆豌励′縺吶ｋ"
-          }
-        },
-        "review_2": {
-          "type": "review_card",
-          "settings": {
-            "stars": "笘・・笘・・笘・,
-            "title": "譁ｰ縺励＞繧ｸ繝｣繝ｳ繝ｫ縺ｧ縺ｨ縺阪ａ縺・◆・・,
-            "text": "縲後Μ繧ｫ繝舌Μ繝ｼ蜉驥阪ヶ繝ｩ繝ｳ繧ｱ繝・ヨ縲阪→縺・≧讖溯・諤ｧ縺後≠繧翫▽縺､縲∬ｦ九◆逶ｮ縺ｮ縺ゅ∩縺ゅ∩縺ｮ蜿ｯ諢帙＆繧ゅ≠縺｣縺ｦ縲∵眠縺励＞繧ｸ繝｣繝ｳ繝ｫ縺ｧ縺ｨ縺阪ａ縺阪∪縺励◆・√Μ繝薙Φ繧ｰ縺ｧ縺壹▲縺ｨ縺上ｋ縺ｾ繧後※縺・◆縺・〒縺呻ｼ・,
-            "meta": "30莉｣螂ｳ諤ｧ / 繧｢繝代Ξ繝ｫ繝｡繝ｼ繧ｫ繝ｼ蜍､蜍・,
-            "tags": "#繧ｽ繝輔ぃ譎る俣, #闥ｸ繧後↓縺上＞"
-          }
-        },
-        "review_3": {
-          "type": "review_card",
-          "settings": {
-            "stars": "笘・・笘・・笘・,
-            "title": "荳蠎ｦ繧りｵｷ縺阪ｋ縺薙→縺ｪ縺鞘ｦ蠢ｫ逵・・,
-            "text": "縺ｾ縺輔↓豈取律逍ｲ繧後※縺・ｋ縺ｮ縺ｧ縺吶′縲∝､應ｸｭ縺ｫ荳蠎ｦ繧りｵｷ縺阪ｋ縺薙→縺ｪ縺丞ｿｫ逵縺ｧ縺阪∪縺励◆・√＞縺､繧ゅ・謨ｰ蝗櫁ｵｷ縺阪ｋ縺ｮ縺ｫ窶ｦ驥阪＆縺御ｸ弱∴縺ｦ縺上ｌ繧句ｽｱ髻ｿ縺ｫ諢滓ｿ縺励∪縺励◆・・,
-            "meta": "50莉｣螂ｳ諤ｧ / 荳ｻ蟀ｦ",
-            "tags": "#繧医￥逵繧後◆豌励′縺吶ｋ, #螳牙ｿ・─"
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
-      "settings": {
-        "heading": "螳滄圀縺ｮ螢ｰ",
-        "avg_score": "4.1",
-        "avg_stars": "笘・・笘・・笘・,
-        "review_count": "27莉ｶ縺ｮ繝ｬ繝薙Η繝ｼ",
-        "star5_pct": 52,
-        "star4_pct": 30,
-        "star3_pct": 4,
-        "star2_pct": 7,
-        "star1_pct": 7
-      }
-    },
-    "cta-after-reviews": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "section_id": "cta-after-reviews",
-        "heading": "菴馴ｨ薙＠縺滉ｺｺ縺縺代′遏･繧九√％縺ｮ螳牙ｿ・─縲・,
-        "cta_url": "",
-        "cta_text": "MUSUBI繧定ｩｳ縺励￥隕九ｋ",
-        "micro_1": "",
-        "micro_2": "",
+        "cta_text": "MUSUBIを詳しく見える",
+        "micro_1": "✓ 家庭で手洗いOK",
+        "micro_2": "✓ オールシーズン対応",
         "micro_3": ""
       }
     },
@@ -807,9 +738,9 @@
           "settings": {
             "image": "shopify://shop_images/ruufu.jpg",
             "image_url": "",
-            "name": "蜿､豌大ｮｶ螳ｿ 繧九≧縺ｵ",
-            "type": "荳譽溯ｲｸ縺怜商豌大ｮｶ螳ｿ",
-            "detail": "譎ゅ′蛻ｻ縺ｾ繧後◆螢ｮ鮗励↑遨ｺ髢薙〒縲∝慍蝓溘↓莨昴ｏ繧矩｣溘→閾ｪ辟ｶ縺ｮ諱ｵ縺ｿ繧貞袖繧上≧"
+            "name": "古民家宿 るうふ",
+            "type": "一棟貸し古民家宿",
+            "detail": "時が刻まれた壮麗な空間で、地域に伝わる食と自然の恵みを味わう"
           }
         },
         "hotel_2": {
@@ -817,9 +748,9 @@
           "settings": {
             "image": "shopify://shop_images/erbastella.jpg",
             "image_url": "",
-            "name": "繧ｪ繝ｼ繝吶Ν繧ｸ繝･ 繧ｨ繝ｫ繝舌せ繝・Λ",
-            "type": "蜈ｨ3螳､縺ｮ蟆上＆縺ｪ螳ｿ",
-            "detail": "驥手除繧ｽ繝繝ｪ繧ｨ繝励Ο螟ｫ蟀ｦ縺悟霧繧貊槫惠蝙九Μ繝医Μ繝ｼ繝・
+            "name": "オーベルジュ エルバステラ",
+            "type": "全3室の小さな宿",
+            "detail": "野菜ソムリエプロ夫婦が営む滞在型リトリート"
           }
         },
         "hotel_3": {
@@ -828,8 +759,8 @@
             "image": "shopify://shop_images/tactile.jpg",
             "image_url": "",
             "name": "TACTILE HOUSE",
-            "type": "蟾･闃ｸ蟒ｺ譚舌・菴馴ｨ灘ｮｿ",
-            "detail": "逕｣蝨ｰ縺ｮ蟾･闃ｸ繝ｻ蟒ｺ譚舌ｒ遨ｺ髢薙〒菴馴ｨ薙〒縺阪ｋ螳ｿ豕頑命險ｭ"
+            "type": "工芸建材の体験宿",
+            "detail": "産地の工芸・建材を空間で体験できる宿泊施設"
           }
         }
       },
@@ -839,17 +770,17 @@
         "hotel_3"
       ],
       "settings": {
-        "heading": "MUSUBI繧剃ｽ馴ｨ薙〒縺阪ｋ螳ｿ",
-        "description": "蜈ｨ蝗ｽ縺ｮ縺薙□繧上ｊ縺ｮ螳ｿ縺ｧ縲∬ｳｼ蜈･蜑阪↓MUSUBI縺ｮ蟇晏ｿ・慍繧偵♀隧ｦ縺励＞縺溘□縺代∪縺吶・
+        "heading": "MUSUBIを体験できる宿",
+        "description": "全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。"
       }
     },
     "gift": {
       "type": "musubi-lp-gift",
       "settings": {
         "image": "shopify://shop_images/188.webp",
-        "image_alt": "繧ｮ繝輔ヨ繧､繝｡繝ｼ繧ｸ",
-        "title": "<p>螟ｧ蛻・↑縺ゅ・莠ｺ縺ｸ縲・br/>讌ｵ荳翫・縲御ｼ第・縲阪ｒ雍医ｋ縲・/p>",
-        "description": "<p>縺・▽繧る大ｼｵ縺｣縺ｦ縺・ｋ縺泌ｮｶ譌上ｄ繝代・繝医リ繝ｼ縺ｸ縲・br/>蟆ら畑縺ｮ繧ｮ繝輔ヨ繝懊ャ繧ｯ繧ｹ・医Λ繝・ヴ繝ｳ繧ｰ・峨ｒ霑ｽ蜉縺ｧ謇矩・蜿ｯ閭ｽ縺ｧ縺吶・/p>",
+        "image_alt": "ギフトイメージ",
+        "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
+        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>専用のギフトボックス（ラッピング）を追加で手配可能です。</p>",
         "note": ""
       }
     },
@@ -859,43 +790,43 @@
         "faq_1": {
           "type": "faq_item",
           "settings": {
-            "question": "繝ｪ繝薙Φ繧ｰ縺ｧ蛻ｩ逕ｨ縺ｧ縺阪∪縺吶°・・,
-            "answer": "<p>縺ｯ縺・・ap Size(M)縺ｯ繧ｽ繝輔ぃ縺ｧ縺ｮ菴ｿ逕ｨ繧呈Φ螳壹＠縺ｦ險ｭ險医＆繧後※縺・∪縺吶よ律譛ｬ縺ｮ繧ｽ繝輔ぃ縺ｮ蟷ｳ蝮・･･陦後″70cm縺ｫ蝓ｺ縺･縺上し繧､繧ｺ縺ｧ縺吶・/p>"
+            "question": "リビングで利用できますか？",
+            "answer": "<p>はい。Nap Size(M)はソファでの使用を想定して設計されています。日本のソファの平均奥行き70cmに基づくサイズです。</p>"
           }
         },
         "faq_2": {
           "type": "faq_item",
           "settings": {
-            "question": "襍ｷ縺阪◆繧峨ヶ繝ｩ繝ｳ繧ｱ繝・ヨ縺瑚誠縺｡縺ｦ縺・∪縺吶ょ粋縺｣縺ｦ縺・↑縺・・縺ｧ縺励ｇ縺・°・・,
-            "answer": "<p>蟇晁ｿ斐ｊ縺ｮ髫帙↓關ｽ縺｡繧九％縺ｨ縺ｯ縺斐＊縺・∪縺吶′縲∝ｯ晏・繧翫・髫帙↓蠢・慍繧医＞驥阪＆繧呈─縺倥※縺・ｌ縺ｰ縲∝香蛻・↓縺贋ｽｿ縺・＞縺溘□縺代※縺・∪縺吶・/p>"
+            "question": "起きたらブランケットが落ちています。合っていないのでしょうか？",
+            "answer": "<p>寝返りの際に落ちることはございますが、寝入りの際に心地よい重さを感じていれば、十分にお使いいただけています。</p>"
           }
         },
         "faq_3": {
           "type": "faq_item",
           "settings": {
-            "question": "2莠ｺ縺ｧ菴ｿ縺医∪縺吶°・・,
-            "answer": "<p>Sleep Size(L)縺ｯ150ﾃ・00cm縺ｧ縺吶・縺ｧ2莠ｺ縺ｧ繧ゆｽｿ逕ｨ蜿ｯ閭ｽ縺ｧ縺吶ゅ◆縺縺励∝刈驥阪ヶ繝ｩ繝ｳ繧ｱ繝・ヨ縺ｮ蜉ｹ譫懊ｒ譛螟ｧ髯舌↓諢溘§繧九◆繧√↓縺ｯ縲・莠ｺ縺ｧ縺ｮ菴ｿ逕ｨ繧偵♀縺吶☆繧√＠縺ｦ縺・∪縺吶・/p>"
+            "question": "2人で使えますか？",
+            "answer": "<p>Sleep Size(L)は150×100cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
-            "question": "豢玲ｿｯ縺ｯ蜿ｯ閭ｽ縺ｧ縺励ｇ縺・°・・,
-            "answer": "<p>縺泌ｮｶ蠎ｭ縺ｧ縺ｮ謇区ｴ励＞縺悟庄閭ｽ縺ｧ縺吶りｩｳ縺励￥縺ｯ莉伜ｱ槭・蜿匁桶隱ｬ譏取嶌繧偵＃遒ｺ隱阪￥縺縺輔＞縲・/p>"
+            "question": "洗濯は可能でしょうか？",
+            "answer": "<p>ご家庭での手洗いが可能です。詳しくは付属の取扱説明書をご確認ください。</p>"
           }
         },
         "faq_5": {
           "type": "faq_item",
           "settings": {
-            "question": "螟上〒繧ゆｽｿ縺医∪縺吶°・・,
-            "answer": "<p>縺ｯ縺・ゅ≠縺ｿ縺ゅ∩讒矩縺ｫ繧医ｋ騾壽ｰ玲ｧ縺ｧ縲∝､上〒繧り頂繧後ｒ豌励↓縺帙★365譌･縺贋ｽｿ縺・＞縺溘□縺代∪縺吶・/p>"
+            "question": "夏でも使えますか？",
+            "answer": "<p>はい。あみあみ構造による通気性で、夏でも蒸れを気にせず365日お使いいただけます。</p>"
           }
         },
         "faq_6": {
           "type": "faq_item",
           "settings": {
-            "question": "谺｡縺ｮ雋ｩ螢ｲ縺ｯ縺・▽縺斐ｍ縺ｧ縺吶°・・,
-            "answer": "<p>谺｡蝗櫁ｲｩ螢ｲ縺ｮ諠・ｱ縺ｯ蜈ｬ蠑臭INE縺ｫ縺ｦ譛騾溘〒縺雁ｱ翫￠縺・◆縺励∪縺吶・/p>"
+            "question": "次の販売はいつごろですか？",
+            "answer": "<p>次回販売の情報は公式LINEにて最速でお届けいたします。</p>"
           }
         }
       },
@@ -908,7 +839,7 @@
         "faq_6"
       ],
       "settings": {
-        "heading": "繧医￥縺ゅｋ縺碑ｳｪ蝠・
+        "heading": "よくあるご質問"
       }
     },
     "closing": {
@@ -917,19 +848,19 @@
         "proof_line_1": {
           "type": "proof_line",
           "settings": {
-            "text": "<p>邏ｯ險郁ｲｩ螢ｲ <strong>2,000譫・/strong>遯∫ｴ</p>"
+            "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>"
           }
         },
         "proof_line_2": {
           "type": "proof_line",
           "settings": {
-            "text": "<p>Makuake <strong>408蜷・/strong>謾ｯ謠ｴ</p>"
+            "text": "<p>Makuake <strong>408名</strong>支援</p>"
           }
         },
         "proof_line_3": {
           "type": "proof_line",
           "settings": {
-            "text": "<p>繝ｬ繝薙Η繝ｼ <strong>笘・.1</strong></p>"
+            "text": "<p>レビュー <strong>★4.1</strong></p>"
           }
         }
       },
@@ -939,13 +870,13 @@
         "proof_line_3"
       ],
       "settings": {
-        "bg_image_alt": "MUSUBI -en- 繧ｫ繝ｩ繝ｼ繝舌Μ繧ｨ繝ｼ繧ｷ繝ｧ繝ｳ",
+        "bg_image_alt": "MUSUBI -en- カラーバリエーション",
         "label": "Recovery Weighted Blanket",
         "product_suffix": "-en-",
-        "price_text": "Nap Size (M) ﾂ･29,800 / Sleep Size (L) ﾂ･39,800",
-        "price_note": "(遞手ｾｼ)",
+        "price_text": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800",
+        "price_note": "(税込)",
         "cta_url": "",
-        "cta_text": "MUSUBI繧定ｩｳ縺励￥隕九ｋ竊・
+        "cta_text": "MUSUBIを詳しく見る→"
       }
     },
     "related-products": {
@@ -961,7 +892,7 @@
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
         "subheading": "",
-        "title": "髢｢騾｣蝠・刀",
+        "title": "関連商品",
         "content": ""
       }
     },
@@ -978,8 +909,59 @@
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
         "subheading": "",
-        "title": "譛霑題ｦ九ｉ繧後◆蝠・刀",
+        "title": "最近見られた商品",
         "content": ""
+      }
+    },
+    "hero": {
+      "type": "musubi-lp-hero",
+      "blocks": {
+        "proof_item_EKFgXW": {
+          "type": "proof_item",
+          "settings": {
+            "number": "2,000",
+            "label": "枚突破"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "408",
+            "label": "名支援"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★4.1",
+            "label": "レビュー"
+          }
+        }
+      },
+      "block_order": [
+        "proof_item_EKFgXW",
+        "proof_2",
+        "proof_3"
+      ],
+      "settings": {
+        "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
+        "hero_image_alt": "MUSUBIブランケットに包まれる女性",
+        "brand_name": "KAPOK KNOT HOME",
+        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
+        "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
+        "cta_url": "",
+        "cta_text": "MUSUBI詳しく見る",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)"
+      }
+    },
+    "video-loop": {
+      "type": "musubi-lp-video-loop",
+      "disabled": true,
+      "settings": {
+        "video_url": "",
+        "bg_image_alt": "MUSUBIの安心感",
+        "heading": "<p>やさしい安心感が、<br/>あなたを深い眠りへ<br/>いざなう。</p>"
       }
     }
   },
