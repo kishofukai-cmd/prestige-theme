@@ -28,6 +28,12 @@
             "show_taxes_notice": false
           }
         },
+        "text_QNtz78": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
+          }
+        },
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7": {
           "type": "inventory",
           "disabled": true,
@@ -175,6 +181,7 @@
         "vendor",
         "title",
         "price",
+        "text_QNtz78",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
         "quantity_selector",
@@ -290,7 +297,7 @@
         "reel_6"
       ],
       "settings": {
-        "heading": "たくさんの方に<br>選ばれています",
+        "heading": "たくさんの方に選ばれています",
         "subheading": "実際にMUSUBIを体験した皆さまの声をご紹介します",
         "instagram_url": "",
         "follow_text": "@kapokknot をフォロー →"
