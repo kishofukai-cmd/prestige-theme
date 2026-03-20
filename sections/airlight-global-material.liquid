@@ -1,0 +1,66 @@
+{% comment %} AirLight Global LP — Material Story (Dark) {% endcomment %}
+
+<section class="ag-material" id="ag-material">
+  <div class="ag-material__inner" data-ag-reveal>
+    <div class="ag-material__img">
+      {% if section.settings.fallback_url != blank %}
+        <img src="{{ section.settings.fallback_url }}" alt="Kapok fiber — the material behind AirLight">
+      {% else %}
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;color:rgba(255,255,255,0.2);">🌿</div>
+      {% endif %}
+    </div>
+
+    <div class="ag-material__content">
+      <span class="ag-label--light">{{ section.settings.label | default: 'About the Material' }}</span>
+      <h2 class="ag-material__heading">
+        <em>Kapok</em> — Nature's<br>Hollow Fiber
+      </h2>
+      <p class="ag-material__body">
+        Kapok is harvested from the seed pods of tropical trees — no cutting, no cruelty. Its hollow fiber structure makes it naturally lightweight, thermally efficient, and water-resistant. We call our proprietary insulation sheet EthicalDown Kapok™.
+      </p>
+
+      <ul class="ag-material__specs">
+        {% for block in section.blocks %}
+          {% if block.type == 'spec_item' %}
+            <li class="ag-material__spec" {{ block.shopify_attributes }}>
+              <span class="ag-material__spec-key">{{ block.settings.key }}</span>
+              <span class="ag-material__spec-val">{{ block.settings.value }}</span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Material",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section Label", "default": "About the Material" },
+    { "type": "text", "id": "fallback_url", "label": "Image URL" }
+  ],
+  "blocks": [
+    {
+      "type": "spec_item",
+      "name": "Spec Item",
+      "settings": [
+        { "type": "text", "id": "key", "label": "Spec Name", "default": "Fill Material" },
+        { "type": "text", "id": "value", "label": "Spec Value", "default": "100% Kapok Fiber" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Material",
+      "blocks": [
+        { "type": "spec_item", "settings": { "key": "Fill Material", "value": "100% Kapok Fiber" } },
+        { "type": "spec_item", "settings": { "key": "Shell", "value": "Recycled Nylon" } },
+        { "type": "spec_item", "settings": { "key": "Weight (S)", "value": "approx. 150g" } },
+        { "type": "spec_item", "settings": { "key": "Packability", "value": "Packs to fist-size" } },
+        { "type": "spec_item", "settings": { "key": "Care", "value": "Machine Washable" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

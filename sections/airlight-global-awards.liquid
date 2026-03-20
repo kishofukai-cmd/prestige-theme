@@ -1,0 +1,49 @@
+{% comment %} AirLight Global LP — Awards {% endcomment %}
+
+<section class="ag-awards" id="ag-awards">
+  <div class="ag-container" data-ag-reveal>
+    <span class="ag-label--gold">{{ section.settings.label | default: 'Recognition' }}</span>
+    <h2 class="ag-awards__heading">{{ section.settings.heading | default: '10+ International Awards.' }}</h2>
+    <p class="ag-awards__subtext">{{ section.settings.subtext | default: "KAPOK KNOT has been recognized by governments, investors, and innovation bodies across Japan and the world." }}</p>
+
+    <div class="ag-awards__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'award_item' %}
+          <div class="ag-awards__item" {{ block.shopify_attributes }}>
+            <div class="ag-awards__item-meta">{{ block.settings.meta }}</div>
+            <div class="ag-awards__item-title">{{ block.settings.title }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Awards",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Recognition" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "10+ International Awards." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext" }
+  ],
+  "blocks": [
+    {
+      "type": "award_item",
+      "name": "Award",
+      "settings": [
+        { "type": "text", "id": "meta", "label": "Award Organization" },
+        { "type": "text", "id": "title", "label": "Award Title" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Awards",
+      "blocks": [
+        { "type": "award_item", "settings": { "meta": "METI · JETRO — 2019", "title": "🏆 Silicon Valley Selection — Grand Prize" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,74 @@
+{% comment %} AirLight Global LP — Products {% endcomment %}
+
+<section class="ag-products" id="ag-products">
+  <div class="ag-container" data-ag-reveal>
+    <span class="ag-label" style="display:block;text-align:center;">{{ section.settings.label | default: 'The Collection' }}</span>
+    <h2 class="ag-products__heading">{{ section.settings.heading | default: 'Find your AirLight Jacket.' }}</h2>
+  </div>
+
+  <div class="ag-products__grid" style="margin-top:clamp(40px,6vw,64px);">
+    {% for block in section.blocks %}
+      {% if block.type == 'product_line' %}
+        <div class="ag-product-line" {{ block.shopify_attributes }} data-ag-reveal>
+          <div class="ag-product-line__gallery">
+            {% if block.settings.fallback_url_1 != blank %}
+              <img src="{{ block.settings.fallback_url_1 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+            {% endif %}
+            {% if block.settings.fallback_url_2 != blank %}
+              <img src="{{ block.settings.fallback_url_2 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+            {% endif %}
+            {% if block.settings.fallback_url_3 != blank %}
+              <img src="{{ block.settings.fallback_url_3 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+            {% endif %}
+            {% if block.settings.fallback_url_4 != blank %}
+              <img src="{{ block.settings.fallback_url_4 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="ag-product-line__info">
+            <div class="ag-product-line__gender">{{ block.settings.gender_label }}</div>
+            <div class="ag-product-line__name">{{ block.settings.product_name }}</div>
+            <div class="ag-product-line__colors">{{ block.settings.colors }}</div>
+            <a href="{{ block.settings.cta_url | default: '#' }}" class="ag-product-line__cta">
+              {{ block.settings.cta_text | default: 'Shop Now →' }}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Products",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section Label", "default": "The Collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find your AirLight Jacket." }
+  ],
+  "blocks": [
+    {
+      "type": "product_line",
+      "name": "Product Line",
+      "settings": [
+        { "type": "text", "id": "gender_label", "label": "Gender Label", "default": "Men's" },
+        { "type": "text", "id": "product_name", "label": "Product Name", "default": "AirLight Jacket — Men" },
+        { "type": "text", "id": "colors", "label": "Colors Info" },
+        { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
+        { "type": "url", "id": "cta_url", "label": "CTA URL" },
+        { "type": "text", "id": "fallback_url_1", "label": "Image 1 URL" },
+        { "type": "text", "id": "fallback_url_2", "label": "Image 2 URL" },
+        { "type": "text", "id": "fallback_url_3", "label": "Image 3 URL" },
+        { "type": "text", "id": "fallback_url_4", "label": "Image 4 URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Products",
+      "blocks": [
+        { "type": "product_line", "settings": { "gender_label": "Men's", "product_name": "AirLight Jacket — Men" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

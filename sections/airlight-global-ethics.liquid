@@ -1,0 +1,44 @@
+{% comment %} AirLight Global LP — Ethics (環境インパクト) {% endcomment %}
+
+<section class="ag-ethics" id="ag-ethics">
+  <div class="ag-container" data-ag-reveal>
+    <div class="ag-ethics__stats">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat_item' %}
+          <div {{ block.shopify_attributes }}>
+            <div class="ag-ethics__stat-num">{{ block.settings.number }}</div>
+            <div class="ag-ethics__stat-label">{{ block.settings.label }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Ethics Stats",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "stat_item",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "97%" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Less CO₂ vs Down" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Ethics Stats",
+      "blocks": [
+        { "type": "stat_item", "settings": { "number": "97%", "label": "Less CO₂ vs Down" } },
+        { "type": "stat_item", "settings": { "number": "30", "label": "Geese saved / jacket" } },
+        { "type": "stat_item", "settings": { "number": "80%", "label": "Hollow fiber structure" } },
+        { "type": "stat_item", "settings": { "number": "1/8", "label": "Weight of cotton" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+{% comment %} AirLight Global LP — Trust Bar {% endcomment %}
+
+<section class="ag-trust-bar" id="ag-trust-bar">
+  <div class="ag-container">
+    <div class="ag-trust-bar__list">
+      {% for block in section.blocks %}
+        <div class="ag-trust-bar__item" {{ block.shopify_attributes }}>
+          <span class="ag-trust-bar__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <span class="ag-trust-bar__text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Trust Bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Trust Item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Free Worldwide Shipping" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Trust Bar",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Free Worldwide Shipping" } },
+        { "type": "item", "settings": { "text": "100% Plant-Based" } },
+        { "type": "item", "settings": { "text": "Japan Engineered" } },
+        { "type": "item", "settings": { "text": "10+ Design Awards" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

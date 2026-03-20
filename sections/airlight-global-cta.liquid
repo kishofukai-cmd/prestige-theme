@@ -1,0 +1,72 @@
+{% comment %} AirLight Global LP — CTA Section {% endcomment %}
+
+<section class="ag-cta" id="{{ section.settings.section_id | default: 'ag-cta' }}">
+  <div class="ag-container--narrow" data-ag-reveal>
+    {% if section.settings.eyebrow != blank %}
+      <p class="ag-cta__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    <h2 class="ag-cta__heading">
+      {{ section.settings.heading | default: '<p>Join the first 100 people<br>to own an AirLight Jacket.</p>' }}
+    </h2>
+
+    {% if section.settings.subheading != blank %}
+      <p class="ag-cta__sub">{{ section.settings.subheading }}</p>
+    {% endif %}
+
+    {% if section.settings.show_progress %}
+      <div class="ag-cta__progress">
+        <div class="ag-cta__progress-bar">
+          <div class="ag-cta__progress-fill" style="width: {{ section.settings.progress_pct | default: 73 }}%"></div>
+        </div>
+        <div class="ag-cta__progress-text">
+          <span>{{ section.settings.progress_taken | default: '73' }} claimed</span>
+          <span>{{ section.settings.progress_remaining | default: '27 remaining' }}</span>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.offer_main != blank %}
+      <div class="ag-cta__offer">
+        {{ section.settings.offer_main }}
+        {% if section.settings.offer_note != blank %}
+          <div class="ag-cta__offer-note">{{ section.settings.offer_note }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <a href="{{ section.settings.cta_url | default: '#ag-products' }}" class="ag-cta__btn">
+      {{ section.settings.cta_text | default: 'Shop Now — Free Shipping' }}
+    </a>
+
+    <div class="ag-cta__micros">
+      {% if section.settings.micro_1 != blank %}<span>{{ section.settings.micro_1 }}</span>{% endif %}
+      {% if section.settings.micro_2 != blank %}<span>{{ section.settings.micro_2 }}</span>{% endif %}
+      {% if section.settings.micro_3 != blank %}<span>{{ section.settings.micro_3 }}</span>{% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG CTA",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "ag-cta" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Limited Launch Offer" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Join the first 100 people<br>to own an AirLight Jacket.</p>" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "When they're gone, free shipping ends." },
+    { "type": "text", "id": "offer_main", "label": "Offer Main", "default": "🌍 Free Worldwide Shipping — First 100 Orders" },
+    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "No code needed. Applied automatically at checkout." },
+    { "type": "checkbox", "id": "show_progress", "label": "Show Progress Bar", "default": true },
+    { "type": "text", "id": "progress_taken", "label": "Taken Count", "default": "73" },
+    { "type": "text", "id": "progress_remaining", "label": "Remaining Text", "default": "27 remaining" },
+    { "type": "range", "id": "progress_pct", "label": "Progress %", "min": 0, "max": 100, "step": 1, "default": 73 },
+    { "type": "url", "id": "cta_url", "label": "CTA URL" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now — Free Shipping" },
+    { "type": "text", "id": "micro_1", "label": "Micro 1", "default": "✓ Free worldwide shipping" },
+    { "type": "text", "id": "micro_2", "label": "Micro 2", "default": "✓ First 100 orders only" },
+    { "type": "text", "id": "micro_3", "label": "Micro 3", "default": "✓ Secure checkout" }
+  ],
+  "presets": [{ "name": "AG CTA" }]
+}
+{% endschema %}

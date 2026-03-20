@@ -1,0 +1,62 @@
+{% comment %} AirLight Global LP — Comparison Table {% endcomment %}
+
+<section class="ag-comparison" id="ag-comparison">
+  <div class="ag-container" data-ag-reveal>
+    <h2 class="ag-comparison__heading">{{ section.settings.heading | default: 'How does it compare?' }}</h2>
+
+    <div class="ag-comparison__table-wrap">
+      <table class="ag-comparison__table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="ag-comparison__th--hero">AirLight</th>
+            <th>Down</th>
+            <th>Synthetic</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for block in section.blocks %}
+            {% if block.type == 'row' %}
+              <tr {{ block.shopify_attributes }}>
+                <td>{{ block.settings.feature }}</td>
+                <td class="ag-comparison__td--hero">{{ block.settings.airlight }}</td>
+                <td>{{ block.settings.down }}</td>
+                <td>{{ block.settings.synthetic }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Comparison",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How does it compare?" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison Row",
+      "settings": [
+        { "type": "text", "id": "feature", "label": "Feature", "default": "Weight" },
+        { "type": "text", "id": "airlight", "label": "AirLight", "default": "✅ ~500g" },
+        { "type": "text", "id": "down", "label": "Down", "default": "❌ 800–1000g" },
+        { "type": "text", "id": "synthetic", "label": "Synthetic", "default": "⚠️ ~700g" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Comparison",
+      "blocks": [
+        { "type": "row", "settings": { "feature": "Weight", "airlight": "✅ ~500g", "down": "❌ 800–1000g", "synthetic": "⚠️ ~700g" } },
+        { "type": "row", "settings": { "feature": "Warmth at 3°C", "airlight": "✅ Down-equivalent", "down": "✅ Excellent", "synthetic": "⚠️ Good" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

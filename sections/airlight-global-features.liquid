@@ -1,0 +1,73 @@
+{% comment %} AirLight Global LP — Features (5大特徴) {% endcomment %}
+
+<section class="ag-features" id="ag-features">
+  <div class="ag-container--narrow">
+    <h2 class="ag-features__heading" data-ag-reveal>
+      {{ section.settings.heading | default: '<p>Everything down promises.<br>Finally delivered.</p>' }}
+    </h2>
+  </div>
+
+  <div class="ag-features__cards">
+    {% assign counter = 0 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'feature_card' %}
+        {% assign counter = counter | plus: 1 %}
+        <div class="ag-feature-card" {{ block.shopify_attributes }} data-ag-reveal>
+          <div class="ag-feature-card__img">
+            {% if block.settings.fallback_url != blank %}
+              <img src="{{ block.settings.fallback_url }}" alt="{{ block.settings.title }}">
+            {% else %}
+              <div class="ag-feature-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:var(--ag-bg-warm);">
+                {{ block.settings.placeholder_emoji | default: '🪶' }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="ag-feature-card__body">
+            <span class="ag-feature-card__tag">{{ block.settings.tag }}</span>
+            <span class="ag-feature-card__num">0{{ counter }}</span>
+            <h3 class="ag-feature-card__title">{{ block.settings.title }}</h3>
+            <p class="ag-feature-card__desc">{{ block.settings.description }}</p>
+            {% if block.settings.stat_num != blank %}
+              <div class="ag-feature-card__stat">
+                <span class="ag-feature-card__stat-num">{{ block.settings.stat_num }}</span>
+                <span class="ag-feature-card__stat-label">{{ block.settings.stat_label }}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Features",
+  "settings": [
+    { "type": "richtext", "id": "heading", "label": "Section Heading", "default": "<p>Everything down promises.<br>Finally delivered.</p>" }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "settings": [
+        { "type": "text", "id": "placeholder_emoji", "label": "Placeholder Emoji", "default": "🪶" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "ULTRALIGHT" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Lighter Than a Sweater" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "stat_num", "label": "Stat Number", "default": "500g" },
+        { "type": "text", "id": "stat_label", "label": "Stat Label", "default": "vs 800–1000g for down" },
+        { "type": "text", "id": "fallback_url", "label": "Image URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Features",
+      "blocks": [
+        { "type": "feature_card", "settings": { "tag": "ULTRALIGHT", "title": "Lighter Than a Sweater", "stat_num": "500g" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

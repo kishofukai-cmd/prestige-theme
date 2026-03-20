@@ -1,0 +1,54 @@
+{% comment %} AirLight Global LP — Brand Story (Dark section) {% endcomment %}
+
+<section class="ag-brand" id="ag-brand">
+  <div class="ag-container" data-ag-reveal>
+    <p class="ag-brand__kicker">{{ section.settings.kicker | default: "Japan's First Material Innovation Brand" }}</p>
+
+    <h2 class="ag-brand__heading">
+      {{ section.settings.heading | default: '<p>A material revolution,<br><em>finally going global.</em></p>' }}
+    </h2>
+
+    <p class="ag-brand__body">
+      {{ section.settings.body | default: "KAPOK KNOT was born from a singular obsession: replace down with something better. After ¥50M+ raised on crowdfunding, 10+ design awards, and a debut at Milano Unica — the world's leading fabric fair — we're bringing Japan's most innovative jacket to the world." }}
+    </p>
+
+    <div class="ag-brand__tags">
+      {% for block in section.blocks %}
+        {% if block.type == 'tag_item' %}
+          <span class="ag-brand__tag" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Brand Story",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Japan's First Material Innovation Brand" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>A material revolution,<br><em>finally going global.</em></p>" },
+    { "type": "textarea", "id": "body", "label": "Body Text" }
+  ],
+  "blocks": [
+    {
+      "type": "tag_item",
+      "name": "Credibility Tag",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Tag Text", "default": "🏆 10+ Design Awards" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Brand Story",
+      "blocks": [
+        { "type": "tag_item", "settings": { "text": "🏆 10+ Design Awards" } },
+        { "type": "tag_item", "settings": { "text": "🇯🇵 Japan Material Innovation" } },
+        { "type": "tag_item", "settings": { "text": "🌿 Milano Unica Exhibitor" } },
+        { "type": "tag_item", "settings": { "text": "💴 ¥50M+ Crowdfunded" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

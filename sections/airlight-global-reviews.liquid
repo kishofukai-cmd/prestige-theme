@@ -1,0 +1,55 @@
+{% comment %} AirLight Global LP — Reviews {% endcomment %}
+
+<section class="ag-reviews" id="ag-reviews">
+  <div class="ag-container" data-ag-reveal>
+    <h2 class="ag-reviews__heading">{{ section.settings.heading | default: 'What people are saying' }}</h2>
+    <div class="ag-reviews__stars-avg">
+      {{ section.settings.avg_stars | default: '★★★★★' }}
+      <span style="font-size:0.8rem; color:var(--ag-text-sub); margin-left:8px;">{{ section.settings.avg_label | default: '4.8 / 5 — Verified Buyers' }}</span>
+    </div>
+
+    <div class="ag-reviews__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'review_card' %}
+          <div class="ag-review-card" {{ block.shopify_attributes }} data-ag-reveal>
+            <div class="ag-review-card__stars">{{ block.settings.stars }}</div>
+            <h3 class="ag-review-card__headline">{{ block.settings.headline }}</h3>
+            <p class="ag-review-card__text">{{ block.settings.text }}</p>
+            <div class="ag-review-card__meta">{{ block.settings.meta }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Reviews",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" },
+    { "type": "text", "id": "avg_stars", "label": "Stars Display", "default": "★★★★★" },
+    { "type": "text", "id": "avg_label", "label": "Average Label", "default": "4.8 / 5 — Verified Buyers" }
+  ],
+  "blocks": [
+    {
+      "type": "review_card",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "text", "id": "headline", "label": "Headline" },
+        { "type": "textarea", "id": "text", "label": "Review Text" },
+        { "type": "text", "id": "meta", "label": "Reviewer Info" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Reviews",
+      "blocks": [
+        { "type": "review_card", "settings": { "stars": "★★★★★", "headline": "Warmer than my Patagonia Nano Puff", "text": "I was skeptical — how could a plant-based jacket compete? After a week in Oslo, I barely touched my down jacket.", "meta": "James R. — Oslo, Norway" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
