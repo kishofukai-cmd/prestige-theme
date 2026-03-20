@@ -34,6 +34,16 @@
             "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
           }
         },
+        "image_h8JqEN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Makuake_408_1_300.png",
+            "alignment": "center",
+            "width_mode": "full_width",
+            "max_width": 300,
+            "mobile_max_width": 200
+          }
+        },
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7": {
           "type": "inventory",
           "disabled": true,
@@ -182,6 +192,7 @@
         "title",
         "price",
         "text_QNtz78",
+        "image_h8JqEN",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
         "quantity_selector",
