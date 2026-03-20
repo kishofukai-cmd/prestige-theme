@@ -8,22 +8,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 :root {
-  /* Colors — 和モダン: 墨色 + 金 パレット */
-  --ag-bg:          #faf8f5;
-  --ag-bg-warm:     #f2ede5;
-  --ag-bg-cream:    #f7f3ec;
-  --ag-bg-dark:     #2c2825;
-  --ag-bg-dark2:    #3a3530;
-  --ag-text:        #2c2825;
-  --ag-text-sub:    #6b635a;
-  --ag-text-light:  #faf8f5;
+  /* Colors — ネイビー + ゴールド パレット (Brand-aligned) */
+  --ag-bg:          #f7f9fc;
+  --ag-bg-warm:     #f0f3f8;
+  --ag-bg-cream:    #f4f6fa;
+  --ag-bg-dark:     #1a2640;
+  --ag-bg-dark2:    #243352;
+  --ag-text:        #1a2640;
+  --ag-text-sub:    #5a6678;
+  --ag-text-light:  #f7f9fc;
   --ag-accent:      #c29d66;
   --ag-accent-light:#d4c2ab;
   --ag-gold:        #c29d66;
   --ag-platinum:    #b8b0a4;
-  --ag-border:      #e0dcd1;
-  --ag-tag-bg:      #ece7da;
-  --ag-tag-text:    #6b5a3e;
+  --ag-border:      #dfe4eb;
+  --ag-tag-bg:      #e8ecf3;
+  --ag-tag-text:    #3d506e;
   --ag-card:        #fff;
 
   /* Typography */
@@ -146,9 +146,9 @@ button { font-family:inherit; }
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(44,40,37,0.92) 0%,
-    rgba(44,40,37,0.5) 45%,
-    rgba(44,40,37,0.1) 100%
+    rgba(26,38,64,0.92) 0%,
+    rgba(26,38,64,0.5) 45%,
+    rgba(26,38,64,0.1) 100%
   );
 }
 .ag-hero__content {
@@ -748,7 +748,7 @@ button { font-family:inherit; }
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(44,40,37,0.08);
+  box-shadow: 0 4px 24px rgba(26,38,64,0.08);
 }
 .ag-comparison__table thead tr {
   background: var(--ag-bg-dark);
@@ -838,12 +838,12 @@ button { font-family:inherit; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: 0 2px 12px rgba(44,40,37,0.04);
+  box-shadow: 0 2px 12px rgba(26,38,64,0.04);
   transition: transform 0.3s var(--ag-ease), box-shadow 0.3s ease;
 }
 .ag-review-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(44,40,37,0.1);
+  box-shadow: 0 8px 28px rgba(26,38,64,0.1);
 }
 .ag-review-card__stars { color: var(--ag-gold); font-size: 1rem; letter-spacing: 0.05em; }
 .ag-review-card__headline {
@@ -1033,7 +1033,7 @@ button { font-family:inherit; }
   border-radius: 16px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 2px 16px rgba(44,40,37,0.05);
+  box-shadow: 0 2px 16px rgba(26,38,64,0.05);
 }
 .ag-faq__item {
   border-bottom: 1px solid var(--ag-border);
@@ -1110,7 +1110,7 @@ button { font-family:inherit; }
 .ag-closing__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(44,40,37,0.9), rgba(44,40,37,0.5));
+  background: linear-gradient(to top, rgba(26,38,64,0.9), rgba(26,38,64,0.5));
 }
 .ag-closing__content {
   position: relative;
