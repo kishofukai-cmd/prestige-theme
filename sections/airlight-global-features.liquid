@@ -1,9 +1,196 @@
-{% comment %} AirLight Global LP — Features (5大特徴) {% endcomment %}
+{% comment %} AirLight Global LP — Features (4大特徴) {% endcomment %}
+
+<style>
+  .ag-features {
+    background: var(--ag-bg-warm, #faf9f6);
+    padding: clamp(64px, 10vw, 120px) 0;
+  }
+
+  .ag-features__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ag-heading, #1a2640);
+    text-align: center;
+    margin: 0 auto clamp(48px, 7vw, 80px);
+    max-width: 640px;
+  }
+
+  .ag-features__heading em {
+    font-style: italic;
+    color: var(--ag-gold, #c29d66);
+  }
+
+  .ag-features__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 3vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 60px);
+  }
+
+  @media (max-width: 768px) {
+    .ag-features__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ag-feature-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(26, 38, 64, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ag-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 40px rgba(26, 38, 64, 0.12);
+  }
+
+  .ag-feature-card__img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--ag-bg-warm, #faf9f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    overflow: hidden;
+  }
+
+  .ag-feature-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ag-feature-card__body {
+    padding: clamp(24px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .ag-feature-card__tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ag-gold, #c29d66);
+  }
+
+  .ag-feature-card__num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(26, 38, 64, 0.3);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .ag-feature-card__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ag-heading, #1a2640);
+    margin: 0;
+  }
+
+  .ag-feature-card__desc {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+    line-height: 1.75;
+    color: var(--ag-text, #5a5550);
+    margin: 0;
+    flex: 1;
+  }
+
+  .ag-feature-card__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(26, 38, 64, 0.08);
+  }
+
+  .ag-feature-card__stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--ag-heading, #1a2640);
+    line-height: 1;
+  }
+
+  .ag-feature-card__stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    color: var(--ag-text, #5a5550);
+    opacity: 0.8;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .ag-features {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+    .ag-features__heading {
+      font-size: 1.8rem;
+      margin-bottom: 32px;
+    }
+    .ag-features__cards {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 0 16px;
+    }
+    .ag-feature-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .ag-feature-card__img {
+      width: 100%;
+      height: 200px;
+      min-width: unset;
+      aspect-ratio: unset;
+      border-radius: 4px;
+      overflow: hidden;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0ece4;
+    }
+    .ag-feature-card__img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      max-width: 100%;
+    }
+    .ag-feature-card__body {
+      flex: 1;
+    }
+    .ag-feature-card__title {
+      font-size: 1.2rem;
+    }
+    .ag-feature-card__desc {
+      font-size: 14px;
+    }
+  }
+</style>
 
 <section class="ag-features" id="ag-features">
   <div class="ag-container--narrow">
     <h2 class="ag-features__heading" data-ag-reveal>
-      {{ section.settings.heading | default: '<p>Everything down promises.<br>Finally delivered.</p>' }}
+      {{ section.settings.heading }}
     </h2>
   </div>
 
@@ -14,12 +201,12 @@
         {% assign counter = counter | plus: 1 %}
         <div class="ag-feature-card" {{ block.shopify_attributes }} data-ag-reveal>
           <div class="ag-feature-card__img">
-            {% if block.settings.fallback_url != blank %}
-              <img src="{{ block.settings.fallback_url }}" alt="{{ block.settings.title }}">
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: alt: block.settings.title, loading: 'lazy' }}
+            {% elsif block.settings.fallback_url != blank %}
+              <img src="{{ block.settings.fallback_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% else %}
-              <div class="ag-feature-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:var(--ag-bg-warm);">
-                {{ block.settings.placeholder_emoji | default: '🪶' }}
-              </div>
+              {{ block.settings.placeholder_emoji | default: '🪶' }}
             {% endif %}
           </div>
           <div class="ag-feature-card__body">
@@ -44,7 +231,7 @@
 {
   "name": "AG Features",
   "settings": [
-    { "type": "richtext", "id": "heading", "label": "Section Heading", "default": "<p>Everything down promises.<br>Finally delivered.</p>" }
+    { "type": "richtext", "id": "heading", "label": "Section Heading", "default": "<p>Everything Down Promises. <em>Finally Delivered.</em></p>" }
   ],
   "blocks": [
     {
@@ -56,8 +243,9 @@
         { "type": "text", "id": "title", "label": "Title", "default": "Lighter Than a Sweater" },
         { "type": "textarea", "id": "description", "label": "Description" },
         { "type": "text", "id": "stat_num", "label": "Stat Number", "default": "500g" },
-        { "type": "text", "id": "stat_label", "label": "Stat Label", "default": "vs 800–1000g for down" },
-        { "type": "text", "id": "fallback_url", "label": "Image URL" }
+        { "type": "text", "id": "stat_label", "label": "Stat Label", "default": "Total weight — 40% lighter than down" },
+        { "type": "image_picker", "id": "image", "label": "Card Image" },
+        { "type": "text", "id": "fallback_url", "label": "Image URL (fallback)" }
       ]
     }
   ],
@@ -65,7 +253,50 @@
     {
       "name": "AG Features",
       "blocks": [
-        { "type": "feature_card", "settings": { "tag": "ULTRALIGHT", "title": "Lighter Than a Sweater", "stat_num": "500g" } }
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🪶",
+            "tag": "ULTRALIGHT",
+            "title": "Lighter Than a Sweater",
+            "description": "500g — 40% lighter than comparable down jackets. You'll forget you're wearing it. Carry it in your bag and you'll forget it's there too.",
+            "stat_num": "500g",
+            "stat_label": "Total weight — 40% lighter than down",
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "☂️",
+            "tag": "RAIN-PROOF",
+            "title": "Rain Doesn't End Its Day.",
+            "description": "Kapok's hollow fiber structure naturally repels water. No collapse, no re-lofting. It performs the same on day one as day one hundred.",
+            "stat_num": "Stays lofted",
+            "stat_label": "When wet — unlike down",
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🫧",
+            "tag": "MACHINE WASH",
+            "title": "Throw It in the Wash.",
+            "description": "Cold cycle, air dry, done. No dry-cleaning fees. No special instructions. Ever. This is what every down jacket owner secretly wishes for.",
+            "stat_num": "$0",
+            "stat_label": "Dry-cleaning cost, for life",
+          }
+        },
+        {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🌿",
+            "tag": "ALLERGY-FREE",
+            "title": "No Feathers. No Sneezing.",
+            "description": "100% plant-based. Zero feathers, zero dust mites, zero allergens. The warmth your allergies can finally handle.",
+            "stat_num": "0",
+            "stat_label": "Animal products — zero",
+          }
+        }
       ]
     }
   ]

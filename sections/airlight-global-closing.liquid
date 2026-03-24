@@ -2,17 +2,19 @@
 
 <section class="ag-closing" id="ag-closing">
   <div class="ag-closing__bg">
-    {% if section.settings.fallback_url != blank %}
+    {% if section.settings.bg_image %}
+      {{ section.settings.bg_image | image_url: width: 2000 | image_tag: alt: 'AirLight Jacket', loading: 'lazy' }}
+    {% elsif section.settings.fallback_url != blank %}
       <img src="{{ section.settings.fallback_url }}" alt="AirLight Jacket" loading="lazy">
     {% endif %}
   </div>
   <div class="ag-closing__overlay"></div>
 
   <div class="ag-closing__content" data-ag-reveal>
-    <p class="ag-closing__eyebrow">{{ section.settings.eyebrow | default: 'KAPOK KNOT' }}</p>
+    <p class="ag-closing__eyebrow">{{ section.settings.eyebrow | default: 'KAPOK KNOT — AirLight Jacket' }}</p>
 
     <h2 class="ag-closing__title">
-      {{ section.settings.title | default: '<p>The jacket that changes<br><em>what warmth means.</em></p>' }}
+      {{ section.settings.title }}
     </h2>
 
     <div class="ag-closing__proofs">
@@ -23,8 +25,12 @@
       {% endfor %}
     </div>
 
+    <p class="ag-closing__spots">
+      {{ section.settings.spots_text | default: 'Only 100 Global Launch Spots Available.' }}
+    </p>
+
     <a href="{{ section.settings.cta_url | default: '#ag-products' }}" class="ag-closing__btn">
-      {{ section.settings.cta_text | default: 'Shop Now — Free Shipping →' }}
+      {{ section.settings.cta_text | default: 'Claim Your Spot — $398 →' }}
     </a>
 
     <div class="ag-closing__micros">
@@ -35,18 +41,67 @@
   </div>
 </section>
 
+<style>
+.ag-closing__spots {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c29d66;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+@media (max-width: 768px) {
+  .ag-closing__content {
+    padding: 60px 16px 80px;
+  }
+  .ag-closing__title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+    margin-bottom: 20px;
+  }
+  .ag-closing__title p {
+    font-size: inherit;
+  }
+  .ag-closing__btn {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  .ag-closing__proofs {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+  .ag-closing__micros {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+  .ag-closing__spots {
+    font-size: 11px;
+  }
+}
+</style>
+
 {% schema %}
 {
   "name": "AG Closing",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KAPOK KNOT" },
-    { "type": "richtext", "id": "title", "label": "Title", "default": "<p>The jacket that changes<br><em>what warmth means.</em></p>" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KAPOK KNOT — AirLight Jacket" },
+    { "type": "richtext", "id": "title", "label": "Title", "default": "<p>Lighter. Warmer. Washable. <em>The World's First Kapok Jacket.</em></p>" },
     { "type": "url", "id": "cta_url", "label": "CTA URL" },
-    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now — Free Shipping →" },
-    { "type": "text", "id": "fallback_url", "label": "Background Image URL" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Claim Your Spot — $398 →" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background Image" },
+    { "type": "text", "id": "fallback_url", "label": "Background Image URL (fallback)" },
+    { "type": "text", "id": "spots_text", "label": "Spots Remaining Text", "default": "Only 100 Global Launch Spots Available." },
     { "type": "text", "id": "micro_1", "label": "Micro 1", "default": "✓ Free worldwide shipping" },
-    { "type": "text", "id": "micro_2", "label": "Micro 2", "default": "✓ First 100 orders only" },
-    { "type": "text", "id": "micro_3", "label": "Micro 3", "default": "✓ Secure checkout" }
+    { "type": "text", "id": "micro_2", "label": "Micro 2", "default": "✓ 30-day return guarantee" },
+    { "type": "text", "id": "micro_3", "label": "Micro 3", "default": "✓ Import duties billed at delivery (DDU)" }
   ],
   "blocks": [
     {
@@ -61,9 +116,9 @@
     {
       "name": "AG Closing",
       "blocks": [
-        { "type": "proof_line", "settings": { "text": "¥50M+ Crowdfunded in Japan" } },
-        { "type": "proof_line", "settings": { "text": "10+ Design Awards" } },
-        { "type": "proof_line", "settings": { "text": "Milano Unica Exhibitor" } }
+        { "type": "proof_line", "settings": { "text": "Tested in Norway in December by our founder" } },
+        { "type": "proof_line", "settings": { "text": "Worn through -20°C Canadian winters by our customers" } },
+        { "type": "proof_line", "settings": { "text": "10+ Design Awards · All Made in Japan" } }
       ]
     }
   ]

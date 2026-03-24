@@ -1,8 +1,134 @@
 {% comment %} AirLight Global LP — Comparison Table {% endcomment %}
 
+<style>
+  .ag-comparison {
+    background: var(--ag-bg-dark, #1a2640);
+    padding: clamp(64px, 10vw, 120px) 0;
+  }
+
+  .ag-comparison__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 clamp(40px, 6vw, 64px);
+    text-align: center;
+  }
+
+  .ag-comparison__table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 16px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  .ag-comparison__table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .ag-comparison__table thead tr {
+    background: rgba(194, 157, 102, 0.12);
+    border-bottom: 2px solid rgba(194, 157, 102, 0.3);
+  }
+
+  .ag-comparison__table th {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    padding: clamp(14px, 2vw, 20px) clamp(16px, 2.5vw, 28px);
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .ag-comparison__th--hero {
+    color: var(--ag-gold, #c29d66) !important;
+  }
+
+  .ag-comparison__table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.2s ease;
+  }
+
+  .ag-comparison__table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .ag-comparison__table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .ag-comparison__table td {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.72);
+    padding: clamp(14px, 2vw, 20px) clamp(16px, 2.5vw, 28px);
+    vertical-align: middle;
+  }
+
+  .ag-comparison__table td:first-child {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .ag-comparison__td--hero {
+    color: #fff !important;
+    font-weight: 600 !important;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .ag-comparison {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+    .ag-comparison__heading {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .ag-comparison__table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ag-comparison__table {
+      min-width: 560px;
+    }
+    .ag-comparison__table th,
+    .ag-comparison__table td {
+      font-size: 14px;
+      padding: 10px 12px;
+      min-width: 120px;
+    }
+    .ag-comparison__table td:first-child,
+    .ag-comparison__table th:first-child {
+      position: sticky;
+      left: 0;
+      background: var(--ag-bg-dark, #1a2640);
+      z-index: 1;
+      min-width: 100px;
+    }
+    .ag-comparison__table img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
 <section class="ag-comparison" id="ag-comparison">
   <div class="ag-container" data-ag-reveal>
-    <h2 class="ag-comparison__heading">{{ section.settings.heading | default: 'How does it compare?' }}</h2>
+    <h2 class="ag-comparison__heading">{{ section.settings.heading | default: 'How AirLight Compares.' }}</h2>
 
     <div class="ag-comparison__table-wrap">
       <table class="ag-comparison__table">
@@ -35,17 +161,17 @@
 {
   "name": "AG Comparison",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "How does it compare?" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How AirLight Compares." }
   ],
   "blocks": [
     {
       "type": "row",
       "name": "Comparison Row",
       "settings": [
-        { "type": "text", "id": "feature", "label": "Feature", "default": "Weight" },
-        { "type": "text", "id": "airlight", "label": "AirLight", "default": "✅ ~500g" },
-        { "type": "text", "id": "down", "label": "Down", "default": "❌ 800–1000g" },
-        { "type": "text", "id": "synthetic", "label": "Synthetic", "default": "⚠️ ~700g" }
+        { "type": "text", "id": "feature", "label": "Feature", "default": "Warmth" },
+        { "type": "text", "id": "airlight", "label": "AirLight", "default": "✅ Proven in -20°C winters" },
+        { "type": "text", "id": "down", "label": "Down", "default": "✅ Effective" },
+        { "type": "text", "id": "synthetic", "label": "Synthetic", "default": "⚠️ Adequate" }
       ]
     }
   ],
@@ -53,8 +179,12 @@
     {
       "name": "AG Comparison",
       "blocks": [
-        { "type": "row", "settings": { "feature": "Weight", "airlight": "✅ ~500g", "down": "❌ 800–1000g", "synthetic": "⚠️ ~700g" } },
-        { "type": "row", "settings": { "feature": "Warmth at 3°C", "airlight": "✅ Down-equivalent", "down": "✅ Excellent", "synthetic": "⚠️ Good" } }
+        { "type": "row", "settings": { "feature": "Warmth", "airlight": "✅ Proven in -20°C winters", "down": "✅ Effective", "synthetic": "⚠️ Adequate" } },
+        { "type": "row", "settings": { "feature": "Water Resistance", "airlight": "✅ Maintained when wet", "down": "❌ Collapses", "synthetic": "✅ Maintained" } },
+        { "type": "row", "settings": { "feature": "Machine Washable", "airlight": "✅ Yes — cold cycle", "down": "❌ Dry-clean only", "synthetic": "⚠️ Often yes" } },
+        { "type": "row", "settings": { "feature": "Allergen-Free", "airlight": "✅ 100% plant-based", "down": "❌ No", "synthetic": "✅ Yes" } },
+        { "type": "row", "settings": { "feature": "Animal-Free", "airlight": "✅ Yes", "down": "❌ No", "synthetic": "✅ Yes" } },
+        { "type": "row", "settings": { "feature": "Price", "airlight": "✅ $398", "down": "❌ $350–600", "synthetic": "⚠️ $200–400" } }
       ]
     }
   ]

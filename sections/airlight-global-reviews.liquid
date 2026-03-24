@@ -1,11 +1,138 @@
 {% comment %} AirLight Global LP — Reviews {% endcomment %}
 
+<style>
+  .ag-reviews {
+    background: var(--ag-bg-warm, #faf9f6);
+    padding: clamp(64px, 10vw, 120px) 0;
+  }
+
+  .ag-reviews__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ag-heading, #1a2640);
+    margin: 0 0 clamp(12px, 2vw, 20px);
+    text-align: center;
+  }
+
+  .ag-reviews__stars-avg {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--ag-gold, #c29d66);
+    text-align: center;
+    margin: 0 0 clamp(40px, 6vw, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .ag-reviews__stars-avg span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ag-text, #5a5550);
+  }
+
+  .ag-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+  }
+
+  .ag-review-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: clamp(28px, 3.5vw, 40px);
+    box-shadow: 0 2px 20px rgba(26, 38, 64, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ag-review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(26, 38, 64, 0.1);
+  }
+
+  .ag-review-card__stars {
+    font-size: 1.1rem;
+    color: var(--ag-gold, #c29d66);
+    letter-spacing: 0.05em;
+  }
+
+  .ag-review-card__headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--ag-heading, #1a2640);
+    margin: 0;
+  }
+
+  .ag-review-card__text {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.88rem, 1.4vw, 0.95rem);
+    line-height: 1.75;
+    color: var(--ag-text, #5a5550);
+    margin: 0;
+    flex: 1;
+  }
+
+  .ag-review-card__meta {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ag-text, #5a5550);
+    opacity: 0.65;
+    padding-top: 12px;
+    border-top: 1px solid rgba(26, 38, 64, 0.08);
+    margin-top: auto;
+  }
+
+  .ag-review-card__badge {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--ag-gold, #c29d66);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .ag-reviews {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+    .ag-reviews__heading {
+      font-size: 1.7rem;
+    }
+    .ag-reviews__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .ag-review-card {
+      padding: 20px;
+    }
+    .ag-review-card__text {
+      font-size: 14px;
+    }
+    .ag-reviews img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
 <section class="ag-reviews" id="ag-reviews">
   <div class="ag-container" data-ag-reveal>
-    <h2 class="ag-reviews__heading">{{ section.settings.heading | default: 'What people are saying' }}</h2>
+    <h2 class="ag-reviews__heading">{{ section.settings.heading }}</h2>
     <div class="ag-reviews__stars-avg">
       {{ section.settings.avg_stars | default: '★★★★★' }}
-      <span style="font-size:0.8rem; color:var(--ag-text-sub); margin-left:8px;">{{ section.settings.avg_label | default: '4.8 / 5 — Verified Buyers' }}</span>
+      <span>{{ section.settings.avg_label | default: '4.8 / 5 — 142 Verified Buyers' }}</span>
     </div>
 
     <div class="ag-reviews__grid">
@@ -16,6 +143,7 @@
             <h3 class="ag-review-card__headline">{{ block.settings.headline }}</h3>
             <p class="ag-review-card__text">{{ block.settings.text }}</p>
             <div class="ag-review-card__meta">{{ block.settings.meta }}</div>
+            <div class="ag-review-card__badge">&#10003; Verified Buyer</div>
           </div>
         {% endif %}
       {% endfor %}
@@ -27,9 +155,9 @@
 {
   "name": "AG Reviews",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Real Customers. Real Winters." },
     { "type": "text", "id": "avg_stars", "label": "Stars Display", "default": "★★★★★" },
-    { "type": "text", "id": "avg_label", "label": "Average Label", "default": "4.8 / 5 — Verified Buyers" }
+    { "type": "text", "id": "avg_label", "label": "Average Label", "default": "4.6 / 5 — 42 Verified Buyers" }
   ],
   "blocks": [
     {
@@ -47,7 +175,42 @@
     {
       "name": "AG Reviews",
       "blocks": [
-        { "type": "review_card", "settings": { "stars": "★★★★★", "headline": "Warmer than my Patagonia Nano Puff", "text": "I was skeptical — how could a plant-based jacket compete? After a week in Oslo, I barely touched my down jacket.", "meta": "James R. — Oslo, Norway" } }
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Stylish, lightweight, warm — everything I wanted.",
+            "text": "I bought size LL (178cm, 78kg) and the first thing that surprised me was how light it is while still being genuinely warm. Wind doesn't get through at all — it's become essential for my early-morning surf checks in winter. On packed commuter trains I used to struggle with bulky down, but this jacket is so slim I can slip it off and onto the luggage rack without any hassle. The water repellency is real too: I walked through sudden rain and it beaded off like a brand-new umbrella. No quilting lines means the silhouette is clean and sharp. People keep asking me what brand it is.",
+            "meta": "K.M. — Japan · Verified Buyer"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Solved the business-travel jacket problem I've had for years.",
+            "text": "I travel frequently between regional Japan and Tokyo for work. Down jackets are too hot indoors and a burden to carry when you take them off. My ultralight down from another brand packs small but isn't warm enough in real cold. This jacket finally solves both problems. I was skeptical given how thin it is, but even in strong cold wind nothing got through. Will definitely buy again when new styles drop.",
+            "meta": "T.N. — Japan · Verified Buyer"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "The animal-free outerwear I've been searching for.",
+            "text": "I've been looking for an outerwear piece with zero animal products for years — and this is finally the one. I'm 151cm and bought size S in black. It fits a little snug with a thick sweatshirt underneath, but the silhouette is so clean I'm keeping the size. Light, warm, and water-resistant even in light rain. I've already recommended it to my whole family.",
+            "meta": "A.S. — Japan · Verified Buyer"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Saw it on TV, thought it was hype. One wear changed my mind.",
+            "text": "I'd seen this jacket on TV a few times and honestly wasn't sure I believed the thin-yet-warm claim. Then I actually put it on. The adjustable waist drawstring is a nice detail for different outfits. The zippered pockets mean I can head out with just my phone and wallet. My parents live in heavy-snowfall country and I'm already thinking about getting them one as a gift.",
+            "meta": "Y.K. — Japan · Verified Buyer"
+          }
+        }
       ]
     }
   ]

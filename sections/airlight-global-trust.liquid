@@ -2,6 +2,15 @@
 
 <section class="ag-trust-bar" id="ag-trust-bar">
   <div class="ag-container">
+    {% if section.settings.trust_image != blank %}
+      <div class="ag-trust-bar__image-wrap">
+        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image | image_url: width: 800 }}" alt="{{ section.settings.trust_image_alt | default: 'Made in Japan — Master Craftsmanship' }}" loading="lazy" width="640">
+      </div>
+    {% elsif section.settings.trust_image_url != blank %}
+      <div class="ag-trust-bar__image-wrap">
+        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image_url | asset_url }}" alt="{{ section.settings.trust_image_alt | default: 'Made in Japan — Master Craftsmanship' }}" loading="lazy" width="640">
+      </div>
+    {% endif %}
     <div class="ag-trust-bar__list">
       {% for block in section.blocks %}
         <div class="ag-trust-bar__item" {{ block.shopify_attributes }}>
@@ -15,10 +24,53 @@
   </div>
 </section>
 
+<style>
+  .ag-trust-bar__image-wrap {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .ag-trust-bar__image {
+    max-width: 560px;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .ag-trust-bar {
+      padding: 16px;
+      overflow-x: hidden;
+    }
+    .ag-trust-bar__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      justify-content: center;
+    }
+    .ag-trust-bar__item {
+      flex: 0 1 auto;
+      white-space: nowrap;
+    }
+    .ag-trust-bar__text {
+      font-size: 14px;
+    }
+    .ag-trust-bar__image {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "AG Trust Bar",
-  "settings": [],
+  "settings": [
+    { "type": "image_picker", "id": "trust_image", "label": "Trust Image" },
+    { "type": "text", "id": "trust_image_url", "label": "Trust Image URL (fallback)" },
+    { "type": "text", "id": "trust_image_alt", "label": "Trust Image Alt Text", "default": "Made in Japan — Master Craftsmanship" }
+  ],
   "blocks": [
     {
       "type": "item",
@@ -32,10 +84,10 @@
     {
       "name": "AG Trust Bar",
       "blocks": [
-        { "type": "item", "settings": { "text": "Free Worldwide Shipping" } },
-        { "type": "item", "settings": { "text": "100% Plant-Based" } },
-        { "type": "item", "settings": { "text": "Japan Engineered" } },
-        { "type": "item", "settings": { "text": "10+ Design Awards" } }
+        { "type": "item", "settings": { "text": "$400K+ Raised in Japan" } },
+        { "type": "item", "settings": { "text": "Sold Out 3× Consecutively" } },
+        { "type": "item", "settings": { "text": "5 Years of R&D" } },
+        { "type": "item", "settings": { "text": "All Made in Japan" } }
       ]
     }
   ]

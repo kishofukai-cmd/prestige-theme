@@ -27,8 +27,19 @@
 </head>
 <body style="margin:0; padding:0;">
   {{ content_for_layout }}
+  {%- section 'cart-drawer' -%}
 
-  {%- sections 'footer-group' -%}
+  <!-- Minimal LP Footer -->
+  <footer style="background:#1a2640; color:rgba(255,255,255,0.45); text-align:center; padding:24px 20px; font-family:'Outfit',sans-serif; font-size:12px; line-height:1.8;">
+    <p style="margin:0 0 6px;">© {{ 'now' | date: '%Y' }} KAPOK KNOT. All rights reserved.</p>
+    <p style="margin:0;">
+      <a href="{{ shop.url }}/policies/privacy-policy" style="color:rgba(255,255,255,0.45); text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="{{ shop.url }}/policies/terms-of-service" style="color:rgba(255,255,255,0.45); text-decoration:underline; text-underline-offset:2px;">Terms of Service</a>
+      &nbsp;·&nbsp;
+      <a href="{{ shop.url }}/policies/refund-policy" style="color:rgba(255,255,255,0.45); text-decoration:underline; text-underline-offset:2px;">Refund Policy</a>
+    </p>
+  </footer>
 
   <!-- Sticky CTA Bar -->
   <div id="ag-sticky-cta" style="
@@ -47,8 +58,8 @@
   ">
     <div style="max-width: 600px; margin: 0 auto; display: flex; align-items: center; gap: 12px;">
       <div style="flex: 1; min-width: 0;">
-        <div style="font-family: 'Outfit', sans-serif; font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.3;">From $198 — Free Worldwide Shipping</div>
-        <div style="font-family: 'Outfit', sans-serif; font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px;">✓ Plant-Based　✓ Machine Washable　✓ 500g</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.3;">AirLight Jacket — $398</div>
+        <div style="font-family: 'Outfit', sans-serif; font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px;">✓ Free Shipping · ✓ 30-Day Returns · ✓ Made in Japan</div>
       </div>
       <a href="#ag-products" style="
         display: inline-block;

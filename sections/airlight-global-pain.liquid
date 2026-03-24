@@ -2,7 +2,7 @@
 
 <section class="ag-pain" id="ag-pain">
   <div class="ag-container" data-ag-reveal>
-    <h2 class="ag-pain__heading">{{ section.settings.heading | default: 'Sound familiar?' }}</h2>
+    <h2 class="ag-pain__heading">{{ section.settings.heading | default: 'Still Wearing Down?' }}</h2>
 
     <div class="ag-pain__items">
       {% for block in section.blocks %}
@@ -18,27 +18,62 @@
     <div class="ag-pain__bridge">
       <div class="ag-pain__bridge-line">↓</div>
       <p class="ag-pain__bridge-text">
-        {{ section.settings.bridge_text | default: 'There had to be a better way.' }}
-        <strong>{{ section.settings.bridge_strong | default: 'Now there is.' }}</strong>
+        {{ section.settings.bridge_text | default: "There's a better answer. And it grows on trees." }}
+        {% if section.settings.bridge_strong != blank %}
+          <strong>{{ section.settings.bridge_strong }}</strong>
+        {% endif %}
       </p>
     </div>
   </div>
 </section>
 
+<style>
+@media (max-width: 768px) {
+  .ag-pain {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .ag-pain__heading {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+  }
+  .ag-pain__items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ag-pain__item {
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .ag-pain__item-icon {
+    font-size: 1.5rem;
+    min-width: 32px;
+  }
+  .ag-pain__bridge {
+    margin-top: 32px;
+  }
+  .ag-pain__bridge-text {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+}
+</style>
+
 {% schema %}
 {
   "name": "AG Pain Points",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Sound familiar?" },
-    { "type": "text", "id": "bridge_text", "label": "Bridge Text", "default": "There had to be a better way." },
-    { "type": "text", "id": "bridge_strong", "label": "Bridge Strong", "default": "Now there is." }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Still Wearing Down?" },
+    { "type": "text", "id": "bridge_text", "label": "Bridge Text", "default": "There's a better answer. And it grows on trees." },
+    { "type": "text", "id": "bridge_strong", "label": "Bridge Strong" }
   ],
   "blocks": [
     {
       "type": "pain_item",
       "name": "Pain Point",
       "settings": [
-        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🏋️" },
+        { "type": "text", "id": "emoji", "label": "Emoji", "default": "🦆" },
         { "type": "textarea", "id": "text", "label": "Description" }
       ]
     }
@@ -47,10 +82,9 @@
     {
       "name": "AG Pain Points",
       "blocks": [
-        { "type": "pain_item", "settings": { "emoji": "🏋️", "text": "Your down jacket weighs as much as a wine bottle — a constant burden on your shoulders." } },
-        { "type": "pain_item", "settings": { "emoji": "🌧️", "text": "One rain shower and it's ruined for days. Down collapses the moment it gets wet." } },
-        { "type": "pain_item", "settings": { "emoji": "🦆", "text": "You've thought about where those feathers came from — and it doesn't feel great." } },
-        { "type": "pain_item", "settings": { "emoji": "🧺", "text": "Dry-clean only. Every. Single. Time." } }
+        { "type": "pain_item", "settings": { "emoji": "🦆", "text": "You know those feathers came from somewhere. And it doesn't sit right." } },
+        { "type": "pain_item", "settings": { "emoji": "🤧", "text": "Down allergies make every morning a sneezing battle — and you've just been tolerating it." } },
+        { "type": "pain_item", "settings": { "emoji": "⚖️", "text": "Heavier than it needs to be. Bulkier than it looks. A trade-off you've accepted for too long." } }
       ]
     }
   ]

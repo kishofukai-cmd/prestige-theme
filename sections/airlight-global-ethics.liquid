@@ -13,7 +13,24 @@
       {% endfor %}
     </div>
   </div>
+  <p style="text-align:center; font-size:0.7rem; color:rgba(250,248,245,0.35); margin-top:20px; padding:0 var(--ag-pad);">*Based on life cycle analysis vs conventional goose down insulation.</p>
 </section>
+
+<style>
+@media (max-width: 768px) {
+  .ag-ethics {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .ag-ethics__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .ag-ethics__stat-num {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}
+</style>
 
 {% schema %}
 {
@@ -33,10 +50,10 @@
     {
       "name": "AG Ethics Stats",
       "blocks": [
-        { "type": "stat_item", "settings": { "number": "97%", "label": "Less CO₂ vs Down" } },
-        { "type": "stat_item", "settings": { "number": "30", "label": "Geese saved / jacket" } },
-        { "type": "stat_item", "settings": { "number": "80%", "label": "Hollow fiber structure" } },
-        { "type": "stat_item", "settings": { "number": "1/8", "label": "Weight of cotton" } }
+        { "type": "stat_item", "settings": { "number": "97%", "label": "Less CO₂ vs Down*" } },
+        { "type": "stat_item", "settings": { "number": "0", "label": "Animals Used" } },
+        { "type": "stat_item", "settings": { "number": "80%", "label": "Air — by Design" } },
+        { "type": "stat_item", "settings": { "number": "40%", "label": "Lighter Than Down" } }
       ]
     }
   ]
