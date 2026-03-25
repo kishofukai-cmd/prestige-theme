@@ -47,7 +47,7 @@
         "eyebrow": "The World's First Kapok-Insulated Jacket",
         "launch_spot": "Only 100 spots available globally",
         "hero_title": "<p>Warmer. Lighter. <em>Completely Animal-Free.</em></p>",
-        "hero_sub": "<p>500g. Machine washable. No animals, no allergens. Built in Japan.</p>",
+        "hero_sub": "<p>500g. Machine washable. No animals, no allergens. Designed in Japan.</p>",
         "cta_url": "",
         "cta_text": "Get My AirLight Jacket — $398",
         "offer_main": "Free Worldwide Shipping on All Orders",
@@ -123,7 +123,7 @@
         "trust_4": {
           "type": "item",
           "settings": {
-            "text": "All Made in Japan"
+            "text": "Designed & Developed in Japan"
           }
         }
       },
@@ -250,8 +250,8 @@
           "type": "japanese_engineering",
           "settings": {
             "label": "Japanese Engineering",
-            "heading": "5 Years. One Breakthrough.",
-            "body": "Kapok fiber is too short to spin into thread — or so we were told. We spent five years working with Japan's leading textile engineers to solve this. The result: NEO DOWN KAPOK™, a patent-pending insulation sheet that holds fiber without spinning it. Mainly sewn by artisans in Japan.",
+            "heading": "140 Years of Craft. 6 Years of Proof. Now, the World.",
+            "body": "KAPOK JAPAN was born from a textile trading family with 140 years of history. Rooted in Japan — close to Southeast Asia's kapok forests and backed by generations of fabric expertise — we spent years developing NEO DOWN KAPOK: a plant-based insulation that is thin, light, and genuinely warm.\n\nFor six years, Japanese customers have worn it, washed it, and come back for more. Now, we're ready to bring it to the world.",
             "image1": "shopify://shop_images/p.jpg",
             "fallback_image1": "airlight-material-sheet.png",
             "image1_caption": "KapokFill™ insulation sheet",
@@ -516,7 +516,7 @@
         "cta_url": "",
         "cta_text": "Shop Now — $398",
         "micro_1": "✓ 30-day returns guaranteed",
-        "micro_2": "✓ All Made in Japan",
+        "micro_2": "✓ Designed & Developed in Japan",
         "micro_3": "✓ Customs billed at delivery (DDU)"
       }
     },
@@ -622,9 +622,18 @@
       "settings": {
         "label": "Size Guide",
         "heading": "Find Your Size",
-        "intro": "AirLight fits true to North American sizing. If you're between sizes, we recommend sizing up for layering flexibility.",
-        "highlight_col": "XS",
-        "fit_tip": "When in doubt, size up — AirLight is designed with room to layer."
+        "intro": "If you're between sizes, we recommend sizing up for layering flexibility.",
+        "fit_tip": "When in doubt, size up — AirLight is designed with room to layer.",
+        "men_length_m": "65", "men_length_l": "66.5", "men_length_ll": "68", "men_length_3l": "71",
+        "men_shoulder_m": "49", "men_shoulder_l": "50.5", "men_shoulder_ll": "52", "men_shoulder_3l": "54",
+        "men_chest_m": "110", "men_chest_l": "115", "men_chest_ll": "120", "men_chest_3l": "125",
+        "men_sleeve_m": "64", "men_sleeve_l": "65", "men_sleeve_ll": "66", "men_sleeve_3l": "68",
+        "men_model_note": "",
+        "women_length_s": "61", "women_length_m": "62", "women_length_l": "64", "women_length_ll": "66",
+        "women_shoulder_s": "42", "women_shoulder_m": "44", "women_shoulder_l": "46", "women_shoulder_ll": "48",
+        "women_chest_s": "99.5", "women_chest_m": "103.5", "women_chest_l": "109.5", "women_chest_ll": "115.5",
+        "women_sleeve_s": "56", "women_sleeve_m": "58.5", "women_sleeve_l": "60", "women_sleeve_ll": "61.5",
+        "women_model_note": ""
       }
     },
     "faq": {
@@ -669,7 +678,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Where is the AirLight Jacket made?",
-            "answer": "<p>Every AirLight Jacket is made entirely in Japan — from the kapok fiber processing to the final stitching. We work with manufacturing partners who produce for top Japanese outdoor brands. 'Made in Japan' is not a marketing line for us; it's the standard we refuse to compromise on.</p>"
+            "answer": "<p>Every AirLight Jacket is designed, developed, and engineered in Japan — using Japanese-developed fabric and insulation technology. Sewing and filling are handled by our trusted manufacturing partners. 'Designed in Japan' means Japanese textile expertise in every detail.</p>"
           }
         }
       },
@@ -697,7 +706,7 @@
         "tag_2": {
           "type": "tag_item",
           "settings": {
-            "text": "🇯🇵 All Made in Japan"
+            "text": "🇯🇵 Designed & Developed in Japan"
           }
         },
         "tag_3": {
@@ -799,7 +808,7 @@
         "proof_3": {
           "type": "proof_line",
           "settings": {
-            "text": "10+ Design Awards · All Made in Japan"
+            "text": "10+ Design Awards · Designed in Japan"
           }
         }
       },
@@ -840,15 +849,15 @@
         "stat_3": {
           "type": "stat_item",
           "settings": {
-            "number": "80%",
-            "label": "Air — by Design"
+            "number": "10+",
+            "label": "Awards"
           }
         },
         "stat_4": {
           "type": "stat_item",
           "settings": {
-            "number": "40%",
-            "label": "Lighter Than Down"
+            "number": "¥50M+",
+            "label": "Crowdfunded"
           }
         }
       },

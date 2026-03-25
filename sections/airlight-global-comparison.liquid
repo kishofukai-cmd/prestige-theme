@@ -1,4 +1,4 @@
-{% comment %} AirLight Global LP — Comparison Table {% endcomment %}
+{% comment %} AirLight Global LP — Comparison Table (Mobile-optimized) {% endcomment %}
 
 <style>
   .ag-comparison {
@@ -16,17 +16,16 @@
     text-align: center;
   }
 
+  /* ═══ Desktop table ═══ */
   .ag-comparison__table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     border-radius: 16px;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
   }
 
   .ag-comparison__table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 560px;
     background: rgba(255, 255, 255, 0.04);
   }
 
@@ -87,41 +86,113 @@
     font-weight: 600 !important;
   }
 
-  /* --- Mobile --- */
+  /* ═══ Mobile cards (hide table, show cards) ═══ */
+  .ag-comparison__cards {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .ag-comparison {
-      padding-left: 16px;
-      padding-right: 16px;
-      overflow-x: hidden;
+      padding: 48px 16px;
     }
     .ag-comparison__heading {
-      padding-left: 16px;
-      padding-right: 16px;
+      font-size: 1.7rem;
+      margin-bottom: 32px;
     }
     .ag-comparison__table-wrap {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      display: none;
     }
-    .ag-comparison__table {
-      min-width: 560px;
+    .ag-comparison__cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.2);
     }
-    .ag-comparison__table th,
-    .ag-comparison__table td {
-      font-size: 14px;
-      padding: 10px 12px;
-      min-width: 120px;
+
+    /* ── Individual row card ── */
+    .ag-comp-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: #fff;
+      border-bottom: 1px solid #e8e3da;
     }
-    .ag-comparison__table td:first-child,
-    .ag-comparison__table th:first-child {
-      position: sticky;
-      left: 0;
-      background: var(--ag-bg-dark, #1a2640);
-      z-index: 1;
-      min-width: 100px;
+    .ag-comp-row:last-child {
+      border-bottom: none;
     }
-    .ag-comparison__table img {
-      max-width: 100%;
-      height: auto;
+
+    .ag-comp-row__feature {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1a2640;
+      padding: 14px 16px 0;
+    }
+
+    .ag-comp-row__values {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      padding: 8px 0 14px;
+    }
+
+    .ag-comp-cell {
+      text-align: center;
+      padding: 6px 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #5a5550;
+    }
+
+    .ag-comp-cell__label {
+      display: block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8a7f6e;
+      margin-bottom: 3px;
+    }
+
+    .ag-comp-cell--hero {
+      background: linear-gradient(135deg, #1a2640, #2a3a5c);
+      color: #fff;
+      border-radius: 8px;
+      margin: 0 4px;
+      padding: 8px;
+    }
+    .ag-comp-cell--hero .ag-comp-cell__label {
+      color: var(--ag-gold, #c29d66);
+    }
+
+    /* ── Header row ── */
+    .ag-comp-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      background: #f0ece4;
+      padding: 12px 0;
+    }
+    .ag-comp-header__cell {
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a7f6e;
+      padding: 4px 8px;
+    }
+    .ag-comp-header__cell--hero {
+      color: #1a2640;
+    }
+    .ag-comp-header__cell--hero::before {
+      content: '★ ';
+      color: var(--ag-gold, #c29d66);
     }
   }
 </style>
@@ -130,12 +201,13 @@
   <div class="ag-container" data-ag-reveal>
     <h2 class="ag-comparison__heading">{{ section.settings.heading | default: 'How AirLight Compares.' }}</h2>
 
+    <!-- ══ Desktop table ══ -->
     <div class="ag-comparison__table-wrap">
       <table class="ag-comparison__table">
         <thead>
           <tr>
             <th></th>
-            <th class="ag-comparison__th--hero">AirLight</th>
+            <th class="ag-comparison__th--hero">★ OUR PICK</th>
             <th>Down</th>
             <th>Synthetic</th>
           </tr>
@@ -154,6 +226,36 @@
         </tbody>
       </table>
     </div>
+
+    <!-- ══ Mobile cards ══ -->
+    <div class="ag-comparison__cards">
+      <!-- Column headers -->
+      <div class="ag-comp-header">
+        <div class="ag-comp-header__cell ag-comp-header__cell--hero">AirLight</div>
+        <div class="ag-comp-header__cell">Down</div>
+        <div class="ag-comp-header__cell">Synthetic</div>
+      </div>
+
+      {% for block in section.blocks %}
+        {% if block.type == 'row' %}
+          <div class="ag-comp-row" {{ block.shopify_attributes }}>
+            <div class="ag-comp-row__feature">{{ block.settings.feature }}</div>
+            <div class="ag-comp-row__values">
+              <div class="ag-comp-cell ag-comp-cell--hero">
+                {{ block.settings.airlight }}
+              </div>
+              <div class="ag-comp-cell">
+                {{ block.settings.down }}
+              </div>
+              <div class="ag-comp-cell">
+                {{ block.settings.synthetic }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
   </div>
 </section>
 
@@ -161,7 +263,12 @@
 {
   "name": "AG Comparison",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "How AirLight Compares." }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How AirLight Compares." },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "カスタムCSS"
+    }
   ],
   "blocks": [
     {
