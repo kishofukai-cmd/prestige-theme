@@ -77,7 +77,7 @@
       ],
       "name": "t:sections.video.presets.video.name",
       "settings": {
-        "autoplay": false,
+        "autoplay": true,
         "show_controls": true,
         "video_size": "md",
         "external_video_url": "https://youtu.be/-ZIZcHy7w8A?si=WRdPaNBHCyyMW8AR",
@@ -743,6 +743,7 @@
         "product_men": {
           "type": "product_line",
           "settings": {
+            "product": "men-hooded-jacket",
             "gender_label": "Men's",
             "product_name": "AirLight Jacket — Men",
             "price": "$398",
@@ -763,6 +764,7 @@
         "product_women": {
           "type": "product_line",
           "settings": {
+            "product": "women-hooded-jacket",
             "gender_label": "Women's",
             "product_name": "AirLight Jacket — Women",
             "price": "$398",
