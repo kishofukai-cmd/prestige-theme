@@ -43,8 +43,8 @@
         "image_hpJVBD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/c_2_2x_1_37a0a140-d4f8-49d6-8331-9a8341154d58.png",
-            "mobile_image": "shopify://shop_images/c_2x_3.png",
+            "image": "shopify://shop_images/c_2_3x_1.png",
+            "mobile_image": "shopify://shop_images/c_3_3x_3aa7929c-7872-4504-9088-955f0d90f3d1.png",
             "subheading": "",
             "title": "",
             "mobile_text_position": "place-self-center text-center",
