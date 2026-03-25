@@ -13,7 +13,7 @@
     "hero": {
       "type": "musubi-lp-hero",
       "blocks": {
-        "proof_item_EKFgXW": {
+        "proof_1": {
           "type": "proof_item",
           "settings": {
             "number": "2,000",
@@ -36,7 +36,7 @@
         }
       },
       "block_order": [
-        "proof_item_EKFgXW",
+        "proof_1",
         "proof_2",
         "proof_3"
       ],
@@ -44,17 +44,16 @@
         "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
         "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
-        "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
+        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを入れる。</p>",
+        "hero_subtitle": "<p>植物由来素材 × 通気構造の<br/>リカバリー加重ブランケット</p>",
         "cta_url": "",
-        "cta_text": "MUSUBI詳しく見る",
+        "cta_text": "今すぐMUSUBIを手に入れる",
         "price_text": "¥29,800〜",
         "price_tax": "(税込)"
       }
     },
     "guarantee": {
       "type": "musubi-lp-guarantee",
-      "disabled": true,
       "settings": {}
     },
     "makuake": {
@@ -152,13 +151,6 @@
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
-        "reel_4B6Vgf": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DP6KXQLk0oC",
-            "caption": "MUSUBI使用レビュー"
-          }
-        },
         "reel_1": {
           "type": "reel",
           "settings": {
@@ -166,11 +158,25 @@
             "caption": "MUSUBI使用レビュー"
           }
         },
-        "reel_ehrVg9": {
+        "reel_2": {
           "type": "reel",
           "settings": {
-            "reel_id": "DVIng-EDw6_",
-            "caption": ""
+            "reel_id": "DR6vqKrksq6",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_3": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP9zolIk9E0",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_4": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DSCaFUGj6OR",
+            "caption": "MUSUBI使用レビュー"
           }
         },
         "reel_5": {
@@ -189,9 +195,10 @@
         }
       },
       "block_order": [
-        "reel_4B6Vgf",
         "reel_1",
-        "reel_ehrVg9",
+        "reel_2",
+        "reel_3",
+        "reel_4",
         "reel_5",
         "reel_6"
       ],
@@ -208,7 +215,7 @@
         "reason_1": {
           "type": "reason_card",
           "settings": {
-            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0885.jpg?v=1771395913&width=800",
             "number": "01",
             "title": "やさしい重み設計",
             "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
@@ -249,21 +256,21 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>頭のなかが<br/>ぐるぐる<br/>休まらない</p>"
+            "text": "<p>頭のなかが<br/>ぐるぐる休まらない</p>"
           }
         },
         "worry_2": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>波立つように<br/>心が落ち着かない</p>"
+            "text": "<p>波立つように<br>心が落ち着かない</p>"
           }
         },
         "worry_3": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>リラックスする<br/>習慣が続かない</p>"
+            "text": "<p>リラックスする<br>習慣が続かない</p>"
           }
         }
       },
@@ -300,8 +307,8 @@
         "para_2"
       ],
       "settings": {
-        "heading": "新発見！眠りには「導入スイッチ」が必要だった",
-        "lead_text": "<p>現代の睡眠課題。<br/>瞑想やフレグランスだけでは、どこか物足りない。</p>"
+        "heading": "眠りには「導入スイッチ」が必要だった",
+        "lead_text": "<p>現代の睡眠課題。<br>瞑想やフレグランスだけでは、どこか物足りない。</p>"
       }
     },
     "trust-visual": {
@@ -378,14 +385,14 @@
       "type": "musubi-lp-comparison",
       "settings": {
         "label": "LABORATORY TEST",
-        "heading": "検証データが証明するMUSUBIの快適な湿度コントロール",
+        "heading": "検証データが証明する<br>MUSUBIの快適性",
         "musubi_value": "約47〜48%",
         "musubi_desc": "60分間ほぼ一定で推移",
-        "other_value": "約55% → 70%",
+        "other_value": "55% → 70%",
         "other_desc": "時間経過とともに上昇",
         "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
         "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
-        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
       }
     },
     "sizes": {
@@ -401,7 +408,7 @@
             "name": "Nap Size (M)",
             "price": "¥29,800",
             "price_note": "(税込)",
-            "dimensions": "約135 × 70 cm",
+            "dimensions": "100 × 70 cm",
             "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
             "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
           }
@@ -416,7 +423,7 @@
             "name": "Sleep Size (L)",
             "price": "¥39,800",
             "price_note": "(税込)",
-            "dimensions": "約175 × 105 cm",
+            "dimensions": "150 × 100 cm",
             "features": "ベッド利用, 重い布団が好き, 包まれたい方",
             "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
@@ -472,6 +479,22 @@
             "color_code": "#d4a5a0",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200"
           }
+        },
+        "color_6": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Earth Green",
+            "color_code": "#5e7a5a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0408.jpg?v=1771395913&width=1200"
+          }
+        },
+        "color_7": {
+          "type": "color_variant",
+          "settings": {
+            "name": "Moon Purple",
+            "color_code": "#7b6b8a",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=1200"
+          }
         }
       },
       "block_order": [
@@ -479,7 +502,9 @@
         "color_2",
         "color_3",
         "color_4",
-        "color_5"
+        "color_5",
+        "color_6",
+        "color_7"
       ],
       "settings": {
         "heading": "カラーバリエーション"
@@ -492,8 +517,8 @@
         "heading": "あなたにぴったりの一枚を。",
         "cta_url": "",
         "cta_text": "サイズ・カラーを選ぶ",
-        "micro_1": "",
-        "micro_2": "",
+        "micro_1": "✓ 14日間返品OK",
+        "micro_2": "✓ ギフトラッピング対応",
         "micro_3": ""
       }
     },
@@ -505,7 +530,7 @@
           "settings": {
             "icon": "✨",
             "title": "日常はシュッとひとふきで完結",
-            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。\n\n<a href=\"https://kapok-knot.com/pages/musubi-en-operating-instructions\">詳しいお手入れ方法はこちら</a>"
+            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
           }
         },
         "care_2": {
@@ -513,7 +538,7 @@
           "settings": {
             "icon": "🫧",
             "title": "本気のケアは「ご家庭で手洗い」",
-            "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。\n\n<a href=\"https://kapok-knot.com/pages/musubi-en-operating-instructions\">詳しいお手入れ方法はこちら</a>"
+            "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。"
           }
         }
       },
@@ -522,7 +547,7 @@
         "care_2"
       ],
       "settings": {
-        "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "heading": "<p>「重い＝手入れが大変」<br>その常識を変えます</p>",
         "image_alt": "日常のケア"
       }
     },
@@ -532,7 +557,7 @@
         "section_id": "cta-after-care",
         "heading": "毎日の休息が、変わる。",
         "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見える",
+        "cta_text": "今すぐMUSUBIを手に入れる",
         "micro_1": "✓ 家庭で手洗いOK",
         "micro_2": "✓ 365日オールシーズン",
         "micro_3": ""
@@ -595,9 +620,9 @@
         "section_id": "cta-after-reviews",
         "heading": "体験した人だけが知る、この安心感。",
         "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見る",
-        "micro_1": "",
-        "micro_2": "",
+        "cta_text": "今すぐMUSUBIを手に入れる",
+        "micro_1": "✓ 14日間返品OK",
+        "micro_2": "✓ ギフトラッピング対応",
         "micro_3": ""
       }
     },
@@ -655,10 +680,9 @@
     "gift": {
       "type": "musubi-lp-gift",
       "settings": {
-        "image": "shopify://shop_images/188.webp",
         "image_alt": "ギフトイメージ",
         "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>専用のギフトラッピングを追加で手配可能です。</p>",
+        "description": "<p>いつも頑張っているご家族やパートナーへ。</p>",
         "note": ""
       }
     },
@@ -754,7 +778,7 @@
         "price_text": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800",
         "price_note": "(税込)",
         "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見る→"
+        "cta_text": "今すぐMUSUBIを手に入れる →"
       }
     }
   },
