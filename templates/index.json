@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/2_19_4x_b729d165-612d-44c2-a66e-1213780481fc.png",
-            "mobile_image": "shopify://shop_images/46_4x_b1e925ce-5999-4aff-9308-0fddb9db08db.png",
+            "mobile_image": "shopify://shop_images/46_4x_2.png",
             "subheading": "",
             "title": "",
             "mobile_text_position": "place-self-center text-center",
@@ -167,6 +167,48 @@
         "controls_color": "#ffffff"
       }
     },
+    "177311566060d11062": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_95c7451_PyL793": {
+          "type": "ai_gen_block_95c7451",
+          "settings": {
+            "layout": "image_first",
+            "container_width": 1200,
+            "image_width": 50,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "section_padding": 60,
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/KK_LINE_-_2026-02-25T100946.368.png",
+            "image_link": "https://kapok-knot.com/products/musubi-en",
+            "image_border_radius": 0,
+            "heading": "<p><strong>リカバリー加重ブランケット“MUSUBI”</strong></p>",
+            "text": "<p>完売していたMUSUBIシリーズが再販売開始！<br/></p><p>24年10月特別先行予約/<strong>完売</strong><br/>24年11月先行予約/<strong>完売</strong><br/>25年1月一般販売/<strong>完売<br/></strong>25年5月先行販売/<strong>完売<br/></strong>25年6月先行販売/<strong>完売<br/></strong>25年7月先行販売<strong>/完売<br/></strong>25年9月先行販売<strong>/完売<br/></strong>25年10月先行販売<strong>/完売</strong></p><p><strong>現在販売中！※残りわずか</strong></p>",
+            "text_alignment": "center",
+            "text_spacing": 20,
+            "heading_size": 24,
+            "text_size": 15,
+            "button_label": "商品ページへ",
+            "button_link": "shopify://products/musubi-en",
+            "button_text_size": 14,
+            "button_padding": 12,
+            "button_border_radius": 0,
+            "background_color": "#ffffff",
+            "heading_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_95c7451_PyL793"
+      ],
+      "settings": {}
+    },
     "1771982131a896470f": {
       "type": "_blocks",
       "blocks": {
@@ -211,48 +253,6 @@
     },
     "1773105372c5188bbf": {
       "type": "_blocks",
-      "settings": {}
-    },
-    "177311566060d11062": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_95c7451_PyL793": {
-          "type": "ai_gen_block_95c7451",
-          "settings": {
-            "layout": "image_first",
-            "container_width": 1200,
-            "image_width": 50,
-            "content_gap": 60,
-            "mobile_gap": 30,
-            "section_padding": 60,
-            "vertical_alignment": "center",
-            "image": "shopify://shop_images/KK_LINE_-_2026-02-25T100946.368.png",
-            "image_link": "https://kapok-knot.com/products/musubi-en",
-            "image_border_radius": 0,
-            "heading": "<p><strong>リカバリー加重ブランケット“MUSUBI”</strong></p>",
-            "text": "<p>完売していたMUSUBIシリーズが再販売開始！<br/></p><p>24年10月特別先行予約/<strong>完売</strong><br/>24年11月先行予約/<strong>完売</strong><br/>25年1月一般販売/<strong>完売<br/></strong>25年5月先行販売/<strong>完売<br/></strong>25年6月先行販売/<strong>完売<br/></strong>25年7月先行販売<strong>/完売<br/></strong>25年9月先行販売<strong>/完売<br/></strong>25年10月先行販売<strong>/完売</strong></p><p><strong>現在販売中！※残りわずか</strong></p>",
-            "text_alignment": "center",
-            "text_spacing": 20,
-            "heading_size": 24,
-            "text_size": 15,
-            "button_label": "商品ページへ",
-            "button_link": "shopify://products/musubi-en",
-            "button_text_size": 14,
-            "button_padding": 12,
-            "button_border_radius": 0,
-            "background_color": "#ffffff",
-            "heading_color": "#1c1c1c",
-            "text_color": "#1c1c1c",
-            "button_background": "#04358d",
-            "button_hover_background": "#1c1c1c",
-            "button_text_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_95c7451_PyL793"
-      ],
       "settings": {}
     },
     "featured_collections_cW6bCK": {
