@@ -213,26 +213,6 @@
       "type": "_blocks",
       "settings": {}
     },
-    "177310552042ea7e7d": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_f585367_LLDymi": {
-          "type": "ai_gen_block_f585367",
-          "settings": {
-            "image_desktop": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
-            "image_mobile": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
-            "link_url": "https://kapok-knot.com/pages/top-kk-choose",
-            "desktop_width_percent": 65,
-            "mobile_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_f585367_LLDymi"
-      ],
-      "settings": {}
-    },
     "177311566060d11062": {
       "type": "_blocks",
       "blocks": {
@@ -303,6 +283,26 @@
         "vertical_spacing_factor": 1,
         "subheading": ""
       }
+    },
+    "177310552042ea7e7d": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f585367_LLDymi": {
+          "type": "ai_gen_block_f585367",
+          "settings": {
+            "image_desktop": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
+            "image_mobile": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
+            "link_url": "https://kapok-knot.com/pages/top-kk-choose",
+            "desktop_width_percent": 65,
+            "mobile_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f585367_LLDymi"
+      ],
+      "settings": {}
     },
     "176197798489aaedc1": {
       "type": "_blocks",
@@ -865,11 +865,11 @@
   },
   "order": [
     "slideshow",
+    "177311566060d11062",
     "1771982131a896470f",
     "1773105372c5188bbf",
-    "177310552042ea7e7d",
-    "177311566060d11062",
     "featured_collections_cW6bCK",
+    "177310552042ea7e7d",
     "176197798489aaedc1",
     "rich_text_WchhXf",
     "scrolling_content_TaycRN",
