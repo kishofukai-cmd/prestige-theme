@@ -9,6 +9,43 @@
  */
 {
   "sections": {
+    "rich_text_cE9BMb": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_n8TNM7": {
+          "type": "subheading",
+          "settings": {
+            "text": "2026年の取り扱い店舗は下記になります"
+          }
+        },
+        "heading_3VFNwX": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>KAPOK KNOT取扱店舗</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_FJcQPh": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>現在、アウターの取り扱い店舗はございません。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_n8TNM7",
+        "heading_3VFNwX",
+        "richtext_FJcQPh"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
     "faq_bNcyPj": {
       "type": "faq",
       "blocks": {
@@ -64,6 +101,7 @@
         "question_wB9hbx",
         "question_JjDqWP"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
@@ -103,7 +141,7 @@
         "template--17013364031740__5edd23ba-bab9-4281-b5b8-e14827177a7e-richtext-1": {
           "type": "richtext",
           "settings": {
-            "content": "<h3><strong>【25AW POP UP STORE】</strong></h3><p>全ての開催が終了いたしました。<br/>沢山のご来店、誠にありがとうございました。<br/>直接お会いし、商品を手に取っていただけたこと、心より感謝しております。</p>"
+            "content": "<h3><strong>【25-26AW POP UP STORE】</strong></h3><p>全ての開催が終了いたしました。<br/>沢山のご来店、誠にありがとうございました。<br/>直接お会いし、商品を手に取っていただけたこと、心より感謝しております。</p>"
           }
         }
       },
@@ -451,6 +489,7 @@
     }
   },
   "order": [
+    "rich_text_cE9BMb",
     "faq_bNcyPj",
     "main",
     "5edd23ba-bab9-4281-b5b8-e14827177a7e",
