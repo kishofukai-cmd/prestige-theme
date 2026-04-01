@@ -74,7 +74,7 @@
             "text_alignment": "left",
             "button_text": "店舗住所を確認する",
             "button_link": "https://maps.app.goo.gl/yTogJmqGZjf9dWbx6",
-            "button_alignment": "left",
+            "button_alignment": "center",
             "button_text_size": 16,
             "button_background": "#04358d",
             "button_hover_background": "#1c1c1c",
