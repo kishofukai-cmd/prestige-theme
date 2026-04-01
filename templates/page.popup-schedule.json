@@ -12,12 +12,6 @@
     "rich_text_cE9BMb": {
       "type": "rich-text",
       "blocks": {
-        "subheading_n8TNM7": {
-          "type": "subheading",
-          "settings": {
-            "text": "2026年の取り扱い店舗は下記になります"
-          }
-        },
         "heading_3VFNwX": {
           "type": "heading",
           "settings": {
@@ -28,7 +22,7 @@
         "richtext_FJcQPh": {
           "type": "richtext",
           "settings": {
-            "content": "<p>現在、アウターの取り扱い店舗はございません。</p>"
+            "content": "<p>現在、アウターの取り扱い店舗はございません。またMUSUBIシリーズ(コラボ商品以外)の取り扱い店舗も現在ございません。</p>"
           }
         },
         "image_Jr9VHJ": {
@@ -43,7 +37,6 @@
         }
       },
       "block_order": [
-        "subheading_n8TNM7",
         "heading_3VFNwX",
         "richtext_FJcQPh",
         "image_Jr9VHJ"
@@ -56,6 +49,49 @@
         "text_position": "center",
         "remove_vertical_spacing": false
       }
+    },
+    "1775013412ce3719d8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_dd9c1f6_Ri37rt": {
+          "type": "ai_gen_block_dd9c1f6",
+          "settings": {
+            "image": "shopify://shop_images/2_19_4x_b729d165-612d-44c2-a66e-1213780481fc.png",
+            "image_border_radius": 0,
+            "title": "<strong>JOURNAL STANDARD FURNITURE×MUSUBIの限定コラボモデル誕生！</strong>",
+            "title_font": "proza_libre_n4",
+            "title_size": 32,
+            "title_color": "#1c1c1c",
+            "title_spacing": 16,
+            "text": "<p>コラボ先であるJOURNAL STANDARD FURNITURE 自由が丘店にてコラボモデルを実際にお試しいただける期間をご用意しました。</p>",
+            "text_size": 16,
+            "text_color": "#1c1c1c",
+            "text_spacing": 24,
+            "store_info": "<p>店舗名 ：journal standard Furniture / ACME Furniture 自由が丘店</p><p>住所 ：〒152-0035 東京都目黒区自由が丘２丁目１７−７</p><p>設置期間 ：4/3〜 Makuake開催期間中に展示</p><p>※店舗内に見当たらない場合は店舗スタッフにお声がけ頂けますと幸いです。</p>",
+            "store_info_size": 14,
+            "store_info_color": "#1c1c1c",
+            "store_info_spacing": 24,
+            "text_alignment": "left",
+            "button_text": "店舗住所を確認する",
+            "button_link": "https://maps.app.goo.gl/yTogJmqGZjf9dWbx6",
+            "button_alignment": "left",
+            "button_text_size": 16,
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff",
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 0,
+            "gap": 40,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_dd9c1f6_Ri37rt"
+      ],
+      "settings": {}
     },
     "faq_bNcyPj": {
       "type": "faq",
@@ -501,6 +537,7 @@
   },
   "order": [
     "rich_text_cE9BMb",
+    "1775013412ce3719d8",
     "faq_bNcyPj",
     "main",
     "5edd23ba-bab9-4281-b5b8-e14827177a7e",
