@@ -261,6 +261,11 @@
       "disabled": true,
       "settings": {}
     },
+    "musubi_review_summary_wBph6j": {
+      "type": "musubi-review-summary",
+      "name": "MUSUBI レビュー要約",
+      "settings": {}
+    },
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
@@ -1007,6 +1012,7 @@
   "order": [
     "main",
     "guarantee",
+    "musubi_review_summary_wBph6j",
     "ugc",
     "empathy",
     "story",
