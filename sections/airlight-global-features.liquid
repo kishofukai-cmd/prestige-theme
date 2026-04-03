@@ -54,19 +54,15 @@
 
   .ag-feature-card__img {
     width: 100%;
-    aspect-ratio: 16 / 9;
     background: var(--ag-bg-warm, #faf9f6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
+    display: block;
     overflow: hidden;
   }
 
   .ag-feature-card__img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
   }
 
   .ag-feature-card__body {
@@ -158,22 +154,17 @@
     }
     .ag-feature-card__img {
       width: 100%;
-      height: 200px;
+      height: auto;
       min-width: unset;
       aspect-ratio: unset;
       border-radius: 4px;
       overflow: hidden;
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0ece4;
+      display: block;
     }
     .ag-feature-card__img img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      max-width: 100%;
+      height: auto;
+      display: block;
     }
     .ag-feature-card__body {
       flex: 1;
