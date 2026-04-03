@@ -206,11 +206,27 @@
     font-size: 12px;
     color: #8a8580;
     text-decoration: underline;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     text-underline-offset: 2px;
   }
   .ag-product-line__size-guide:hover {
     color: #1a2640;
+  }
+  .ag-product-line__details-link {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a2640;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .ag-product-line__details-link:hover {
+    color: #c29d66;
   }
 
   /* ── Add to Cart button ── */
@@ -419,6 +435,12 @@
 
                   <a href="#ag-size-guide" class="ag-product-line__size-guide">Size Guide &rarr;</a>
 
+                  <a class="ag-product-line__details-link"
+                     data-geo-product="{{ product.handle }}"
+                     href="/products/{{ product.handle }}">
+                    View Full Details &rarr;
+                  </a>
+
                   <button type="button" class="ag-buy__atc" disabled data-atc>
                     Select size to continue
                   </button>
@@ -453,6 +475,11 @@
                   <div style="font-family:'Outfit',sans-serif;font-size:13px;color:#5a5550;margin-bottom:16px;">{{ block.settings.colors }}</div>
                 {% endif %}
                 <a href="#ag-size-guide" class="ag-product-line__size-guide">Size Guide &rarr;</a>
+                <a class="ag-product-line__details-link"
+                   data-geo-product="{{ product.handle }}"
+                   href="/products/{{ product.handle }}">
+                  View Full Details &rarr;
+                </a>
                 <a href="{{ block.settings.cta_url | default: '#' }}" class="ag-buy__atc" style="text-decoration:none;">
                   {{ block.settings.cta_text | default: 'Shop Now — $398 →' }}
                 </a>

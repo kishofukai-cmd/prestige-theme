@@ -25,6 +25,31 @@
   <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
   {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
 
+  {% comment %} ── Geo-based URL routing (IP → country via Shopify Markets) ── {% endcomment %}
+  <script>
+    // Shopify infers country from IP via Markets/Localization
+    window.AG_GEO = {
+      country: {{ localization.country.iso_code | json }},
+      isJapan: {{ localization.country.iso_code | json }} === 'JP'
+    };
+
+    // Rewrite all [data-geo-product] links based on visitor country
+    function agApplyGeoLinks() {
+      var prefix = window.AG_GEO.isJapan ? '' : '/en';
+      document.querySelectorAll('[data-geo-product]').forEach(function(el) {
+        var handle = el.getAttribute('data-geo-product');
+        el.href = prefix + '/products/' + handle;
+      });
+    }
+
+    // Run immediately + on DOMContentLoaded (belt-and-suspenders)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', agApplyGeoLinks);
+    } else {
+      agApplyGeoLinks();
+    }
+  </script>
+
   {% comment %} ── Hide Channel Talk chat widget on this LP ── {% endcomment %}
   <style>
     /* Channel Talk — all known selectors */
