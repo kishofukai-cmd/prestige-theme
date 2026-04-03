@@ -25,6 +25,123 @@
         "toolbar_color_scheme": ""
       }
     },
+    "timeline_iyDeiy": {
+      "type": "timeline",
+      "blocks": {
+        "item_JfEdJH": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "label": "2010",
+            "subheading": "Subheading",
+            "title": "2010",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
+          }
+        },
+        "item_97dTX7": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "label": "2020",
+            "subheading": "Subheading",
+            "title": "2020",
+            "content": "<p>Use this text to share information about what happened to your brand at a specific time.</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "mobile_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "item_JfEdJH",
+        "item_97dTX7"
+      ],
+      "name": "t:sections.timeline.presets.timeline.name",
+      "settings": {
+        "color_scheme": "",
+        "item_color_scheme": "",
+        "separate_section_with_border": true
+      }
+    },
+    "1775203698b97e1c60": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_95c7451_YfBHLH": {
+          "type": "ai_gen_block_95c7451",
+          "name": "Image with text",
+          "settings": {
+            "layout": "image_first",
+            "container_width": 1200,
+            "image_width": 50,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "section_padding": 60,
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/OFFICIAL_LINE_11.png",
+            "image_link": "",
+            "image_border_radius": 0,
+            "heading": "<p>Image with text</p>",
+            "text": "<p>今年の国際女性day</p>",
+            "text_alignment": "left",
+            "text_spacing": 20,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_label": "",
+            "button_link": "",
+            "button_text_size": 14,
+            "button_padding": 12,
+            "button_border_radius": 0,
+            "background_color": "#ffffff",
+            "heading_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_82b4ef8_88RUMp": {
+          "type": "ai_gen_block_82b4ef8",
+          "settings": {
+            "desktop_width_percent": 100,
+            "item_1_title": "騒がしくて、愛おしい朝のルーティン",
+            "item_1_content": "我が家はもうすぐ2歳の双子（息子2人）がいる四人家族です。そんな私の心を軽くする瞬間の1つは、家族4人で過ごす朝の保育園までの時間です。\n\n我が家は共働きで、出勤前に夫と2人でバタバタと準備をして、息子達と一緒に4人で家を出ます。\n\n保育園までの道では、散歩中のわんちゃんを見つけ「あ、わんわん！」と息子一人が叫べば、もう一人も指をさして笑う。その様子を見たくて夫と一緒に「あ、わんわんいるよー！」と声を出して教えてあげます。\n交通整理のおじさんが手を振ってくれれば、手を振りかえして「バイバーイ」と挨拶する2人。\n\nそんな日々を今では誇らしく感じられるようになりましたが、2人が生まれて間もなくは、まともに寝ることすらできず、日々戦場でした。\n私も夫も心身が摩耗して本当に重く感じていましたが、今では、無事に睡眠も取れるようになり、夫の積極的な協力もあり家族全員で健やかな日々を送れるようになりました。\nそんな思い出も振り返りながら、毎日、家族みんなで眠りにつき、朝はまた騒がしく愛おしいルーティンを日々繰り返しています。",
+            "item_2_title": "役割を手放し、わたしを生きる",
+            "item_2_content": "49歳、来月、15年働いた会社をやめます。\nそして、3年間という時間を家族にもらい、1人のひととして、自分の足で世の中を見て、あたらしい場所で、自分チャレンジをします。\n\n\nお母さん、妻、娘、会社での役割。たくさんの顔をもち、マルチタスクをがむしゃらにやってきた。そのことは、私を大きく成長させてくれた。関わってくれた同僚、友、家族、本当に感謝してもしきれないくらい感謝している。\n\n子どもたちが結婚＆出産、就職と人生の節目を迎え、親としての役割を一つ終えたきもち。\nそんなとき、私はこの先に何かしたいことはあるのか？ふと浮かんだのがひとり暮らしと自己選択という言葉。誰かのために一生懸命だったけど、自分のために時間を使ったり、自分のことだけを考えて判断するなどをしてこなかったかも、と。ひとりの人として、この先の人生に必要で、でも今のわたしに足りないものはこれかもしれないと。\n思い切って自分の思いを夫に話してみると、\"いいんじゃない？逆単身赴任だね\"。あれ、できないと思っていたのは私だけだったんだ！とそこにも気づきがあった。\n\n少しの間、一旦すべての役割をお休みして、ひとりで、全く知らない土地で、初めての仕事をしてみようと決断。一時的に、家族とは離れて暮らすことにはなるけど、ここはあえて自立と自律へのチャレンジを、します。これはとても前向きで大きな一歩になると確信しています。\n\n私が心を軽やかにする方法、それは自分の気持ちを自分が素直に受け止め、思っているだけではなく言葉にしたり、行動に移したりしてみること。\n\nフットワークが軽いとよく言われる。着物の着付、和裁、ヨガ、マラソンもやってみた。着物とヨガは今も私の生活の軸にあるものになっている。動けば視点が変わり、出会う人にも変化がある、新しい学びがある。それを知っているから、そして失敗しても帰る場所があるから、できるのだと思う。\n\n周りへの感謝を忘れず、女性として頑張ってきた自分をねぎらい、人としてさらに成長をすることは、これからも自分のテーマとして持ち続けていきたい。自分らしくいることが、めぐりめぐって周りの人も幸せにすることができると信じている。",
+            "item_3_title": "深く息をするだけで、少しやさしくなれる",
+            "item_3_content": "腹式呼吸を習慣にするように今コツコツ取り組んでます。\n子供2人を育てていると心の余裕がなく、毎日一杯一杯になってましたが、一呼吸ずつ意識すると思っていたより思い詰めなくてもいいのかとふわっと心も体も軽くなるんだな〜と呼吸ひとつで実感できます。",
+            "item_4_title": "この存在が、わたしを整える",
+            "item_4_content": "なんと言っても、4つの足の家族たち(愛犬)と過ごすこと。\n我が家の愛犬たちは、皆保護犬です。しかも、保護犬の中でも最も受け入れのハードルが高いと言われる元野犬たちです。野犬は、人に頼らず人を避け、ただ懸命に生きる強く尊く美しい命。彼らには、何の駆け引きも媚びもなく、純粋に生きる姿は誠実そのもので、私たちの邪念やストレスを浄化してくれます。\n心から慈しみ、何よりも感謝を込めて、日々を穏やかなに時ににぎやかに過ごしています。",
+            "item_5_title": "深く呼吸して、わたしをほどく",
+            "item_5_content": "もともと体育会系な私が、育児や仕事に追われ、すっかり自分の健康に気を向く事は出来ませんでした。ようやく男子3人も手を離れてきたので、去年の夏からホットヨガ教室に通い始めました。\n自分に向き合って、夢中になってポーズを取り、汗をかいて過ごす時間は、運動不足解消だけでなく、心穏やかに過ごすために必要な習い事となりました。\nもともとヨガは「心と体をつなぐもの」。歳を重ねて、改めて自分のカラダの今出来ること出来ないことがわかります。\nそのひとつひとつのことは、今の自分を認めることにつながりました。\nレッスンを終えるころにはとても清々しく、心軽やかに穏やかに過ごせます。\n頻回に通えませんが、細々と続けていきたいと思う習い事になりました。",
+            "item_6_title": "手放すたびに、心に余白が生まれる",
+            "item_6_content": "日々子育てと仕事に追われ自分の時間はほぼありません。それでも年に一度は、自分の服、子供の服の断捨離をして、子供たちの成長を振り返りつつ、自分のライフスタイルに合う持ち物にアップデートしています。持ち物が減ることで心も軽くなります。",
+            "title_font_size": 16,
+            "text_font_size": 14,
+            "border_radius": 8,
+            "item_background_color": "#ffffff",
+            "item_border_color": "#e0e0e0",
+            "title_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_color": "#04358d",
+            "button_hover_color": "#1c1c1c",
+            "read_more_text": "詳しく見る",
+            "read_less_text": "閉じる"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_95c7451_YfBHLH",
+        "ai_gen_block_82b4ef8_88RUMp"
+      ],
+      "settings": {}
+    },
     "prev-next-blog-posts": {
       "type": "prev-next-blog-posts",
       "disabled": true,
@@ -41,6 +158,8 @@
   },
   "order": [
     "main",
+    "timeline_iyDeiy",
+    "1775203698b97e1c60",
     "prev-next-blog-posts"
   ]
 }
