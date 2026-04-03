@@ -24,6 +24,119 @@
   <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
   <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
   {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+
+  {% comment %} ── Hide Channel Talk chat widget on this LP ── {% endcomment %}
+  <style>
+    /* Channel Talk — all known selectors */
+    #ch-plugin,
+    #ch-plugin-core,
+    #ch-plugin-entry,
+    #ch-plugin-script,
+    #channel-io-plugin,
+    [id^="ch-plugin"],
+    [id^="channel-io"],
+    .ch-messenger-frame,
+    .ch-btn-launcher,
+    .ch-desktop,
+    .ch-mobile,
+    iframe[title*="Channel"],
+    iframe[title*="channel"],
+    iframe[src*="channel.io"],
+    div[class*="ChannelIO"],
+    div[data-ch-testid] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      max-width: 0 !important;
+      max-height: 0 !important;
+      overflow: hidden !important;
+      position: fixed !important;
+      z-index: -9999 !important;
+    }
+  </style>
+  <script>
+    (function() {
+      /* 1) API-level hide (if ChannelIO SDK loaded) */
+      function tryHideChannelIO() {
+        if (typeof ChannelIO === 'function') {
+          try {
+            ChannelIO('hideChannelButton');
+            ChannelIO('hideMessenger');
+          } catch(e) {}
+        }
+        if (typeof window.ChannelIOInitialized !== 'undefined' || typeof window.ChannelIO === 'function') {
+          try { window.ChannelIO('shutdown'); } catch(e) {}
+        }
+      }
+
+      /* 2) DOM removal — nuke any Channel Talk elements */
+      function removeChannelElements() {
+        var selectors = [
+          '#ch-plugin', '#ch-plugin-core', '#ch-plugin-entry',
+          '#channel-io-plugin', '[id^="ch-plugin"]', '[id^="channel-io"]',
+          'iframe[src*="channel.io"]', 'iframe[title*="Channel"]',
+          'iframe[title*="channel"]', 'div[class*="ChannelIO"]',
+          '.ch-btn-launcher', 'div[data-ch-testid]'
+        ];
+        selectors.forEach(function(sel) {
+          document.querySelectorAll(sel).forEach(function(el) {
+            el.remove();
+          });
+        });
+      }
+
+      /* 3) MutationObserver — catch late-injected elements */
+      function watchForChannel() {
+        if (typeof MutationObserver === 'undefined') return;
+        var observer = new MutationObserver(function(mutations) {
+          var found = false;
+          mutations.forEach(function(m) {
+            m.addedNodes.forEach(function(node) {
+              if (node.nodeType !== 1) return;
+              var id = (node.id || '').toLowerCase();
+              var cls = (node.className || '').toString().toLowerCase();
+              if (id.indexOf('ch-plugin') !== -1 || id.indexOf('channel-io') !== -1 ||
+                  cls.indexOf('channelio') !== -1 || cls.indexOf('ch-btn') !== -1) {
+                node.remove();
+                found = true;
+              }
+              /* Also check iframes */
+              if (node.tagName === 'IFRAME') {
+                var src = (node.src || '').toLowerCase();
+                var title = (node.title || '').toLowerCase();
+                if (src.indexOf('channel.io') !== -1 || title.indexOf('channel') !== -1) {
+                  node.remove();
+                  found = true;
+                }
+              }
+            });
+          });
+          if (found) tryHideChannelIO();
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+
+        /* Auto-stop after 30s to save resources */
+        setTimeout(function() { observer.disconnect(); }, 30000);
+      }
+
+      /* Run on DOMContentLoaded + delayed retries */
+      document.addEventListener('DOMContentLoaded', function() {
+        tryHideChannelIO();
+        removeChannelElements();
+        watchForChannel();
+      });
+      /* Retry multiple times as Channel Talk loads async */
+      [500, 1500, 3000, 5000, 8000].forEach(function(ms) {
+        setTimeout(function() {
+          tryHideChannelIO();
+          removeChannelElements();
+        }, ms);
+      });
+    })();
+  </script>
 </head>
 <body style="margin:0; padding:0;">
   {{ content_for_layout }}
