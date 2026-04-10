@@ -33,12 +33,33 @@
             "number": "★ 4.8",
             "label": "Review Score"
           }
+        },
+        "highlight_1": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing."
+          }
+        },
+        "highlight_2": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator."
+          }
+        },
+        "highlight_3": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "No animal feathers. No tree cutting. A sustainable brand from Japan changing fashion with plant innovation."
+          }
         }
       },
       "block_order": [
         "proof_1",
         "proof_2",
-        "proof_3"
+        "proof_3",
+        "highlight_1",
+        "highlight_2",
+        "highlight_3"
       ],
       "settings": {
         "eyebrow": "KAPOK KNOT — Japan Material Innovation",

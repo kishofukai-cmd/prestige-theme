@@ -33,6 +33,19 @@
       {{ section.settings.hero_sub | default: '500g. Plant-based warmth. Tested in Norwegian winters. Made in Japan. Now shipping worldwide.' }}
     </p>
 
+    <!-- Highlights (Makuake-style key points) -->
+    {% assign highlights = section.blocks | where: 'type', 'highlight_item' %}
+    {% if highlights.size > 0 %}
+      <div class="ag-hero__highlights">
+        {% for block in highlights %}
+          <div class="ag-hero__highlight-item" {{ block.shopify_attributes }}>
+            <span class="ag-hero__highlight-check">✓</span>
+            <span class="ag-hero__highlight-text">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <!-- Proof Bar -->
     <div class="ag-hero__proof">
       {% for block in section.blocks %}
@@ -61,6 +74,55 @@
 </section>
 
 <style>
+/* --- Hero Highlights --- */
+.ag-hero__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid var(--ag-gold, #c29d66);
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+.ag-hero__highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.ag-hero__highlight-check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ag-gold, #c29d66);
+  color: #0a0a0a;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+.ag-hero__highlight-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  color: rgba(255,255,255,0.92);
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .ag-hero__highlights {
+    padding: 16px 18px;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .ag-hero__highlight-text {
+    font-size: 13px;
+  }
+}
+
 .ag-hero__launch-badge {
   display: inline-flex;
   align-items: center;
@@ -154,6 +216,13 @@
         { "type": "text", "id": "number", "label": "Number", "default": "Sold Out 3×" },
         { "type": "text", "id": "label", "label": "Label", "default": "Japan" }
       ]
+    },
+    {
+      "type": "highlight_item",
+      "name": "Key Highlight",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Highlight Text", "default": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." }
+      ]
     }
   ],
   "presets": [
@@ -162,7 +231,10 @@
       "blocks": [
         { "type": "proof_item", "settings": { "number": "Sold Out 3×", "label": "Japan" } },
         { "type": "proof_item", "settings": { "number": "$400K+", "label": "Raised in Japan" } },
-        { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Verified Reviews" } }
+        { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Verified Reviews" } },
+        { "type": "highlight_item", "settings": { "text": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." } },
+        { "type": "highlight_item", "settings": { "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator." } },
+        { "type": "highlight_item", "settings": { "text": "No animal feathers. No tree cutting. A sustainable brand from Japan changing fashion with plant innovation." } }
       ]
     }
   ]
