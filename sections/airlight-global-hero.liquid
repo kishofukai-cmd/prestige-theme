@@ -1,4 +1,4 @@
-{% comment %} AirLight Global LP — Hero Section {% endcomment %}
+{% comment %} AirLight Global LP  EHero Section {% endcomment %}
 {% render 'airlight-global-styles' %}
 {% render 'airlight-global-scripts' %}
 
@@ -6,37 +6,35 @@
   <div class="ag-hero__img-wrapper">
     {% if section.settings.hero_image != blank %}
       <img src="{{ section.settings.hero_image | img_url: '1600x' }}"
-           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
+           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket  EKAPOK KNOT' }}"
            class="ag-hero__img" fetchpriority="high">
     {% elsif section.settings.fallback_url != blank %}
       <img src="{{ section.settings.fallback_url }}"
-           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
+           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket  EKAPOK KNOT' }}"
            class="ag-hero__img" fetchpriority="high">
     {% else %}
       <img src="{{ 'airlight-hero-bg.jpg' | asset_url }}"
-           alt="AirLight Jacket — KAPOK KNOT" class="ag-hero__img" fetchpriority="high">
+           alt="AirLight Jacket  EKAPOK KNOT" class="ag-hero__img" fetchpriority="high">
     {% endif %}
     <!-- ④ Dark gradient overlay -->
     <div class="ag-hero__img-overlay"></div>
   </div>
 
   <div class="ag-hero__content">
-    <p class="ag-hero__eyebrow">{{ section.settings.eyebrow | default: "Japan Global Launch — First 100 Customers Only" }}</p>
+    <p class="ag-hero__eyebrow">{{ section.settings.eyebrow | default: "Japan Global Launch  EFirst 100 Customers Only" }}</p>
 
     <div class="ag-hero__launch-badge">
       <span class="ag-hero__launch-spot">⬡ {{ section.settings.launch_spot | default: "Only 100 spots available globally" }}</span>
     </div>
 
-    <!-- ④ サブ文言（ヘッドライン上） -->
-    {% if section.settings.pre_headline != blank %}
-      <p class="ag-hero__pre-headline">{{ section.settings.pre_headline }}</p>
-    {% endif %}
+    <!-- ④ サブ文言�E��EチE��ライン上！E-->
+    <p class="ag-hero__pre-headline">{{ section.settings.pre_headline | default: 'Still freezing in a jacket that weighs you down?' }}</p>
 
     <h1 class="ag-hero__title">
       {{ section.settings.hero_title }}
     </h1>
 
-    <!-- ① Proof Bar — ヘッドライン直下 -->
+    <!-- ① Proof Bar  Eヘッドライン直丁E-->
     <div class="ag-hero__proof">
       {% for block in section.blocks %}
         {% if block.type == 'proof_item' %}
@@ -59,7 +57,7 @@
       <div class="ag-hero__highlights">
         {% for block in highlights %}
           <div class="ag-hero__highlight-item" {{ block.shopify_attributes }}>
-            <span class="ag-hero__highlight-check">✓</span>
+            <span class="ag-hero__highlight-check">✁E/span>
             <span class="ag-hero__highlight-text">{{ block.settings.text }}</span>
           </div>
         {% endfor %}
@@ -70,7 +68,7 @@
     <div class="ag-hero__cta-wrap">
       <a href="{{ section.settings.cta_url | default: '#ag-products' }}"
          class="ag-hero__cta-btn">
-        {{ section.settings.cta_text | default: 'Get My AirLight Jacket →' }}
+        {{ section.settings.cta_label | default: 'Get My AirLight Jacket ↁE }}
       </a>
       <p class="ag-hero__cta-price">{{ section.settings.cta_price | default: '$398 · Free Worldwide Shipping' }}</p>
       <p class="ag-hero__cta-note">
@@ -79,9 +77,9 @@
     </div>
   </div>
 
-  <!-- ⑤ スクロール誘導 -->
+  <!-- ⑤ スクロール誘封E-->
   <div class="ag-hero__scroll-hint">
-    <span>{{ section.settings.scroll_hint | default: '↓ See how it works' }}</span>
+    <span>{{ section.settings.scroll_hint | default: 'ↁESee how it works' }}</span>
   </div>
 </section>
 
@@ -108,7 +106,7 @@
   line-height: 1.5;
 }
 
-/* --- Proof Bar (ヘッドライン直下) --- */
+/* --- Proof Bar (ヘッドライン直丁E --- */
 .ag-hero__proof {
   display: flex;
   align-items: center;
@@ -274,25 +272,25 @@
   "name": "AG Hero",
   "settings": [
     { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
-    { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket — KAPOK KNOT" },
+    { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket  EKAPOK KNOT" },
     { "type": "text", "id": "fallback_url", "label": "Fallback Image URL (external)", "default": "" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "Japan Global Launch — First 100 Customers Only" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "Japan Global Launch  EFirst 100 Customers Only" },
     { "type": "text", "id": "launch_spot", "label": "Launch Badge Text", "default": "Only 100 spots available globally" },
     { "type": "text", "id": "pre_headline", "label": "Pre-headline (italic, above title)", "default": "Still freezing in a jacket that weighs you down?" },
     { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>Down Warmth.<br><em>Reinvented in Japan.</em></p>" },
     { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g plant-based jacket. Engineered with Japanese precision.<br>Ethical insulation. Zero compromise.</p>" },
     { "type": "url", "id": "cta_url", "label": "CTA Link" },
-    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Get My AirLight Jacket →" },
+    { "type": "text", "id": "cta_label", "label": "CTA Button Text", "default": "Get My AirLight Jacket ↁE },
     { "type": "text", "id": "cta_price", "label": "Price Line (below button)", "default": "$398 · Free Worldwide Shipping" },
     { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "· 30-day guarantee · Only 100 spots" },
-    { "type": "text", "id": "scroll_hint", "label": "Scroll Hint Text", "default": "↓ See how it works" }
+    { "type": "text", "id": "scroll_hint", "label": "Scroll Hint Text", "default": "ↁESee how it works" }
   ],
   "blocks": [
     {
       "type": "proof_item",
       "name": "Proof Number",
       "settings": [
-        { "type": "text", "id": "number", "label": "Number", "default": "Sold Out 3×" },
+        { "type": "text", "id": "number", "label": "Number", "default": "Sold Out 3ÁE },
         { "type": "text", "id": "label", "label": "Label", "default": "Japan" }
       ]
     },
@@ -300,7 +298,7 @@
       "type": "highlight_item",
       "name": "Key Highlight",
       "settings": [
-        { "type": "text", "id": "text", "label": "Highlight Text", "default": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." }
+        { "type": "text", "id": "text", "label": "Highlight Text", "default": "Just 500g  Edown-level warmth in a plant-based jacket you'll forget you're wearing." }
       ]
     }
   ],
@@ -308,11 +306,11 @@
     {
       "name": "AG Hero",
       "blocks": [
-        { "type": "proof_item", "settings": { "number": "Sold Out 3×", "label": "Japan" } },
+        { "type": "proof_item", "settings": { "number": "Sold Out 3ÁE, "label": "Japan" } },
         { "type": "proof_item", "settings": { "number": "10+", "label": "Design Awards" } },
-        { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Verified Reviews" } },
-        { "type": "highlight_item", "settings": { "text": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." } },
-        { "type": "highlight_item", "settings": { "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator." } },
+        { "type": "proof_item", "settings": { "number": "☁E4.8", "label": "Verified Reviews" } },
+        { "type": "highlight_item", "settings": { "text": "Just 500g  Edown-level warmth in a plant-based jacket you'll forget you're wearing." } },
+        { "type": "highlight_item", "settings": { "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat  Enature's lightest insulator." } },
         { "type": "highlight_item", "settings": { "text": "No animal feathers. No tree cutting. A sustainable brand from Japan changing fashion with plant innovation." } }
       ]
     }
