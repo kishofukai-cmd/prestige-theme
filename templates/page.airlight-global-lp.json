@@ -63,11 +63,13 @@
       ],
       "settings": {
         "eyebrow": "KAPOK KNOT — Japan Material Innovation",
+        "pre_headline": "Still freezing in a jacket that weighs you down?",
         "hero_title": "<p>Down Warmth.<br><em>Reinvented in Japan.</em></p>",
         "hero_sub": "<p>500g plant-based jacket. Engineered with Japanese precision.<br>Ethical insulation. Zero compromise.</p>",
-        "cta_text": "Shop Now",
-        "offer_main": "Free worldwide shipping",
-        "offer_note": "· First 100 orders only",
+        "cta_text": "Get My AirLight Jacket →",
+        "cta_price": "$398 · Free Worldwide Shipping",
+        "offer_note": "· 30-day guarantee · Only 100 spots",
+        "scroll_hint": "↓ See how it works",
         "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png"
       }
     },
@@ -280,6 +282,29 @@
         "heading": "Sound familiar?",
         "bridge_text": "There had to be a better way.",
         "bridge_strong": "Now there is."
+      }
+    },
+    "problem": {
+      "type": "airlight-global-problem",
+      "blocks": {
+        "pill_1": {
+          "type": "problem_pill",
+          "settings": { "text": "Heavy. Clumps when wet. Loses warmth." }
+        },
+        "pill_2": {
+          "type": "problem_pill",
+          "settings": { "text": "Bulky. Compresses in your bag." }
+        },
+        "pill_3": {
+          "type": "problem_pill",
+          "settings": { "text": "Animal-sourced. Ethical trade-offs." }
+        }
+      },
+      "block_order": ["pill_1", "pill_2", "pill_3"],
+      "settings": {
+        "heading": "Still happy with your current jacket?",
+        "image_label": "CONVENTIONAL DOWN JACKET",
+        "bridge": "There is a better way. ↓"
       }
     },
     "features": {
@@ -751,6 +776,7 @@
     "brand",
     "awards",
     "pain",
+    "problem",
     "features",
     "material",
     "cta-mid",

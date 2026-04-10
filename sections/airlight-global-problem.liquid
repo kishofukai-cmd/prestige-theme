@@ -1,0 +1,181 @@
+{% comment %} AirLight Global LP — Problem Agitation Section {% endcomment %}
+
+<style>
+  .ag-problem {
+    background: #7A5830;
+    padding: clamp(64px, 10vw, 120px) var(--ag-pad, 20px);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .ag-problem__inner {
+    max-width: var(--ag-max, 960px);
+    margin: 0 auto;
+  }
+
+  .ag-problem__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #F5ECD7;
+    margin: 0 0 clamp(40px, 6vw, 60px);
+  }
+
+  /* --- Image block --- */
+  .ag-problem__img-wrap {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto clamp(32px, 5vw, 48px);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ag-problem__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(30%) brightness(0.85);
+  }
+  .ag-problem__img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    border: 2px dashed rgba(245,236,215,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(245,236,215,0.5);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+  .ag-problem__img-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,236,215,0.55);
+    margin: 12px 0 0;
+    text-align: center;
+  }
+
+  /* --- Pills --- */
+  .ag-problem__pills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 clamp(40px, 6vw, 56px);
+  }
+  .ag-problem__pill {
+    background: rgba(245, 236, 215, 0.92);
+    border-radius: 25px;
+    padding: 12px 28px;
+    color: #5C3A18;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.4;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+  }
+  .ag-problem__pill-x {
+    color: #A03020;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  /* --- Bridge text --- */
+  .ag-problem__bridge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-style: italic;
+    color: #F5ECD7;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .ag-problem {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .ag-problem__pill {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="ag-problem" id="ag-problem" data-ag-reveal>
+  <div class="ag-problem__inner">
+
+    <h2 class="ag-problem__heading">{{ section.settings.heading | default: 'Still happy with your current jacket?' }}</h2>
+
+    <!-- Image block -->
+    <div class="ag-problem__img-wrap">
+      {% if section.settings.problem_image != blank %}
+        <img src="{{ section.settings.problem_image | img_url: '960x' }}"
+             alt="{{ section.settings.image_alt | default: 'Conventional down jacket' }}"
+             class="ag-problem__img">
+      {% elsif section.settings.problem_image_url != blank %}
+        <img src="{{ section.settings.problem_image_url }}"
+             alt="{{ section.settings.image_alt | default: 'Conventional down jacket' }}"
+             class="ag-problem__img">
+      {% else %}
+        <div class="ag-problem__img-placeholder">[ Image placeholder ]</div>
+      {% endif %}
+      <p class="ag-problem__img-label">{{ section.settings.image_label | default: 'Conventional Down Jacket' }}</p>
+    </div>
+
+    <!-- Pills -->
+    <div class="ag-problem__pills">
+      {% for block in section.blocks %}
+        {% if block.type == 'problem_pill' %}
+          <div class="ag-problem__pill" {{ block.shopify_attributes }}>
+            <span class="ag-problem__pill-x">×</span>{{ block.settings.text }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Bridge text -->
+    <p class="ag-problem__bridge">{{ section.settings.bridge | default: 'There is a better way. ↓' }}</p>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Problem",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Still happy with your current jacket?" },
+    { "type": "image_picker", "id": "problem_image", "label": "Problem Image" },
+    { "type": "text", "id": "problem_image_url", "label": "Image URL (external fallback)", "default": "" },
+    { "type": "text", "id": "image_alt", "label": "Image Alt Text", "default": "Conventional down jacket" },
+    { "type": "text", "id": "image_label", "label": "Image Label", "default": "Conventional Down Jacket" },
+    { "type": "text", "id": "bridge", "label": "Bridge Text", "default": "There is a better way. ↓" }
+  ],
+  "blocks": [
+    {
+      "type": "problem_pill",
+      "name": "Problem Pill",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Problem Text", "default": "Heavy. Clumps when wet. Loses warmth." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Problem",
+      "blocks": [
+        { "type": "problem_pill", "settings": { "text": "Heavy. Clumps when wet. Loses warmth." } },
+        { "type": "problem_pill", "settings": { "text": "Bulky. Compresses in your bag." } },
+        { "type": "problem_pill", "settings": { "text": "Animal-sourced. Ethical trade-offs." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

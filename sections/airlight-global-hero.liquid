@@ -1,4 +1,4 @@
-{% comment %} AirLight Global LP — Hero Section (和モダン) {% endcomment %}
+{% comment %} AirLight Global LP — Hero Section {% endcomment %}
 {% render 'airlight-global-styles' %}
 {% render 'airlight-global-scripts' %}
 
@@ -9,13 +9,15 @@
            alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
            class="ag-hero__img" fetchpriority="high">
     {% elsif section.settings.fallback_url != blank %}
-      <img src="{{ section.settings.fallback_url | asset_url }}"
+      <img src="{{ section.settings.fallback_url }}"
            alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket — KAPOK KNOT' }}"
            class="ag-hero__img" fetchpriority="high">
     {% else %}
       <img src="{{ 'airlight-hero-bg.jpg' | asset_url }}"
            alt="AirLight Jacket — KAPOK KNOT" class="ag-hero__img" fetchpriority="high">
     {% endif %}
+    <!-- ④ Dark gradient overlay -->
+    <div class="ag-hero__img-overlay"></div>
   </div>
 
   <div class="ag-hero__content">
@@ -25,12 +27,30 @@
       <span class="ag-hero__launch-spot">⬡ {{ section.settings.launch_spot | default: "Only 100 spots available globally" }}</span>
     </div>
 
+    <!-- ④ サブ文言（ヘッドライン上） -->
+    {% if section.settings.pre_headline != blank %}
+      <p class="ag-hero__pre-headline">{{ section.settings.pre_headline }}</p>
+    {% endif %}
+
     <h1 class="ag-hero__title">
       {{ section.settings.hero_title }}
     </h1>
 
+    <!-- ① Proof Bar — ヘッドライン直下 -->
+    <div class="ag-hero__proof">
+      {% for block in section.blocks %}
+        {% if block.type == 'proof_item' %}
+          {% unless forloop.first %}<div class="ag-hero__proof-div"></div>{% endunless %}
+          <div class="ag-hero__proof-item" {{ block.shopify_attributes }}>
+            <span class="ag-hero__proof-num">{{ block.settings.number }}</span>
+            <span class="ag-hero__proof-label">{{ block.settings.label }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
     <p class="ag-hero__sub">
-      {{ section.settings.hero_sub | default: '500g. Plant-based warmth. Tested in Norwegian winters. Made in Japan. Now shipping worldwide.' }}
+      {{ section.settings.hero_sub | default: '500g. Plant-based warmth. Made in Japan. Now shipping worldwide.' }}
     </p>
 
     <!-- Highlights (Makuake-style key points) -->
@@ -46,34 +66,87 @@
       </div>
     {% endif %}
 
-    <!-- Proof Bar -->
-    <div class="ag-hero__proof">
-      {% for block in section.blocks %}
-        {% if block.type == 'proof_item' %}
-          {% unless forloop.first %}<div class="ag-hero__proof-div"></div>{% endunless %}
-          <div class="ag-hero__proof-item" {{ block.shopify_attributes }}>
-            <span class="ag-hero__proof-num">{{ block.settings.number }}</span>
-            <span class="ag-hero__proof-label">{{ block.settings.label }}</span>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    <!-- CTA -->
+    <!-- ② CTA -->
     <div class="ag-hero__cta-wrap">
       <a href="{{ section.settings.cta_url | default: '#ag-products' }}"
          class="ag-hero__cta-btn">
-        {{ section.settings.cta_text | default: 'Claim Your Spot — $398' }}
+        {{ section.settings.cta_text | default: 'Get My AirLight Jacket →' }}
       </a>
+      <p class="ag-hero__cta-price">{{ section.settings.cta_price | default: '$398 · Free Worldwide Shipping' }}</p>
       <p class="ag-hero__cta-note">
-        <strong>{{ section.settings.offer_main | default: 'Free worldwide shipping on all orders' }}</strong>
         {{ section.settings.offer_note | default: '· 30-day guarantee · Only 100 spots' }}
       </p>
     </div>
   </div>
+
+  <!-- ⑤ スクロール誘導 -->
+  <div class="ag-hero__scroll-hint">
+    <span>{{ section.settings.scroll_hint | default: '↓ See how it works' }}</span>
+  </div>
 </section>
 
 <style>
+/* --- Gradient Overlay --- */
+.ag-hero__img-wrapper {
+  position: relative;
+}
+.ag-hero__img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
+  pointer-events: none;
+}
+
+/* --- Pre-headline (上サブ文言) --- */
+.ag-hero__pre-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* --- Proof Bar (ヘッドライン直下) --- */
+.ag-hero__proof {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+/* --- CTA price line --- */
+.ag-hero__cta-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  margin: 10px 0 4px;
+  text-align: center;
+}
+
+/* --- Scroll Hint --- */
+.ag-hero__scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: ag-scroll-fade 2s ease-in-out infinite;
+}
+.ag-hero__scroll-hint span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+@keyframes ag-scroll-fade {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(4px); }
+}
+
 /* --- Hero Highlights --- */
 .ag-hero__highlights {
   display: flex;
@@ -112,16 +185,6 @@
   color: rgba(255,255,255,0.92);
   font-weight: 400;
 }
-@media (max-width: 768px) {
-  .ag-hero__highlights {
-    padding: 16px 18px;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .ag-hero__highlight-text {
-    font-size: 13px;
-  }
-}
 
 .ag-hero__launch-badge {
   display: inline-flex;
@@ -147,7 +210,7 @@
     overflow-x: hidden;
   }
   .ag-hero__content {
-    padding: 80px 16px 100px;
+    padding: 80px 16px 120px;
   }
   .ag-hero__title {
     font-size: 2rem;
@@ -171,6 +234,9 @@
     box-sizing: border-box;
     text-align: center;
   }
+  .ag-hero__cta-price {
+    font-size: 0.9rem;
+  }
   .ag-hero__cta-note {
     font-size: 12px;
   }
@@ -189,6 +255,17 @@
     max-width: 100%;
     height: auto;
   }
+  .ag-hero__highlights {
+    padding: 16px 18px;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .ag-hero__highlight-text {
+    font-size: 13px;
+  }
+  .ag-hero__scroll-hint {
+    bottom: 16px;
+  }
 }
 </style>
 
@@ -198,15 +275,17 @@
   "settings": [
     { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
     { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket — KAPOK KNOT" },
-    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL", "default": "airlight-hero-bg.jpg" },
+    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL (external)", "default": "" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "Japan Global Launch — First 100 Customers Only" },
-    { "type": "text", "id": "launch_spot", "label": "Launch Spot Text", "default": "Only 100 spots available globally" },
-    { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>The Jacket That Sold Out 3 Times in Japan <em>Is Coming to You.</em></p>" },
-    { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g. Plant-based warmth. Tested in Norwegian winters. Made in Japan. Now shipping worldwide.</p>" },
+    { "type": "text", "id": "launch_spot", "label": "Launch Badge Text", "default": "Only 100 spots available globally" },
+    { "type": "text", "id": "pre_headline", "label": "Pre-headline (italic, above title)", "default": "Still freezing in a jacket that weighs you down?" },
+    { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>Down Warmth.<br><em>Reinvented in Japan.</em></p>" },
+    { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g plant-based jacket. Engineered with Japanese precision.<br>Ethical insulation. Zero compromise.</p>" },
     { "type": "url", "id": "cta_url", "label": "CTA Link" },
-    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Claim Your Spot — $398" },
-    { "type": "text", "id": "offer_main", "label": "Offer Line (Bold)", "default": "Free worldwide shipping on all orders" },
-    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "· 30-day guarantee · Only 100 spots" }
+    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Get My AirLight Jacket →" },
+    { "type": "text", "id": "cta_price", "label": "Price Line (below button)", "default": "$398 · Free Worldwide Shipping" },
+    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "· 30-day guarantee · Only 100 spots" },
+    { "type": "text", "id": "scroll_hint", "label": "Scroll Hint Text", "default": "↓ See how it works" }
   ],
   "blocks": [
     {
@@ -230,7 +309,7 @@
       "name": "AG Hero",
       "blocks": [
         { "type": "proof_item", "settings": { "number": "Sold Out 3×", "label": "Japan" } },
-        { "type": "proof_item", "settings": { "number": "$400K+", "label": "Raised in Japan" } },
+        { "type": "proof_item", "settings": { "number": "10+", "label": "Design Awards" } },
         { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Verified Reviews" } },
         { "type": "highlight_item", "settings": { "text": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." } },
         { "type": "highlight_item", "settings": { "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator." } },
