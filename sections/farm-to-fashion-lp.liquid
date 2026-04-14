@@ -8,19 +8,24 @@
           {%- when 'hero' -%}
             <div class="ff-lp__hero">
               {%- if block.settings.image != blank -%}
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | default: 'Hero image' | escape }}" class="ff-lp__hero-img {% if block.settings.image_sp != blank %}ff-lp__hide-sp{% endif %}" loading="lazy">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | default: 'Hero image' | escape }}" class="ff-lp__hero-img {% if block.settings.image_sp != blank or block.settings.image_sp_url != blank %}ff-lp__hide-sp{% endif %}" loading="lazy">
+              {%- elsif block.settings.image_url != blank -%}
+                <img src="{{ block.settings.image_url }}" alt="Hero image" class="ff-lp__hero-img {% if block.settings.image_sp != blank or block.settings.image_sp_url != blank %}ff-lp__hide-sp{% endif %}" loading="lazy">
               {%- endif -%}
+
               {%- if block.settings.image_sp != blank -%}
                 <img src="{{ block.settings.image_sp | img_url: 'master' }}" alt="{{ block.settings.image_sp.alt | default: 'Hero image' | escape }}" class="ff-lp__hero-img ff-lp__hide-pc" loading="lazy">
+              {%- elsif block.settings.image_sp_url != blank -%}
+                <img src="{{ block.settings.image_sp_url }}" alt="Hero image sp" class="ff-lp__hero-img ff-lp__hide-pc" loading="lazy">
               {%- else -%}
-                {%- if block.settings.image == blank -%}
+                {%- if block.settings.image == blank and block.settings.image_url == blank -%}
                   {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
                 {%- endif -%}
               {%- endif -%}
             </div>
 
           {%- when 'rich_text' -%}
-            <div class="ff-lp__rich-text" style="text-align: {{ block.settings.text_alignment }}; color: {{ block.settings.text_color }};">
+            <div class="ff-lp__rich-text" style="text-align: {{ block.settings.text_alignment }}; color: {{ block.settings.text_color }}; background-color: {{ block.settings.bg_color }}; padding: {{ block.settings.padding }}px;">
               {%- if block.settings.heading != blank -%}
                 <h2 class="ff-lp__heading">{{ block.settings.heading }}</h2>
               {%- endif -%}
@@ -34,6 +39,8 @@
               <div class="ff-lp__image-text-col">
                 {%- if block.settings.image != blank -%}
                   <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt | escape }}" class="ff-lp__img" loading="lazy">
+                {%- elsif block.settings.image_url != blank -%}
+                  <img src="{{ block.settings.image_url }}" alt="Image" class="ff-lp__img" loading="lazy">
                 {%- else -%}
                   {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
                 {%- endif -%}
@@ -54,12 +61,16 @@
             </div>
 
           {%- when 'image_full' -%}
-            <div class="ff-lp__image-full">
+            <div class="ff-lp__image-full" style="text-align: center;">
+              {%- if block.settings.button_link != blank -%}<a href="{{ block.settings.button_link }}">{%- endif -%}
               {%- if block.settings.image != blank -%}
-                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" class="ff-lp__img" loading="lazy">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" class="ff-lp__img" style="max-width: {{ block.settings.max_width }}%; margin: 0 auto;" loading="lazy">
+              {%- elsif block.settings.image_url != blank -%}
+                 <img src="{{ block.settings.image_url }}" alt="Image" class="ff-lp__img" style="max-width: {{ block.settings.max_width }}%; margin: 0 auto;" loading="lazy">
               {%- else -%}
                 {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
               {%- endif -%}
+              {%- if block.settings.button_link != blank -%}</a>{%- endif -%}
             </div>
 
           {%- when 'product_grid' -%}
@@ -84,6 +95,56 @@
                 {%- endif -%}
               {%- endfor -%}
             </div>
+            
+          {%- when 'features_grid' -%}
+            <div class="ff-lp__features-grid">
+              {%- for i in (1..4) -%}
+                {%- capture img_key -%}image_{{ i }}{%- endcapture -%}
+                {%- capture img_url_key -%}image_url_{{ i }}{%- endcapture -%}
+                {%- capture title_key -%}title_{{ i }}{%- endcapture -%}
+                {%- capture text_key -%}text_{{ i }}{%- endcapture -%}
+                
+                {%- if block.settings[img_key] != blank or block.settings[img_url_key] != blank or block.settings[title_key] != blank -%}
+                  <div class="ff-lp__feature-item">
+                    <div class="ff-lp__feature-icon">
+                      {%- if block.settings[img_key] != blank -%}
+                        <img src="{{ block.settings[img_key] | img_url: '200x' }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
+                      {%- elsif block.settings[img_url_key] != blank -%}
+                        <img src="{{ block.settings[img_url_key] }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
+                      {%- endif -%}
+                    </div>
+                    {%- if block.settings[title_key] != blank -%}
+                      <div class="ff-lp__feature-heading">{{ block.settings[title_key] }}</div>
+                    {%- endif -%}
+                    {%- if block.settings[text_key] != blank -%}
+                      <div class="ff-lp__feature-text">{{ block.settings[text_key] }}</div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+            
+          {%- when 'review_card' -%}
+            <div class="ff-lp__review-card">
+              <div class="ff-lp__review-stars">
+                {%- for i in (1..5) -%}
+                  {%- if i <= block.settings.rating -%}
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+              {%- if block.settings.heading != blank -%}
+                <div class="ff-lp__review-heading">{{ block.settings.heading }}</div>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="ff-lp__review-text">{{ block.settings.text }}</div>
+              {%- endif -%}
+            </div>
+
+          {%- when 'separator' -%}
+            <hr class="ff-lp__separator" style="border-top: {{ block.settings.thickness }}px solid {{ block.settings.color }};">
 
           {%- when 'button' -%}
             <div class="ff-lp__btn-wrapper" style="text-align: {{ block.settings.alignment }};">
@@ -251,6 +312,77 @@
     text-align: center;
     color: #666;
   }
+  
+  /* Features Grid */
+  .ff-lp__features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .ff-lp__features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .ff-lp__feature-item {
+    text-align: center;
+  }
+  .ff-lp__feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ff-lp__feature-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .ff-lp__feature-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .ff-lp__feature-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Review Card */
+  .ff-lp__review-card {
+    background: #fdfdfd;
+    padding: 32px;
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #eaeaea;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .ff-lp__review-stars {
+    color: #dba936;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 4px;
+  }
+  .ff-lp__review-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  .ff-lp__review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  /* Separator */
+  .ff-lp__separator {
+    width: 100%;
+    margin: 0;
+  }
 
   /* Buttons */
   .ff-lp__btn {
@@ -309,9 +441,21 @@
           "label": "Desktop Image"
         },
         {
+          "type": "text",
+          "id": "image_url",
+          "label": "Desktop Image URL Fallback",
+          "info": "Used if standard image is empty. e.g. https://ucarecdn.com/..."
+        },
+        {
           "type": "image_picker",
           "id": "image_sp",
           "label": "Mobile Image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "image_sp_url",
+          "label": "Mobile Image URL Fallback",
+          "info": "Used if standard image is empty."
         },
         {
           "type": "range",
@@ -369,6 +513,22 @@
           "default": "#1a1a1a"
         },
         {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "transparent"
+        },
+        {
+          "type": "range",
+          "id": "padding",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Inside",
+          "default": 0
+        },
+        {
           "type": "range",
           "id": "margin_top",
           "min": 0,
@@ -400,6 +560,11 @@
           "label": "Image"
         },
         {
+          "type": "text",
+          "id": "image_url",
+          "label": "Image URL Fallback"
+        },
+        {
           "type": "select",
           "id": "layout",
           "label": "Desktop Layout",
@@ -419,7 +584,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Text",
-          "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post.</p>"
+          "default": "<p>Pair large text with an image.</p>"
         },
         {
           "type": "select",
@@ -478,6 +643,26 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Image URL Fallback"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link (Optional)"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Max Width",
+          "default": 100
         },
         {
           "type": "range",
@@ -539,6 +724,153 @@
           "type": "product",
           "id": "product_4",
           "label": "Product 4"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "features_grid",
+      "name": "Features Grid",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Feature 1"
+        },
+        { "type": "image_picker", "id": "image_1", "label": "Icon 1" },
+        { "type": "text", "id": "image_url_1", "label": "Icon 1 URL" },
+        { "type": "text", "id": "title_1", "label": "Title 1" },
+        { "type": "textarea", "id": "text_1", "label": "Text 1" },
+        {
+          "type": "header",
+          "content": "Feature 2"
+        },
+        { "type": "image_picker", "id": "image_2", "label": "Icon 2" },
+        { "type": "text", "id": "image_url_2", "label": "Icon 2 URL" },
+        { "type": "text", "id": "title_2", "label": "Title 2" },
+        { "type": "textarea", "id": "text_2", "label": "Text 2" },
+        {
+          "type": "header",
+          "content": "Feature 3"
+        },
+        { "type": "image_picker", "id": "image_3", "label": "Icon 3" },
+        { "type": "text", "id": "image_url_3", "label": "Icon 3 URL" },
+        { "type": "text", "id": "title_3", "label": "Title 3" },
+        { "type": "textarea", "id": "text_3", "label": "Text 3" },
+        {
+          "type": "header",
+          "content": "Feature 4"
+        },
+        { "type": "image_picker", "id": "image_4", "label": "Icon 4" },
+        { "type": "text", "id": "image_url_4", "label": "Icon 4 URL" },
+        { "type": "text", "id": "title_4", "label": "Title 4" },
+        { "type": "textarea", "id": "text_4", "label": "Text 4" },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "review_card",
+      "name": "Review Card",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Review Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Text",
+          "default": "Great product!"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "type": "separator",
+      "name": "Separator",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#eaeaea"
+        },
+        {
+          "type": "range",
+          "id": "thickness",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "unit": "px",
+          "label": "Thickness",
+          "default": 1
         },
         {
           "type": "range",
