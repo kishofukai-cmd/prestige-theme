@@ -79,7 +79,11 @@
             {%- endif -%}
             <div class="ff-lp__product-grid" style="--grid-col-desktop: {{ block.settings.columns_desktop }};">
               {%- if block.settings.collection != blank -%}
-                {%- for obj in block.settings.collection.products limit: block.settings.collection_limit -%}
+                {%- assign target_col = block.settings.collection -%}
+                {%- if target_col.products == blank -%}
+                  {%- assign target_col = collections[target_col] -%}
+                {%- endif -%}
+                {%- for obj in target_col.products limit: block.settings.collection_limit -%}
                   <a href="{{ obj.url }}" class="ff-lp__product-card">
                     <div class="ff-lp__product-image">
                        <img src="{{ obj.featured_image | img_url: '600x' }}" alt="{{ obj.title | escape }}" loading="lazy">
