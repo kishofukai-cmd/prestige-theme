@@ -1,0 +1,646 @@
+<section class="ff-lp" id="ff-lp-{{ section.id }}" style="background-color: {{ section.settings.bg_color }};">
+  <div class="ff-lp__inner" style="max-width: {{ section.settings.container_width }}px;">
+    
+    {%- for block in section.blocks -%}
+      <div class="ff-lp__block ff-lp__block--{{ block.type }}" {{ block.shopify_attributes }} style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;">
+        
+        {%- case block.type -%}
+          {%- when 'hero' -%}
+            <div class="ff-lp__hero">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | default: 'Hero image' | escape }}" class="ff-lp__hero-img {% if block.settings.image_sp != blank %}ff-lp__hide-sp{% endif %}" loading="lazy">
+              {%- endif -%}
+              {%- if block.settings.image_sp != blank -%}
+                <img src="{{ block.settings.image_sp | img_url: 'master' }}" alt="{{ block.settings.image_sp.alt | default: 'Hero image' | escape }}" class="ff-lp__hero-img ff-lp__hide-pc" loading="lazy">
+              {%- else -%}
+                {%- if block.settings.image == blank -%}
+                  {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+
+          {%- when 'rich_text' -%}
+            <div class="ff-lp__rich-text" style="text-align: {{ block.settings.text_alignment }}; color: {{ block.settings.text_color }};">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="ff-lp__heading">{{ block.settings.heading }}</h2>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="ff-lp__text">{{ block.settings.text }}</div>
+              {%- endif -%}
+            </div>
+
+          {%- when 'image_text' -%}
+            <div class="ff-lp__image-text {% if block.settings.layout == 'right' %}ff-lp__image-text--reverse{% endif %}">
+              <div class="ff-lp__image-text-col">
+                {%- if block.settings.image != blank -%}
+                  <img src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt | escape }}" class="ff-lp__img" loading="lazy">
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
+                {%- endif -%}
+              </div>
+              <div class="ff-lp__image-text-col ff-lp__image-text-content" style="text-align: {{ block.settings.text_alignment }};">
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="ff-lp__subheading" style="color: {{ block.settings.text_color }};">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="ff-lp__text" style="color: {{ block.settings.text_color }};">{{ block.settings.text }}</div>
+                {%- endif -%}
+                {%- if block.settings.button_label != blank -%}
+                  <div style="margin-top: 24px;">
+                    <a href="{{ block.settings.button_link | default: '#' }}" class="ff-lp__btn ff-lp__btn--sub">{{ block.settings.button_label }}</a>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+
+          {%- when 'image_full' -%}
+            <div class="ff-lp__image-full">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" class="ff-lp__img" loading="lazy">
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'ff-lp__placeholder' }}
+              {%- endif -%}
+            </div>
+
+          {%- when 'product_grid' -%}
+            {%- if block.settings.heading != blank -%}
+              <h2 class="ff-lp__heading ff-lp__heading--center">{{ block.settings.heading }}</h2>
+            {%- endif -%}
+            <div class="ff-lp__product-grid" style="--grid-col-desktop: {{ block.settings.columns_desktop }};">
+              {%- for i in (1..4) -%}
+                {%- capture product_key -%}product_{{ i }}{%- endcapture -%}
+                {%- assign product_handle = block.settings[product_key] -%}
+                {%- if product_handle != blank -%}
+                  {%- assign product = all_products[product_handle] -%}
+                  <a href="{{ product.url }}" class="ff-lp__product-card">
+                    <div class="ff-lp__product-image">
+                       <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title | escape }}" loading="lazy">
+                    </div>
+                    <div class="ff-lp__product-info">
+                      <h4 class="ff-lp__product-title">{{ product.title }}</h4>
+                      <div class="ff-lp__product-price">{{ product.price | money }}</div>
+                    </div>
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+          {%- when 'button' -%}
+            <div class="ff-lp__btn-wrapper" style="text-align: {{ block.settings.alignment }};">
+              <a href="{{ block.settings.button_link | default: '#' }}" class="ff-lp__btn">{{ block.settings.button_label }}</a>
+            </div>
+
+          {%- when 'spacer' -%}
+            <div class="ff-lp__spacer ff-lp__hide-sp" style="height: {{ block.settings.height_pc }}px;"></div>
+            <div class="ff-lp__spacer ff-lp__hide-pc" style="height: {{ block.settings.height_sp }}px;"></div>
+        {%- endcase -%}
+
+      </div>
+    {%- endfor -%}
+
+  </div>
+</section>
+
+<style>
+  /* BEM Standard CSS */
+  .ff-lp {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .ff-lp__inner {
+    margin: 0 auto;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  /* Utilities */
+  .ff-lp__hide-pc { display: none; }
+  .ff-lp__hide-sp { display: block; }
+  @media (max-width: 768px) {
+    .ff-lp__hide-pc { display: block; }
+    .ff-lp__hide-sp { display: none; }
+  }
+
+  .ff-lp__placeholder {
+    width: 100%;
+    height: auto;
+    background: #f4f4f4;
+    display: block;
+  }
+  .ff-lp__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Blocks */
+  .ff-lp__block {
+    position: relative;
+  }
+
+  /* Hero */
+  .ff-lp__hero {
+    width: 100%;
+  }
+  .ff-lp__hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Rich Text */
+  .ff-lp__rich-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  .ff-lp__heading {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: bold;
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+  .ff-lp__heading--center {
+    text-align: center;
+  }
+  .ff-lp__subheading {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: bold;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .ff-lp__text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .ff-lp__text p {
+    margin-bottom: 1em;
+  }
+  .ff-lp__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Image with Text */
+  .ff-lp__image-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+  .ff-lp__image-text--reverse {
+    flex-direction: row-reverse;
+  }
+  .ff-lp__image-text-col {
+    flex: 1 1 300px;
+    min-width: 300px;
+  }
+  @media (max-width: 768px) {
+    .ff-lp__image-text {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .ff-lp__image-text--reverse {
+      flex-direction: column;
+    }
+  }
+
+  /* Product Grid */
+  .ff-lp__product-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-col-desktop, 4), 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  @media (max-width: 768px) {
+    .ff-lp__product-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 16px;
+    }
+  }
+  .ff-lp__product-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+  }
+  .ff-lp__product-card:hover {
+    opacity: 0.8;
+  }
+  .ff-lp__product-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: #f4f4f4;
+    margin-bottom: 16px;
+  }
+  .ff-lp__product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ff-lp__product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .ff-lp__product-price {
+    font-size: 15px;
+    text-align: center;
+    color: #666;
+  }
+
+  /* Buttons */
+  .ff-lp__btn {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  .ff-lp__btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .ff-lp__btn--sub {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Farm to Fashion LP",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 600,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Max Container Width",
+      "default": 1200
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero",
+      "name": "Hero Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_sp",
+          "label": "Mobile Image (optional)"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "rich_text",
+      "name": "Rich Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Your heading here"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share information about your brand with your customers.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#1a1a1a"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "image_text",
+      "name": "Image with Text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Desktop Layout",
+          "options": [
+            { "value": "left", "label": "Image on left" },
+            { "value": "right", "label": "Image on right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Image with text"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#1a1a1a"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "image_full",
+      "name": "Single Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "type": "product_grid",
+      "name": "Product Grid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Featured Products"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 2,
+          "max": 4,
+          "step": 1,
+          "label": "Number of columns on desktop",
+          "default": 4
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "product_4",
+          "label": "Product 4"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Button Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 20
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": [
+        {
+          "type": "range",
+          "id": "height_pc",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "Height (Desktop)",
+          "default": 60
+        },
+        {
+          "type": "range",
+          "id": "height_sp",
+          "min": 0,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "label": "Height (Mobile)",
+          "default": 40
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Farm to Fashion LP"
+    }
+  ]
+}
+{% endschema %}
