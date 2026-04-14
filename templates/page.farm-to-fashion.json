@@ -100,7 +100,8 @@
           "settings": {
             "heading": "Coats",
             "columns_desktop": 4,
-            "margin_bottom": 80
+            "margin_bottom": 80,
+            "collection": "coats"
           }
         },
         "product_grid_11": {
@@ -108,7 +109,8 @@
           "settings": {
             "heading": "Jackets",
             "columns_desktop": 4,
-            "margin_bottom": 80
+            "margin_bottom": 80,
+            "collection": "jackets"
           }
         },
         "image_full_12": {
