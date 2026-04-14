@@ -13,96 +13,260 @@
             "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_85": {
-          "type": "features_grid",
+        "image_full_2": {
+          "type": "hero",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
-            "title_1": "",
-            "text_1": "<p>※3度環境の中、着用1分後の状態<br>※こちらの商品はカポックの中綿シートを使用している<br>別の商品のものになります<br>※同じ重さで素材がポリエステルのダウン、コートと比較</p>",
-            "image_url_2": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
-            "title_2": "[New]Navy/ネイビー",
-            "text_2": "",
-            "image_url_3": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
-            "title_3": "[New]Beige/ベージュ",
-            "text_3": "",
-            "image_url_4": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
-            "title_4": "Olive/オリーブ",
-            "text_4": ""
+            "image_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
+            "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_86": {
-          "type": "features_grid",
+        "rich_text_3": {
+          "type": "rich_text",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
-            "title_1": "Greige/グレージュ",
-            "text_1": "",
-            "image_url_2": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg",
-            "title_2": "Black/ブラック",
-            "text_2": "<h3>エアーライトジャケット-Men-</h3><h3>5Color：Navy / Beige / Olive / Black / Greige</h3><h3>¥39,800</h3><p>エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触りでさらに気持ちも軽くなるはずです。</p>",
-            "image_url_3": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
-            "title_3": "[New]Navy/ネイビー",
-            "text_3": "",
-            "image_url_4": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
-            "title_4": "[New]Beige/ベージュ",
-            "text_4": ""
+            "heading": "",
+            "text": "<p>※3度環境の中、着用1分後の状態<br>※こちらの商品はカポックの中綿シートを使用している<br>別の商品のものになります<br>※同じ重さで素材がポリエステルのダウン、コートと比較</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_87": {
-          "type": "features_grid",
+        "image_full_4": {
+          "type": "image_full",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
-            "title_1": "Black/ブラック",
-            "text_1": "",
-            "image_url_2": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
-            "title_2": "Olive/オリーブ",
-            "text_2": "",
-            "image_url_3": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg",
-            "title_3": "Greige/グレージュ",
-            "text_3": "<h3>エアーライトジャケット-Women-</h3><h3>5Color：Navy / Beige / Olive / Black / Greige</h3><h3>¥39,800</h3><p>エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触りでさらに気持ちも軽くなるはずです。<br>また- Woman -はウエストにスピンドルが付いていますので、ウエストを調節して絞ることができます。</p>",
-            "image_url_4": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
-            "title_4": "White/ホワイト",
-            "text_4": ""
+            "image_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
+            "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_88": {
-          "type": "features_grid",
+        "rich_text_5": {
+          "type": "rich_text",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
-            "title_1": "Ice Blue/アイスブルー",
-            "text_1": "",
-            "image_url_2": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
-            "title_2": "Black/ブラック",
-            "text_2": "",
-            "image_url_3": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png",
-            "title_3": "khaki/カーキ",
-            "text_3": "<h3>エアーライトペプラムジャケット-Women-</h3><h3>4Color：White / Ice Blue / Black / khaki</h3><h3>¥49,800</h3><p>エアーライトペプラムジャケットは- Woman - シリーズならではの特長として、ウエストにはスピンドルを搭載。<br>エアーライトペプラムジャケットは<br>シリーズならではの特長として、ウエストにはスピンドルを搭載。<br>ウエストラインをキュッと絞って女性らしいシルエットをつくることも、ゆったり着ることも自由自在です。<br>また、ヒップまわりがしっかり隠れる着丈のため、体型をさりげなくカバーしつつ、冷えやすい腰まわりまでぬくもりをキープ。デイリーに頼れる一枚です。<br>軽いのに暖かく、シンプルなのにスタイルが決まる冬の新定番。どんな日にも自然と手が伸びるアウターです。</p>",
-            "image_url_4": "https://ucarecdn.com/d9780751-672f-41f1-adae-afe3fc503e5b/test_airlight.gif",
-            "title_4": "どんな場面でも使える",
-            "text_4": "<h3>“エアーライトジャケット”</h3>"
+            "heading": "[New]Navy/ネイビー",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_6": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_7": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "[New]Beige/ベージュ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_8": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_9": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Olive/オリーブ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_10": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_11": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Greige/グレージュ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_12": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_13": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/ブラック",
+            "text": "<h3>エアーライトジャケット-Men-</h3><h3>5Color：Navy / Beige / Olive / Black / Greige</h3><h3>¥39,800</h3><p>エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触りでさらに気持ちも軽くなるはずです。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_14": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_15": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "[New]Navy/ネイビー",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_16": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_17": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "[New]Beige/ベージュ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_18": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_19": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/ブラック",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_20": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_21": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Olive/オリーブ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_22": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_23": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Greige/グレージュ",
+            "text": "<h3>エアーライトジャケット-Women-</h3><h3>5Color：Navy / Beige / Olive / Black / Greige</h3><h3>¥39,800</h3><p>エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触りでさらに気持ちも軽くなるはずです。<br>また- Woman -はウエストにスピンドルが付いていますので、ウエストを調節して絞ることができます。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_24": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_25": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "White/ホワイト",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_26": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_27": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Ice Blue/アイスブルー",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_28": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_29": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/ブラック",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_30": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_31": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "khaki/カーキ",
+            "text": "<h3>エアーライトペプラムジャケット-Women-</h3><h3>4Color：White / Ice Blue / Black / khaki</h3><h3>¥49,800</h3><p>エアーライトペプラムジャケットは- Woman - シリーズならではの特長として、ウエストにはスピンドルを搭載。<br>エアーライトペプラムジャケットは<br>シリーズならではの特長として、ウエストにはスピンドルを搭載。<br>ウエストラインをキュッと絞って女性らしいシルエットをつくることも、ゆったり着ることも自由自在です。<br>また、ヒップまわりがしっかり隠れる着丈のため、体型をさりげなくカバーしつつ、冷えやすい腰まわりまでぬくもりをキープ。デイリーに頼れる一枚です。<br>軽いのに暖かく、シンプルなのにスタイルが決まる冬の新定番。どんな日にも自然と手が伸びるアウターです。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_32": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/d9780751-672f-41f1-adae-afe3fc503e5b/test_airlight.gif",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_33": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "どんな場面でも使える",
+            "text": "<h3>“エアーライトジャケット”</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
         "features_grid_34": {
@@ -166,7 +330,7 @@
           }
         },
         "image_full_38": {
-          "type": "hero",
+          "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/a165d4cb-d574-462e-9e44-4961919688f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-18%2010.59.00.png",
             "margin_bottom": 24
@@ -282,70 +446,180 @@
             "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_89": {
-          "type": "features_grid",
+        "image_full_54": {
+          "type": "image_full",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/8cccbeaa-2ab2-436d-b1e9-a4ea50e54511/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
-            "title_1": "【KAPOK KNOT】他のおすすめジャケットはこちら",
-            "text_1": "<h3>エアーライトペプラムジャケット - Women</h3>",
-            "image_url_2": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
-            "title_2": "Ice blue/White/Black",
-            "text_2": "<h3>¥49,800</h3><h3>ベロアキルティングジャケット - Unisex</h3>",
-            "image_url_3": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
-            "title_3": "Khaki/Navy",
-            "text_3": "<h3>¥39,800</h3><h3>WARMデニムジャケット - Men</h3>",
-            "image_url_4": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
-            "title_4": "Black/Blue",
-            "text_4": "<h3>¥39,800</h3><h3>キルティングジャケット -チェック-Unisex</h3>"
+            "image_url": "https://ucarecdn.com/8cccbeaa-2ab2-436d-b1e9-a4ea50e54511/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
+            "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_90": {
-          "type": "features_grid",
+        "rich_text_55": {
+          "type": "rich_text",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png",
-            "title_1": "Olive/Black",
-            "text_1": "<h3>¥48,000</h3><h3>【KAPOK KNOT】他のおすすめコートはこちら</h3><h3>スタンドカラーコート-Unisex</h3>",
-            "image_url_2": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
-            "title_2": "Black(New)/Greige/Green/Navy",
-            "text_2": "<h3>¥69,000</h3><h3>ポンチョコート-Unisex</h3>",
-            "image_url_3": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
-            "title_3": "Olive/Navy/Black/Greige",
-            "text_3": "<h3>¥65,000</h3><h3>ウエストマークパーカーコート-Women</h3>",
-            "image_url_4": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg",
-            "title_4": "Camel/Greige/Navy",
-            "text_4": "<h3>¥49,800</h3><h3>バルマカンコート-Women-Men</h3>"
+            "heading": "【KAPOK KNOT】他のおすすめジャケットはこちら",
+            "text": "<h3>エアーライトペプラムジャケット - Women</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
-        "features_grid_auto_review_91": {
-          "type": "features_grid",
+        "image_full_56": {
+          "type": "image_full",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 3,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg",
-            "title_1": "Dark Navy/Beige/Camel",
-            "text_1": "<h3>¥48,000</h3><h3>Makuakeで累計5000万円以上の応援をいただきました</h3><p>信頼のMakuake実績！KAPOK KNOTはデビュー以来、4年間でなんと、<br>2000人以上の方から、累計5000万円以上の応援をいただいております！</p>",
-            "image_url_2": "https://ucarecdn.com/3d1d5d10-0344-4a41-bb9c-baef78d38b45/-/format/auto/-/preview/3000x3000/-/quality/lighter/bc97881b-ce8f-40bc-b8d9-3b6ae3f5d98f.jpeg",
-            "title_2": "多くのメディアでも取り上げていただきました",
-            "text_2": "",
-            "image_url_3": "https://ucarecdn.com/205009e2-a561-423e-9af7-33c18a767929/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-04%2016.00%201.png",
-            "title_3": "ブランドに共感いただいているクリエイターのみなさま",
-            "text_3": ""
+            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_57": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Ice blue/White/Black",
+            "text": "<h3>¥49,800</h3><h3>ベロアキルティングジャケット - Unisex</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_58": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_59": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Khaki/Navy",
+            "text": "<h3>¥39,800</h3><h3>WARMデニムジャケット - Men</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_60": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_61": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/Blue",
+            "text": "<h3>¥39,800</h3><h3>キルティングジャケット -チェック-Unisex</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_62": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_63": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Olive/Black",
+            "text": "<h3>¥48,000</h3><h3>【KAPOK KNOT】他のおすすめコートはこちら</h3><h3>スタンドカラーコート-Unisex</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_64": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_65": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black(New)/Greige/Green/Navy",
+            "text": "<h3>¥69,000</h3><h3>ポンチョコート-Unisex</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_66": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_67": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Olive/Navy/Black/Greige",
+            "text": "<h3>¥65,000</h3><h3>ウエストマークパーカーコート-Women</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_68": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_69": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Camel/Greige/Navy",
+            "text": "<h3>¥49,800</h3><h3>バルマカンコート-Women-Men</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_70": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_71": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Dark Navy/Beige/Camel",
+            "text": "<h3>¥48,000</h3><h3>Makuakeで累計5000万円以上の応援をいただきました</h3><p>信頼のMakuake実績！KAPOK KNOTはデビュー以来、4年間でなんと、<br>2000人以上の方から、累計5000万円以上の応援をいただいております！</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_72": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/3d1d5d10-0344-4a41-bb9c-baef78d38b45/-/format/auto/-/preview/3000x3000/-/quality/lighter/bc97881b-ce8f-40bc-b8d9-3b6ae3f5d98f.jpeg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_73": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "多くのメディアでも取り上げていただきました",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_74": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/205009e2-a561-423e-9af7-33c18a767929/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-04%2016.00%201.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_75": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "ブランドに共感いただいているクリエイターのみなさま",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
         "features_grid_76": {
@@ -427,7 +701,7 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_heading_92": {
+        "rich_text_heading_85": {
           "type": "rich_text",
           "settings": {
             "heading": "よくあるご質問",
@@ -436,7 +710,7 @@
             "text_alignment": "center"
           }
         },
-        "accordion_93": {
+        "accordion_86": {
           "type": "accordion",
           "settings": {
             "title": "Q. カポックは洋服以外に何に使われていますか？<br>A. 現地では、枕の詰め物や、オイルキャッチャー（海に流れた重油などの吸収剤）として使われています。<br>以前はベッドのマットレスにも使われていたが、スプリング式のマットレスに変わりあまり使われなくなってしまいました。<br>需要が減ってしまったため、木材として切り出されるといったことも起きています。<br>Q. 配送のタイムラインを教えてください。<br>A. 基本的に注文から一週間以内でお届けいたします。<br>Q. 縫製はどこで行っていますか？<br>A. ほとんどの製品は、青森の工場で縫製しています。<br>多くの工場で行われている分業型とは違い、この縫製工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得して初めて1人前とされます。そのため、完全に分業型の工場に比べて縫製技術が高いです。<br>Q. ロゴにはどんな意味がありますか？<br>A. カポックノットは 「結び目/絆」を意味するknot(ノット)を冠しています。<br>マークにある結び方は、「あやむすび」という結び方で、結び目が非常に強く、緩まないことが特徴の結び方です。<br>そのため、日本で使用されるこの水引の形には「末長く」「永遠に続く」という意味があります。<br>関わる全て人が無理をせずに関わりながら、地球資源の持続可能な未来を考えるブランドのあり方を体現しています。",
@@ -448,10 +722,38 @@
       },
       "block_order": [
         "image_text_1",
-        "features_grid_auto_review_85",
-        "features_grid_auto_review_86",
-        "features_grid_auto_review_87",
-        "features_grid_auto_review_88",
+        "image_full_2",
+        "rich_text_3",
+        "image_full_4",
+        "rich_text_5",
+        "image_full_6",
+        "rich_text_7",
+        "image_full_8",
+        "rich_text_9",
+        "image_full_10",
+        "rich_text_11",
+        "image_full_12",
+        "rich_text_13",
+        "image_full_14",
+        "rich_text_15",
+        "image_full_16",
+        "rich_text_17",
+        "image_full_18",
+        "rich_text_19",
+        "image_full_20",
+        "rich_text_21",
+        "image_full_22",
+        "rich_text_23",
+        "image_full_24",
+        "rich_text_25",
+        "image_full_26",
+        "rich_text_27",
+        "image_full_28",
+        "rich_text_29",
+        "image_full_30",
+        "rich_text_31",
+        "image_full_32",
+        "rich_text_33",
         "features_grid_34",
         "rich_text_35",
         "features_grid_36",
@@ -472,9 +774,28 @@
         "image_full_51",
         "image_full_52",
         "image_full_53",
-        "features_grid_auto_review_89",
-        "features_grid_auto_review_90",
-        "features_grid_auto_review_91",
+        "image_full_54",
+        "rich_text_55",
+        "image_full_56",
+        "rich_text_57",
+        "image_full_58",
+        "rich_text_59",
+        "image_full_60",
+        "rich_text_61",
+        "image_full_62",
+        "rich_text_63",
+        "image_full_64",
+        "rich_text_65",
+        "image_full_66",
+        "rich_text_67",
+        "image_full_68",
+        "rich_text_69",
+        "image_full_70",
+        "rich_text_71",
+        "image_full_72",
+        "rich_text_73",
+        "image_full_74",
+        "rich_text_75",
         "features_grid_76",
         "rich_text_77",
         "image_text_78",
@@ -483,8 +804,8 @@
         "rich_text_81",
         "image_full_82",
         "image_full_83",
-        "rich_text_heading_92",
-        "accordion_93"
+        "rich_text_heading_85",
+        "accordion_86"
       ],
       "settings": {
         "bg_color": "#ffffff",

@@ -52,27 +52,40 @@
             "margin_bottom": 24
           }
         },
+        "image_full_8": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/d068a558-7593-42e0-a6a6-c7b0b784e39a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_6_.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_9": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "MUSUBIはこのような宿でも体験できます",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
         "features_grid_auto_review_84": {
           "type": "features_grid",
           "settings": {
             "image_on": true,
             "margin_bottom": 24,
             "icon_size": "medium",
-            "columns_desktop": 4,
+            "columns_desktop": 3,
             "columns_mobile": 2,
             "swipe_on_mobile": true,
-            "image_url_1": "https://ucarecdn.com/d068a558-7593-42e0-a6a6-c7b0b784e39a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_6_.png",
-            "title_1": "MUSUBIはこのような宿でも体験できます",
-            "text_1": "",
-            "image_url_2": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
-            "title_2": "古民家宿るうふ",
-            "text_2": "<p>るうふ / 一棟貸し古民家宿<br>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、<br>地域に伝わる食を楽しんだり、<br>火を囲んで談笑したり、<br>土地が育む自然の恵みや日本ならではの<br>土地が育む自然の恵みや<br>日本ならではの<br>生活文化を味わう体験できる。</p>",
-            "image_url_3": "https://ucarecdn.com/2e14f59a-b78f-4277-81ec-9728636fc66e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-07-23%2017.06.13.jpeg",
-            "title_3": "オーベルジュ エルバステラ",
-            "text_3": "<p>野菜ソムリエプロ夫婦が営む全3室の宿<br>We're Smart® Green Guide ★4radish<br>全食材の9割以上オーガニック<br>動物性食品不使用<br>合成添加物・溶剤抽出油・白砂糖不使用<br>滞在型リトリート(心身デトックス)<br>自然栽培の自家菜園(100種以上)</p>",
-            "image_url_4": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
-            "title_4": "TACTILE HOUSE",
-            "text_4": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>"
+            "image_url_1": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
+            "title_1": "古民家宿るうふ",
+            "text_1": "<p>るうふ / 一棟貸し古民家宿<br>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、<br>地域に伝わる食を楽しんだり、<br>火を囲んで談笑したり、<br>土地が育む自然の恵みや日本ならではの<br>土地が育む自然の恵みや<br>日本ならではの<br>生活文化を味わう体験できる。</p>",
+            "image_url_2": "https://ucarecdn.com/2e14f59a-b78f-4277-81ec-9728636fc66e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-07-23%2017.06.13.jpeg",
+            "title_2": "オーベルジュ エルバステラ",
+            "text_2": "<p>野菜ソムリエプロ夫婦が営む全3室の宿<br>We're Smart® Green Guide ★4radish<br>全食材の9割以上オーガニック<br>動物性食品不使用<br>合成添加物・溶剤抽出油・白砂糖不使用<br>滞在型リトリート(心身デトックス)<br>自然栽培の自家菜園(100種以上)</p>",
+            "image_url_3": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
+            "title_3": "TACTILE HOUSE",
+            "text_3": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>"
           }
         },
         "image_full_16": {
@@ -378,19 +391,32 @@
           "settings": {
             "image_on": true,
             "margin_bottom": 24,
-            "icon_size": "medium",
-            "columns_desktop": 3,
-            "columns_mobile": 2,
-            "swipe_on_mobile": true,
+            "icon_size": "large",
+            "columns_desktop": 2,
+            "columns_mobile": 1,
+            "swipe_on_mobile": false,
             "image_url_1": "https://ucarecdn.com/24d96eb6-f50a-4a5f-add9-7579227609d0/-/format/auto/-/preview/2560x2560/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_7_.png",
             "title_1": "2) あみあみ構造による通気性",
             "text_1": "<p>加重ブランケットは、特に暖かい季節に中が蒸れやすくなったり<br>中が蒸れやすくなったり<br>身体への密着で熱く感じると言われていますが、<br>身体への密着で熱く感じると<br>言われていますが、<br>MUSUBIは365日オールシーズン使用可能です！<br>ブランケットそのものが、あみあみの形状のため<br>重さがあっても蒸れを気にせず365日快適に使用いただけます！</p>",
             "image_url_2": "https://ucarecdn.com/46503261-fa95-4c99-878e-9dc685220cb7/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1617.JPG",
             "title_2": "3）日本人の生活に合わせたサイズ、デザイン、カラー",
-            "text_2": "<p>「この“ブランケット”は夜に使用する寝具なのか、<br>ソファで使用することを想定しているのか、どっち？」<br>としばしば聞かれますが、<br>答えとしてはどちらでもご使用いただけます！<br>どちらでもご使用いただけます<br>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>",
-            "image_url_3": "https://ucarecdn.com/f2481d01-17de-488a-ab5f-39beb7c73c93/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_14_.png",
-            "title_3": "【現在までのMUSUBIシリーズ販売実績】",
-            "text_3": "<p>日本のソファの奥行きサイズを徹底分析し、<br>男女問わず寝転ぶことが出来るサイズで<br>平均的な奥行きが70cmであったことから、<br>ソファでゴロゴロ過ごす至福時間に使用したい！という方は<br>Nap Size(M)がおすすめです<br>「元々重い布団が好きなんです！」という方や<br>寝室のベッドで1日の終わりに、全身を安心感に包まれて<br>ベッドに沈んでいくような快眠を感じたい方は、<br>Sleep Size(L)がおすすめです<br>夜の睡眠に、日中の束の間の休憩に、是非MUSUBIをご使用ください<br>〈脚注・参考文献〉<br>¹ 体重比の目安<br>体重の約10％前後が目安と紹介されることが多い一方、<br>科学的根拠は限定的とする報告もあります。<br>圧迫感が強すぎない範囲での使用が推奨されています。<br>→ J. Yu et al., The effect of weighted blankets on sleep and related disorders – Weighted blankets<br>² 深部圧刺激と自律神経<br>深部圧刺激は、生理的覚醒（交感神経活動）を低下させる可能性が報告されています。<br>³ メラトニンとの関連<br>加重ブランケット使用により、就寝前のメラトニン濃度が上昇した可能性を示す研究があります。<br>Weighted blankets & sleep/related disorders review<br>⁴ セロトニンとメラトニン<br>セロトニンはメラトニンの前駆体として知られています。<br>Hardeland R. (2012). Melatonin biosynthesis and metabolism.<br>Acta Biochimica Polonica.<br>⁵ タッチとオキシトシン<br>心地よい触覚刺激とオキシトシン変化の関連が示唆されています。<br>Weighted blankets & anxiety review</p><h3>2024年10月先行予約/完売</h3><h3>2024年11月先行予約/完売</h3><h3>2025年1月一般販売/完売</h3><h3>2025年5月23日先行予約/完売</h3><p>2025年6月27日先行予約/完売<br>2025年7月25日先行予約/完売</p><h3>【“MUSUBI”-en- お手入れ方法】</h3>"
+            "text_2": "<p>「この“ブランケット”は夜に使用する寝具なのか、<br>ソファで使用することを想定しているのか、どっち？」<br>としばしば聞かれますが、<br>答えとしてはどちらでもご使用いただけます！<br>どちらでもご使用いただけます<br>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>"
+          }
+        },
+        "image_full_60": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/f2481d01-17de-488a-ab5f-39beb7c73c93/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_14_.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_61": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "【現在までのMUSUBIシリーズ販売実績】",
+            "text": "<p>日本のソファの奥行きサイズを徹底分析し、<br>男女問わず寝転ぶことが出来るサイズで<br>平均的な奥行きが70cmであったことから、<br>ソファでゴロゴロ過ごす至福時間に使用したい！という方は<br>Nap Size(M)がおすすめです<br>「元々重い布団が好きなんです！」という方や<br>寝室のベッドで1日の終わりに、全身を安心感に包まれて<br>ベッドに沈んでいくような快眠を感じたい方は、<br>Sleep Size(L)がおすすめです<br>夜の睡眠に、日中の束の間の休憩に、是非MUSUBIをご使用ください<br>〈脚注・参考文献〉<br>¹ 体重比の目安<br>体重の約10％前後が目安と紹介されることが多い一方、<br>科学的根拠は限定的とする報告もあります。<br>圧迫感が強すぎない範囲での使用が推奨されています。<br>→ J. Yu et al., The effect of weighted blankets on sleep and related disorders – Weighted blankets<br>² 深部圧刺激と自律神経<br>深部圧刺激は、生理的覚醒（交感神経活動）を低下させる可能性が報告されています。<br>³ メラトニンとの関連<br>加重ブランケット使用により、就寝前のメラトニン濃度が上昇した可能性を示す研究があります。<br>Weighted blankets & sleep/related disorders review<br>⁴ セロトニンとメラトニン<br>セロトニンはメラトニンの前駆体として知られています。<br>Hardeland R. (2012). Melatonin biosynthesis and metabolism.<br>Acta Biochimica Polonica.<br>⁵ タッチとオキシトシン<br>心地よい触覚刺激とオキシトシン変化の関連が示唆されています。<br>Weighted blankets & anxiety review</p><h3>2024年10月先行予約/完売</h3><h3>2024年11月先行予約/完売</h3><h3>2025年1月一般販売/完売</h3><h3>2025年5月23日先行予約/完売</h3><p>2025年6月27日先行予約/完売<br>2025年7月25日先行予約/完売</p><h3>【“MUSUBI”-en- お手入れ方法】</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
         "image_full_62": {
@@ -579,6 +605,8 @@
         "image_full_5",
         "image_full_6",
         "image_full_7",
+        "image_full_8",
+        "rich_text_9",
         "features_grid_auto_review_84",
         "image_full_16",
         "image_full_17",
@@ -621,6 +649,8 @@
         "features_grid_54",
         "rich_text_55",
         "features_grid_auto_review_85",
+        "image_full_60",
+        "rich_text_61",
         "image_full_62",
         "image_text_63",
         "features_grid_64",

@@ -259,8 +259,32 @@ cleanItems.forEach(item => {
 flushFullText(); flushHalf(); flushQuarter(); flushThird();
 
 // Advanced Pre-processing: turn sequential [image_full, rich_text] avatar review pairs into features_grid
+// STRICT conditions: only merge when rich_text has actual body text (not just a heading)
+// and doesn't contain price/color metadata patterns.
 let combo_order = [];
 let combo_blocks = {};
+
+function isReviewPairCandidate(imgBlock, txtBlock) {
+    if (!imgBlock || imgBlock.type !== 'image_full') return false;
+    if (!txtBlock || txtBlock.type !== 'rich_text') return false;
+    
+    const heading = txtBlock.settings.heading || '';
+    const text = txtBlock.settings.text || '';
+    
+    // Skip if no meaningful body text (just a heading = section title, not a review)
+    if (text.length < 10) return false;
+    
+    // Skip if heading contains price patterns (¥, $) - it's a product card
+    if (/[¥$€]/.test(heading) || /[¥$€]/.test(text)) return false;
+    
+    // Skip if heading looks like color names (product variant display)
+    if (/\b(Navy|Beige|Olive|Black|Greige|White|Blue|Khaki|Camel|Green)\b/i.test(heading) && heading.length < 50) return false;
+    
+    // Skip if heading contains catalog markers like 【】
+    if (/【.*】/.test(heading)) return false;
+    
+    return true;
+}
 
 for(let i = 0; i < block_order.length; i++) {
     const b1 = blocks[block_order[i]];
@@ -268,14 +292,13 @@ for(let i = 0; i < block_order.length; i++) {
     const b3 = blocks[block_order[i+2]];
     const b4 = blocks[block_order[i+3]];
 
+    // Require 2+ consecutive valid pairs before triggering
     if (
-        b1 && b1.type === 'image_full' && 
-        b2 && b2.type === 'rich_text' && 
-        b3 && b3.type === 'image_full' && 
-        b4 && b4.type === 'rich_text'
+        isReviewPairCandidate(b1, b2) && 
+        isReviewPairCandidate(b3, b4)
     ) {
         let pairs = [];
-        while(i < block_order.length - 1 && blocks[block_order[i]].type === 'image_full' && blocks[block_order[i+1]].type === 'rich_text') {
+        while(i < block_order.length - 1 && isReviewPairCandidate(blocks[block_order[i]], blocks[block_order[i+1]])) {
              pairs.push({
                  img: blocks[block_order[i]].settings.image_url,
                  head: blocks[block_order[i+1]].settings.heading,
@@ -290,8 +313,6 @@ for(let i = 0; i < block_order.length; i++) {
             const id = `features_grid_auto_review_${blockCounter++}`;
             combo_order.push(id);
             
-            // Heuristic: If it's a grid of 3+ items, it's virtually always a Review/Team carousel regardless of text length.
-            // Diagrams (like 500g jacket or netting) usually appear in pairs of 2.
             const avgTextLength = chunkPairs.reduce((acc, p) => acc + (p.txt || '').length, 0) / chunkPairs.length;
             const isLargeFeature = (chunkPairs.length <= 2) && (avgTextLength > 80);
             
