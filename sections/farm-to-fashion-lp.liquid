@@ -2,7 +2,7 @@
   <div class="ff-lp__inner" style="max-width: {{ section.settings.container_width }}px;">
     
     {%- for block in section.blocks -%}
-      <div class="ff-lp__block ff-lp__block--{{ block.type }}" {{ block.shopify_attributes }} style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px;">
+      <div class="ff-lp__block ff-lp__block--{{ block.type }}" {{ block.shopify_attributes }} style="margin-top: {{ block.settings.margin_top }}px; margin-bottom: {{ block.settings.margin_bottom }}px; --margin-top: {{ block.settings.margin_top }}px; --margin-bottom: {{ block.settings.margin_bottom }}px;">
         
         {%- case block.type -%}
           {%- when 'hero' -%}
@@ -239,7 +239,7 @@
   }
   .ff-lp__text {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
   .ff-lp__text p {
     margin-bottom: 1em;
@@ -270,9 +270,17 @@
     min-width: 300px;
   }
   @media (max-width: 768px) {
+    .ff-lp__block {
+      margin-top: calc(var(--margin-top, 40px) * 0.6) !important;
+      margin-bottom: calc(var(--margin-bottom, 40px) * 0.6) !important;
+    }
     .ff-lp__image-text {
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
+    }
+    .ff-lp__image-text-col {
+      flex-basis: auto !important;
+      min-width: 100%;
     }
     .ff-lp__image-text--reverse {
       flex-direction: column;
