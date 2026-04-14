@@ -285,9 +285,10 @@ for(let i = 0; i < block_order.length; i++) {
             let settings = { 
                image_on: true, 
                margin_bottom: 24, 
-               icon_size: isLargeFeature ? 'large' : 'small', 
+               icon_size: isLargeFeature ? 'large' : 'medium', 
                columns_desktop: Math.min(chunkPairs.length, 4),
-               columns_mobile: isLargeFeature ? 1 : 2
+               columns_mobile: isLargeFeature ? 1 : 2,
+               swipe_on_mobile: !isLargeFeature
             };
             
             chunkPairs.forEach((p, index) => {

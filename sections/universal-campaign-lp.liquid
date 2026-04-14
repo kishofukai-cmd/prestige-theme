@@ -115,7 +115,7 @@
             </div>
             
           {%- when 'features_grid' -%}
-            <div class="ff-lp__features-grid {% if block.settings.icon_size == 'large' %}ff-lp__features-grid--large{% endif %}" style="--columns: {{ block.settings.columns_desktop }}; --columns-mobile: {{ block.settings.columns_mobile | default: 2 }};">
+            <div class="ff-lp__features-grid {% if block.settings.icon_size != 'small' %}ff-lp__features-grid--{{ block.settings.icon_size }}{% endif %} {% if block.settings.swipe_on_mobile %}ff-lp__features-grid--swipeable{% endif %}" style="--columns: {{ block.settings.columns_desktop }}; --columns-mobile: {{ block.settings.columns_mobile | default: 2 }};">
               {%- for i in (1..4) -%}
                 {%- capture img_key -%}image_{{ i }}{%- endcapture -%}
                 {%- capture img_url_key -%}image_url_{{ i }}{%- endcapture -%}
@@ -124,7 +124,7 @@
                 
                 {%- if block.settings[img_key] != blank or block.settings[img_url_key] != blank or block.settings[title_key] != blank -%}
                   <div class="ff-lp__feature-item">
-                    <div class="ff-lp__feature-icon {% if block.settings.icon_size == 'large' %}ff-lp__feature-icon--large{% endif %}">
+                    <div class="ff-lp__feature-icon {% if block.settings.icon_size != 'small' %}ff-lp__feature-icon--{{ block.settings.icon_size }}{% endif %}">
                       {%- if block.settings[img_key] != blank -%}
                         <img src="{{ block.settings[img_key] | img_url: '400x' }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
                       {%- elsif block.settings[img_url_key] != blank -%}
@@ -380,9 +380,28 @@
     .ff-lp__features-grid {
       grid-template-columns: repeat(var(--columns-mobile, 2), 1fr);
     }
-    .ff-lp__features-grid--large {
+    .ff-lp__features-grid--large:not(.ff-lp__features-grid--swipeable) {
       grid-template-columns: 1fr !important; /* Stack large items on mobile */
       gap: 32px !important;
+    }
+    .ff-lp__features-grid--swipeable {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 24px;
+      margin-right: -16px;
+      padding-right: 16px;
+      grid-template-columns: none;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ff-lp__features-grid--swipeable::-webkit-scrollbar {
+      display: none;
+    }
+    .ff-lp__features-grid--swipeable .ff-lp__feature-item {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+      padding-right: 16px;
     }
   }
   .ff-lp__feature-item {
@@ -401,6 +420,19 @@
     height: auto !important;
     margin: 0 auto 20px !important;
     display: block !important;
+  }
+  .ff-lp__feature-icon--medium {
+    width: 140px !important;
+    height: 140px !important;
+    margin: 0 auto 16px !important;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex !important;
+  }
+  .ff-lp__feature-icon--medium img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
   .ff-lp__feature-icon--large img {
     width: 100% !important;
@@ -845,9 +877,16 @@
           "label": "Icon/Image Style",
           "options": [
             { "value": "small", "label": "Small Icon (60px)" },
+            { "value": "medium", "label": "Medium Avatar (140px Circle)" },
             { "value": "large", "label": "Large Image (Full Width Column)" }
           ],
           "default": "small"
+        },
+        {
+          "type": "checkbox",
+          "id": "swipe_on_mobile",
+          "label": "Enable horizontal swipe on mobile",
+          "default": false
         },
         {
           "type": "range",
