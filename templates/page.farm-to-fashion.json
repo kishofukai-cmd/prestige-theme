@@ -3,218 +3,556 @@
     "main": {
       "type": "farm-to-fashion-lp",
       "blocks": {
-        "hero": {
+        "hero_1": {
           "type": "hero",
           "settings": {
             "image_url": "https://ucarecdn.com/9a3994a6-7520-4345-ad32-532fa0c68364/-/format/auto/-/preview/3000x3000/-/quality/lighter/Group%2017.png",
             "margin_bottom": 40
           }
         },
-        "about_kapok_heading": {
+        "rich_text_2": {
           "type": "rich_text",
           "settings": {
-            "heading": "What is Kapok?",
+            "heading": "とにかく軽い！",
             "text": "",
             "text_alignment": "center",
             "margin_bottom": 40
           }
         },
-        "about_kapok_image": {
+        "rich_text_3": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "コットンの約1/8の軽さ",
+            "text": "<p>カポックの特徴は、軽さにあります。&nbsp;<br>カポックは従来のコットンの1/8の軽さです。繊維がストロー状で空洞になっていることで、カポックはふわふわと宙を舞うくらい軽く、着心地の良いアウターが出来上がります。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_4": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/67570698-0f6e-4796-894a-426d135c9b6c/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20100.png",
-            "margin_bottom": 80
+            "margin_bottom": 60
           }
         },
-        "farm_to_fashion_heading": {
+        "rich_text_5": {
           "type": "rich_text",
           "settings": {
-            "heading": "Farm to Fashion",
+            "heading": "とにかく暖かい！",
             "text": "",
             "text_alignment": "center",
             "margin_bottom": 40
           }
         },
-        "farm_to_fashion_hero": {
-          "type": "image_text",
+        "rich_text_6": {
+          "type": "rich_text",
           "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
-            "heading": "",
-            "text": "<p>わたしたちは「Farm to Fashion」を掲げ、農園や縫製工場の生産プロセスの透明性を大切にし、皆さんのもとへ届くまでに関わる生産者と地球環境にとってよりよい選択を模索し続けています。<br>カポックノットは、インドネシアの農園や工場に実際に足を運び、直接やりとりをし、短期的なコストだけでの選択をせず、長期的に関わる人たちにとってよりよい循環を生み出します。</p>",
+            "heading": "木になるダウン「カポック」",
+            "text": "<p>カポックは植物由来のため、化学繊維のポリエステルとは違って「呼吸」をします。<br>湿気を吸って暖かくなる吸湿発熱という機能を持っており、軽さと暖かさの両立を実現しています。カポックはこれらの特徴から、「木に実るダウン」や「ホワイトシルクコットン」とも呼ばれています。&nbsp;</p>",
+            "text_alignment": "center",
             "margin_bottom": 40
           }
         },
-        "farm_to_fashion_images": {
+        "image_full_7": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/67570698-0f6e-4796-894a-426d135c9b6c/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20100.png",
+            "margin_bottom": 60
+          }
+        },
+        "image_full_8": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_9": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "",
+            "text": "<p>※3度環境の中、着用1分後の状態<br>※こちらの商品はカポックの中綿シートを使用している別の商品のものになります<br>※同じ重さで素材がポリエステルのダウン、コートと比較</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_10": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_11": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "動物にも優しいアニマルフリー",
+            "text": "<p>従来のダウンは水鳥の羽が使用されていました。一説には、１つのダウンジャケットには約30羽分の羽毛が使われているといわれています。<br>羽毛の採取方法にもいくつかありますが、ライブハンドピッキング法は質の良い羽毛を採取できる方法としても知られています。実際、採取方法を表明していない企業も存在しています。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_12": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "ご購入いただいたお客様の声",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "features_grid_13": {
           "type": "features_grid",
           "settings": {
             "image_on": true,
             "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
-            "title_1": "農園から直接買い付け",
-            "text_1": "丁寧に愛情深く紡がれるカポックの繊維。インドネシアのカポック農園の方々が、丁寧に生産・収穫しています。",
             "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
-            "title_2": "加工工場へ",
-            "text_2": "国内大手繊維メーカーとの研究開発の末、カポックのシート化に成功。",
             "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
-            "title_3": "特殊縫製工場へ",
-            "text_3": "縫製工場では従業員の方達が、1着1着、丁寧に作り上げていきます。細部に思いやりの行き届いたモノづくりができます。",
             "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png",
-            "title_4": "皆様のもとへ",
-            "text_4": "デザイン・機能・価格のバランスの取れたものづくりを心がけ、お客様に長く使っていただける服に仕上げています。",
             "margin_bottom": 80
           }
         },
-        "product_grid_coats": {
-          "type": "product_grid",
+        "rich_text_14": {
+          "type": "rich_text",
           "settings": {
-            "heading": "Coats",
-            "columns_desktop": 4,
-            "margin_bottom": 60
+            "heading": "ご愛用いただいているみなさま",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
           }
         },
-        "product_grid_jackets": {
-          "type": "product_grid",
+        "features_grid_15": {
+          "type": "features_grid",
           "settings": {
-            "heading": "Jackets",
-            "columns_desktop": 4,
+            "image_on": true,
+            "image_url_1": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png",
+            "image_url_2": "https://ucarecdn.com/bc36ca8b-6051-4821-b8a6-569d620ff601/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.43.02.png",
+            "image_url_3": "https://ucarecdn.com/f61f79e8-3ee2-457b-a314-bc8379aa8da9/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.53.png",
+            "image_url_4": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png",
             "margin_bottom": 80
           }
         },
-        "lightness_image": {
+        "rich_text_16": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "ブランドに共感いただいているクリエイターのみなさま",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_17": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png",
-            "margin_bottom": 80
+            "margin_bottom": 60
           }
         },
-        "thermograph_heading": {
+        "rich_text_18": {
           "type": "rich_text",
           "settings": {
-            "heading": "THERMOGRAPH",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 20
-          }
-        },
-        "thermograph_content": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
-            "margin_bottom": 80
-          }
-        },
-        "animal_free": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
-            "heading": "Animal Free",
-            "text": "<p>カポックは高機能でありながら、木の実なので木を伐採することも、動物を痛めつけることも必要ありません。</p>",
-            "margin_bottom": 80
-          }
-        },
-        "voice_of_customers_heading": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Voice of Customers",
-            "text": "",
+            "heading": "",
+            "text": "<p>建築家の谷尻誠さんと料理家の谷尻直子さん</p>",
             "text_alignment": "center",
             "margin_bottom": 40
           }
         },
-        "review_1": {
-          "type": "review_card",
-          "settings": {
-            "rating": 5,
-            "image_url": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
-            "heading": "ご購入者様",
-            "text": "軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。",
-            "margin_bottom": 20
-          }
-        },
-        "review_2": {
-          "type": "review_card",
-          "settings": {
-            "rating": 5,
-            "image_url": "https://ucarecdn.com/d048ed14-caa7-4f4c-a6f2-5110e88d1ed1/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_02.png",
-            "heading": "ご購入者様",
-            "text": "機能とデザイン、そして環境配慮。魅力的なプロダクトです。",
-            "margin_bottom": 20
-          }
-        },
-        "review_3": {
-          "type": "review_card",
-          "settings": {
-            "rating": 5,
-            "image_url": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
-            "heading": "ご購入者様",
-            "text": "あったかくてスタイリッシュなカポックに感動しました。",
-            "margin_bottom": 40
-          }
-        },
-        "founder_heading": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Founder's Message",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "founder_message": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
-            "heading": "カポックノット代表　深井喜翔",
-            "text": "<p>初めましてカポックノット創業者の深井喜翔です。老舗アパレル企業の4代目として繊維業界に身を置くことで、アパレル業界の負のシステムを目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p>",
-            "margin_bottom": 80
-          }
-        },
-        "diagram_image": {
+        "image_full_19": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png",
-            "margin_bottom": 80
+            "margin_bottom": 60
           }
         },
-        "media_logos": {
+        "image_full_20": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_21": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "",
+            "text": "<p>『201カ国、202人の夢xSDGs』編集者 平原依文さん</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_22": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_23": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "",
+            "text": "<p>DEPT Company代表 デザイナー/アクティビスト eriさん</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_24": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "さらに多くの皆様にご支持をいただいています",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_25": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_26": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "木村祥一郎",
+            "text": "<p>軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。カラダは正直で、ついつい他よりKAPOK KNOTのアウターを選んでしまう。しかもサスティナブル志向。そりゃ応援したくなる。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_27": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/d048ed14-caa7-4f4c-a6f2-5110e88d1ed1/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_02.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_28": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "河野貴伸",
+            "text": "<p>機能とデザイン、そして環境配慮。それらのバランスをとりながら、全てを満たす魅力的なプロダクトを実現した「カポックノット」は、僕が心からリスペクトするD2Cブランドの一つです。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_29": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_30": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "宮崎真理子",
+            "text": "<p>カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_31": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エシカルファッションブランド カポックノット",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_32": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "創業者からのメッセージ",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_33": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_34": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "カポックノット代表　深井喜翔",
+            "text": "<p>初めましてカポックノット創業者の深井喜翔です。<br>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。<br>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_35": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "カポックノットの価値観",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_36": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/1573de7b-7ae4-497e-b340-1970bc5ca977/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2068.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_37": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "次世代に託す地球環境への還元",
+            "text": "<p>サステナブルな素材を活用し、持続可能なビジネスを展開し、その利益の一部で地球環境再生に貢献します</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_38": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "生産者に優しいものづくり",
+            "text": "<p>受け継いできた技術と革新的な技術を活かし、原料生産元からお客様の手に届くまで独自のサプライチェーンを構築し、生産者にも優しいものづくりをしていきます</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_39": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "より軽く、より暖かく",
+            "text": "<p>軽さと吸湿発熱の機能を持つカポックによって、着膨れしない「軽い、薄い、暖かい」スタイリッシュなアウターを実現します</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_40": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Makuakeでは累計5000万円以上の支援をいただきました",
+            "text": "<p>信頼のMakuake実績！なんと、2000人以上の方から、累計5000万円以上の支援をいただいております！</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_41": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/4da67018-83b3-447d-b4b2-024ddf524186/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-11-12%20193938.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_42": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "多くのメディアでも取り上げていただきました",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_43": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/205009e2-a561-423e-9af7-33c18a767929/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-04%2016.00%201.png",
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_44": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "木の実由来のアウターを体験してみませんか？",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_45": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "期間限定 POP UP全国で開催中！",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "image_full_46": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/fd46de82-00ee-453d-b491-fe527e9cbfe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-5%20_1_.jpg",
-            "margin_bottom": 80
+            "margin_bottom": 60
           }
         },
-        "popup_store": {
+        "image_full_47": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/f148b57b-451b-4a46-97ba-252553f75304/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_1_.jpg",
-            "margin_bottom": 80
+            "margin_bottom": 60
+          }
+        },
+        "rich_text_48": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "よくあるご質問",
+            "text": "<p>Q. カポックは洋服以外に何に使われていますか？<br>A. 現地では、枕の詰め物や、オイルキャッチャー（海に流れた重油などの吸収剤）として使われています。<br>以前はベッドのマットレスにも使われていたが、スプリング式のマットレスに変わりあまり使われなくなってしまいました。<br>需要が減ってしまったため、木材として切り出されるといったことも起きています。<br>Q. 配送のタイムラインを教えてください。<br>A. 基本的に注文から一週間以内でお届けいたします。<br>Q. 縫製はどこで行っていますか？<br>A. ほとんどの製品は、青森の工場で縫製しています。<br>多くの工場で行われている分業型とは違い、この縫製工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得して初めて1人前とされます。そのため、完全に分業型の工場に比べて縫製技術が高いです。<br>Q. ロゴにはどんな意味がありますか？<br>A. カポックノットは 「結び目/絆」を意味するknot(ノット)を冠しています。<br>マークにある結び方は、「あやむすび」という結び方で、結び目が非常に強く、緩まないことが特徴の結び方です。<br>そのため、日本で使用されるこの水引の形には「末長く」「永遠に続く」という意味があります。<br>関わる全て人が無理をせずに関わりながら、地球資源の持続可能な未来を考えるブランドのあり方を体現しています。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_49": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "カポックノットの防寒性を是非お試しください",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_50": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エアーライトペプラムジャケット - Women",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_51": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Tenderproof ジャケット -Women",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_52": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エアーライトジャケット-Men",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_53": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エアーライトジャケット-Women",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_54": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エアースムースシャツ-Men",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_55": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "カンガルーパーカー-Unisex",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_56": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "カポックダウンライトジャケット-Men",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_57": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "キルティングジャケット-Men",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "rich_text_58": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "エアースムースシャツ-Women",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 40
           }
         }
       },
       "block_order": [
-        "hero",
-        "about_kapok_heading",
-        "about_kapok_image",
-        "farm_to_fashion_heading",
-        "farm_to_fashion_hero",
-        "farm_to_fashion_images",
-        "product_grid_coats",
-        "product_grid_jackets",
-        "lightness_image",
-        "thermograph_heading",
-        "thermograph_content",
-        "animal_free",
-        "voice_of_customers_heading",
-        "review_1",
-        "review_2",
-        "review_3",
-        "founder_heading",
-        "founder_message",
-        "diagram_image",
-        "media_logos",
-        "popup_store"
+        "hero_1",
+        "rich_text_2",
+        "rich_text_3",
+        "image_full_4",
+        "rich_text_5",
+        "rich_text_6",
+        "image_full_7",
+        "image_full_8",
+        "rich_text_9",
+        "image_full_10",
+        "rich_text_11",
+        "rich_text_12",
+        "features_grid_13",
+        "rich_text_14",
+        "features_grid_15",
+        "rich_text_16",
+        "image_full_17",
+        "rich_text_18",
+        "image_full_19",
+        "image_full_20",
+        "rich_text_21",
+        "image_full_22",
+        "rich_text_23",
+        "rich_text_24",
+        "image_full_25",
+        "rich_text_26",
+        "image_full_27",
+        "rich_text_28",
+        "image_full_29",
+        "rich_text_30",
+        "rich_text_31",
+        "rich_text_32",
+        "image_full_33",
+        "rich_text_34",
+        "rich_text_35",
+        "image_full_36",
+        "rich_text_37",
+        "rich_text_38",
+        "rich_text_39",
+        "rich_text_40",
+        "image_full_41",
+        "rich_text_42",
+        "image_full_43",
+        "rich_text_44",
+        "rich_text_45",
+        "image_full_46",
+        "image_full_47",
+        "rich_text_48",
+        "rich_text_49",
+        "rich_text_50",
+        "rich_text_51",
+        "rich_text_52",
+        "rich_text_53",
+        "rich_text_54",
+        "rich_text_55",
+        "rich_text_56",
+        "rich_text_57",
+        "rich_text_58"
       ],
       "settings": {
         "bg_color": "#ffffff",
