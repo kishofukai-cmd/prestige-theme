@@ -6,19 +6,81 @@
         "hero_1": {
           "type": "hero"
         },
-        "text_1": {
+        "text_intro": {
           "type": "rich_text",
           "settings": {
-            "heading": "Farm to Fashion",
-            "text": "<p>テキストをここに入力します。</p>"
+            "heading": "販売実績20,000着突破！",
+            "text": "<p>多くのお客様にご愛用いただき、心より感謝申し上げます。<br>これからも、驚きの軽さと暖かさを皆様にお届けします。</p>",
+            "text_color": "#1a1a1a",
+            "margin_bottom": 60
+          }
+        },
+        "feature_1": {
+          "type": "image_text",
+          "settings": {
+            "layout": "left",
+            "heading": "たった5mmの薄さで、ダウン並みの暖かさ",
+            "text": "<p>木の実由来の新素材「カポック」を使用。従来のダウンの弱点であった着膨れを解消し、スマートなシルエットと圧倒的な保温性を両立しました。</p>",
+            "margin_bottom": 80
+          }
+        },
+        "feature_2": {
+          "type": "image_text",
+          "settings": {
+            "layout": "right",
+            "heading": "エシカルなモノづくり",
+            "text": "<p>「Farm to Fashion」の理念のもと、木を切らずに実から採取できるカポックを使用しています。環境に優しく、アニマルフリーなサステナブル素材です。</p>",
+            "margin_bottom": 80
+          }
+        },
+        "grid_intro": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "KAPOK KNOT 公式LINE登録で500円OFFクーポン",
+            "text": "",
+            "margin_bottom": 40
+          }
+        },
+        "product_list": {
+          "type": "product_grid",
+          "settings": {
+            "heading": "【WINTER SEASON】LINEUP",
+            "columns_desktop": 4,
+            "margin_bottom": 80
+          }
+        },
+        "thermo": {
+          "type": "image_text",
+          "settings": {
+            "layout": "left",
+            "heading": "サーモグラフィー比較",
+            "text": "<p>一般的な防寒着と比較しても、カポックの優れた保温層が熱を逃さないことが実証されています。</p>",
+            "margin_bottom": 80
+          }
+        },
+        "cta_button": {
+          "type": "button",
+          "settings": {
+            "button_label": "商品一覧を見る",
+            "alignment": "center",
+            "margin_bottom": 80
           }
         }
       },
       "block_order": [
         "hero_1",
-        "text_1"
+        "text_intro",
+        "feature_1",
+        "feature_2",
+        "grid_intro",
+        "product_list",
+        "thermo",
+        "cta_button"
       ],
-      "settings": {}
+      "settings": {
+        "bg_color": "#ffffff",
+        "container_width": 1000
+      }
     }
   },
   "order": [
