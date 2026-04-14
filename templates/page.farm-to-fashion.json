@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "farm-to-fashion-lp",
+      "blocks": {
+        "hero_1": {
+          "type": "hero"
+        },
+        "text_1": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Farm to Fashion",
+            "text": "<p>テキストをここに入力します。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "hero_1",
+        "text_1"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
