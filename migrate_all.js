@@ -98,6 +98,15 @@ function flushHalf() {
                  if (currentHalf.texts[j]) combinedTextParts.push(`${currentHalf.texts[j]}`);
             }
 
+            let formattedTextContent = '';
+            combinedTextParts.forEach(part => {
+                if (part.startsWith('<h')) {
+                    formattedTextContent += part;
+                } else {
+                    formattedTextContent += `<p>${part}</p>`;
+                }
+            });
+
             let blockId = `image_text_${blockCounter++}`;
             block_order.push(blockId);
             blocks[blockId] = {
@@ -106,7 +115,7 @@ function flushHalf() {
                     layout: layoutDir,
                     image_url: currentHalf.images[0] || '',
                     heading: currentHalf.headings[0] || '',
-                    text: combinedTextParts.length > 0 ? `<p>${combinedTextParts.join('<br>')}</p>` : '',
+                    text: formattedTextContent,
                     margin_bottom: 24
                 }
             };
