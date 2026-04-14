@@ -42,13 +42,13 @@
           "type": "features_grid",
           "settings": {
             "image_on": true,
-            "image_1_url": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
+            "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
             "title_1": "KAPOK FARM",
             "text_1": "丁寧に愛情深く紡がれるカポックの繊維。インドネシアのカポック農園の方々が、丁寧に生産・収穫しています。",
-            "image_2_url": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
+            "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
             "title_2": "PRODUCT DESIGN",
             "text_2": "デザイン・機能・価格のバランスの取れたものづくりを心がけ、お客様に長く使っていただける服に仕上げています。",
-            "image_3_url": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
+            "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
             "title_3": "GARMENT FACTORY",
             "text_3": "縫製工場では従業員の方達が、1着1着、丁寧に作り上げていきます。細部に思いやりの行き届いたモノづくりができます。",
             "margin_bottom": 80
