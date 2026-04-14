@@ -77,28 +77,25 @@
             "margin_bottom": 40
           }
         },
-        "image_full_9": {
-          "type": "image_full",
+        "features_grid_9": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/da9dfac5-191b-4f71-b3a2-fc68dc73a690/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_3.png",
-            "margin_bottom": 60
+            "image_on": true,
+            "margin_bottom": 80,
+            "columns_desktop": 3,
+            "icon_size": "large",
+            "image_url_1": "https://ucarecdn.com/da9dfac5-191b-4f71-b3a2-fc68dc73a690/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_3.png",
+            "title_1": "",
+            "text_1": "",
+            "image_url_2": "https://ucarecdn.com/0e784a9e-4b6c-462e-a9f0-d41548f3324f/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645.png",
+            "title_2": "",
+            "text_2": "",
+            "image_url_3": "https://ucarecdn.com/66384172-54e0-46df-8a81-81b62f22db73/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_2.png",
+            "title_3": "",
+            "text_3": ""
           }
         },
-        "image_full_10": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/0e784a9e-4b6c-462e-a9f0-d41548f3324f/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645.png",
-            "margin_bottom": 60
-          }
-        },
-        "image_full_11": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/66384172-54e0-46df-8a81-81b62f22db73/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_2.png",
-            "margin_bottom": 60
-          }
-        },
-        "product_grid_12": {
+        "product_grid_10": {
           "type": "product_grid",
           "settings": {
             "heading": "Coats",
@@ -106,7 +103,7 @@
             "margin_bottom": 80
           }
         },
-        "product_grid_13": {
+        "product_grid_11": {
           "type": "product_grid",
           "settings": {
             "heading": "Jackets",
@@ -114,14 +111,14 @@
             "margin_bottom": 80
           }
         },
-        "image_full_14": {
+        "image_full_12": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
             "margin_bottom": 60
           }
         },
-        "rich_text_15": {
+        "rich_text_13": {
           "type": "rich_text",
           "settings": {
             "heading": "",
@@ -130,7 +127,7 @@
             "margin_bottom": 40
           }
         },
-        "image_text_16": {
+        "image_text_14": {
           "type": "image_text",
           "settings": {
             "layout": "left",
@@ -140,7 +137,7 @@
             "margin_bottom": 60
           }
         },
-        "rich_text_17": {
+        "rich_text_15": {
           "type": "rich_text",
           "settings": {
             "heading": "ご購入いただいたお客様の声",
@@ -149,15 +146,20 @@
             "margin_bottom": 40
           }
         },
-        "features_grid_auto_49": {
+        "features_grid_16": {
           "type": "features_grid",
           "settings": {
             "image_on": true,
-            "margin_bottom": 60,
-            "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png"
+            "margin_bottom": 80,
+            "columns_desktop": 2,
+            "icon_size": "large",
+            "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
+            "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
+            "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
+            "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png"
           }
         },
-        "rich_text_19": {
+        "rich_text_17": {
           "type": "rich_text",
           "settings": {
             "heading": "ご愛用いただいているみなさま",
@@ -166,15 +168,20 @@
             "margin_bottom": 40
           }
         },
-        "features_grid_auto_50": {
+        "features_grid_18": {
           "type": "features_grid",
           "settings": {
             "image_on": true,
-            "margin_bottom": 60,
-            "image_url_1": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png"
+            "margin_bottom": 80,
+            "columns_desktop": 2,
+            "icon_size": "large",
+            "image_url_1": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png",
+            "image_url_2": "https://ucarecdn.com/bc36ca8b-6051-4821-b8a6-569d620ff601/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.43.02.png",
+            "image_url_3": "https://ucarecdn.com/f61f79e8-3ee2-457b-a314-bc8379aa8da9/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.53.png",
+            "image_url_4": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png"
           }
         },
-        "rich_text_21": {
+        "rich_text_19": {
           "type": "rich_text",
           "settings": {
             "heading": "ブランドに共感いただいているクリエイターのみなさま",
@@ -183,55 +190,25 @@
             "margin_bottom": 40
           }
         },
-        "image_full_22": {
-          "type": "image_full",
+        "features_grid_20": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png",
-            "margin_bottom": 60
+            "image_on": true,
+            "margin_bottom": 80,
+            "columns_desktop": 3,
+            "icon_size": "large",
+            "image_url_1": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png",
+            "title_1": "",
+            "text_1": "建築家の谷尻誠さんと料理家の谷尻直子さん",
+            "image_url_2": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png",
+            "title_2": "",
+            "text_2": "『201カ国、202人の夢xSDGs』編集者 平原依文さん",
+            "image_url_3": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png",
+            "title_3": "",
+            "text_3": "DEPT Company代表 デザイナー/アクティビスト eriさん"
           }
         },
-        "rich_text_23": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>建築家の谷尻誠さんと料理家の谷尻直子さん</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "image_full_24": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png",
-            "margin_bottom": 60
-          }
-        },
-        "rich_text_25": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>『201カ国、202人の夢xSDGs』編集者 平原依文さん</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "image_full_26": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png",
-            "margin_bottom": 60
-          }
-        },
-        "rich_text_27": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>DEPT Company代表 デザイナー/アクティビスト eriさん</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "rich_text_28": {
+        "rich_text_21": {
           "type": "rich_text",
           "settings": {
             "heading": "さらに多くの皆様にご支持をいただいています",
@@ -240,55 +217,25 @@
             "margin_bottom": 40
           }
         },
-        "image_full_29": {
-          "type": "image_full",
+        "features_grid_22": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
-            "margin_bottom": 60
+            "image_on": true,
+            "margin_bottom": 80,
+            "columns_desktop": 3,
+            "icon_size": "large",
+            "image_url_1": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
+            "title_1": "木村祥一郎",
+            "text_1": "軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。カラダは正直で、ついつい他よりKAPOK KNOTのアウターを選んでしまう。しかもサスティナブル志向。そりゃ応援したくなる。",
+            "image_url_2": "https://ucarecdn.com/d048ed14-caa7-4f4c-a6f2-5110e88d1ed1/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_02.png",
+            "title_2": "河野貴伸",
+            "text_2": "機能とデザイン、そして環境配慮。それらのバランスをとりながら、全てを満たす魅力的なプロダクトを実現した「カポックノット」は、僕が心からリスペクトするD2Cブランドの一つです。",
+            "image_url_3": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
+            "title_3": "宮崎真理子",
+            "text_3": "カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。"
           }
         },
-        "rich_text_30": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "木村祥一郎",
-            "text": "<p>軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。カラダは正直で、ついつい他よりKAPOK KNOTのアウターを選んでしまう。しかもサスティナブル志向。そりゃ応援したくなる。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "image_full_31": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/d048ed14-caa7-4f4c-a6f2-5110e88d1ed1/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_02.png",
-            "margin_bottom": 60
-          }
-        },
-        "rich_text_32": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "河野貴伸",
-            "text": "<p>機能とデザイン、そして環境配慮。それらのバランスをとりながら、全てを満たす魅力的なプロダクトを実現した「カポックノット」は、僕が心からリスペクトするD2Cブランドの一つです。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "image_full_33": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
-            "margin_bottom": 60
-          }
-        },
-        "rich_text_34": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "宮崎真理子",
-            "text": "<p>カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
-        "rich_text_35": {
+        "rich_text_23": {
           "type": "rich_text",
           "settings": {
             "heading": "エシカルファッションブランド カポックノット - 創業者からのメッセージ",
@@ -297,7 +244,7 @@
             "margin_bottom": 40
           }
         },
-        "image_text_36": {
+        "image_text_24": {
           "type": "image_text",
           "settings": {
             "layout": "left",
@@ -307,7 +254,7 @@
             "margin_bottom": 60
           }
         },
-        "rich_text_37": {
+        "rich_text_25": {
           "type": "rich_text",
           "settings": {
             "heading": "カポックノットの価値観",
@@ -316,7 +263,7 @@
             "margin_bottom": 40
           }
         },
-        "image_text_38": {
+        "image_text_26": {
           "type": "image_text",
           "settings": {
             "layout": "left",
@@ -326,7 +273,7 @@
             "margin_bottom": 60
           }
         },
-        "rich_text_39": {
+        "rich_text_27": {
           "type": "rich_text",
           "settings": {
             "heading": "Makuakeでは累計5000万円以上の支援をいただきました",
@@ -335,14 +282,14 @@
             "margin_bottom": 40
           }
         },
-        "image_full_40": {
+        "image_full_28": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/4da67018-83b3-447d-b4b2-024ddf524186/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-11-12%20193938.png",
             "margin_bottom": 60
           }
         },
-        "rich_text_41": {
+        "rich_text_29": {
           "type": "rich_text",
           "settings": {
             "heading": "多くのメディアでも取り上げていただきました",
@@ -351,14 +298,14 @@
             "margin_bottom": 40
           }
         },
-        "image_full_42": {
+        "image_full_30": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/205009e2-a561-423e-9af7-33c18a767929/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-04%2016.00%201.png",
             "margin_bottom": 60
           }
         },
-        "rich_text_43": {
+        "rich_text_31": {
           "type": "rich_text",
           "settings": {
             "heading": "木の実由来のアウターを体験してみませんか？ - 期間限定 POP UP全国で開催中！",
@@ -367,21 +314,21 @@
             "margin_bottom": 40
           }
         },
-        "image_full_44": {
+        "image_full_32": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/fd46de82-00ee-453d-b491-fe527e9cbfe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-5%20_1_.jpg",
             "margin_bottom": 60
           }
         },
-        "image_full_45": {
+        "image_full_33": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/f148b57b-451b-4a46-97ba-252553f75304/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_1_.jpg",
             "margin_bottom": 60
           }
         },
-        "rich_text_46": {
+        "rich_text_34": {
           "type": "rich_text",
           "settings": {
             "heading": "",
@@ -390,7 +337,7 @@
             "margin_bottom": 40
           }
         },
-        "rich_text_47": {
+        "rich_text_35": {
           "type": "rich_text",
           "settings": {
             "heading": "よくあるご質問",
@@ -399,11 +346,13 @@
             "margin_bottom": 40
           }
         },
-        "features_grid_48": {
+        "features_grid_36": {
           "type": "features_grid",
           "settings": {
             "image_on": true,
             "margin_bottom": 80,
+            "columns_desktop": 4,
+            "icon_size": "small",
             "image_url_1": "//kapok-knot.com/cdn/shop/products/shirts_pdp_M04_1024x1024.jpg?v=1750303226",
             "image_url_2": "//kapok-knot.com/cdn/shop/products/shirts_pdp_M05_1024x1024.jpg?v=1750303226",
             "image_url_3": "//kapok-knot.com/cdn/shop/products/04-006_1024x1024.png?v=1761880585",
@@ -420,46 +369,34 @@
         "image_text_6",
         "image_text_7",
         "rich_text_8",
-        "image_full_9",
-        "image_full_10",
-        "image_full_11",
-        "product_grid_12",
-        "product_grid_13",
-        "image_full_14",
+        "features_grid_9",
+        "product_grid_10",
+        "product_grid_11",
+        "image_full_12",
+        "rich_text_13",
+        "image_text_14",
         "rich_text_15",
-        "image_text_16",
+        "features_grid_16",
         "rich_text_17",
-        "features_grid_auto_49",
+        "features_grid_18",
         "rich_text_19",
-        "features_grid_auto_50",
+        "features_grid_20",
         "rich_text_21",
-        "image_full_22",
+        "features_grid_22",
         "rich_text_23",
-        "image_full_24",
+        "image_text_24",
         "rich_text_25",
-        "image_full_26",
+        "image_text_26",
         "rich_text_27",
-        "rich_text_28",
-        "image_full_29",
-        "rich_text_30",
-        "image_full_31",
-        "rich_text_32",
+        "image_full_28",
+        "rich_text_29",
+        "image_full_30",
+        "rich_text_31",
+        "image_full_32",
         "image_full_33",
         "rich_text_34",
         "rich_text_35",
-        "image_text_36",
-        "rich_text_37",
-        "image_text_38",
-        "rich_text_39",
-        "image_full_40",
-        "rich_text_41",
-        "image_full_42",
-        "rich_text_43",
-        "image_full_44",
-        "image_full_45",
-        "rich_text_46",
-        "rich_text_47",
-        "features_grid_48"
+        "features_grid_36"
       ],
       "settings": {
         "bg_color": "#ffffff",
