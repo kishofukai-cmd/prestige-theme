@@ -13,19 +13,16 @@
         "about_kapok_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "KAPOK",
-            "text": "<p>カポックは東南アジアに自生する植物で、コットンの1/8の軽さ、吸湿発熱という機能を備えていますが、その繊維の軽さと短さ故に糸への加工が難しく、多くの企業が商品化を断念。国内大手繊維メーカーとの研究開発の末、カポックのシート化に成功。<br>またカポックは木の実なので木を伐採する必要もなく、アニマルフリーでスペシャルな素材。</p>",
+            "heading": "What is Kapok?",
+            "text": "",
             "text_alignment": "center",
             "margin_bottom": 40
           }
         },
         "about_kapok_image": {
-          "type": "image_text",
+          "type": "image_full",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/67570698-0f6e-4796-894a-426d135c9b6c/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20100.png",
-            "heading": "木になるダウン「カポック」",
-            "text": "<p>カポックは植物由来のため、化学繊維のポリエステルとは違って「呼吸」をします。湿気を吸って暖かくなる吸湿発熱という機能を持っており、軽さと暖かさの両立を実現しています。カポックはこれらの特徴から、「木に実るダウン」や「ホワイトシルクコットン」とも呼ばれています。</p>",
             "margin_bottom": 80
           }
         },
@@ -33,8 +30,18 @@
           "type": "rich_text",
           "settings": {
             "heading": "Farm to Fashion",
-            "text": "<p>わたしたちは「Farm to Fashion」を掲げ、農園や縫製工場の生産プロセスの透明性を大切にし、皆さんのもとへ届くまでに関わる生産者と地球環境にとってよりよい選択を模索し続けています。<br>カポックノットは、インドネシアの農園や工場に実際に足を運び、直接やりとりをし、短期的なコストだけでの選択をせず、長期的に関わる人たちにとってよりよい循環を生み出します。</p>",
+            "text": "",
             "text_alignment": "center",
+            "margin_bottom": 40
+          }
+        },
+        "farm_to_fashion_hero": {
+          "type": "image_text",
+          "settings": {
+            "layout": "left",
+            "image_url": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
+            "heading": "",
+            "text": "<p>わたしたちは「Farm to Fashion」を掲げ、農園や縫製工場の生産プロセスの透明性を大切にし、皆さんのもとへ届くまでに関わる生産者と地球環境にとってよりよい選択を模索し続けています。<br>カポックノットは、インドネシアの農園や工場に実際に足を運び、直接やりとりをし、短期的なコストだけでの選択をせず、長期的に関わる人たちにとってよりよい循環を生み出します。</p>",
             "margin_bottom": 40
           }
         },
@@ -43,14 +50,17 @@
           "settings": {
             "image_on": true,
             "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
-            "title_1": "KAPOK FARM",
+            "title_1": "農園から直接買い付け",
             "text_1": "丁寧に愛情深く紡がれるカポックの繊維。インドネシアのカポック農園の方々が、丁寧に生産・収穫しています。",
             "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
-            "title_2": "PRODUCT DESIGN",
-            "text_2": "デザイン・機能・価格のバランスの取れたものづくりを心がけ、お客様に長く使っていただける服に仕上げています。",
+            "title_2": "加工工場へ",
+            "text_2": "国内大手繊維メーカーとの研究開発の末、カポックのシート化に成功。",
             "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
-            "title_3": "GARMENT FACTORY",
+            "title_3": "特殊縫製工場へ",
             "text_3": "縫製工場では従業員の方達が、1着1着、丁寧に作り上げていきます。細部に思いやりの行き届いたモノづくりができます。",
+            "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png",
+            "title_4": "皆様のもとへ",
+            "text_4": "デザイン・機能・価格のバランスの取れたものづくりを心がけ、お客様に長く使っていただける服に仕上げています。",
             "margin_bottom": 80
           }
         },
@@ -71,22 +81,25 @@
           }
         },
         "lightness_image": {
-          "type": "image_text",
+          "type": "image_full",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png",
-            "heading": "コットンの約1/8の軽さ",
-            "text": "<p>カポックの特徴は、軽さにあります。カポックは従来のコットンの1/8の軽さです。繊維がストロー状で空洞になっていることで、カポックはふわふわと宙を舞うくらい軽く、着心地の良いアウターが出来上がります。</p>",
             "margin_bottom": 80
           }
         },
-        "thermograph_content": {
-          "type": "image_text",
+        "thermograph_heading": {
+          "type": "rich_text",
           "settings": {
-            "layout": "right",
+            "heading": "THERMOGRAPH",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 20
+          }
+        },
+        "thermograph_content": {
+          "type": "image_full",
+          "settings": {
             "image_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
-            "heading": "サーモグラフィー比較",
-            "text": "<p>一般的な防寒着と比較しても、カポックの優れた保温層が熱を逃さないことが実証されています。</p>",
             "margin_bottom": 80
           }
         },
@@ -95,16 +108,16 @@
           "settings": {
             "layout": "left",
             "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
-            "heading": "動物にも優しいアニマルフリー",
-            "text": "<p>カポックは高機能でありながら、木の実なので木を伐採することも、動物を痛めつけることも必要ありません。従来のダウンは水鳥の羽が使用されていました。</p>",
+            "heading": "Animal Free",
+            "text": "<p>カポックは高機能でありながら、木の実なので木を伐採することも、動物を痛めつけることも必要ありません。</p>",
             "margin_bottom": 80
           }
         },
         "voice_of_customers_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "お客様の声",
-            "text": "<p>KAPOK KNOTをご愛用いただいている皆様からの声をご紹介します。</p>",
+            "heading": "Voice of Customers",
+            "text": "",
             "text_alignment": "center",
             "margin_bottom": 40
           }
@@ -114,8 +127,8 @@
           "settings": {
             "rating": 5,
             "image_url": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
-            "heading": "木村祥一郎 様",
-            "text": "軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。カラダは正直で、ついつい他よりKAPOK KNOTのアウターを選んでしまう。しかもサスティナブル志向。そりゃ応援したくなる。",
+            "heading": "ご購入者様",
+            "text": "軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。",
             "margin_bottom": 20
           }
         },
@@ -124,8 +137,8 @@
           "settings": {
             "rating": 5,
             "image_url": "https://ucarecdn.com/d048ed14-caa7-4f4c-a6f2-5110e88d1ed1/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_02.png",
-            "heading": "河野貴伸 様",
-            "text": "機能とデザイン、そして環境配慮。それらのバランスをとりながら、全てを満たす魅力的なプロダクトを実現した「カポックノット」は、僕が心からリスペクトするD2Cブランドの一つです。",
+            "heading": "ご購入者様",
+            "text": "機能とデザイン、そして環境配慮。魅力的なプロダクトです。",
             "margin_bottom": 20
           }
         },
@@ -134,8 +147,17 @@
           "settings": {
             "rating": 5,
             "image_url": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
-            "heading": "宮崎真理子 様",
-            "text": "カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。",
+            "heading": "ご購入者様",
+            "text": "あったかくてスタイリッシュなカポックに感動しました。",
+            "margin_bottom": 40
+          }
+        },
+        "founder_heading": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Founder's Message",
+            "text": "",
+            "text_alignment": "center",
             "margin_bottom": 40
           }
         },
@@ -145,17 +167,28 @@
             "layout": "left",
             "image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
             "heading": "カポックノット代表　深井喜翔",
-            "text": "<p>初めましてカポックノット創業者の深井喜翔です。老舗アパレル企業の4代目として繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p>",
+            "text": "<p>初めましてカポックノット創業者の深井喜翔です。老舗アパレル企業の4代目として繊維業界に身を置くことで、アパレル業界の負のシステムを目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p>",
+            "margin_bottom": 80
+          }
+        },
+        "diagram_image": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png",
             "margin_bottom": 80
           }
         },
         "media_logos": {
-          "type": "image_text",
+          "type": "image_full",
           "settings": {
-            "layout": "right",
             "image_url": "https://ucarecdn.com/fd46de82-00ee-453d-b491-fe527e9cbfe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-5%20_1_.jpg",
-            "heading": "メディア掲載",
-            "text": "<p>様々なメディアで取り上げていただいております。</p>",
+            "margin_bottom": 80
+          }
+        },
+        "popup_store": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/f148b57b-451b-4a46-97ba-252553f75304/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_1_.jpg",
             "margin_bottom": 80
           }
         }
@@ -165,18 +198,23 @@
         "about_kapok_heading",
         "about_kapok_image",
         "farm_to_fashion_heading",
+        "farm_to_fashion_hero",
         "farm_to_fashion_images",
         "product_grid_coats",
         "product_grid_jackets",
         "lightness_image",
+        "thermograph_heading",
         "thermograph_content",
         "animal_free",
         "voice_of_customers_heading",
         "review_1",
         "review_2",
         "review_3",
+        "founder_heading",
         "founder_message",
-        "media_logos"
+        "diagram_image",
+        "media_logos",
+        "popup_store"
       ],
       "settings": {
         "bg_color": "#ffffff",
