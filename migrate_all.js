@@ -5,6 +5,8 @@ const html = fs.readFileSync(htmlFile, 'utf8');
 const templateName = htmlFile.replace('.html', '').replace(/[^a-zA-Z0-9-]/g, '-');
 const $ = cheerio.load(html);
 
+const pageTitle = $('title').text().trim();
+
 $('.visible-xs, .hidden-lg, .visible-sm').remove();
 
 const items = [];
@@ -32,7 +34,9 @@ $('*').each((i, el) => {
     } else if (tag === 'p' || tag === 'span') {
         if ($(el).parents('.header, .nav, footer, #shopify-section-header, a, button, [class*="btn"]').length > 0) return;
         const t = $(el).text().replace(/\s+/g, ' ').trim();
-        if (t && t.length > 3 && !t.includes('商品ページへ')) items.push({ type: 'TEXT', state, content: t, outer: outerId });
+        if (t && t.length > 3 && !t.includes('商品ページへ') && t !== pageTitle) {
+            items.push({ type: 'TEXT', state, content: t, outer: outerId });
+        }
     }
 });
 
@@ -286,9 +290,10 @@ for(let i = 0; i < block_order.length; i++) {
             const id = `features_grid_auto_review_${blockCounter++}`;
             combo_order.push(id);
             
-            // Heuristic: If the average text length is huge, it's a major diagram feature block, not a small review avatar grid!
+            // Heuristic: If it's a grid of 3+ items, it's virtually always a Review/Team carousel regardless of text length.
+            // Diagrams (like 500g jacket or netting) usually appear in pairs of 2.
             const avgTextLength = chunkPairs.reduce((acc, p) => acc + (p.txt || '').length, 0) / chunkPairs.length;
-            const isLargeFeature = avgTextLength > 80;
+            const isLargeFeature = (chunkPairs.length <= 2) && (avgTextLength > 80);
             
             let settings = { 
                image_on: true, 
