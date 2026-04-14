@@ -246,6 +246,57 @@ cleanItems.forEach(item => {
 
 flushFullText(); flushHalf(); flushQuarter(); flushThird();
 
+// Advanced Pre-processing: turn sequential [image_full, rich_text] avatar review pairs into features_grid
+let combo_order = [];
+let combo_blocks = {};
+
+for(let i = 0; i < block_order.length; i++) {
+    const b1 = blocks[block_order[i]];
+    const b2 = blocks[block_order[i+1]];
+    const b3 = blocks[block_order[i+2]];
+    const b4 = blocks[block_order[i+3]];
+
+    if (
+        b1 && b1.type === 'image_full' && 
+        b2 && b2.type === 'rich_text' && 
+        b3 && b3.type === 'image_full' && 
+        b4 && b4.type === 'rich_text'
+    ) {
+        let pairs = [];
+        while(i < block_order.length - 1 && blocks[block_order[i]].type === 'image_full' && blocks[block_order[i+1]].type === 'rich_text') {
+             pairs.push({
+                 img: blocks[block_order[i]].settings.image_url,
+                 head: blocks[block_order[i+1]].settings.heading,
+                 txt: blocks[block_order[i+1]].settings.text
+             });
+             i += 2;
+        }
+        i--; 
+        
+        for (let chunk = 0; chunk < pairs.length; chunk += 4) {
+            const chunkPairs = pairs.slice(chunk, chunk + 4);
+            const id = `features_grid_auto_review_${blockCounter++}`;
+            combo_order.push(id);
+            let settings = { image_on: true, margin_bottom: 24, icon_size: 'small', columns_desktop: Math.min(chunkPairs.length, 4) };
+            chunkPairs.forEach((p, index) => {
+                const iNum = index + 1;
+                settings[`image_url_${iNum}`] = p.img;
+                settings[`title_${iNum}`] = p.head || '';
+                settings[`text_${iNum}`] = p.txt || '';
+            });
+            combo_blocks[id] = { type: 'features_grid', settings };
+        }
+    } else {
+        combo_order.push(block_order[i]);
+        combo_blocks[block_order[i]] = b1;
+    }
+}
+
+// Map back to block_order for standard post-processing
+block_order.length = 0;
+for(let k in blocks) delete blocks[k];
+combo_order.forEach(id => { block_order.push(id); blocks[id] = combo_blocks[id]; });
+
 // Post-processing to turn image-only half sections into features_grid (for the 4 reviews)
 const new_order = [];
 const new_blocks = {};

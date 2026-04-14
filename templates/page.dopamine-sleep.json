@@ -3,56 +3,26 @@
     "main": {
       "type": "universal-campaign-lp",
       "blocks": {
-        "image_full_1": {
-          "type": "hero",
+        "features_grid_auto_review_103": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/88cec6ff-bf8e-43c7-af80-06249426fe57/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_9_.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_2": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "ドーパミン依存症とは？",
-            "text": "<p>私たちの脳は</p><p>楽しい・嬉しい・ワクワクすることを感じたときに</p><p>「ドーパミン」という快楽物質を分泌します。</p><p>このドーパミンは、生きるために必要な大切な仕組み。</p><p>ただ現代の生活では</p><p>この仕組みが“暴走”しやすくなっています。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_3": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/9a3819b5-147f-440b-bb68-0280b9d2478a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_4_.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_4": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "その結果、こんな夜に..",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_5": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/59f7c946-94ee-4432-8a56-24216e8756d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_6": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>これは意志が弱いからではなく、</p><p>脳が興奮しているから。</p><p>脳が興奮モード＝交感神経が優位になっている状態では</p><p>自然な眠りは訪れません。</p><p>そんな眠ることに悩むあなたへ</p><p>新しい選択肢を。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 3,
+            "image_url_1": "https://ucarecdn.com/88cec6ff-bf8e-43c7-af80-06249426fe57/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_9_.png",
+            "title_1": "ドーパミン依存症とは？",
+            "text_1": "<p>私たちの脳は</p><p>楽しい・嬉しい・ワクワクすることを感じたときに</p><p>「ドーパミン」という快楽物質を分泌します。</p><p>このドーパミンは、生きるために必要な大切な仕組み。</p><p>ただ現代の生活では</p><p>この仕組みが“暴走”しやすくなっています。</p>",
+            "image_url_2": "https://ucarecdn.com/9a3819b5-147f-440b-bb68-0280b9d2478a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_4_.png",
+            "title_2": "その結果、こんな夜に..",
+            "text_2": "",
+            "image_url_3": "https://ucarecdn.com/59f7c946-94ee-4432-8a56-24216e8756d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.png",
+            "title_3": "",
+            "text_3": "<p>これは意志が弱いからではなく、</p><p>脳が興奮しているから。</p><p>脳が興奮モード＝交感神経が優位になっている状態では</p><p>自然な眠りは訪れません。</p><p>そんな眠ることに悩むあなたへ</p><p>新しい選択肢を。</p>"
           }
         },
         "image_full_7": {
-          "type": "image_full",
+          "type": "hero",
           "settings": {
             "image_url": "https://ucarecdn.com/5b333abe-334a-4157-9fe8-67349a4b2c07/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_5_.png",
             "margin_bottom": 24
@@ -103,84 +73,37 @@
             "margin_bottom": 24
           }
         },
-        "image_full_13": {
-          "type": "image_full",
+        "features_grid_auto_review_104": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/d068a558-7593-42e0-a6a6-c7b0b784e39a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_6_.png",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 4,
+            "image_url_1": "https://ucarecdn.com/d068a558-7593-42e0-a6a6-c7b0b784e39a/-/format/auto/-/preview/3000x3000/-/quality/lighter/SNS%E3%81%AE%E9%80%9A%E7%9F%A5%20_6_.png",
+            "title_1": "MUSUBI-en- このような宿でも体験できます",
+            "text_1": "",
+            "image_url_2": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
+            "title_2": "古民家宿るうふ",
+            "text_2": "<p>るうふ / 一棟貸し古民家宿</p><p>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、</p><p>地域に伝わる食を楽しんだり、</p><p>火を囲んで談笑したり、</p><p>土地が育む自然の恵みや日本ならではの</p><p>土地が育む自然の恵みや</p><p>日本ならではの</p><p>生活文化を味わう体験できる。</p>",
+            "image_url_3": "https://ucarecdn.com/2e14f59a-b78f-4277-81ec-9728636fc66e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-07-23%2017.06.13.jpeg",
+            "title_3": "オーベルジュ エルバステラ",
+            "text_3": "<p>野菜ソムリエプロ夫婦が営む全3室の宿</p><p>We're Smart® Green Guide ★4radish</p><p>全食材の9割以上オーガニック</p><p>動物性食品不使用</p><p>合成添加物・溶剤抽出油・白砂糖不使用</p><p>滞在型リトリート(心身デトックス)</p><p>自然栽培の自家菜園(100種以上)</p>",
+            "image_url_4": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
+            "title_4": "TACTILE HOUSE",
+            "text_4": "<p>時が透ける、和紙の窓。</p><p>ひとのぬくもりを宿すタイル。</p><p>穏やかに迎え入れてくれるファブリック。</p><p>工芸建材とのくらしを体感できる場所。</p>"
           }
         },
-        "rich_text_14": {
-          "type": "rich_text",
+        "features_grid_auto_review_105": {
+          "type": "features_grid",
           "settings": {
-            "heading": "MUSUBI-en- このような宿でも体験できます",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_15": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_16": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "古民家宿るうふ",
-            "text": "<p>るうふ / 一棟貸し古民家宿</p><p>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、</p><p>地域に伝わる食を楽しんだり、</p><p>火を囲んで談笑したり、</p><p>土地が育む自然の恵みや日本ならではの</p><p>土地が育む自然の恵みや</p><p>日本ならではの</p><p>生活文化を味わう体験できる。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_17": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/2e14f59a-b78f-4277-81ec-9728636fc66e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-07-23%2017.06.13.jpeg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_18": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "オーベルジュ エルバステラ",
-            "text": "<p>野菜ソムリエプロ夫婦が営む全3室の宿</p><p>We're Smart® Green Guide ★4radish</p><p>全食材の9割以上オーガニック</p><p>動物性食品不使用</p><p>合成添加物・溶剤抽出油・白砂糖不使用</p><p>滞在型リトリート(心身デトックス)</p><p>自然栽培の自家菜園(100種以上)</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_19": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_20": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "TACTILE HOUSE",
-            "text": "<p>時が透ける、和紙の窓。</p><p>ひとのぬくもりを宿すタイル。</p><p>穏やかに迎え入れてくれるファブリック。</p><p>工芸建材とのくらしを体感できる場所。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_21": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/c0f50971-1357-448b-885a-555331f4bdc8/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-31%2022.29.36.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_22": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Makuakeにて408名,1300万円を超える",
-            "text": "<h3>応援購入をいただいたブランケットになります。</h3><h3>【現在までの販売実績】</h3><h3>2024年10月先行予約/完売</h3><h3>2024年11月先行予約/完売</h3><h3>2025年1月一般販売/完売</h3><h3>2025年5月23日先行予約/完売</h3><h3>2025年6月27日先行予約/完売</h3><h3>2025年7月25日先行予約/完売2025年9月12日一般販売/完売</h3><p>2025年7月25日先行予約/完売</p><p>2025年9月12日一般販売/完売</p><h3>2025年10月17日先行予約/完売</h3>",
-            "text_alignment": "center",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 1,
+            "image_url_1": "https://ucarecdn.com/c0f50971-1357-448b-885a-555331f4bdc8/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-31%2022.29.36.png",
+            "title_1": "Makuakeにて408名,1300万円を超える",
+            "text_1": "<h3>応援購入をいただいたブランケットになります。</h3><h3>【現在までの販売実績】</h3><h3>2024年10月先行予約/完売</h3><h3>2024年11月先行予約/完売</h3><h3>2025年1月一般販売/完売</h3><h3>2025年5月23日先行予約/完売</h3><h3>2025年6月27日先行予約/完売</h3><h3>2025年7月25日先行予約/完売2025年9月12日一般販売/完売</h3><p>2025年7月25日先行予約/完売</p><p>2025年9月12日一般販売/完売</p><h3>2025年10月17日先行予約/完売</h3>"
           }
         },
         "features_grid_23": {
@@ -508,52 +431,22 @@
             "margin_bottom": 24
           }
         },
-        "image_full_67": {
-          "type": "image_full",
+        "features_grid_auto_review_106": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/24d96eb6-f50a-4a5f-add9-7579227609d0/-/format/auto/-/preview/2560x2560/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_7_.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_68": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "2) あみあみ構造による通気性",
-            "text": "<p>加重ブランケットは、特に暖かい季節に中が蒸れやすくなったり</p><p>中が蒸れやすくなったり</p><p>身体への密着で熱く感じると言われていますが、</p><p>身体への密着で熱く感じると</p><p>言われていますが、</p><p>MUSUBIは365日オールシーズン使用可能です！</p><p>ブランケットそのものが、あみあみの形状のため</p><p>重さがあっても蒸れを気にせず365日快適に使用いただけます！</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_69": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/8c7dece5-9f89-461d-b69f-a72a289d647b/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-04095.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_70": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "3）日本人の生活に合わせたサイズ、デザイン",
-            "text": "<p>「この“ブランケット”は夜に使用する寝具なのか、</p><p>ソファで使用することを想定しているのか、どっち？」</p><p>としばしば聞かれますが、</p><p>答えとしてはどちらでもご使用いただけます！</p><p>どちらでもご使用いただけます</p><p>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_71": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/f2481d01-17de-488a-ab5f-39beb7c73c93/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_14_.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_72": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>日本のソファの奥行きサイズを徹底分析し、</p><p>男女問わず寝転ぶことが出来るサイズで</p><p>平均的な奥行きが70cmであったことから、</p><p>ソファでゴロゴロ過ごす至福時間に使用したい！という方は</p><p>Nap Size(M)がおすすめです</p><p>「元々重い布団が好きなんです！」という方や</p><p>寝室のベッドで1日の終わりに、全身を安心感に包まれて</p><p>ベッドに沈んでいくような快眠を感じたい方は、</p><p>Sleep Size(L)がおすすめです</p><p>夜の睡眠に、日中の束の間の休憩に、是非MUSUBIをご使用ください</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 3,
+            "image_url_1": "https://ucarecdn.com/24d96eb6-f50a-4a5f-add9-7579227609d0/-/format/auto/-/preview/2560x2560/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_7_.png",
+            "title_1": "2) あみあみ構造による通気性",
+            "text_1": "<p>加重ブランケットは、特に暖かい季節に中が蒸れやすくなったり</p><p>中が蒸れやすくなったり</p><p>身体への密着で熱く感じると言われていますが、</p><p>身体への密着で熱く感じると</p><p>言われていますが、</p><p>MUSUBIは365日オールシーズン使用可能です！</p><p>ブランケットそのものが、あみあみの形状のため</p><p>重さがあっても蒸れを気にせず365日快適に使用いただけます！</p>",
+            "image_url_2": "https://ucarecdn.com/8c7dece5-9f89-461d-b69f-a72a289d647b/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-04095.jpg",
+            "title_2": "3）日本人の生活に合わせたサイズ、デザイン",
+            "text_2": "<p>「この“ブランケット”は夜に使用する寝具なのか、</p><p>ソファで使用することを想定しているのか、どっち？」</p><p>としばしば聞かれますが、</p><p>答えとしてはどちらでもご使用いただけます！</p><p>どちらでもご使用いただけます</p><p>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>",
+            "image_url_3": "https://ucarecdn.com/f2481d01-17de-488a-ab5f-39beb7c73c93/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_14_.png",
+            "title_3": "",
+            "text_3": "<p>日本のソファの奥行きサイズを徹底分析し、</p><p>男女問わず寝転ぶことが出来るサイズで</p><p>平均的な奥行きが70cmであったことから、</p><p>ソファでゴロゴロ過ごす至福時間に使用したい！という方は</p><p>Nap Size(M)がおすすめです</p><p>「元々重い布団が好きなんです！」という方や</p><p>寝室のベッドで1日の終わりに、全身を安心感に包まれて</p><p>ベッドに沈んでいくような快眠を感じたい方は、</p><p>Sleep Size(L)がおすすめです</p><p>夜の睡眠に、日中の束の間の休憩に、是非MUSUBIをご使用ください</p>"
           }
         },
         "image_text_73": {
@@ -689,68 +582,25 @@
             "margin_bottom": 24
           }
         },
-        "image_full_85": {
-          "type": "image_full",
+        "features_grid_auto_review_107": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/a527e82e-179a-42da-9864-03fe720857fe/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%92%E3%82%B1%E3%82%99%E3%81%AE%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_86": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "今までなかった新しいジャンル！",
-            "text": "<p>50代男性 / 商社勤務</p><p>「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_87": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/92e86b82-75a5-4d8d-a858-21a4d4848d0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E7%B7%9A%E7%94%BB%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_88": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "雇用も守れる！",
-            "text": "<p>30代女性 / アパレルメーカー勤務</p><p>30代女性</p><p>沈み込む感覚がなんとも言えない気持ちよさがある！KAPOK KNOTならではのサステナブルな取り組みや生産者さんの安定した雇用形態などストーリーが流石です！</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_89": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/bf5302f6-c5cd-47fa-aaae-531b5955d4b6/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%A1%E3%82%AB%E3%82%99%E3%83%8D%E3%82%92%E3%81%8B%E3%81%91%E3%81%9F%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_90": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "一度も起きることなく...快眠！",
-            "text": "<p>40代男性 / IT企業勤務</p><p>40代男性</p><p>まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激したのでこれから重宝します！</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_91": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/ec014e2f-0859-478b-b993-7e599be6cf90/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E4%BA%BA%E7%89%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_92": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "FAQ",
-            "text": "<p>50代女性 / 主婦</p><p>50代女性</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 4,
+            "image_url_1": "https://ucarecdn.com/a527e82e-179a-42da-9864-03fe720857fe/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%92%E3%82%B1%E3%82%99%E3%81%AE%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
+            "title_1": "今までなかった新しいジャンル！",
+            "text_1": "<p>50代男性 / 商社勤務</p><p>「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！</p>",
+            "image_url_2": "https://ucarecdn.com/92e86b82-75a5-4d8d-a858-21a4d4848d0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E7%B7%9A%E7%94%BB%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88.png",
+            "title_2": "雇用も守れる！",
+            "text_2": "<p>30代女性 / アパレルメーカー勤務</p><p>30代女性</p><p>沈み込む感覚がなんとも言えない気持ちよさがある！KAPOK KNOTならではのサステナブルな取り組みや生産者さんの安定した雇用形態などストーリーが流石です！</p>",
+            "image_url_3": "https://ucarecdn.com/bf5302f6-c5cd-47fa-aaae-531b5955d4b6/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%A1%E3%82%AB%E3%82%99%E3%83%8D%E3%82%92%E3%81%8B%E3%81%91%E3%81%9F%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
+            "title_3": "一度も起きることなく...快眠！",
+            "text_3": "<p>40代男性 / IT企業勤務</p><p>40代男性</p><p>まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激したのでこれから重宝します！</p>",
+            "image_url_4": "https://ucarecdn.com/ec014e2f-0859-478b-b993-7e599be6cf90/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E4%BA%BA%E7%89%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
+            "title_4": "FAQ",
+            "text_4": "<p>50代女性 / 主婦</p><p>50代女性</p>"
           }
         },
         "image_text_93": {
@@ -783,36 +633,19 @@
             "image_url_2": "https://ucarecdn.com/000e45da-aeca-4004-80cc-d770d53fd832/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.jpg"
           }
         },
-        "image_full_96": {
-          "type": "image_full",
+        "features_grid_auto_review_108": {
+          "type": "features_grid",
           "settings": {
-            "image_url": "https://ucarecdn.com/96738f15-cc32-4b56-8cf2-9c44dbf9c40e/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC02265%202.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_97": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>大量生産・大量消費の負のシステムに新たな提案を。</p><p>素材の力を信じサステナブルを志向するブランド</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_98": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/9d2c3af4-68fc-4810-8251-b7f048a36fe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/INDO0824NIKON-19%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC%201.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_99": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "",
-            "text": "<p>初めましてカポックノット創業者の深井喜翔です。</p><p>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。</p><p>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p><p>カポックジャパン株式会社</p>",
-            "text_alignment": "center",
-            "margin_bottom": 24
+            "image_on": true,
+            "margin_bottom": 24,
+            "icon_size": "small",
+            "columns_desktop": 2,
+            "image_url_1": "https://ucarecdn.com/96738f15-cc32-4b56-8cf2-9c44dbf9c40e/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC02265%202.png",
+            "title_1": "",
+            "text_1": "<p>大量生産・大量消費の負のシステムに新たな提案を。</p><p>素材の力を信じサステナブルを志向するブランド</p>",
+            "image_url_2": "https://ucarecdn.com/9d2c3af4-68fc-4810-8251-b7f048a36fe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/INDO0824NIKON-19%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC%201.png",
+            "title_2": "",
+            "text_2": "<p>初めましてカポックノット創業者の深井喜翔です。</p><p>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。</p><p>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p><p>カポックジャパン株式会社</p>"
           }
         },
         "features_grid_100": {
@@ -846,28 +679,15 @@
         }
       },
       "block_order": [
-        "image_full_1",
-        "rich_text_2",
-        "image_full_3",
-        "rich_text_4",
-        "image_full_5",
-        "rich_text_6",
+        "features_grid_auto_review_103",
         "image_full_7",
         "features_grid_8",
         "image_full_9",
         "image_full_10",
         "image_text_11",
         "image_text_12",
-        "image_full_13",
-        "rich_text_14",
-        "image_full_15",
-        "rich_text_16",
-        "image_full_17",
-        "rich_text_18",
-        "image_full_19",
-        "rich_text_20",
-        "image_full_21",
-        "rich_text_22",
+        "features_grid_auto_review_104",
+        "features_grid_auto_review_105",
         "features_grid_23",
         "image_full_24",
         "image_full_25",
@@ -912,12 +732,7 @@
         "image_full_64",
         "features_grid_65",
         "rich_text_66",
-        "image_full_67",
-        "rich_text_68",
-        "image_full_69",
-        "rich_text_70",
-        "image_full_71",
-        "rich_text_72",
+        "features_grid_auto_review_106",
         "image_text_73",
         "image_text_74",
         "image_text_75",
@@ -930,21 +745,11 @@
         "rich_text_82",
         "features_grid_83",
         "rich_text_84",
-        "image_full_85",
-        "rich_text_86",
-        "image_full_87",
-        "rich_text_88",
-        "image_full_89",
-        "rich_text_90",
-        "image_full_91",
-        "rich_text_92",
+        "features_grid_auto_review_107",
         "image_text_93",
         "rich_text_94",
         "features_grid_95",
-        "image_full_96",
-        "rich_text_97",
-        "image_full_98",
-        "rich_text_99",
+        "features_grid_auto_review_108",
         "features_grid_100",
         "image_text_101",
         "image_full_102"
