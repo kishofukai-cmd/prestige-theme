@@ -115,7 +115,7 @@
             </div>
             
           {%- when 'features_grid' -%}
-            <div class="ff-lp__features-grid {% if block.settings.icon_size == 'large' %}ff-lp__features-grid--large{% endif %}" style="--columns: {{ block.settings.columns_desktop }};">
+            <div class="ff-lp__features-grid {% if block.settings.icon_size == 'large' %}ff-lp__features-grid--large{% endif %}" style="--columns: {{ block.settings.columns_desktop }}; --columns-mobile: {{ block.settings.columns_mobile | default: 2 }};">
               {%- for i in (1..4) -%}
                 {%- capture img_key -%}image_{{ i }}{%- endcapture -%}
                 {%- capture img_url_key -%}image_url_{{ i }}{%- endcapture -%}
@@ -857,6 +857,15 @@
           "step": 1,
           "label": "Columns on Desktop",
           "default": 4
+        },
+        {
+          "type": "range",
+          "id": "columns_mobile",
+          "min": 1,
+          "max": 2,
+          "step": 1,
+          "label": "Columns on Mobile",
+          "default": 2
         },
         {
           "type": "header",

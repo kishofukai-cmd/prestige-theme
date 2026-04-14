@@ -277,7 +277,19 @@ for(let i = 0; i < block_order.length; i++) {
             const chunkPairs = pairs.slice(chunk, chunk + 4);
             const id = `features_grid_auto_review_${blockCounter++}`;
             combo_order.push(id);
-            let settings = { image_on: true, margin_bottom: 24, icon_size: 'small', columns_desktop: Math.min(chunkPairs.length, 4) };
+            
+            // Heuristic: If the average text length is huge, it's a major diagram feature block, not a small review avatar grid!
+            const avgTextLength = chunkPairs.reduce((acc, p) => acc + (p.txt || '').length, 0) / chunkPairs.length;
+            const isLargeFeature = avgTextLength > 80;
+            
+            let settings = { 
+               image_on: true, 
+               margin_bottom: 24, 
+               icon_size: isLargeFeature ? 'large' : 'small', 
+               columns_desktop: Math.min(chunkPairs.length, 4),
+               columns_mobile: isLargeFeature ? 1 : 2
+            };
+            
             chunkPairs.forEach((p, index) => {
                 const iNum = index + 1;
                 settings[`image_url_${iNum}`] = p.img;
