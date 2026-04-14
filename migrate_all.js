@@ -137,13 +137,22 @@ function flushQuarter() {
 
 function flushFullText() {
     if (currentFullHeaders.length > 0 || currentFullTexts.length > 0) {
+        let formattedTextContent = '';
+        currentFullTexts.forEach(part => {
+            if (part.startsWith('<h') || part.startsWith('<p>')) {
+                formattedTextContent += part;
+            } else {
+                formattedTextContent += `<p>${part}</p>`;
+            }
+        });
+
         const blockId = `rich_text_${blockCounter++}`;
         block_order.push(blockId);
         blocks[blockId] = {
             type: 'rich_text',
             settings: {
-                heading: currentFullHeaders.join(' - '),
-                text: currentFullTexts.length > 0 ? `<p>${currentFullTexts.join('<br>')}</p>` : '',
+                heading: currentFullHeaders.join(' '),
+                text: formattedTextContent,
                 text_alignment: 'center',
                 margin_bottom: 24
             }
@@ -224,8 +233,11 @@ cleanItems.forEach(item => {
              block_order.push(blockId);
              blocks[blockId] = { type: 'image_full', settings: { image_url: content, margin_bottom: 24 } };
         } else if (type === 'HEAD') {
-             if (currentFullTexts.length > 0) flushFullText();
-             currentFullHeaders.push(content);
+             if (currentFullHeaders.length === 0) {
+                  currentFullHeaders.push(content);
+             } else {
+                  currentFullTexts.push(`<h3>${content}</h3>`);
+             }
         } else if (type === 'TEXT') {
              currentFullTexts.push(content);
         }
