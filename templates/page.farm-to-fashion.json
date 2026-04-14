@@ -3,199 +3,108 @@
     "main": {
       "type": "farm-to-fashion-lp",
       "blocks": {
-        "hero_1": {
+        "hero": {
           "type": "hero",
           "settings": {
-            "image_url": "https://ucarecdn.com/f2826f60-53a0-44e2-a307-1b2dd44a87f8/-/format/auto/-/preview/3000x3000/-/quality/lighter/03-306_1012_CLR.png",
-            "image_sp_url": "https://ucarecdn.com/e34a0099-9bbf-4164-9566-7781f503bfc2/-/format/auto/-/preview/3000x3000/-/quality/lighter/hero_sp.png",
             "margin_bottom": 40
           }
         },
-        "sale_text": {
+        "about_kapok_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "2025年も反響をいただき数量限定で再販売中！",
-            "text": "<p><strong>【販売終了間近】3月11日23:59まで</strong></p>",
+            "heading": "What is Kapok?",
+            "text": "<p>カポックについての説明文をここに入力します。</p>",
             "text_alignment": "center",
-            "text_color": "#1a1a1a",
-            "margin_top": 20,
             "margin_bottom": 40
           }
         },
-        "intro_text": {
+        "about_kapok_image": {
+          "type": "image_full",
+          "settings": {
+            "margin_bottom": 80
+          }
+        },
+        "farm_to_fashion_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "新しい時代の豊かさは\nアニマルライツ×モードに込めた想像力",
-            "text": "<p>木の実由来のファッションブランドKAPOK KNOTと、俳優・二階堂ふみ氏が共同制作したアウター3型。</p><p>「服がどんな素材で作られているか、どうやって染色されているか知ることは社会的責任であり、ファッションを純粋に楽しむためにも大切なこと」と考える二階堂氏。</p><p>KAPOK KNOTは今回、アニマルライツ×モードを新しい豊かさの選択肢として提案します。アニマルフリーファッションの可能性と魅力を伝えたいという想いを共にし、アクティビストであり、ブランドアイテムを愛用する二階堂氏とのコラボレーションが実現しました。</p><p>販売開始後は人気アイテムとして瞬く間に完売。たくさんの再入荷リクエストをいただき、2025年も数量限定での再販売をいたしました。</p>",
+            "heading": "Farm to Fashion",
+            "text": "<p>カポックの収穫から製品ができるまでのストーリー。</p>",
             "text_alignment": "center",
-            "text_color": "#1a1a1a",
-            "margin_bottom": 60
-          }
-        },
-        "about_kapok_knot": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "KAPOK KNOTについて",
-            "text": "<p>KAPOK KNOT(カポックノット)は、木の実由来の新素材「カポック」を使って、薄くて軽いのにダウンの暖かさを持つアウターを実現しました。カポックは東南アジアに自生する植物で、そのワタはコットンの1/8の軽さ、湿気を吸って熱を吐き出す高い機能性を備えています。さらに木の実なので、木を伐採することも必要なく、アニマルフリーでサステナブルな新素材です。</p><p>2019年から「Farm to Fashion」という独自のサプライチェーンを大切にし、生産者、消費者、地球環境の視点に立ち、製品ができてから届くまでに関わる人に寄り添ったモノづくりを目指しています。</p>",
-            "text_alignment": "left",
-            "text_color": "#1c1c1c",
-            "bg_color": "#f9f9f9",
-            "padding": 40,
             "margin_bottom": 40
           }
         },
-        "about_nikaido": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "俳優・二階堂ふみ氏とのコラボレーション",
-            "text": "<p>動物愛護に関する発信や活動を行いながら、ファッションへの強い興味、関心を持つ二階堂氏。サステナブルな社会を目指していること、アニマルフリーなライフスタイルを提案していることなど、KAPOK KNOTとの共通点が多く、互いに抱いていた親近感が今回のコラボレーションへと繋がりました。</p><p>二階堂氏がブランドのアイテム「羽織りジャケット」を愛用していたことが出逢いの始まりです。洋服を愛し、ファッションへの感度が高い一方で、アニマルライツやサステナビリティも大切にする二階堂氏。「服がどのような素材で作られているか、どうやって染色されているかを知ることは社会的責任であり、ファッションを純粋に楽しむためにも大切なこと」という想いを抱くなか、サステナブルな素材で動物にも優しいものづくりを行うKAPOK KNOTを知りました。</p><p>「罪悪感のないものづくりを通して、ファッションの楽しさを表現したい」という共通の想いが形になり、コラボの構想がスタートしました。</p>",
-            "text_alignment": "left",
-            "text_color": "#1c1c1c",
-            "bg_color": "#f9f9f9",
-            "padding": 40,
-            "margin_bottom": 60
-          }
-        },
-        "product_scarf_title": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/6e2548e2-3380-4a5a-bc37-911706b667cf/-/format/auto/-/preview/3000x3000/-/quality/lighter/Animal%20Free%20Down_%20SCARF.png",
-            "max_width": 40,
-            "margin_bottom": 20
-          }
-        },
-        "product_scarf_text": {
-          "type": "image_text",
-          "settings": {
-            "image_url": "https://ucarecdn.com/f13082f4-9a58-43da-8dd5-ede42d32c086/-/format/auto/-/preview/3000x3000/-/quality/lighter/02-016_CLR-2.jpg",
-            "layout": "left",
-            "text": "<p>シックにまとまったシンプルなモード系アウターで、アウターが主役のファッションを楽しめる「Animal Free Down: SCARF」</p><p>たとえマフラーを忘れてしまっても大丈夫。首元をあたためるマフラーがアウターと一体化した新しいデザインで、全身がカポックのぬくもりに包まれます。</p><p>裾に向かって広がるAラインシルエットで、中に着るものを選ばず、どんなシーンでも着用しやすいアウターに。</p>",
-            "text_alignment": "left",
-            "button_label": "商品詳細を見る",
-            "button_link": "/products/unisex-animal-free-down-scarf"
-          }
-        },
-        "spacer_1": {
-          "type": "spacer"
-        },
-        "product_trench_title": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/a7284df6-23cd-4130-bbe0-1b49530ec992/-/format/auto/-/preview/3000x3000/-/quality/lighter/Animal%20Free%20Down_%20TRENCH.png",
-            "max_width": 40,
-            "margin_bottom": 20
-          }
-        },
-        "product_trench_text": {
-          "type": "image_text",
-          "settings": {
-            "image_url": "https://ucarecdn.com/00be4271-206b-4b6d-b77c-737cd3cee8a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/01-134_CLR-2.jpg",
-            "layout": "right",
-            "text": "<p>フレアが大きく広がり、思わずくるくるとターンをしたくなるような、高揚感を覚えるドレスデザイン。「Animal Free Down: TRENCH」を身に纏えば、シンプルなデザインながらも優雅さが漂い、コートが主役のファッションに。</p><p>着丈は長く、ロングスカートやワンピースはもちろん、綺麗目なパンツスタイルに合わせてコーディネートを組んでも。</p><p>また、従来のアウターだと重く見えてしまい、秋口や春先での着用はやや抵抗がありますが、この「Animal Free Down: TRENCH」は薄くて軽く、トレンチコートの形をしたアウターのため、冬場を超えての着用もおすすめです。寒くなり始める秋口や、冬の寒さが残る春先など、3シーズンに渡り長くお楽しみいただけます。</p>",
-            "text_alignment": "left",
-            "button_label": "商品詳細を見る",
-            "button_link": "/products/women-animal-free-down-trench"
-          }
-        },
-        "spacer_2": {
-          "type": "spacer"
-        },
-        "product_chinadress_title": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/81c779b6-b77f-4069-a632-a2b3ccad7d10/-/format/auto/-/preview/3000x3000/-/quality/lighter/Animal%20Free%20Down_%20CHINA%20DRESS.png",
-            "max_width": 40,
-            "margin_bottom": 20
-          }
-        },
-        "product_chinadress_text": {
-          "type": "image_text",
-          "settings": {
-            "image_url": "https://ucarecdn.com/16f9f8c1-4cba-4fa0-a266-9deac5b19908/-/format/auto/-/preview/3000x3000/-/quality/lighter/03-111_CLR-2.jpg",
-            "layout": "left",
-            "text": "<p>チャイナドレスに欠かせない、紐を結んで作ったこだわりのチャイナボタンは、フロントにはもちろん、袖口にも。またファスナーは、上下どちらからも動かせるフロントのダブルジップと、スリットとして開けられる両サイドにデザイン。</p><p>フロントのファスナーを首元まで上げ、チャイナボタンを閉じれば、見た目がまるでドレスのチャイナドレスとして、チャイナボタンは閉じたままファスナーを開ける着こなしもおすすめ。</p><p>中にスカートを合わせる日は、お好みでサイドジップを開けて、スカートのデザインを覗かせるコーディネートが楽しめます。</p>",
-            "text_alignment": "left",
-            "button_label": "商品詳細を見る",
-            "button_link": "/products/women-animal-free-down-chinadress"
-          }
-        },
-        "spacer_3": {
-          "type": "spacer"
-        },
-        "functions_grid": {
+        "farm_to_fashion_images": {
           "type": "features_grid",
           "settings": {
-            "margin_top": 40,
-            "margin_bottom": 60,
-            "image_url_1": "https://ucarecdn.com/51f063a0-006e-4ab9-a5db-c68432bc7404/-/format/auto/-/preview/3000x3000/-/quality/lighter/Down%20Cruelty-free_%E6%A9%9F%E8%83%BD%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "title_1": "アニマルフリー",
-            "text_1": "カポックのワタはコットンの1/8 の軽さ、動物の毛皮や羽毛を使うことも、木を伐採する必要もないスペシャルな素材",
-            "image_url_2": "https://ucarecdn.com/a4f59429-fed2-40f6-8008-d820a213fff6/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%90%B8%E6%B9%BF%E7%99%BA%E7%86%B1_%E6%A9%9F%E8%83%BD%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "title_2": "吸湿発熱",
-            "text_2": "カポックは特殊な構造によって湿気を吸い、熱を放出する「吸湿発熱」",
-            "image_url_3": "https://ucarecdn.com/6fee2c21-4459-4e87-a64e-898f28f541f5/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%81%AE%E6%9A%96%E3%81%8B%E3%81%95_%E6%A9%9F%E8%83%BD%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "title_3": "ダウンの暖かさ",
-            "text_3": "カポックは特殊な構造によって湿気を吸い、熱を放出する「吸湿発熱」ダウンに匹敵するため木に実るダウンとも呼ばれている",
-            "image_url_4": "https://ucarecdn.com/df25a465-9bd5-4444-a848-1bbf86a29aed/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%89%8B%E6%B4%97%E3%81%84%E5%8F%AF%E8%83%BD_%E6%A9%9F%E8%83%BD%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "title_4": "手洗い可能",
-            "text_4": "ご自宅での手洗いが可能なので清潔に、長く愛用できる"
+            "title_1": "Step 1",
+            "text_1": "収穫",
+            "title_2": "Step 2",
+            "text_2": "加工",
+            "title_3": "Step 3",
+            "text_3": "縫製",
+            "title_4": "Step 4",
+            "text_4": "お届け",
+            "margin_bottom": 80
           }
         },
-        "collab_button": {
-          "type": "button",
+        "product_grid_coats": {
+          "type": "product_grid",
           "settings": {
-            "button_label": "コラボ商品一覧へ",
-            "button_link": "/collections/kapok-knotfumi-nikaido",
-            "alignment": "center",
+            "heading": "Coats",
+            "columns_desktop": 4,
             "margin_bottom": 60
           }
         },
-        "collection_theme": {
+        "product_grid_jackets": {
+          "type": "product_grid",
+          "settings": {
+            "heading": "Jackets",
+            "columns_desktop": 4,
+            "margin_bottom": 80
+          }
+        },
+        "thermograph_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "コレクションテーマは\n「アニマルライツ×モード」",
-            "text": "<p>「アニマルフリーなファッションには、もっとデザインの幅が出てきていいのではないか」と前々から課題に感じていた二階堂氏。従来、動物や自然環境に配慮した素材でものづくりを行う際、耐久性が弱くなったり、デザインに制限があったりと、結果的にサステナブル＝シンプルという印象が根付いています。</p><p>本コラボレーションでは、耐久性や機能性も兼ね備え、遊びごころのあるデザインで環境負荷の低い新しい形のモードファッションを目指し、アニマルフリー素材を用いたアウターをデザインしました。</p>",
+            "heading": "THERMOGRAPH",
+            "text": "<p>サーモグラフィーでの比較結果</p>",
             "text_alignment": "center",
-            "bg_color": "#f9f9f9",
-            "padding": 40,
             "margin_bottom": 20
           }
         },
-        "timeless_design": {
-          "type": "rich_text",
+        "thermograph_content": {
+          "type": "image_text",
           "settings": {
-            "heading": "世界のファッションを取り入れた\nタイムレスなデザイン",
-            "text": "<p>近年問題視されている、大量生産・大量廃棄を繰り返すファッション業界。トレンドをその課題に対し、KAPOK KNOTはサステナブルな素材を活用しながら、トレンドに囚われず長く着用してもらえる「タイムレスなデザイン」を大切にしています。その想いから、今回のコラボレーションでは世界のファッションを「アウター」に落とし込み、サステナブル新素材のカポックを使って表現した、全3型を共同制作しました。</p>",
-            "text_alignment": "center",
-            "bg_color": "#f9f9f9",
-            "padding": 40,
-            "margin_bottom": 60
+            "layout": "left",
+            "heading": "サーモグラフィー比較",
+            "text": "<p>一般的な防寒着と比較しても、カポックの優れた保温層が熱を逃さないことが実証されています。</p>",
+            "margin_bottom": 80
           }
         },
-        "charity_info": {
-          "type": "rich_text",
+        "animal_free": {
+          "type": "image_text",
           "settings": {
-            "heading": "収益の一部は\nアニマルライツを追求する団体へ寄付",
-            "text": "<p>ファッション業界は、目まぐるしく変わるトレンドの中で、大量生産・大量消費を繰り返す世界第二位の汚染産業です。KAPOK KNOTは長く着用してもらえる「タイムレスなデザイン」を大切にしています。今回のコラボでは世紀を超えて愛されてきた世界のファッションスタイルを「アウター」に落とし込み、サステナブル素材カポックを使って全3型を共同制作しました。今回のアイテムの収益の一部は「アニマルライツを追求する団体」へ寄付いたします。</p>",
-            "text_alignment": "center"
+            "layout": "right",
+            "heading": "Animal Free",
+            "text": "<p>動物の毛皮や羽毛を使用しない、エシカルなモノづくり。</p>",
+            "margin_bottom": 80
           }
         },
-        "review_heading": {
+        "voice_of_customers_heading": {
           "type": "rich_text",
           "settings": {
-            "heading": "Customer Review",
+            "heading": "Voice of Customers",
+            "text": "<p>お客様の声</p>",
             "text_alignment": "center",
-            "margin_top": 60,
-            "margin_bottom": 0
+            "margin_bottom": 40
           }
         },
         "review_1": {
           "type": "review_card",
           "settings": {
             "rating": 5,
-            "heading": "想像以上に温かく、軽く、デザインも最高で感動しています！",
-            "text": "164cm、Mサイズを購入しましたが、くるぶしまでしっかり温かいです。スタイルも良く見える気がします。再販したら色違いで購入したいと思っています。",
-            "margin_top": 20,
+            "heading": "お客様の声 タイトル1",
+            "text": "レビューの本文をここに入力します。",
             "margin_bottom": 20
           }
         },
@@ -203,62 +112,54 @@
           "type": "review_card",
           "settings": {
             "rating": 5,
-            "heading": "シルエットが美しい",
-            "text": "妻への記念日のプレゼントに購入しました。カポックのシャツジャケットを自分では愛用していて、その軽さと暖かさは承知していました。このコートは着た時にシルエットが美しく、ダウン製品にありがちな寸胴形状とは一線をかくした仕上がりで、妻にも喜んでもらえました。",
-            "margin_top": 0,
+            "heading": "お客様の声 タイトル2",
+            "text": "レビューの本文をここに入力します。",
             "margin_bottom": 20
           }
         },
-        "review_3": {
-          "type": "review_card",
+        "founder_message": {
+          "type": "image_text",
           "settings": {
-            "rating": 5,
-            "heading": "他にはないデザインがお気に入り",
-            "text": "初めてカポックのアニマルフリーダウンを購入しました。アニマルフリーのアイテムはデザイン性が高くないものが多いイメージでしたが、シンプルだけど洗練されていて一目ぼれしました。また、本当に軽くて暖かいです。これからも楽しみに買い足していきたいです。",
-            "margin_top": 0,
-            "margin_bottom": 60
+            "layout": "left",
+            "heading": "Founder's Message",
+            "text": "<p>代表からのメッセージをここに入力します。</p>",
+            "margin_bottom": 80
           }
         },
-        "products_grid": {
-          "type": "product_grid",
+        "circular_diagram": {
+          "type": "image_full",
           "settings": {
-            "heading": "Featured Products",
-            "columns_desktop": 3,
-            "product_1": "women-animal-free-down-chinadress",
-            "product_2": "women-animal-free-down-trench",
-            "product_3": "unisex-animal-free-down-scarf"
+            "margin_bottom": 80
+          }
+        },
+        "media_logos": {
+          "type": "image_full",
+          "settings": {
+            "margin_bottom": 80
           }
         }
       },
       "block_order": [
-        "hero_1",
-        "sale_text",
-        "intro_text",
-        "about_kapok_knot",
-        "about_nikaido",
-        "product_scarf_title",
-        "product_scarf_text",
-        "spacer_1",
-        "product_trench_title",
-        "product_trench_text",
-        "spacer_2",
-        "product_chinadress_title",
-        "product_chinadress_text",
-        "spacer_3",
-        "functions_grid",
-        "collab_button",
-        "collection_theme",
-        "timeless_design",
-        "charity_info",
-        "review_heading",
+        "hero",
+        "about_kapok_heading",
+        "about_kapok_image",
+        "farm_to_fashion_heading",
+        "farm_to_fashion_images",
+        "product_grid_coats",
+        "product_grid_jackets",
+        "thermograph_heading",
+        "thermograph_content",
+        "animal_free",
+        "voice_of_customers_heading",
         "review_1",
         "review_2",
-        "review_3",
-        "products_grid"
+        "founder_message",
+        "circular_diagram",
+        "media_logos"
       ],
       "settings": {
         "bg_color": "#ffffff",
-        "container_width": 1200
+        "container_width": 1000
       }
     }
   },
