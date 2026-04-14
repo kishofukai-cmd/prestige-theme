@@ -97,7 +97,7 @@
             </div>
             
           {%- when 'features_grid' -%}
-            <div class="ff-lp__features-grid">
+            <div class="ff-lp__features-grid {% if block.settings.icon_size == 'large' %}ff-lp__features-grid--large{% endif %}" style="--columns: {{ block.settings.columns_desktop }};">
               {%- for i in (1..4) -%}
                 {%- capture img_key -%}image_{{ i }}{%- endcapture -%}
                 {%- capture img_url_key -%}image_url_{{ i }}{%- endcapture -%}
@@ -106,9 +106,9 @@
                 
                 {%- if block.settings[img_key] != blank or block.settings[img_url_key] != blank or block.settings[title_key] != blank -%}
                   <div class="ff-lp__feature-item">
-                    <div class="ff-lp__feature-icon">
+                    <div class="ff-lp__feature-icon {% if block.settings.icon_size == 'large' %}ff-lp__feature-icon--large{% endif %}">
                       {%- if block.settings[img_key] != blank -%}
-                        <img src="{{ block.settings[img_key] | img_url: '200x' }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
+                        <img src="{{ block.settings[img_key] | img_url: '400x' }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
                       {%- elsif block.settings[img_url_key] != blank -%}
                         <img src="{{ block.settings[img_url_key] }}" alt="{{ block.settings[title_key] | escape }}" loading="lazy">
                       {%- endif -%}
@@ -323,12 +323,16 @@
   /* Features Grid */
   .ff-lp__features-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--columns, 4), 1fr);
     gap: 20px;
   }
   @media (max-width: 768px) {
     .ff-lp__features-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(var(--columns-mobile, 2), 1fr);
+    }
+    .ff-lp__features-grid--large {
+      grid-template-columns: 1fr !important; /* Stack large items on mobile */
+      gap: 32px !important;
     }
   }
   .ff-lp__feature-item {
@@ -341,6 +345,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .ff-lp__feature-icon--large {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 auto 20px !important;
+    display: block !important;
+  }
+  .ff-lp__feature-icon--large img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
   }
   .ff-lp__feature-icon img {
     max-width: 100%;
@@ -759,6 +775,25 @@
       "type": "features_grid",
       "name": "Features Grid",
       "settings": [
+        {
+          "type": "select",
+          "id": "icon_size",
+          "label": "Icon/Image Style",
+          "options": [
+            { "value": "small", "label": "Small Icon (60px)" },
+            { "value": "large", "label": "Large Image (Full Width Column)" }
+          ],
+          "default": "small"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "label": "Columns on Desktop",
+          "default": 4
+        },
         {
           "type": "header",
           "content": "Feature 1"
