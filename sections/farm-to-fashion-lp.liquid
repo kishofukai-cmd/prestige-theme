@@ -78,22 +78,36 @@
               <h2 class="ff-lp__heading ff-lp__heading--center">{{ block.settings.heading }}</h2>
             {%- endif -%}
             <div class="ff-lp__product-grid" style="--grid-col-desktop: {{ block.settings.columns_desktop }};">
-              {%- for i in (1..4) -%}
-                {%- capture product_key -%}product_{{ i }}{%- endcapture -%}
-                {%- assign product_handle = block.settings[product_key] -%}
-                {%- if product_handle != blank -%}
-                  {%- assign product = all_products[product_handle] -%}
-                  <a href="{{ product.url }}" class="ff-lp__product-card">
+              {%- if block.settings.collection != blank -%}
+                {%- for obj in block.settings.collection.products limit: block.settings.collection_limit -%}
+                  <a href="{{ obj.url }}" class="ff-lp__product-card">
                     <div class="ff-lp__product-image">
-                       <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title | escape }}" loading="lazy">
+                       <img src="{{ obj.featured_image | img_url: '600x' }}" alt="{{ obj.title | escape }}" loading="lazy">
                     </div>
                     <div class="ff-lp__product-info">
-                      <h4 class="ff-lp__product-title">{{ product.title }}</h4>
-                      <div class="ff-lp__product-price">{{ product.price | money }}</div>
+                      <h4 class="ff-lp__product-title">{{ obj.title }}</h4>
+                      <div class="ff-lp__product-price">{{ obj.price | money }}</div>
                     </div>
                   </a>
-                {%- endif -%}
-              {%- endfor -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- for i in (1..4) -%}
+                  {%- capture product_key -%}product_{{ i }}{%- endcapture -%}
+                  {%- assign product_handle = block.settings[product_key] -%}
+                  {%- if product_handle != blank -%}
+                    {%- assign obj = all_products[product_handle] -%}
+                    <a href="{{ obj.url }}" class="ff-lp__product-card">
+                      <div class="ff-lp__product-image">
+                         <img src="{{ obj.featured_image | img_url: '600x' }}" alt="{{ obj.title | escape }}" loading="lazy">
+                      </div>
+                      <div class="ff-lp__product-info">
+                        <h4 class="ff-lp__product-title">{{ obj.title }}</h4>
+                        <div class="ff-lp__product-price">{{ obj.price | money }}</div>
+                      </div>
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
             </div>
             
           {%- when 'features_grid' -%}
@@ -296,8 +310,18 @@
   }
   @media (max-width: 768px) {
     .ff-lp__product-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       gap: 16px;
+      padding-bottom: 24px;
+      margin-bottom: -12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .ff-lp__product-grid::-webkit-scrollbar {
+      display: none;
     }
   }
   .ff-lp__product-card {
@@ -305,6 +329,13 @@
     text-decoration: none;
     color: inherit;
     transition: opacity 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .ff-lp__product-card {
+      min-width: 75%;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
   }
   .ff-lp__product-card:hover {
     opacity: 0.8;
@@ -740,6 +771,20 @@
           "max": 4,
           "step": 1,
           "label": "Number of columns on desktop",
+          "default": 4
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection (Overrides individual products)"
+        },
+        {
+          "type": "range",
+          "id": "collection_limit",
+          "min": 2,
+          "max": 12,
+          "step": 1,
+          "label": "Collection Limit",
           "default": 4
         },
         {
