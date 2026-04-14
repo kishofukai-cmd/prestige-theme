@@ -149,44 +149,15 @@
             "margin_bottom": 40
           }
         },
-        "image_text_18": {
-          "type": "image_text",
+        "features_grid_auto_664": {
+          "type": "features_grid",
           "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_19": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_20": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_21": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
+            "image_on": true,
+            "margin_bottom": 60,
+            "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
+            "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
+            "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
+            "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png"
           }
         },
         "rich_text_22": {
@@ -198,44 +169,15 @@
             "margin_bottom": 40
           }
         },
-        "image_text_23": {
-          "type": "image_text",
+        "features_grid_auto_596": {
+          "type": "features_grid",
           "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_24": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/bc36ca8b-6051-4821-b8a6-569d620ff601/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.43.02.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_25": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/f61f79e8-3ee2-457b-a314-bc8379aa8da9/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.53.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
-          }
-        },
-        "image_text_26": {
-          "type": "image_text",
-          "settings": {
-            "layout": "left",
-            "image_url": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png",
-            "heading": "",
-            "text": "",
-            "margin_bottom": 60
+            "image_on": true,
+            "margin_bottom": 60,
+            "image_url_1": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png",
+            "image_url_2": "https://ucarecdn.com/bc36ca8b-6051-4821-b8a6-569d620ff601/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.43.02.png",
+            "image_url_3": "https://ucarecdn.com/f61f79e8-3ee2-457b-a314-bc8379aa8da9/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.53.png",
+            "image_url_4": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png"
           }
         },
         "rich_text_27": {
@@ -522,15 +464,9 @@
         "rich_text_15",
         "image_text_16",
         "rich_text_17",
-        "image_text_18",
-        "image_text_19",
-        "image_text_20",
-        "image_text_21",
+        "features_grid_auto_664",
         "rich_text_22",
-        "image_text_23",
-        "image_text_24",
-        "image_text_25",
-        "image_text_26",
+        "features_grid_auto_596",
         "rich_text_27",
         "image_full_28",
         "rich_text_29",
