@@ -154,6 +154,11 @@
           {%- when 'spacer' -%}
             <div class="ff-lp__spacer ff-lp__hide-sp" style="height: {{ block.settings.height_pc }}px;"></div>
             <div class="ff-lp__spacer ff-lp__hide-pc" style="height: {{ block.settings.height_sp }}px;"></div>
+
+          {%- when 'accordion' -%}
+            <div class="ff-lp__accordion" style="margin-bottom: {{ block.settings.margin_bottom }}px;">
+              {%- render 'accordion', title: block.settings.title, content: block.settings.content, open: block.settings.open, prose_content: true, show_arrow: true -%}
+            </div>
         {%- endcase -%}
 
       </div>
@@ -1008,6 +1013,40 @@
           "unit": "px",
           "label": "Height (Mobile)",
           "default": 40
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion (FAQ)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Q. Question text here"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Answer",
+          "default": "<p>A. Answer text here</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "Open by default",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Bottom Margin",
+          "default": 16
         }
       ]
     }
