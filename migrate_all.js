@@ -138,13 +138,21 @@ function flushQuarter() {
 function flushFullText() {
     if (currentFullHeaders.length > 0 || currentFullTexts.length > 0) {
         let formattedTextContent = '';
+        let currentP = [];
         currentFullTexts.forEach(part => {
             if (part.startsWith('<h') || part.startsWith('<p>')) {
+                if (currentP.length > 0) {
+                     formattedTextContent += `<p>${currentP.join('<br>')}</p>`;
+                     currentP = [];
+                }
                 formattedTextContent += part;
             } else {
-                formattedTextContent += `<p>${part}</p>`;
+                currentP.push(part);
             }
         });
+        if (currentP.length > 0) {
+            formattedTextContent += `<p>${currentP.join('<br>')}</p>`;
+        }
 
         const blockId = `rich_text_${blockCounter++}`;
         block_order.push(blockId);
