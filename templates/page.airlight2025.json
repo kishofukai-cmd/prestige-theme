@@ -36,28 +36,10 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_5": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "[New]Navy/ネイビー",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_6": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_7": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "[New]Beige/ベージュ",
-            "text": "",
-            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -68,28 +50,10 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_9": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Olive/オリーブ",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_10": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_11": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Greige/グレージュ",
-            "text": "",
-            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -116,28 +80,10 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_15": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "[New]Navy/ネイビー",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_16": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_17": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "[New]Beige/ベージュ",
-            "text": "",
-            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -148,28 +94,10 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_19": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Black/ブラック",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_20": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_21": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Olive/オリーブ",
-            "text": "",
-            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -196,15 +124,6 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_25": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "White/ホワイト",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_26": {
           "type": "image_full",
           "settings": {
@@ -212,28 +131,10 @@
             "margin_bottom": 24
           }
         },
-        "rich_text_27": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Ice Blue/アイスブルー",
-            "text": "",
-            "text_alignment": "center",
-            "margin_bottom": 24
-          }
-        },
         "image_full_28": {
           "type": "image_full",
           "settings": {
             "image_url": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
-            "margin_bottom": 24
-          }
-        },
-        "rich_text_29": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "Black/ブラック",
-            "text": "",
-            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -725,31 +626,20 @@
         "image_full_2",
         "rich_text_3",
         "image_full_4",
-        "rich_text_5",
         "image_full_6",
-        "rich_text_7",
         "image_full_8",
-        "rich_text_9",
         "image_full_10",
-        "rich_text_11",
         "image_full_12",
         "rich_text_13",
         "image_full_14",
-        "rich_text_15",
         "image_full_16",
-        "rich_text_17",
         "image_full_18",
-        "rich_text_19",
         "image_full_20",
-        "rich_text_21",
         "image_full_22",
         "rich_text_23",
         "image_full_24",
-        "rich_text_25",
         "image_full_26",
-        "rich_text_27",
         "image_full_28",
-        "rich_text_29",
         "image_full_30",
         "rich_text_31",
         "image_full_32",

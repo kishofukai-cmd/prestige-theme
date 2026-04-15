@@ -360,7 +360,7 @@ function flushFeatures() {
     }
 }
 
-block_order.forEach(id => {
+block_order.forEach((id, idx) => {
     const b = blocks[id];
     
     // Post process Q&A text blocks into accordions
@@ -415,6 +415,25 @@ block_order.forEach(id => {
     } else if (b.type === 'image_text' && !b.settings.heading && !b.settings.text) {
         if (b.settings.image_url) currentFeaturesGrid.push(b.settings.image_url);
         if (currentFeaturesGrid.length >= 4) flushFeatures();
+    } else if (b.type === 'rich_text' && !b.settings.text && b.settings.heading) {
+        // Heading-only rich_text: check if previous block in new_order is image_full
+        // If so, merge as caption; otherwise keep as section heading
+        const prevId = new_order.length > 0 ? new_order[new_order.length - 1] : null;
+        const prevBlock = prevId ? new_blocks[prevId] : null;
+        
+        // Color name patterns or price patterns - these are image captions 
+        const heading = b.settings.heading;
+        const isCaption = prevBlock && (prevBlock.type === 'image_full' || prevBlock.type === 'hero');
+        const isColorLabel = /^(\[New\])?[A-Za-z\s\/]+[\/／][ァ-ヶー]+/.test(heading) || /^(Navy|Beige|Olive|Black|Greige|White|Blue|Khaki|Camel|Ice|Dark)/.test(heading);
+        
+        if (isCaption && isColorLabel) {
+            // Skip standalone color labels - they add visual noise without value
+            // The color is visible in the image itself
+        } else {
+            flushFeatures();
+            new_order.push(id);
+            new_blocks[id] = b;
+        }
     } else {
         flushFeatures();
         new_order.push(id);
