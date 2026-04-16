@@ -112,7 +112,7 @@
           "settings": {
             "color_scheme": "",
             "collection": "womens",
-            "image": "shopify://shop_images/OFFICIAL_LINE_14.png",
+            "image": "shopify://shop_images/OFFICIAL_LINE_16.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
@@ -127,7 +127,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "musubi-series",
+            "collection": "26home",
             "image": "shopify://shop_images/OFFICIAL_LINE_13.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
@@ -144,15 +144,15 @@
           "settings": {
             "color_scheme": "",
             "collection": "accessories",
-            "image": "shopify://shop_images/OFFICIAL_LINE_15.png",
+            "image": "shopify://shop_images/OFFICIAL_LINE_17.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
             "title": "",
-            "button_text": "HOME GOODS",
+            "button_text": "GOODS",
             "button_link": "",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         }
       },
