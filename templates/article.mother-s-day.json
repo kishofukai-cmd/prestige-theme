@@ -111,7 +111,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "",
+            "collection": "womens",
             "image": "shopify://shop_images/OFFICIAL_LINE_14.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
@@ -127,7 +127,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "",
+            "collection": "musubi-series",
             "image": "shopify://shop_images/OFFICIAL_LINE_13.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
@@ -143,7 +143,7 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "",
+            "collection": "accessories",
             "image": "shopify://shop_images/OFFICIAL_LINE_15.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
