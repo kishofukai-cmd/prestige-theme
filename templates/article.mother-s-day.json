@@ -86,7 +86,7 @@
         "richtext_XWVfHr": {
           "type": "richtext",
           "settings": {
-            "content": "<p><strong>今年の母の日は、“想いを添えて”届ける</strong><br/><br/>期間限定で、ギフトをご希望の方に<br/><br/><strong>オリジナルの母の日カード</strong>をお付けします。</p><p>特別な日のためにご用意した、今だけの限定仕様。<br/><br/>大切な人へ、言葉と一緒に贈りませんか。<br/>【期間：4/24 fri 12:00 - 5/7 thu 11:59】</p>"
+            "content": "<p><strong>今年の母の日は、“想いを添えて”届ける</strong><br/><br/>期間限定で、ギフトをご希望の方に<br/><br/><strong>オリジナルの母の日カード</strong>をお付けします。</p><p>特別な日のためにご用意した、今だけの限定仕様。<br/><br/>大切な人へ、言葉と一緒に贈りませんか。<br/><br/>【期間：4/24 fri 12:00 - 5/7 thu 11:59】</p>"
           }
         }
       },
@@ -106,6 +106,45 @@
     },
     "17763141009027f949": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "1776326373ce2ae80f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f4abd73_yUrb3q": {
+          "type": "ai_gen_block_f4abd73",
+          "settings": {
+            "heading": "KAPOK KNOTがギフトに選ばれる理由",
+            "desktop_width_percent": 100,
+            "reason_1_title": "高品質な素材",
+            "reason_1_text": "厳選された上質な素材を使用し、長く愛用いただける製品をお届けします。",
+            "reason_2_title": "洗練されたデザイン",
+            "reason_2_text": "シンプルで洗練されたデザインは、どんなシーンにもマッチします。",
+            "reason_3_title": "心を込めたギフト包装",
+            "reason_3_text": "大切な方への贈り物として、丁寧なギフト包装でお届けします。",
+            "background_color": "#fce4ec",
+            "heading_color": "#000000",
+            "heading_size": 32,
+            "number_color": "#e91e63",
+            "number_size": 20,
+            "title_color": "#000000",
+            "title_size": 22,
+            "text_color": "#333333",
+            "text_size": 14,
+            "image_size": 200,
+            "image_border_radius": 8,
+            "card_background_color": "#ffffff",
+            "border_color": "#e0e0e0",
+            "border_width": 2,
+            "card_border_radius": 12,
+            "card_padding": 30
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f4abd73_yUrb3q"
+      ],
       "settings": {}
     },
     "1775203698b97e1c60": {
@@ -312,6 +351,7 @@
     "blocks_Rd7DAJ",
     "rich_text_78DGp3",
     "17763141009027f949",
+    "1776326373ce2ae80f",
     "1775203698b97e1c60",
     "prev-next-blog-posts",
     "1776315703253a57a9"
