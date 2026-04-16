@@ -50,7 +50,7 @@
             "content_position_horizontal": "center",
             "text_alignment": "center",
             "content_max_width": 800,
-            "button_text": "詳しく見る",
+            "button_text": "",
             "button_link": "",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
@@ -146,6 +146,40 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_95c7451_6Ej8WY": {
+          "type": "ai_gen_block_95c7451",
+          "name": "Image with text",
+          "settings": {
+            "layout": "image_first",
+            "container_width": 1200,
+            "image_width": 50,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "section_padding": 60,
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/OFFICIAL_LINE_22.png",
+            "image_link": "",
+            "image_border_radius": 0,
+            "heading": "<p>Image with text</p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_alignment": "left",
+            "text_spacing": 20,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_label": "詳細はこちらから",
+            "button_link": "",
+            "button_text_size": 15,
+            "button_padding": 12,
+            "button_border_radius": 0,
+            "background_color": "#ffffff",
+            "heading_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_95c7451_YfBHLH": {
           "type": "ai_gen_block_95c7451",
           "name": "Image with text",
@@ -213,6 +247,7 @@
       },
       "block_order": [
         "ai_gen_block_3455952_iAd7eL",
+        "ai_gen_block_95c7451_6Ej8WY",
         "ai_gen_block_95c7451_YfBHLH",
         "ai_gen_block_82b4ef8_88RUMp"
       ],
