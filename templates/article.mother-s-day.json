@@ -97,87 +97,55 @@
       ],
       "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-mothers-day-black-text",
         "separate_section_with_border": true,
         "content_width": "sm",
         "text_position": "center",
         "remove_vertical_spacing": false
       }
     },
-    "collection_list_EWzkBQ": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_HrgQbL": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "",
-            "collection": "womens",
-            "image": "shopify://shop_images/OFFICIAL_LINE_18.png",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "",
-            "button_text": "OUTER",
-            "button_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_fLtLHe": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "",
-            "collection": "26home",
-            "image": "shopify://shop_images/OFFICIAL_LINE_13.png",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "",
-            "button_text": "MUSUBI",
-            "button_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_kUznz8": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "",
-            "collection": "accessories",
-            "image": "shopify://shop_images/OFFICIAL_LINE_19.png",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "",
-            "button_text": "GOODS",
-            "button_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "collection_HrgQbL",
-        "collection_fLtLHe",
-        "collection_kUznz8"
-      ],
-      "name": "t:sections.collection_list.presets.collection_list.name",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "image_size": "auto",
-        "show_text_outside": false,
-        "space_items": true,
-        "stack_collections": true,
-        "collections_per_row_desktop": 3,
-        "subheading": "",
-        "title": "",
-        "content": ""
-      }
+    "17763141009027f949": {
+      "type": "_blocks",
+      "settings": {}
     },
     "1775203698b97e1c60": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_3455952_iAd7eL": {
+          "type": "ai_gen_block_3455952",
+          "settings": {
+            "show_main_title": true,
+            "main_title": "Gift Collection",
+            "main_title_size": 22,
+            "main_title_color": "#000000",
+            "main_title_alignment": "center",
+            "main_title_spacing": 24,
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "border_radius": 0,
+            "collection_1": "sex_women",
+            "image_1": "shopify://shop_images/OFFICIAL_LINE_18.png",
+            "button_text_1": "OUTER",
+            "collection_2": "26home",
+            "image_2": "shopify://shop_images/OFFICIAL_LINE_13.png",
+            "button_text_2": "MUSUBI",
+            "collection_3": "accessories",
+            "image_3": "shopify://shop_images/OFFICIAL_LINE_19.png",
+            "button_text_3": "GOODS",
+            "show_button": true,
+            "default_button_text": "詳しく見る",
+            "overlay_opacity": 0.3,
+            "overlay_padding": 8,
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 4,
+            "button_background": "#ffffff",
+            "button_hover_background": "#f0f0f0",
+            "button_text_color": "#000000"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_95c7451_YfBHLH": {
           "type": "ai_gen_block_95c7451",
           "name": "Image with text",
@@ -192,8 +160,8 @@
             "image": "shopify://shop_images/OFFICIAL_LINE_11.png",
             "image_link": "",
             "image_border_radius": 0,
-            "heading": "",
-            "text": "<p><strong>2026/INTER NATIONAL WOMEN'S DAY<br/>　Stay Loight. Stay You.<br/></strong><br/>今年の国際女性デーの日に、心を軽やかにするための習慣、エピソードを募集しました。<br/>その中でいただいた素敵なエピソードをご紹介いたします。<br/></p>",
+            "heading": "<p>2026/INTER NATIONAL <br/>WOMEN'S DAY<br/>Stay Loight. Stay You.<strong><br/></strong></p>",
+            "text": "<p>今年の国際女性デーの日に、心を軽やかにするための習慣、エピソードを募集しました。<br/>その中でいただいた素敵なエピソードをご紹介いたします。<br/></p>",
             "text_alignment": "center",
             "text_spacing": 20,
             "heading_size": 32,
@@ -203,7 +171,7 @@
             "button_text_size": 14,
             "button_padding": 12,
             "button_border_radius": 0,
-            "background_color": "#ffffff",
+            "background_color": "#f5e6c8",
             "heading_color": "#1c1c1c",
             "text_color": "#1c1c1c",
             "button_background": "#04358d",
@@ -244,6 +212,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_3455952_iAd7eL",
         "ai_gen_block_95c7451_YfBHLH",
         "ai_gen_block_82b4ef8_88RUMp"
       ],
@@ -261,14 +230,55 @@
         "show_excerpt": true,
         "show_read_more": true
       }
+    },
+    "1776315703253a57a9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed76029_wEErQ4": {
+          "type": "ai_gen_block_ed76029",
+          "settings": {
+            "button_text": "Gift Collectionへ戻る",
+            "anchor_id": "",
+            "collection_link": "",
+            "scroll_offset": 80,
+            "show_icon": true,
+            "icon_position": "right",
+            "icon_size": 18,
+            "alignment": "center",
+            "desktop_width_percent": 100,
+            "section_padding": 20,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "border_radius": 0,
+            "border_width": 1,
+            "font_size": 14,
+            "font_weight": "400",
+            "text_transform": "none",
+            "letter_spacing": 0,
+            "button_background": "#04358d",
+            "button_text_color": "#ffffff",
+            "border_color": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_hover_text_color": "#ffffff",
+            "border_hover_color": "#1c1c1c",
+            "hover_transform": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed76029_wEErQ4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
     "blocks_Rd7DAJ",
     "rich_text_78DGp3",
-    "collection_list_EWzkBQ",
+    "17763141009027f949",
     "1775203698b97e1c60",
-    "prev-next-blog-posts"
+    "prev-next-blog-posts",
+    "1776315703253a57a9"
   ]
 }
