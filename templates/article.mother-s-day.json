@@ -184,7 +184,7 @@
           "type": "ai_gen_block_95c7451",
           "name": "Image with text",
           "settings": {
-            "layout": "image_first",
+            "layout": "text_first",
             "container_width": 1200,
             "image_width": 40,
             "content_gap": 60,
@@ -194,7 +194,7 @@
             "image": "shopify://shop_images/OFFICIAL_LINE_11.png",
             "image_link": "",
             "image_border_radius": 0,
-            "heading": "<p>2026/INTER NATIONAL <br/>WOMEN'S DAY<br/>Stay Loight. Stay You.<strong><br/></strong></p>",
+            "heading": "",
             "text": "<p>今年の国際女性デーの日に、心を軽やかにするための習慣、エピソードを募集しました。<br/>その中でいただいた素敵なエピソードをご紹介いたします。<br/></p>",
             "text_alignment": "center",
             "text_spacing": 20,
