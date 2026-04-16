@@ -112,6 +112,7 @@
           "settings": {
             "color_scheme": "",
             "collection": "",
+            "image": "shopify://shop_images/OFFICIAL_LINE_14.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
@@ -119,7 +120,7 @@
             "button_text": "OUTER",
             "button_link": "",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_fLtLHe": {
@@ -127,6 +128,7 @@
           "settings": {
             "color_scheme": "",
             "collection": "",
+            "image": "shopify://shop_images/OFFICIAL_LINE_13.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
@@ -134,7 +136,7 @@
             "button_text": "MUSUBI",
             "button_link": "",
             "overlay_color": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_kUznz8": {
@@ -142,6 +144,7 @@
           "settings": {
             "color_scheme": "",
             "collection": "",
+            "image": "shopify://shop_images/OFFICIAL_LINE_15.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
