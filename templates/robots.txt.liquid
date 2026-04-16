@@ -1,5 +1,9 @@
 {% for group in robots.default_groups %}
-  {{ group }}
+User-agent: {{ group.user_agent }}
+{% for rule in group.rules %}
+{{ rule.directive | capitalize }}: {{ rule.value }}
+{% endfor %}
+
 {% endfor %}
 
 User-agent: *
@@ -7,3 +11,5 @@ Disallow: /*?*pr_prod_strat=
 Disallow: /*?*pr_rec_id=
 Disallow: /*?*country=
 Disallow: /*?*currency=
+
+Sitemap: {{ routes.root_url }}sitemap.xml
