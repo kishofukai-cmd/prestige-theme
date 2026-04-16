@@ -143,16 +143,16 @@
             "item_1_link": "",
             "item_2_enabled": true,
             "item_2_size": "medium",
-            "item_2_image": "shopify://shop_images/OFFICIAL_LINE_24.png",
-            "item_2_title": "エアライト",
+            "item_2_image": "shopify://shop_images/OFFICIAL_LINE_26.png",
+            "item_2_title": "エアーライトペプラムジャケット",
             "item_2_subtitle": "",
-            "item_2_link": "",
+            "item_2_link": "https://kapok-knot.com/products/airlight-peplum-jacket",
             "item_3_enabled": true,
             "item_3_size": "small",
-            "item_3_image": "shopify://shop_images/OFFICIAL_LINE_24.png",
-            "item_3_title": "エアライト",
+            "item_3_image": "shopify://shop_images/OFFICIAL_LINE_15.png",
+            "item_3_title": "KAPOK Sleep Ket",
             "item_3_subtitle": "",
-            "item_3_link": ""
+            "item_3_link": "https://kapok-knot.com/products/new-kapok-sleep-ket"
           },
           "blocks": {}
         }
