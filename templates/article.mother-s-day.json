@@ -108,6 +108,41 @@
       "type": "_blocks",
       "settings": {}
     },
+    "1776326949565d254f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4dc0eb5_Jjz8hM": {
+          "type": "ai_gen_block_4dc0eb5",
+          "settings": {
+            "title": "おすすめ商品",
+            "title_size": 24,
+            "title_alignment": "left",
+            "products": [
+              "2waymiddle-down-coat",
+              "kapok-knot-heralbony-art-down-stole",
+              "azuma-bag-unisex",
+              "flying-blanket",
+              "haori-jacket"
+            ],
+            "desktop_width_percent": 100,
+            "product_title_size": 14,
+            "product_price_size": 14,
+            "text_color": "#1c1c1c",
+            "title_color": "#1c1c1c",
+            "button_background": "#ffffff",
+            "button_color": "#1c1c1c",
+            "button_border_color": "#1c1c1c",
+            "button_hover_background": "#1c1c1c",
+            "button_hover_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4dc0eb5_Jjz8hM"
+      ],
+      "settings": {}
+    },
     "1776326373ce2ae80f": {
       "type": "_blocks",
       "blocks": {
@@ -351,6 +386,7 @@
     "blocks_Rd7DAJ",
     "rich_text_78DGp3",
     "17763141009027f949",
+    "1776326949565d254f",
     "1776326373ce2ae80f",
     "1775203698b97e1c60",
     "prev-next-blog-posts",
