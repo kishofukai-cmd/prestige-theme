@@ -183,18 +183,18 @@
             "heading_color": "#f62828",
             "heading_size": 32,
             "number_color": "#e91e63",
-            "number_size": 24,
+            "number_size": 30,
             "title_color": "#000000",
             "title_size": 22,
             "text_color": "#333333",
             "text_size": 14,
             "image_size": 290,
-            "image_border_radius": 8,
+            "image_border_radius": 10,
             "card_background_color": "#ffffff",
             "border_color": "#e0e0e0",
-            "border_width": 2,
-            "card_border_radius": 12,
-            "card_padding": 30
+            "border_width": 4,
+            "card_border_radius": 22,
+            "card_padding": 15
           },
           "blocks": {}
         }
