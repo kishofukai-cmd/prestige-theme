@@ -119,7 +119,7 @@
           "type": "ai_gen_block_eb214c8",
           "settings": {
             "main_title": "人気＆おすすめアイテム",
-            "main_title_size": 32,
+            "main_title_size": 28,
             "header_alignment": "center",
             "header_margin_bottom": 30,
             "desktop_width_percent": 100,
@@ -210,9 +210,9 @@
         "ai_gen_block_3455952_iAd7eL": {
           "type": "ai_gen_block_3455952",
           "settings": {
-            "show_main_title": true,
-            "main_title": "ギフトコレクション",
-            "main_title_size": 28,
+            "show_main_title": false,
+            "main_title": "カテゴリーで探す",
+            "main_title_size": 26,
             "main_title_color": "#000000",
             "main_title_alignment": "center",
             "main_title_spacing": 24,
