@@ -305,12 +305,76 @@
             "read_less_text": "閉じる"
           },
           "blocks": {}
+        },
+        "ai_gen_block_6b34618_Jm6TCr": {
+          "type": "ai_gen_block_6b34618",
+          "settings": {
+            "line_thickness": 3,
+            "line_color": "#ffbcbc",
+            "spacing_top": 15,
+            "spacing_bottom": 20,
+            "spacing_top_mobile": 20,
+            "spacing_bottom_mobile": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_733ced0_ipA6eG": {
+          "type": "ai_gen_block_733ced0",
+          "settings": {
+            "main_title": "ギフトカード",
+            "title_size": 28,
+            "image": "shopify://shop_images/OFFICIAL_LINE_22.png",
+            "image_border_radius": 8,
+            "heading": "大切な人へ、特別な贈り物を",
+            "heading_size": 28,
+            "description": "<p>KAPOK KNOTのギフトカードは、大切な方への贈り物に最適です。お好きな金額を選んで、心のこもったギフトをお届けください。</p>",
+            "description_size": 16,
+            "button_text": "ギフトカードを購入",
+            "button_url": "https://kapok-knot.com/products/online-gift-card?",
+            "button_text_size": 14,
+            "button_color": "#04358d",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#1c1c1c",
+            "button_border_radius": 4,
+            "faq_title": "よくある質問",
+            "faq_title_size": 24,
+            "faq_background_color": "#ffffff",
+            "faq_border_color": "#e0e0e0",
+            "faq_border_width": 1,
+            "faq_border_radius": 8,
+            "faq_question_size": 16,
+            "faq_answer_size": 14,
+            "faq_question_1": "ギフトカードの有効期限はありますか？",
+            "faq_answer_1": "<p>ギフトカードに有効期限は購入から1年間です。<br/>他のクーポンコードと併用も可能です。<br/>さらに、残高が足りない場合は差額を別のお支払い方法で決済可能です。</p>",
+            "faq_question_2": "ギフトカードはどのように届きますか？",
+            "faq_answer_2": "<p>ご購入後、ギフトカードコードはメールで届きます。<br/>そのままメッセージに添えて送るだけで、すぐにギフトとしてお渡し可能です。</p>",
+            "faq_question_3": "ギフトカードは返金できますか？",
+            "faq_answer_3": "<p>申し訳ございませんが、ギフトカードのご購入後の返金は承っておりません。</p>",
+            "text_color": "#1c1c1c",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_6b34618_hBVUD8": {
+          "type": "ai_gen_block_6b34618",
+          "settings": {
+            "line_thickness": 3,
+            "line_color": "#ffbcbc",
+            "spacing_top": 15,
+            "spacing_bottom": 20,
+            "spacing_top_mobile": 20,
+            "spacing_bottom_mobile": 20
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_3455952_iAd7eL",
         "ai_gen_block_95c7451_YfBHLH",
-        "ai_gen_block_82b4ef8_88RUMp"
+        "ai_gen_block_82b4ef8_88RUMp",
+        "ai_gen_block_6b34618_Jm6TCr",
+        "ai_gen_block_733ced0_ipA6eG",
+        "ai_gen_block_6b34618_hBVUD8"
       ],
       "settings": {}
     },
@@ -357,10 +421,38 @@
             "item_3_link": "https://kapok-knot.com/products/musubi-en"
           },
           "blocks": {}
+        },
+        "ai_gen_block_f3a6c07_MiaaFp": {
+          "type": "ai_gen_block_f3a6c07",
+          "settings": {
+            "question_1": "配送にはどのくらいかかりますか？",
+            "answer_1": "<p>ご注文から3〜5営業日でお届けいたします。</p>",
+            "question_2": "返品は可能ですか？",
+            "answer_2": "<p>商品到着後14日以内であれば返品可能です。</p>",
+            "question_3": "ギフトラッピングはできますか？",
+            "answer_3": "<p>はい、カート画面でギフトラッピングオプションをお選びいただけます。</p>",
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff",
+            "border_color": "#e0e0e0",
+            "border_width": 2,
+            "border_radius": 8,
+            "container_padding": 25,
+            "divider_color": "#e0e0e0",
+            "item_padding": 20,
+            "question_color": "#1c1c1c",
+            "question_font_size": 16,
+            "question_font_weight": "600",
+            "icon_color": "#1c1c1c",
+            "answer_color": "#666666",
+            "answer_font_size": 14,
+            "answer_top_spacing": 15
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_eb214c8_GbKG3n"
+        "ai_gen_block_eb214c8_GbKG3n",
+        "ai_gen_block_f3a6c07_MiaaFp"
       ],
       "settings": {}
     },
