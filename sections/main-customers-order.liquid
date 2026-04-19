@@ -170,7 +170,7 @@
           </table>
 
           <div style="margin-top: 24px;">
-            <a href="https://kapok-receipt.vercel.app/receipt?token={{ order.order_status_url | split: '/' | last | split: '?' | last }}" style="display: inline-block; padding: 12px 24px; background: #1a1a1a; color: #fff; text-decoration: none; border-radius: 6px; font-size: 14px;">
+            <a href="https://kapok-receipt.vercel.app/receipt?token={{ order.order_status_url | split: 'key=' | last }}" style="display: inline-block; padding: 12px 24px; background: #1a1a1a; color: #fff; text-decoration: none; border-radius: 6px; font-size: 14px;">
               領収書を発行する
             </a>
           </div>
