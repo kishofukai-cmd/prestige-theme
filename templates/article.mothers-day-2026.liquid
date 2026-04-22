@@ -99,6 +99,19 @@
   cart-drawer:not([open]),
   #cart-drawer:not([open]) { display: none !important; }
 
+  /* 【FIX 最優先】Tailwind CDNが .contents を再定義してテーマの md-max:hidden (@media) を cascade order で上書きしている問題。テーマの意図を復活 */
+  @media screen and (max-width: 999px) {
+    .md-max\:hidden,
+    ul.md-max\:hidden,
+    .contents.md-max\:hidden,
+    nav .md-max\:hidden { display: none !important; }
+  }
+  @media screen and (min-width: 1000px) {
+    .md\:hidden { display: none !important; }
+  }
+  /* main nav/drawer系の保護 */
+  .header__primary-nav > ul:not(.is-open).md-max\:hidden { display: none !important; }
+
   .md-body { font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; font-size: 16px; line-height: 1.9; background: #F7F3EC; }
   .md-body h1, .md-body h2, .md-body h3 { font-family: 'Noto Serif JP', serif; letter-spacing: 0.02em; }
   .md-body p { font-size: 16px; line-height: 1.9; }
