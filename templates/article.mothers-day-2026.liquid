@@ -91,6 +91,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
+  /* 【FIX 最優先】親テーマのヘッダードロワーが特異度0（:where）で隠されているため、Tailwind CDN注入ルールが勝って表示される。高特異度で明示的に隠す */
+  header-sidebar#sidebar-menu:not([open]),
+  x-drawer:not([open]),
+  #sidebar-menu:not([open]),
+  .header-sidebar:not([open]),
+  cart-drawer:not([open]),
+  #cart-drawer:not([open]) { display: none !important; }
+
   .md-body { font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; font-size: 16px; line-height: 1.9; background: #F7F3EC; }
   .md-body h1, .md-body h2, .md-body h3 { font-family: 'Noto Serif JP', serif; letter-spacing: 0.02em; }
   .md-body p { font-size: 16px; line-height: 1.9; }
