@@ -118,45 +118,6 @@
       "type": "_blocks",
       "settings": {}
     },
-    "rich_text_78DGp3": {
-      "type": "rich-text",
-      "blocks": {
-        "subheading_4C836p": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_pVNc4Q": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "text": "<strong>HAPPY MOTHER'S DAY</strong>",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_XWVfHr": {
-          "type": "richtext",
-          "disabled": true,
-          "settings": {
-            "content": "<p><strong>今年の母の日は、“想いを添えて”届ける</strong><br/><br/>期間限定で、ギフトをご希望の方に<br/><br/><strong>オリジナルの母の日カード</strong>をお付けします。</p><p>特別な日のためにご用意した、今だけの限定仕様。<br/><br/>大切な人へ、言葉と一緒に贈りませんか。<br/><br/><strong>【期間：4/24 fri 12:00 - 5/7 thu 11:59】</strong></p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_4C836p",
-        "heading_pVNc4Q",
-        "richtext_XWVfHr"
-      ],
-      "name": "t:sections.rich_text.presets.rich_text.name",
-      "settings": {
-        "color_scheme": "scheme-mothers-day-black-text",
-        "separate_section_with_border": true,
-        "content_width": "sm",
-        "text_position": "center",
-        "remove_vertical_spacing": false
-      }
-    },
     "17763141009027f949": {
       "type": "_blocks",
       "settings": {}
@@ -204,10 +165,19 @@
             "item_3_link": "https://kapok-knot.com/products/new-kapok-sleep-ket"
           },
           "blocks": {}
+        },
+        "ai_gen_block_24634fb_ewmEnx": {
+          "type": "ai_gen_block_24634fb",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_eb214c8_QP7c3D"
+        "ai_gen_block_eb214c8_QP7c3D",
+        "ai_gen_block_24634fb_ewmEnx"
       ],
       "settings": {}
     },
@@ -292,6 +262,14 @@
           },
           "blocks": {}
         },
+        "ai_gen_block_f779742_Gg3Np3": {
+          "type": "ai_gen_block_f779742",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        },
         "ai_gen_block_ea182d8_9dzAfQ": {
           "type": "ai_gen_block_ea182d8",
           "settings": {
@@ -324,6 +302,14 @@
             "button_background": "#f9c8c8",
             "button_hover_background": "#f9c8c8",
             "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5b54a15_Uq8M3e": {
+          "type": "ai_gen_block_5b54a15",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
           },
           "blocks": {}
         },
@@ -455,7 +441,9 @@
       },
       "block_order": [
         "ai_gen_block_3455952_iAd7eL",
+        "ai_gen_block_f779742_Gg3Np3",
         "ai_gen_block_ea182d8_9dzAfQ",
+        "ai_gen_block_5b54a15_Uq8M3e",
         "ai_gen_block_95c7451_YfBHLH",
         "ai_gen_block_82b4ef8_88RUMp",
         "ai_gen_block_6b34618_Jm6TCr",
@@ -602,7 +590,6 @@
     "blocks_Rd7DAJ",
     "1776328488e4a02d2f",
     "17768245577ec41fd5",
-    "rich_text_78DGp3",
     "17763141009027f949",
     "1776326949565d254f",
     "1776326373ce2ae80f",
