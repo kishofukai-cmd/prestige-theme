@@ -65,7 +65,7 @@
           "type": "ai_gen_block_70db8fb",
           "settings": {
             "image": "shopify://shop_images/2_092171b0-b707-4faf-92e8-60900beac8d3.png",
-            "desktop_width_percent": 80,
+            "desktop_width_percent": 100,
             "aspect_ratio": "50",
             "border_radius": 0
           },
