@@ -1,0 +1,248 @@
+{% comment %} Article — Sticky Bottom CTA ("商品ページはこちら" 追随型導線) {% endcomment %}
+
+<style>
+  /* Reserve space at the page bottom so the fixed CTA doesn't cover footer content */
+  #{{ section.id }}.asc-spacer {
+    display: block;
+    height: 0;
+  }
+
+  #{{ section.id }}-bar.asc-bar {
+    position: fixed;
+    left: 50%;
+    bottom: {{ section.settings.bottom_offset | default: 16 }}px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: {{ section.settings.max_width | default: 720 }}px;
+    z-index: 9998;
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    color: {{ section.settings.text_color | default: '#1c1c1c' }};
+    border: 1px solid rgba(28, 28, 28, 0.08);
+    border-radius: 100px;
+    box-shadow: 0 10px 32px rgba(28, 28, 28, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px 10px 14px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: {{ section.settings.show_on_load | default: true | json | replace: 'true', '1' | replace: 'false', '0' }};
+    pointer-events: {{ section.settings.show_on_load | default: true | json | replace: 'true', 'auto' | replace: 'false', 'none' }};
+    box-sizing: border-box;
+  }
+
+  #{{ section.id }}-bar.asc-bar[data-asc-hidden="true"] {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 20px);
+  }
+
+  #{{ section.id }}-bar .asc-bar__thumb {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  #{{ section.id }}-bar .asc-bar__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #{{ section.id }}-bar .asc-bar__info {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  #{{ section.id }}-bar .asc-bar__name {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    color: inherit;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #{{ section.id }}-bar .asc-bar__price {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  #{{ section.id }}-bar .asc-bar__cta {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: {{ section.settings.cta_text_color | default: '#ffffff' }};
+    background: {{ section.settings.cta_bg_color | default: '#1c1c1c' }};
+    border-radius: 100px;
+    padding: 10px 18px;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+    min-height: 40px;
+    box-sizing: border-box;
+  }
+
+  #{{ section.id }}-bar .asc-bar__cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  #{{ section.id }}-bar .asc-bar__close {
+    flex-shrink: 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    opacity: 0.55;
+    font-size: 20px;
+    line-height: 1;
+    padding: 6px 4px;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+
+  #{{ section.id }}-bar .asc-bar__close:hover { opacity: 1; }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    #{{ section.id }}-bar.asc-bar {
+      width: calc(100% - 16px);
+      bottom: 8px;
+      padding: 8px 10px;
+      padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+      gap: 10px;
+    }
+    #{{ section.id }}-bar .asc-bar__thumb {
+      width: 40px;
+      height: 40px;
+    }
+    #{{ section.id }}-bar .asc-bar__name {
+      font-size: 12.5px;
+    }
+    #{{ section.id }}-bar .asc-bar__price {
+      font-size: 10.5px;
+    }
+    #{{ section.id }}-bar .asc-bar__cta {
+      font-size: 12px;
+      padding: 8px 14px;
+      min-height: 36px;
+    }
+    #{{ section.id }}-bar .asc-bar__close {
+      font-size: 18px;
+      padding: 4px 2px;
+    }
+    {%- if section.settings.hide_price_on_mobile -%}
+      #{{ section.id }}-bar .asc-bar__price { display: none; }
+    {%- endif -%}
+  }
+</style>
+
+<div id="{{ section.id }}" class="asc-spacer" aria-hidden="true"></div>
+
+<aside id="{{ section.id }}-bar"
+       class="asc-bar"
+       role="complementary"
+       aria-label="{{ section.settings.aria_label | default: '関連商品へのリンク' }}">
+  {% if section.settings.product_image != blank or section.settings.product_image_url != blank %}
+    <span class="asc-bar__thumb">
+      {% if section.settings.product_image != blank %}
+        <img src="{{ section.settings.product_image | image_url: width: 200 }}"
+             alt="{{ section.settings.product_name | default: '' | escape }}"
+             loading="lazy">
+      {% elsif section.settings.product_image_url != blank %}
+        <img src="{{ section.settings.product_image_url }}"
+             alt="{{ section.settings.product_name | default: '' | escape }}"
+             loading="lazy">
+      {% endif %}
+    </span>
+  {% endif %}
+
+  <div class="asc-bar__info">
+    {% if section.settings.product_name != blank %}
+      <p class="asc-bar__name">{{ section.settings.product_name }}</p>
+    {% endif %}
+    {% if section.settings.product_price != blank %}
+      <p class="asc-bar__price">{{ section.settings.product_price }}</p>
+    {% endif %}
+  </div>
+
+  <a class="asc-bar__cta"
+     href="{{ section.settings.cta_url | default: '#' }}"
+     data-asc-cta>
+    {{ section.settings.cta_text | default: '商品ページはこちら →' }}
+  </a>
+
+  {% if section.settings.show_close %}
+    <button class="asc-bar__close"
+            type="button"
+            aria-label="閉じる"
+            data-asc-close>×</button>
+  {% endif %}
+</aside>
+
+{% if section.settings.show_close %}
+  <script>
+    (function(){
+      var bar = document.getElementById('{{ section.id }}-bar');
+      if (!bar) return;
+      var btn = bar.querySelector('[data-asc-close]');
+      if (!btn) return;
+      btn.addEventListener('click', function(){
+        bar.setAttribute('data-asc-hidden', 'true');
+      });
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article Sticky CTA",
+  "tag": "section",
+  "class": "shopify-section--asc",
+  "settings": [
+    { "type": "header", "content": "商品情報" },
+    { "type": "image_picker", "id": "product_image", "label": "商品画像" },
+    { "type": "text", "id": "product_image_url", "label": "商品画像 URL (外部フォールバック)" },
+    { "type": "text", "id": "product_name", "label": "商品名", "default": "リカバリー加重ブランケット MUSUBI" },
+    { "type": "text", "id": "product_price", "label": "価格表示", "default": "¥39,800〜" },
+
+    { "type": "header", "content": "CTA ボタン" },
+    { "type": "text", "id": "cta_text", "label": "ボタンテキスト", "default": "商品ページはこちら →" },
+    { "type": "url", "id": "cta_url", "label": "ボタンリンク" },
+    { "type": "color", "id": "cta_bg_color", "label": "ボタン背景色", "default": "#1c1c1c" },
+    { "type": "color", "id": "cta_text_color", "label": "ボタン文字色", "default": "#ffffff" },
+
+    { "type": "header", "content": "バー外観" },
+    { "type": "color", "id": "bg_color", "label": "バー背景色", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "バー文字色", "default": "#1c1c1c" },
+    { "type": "range", "id": "max_width", "label": "最大幅 (px)", "min": 360, "max": 1100, "step": 20, "default": 720 },
+    { "type": "range", "id": "bottom_offset", "label": "画面下からの距離 (px)", "min": 0, "max": 48, "step": 2, "default": 16 },
+
+    { "type": "header", "content": "表示オプション" },
+    { "type": "checkbox", "id": "show_on_load", "label": "ページ表示直後から出す", "default": true },
+    { "type": "checkbox", "id": "show_close", "label": "閉じるボタンを表示", "default": false },
+    { "type": "checkbox", "id": "hide_price_on_mobile", "label": "モバイルで価格を非表示にする", "default": false },
+    { "type": "text", "id": "aria_label", "label": "ARIA ラベル (スクリーンリーダー向け)", "default": "関連商品へのリンク" }
+  ],
+  "presets": [
+    { "name": "Article Sticky CTA" }
+  ]
+}
+{% endschema %}
