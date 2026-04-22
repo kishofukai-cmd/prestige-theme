@@ -31,6 +31,7 @@
       "blocks": {
         "ai_gen_block_59dce29_ecXe3P": {
           "type": "ai_gen_block_59dce29",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/c_2_3x_2.png",
             "height_desktop": 70,
@@ -59,15 +60,61 @@
             "button_border_radius": 0
           },
           "blocks": {}
+        },
+        "ai_gen_block_70db8fb_bKeM9q": {
+          "type": "ai_gen_block_70db8fb",
+          "settings": {
+            "image": "shopify://shop_images/2_092171b0-b707-4faf-92e8-60900beac8d3.png",
+            "desktop_width_percent": 80,
+            "aspect_ratio": "50",
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_be25dbb_jXjKhX": {
+          "type": "ai_gen_block_be25dbb",
+          "settings": {
+            "image": "shopify://shop_images/OFFICIAL_LINE_39.png",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_70db8fb_cBRyh8": {
+          "type": "ai_gen_block_70db8fb",
+          "settings": {
+            "image": "shopify://shop_images/1_36486d7c-7b09-4cdc-be0c-56c49a81688f.png",
+            "desktop_width_percent": 100,
+            "aspect_ratio": "33.33",
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_be25dbb_TYqQJ4": {
+          "type": "ai_gen_block_be25dbb",
+          "settings": {
+            "image": "shopify://shop_images/OFFICIAL_LINE_38.png",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_59dce29_ecXe3P"
+        "ai_gen_block_59dce29_ecXe3P",
+        "ai_gen_block_70db8fb_bKeM9q",
+        "ai_gen_block_be25dbb_jXjKhX",
+        "ai_gen_block_70db8fb_cBRyh8",
+        "ai_gen_block_be25dbb_TYqQJ4"
       ],
       "name": "KV Hero",
       "settings": {}
     },
     "1776328488e4a02d2f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17768245577ec41fd5": {
       "type": "_blocks",
       "settings": {}
     },
@@ -82,6 +129,7 @@
         },
         "heading_pVNc4Q": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "text": "<strong>HAPPY MOTHER'S DAY</strong>",
             "heading_tag": "h1"
@@ -89,6 +137,7 @@
         },
         "richtext_XWVfHr": {
           "type": "richtext",
+          "disabled": true,
           "settings": {
             "content": "<p><strong>今年の母の日は、“想いを添えて”届ける</strong><br/><br/>期間限定で、ギフトをご希望の方に<br/><br/><strong>オリジナルの母の日カード</strong>をお付けします。</p><p>特別な日のためにご用意した、今だけの限定仕様。<br/><br/>大切な人へ、言葉と一緒に贈りませんか。<br/><br/><strong>【期間：4/24 fri 12:00 - 5/7 thu 11:59】</strong></p>"
           }
@@ -514,6 +563,7 @@
     "main",
     "blocks_Rd7DAJ",
     "1776328488e4a02d2f",
+    "17768245577ec41fd5",
     "rich_text_78DGp3",
     "17763141009027f949",
     "1776326949565d254f",
