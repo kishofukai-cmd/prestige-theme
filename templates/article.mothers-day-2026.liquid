@@ -266,12 +266,9 @@
       </h1>
       <p class="text-md-muted text-sm mb-8">2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード</p>
       <div class="md-divider"></div>
-      <p class="md-fade mb-6">
+      <p class="md-fade leading-loose">
         お母さまの日常を、ほんの少し豊かにする贈り物。<br>
-        今年は、いつもと違う選択肢をご用意しました。
-      </p>
-      <p class="text-sm text-md-muted md-fade">
-        ——まずは最新の調査データから、母の日に"本当に喜ばれるもの"を見てみましょう。
+        いつもと違う選択肢を、ご用意しました。
       </p>
 
       <!-- 目次（先頭に配置） -->
@@ -281,8 +278,6 @@
           <li><a href="#ranking">2026年、母の日ギフトの新しい選択肢（調査データ）</a></li>
           <li><a href="#hero-transition">今年の母の日は、やさしい「重み」を贈る</a></li>
           <li><a href="#awards">"眠り"を贈るギフトとして、選ばれています</a></li>
-          <li><a href="#numbers">数字で見る、MUSUBIとKAPOK KNOT</a></li>
-          <li><a href="#founder">創業者からの、母の日へのメッセージ</a></li>
           <li><a href="#musubi">選択肢01｜MUSUBI（加重ブランケット）</a></li>
           <li><a href="#giftcard">選択肢02｜ギフトカード</a></li>
           <li><a href="#compare">お母さまに合うものを（比較表）</a></li>
@@ -298,10 +293,8 @@
   <!-- 2. ランキング（調査データを先に見せて信頼を形成） -->
   <section id="ranking" class="md-section">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 md-fade">2026年、母の日ギフトの新しい選択肢</h2>
-      <p class="mb-10 md-fade">
-        母の日のギフトは、「花」だけの時代から変わりはじめています。2026年の調査では、お母さまが本当に欲しいと思うのは、日々の暮らしを豊かにする"実用的で特別なもの"。下記は2026年版・母の日に贈りたいギフトランキングです。
-      </p>
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 text-center md-fade">2026年 母の日ギフト・ランキング</h2>
+      <p class="text-sm text-md-muted text-center mb-10 md-fade">「花」から「日々を豊かにする実用品」へ。</p>
 
       <div class="bg-white p-6 md:p-10 space-y-4 md-fade">
         {%- assign ranks = 'ranking_items' -%}
@@ -332,8 +325,8 @@
         <p class="text-xs text-md-muted pt-3">※出典：母の日.me「2026年版 母の日に関するアンケート調査」</p>
       </div>
 
-      <p class="mt-10 md-fade">
-        特に30〜40代の贈り手が選ぶのは、「お母さまのライフスタイルに寄り添う、実用的かつ特別感のあるギフト」。その中でも今、静かに支持を集めているのが <strong class="text-md-navy">"眠り"を贈るという選択</strong> です。
+      <p class="mt-8 text-center md-fade">
+        いま注目を集めているのが、<strong class="text-md-navy">"眠り"を贈るという選択</strong>。
       </p>
     </div>
   </section>
@@ -351,27 +344,24 @@
            width="1600" height="900"
            class="md-aspect-16-9 mb-8" loading="lazy">
 
-      <p class="text-md-ink text-base md:text-lg mb-10 leading-loose md-fade">
-        {{ hero_body_line1 }}<br>{{ hero_body_line2 }}
+      <p class="text-md-ink text-base mb-8 leading-loose md-fade">
+        植物由来のぬくもりで、ふたつの選択を。
       </p>
 
       <!-- 推しカラー訴求（母の日2026キャンペーン） -->
       <!-- EDITABLE: 推しカラー訴求は featured_color_* 変数を編集 -->
       <div class="text-left mb-6">
         <p class="text-sm tracking-[0.2em] text-md-accent text-center mb-4">— {{ featured_colors_label }} —</p>
-        <div class="grid grid-cols-2 gap-3 md:gap-6 max-w-xl mx-auto mb-6 md-fade">
+        <div class="grid grid-cols-2 gap-3 md:gap-6 max-w-xl mx-auto mb-4 md-fade">
           <a href="https://kapok-knot.com/products/musubi-en?variant=cloud-white" class="md-color-card block">
             <img src="{{ cloud_white_image }}" alt="MUSUBI -en- Cloud White" width="400" height="400" loading="lazy">
             <span class="color-name">{{ featured_color_1_name }}</span>
-            <span class="color-desc">{{ featured_color_1_desc }}</span>
           </a>
           <a href="https://kapok-knot.com/products/musubi-en?variant=blossom-peach" class="md-color-card block">
             <img src="{{ blossom_peach_image }}" alt="MUSUBI -en- Blossom Peach" width="400" height="400" loading="lazy">
             <span class="color-name">{{ featured_color_2_name }}</span>
-            <span class="color-desc">{{ featured_color_2_desc }}</span>
           </a>
         </div>
-        <p class="text-xs text-md-muted text-center">※在庫状況により、ご注文時期によっては欠品する可能性があります。</p>
       </div>
 
       <!-- FV 3商品プレビュー -->
@@ -441,56 +431,6 @@
     </div>
   </section>
 
-  <!-- 5. 数字で見る実績（JSF LPの訴求を母の日文脈に翻案） -->
-  <!-- EDITABLE: 各数字は md-stat-card 内 stat-num を編集 -->
-  <section id="numbers" class="md-section">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-10 text-center md-fade">{{ h2_numbers }}</h2>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 md-fade">
-        <div class="md-stat-card">
-          <span class="stat-num">408<span style="font-size:16px;">+</span></span>
-          <span class="stat-unit">名</span>
-          <span class="stat-label">Makuakeで<br>応援購入した方</span>
-        </div>
-        <div class="md-stat-card">
-          <span class="stat-num">1,300<span style="font-size:16px;">万円+</span></span>
-          <span class="stat-unit">応援購入</span>
-          <span class="stat-label">クラウド<br>ファンディング実績</span>
-        </div>
-        <div class="md-stat-card">
-          <span class="stat-num">365</span>
-          <span class="stat-unit">日</span>
-          <span class="stat-label">オールシーズン<br>使える通気性</span>
-        </div>
-        <div class="md-stat-card">
-          <span class="stat-num">1/8</span>
-          <span class="stat-unit">の軽さ</span>
-          <span class="stat-label">カポック繊維は<br>綿花の約1/8の軽さ</span>
-        </div>
-      </div>
-
-      <p class="text-xs text-md-muted text-center mt-6 md-fade">※数値は発売開始〜2025年時点の累計実績。最新の数値は予告なく更新される場合があります。</p>
-    </div>
-  </section>
-
-  <!-- 6. 創業者メッセージ（開発ストーリー・母の日文脈） -->
-  <!-- EDITABLE: 本文は .founder-message を編集、写真は .founder-photo-placeholder を <img> に -->
-  <section id="founder" class="md-section bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[22px] md:text-[28px] text-md-navy mb-8 text-center md-fade">{{ h2_founder }}</h2>
-
-      <div class="md-founder-card md-fade">
-        <div class="founder-photo-placeholder">[創業者写真 / 150×150 推奨]</div>
-        <p class="founder-message text-md-ink leading-loose" style="font-size:15px;">
-          カポックという木の実の素材に出会ったとき、私はこれが「人生を懸けて取り組むべき素材」だと確信しました。動物を傷つけず、大量の水も必要とせず、それでいて人の体をやさしく包む。<br><br>
-          MUSUBIは、そのカポックの魅力を最大限に引き出すためにつくった、特許出願中のリカバリー加重ブランケットです。母の日という大切な一日に、日々お母さまを支えてきた"ありがとう"の気持ちを、植物のぬくもりに託していただけたら嬉しいです。
-        </p>
-        <span class="founder-name">深井 喜翔</span>
-        <span class="founder-title">KAPOK JAPAN株式会社 代表取締役 / KAPOK KNOT創業者</span>
-      </div>
-    </div>
-  </section>
 
   <!-- 5. MUSUBI -->
   <section id="musubi" class="md-section">
@@ -500,65 +440,37 @@
         眠りを贈る。<br>リカバリー加重ブランケット「MUSUBI」
       </h2>
 
-      <div class="md-definition md-fade">
-        <strong>MUSUBI（むすび）とは、</strong>KAPOK KNOTが開発した植物由来カポック繊維の特許出願中リカバリー加重ブランケットです。約3.0〜4.5kgの心地よい重みが、ゆったりとしたリラックスタイムに寄り添います。365日使用可能で、ご自宅で手洗いが可能。<!-- [要確認: 特許出願番号の追記] -->
-      </div>
-
       <img src="https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_0885.jpg?v=1771395913&width=1600"
            alt="リカバリー加重ブランケットMUSUBIの使用シーン"
            width="1600" height="900"
-           class="md-aspect-16-9 my-8" loading="lazy">
+           class="md-aspect-16-9 my-6" loading="lazy">
 
-      <p class="mb-10 md-fade">
-        年に一度の母の日に、"くつろぎの時間"を贈る。<br>
-        MUSUBIは、体全体に感じる心地よい重みで、ゆったりとしたリラックスタイムに寄り添う特許出願中のブランケットです。
+      <p class="mb-8 md-fade leading-loose">
+        カポック繊維を編み込んだ、<strong>特許出願中</strong>のリカバリー加重ブランケット。<br>
+        体全体に感じる心地よい重みで、お母さまのくつろぎ時間に寄り添います。
       </p>
 
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-12 mb-4 md-fade">「重さ」がもたらす、やすらぎの時間</h3>
-      <p class="mb-6 md-fade">
-        適度な重みを体全体に感じることで、ゆったりとした安心感に包まれる——加重ブランケットは、そうした"体感"を設計の軸にしたアイテムです。一日のおわり、ソファや寝室でのくつろぎの時間に、そっと寄り添います。
-      </p>
-      <p class="mb-8 md-fade">
-        「最近、ゆっくり休む時間が取れていないかも」<br>
-        「疲れたときに、ホッとできる時間が欲しい」<br>
-        そんなお母さまの声に、さりげなく応える一枚です。
-      </p>
-
-      <div class="md-quote my-10 md-fade">
-        適度な重みを伴う寝具は、海外の複数の研究でリラックス時の心理的指標との関連が報告されています。<br>
-        <span class="text-xs">※あくまで参考情報であり、医学的効能を保証するものではありません。体感には個人差があります。</span>
+      <div class="md-quote my-8 md-fade">
+        適度な重みのある寝具は、海外の複数の研究でリラックス時の指標との関連が報告されています。<br>
+        <span class="text-xs">※医学的効能を保証するものではありません。体感には個人差があります。</span>
       </div>
 
-      <!-- あみあみ構造セクション（JSF LPから移植） -->
-      <!-- EDITABLE: amiami-img-placeholder に編み構造画像を入れてください -->
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">{{ h2_amiami }}</h3>
-      <div class="md-amiami-grid md-fade">
-        <div class="amiami-img-placeholder">[あみあみ構造の拡大写真 / 通気性を可視化したカット画像 推奨]</div>
-        <p class="mb-4 leading-loose" style="font-size:15px;">
-          MUSUBIの最大の特徴は、カポック繊維とポリエステル繊維を編み込んだ<strong>"あみあみ構造"</strong>です。
-          繊維の80%が空洞のカポックと、編み目の空気層の二重構造により、<strong>重みを感じながらも蒸れにくい</strong>という相反する体感を両立しています。
-        </p>
-        <p class="text-sm text-md-muted leading-loose">
-          一般的な加重ブランケットは、厚手の布に重みの素材を詰めるため、夏場の使用は難しい傾向があります。MUSUBIは編み構造により通気を確保し、<strong>365日オールシーズン使える</strong>設計です。
-        </p>
-      </div>
-
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">植物由来×編み構造で、365日使える</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-        <div class="bg-white p-6 md-fade">
-          <p class="text-md-accent text-xs tracking-widest mb-2">01</p>
-          <p class="font-medium text-md-navy mb-2">軽やかな通気性</p>
-          <p class="text-sm text-md-muted leading-relaxed">カポック繊維の80%は空洞。編み構造との相乗効果で、夏も蒸れずに心地よく。</p>
+      <!-- 3つのポイント（簡潔） -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
+        <div class="bg-white p-5 text-center md-fade">
+          <p class="text-md-accent text-lg mb-2">◆</p>
+          <p class="font-medium text-md-navy mb-1">通気性</p>
+          <p class="text-xs text-md-muted leading-relaxed">あみあみ構造で<br>夏も蒸れにくい</p>
         </div>
-        <div class="bg-white p-6 md-fade">
-          <p class="text-md-accent text-xs tracking-widest mb-2">02</p>
-          <p class="font-medium text-md-navy mb-2">洗える清潔さ</p>
-          <p class="text-sm text-md-muted leading-relaxed">ご自宅で手洗い可能。お母さまの負担にならない、シンプルなお手入れ。</p>
+        <div class="bg-white p-5 text-center md-fade">
+          <p class="text-md-accent text-lg mb-2">◆</p>
+          <p class="font-medium text-md-navy mb-1">手洗いOK</p>
+          <p class="text-xs text-md-muted leading-relaxed">ご自宅で<br>お手入れ簡単</p>
         </div>
-        <div class="bg-white p-6 md-fade">
-          <p class="text-md-accent text-xs tracking-widest mb-2">03</p>
-          <p class="font-medium text-md-navy mb-2">サステナブル</p>
-          <p class="text-sm text-md-muted leading-relaxed">植物由来で、単一素材設計。贈り物として、環境への配慮も一緒に届きます。</p>
+        <div class="bg-white p-5 text-center md-fade">
+          <p class="text-md-accent text-lg mb-2">◆</p>
+          <p class="font-medium text-md-navy mb-1">植物由来</p>
+          <p class="text-xs text-md-muted leading-relaxed">カポック繊維で<br>肌にも地球にも優しい</p>
         </div>
       </div>
 
@@ -655,21 +567,9 @@
         <a href="https://kapok-knot.com/products/musubi-on" class="md-btn md-btn-secondary w-full">MUSUBI -ON- を見る →</a>
       </div>
 
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">こんなお母さまに、特におすすめ</h3>
-      <ul class="space-y-3 md-fade">
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">最近、眠りが浅いと感じるお母さま</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">日々の疲れをやさしくほどきたいお母さま</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">インテリアにもこだわるお母さま</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">自分ではなかなか"良いもの"を買わないお母さま</span></li>
-      </ul>
-
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">贈る前に、知っておいていただきたいこと</h3>
       <div class="md-caution-box md-fade">
-        <p class="mb-4">
-          リカバリー加重ブランケットは、その性質上、<strong>筋力が低下されている高齢の方にはおすすめしておりません</strong>。お母さまのお身体の状態が気になる場合は、より軽量な<strong>MUSUBI -PON-</strong>、または次にご紹介する<strong>ギフトカード</strong>をご検討ください。
-        </p>
-        <p class="text-sm text-md-muted">
-          大切な方への贈り物だからこそ、無理なくお使いいただけるものを。これが、KAPOK KNOTのお約束です。
+        <p class="text-sm">
+          <strong>※70代以上・筋力が気になるお母さまへは、軽量な MUSUBI -PON- またはギフトカードがおすすめです。</strong>
         </p>
       </div>
     </div>
@@ -683,54 +583,36 @@
         自由を贈る。<br>KAPOK KNOT ギフトカード
       </h2>
 
-      <div class="md-definition md-fade">
-        <strong>KAPOK KNOT ギフトカードとは、</strong>任意の金額で購入でき、KAPOK KNOTのオンラインストア全商品（MUSUBIシリーズ、カポックダウンアウター、ホームコレクション、ルームフレグランス等）に利用できるデジタル／物理のギフト券です。お母さまご自身に"好きなもの"を選んでいただけます。
-      </div>
-
       <img src="https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=1600"
            alt="KAPOK KNOT ギフトカード｜母の日の贈り物"
            width="1600" height="900"
-           class="md-aspect-16-9 my-8" loading="lazy">
+           class="md-aspect-16-9 my-6" loading="lazy">
 
-      <p class="mb-8 md-fade">
-        お母さまの"好きなもの"を、お母さま自身に選んでいただく。<br>
-        それもまた、感謝の伝え方のひとつです。
+      <p class="mb-8 md-fade leading-loose">
+        KAPOK KNOTの<strong>全商品</strong>に使える、自由な金額で贈れるギフトカード。<br>
+        「好みが分からない」「サイズ選びで失敗したくない」そんなときに。
       </p>
 
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-12 mb-6 md-fade">なぜ今、ギフトカードという選択が増えているのか</h3>
-      <p class="mb-4 md-fade">
-        「色やサイズで、失敗したくない」<br>
-        「お母さまの好みが、正直わからない」<br>
-        「気を使わせてしまうのが心配」
-      </p>
-      <p class="mb-8 md-fade">
-        そんな悩みを持つ贈り手が増えています。ギフトカードは、そうした気遣いに応える、新しい母の日の形です。
-      </p>
-
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-12 mb-6 md-fade">KAPOK KNOTのギフトカードが、母の日に選ばれる理由</h3>
-
-      <div class="space-y-4 my-8">
-        {% assign gc_titles = '予算に合わせて贈れる|ブランド全商品に使える|春も、秋冬も|贈り手の選ぶ時間も、贈り物' | split: '|' %}
-        {% assign gc_bodies = '任意の金額で購入可能。兄弟姉妹で折半することもできます。|MUSUBIシリーズはもちろん、カポックダウンのアウター、ホームコレクション、ルームフレグランスまで。お母さまの"欲しい"に、しっかり応えます。|母の日に贈って、秋冬の新作アウターに使うという贈り方も。季節を越えて、長く楽しんでいただけます。|「このブランドから、好きなものを選んでね」というメッセージは、"あなたのことを思っている"というサインそのものです。' | split: '|' %}
-        {% for title in gc_titles %}
-          <div class="bg-md-cream p-6 md-fade">
-            <p class="text-md-accent text-xs tracking-widest mb-2">0{{ forloop.index }}</p>
-            <p class="font-medium text-md-navy mb-2">{{ title }}</p>
-            <p class="text-sm text-md-muted leading-relaxed">{{ gc_bodies[forloop.index0] }}</p>
-          </div>
-        {% endfor %}
+      <div class="grid grid-cols-2 gap-3 my-8">
+        <div class="bg-md-cream p-4 text-center md-fade">
+          <p class="text-md-accent text-xs tracking-widest mb-1">01</p>
+          <p class="font-medium text-md-navy text-sm">予算自由</p>
+        </div>
+        <div class="bg-md-cream p-4 text-center md-fade">
+          <p class="text-md-accent text-xs tracking-widest mb-1">02</p>
+          <p class="font-medium text-md-navy text-sm">全商品対応</p>
+        </div>
+        <div class="bg-md-cream p-4 text-center md-fade">
+          <p class="text-md-accent text-xs tracking-widest mb-1">03</p>
+          <p class="font-medium text-md-navy text-sm">兄弟姉妹で折半OK</p>
+        </div>
+        <div class="bg-md-cream p-4 text-center md-fade">
+          <p class="text-md-accent text-xs tracking-widest mb-1">04</p>
+          <p class="font-medium text-md-navy text-sm">春夏秋冬使える</p>
+        </div>
       </div>
 
-      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-12 mb-6 md-fade">こんな方におすすめ</h3>
-      <ul class="space-y-3 mb-10 md-fade">
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">お母さまの好み（色・サイズ）に自信がない方</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">加重ブランケットが合うか不安な方</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">兄弟姉妹で金額を出し合って贈る方</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">遠方に住むお母さまへ、自由に選んでほしい方</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">✓</span><span style="flex:1; text-align:left; line-height:1.9;">昨年、他ブランドのリカバリーウェアなどを贈った方</span></li>
-      </ul>
-
-      <a href="https://kapok-knot.com/products/gift-card" class="md-btn md-btn-primary w-full md:w-auto md:px-16">KAPOK KNOT ギフトカードを見る →</a>
+      <a href="https://kapok-knot.com/products/gift-card" class="md-btn md-btn-primary w-full md:w-auto md:px-16">ギフトカードを見る →</a>
       <!-- [要確認: ギフトカード商品ページのURL] -->
     </div>
   </section>
@@ -806,43 +688,14 @@
   <!-- 8. リカバリーウェアの次 -->
   <section id="next-step" class="md-section bg-white">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 md-fade">去年、リカバリーウェアを贈った方へ</h2>
-      <img src="https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1600"
-           alt="MUSUBIのある日常｜包まれる時間"
-           width="1600" height="900"
-           class="md-aspect-16-9 my-8" loading="lazy">
-      <p class="mb-6 md-fade">
-        ここ数年、母の日のギフトとして <strong>リカバリーウェア</strong> を選ばれた方、多いのではないでしょうか。
-      </p>
-      <p class="mb-6 md-fade">
-        BAKUNEをはじめとするリカバリーウェアは、お母さまの"疲れをほどく時間"に寄り添う、新しい定番となりました。着るだけで一日の疲労をケアする、という発想は、たしかに贈り物として優れたものです。<a href="#musubi" class="text-md-accent border-b border-md-accent">MUSUBIとの違いを比較する</a>。
-      </p>
-      <p class="mb-10 md-fade">では、今年は何を贈りますか。</p>
+      <h2 class="font-jp text-[22px] md:text-[28px] text-md-navy mb-6 text-center md-fade">去年、リカバリーウェアを贈った方へ</h2>
 
-      <div class="md-divider"></div>
-
-      <p class="font-jp text-[20px] md:text-[22px] text-md-navy mt-10 mb-6 md-fade">
-        "着る"の次は、"包まれる"という選択肢。
-      </p>
-      <p class="mb-6 md-fade">MUSUBIは、リカバリーウェアとは別のアプローチで、お母さまの休息に寄り添います。</p>
-      <ul class="space-y-4 mb-10 md-fade" style="display:block;">
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">◇</span><span style="flex:1; text-align:left; line-height:1.9;">リカバリーウェアが<strong>着ている時間</strong>をケアするなら、MUSUBIは<strong>眠りと、ソファでくつろぐ時間</strong>を包む</span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">◇</span><span style="flex:1; text-align:left; line-height:1.9;">ウェアは服としてのサイズ選びが必要ですが、MUSUBIは<strong>サイズの失敗がほぼない</strong></span></li>
-        <li style="display:flex; gap:12px; align-items:flex-start; text-align:left;"><span class="text-md-accent" style="flex-shrink:0;">◇</span><span style="flex:1; text-align:left; line-height:1.9;">「2年続けて似たものを贈る」を避けたい方にとって、<strong>同じ"リカバリー文脈"でありながら体験が違う</strong>という選択</span></li>
-      </ul>
-      <p class="mb-10 md-fade">
-        去年のリカバリーウェアを、お母さまが気に入って使ってくださっているなら。<br>
-        <strong>今年は、その上から掛ける一枚を贈る</strong>という選び方も、美しい続き方です。
+      <p class="text-center md-fade mb-6 leading-loose">
+        "着る"の次は、<strong>"包まれる"</strong> という選択肢。<br>
+        MUSUBIは、リカバリーウェアの上から掛けても心地よい一枚です。
       </p>
 
-      <div class="md-divider"></div>
-
-      <p class="font-jp text-[18px] text-md-navy mt-10 mb-4 md-fade">どちらを選ぶか、決めきれない方へ</p>
-      <p class="mb-10 md-fade">
-        去年アプローチを一つ試したからこそ、今年は<strong>ギフトカード</strong>で"選ぶ自由"を贈るのも、自然な流れです。お母さまご自身が、本当に欲しいものをKAPOK KNOTの商品群から選んでいただけます。
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-3 md-fade">
+      <div class="flex flex-col sm:flex-row gap-3 md-fade max-w-xl mx-auto">
         <a href="#musubi" class="md-btn md-btn-secondary flex-1">MUSUBIを見る →</a>
         <a href="#giftcard" class="md-btn md-btn-secondary flex-1">ギフトカードを見る →</a>
       </div>
