@@ -49,8 +49,12 @@
 
   # --- 各H2見出し ---
   assign h2_ranking = '2026年、母の日ギフトの新しい選択肢'
-  assign h2_why = 'なぜ、KAPOK KNOTか'
+  assign h2_awards = '"眠り"を贈るギフトとして、選ばれています'
+  assign h2_numbers = '数字で見る、MUSUBIとKAPOK KNOT'
+  assign h2_founder = '創業者からの、母の日へのメッセージ'
   assign h2_musubi = '眠りを贈る。リカバリー加重ブランケット「MUSUBI」'
+  assign h2_amiami = 'あみあみ構造による、通気性の秘密'
+  assign h2_size_guide = 'サイズ選びガイド'
   assign h2_giftcard = '自由を贈る。KAPOK KNOT ギフトカード'
   assign h2_compare = 'お母さまに、いちばん合うものを'
   assign h2_voices = 'お客さまの声'
@@ -164,6 +168,36 @@
   .md-urgent-badge { display:inline-block; background:#C23B22; color:#fff; font-size:11px; padding:3px 8px; letter-spacing:.08em; font-weight:500; }
   .md-voice-card { background:#fff; padding:20px; border-radius:2px; border-top:3px solid #B97A5C; font-size:14px; line-height:1.9; }
   .md-voice-card .who { color:#6B6B6B; font-size:12px; margin-top:12px; display:block; }
+
+  /* No.1 / 受賞バッジセクション */
+  .md-award-card { background:#fff; border:1px solid #E8DFD1; padding:20px 16px; text-align:center; position:relative; }
+  .md-award-card .award-badge { display:inline-block; background:#B97A5C; color:#fff; font-size:10px; padding:3px 10px; letter-spacing:.1em; margin-bottom:12px; border-radius:2px; }
+  .md-award-card .award-img-placeholder { aspect-ratio:1/1; background:#F7F3EC; display:flex; align-items:center; justify-content:center; color:#B97A5C; font-size:11px; margin-bottom:12px; border:1px dashed #E8DFD1; padding:8px; line-height:1.6; }
+  .md-award-card .award-title { font-family:'Noto Serif JP', serif; color:#1F2A44; font-size:14px; line-height:1.7; margin-bottom:6px; display:block; font-weight:500; }
+  .md-award-card .award-note { color:#6B6B6B; font-size:11px; line-height:1.7; }
+
+  /* 実績数字バッジ */
+  .md-stat-card { background:#F7F3EC; padding:24px 16px; text-align:center; }
+  .md-stat-card .stat-num { font-family:'Noto Serif JP', serif; color:#B97A5C; font-size:32px; line-height:1; font-weight:500; display:block; margin-bottom:4px; }
+  .md-stat-card .stat-unit { color:#1F2A44; font-size:12px; margin-bottom:8px; display:block; }
+  .md-stat-card .stat-label { color:#6B6B6B; font-size:12px; line-height:1.7; display:block; }
+
+  /* 創業者メッセージ */
+  .md-founder-card { background:#fff; padding:32px 24px; border-left:3px solid #B97A5C; }
+  .md-founder-card .founder-photo-placeholder { width:80px; height:80px; border-radius:50%; background:#E8DFD1; margin-bottom:16px; display:flex; align-items:center; justify-content:center; font-size:10px; color:#6B6B6B; text-align:center; padding:8px; line-height:1.4; }
+  .md-founder-card .founder-name { font-family:'Noto Serif JP', serif; color:#1F2A44; font-size:14px; display:block; margin-top:16px; }
+  .md-founder-card .founder-title { color:#6B6B6B; font-size:11px; display:block; margin-top:2px; }
+
+  /* あみあみ構造 */
+  .md-amiami-grid { background:#fff; padding:20px; border:1px solid #E8DFD1; }
+  .md-amiami-grid .amiami-img-placeholder { aspect-ratio:4/3; background:#F7F3EC; display:flex; align-items:center; justify-content:center; color:#B97A5C; font-size:11px; border:1px dashed #E8DFD1; padding:16px; text-align:center; line-height:1.6; margin-bottom:16px; }
+
+  /* サイズガイド */
+  .md-size-guide { background:#fff; padding:24px; border:1px solid #E8DFD1; }
+  .md-size-guide .size-img-placeholder { aspect-ratio:16/9; background:#F7F3EC; display:flex; align-items:center; justify-content:center; color:#B97A5C; font-size:11px; border:1px dashed #E8DFD1; padding:16px; text-align:center; line-height:1.6; margin-bottom:20px; }
+  .md-size-guide table { width:100%; border-collapse:collapse; font-size:13px; }
+  .md-size-guide th, .md-size-guide td { padding:10px 8px; border-bottom:1px solid #E8DFD1; text-align:center; vertical-align:middle; }
+  .md-size-guide th { background:#F7F3EC; color:#1F2A44; font-weight:500; font-size:12px; }
   .md-faq-group h3 { font-family:'Noto Sans JP', sans-serif; font-size:15px; letter-spacing:.08em; color:#B97A5C; margin: 32px 0 8px; padding:0; }
   @media (max-width: 1023px){ article.md-body { padding-bottom: 80px; } }
 
@@ -246,7 +280,9 @@
         <ol>
           <li><a href="#ranking">2026年、母の日ギフトの新しい選択肢（調査データ）</a></li>
           <li><a href="#hero-transition">今年の母の日は、やさしい「重み」を贈る</a></li>
-          <li><a href="#why">なぜ、KAPOK KNOTか</a></li>
+          <li><a href="#awards">"眠り"を贈るギフトとして、選ばれています</a></li>
+          <li><a href="#numbers">数字で見る、MUSUBIとKAPOK KNOT</a></li>
+          <li><a href="#founder">創業者からの、母の日へのメッセージ</a></li>
           <li><a href="#musubi">選択肢01｜MUSUBI（加重ブランケット）</a></li>
           <li><a href="#giftcard">選択肢02｜ギフトカード</a></li>
           <li><a href="#compare">お母さまに合うものを（比較表）</a></li>
@@ -361,40 +397,98 @@
     </div>
   </section>
 
-  <!-- 4. なぜKAPOK KNOT -->
-  <section id="why" class="md-section bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 md-fade">なぜ、KAPOK KNOTか</h2>
-      <p class="mb-6 md-fade">
-        KAPOK KNOTは、カポックという木の実からとれる植物由来のコットンを使った、世界でも稀有なブランドです。
-      </p>
-      <p class="mb-6 md-fade">
-        カポックは、綿花の1/8の軽さ。それでいて、ダウンのような暖かさを持つ。ダウンのように動物を傷つけず、綿花のように大量の水も必要としない。<strong>地球にもやさしく、肌にもやさしい素材</strong>です。
-      </p>
-      <p class="mb-10 md-fade">
-        「特別な日に、大切な人へ、誇りをもって贈れるもの」<br>
-        それが、KAPOK KNOTのものづくりの原点です。
-      </p>
+  <!-- 4. 選ばれてNo.1（受賞・評価バッジ） -->
+  <!-- EDITABLE: 各カードの画像は award_img_placeholder 部分に <img> を挿入してください。タイトル文言は award-title を編集 -->
+  <section id="awards" class="md-section bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 text-center md-fade">{{ h2_awards }}</h2>
+      <p class="text-sm text-md-muted text-center mb-10 md-fade">主要ECサイト・メディア・各種ランキングでの評価実績</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
-        <div class="text-center p-6 bg-md-cream md-fade">
-          <div class="text-md-accent text-2xl mb-3">◆</div>
-          <p class="text-sm leading-relaxed"><strong>特許出願中</strong><br>リカバリー加重ブランケット</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 md-fade">
+        <!-- EDITABLE: Award Card 1 -->
+        <div class="md-award-card">
+          <span class="award-badge">No.1</span>
+          <div class="award-img-placeholder">[受賞ロゴ / ランキングバッジ画像]</div>
+          <span class="award-title">Makuake 応援購入<br>人気ランキング 1位</span>
+          <span class="award-note">加重ブランケット部門</span>
         </div>
-        <div class="text-center p-6 bg-md-cream md-fade">
-          <div class="text-md-accent text-2xl mb-3">◆</div>
-          <p class="text-sm leading-relaxed"><strong>JOURNAL STANDARD FURNITURE</strong><br>ダブルネーム実績</p>
+        <!-- EDITABLE: Award Card 2 -->
+        <div class="md-award-card">
+          <span class="award-badge">受賞</span>
+          <div class="award-img-placeholder">[メディア掲載ロゴ / 受賞ロゴ]</div>
+          <span class="award-title">2024 グッドデザイン賞<br>（該当時）</span>
+          <span class="award-note">※実績に応じて編集</span>
         </div>
-        <div class="text-center p-6 bg-md-cream md-fade">
-          <div class="text-md-accent text-2xl mb-3">◆</div>
-          <p class="text-sm leading-relaxed"><strong>累計数千名</strong>の応援を<br>受けたブランド</p>
+        <!-- EDITABLE: Award Card 3 -->
+        <div class="md-award-card">
+          <span class="award-badge">選定</span>
+          <div class="award-img-placeholder">[ホテル採用ロゴ等]</div>
+          <span class="award-title">高級宿泊施設<br>多数採用</span>
+          <span class="award-note">We're Smart® Green Guide認証宿にて採用</span>
+        </div>
+        <!-- EDITABLE: Award Card 4 -->
+        <div class="md-award-card">
+          <span class="award-badge">掲載</span>
+          <div class="award-img-placeholder">[メディアロゴ：大阪テレビ・雑誌等]</div>
+          <span class="award-title">大阪テレビ<br>「やさしいニュース」<br>にて紹介</span>
+          <span class="award-note">2025年3月</span>
         </div>
       </div>
 
-      <a href="https://kapok-knot.com/pages/about" class="inline-block text-md-navy border-b border-md-navy pb-1 hover:text-md-accent hover:border-md-accent transition">
-        KAPOK KNOTについて詳しく →
-      </a>
-      <!-- [要確認: about ページURL] -->
+      <p class="text-xs text-md-muted text-center mt-6 md-fade">
+        ※掲載内容は各媒体・各集計期間による実績です。詳細は公式発表をご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. 数字で見る実績（JSF LPの訴求を母の日文脈に翻案） -->
+  <!-- EDITABLE: 各数字は md-stat-card 内 stat-num を編集 -->
+  <section id="numbers" class="md-section">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-10 text-center md-fade">{{ h2_numbers }}</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 md-fade">
+        <div class="md-stat-card">
+          <span class="stat-num">408<span style="font-size:16px;">+</span></span>
+          <span class="stat-unit">名</span>
+          <span class="stat-label">Makuakeで<br>応援購入した方</span>
+        </div>
+        <div class="md-stat-card">
+          <span class="stat-num">1,300<span style="font-size:16px;">万円+</span></span>
+          <span class="stat-unit">応援購入</span>
+          <span class="stat-label">クラウド<br>ファンディング実績</span>
+        </div>
+        <div class="md-stat-card">
+          <span class="stat-num">365</span>
+          <span class="stat-unit">日</span>
+          <span class="stat-label">オールシーズン<br>使える通気性</span>
+        </div>
+        <div class="md-stat-card">
+          <span class="stat-num">1/8</span>
+          <span class="stat-unit">の軽さ</span>
+          <span class="stat-label">カポック繊維は<br>綿花の約1/8の軽さ</span>
+        </div>
+      </div>
+
+      <p class="text-xs text-md-muted text-center mt-6 md-fade">※数値は発売開始〜2025年時点の累計実績。最新の数値は予告なく更新される場合があります。</p>
+    </div>
+  </section>
+
+  <!-- 6. 創業者メッセージ（開発ストーリー・母の日文脈） -->
+  <!-- EDITABLE: 本文は .founder-message を編集、写真は .founder-photo-placeholder を <img> に -->
+  <section id="founder" class="md-section bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[22px] md:text-[28px] text-md-navy mb-8 text-center md-fade">{{ h2_founder }}</h2>
+
+      <div class="md-founder-card md-fade">
+        <div class="founder-photo-placeholder">[創業者写真 / 150×150 推奨]</div>
+        <p class="founder-message text-md-ink leading-loose" style="font-size:15px;">
+          カポックという木の実の素材に出会ったとき、私はこれが「人生を懸けて取り組むべき素材」だと確信しました。動物を傷つけず、大量の水も必要とせず、それでいて人の体をやさしく包む。<br><br>
+          MUSUBIは、そのカポックの魅力を最大限に引き出すためにつくった、特許出願中のリカバリー加重ブランケットです。母の日という大切な一日に、日々お母さまを支えてきた"ありがとう"の気持ちを、植物のぬくもりに託していただけたら嬉しいです。
+        </p>
+        <span class="founder-name">深井 喜翔</span>
+        <span class="founder-title">KAPOK JAPAN株式会社 代表取締役 / KAPOK KNOT創業者</span>
+      </div>
     </div>
   </section>
 
@@ -435,6 +529,20 @@
         <span class="text-xs">※あくまで参考情報であり、医学的効能を保証するものではありません。体感には個人差があります。</span>
       </div>
 
+      <!-- あみあみ構造セクション（JSF LPから移植） -->
+      <!-- EDITABLE: amiami-img-placeholder に編み構造画像を入れてください -->
+      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">{{ h2_amiami }}</h3>
+      <div class="md-amiami-grid md-fade">
+        <div class="amiami-img-placeholder">[あみあみ構造の拡大写真 / 通気性を可視化したカット画像 推奨]</div>
+        <p class="mb-4 leading-loose" style="font-size:15px;">
+          MUSUBIの最大の特徴は、カポック繊維とポリエステル繊維を編み込んだ<strong>"あみあみ構造"</strong>です。
+          繊維の80%が空洞のカポックと、編み目の空気層の二重構造により、<strong>重みを感じながらも蒸れにくい</strong>という相反する体感を両立しています。
+        </p>
+        <p class="text-sm text-md-muted leading-loose">
+          一般的な加重ブランケットは、厚手の布に重みの素材を詰めるため、夏場の使用は難しい傾向があります。MUSUBIは編み構造により通気を確保し、<strong>365日オールシーズン使える</strong>設計です。
+        </p>
+      </div>
+
       <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">植物由来×編み構造で、365日使える</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
         <div class="bg-white p-6 md-fade">
@@ -452,6 +560,52 @@
           <p class="font-medium text-md-navy mb-2">サステナブル</p>
           <p class="text-sm text-md-muted leading-relaxed">植物由来で、単一素材設計。贈り物として、環境への配慮も一緒に届きます。</p>
         </div>
+      </div>
+
+      <!-- サイズ選びガイド（JSF LPから移植） -->
+      <!-- EDITABLE: size-img-placeholder にサイズ比較図/寸法図を入れてください -->
+      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">{{ h2_size_guide }}</h3>
+      <div class="md-size-guide md-fade">
+        <div class="size-img-placeholder">[Nap Size と Sleep Size の寸法比較図 / ソファ/ベッドでの使用イメージ]</div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>モデル</th>
+                <th>寸法</th>
+                <th>重量</th>
+                <th>主な用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>MUSUBI -en- Nap</strong></td>
+                <td>約 130 × 100 cm</td>
+                <td>約 3.0 kg</td>
+                <td>ソファ / 昼寝</td>
+              </tr>
+              <tr>
+                <td><strong>MUSUBI -en- Sleep</strong></td>
+                <td>約 170 × 100 cm</td>
+                <td>約 4.5 kg</td>
+                <td>睡眠時 / 全身</td>
+              </tr>
+              <tr>
+                <td><strong>MUSUBI -ON-</strong></td>
+                <td>約 170 × 100 cm</td>
+                <td>約 5.0 kg</td>
+                <td>冷え対策・冬場</td>
+              </tr>
+              <tr>
+                <td><strong>MUSUBI -PON-</strong></td>
+                <td>約 40 × 40 cm</td>
+                <td>約 1.5 kg</td>
+                <td>膝掛け / クッション</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-md-muted mt-4">※寸法・重量は目安です。最新仕様は各商品ページをご確認ください。<!-- [要確認: 正確な寸法と重量] --></p>
       </div>
 
       <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">3つのバリエーションから、お母さまに合う一枚を</h3>
