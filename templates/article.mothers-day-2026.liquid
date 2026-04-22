@@ -223,19 +223,97 @@
     </div>
   </section>
 
-  <!-- 1. HERO -->
-  <section class="md-section text-center" style="padding-top:40px;" aria-labelledby="hero-heading">
-    <div class="max-w-3xl mx-auto">
+  <!-- 1. 問いかけ（H1として先頭配置・SEO意図：母の日 ギフト ブランケット の検索者が離脱しないようMUSUBI訴求は後半） -->
+  <section class="md-section text-center bg-white" aria-labelledby="lead-question-heading">
+    <div class="max-w-2xl mx-auto">
       <p class="text-sm tracking-[0.3em] text-md-accent mb-3">{{ hero_eyebrow }}</p>
-      <h1 id="hero-heading" class="font-jp text-[28px] md:text-[44px] leading-[1.6] text-md-navy mb-6 md-fade">
-        {{ hero_heading_line1 }}<br>{{ hero_heading_line2 }}
+      <h1 id="lead-question-heading" class="font-jp text-[26px] md:text-[40px] leading-[1.7] text-md-navy mb-4 md-fade">
+        「ありがとう」を、<br>どんな形で伝えますか。
       </h1>
-      <p class="text-md-muted text-sm mb-6">{{ hero_date_note }}</p>
+      <p class="text-md-muted text-sm mb-8">2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード</p>
+      <div class="md-divider"></div>
+      <p class="md-fade mb-6">
+        お母さまの日常を、ほんの少し豊かにする贈り物。<br>
+        今年は、いつもと違う選択肢をご用意しました。
+      </p>
+      <p class="text-sm text-md-muted md-fade">
+        ——まずは最新の調査データから、母の日に"本当に喜ばれるもの"を見てみましょう。
+      </p>
+
+      <!-- 目次（先頭に配置） -->
+      <details class="md-toc text-left mt-10 md-fade">
+        <summary>この記事の目次</summary>
+        <ol>
+          <li><a href="#ranking">2026年、母の日ギフトの新しい選択肢（調査データ）</a></li>
+          <li><a href="#hero-transition">今年の母の日は、やさしい「重み」を贈る</a></li>
+          <li><a href="#why">なぜ、KAPOK KNOTか</a></li>
+          <li><a href="#musubi">選択肢01｜MUSUBI（加重ブランケット）</a></li>
+          <li><a href="#giftcard">選択肢02｜ギフトカード</a></li>
+          <li><a href="#compare">お母さまに合うものを（比較表）</a></li>
+          <li><a href="#voices">お客さまの声</a></li>
+          <li><a href="#next-step">去年リカバリーウェアを贈った方へ</a></li>
+          <li><a href="#delivery">母の日当日に、確実に届ける</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <!-- 2. ランキング（調査データを先に見せて信頼を形成） -->
+  <section id="ranking" class="md-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 md-fade">2026年、母の日ギフトの新しい選択肢</h2>
+      <p class="mb-10 md-fade">
+        母の日のギフトは、「花」だけの時代から変わりはじめています。2026年の調査では、お母さまが本当に欲しいと思うのは、日々の暮らしを豊かにする"実用的で特別なもの"。下記は2026年版・母の日に贈りたいギフトランキングです。
+      </p>
+
+      <div class="bg-white p-6 md:p-10 space-y-4 md-fade">
+        {%- assign ranks = 'ranking_items' -%}
+        <div class="flex items-center justify-between border-b border-md-beige pb-3">
+          <span class="text-md-ink">食品・グルメ</span>
+          <span class="count-up text-md-navy font-medium text-xl" data-target="26.1">26.1%</span>
+        </div>
+        <div class="flex items-center justify-between border-b border-md-beige pb-3">
+          <span>お花・観葉植物</span>
+          <span class="count-up text-md-muted text-lg" data-target="20.5">20.5%</span>
+        </div>
+        <div class="flex items-center justify-between border-b border-md-beige pb-3">
+          <span>スイーツ</span>
+          <span class="count-up text-md-muted text-lg" data-target="17.2">17.2%</span>
+        </div>
+        <div class="flex items-center justify-between border-b border-md-beige pb-3 bg-md-cream -mx-6 md:-mx-10 px-6 md:px-10 py-4">
+          <span class="text-md-accent font-medium">健康・生活雑貨 <span class="text-xs ml-1">← 注目</span></span>
+          <span class="count-up text-md-accent font-medium text-xl" data-target="7.8">7.8%</span>
+        </div>
+        <div class="flex items-center justify-between border-b border-md-beige pb-3">
+          <span>ファッション</span>
+          <span class="count-up text-md-muted text-lg" data-target="6.2">6.2%</span>
+        </div>
+        <div class="flex items-center justify-between pb-2">
+          <span>コスメ</span>
+          <span class="count-up text-md-muted text-lg" data-target="5.0">5.0%</span>
+        </div>
+        <p class="text-xs text-md-muted pt-3">※出典：母の日.me「2026年版 母の日に関するアンケート調査」</p>
+      </div>
+
+      <p class="mt-10 md-fade">
+        特に30〜40代の贈り手が選ぶのは、「お母さまのライフスタイルに寄り添う、実用的かつ特別感のあるギフト」。その中でも今、静かに支持を集めているのが <strong class="text-md-navy">"眠り"を贈るという選択</strong> です。
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. ヒーロー転換（調査→ソリューション：MUSUBIへの橋渡し） -->
+  <section id="hero-transition" class="md-section text-center" aria-labelledby="hero-heading">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm tracking-[0.3em] text-md-accent mb-3">OUR ANSWER</p>
+      <h2 id="hero-heading" class="font-jp text-[28px] md:text-[44px] leading-[1.6] text-md-navy mb-6 md-fade">
+        {{ hero_heading_line1 }}<br>{{ hero_heading_line2 }}
+      </h2>
 
       <img src="{{ hero_lifestyle_image }}"
            alt="リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト"
            width="1600" height="900"
-           class="md-aspect-16-9 mb-8" loading="eager" fetchpriority="high">
+           class="md-aspect-16-9 mb-8" loading="lazy">
 
       <p class="text-md-ink text-base md:text-lg mb-10 leading-loose md-fade">
         {{ hero_body_line1 }}<br>{{ hero_body_line2 }}
@@ -280,79 +358,6 @@
         <a href="#musubi" class="md-btn md-btn-primary flex-1">MUSUBIを見る →</a>
         <a href="#giftcard" class="md-btn md-btn-secondary flex-1">ギフトカードを見る →</a>
       </div>
-
-      <!-- 目次 -->
-      <details class="md-toc text-left mt-10 md-fade">
-        <summary>この記事の目次</summary>
-        <ol>
-          <li><a href="#ranking">2026年、母の日ギフトの新しい選択肢</a></li>
-          <li><a href="#why">なぜ、KAPOK KNOTか</a></li>
-          <li><a href="#musubi">選択肢01｜MUSUBI（加重ブランケット）</a></li>
-          <li><a href="#giftcard">選択肢02｜ギフトカード</a></li>
-          <li><a href="#compare">お母さまに合うものを（比較表）</a></li>
-          <li><a href="#voices">お客さまの声</a></li>
-          <li><a href="#next-step">去年リカバリーウェアを贈った方へ</a></li>
-          <li><a href="#delivery">母の日当日に、確実に届ける</a></li>
-          <li><a href="#faq">よくあるご質問</a></li>
-        </ol>
-      </details>
-    </div>
-  </section>
-
-  <!-- 2. 問いかけ -->
-  <section class="md-section text-center bg-white">
-    <div class="max-w-2xl mx-auto">
-      <h2 class="font-jp text-[26px] md:text-[36px] leading-[1.7] text-md-navy mb-6 md-fade">
-        「ありがとう」を、<br>どんな形で伝えますか。
-      </h2>
-      <div class="md-divider"></div>
-      <p class="md-fade">
-        お母さまの日常を、ほんの少し豊かにする贈り物。<br>
-        今年は、いつもと違う選択肢をご用意しました。
-      </p>
-    </div>
-  </section>
-
-  <!-- 3. ランキング -->
-  <section id="ranking" class="md-section">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 md-fade">2026年、母の日ギフトの新しい選択肢</h2>
-      <p class="mb-10 md-fade">
-        母の日のギフトは、「花」だけの時代から変わりはじめています。2026年の調査では、お母さまが本当に欲しいと思うのは、日々の暮らしを豊かにする"実用的で特別なもの"。下記は2026年版・母の日に贈りたいギフトランキングです。
-      </p>
-
-      <div class="bg-white p-6 md:p-10 space-y-4 md-fade">
-        {%- assign ranks = 'ranking_items' -%}
-        <div class="flex items-center justify-between border-b border-md-beige pb-3">
-          <span class="text-md-ink">食品・グルメ</span>
-          <span class="count-up text-md-navy font-medium text-xl" data-target="26.1">26.1%</span>
-        </div>
-        <div class="flex items-center justify-between border-b border-md-beige pb-3">
-          <span>お花・観葉植物</span>
-          <span class="count-up text-md-muted text-lg" data-target="20.5">20.5%</span>
-        </div>
-        <div class="flex items-center justify-between border-b border-md-beige pb-3">
-          <span>スイーツ</span>
-          <span class="count-up text-md-muted text-lg" data-target="17.2">17.2%</span>
-        </div>
-        <div class="flex items-center justify-between border-b border-md-beige pb-3 bg-md-cream -mx-6 md:-mx-10 px-6 md:px-10 py-4">
-          <span class="text-md-accent font-medium">健康・生活雑貨 <span class="text-xs ml-1">← 注目</span></span>
-          <span class="count-up text-md-accent font-medium text-xl" data-target="7.8">7.8%</span>
-        </div>
-        <div class="flex items-center justify-between border-b border-md-beige pb-3">
-          <span>ファッション</span>
-          <span class="count-up text-md-muted text-lg" data-target="6.2">6.2%</span>
-        </div>
-        <div class="flex items-center justify-between pb-2">
-          <span>コスメ</span>
-          <span class="count-up text-md-muted text-lg" data-target="5.0">5.0%</span>
-        </div>
-        <p class="text-xs text-md-muted pt-3">※出典：母の日.me「2026年版 母の日に関するアンケート調査」</p>
-      </div>
-
-      <p class="mt-10 md-fade">
-        特に30〜40代の贈り手が選ぶのは、「お母さまのライフスタイルに寄り添う、実用的かつ特別感のあるギフト」。その中でも今、静かに支持を集めているのが <strong class="text-md-navy">"眠り"を贈るという選択</strong> です。
-      </p>
     </div>
   </section>
 
