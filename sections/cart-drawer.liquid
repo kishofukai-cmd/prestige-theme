@@ -105,6 +105,20 @@
           <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
         </div>
       {% endfor %}
+      <!-- 母の日カードオプション -->
+  <div class="cart-gift-option" style="margin-top: 12px; margin-bottom: 12px;">
+    <input type="hidden" name="attributes[母の日]" value="希望しない">
+
+    <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+      <input
+        type="checkbox"
+        name="attributes[母の日]"
+        value="希望する"
+        {% if cart.attributes["母の日"] == "希望する" %}checked{% endif %}
+      >
+      母の日カードを同梱する
+    </label>
+  </div>
 
       <div class="button-group">
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
