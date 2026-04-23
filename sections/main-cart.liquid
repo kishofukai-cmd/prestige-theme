@@ -82,16 +82,24 @@
                   {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, placeholder: placeholder, show_label_as_block: true -%}
                 </cart-note>
               {%- endif -%}
+             <!-- 母の日カードオプション -->
+             <div class="cart-gift-option" style="margin-top:24px;">
+             <div style="padding:16px; border:1px solid #e5e5e5; border-radius:8px;">
 
-              {%- comment -%}
-              ギフトオプション（注文属性）
-              {%- endcomment -%}
-              <div class="cart-gift-option">
-                <label class="h-stack gap-2">
-                  <input type="checkbox" name="attributes[ギフト]" value="希望する">
-                  <span>ギフトとして注文する</span>
-                </label>
-              </div>
+             <!-- 未チェック時の値 -->
+             <input type="hidden" name="attributes[母の日]" value="希望しない">
+
+             <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+             <input
+             type="checkbox"
+             name="attributes[母の日]"
+             value="希望する"
+             {% if cart.attributes["母の日"] == "希望する" %}checked{% endif %}
+            >
+             🌸 母の日カードを同梱する
+             </label>
+             </div>
+             </div>
 
               <div class="cart-recap">
                 {%- comment -%}Give apps a special hook to add features on the recap (such as capturing delivery dates){%- endcomment -%}
