@@ -1,0 +1,1013 @@
+{% comment %}
+  Mother's Day 2026 Rich Article — Editable Section
+  Use via templates/article.mothers-day-2026.json
+{% endcomment %}
+
+{%- liquid
+  assign kv_img = section.settings.kv_image
+  if kv_img != blank
+    assign kv_url = kv_img | image_url: width: 1600
+  else
+    assign kv_url = section.settings.kv_image_url
+  endif
+
+  assign hero_img = section.settings.hero_lifestyle_image
+  if hero_img != blank
+    assign hero_url = hero_img | image_url: width: 1600
+  else
+    assign hero_url = section.settings.hero_lifestyle_image_url
+  endif
+
+  assign cw_img = section.settings.cloud_white_image
+  if cw_img != blank
+    assign cw_url = cw_img | image_url: width: 800
+  else
+    assign cw_url = section.settings.cloud_white_image_url
+  endif
+
+  assign bp_img = section.settings.blossom_peach_image
+  if bp_img != blank
+    assign bp_url = bp_img | image_url: width: 800
+  else
+    assign bp_url = section.settings.blossom_peach_image_url
+  endif
+
+  assign musubi_main_img = section.settings.musubi_main_image
+  if musubi_main_img != blank
+    assign musubi_main_url = musubi_main_img | image_url: width: 1600
+  else
+    assign musubi_main_url = section.settings.musubi_main_image_url
+  endif
+
+  assign wrap_img = section.settings.wrapping_image
+  if wrap_img != blank
+    assign wrap_url = wrap_img | image_url: width: 1600
+  else
+    assign wrap_url = section.settings.wrapping_image_url
+  endif
+-%}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: { preflight: false },
+    theme: {
+      extend: {
+        colors: {
+          'md-cream': '#F7F3EC',
+          'md-beige': '#E8DFD1',
+          'md-navy':  '#1F2A44',
+          'md-ink':   '#2B2B2B',
+          'md-accent':'#B97A5C',
+          'md-muted': '#6B6B6B'
+        },
+        fontFamily: {
+          'jp': ['"Noto Serif JP"','"Yu Mincho"','serif'],
+          'sans-jp': ['"Noto Sans JP"','"Yu Gothic"','sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  header-sidebar#sidebar-menu:not([open]),
+  x-drawer:not([open]),
+  #sidebar-menu:not([open]),
+  .header-sidebar:not([open]),
+  cart-drawer:not([open]),
+  #cart-drawer:not([open]) { display: none !important; }
+
+  @media screen and (max-width: 999px) {
+    .md-max\:hidden,
+    ul.md-max\:hidden,
+    .contents.md-max\:hidden,
+    nav .md-max\:hidden { display: none !important; }
+  }
+  @media screen and (min-width: 1000px) {
+    .md\:hidden { display: none !important; }
+  }
+  .header__primary-nav > ul:not(.is-open).md-max\:hidden { display: none !important; }
+
+  .md-body { font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; font-size: 16px; line-height: 1.9; background: #F7F3EC; }
+  .md-body h1, .md-body h2, .md-body h3 { font-family: 'Noto Serif JP', serif; letter-spacing: 0.02em; }
+  .md-body p { font-size: 16px; line-height: 1.9; }
+  .md-fade { opacity: 0; transform: translateY(24px); transition: opacity .9s ease-out, transform .9s ease-out; }
+  .md-fade.is-visible { opacity: 1; transform: translateY(0); }
+  .md-btn { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding: 14px 28px; font-weight:500; letter-spacing:.04em; transition: all .25s ease; }
+  .md-btn-primary { background:#1F2A44; color:#fff; }
+  .md-btn-primary:hover { background:#2a3657; }
+  .md-btn-secondary { background:#fff; color:#1F2A44; border:1px solid #1F2A44; }
+  .md-btn-secondary:hover { background:#1F2A44; color:#fff; }
+  .md-image-placeholder { background:#E8DFD1; display:flex; align-items:center; justify-content:center; color:#6B6B6B; font-size:12px; text-align:center; padding:16px; min-height:240px; }
+  .md-section { padding: 72px 20px; }
+  @media (min-width:768px){ .md-section { padding: 120px 40px; } }
+  .md-divider { width:48px; height:1px; background:#B97A5C; margin: 24px auto; }
+  .md-quote { border-left: 3px solid #B97A5C; padding: 16px 20px; background: #fff; color:#6B6B6B; font-size:14px; line-height:1.8; }
+  .md-faq summary { list-style:none; cursor:pointer; padding: 20px 16px; border-bottom:1px solid #E8DFD1; font-weight:500; display:flex; justify-content:space-between; align-items:center; min-height:60px; }
+  .md-faq summary::-webkit-details-marker { display:none; }
+  .md-faq summary::after { content:'+'; font-size:24px; color:#B97A5C; transition: transform .25s; }
+  .md-faq[open] summary::after { content:'−'; }
+  .md-faq-body { padding: 0 16px 24px; color:#4B4B4B; line-height:1.9; }
+  .md-sticky-cta { position: fixed; left:0; right:0; bottom:0; z-index: 50; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-top:1px solid #E8DFD1; padding: 10px 12px; display:flex; gap:8px; }
+  @media (min-width: 1024px){ .md-sticky-cta { display:none; } }
+  .md-sticky-cta a { flex:1; min-height:48px; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:500; border-radius:2px; }
+  .md-body a { min-height:44px; }
+  .md-table { width:100%; border-collapse: collapse; font-size:15px; }
+  .md-table th, .md-table td { padding: 14px 12px; border-bottom:1px solid #E8DFD1; text-align:left; vertical-align: top; }
+  .md-table th { background:#E8DFD1; font-weight:500; }
+  .md-product-card { background:#fff; padding:28px 20px; border:1px solid #E8DFD1; }
+  .md-recommend-badge { display:inline-block; background:#B97A5C; color:#fff; font-size:12px; padding:4px 10px; letter-spacing:.1em; margin-bottom:8px; }
+  .md-caution-box { background:#fff; border:1px solid #E8DFD1; padding: 24px; border-left:3px solid #B97A5C; }
+  .count-up { font-variant-numeric: tabular-nums; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .md-definition { background:#fff; border-left:3px solid #B97A5C; padding:16px 20px; margin: 16px 0 32px; font-size:15px; color:#2B2B2B; line-height:1.85; }
+  .md-definition strong { color:#1F2A44; }
+  .md-countdown-banner { background:#1F2A44; color:#fff; padding: 14px 16px; text-align:center; font-size:14px; letter-spacing:.05em; }
+  .md-countdown-banner strong { color:#E8DFD1; font-size:18px; margin: 0 4px; }
+  .md-toc { background:#fff; padding:24px; margin: 24px 0; border:1px solid #E8DFD1; }
+  .md-toc summary { font-weight:500; color:#1F2A44; cursor:pointer; padding:4px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  .md-toc summary::-webkit-details-marker { display:none; }
+  .md-toc summary::after { content:'▼'; font-size:10px; color:#B97A5C; transition:transform .25s; }
+  .md-toc[open] summary::after { transform: rotate(180deg); }
+  .md-toc ol { list-style: none; counter-reset: toc; padding: 16px 0 0; margin: 0; }
+  .md-toc ol li { counter-increment: toc; padding: 8px 0; border-bottom: 1px solid #F7F3EC; }
+  .md-toc ol li::before { content: counter(toc, decimal-leading-zero); color:#B97A5C; margin-right:12px; font-size:13px; }
+  .md-toc a { color:#2B2B2B; text-decoration:none; font-size:14px; }
+  .md-toc a:hover { color:#B97A5C; }
+  .md-aspect-16-9 { aspect-ratio: 16/9; object-fit: cover; width:100%; height:auto; }
+  .md-aspect-4-3 { aspect-ratio: 4/3; object-fit: cover; width:100%; height:auto; }
+  .md-aspect-1-1 { aspect-ratio: 1/1; object-fit: cover; width:100%; height:auto; }
+  .md-urgent-badge { display:inline-block; background:#C23B22; color:#fff; font-size:11px; padding:3px 8px; letter-spacing:.08em; font-weight:500; }
+  .md-voice-card { background:#fff; padding:20px; border-radius:2px; border-top:3px solid #B97A5C; font-size:14px; line-height:1.9; }
+  .md-voice-card .who { color:#6B6B6B; font-size:12px; margin-top:12px; display:block; }
+  .md-award-card { background:#fff; border:1px solid #E8DFD1; padding:20px 16px; text-align:center; position:relative; }
+  .md-award-card .award-badge { display:inline-block; background:#B97A5C; color:#fff; font-size:10px; padding:3px 10px; letter-spacing:.1em; margin-bottom:12px; border-radius:2px; }
+  .md-award-card .award-img-placeholder { aspect-ratio:1/1; background:#F7F3EC; display:flex; align-items:center; justify-content:center; color:#B97A5C; font-size:11px; margin-bottom:12px; border:1px dashed #E8DFD1; padding:8px; line-height:1.6; }
+  .md-award-card .award-img-placeholder img { width:100%; height:100%; object-fit:contain; }
+  .md-award-card .award-title { font-family:'Noto Serif JP', serif; color:#1F2A44; font-size:14px; line-height:1.7; margin-bottom:6px; display:block; font-weight:500; }
+  .md-award-card .award-note { color:#6B6B6B; font-size:11px; line-height:1.7; }
+  .md-size-guide { background:#fff; padding:24px; border:1px solid #E8DFD1; }
+  .md-size-guide .size-img-placeholder { aspect-ratio:16/9; background:#F7F3EC; display:flex; align-items:center; justify-content:center; color:#B97A5C; font-size:11px; border:1px dashed #E8DFD1; padding:16px; text-align:center; line-height:1.6; margin-bottom:20px; }
+  .md-size-guide table { width:100%; border-collapse:collapse; font-size:13px; }
+  .md-size-guide th, .md-size-guide td { padding:10px 8px; border-bottom:1px solid #E8DFD1; text-align:center; vertical-align:middle; }
+  .md-size-guide th { background:#F7F3EC; color:#1F2A44; font-weight:500; font-size:12px; }
+  .md-faq-group h3 { font-family:'Noto Sans JP', sans-serif; font-size:15px; letter-spacing:.08em; color:#B97A5C; margin: 32px 0 8px; padding:0; }
+  @media (max-width: 1023px){ article.md-body { padding-bottom: 80px; } }
+
+  .md-body, .md-body p, .md-body li, .md-body h1, .md-body h2, .md-body h3, .md-body h4, .md-body span, .md-body div { text-align: left; text-justify: none; word-spacing: normal; letter-spacing: normal; }
+  .md-body .text-center, .md-body .text-center * { text-align: center !important; }
+  .md-body ul, .md-body ol { list-style: none; padding-left: 0; }
+  .md-body li { display: block; }
+  .md-body li.flex { display: flex; }
+  .md-body h1, .md-body h2, .md-body h3, .md-body h4 { letter-spacing: 0.02em; }
+
+  article.md-body { position: relative; z-index: 1; isolation: isolate; }
+
+  .md-body img { display: block; max-width: 100%; }
+  .md-body h1, .md-body h2, .md-body h3, .md-body h4 { margin: 0; font-weight: 500; }
+  .md-body p { margin: 0; }
+  .md-body ul, .md-body ol { margin: 0; }
+  .md-body a { color: inherit; text-decoration: none; }
+  .md-body button { cursor: pointer; background: transparent; border: 0; padding: 0; }
+  .md-body *, .md-body *::before, .md-body *::after { box-sizing: border-box; }
+
+  .md-color-card { background:#fff; padding:16px; border:1px solid #E8DFD1; text-align:center; }
+  .md-color-card img { aspect-ratio: 1/1; object-fit: cover; width:100%; height:auto; margin-bottom:12px; }
+  .md-color-card .color-name { font-family:'Noto Serif JP', serif; color:#1F2A44; font-size:15px; margin-bottom:6px; display:block; }
+  .md-color-card .color-desc { font-size:12px; color:#6B6B6B; line-height:1.7; }
+
+  .md-kv { background:#F7E6E4; padding: 32px 20px; text-align:center; }
+  .md-kv img { max-width: 720px; width:100%; height:auto; margin: 0 auto; display:block; }
+
+  .editable-area { position: relative; }
+  .editable-area::before { content:'[編集エリア]'; position:absolute; top:-8px; left:0; font-size:10px; color:transparent; }
+</style>
+
+<article class="md-body">
+
+  <!-- Countdown Banner -->
+  <div class="md-countdown-banner" id="md-countdown" data-target-date="{{ section.settings.countdown_target_date }}" data-zero-message="{{ section.settings.countdown_zero_message | escape }}">
+    {{ section.settings.countdown_prefix }} <strong id="md-days">—</strong> {{ section.settings.countdown_suffix }}
+  </div>
+
+  <!-- KV (Key Visual) -->
+  {%- if kv_url != blank -%}
+  <section class="md-kv" aria-label="{{ section.settings.kv_alt | default: '母の日キービジュアル' }}">
+    <img src="{{ kv_url }}"
+         alt="{{ section.settings.kv_alt }}"
+         width="1600" height="800"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+         loading="eager" fetchpriority="high">
+    <div style="display:none; padding:48px 16px;">
+      <p class="font-jp" style="font-size:32px; color:#C23B22; letter-spacing:0.08em; margin-bottom:8px;">{{ section.settings.kv_fallback_text }}</p>
+      <p style="font-size:12px; color:#B97A5C;">※KV画像をShopify Filesにアップロードして差し替えてください</p>
+    </div>
+  </section>
+  {%- endif -%}
+
+  <!-- 1. 問いかけ -->
+  <section class="md-section text-center bg-white" aria-labelledby="lead-question-heading">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-sm tracking-[0.3em] text-md-accent mb-3">{{ section.settings.hero_eyebrow }}</p>
+      <h1 id="lead-question-heading" class="font-jp text-[26px] md:text-[40px] leading-[1.7] text-md-navy mb-4 md-fade">
+        {{ section.settings.lead_h1 }}
+      </h1>
+      <p class="text-md-muted text-sm mb-8">{{ section.settings.lead_date_note }}</p>
+      <div class="md-divider"></div>
+      <p class="md-fade leading-loose">
+        {{ section.settings.lead_body }}
+      </p>
+
+      {%- if section.settings.show_toc -%}
+      <details class="md-toc text-left mt-10 md-fade">
+        <summary>{{ section.settings.toc_title }}</summary>
+        <ol>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'toc_item' -%}
+              <li><a href="{{ block.settings.anchor }}">{{ block.settings.label }}</a></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ol>
+      </details>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- 2. ランキング -->
+  <section id="ranking" class="md-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 text-center md-fade">{{ section.settings.ranking_h2 }}</h2>
+      <p class="text-sm text-md-muted text-center mb-10 md-fade">{{ section.settings.ranking_subtitle }}</p>
+
+      <div class="bg-white p-6 md:p-10 space-y-4 md-fade">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'ranking_item' -%}
+            {%- if block.settings.highlight -%}
+              <div class="flex items-center justify-between border-b border-md-beige pb-3 bg-md-cream -mx-6 md:-mx-10 px-6 md:px-10 py-4">
+                <span class="text-md-accent font-medium">{{ block.settings.label }} {%- if block.settings.tag != blank %} <span class="text-xs ml-1">{{ block.settings.tag }}</span>{% endif -%}</span>
+                <span class="count-up text-md-accent font-medium text-xl" data-target="{{ block.settings.percentage }}">{{ block.settings.percentage }}%</span>
+              </div>
+            {%- else -%}
+              <div class="flex items-center justify-between border-b border-md-beige pb-3">
+                <span {% if forloop.first %}class="text-md-ink"{% endif %}>{{ block.settings.label }}</span>
+                <span class="count-up {% if forloop.first %}text-md-navy font-medium text-xl{% else %}text-md-muted text-lg{% endif %}" data-target="{{ block.settings.percentage }}">{{ block.settings.percentage }}%</span>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <p class="text-xs text-md-muted pt-3">{{ section.settings.ranking_source }}</p>
+      </div>
+
+      <p class="mt-8 text-center md-fade">
+        {{ section.settings.ranking_conclusion }}
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. ヒーロー転換 -->
+  <section id="hero-transition" class="md-section text-center" aria-labelledby="hero-heading">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm tracking-[0.3em] text-md-accent mb-3">{{ section.settings.hero_transition_eyebrow }}</p>
+      <h2 id="hero-heading" class="font-jp text-[28px] md:text-[44px] leading-[1.6] text-md-navy mb-6 md-fade">
+        {{ section.settings.hero_heading_line1 }}<br>{{ section.settings.hero_heading_line2 }}
+      </h2>
+
+      {%- if hero_url != blank -%}
+      <img src="{{ hero_url }}"
+           alt="{{ section.settings.hero_lifestyle_alt }}"
+           width="1600" height="900"
+           class="md-aspect-16-9 mb-8" loading="lazy">
+      {%- endif -%}
+
+      <p class="text-md-ink text-base mb-8 leading-loose md-fade">
+        {{ section.settings.hero_body }}
+      </p>
+
+      <!-- 推しカラー訴求 -->
+      <div class="text-left mb-6">
+        <p class="text-sm tracking-[0.2em] text-md-accent text-center mb-4">— {{ section.settings.featured_colors_label }} —</p>
+        <div class="grid grid-cols-2 gap-3 md:gap-6 max-w-xl mx-auto mb-4 md-fade">
+          <a href="{{ section.settings.cloud_white_url }}" class="md-color-card block">
+            {%- if cw_url != blank -%}<img src="{{ cw_url }}" alt="{{ section.settings.featured_color_1_name }}" width="400" height="400" loading="lazy">{%- endif -%}
+            <span class="color-name">{{ section.settings.featured_color_1_name }}</span>
+          </a>
+          <a href="{{ section.settings.blossom_peach_url }}" class="md-color-card block">
+            {%- if bp_url != blank -%}<img src="{{ bp_url }}" alt="{{ section.settings.featured_color_2_name }}" width="400" height="400" loading="lazy">{%- endif -%}
+            <span class="color-name">{{ section.settings.featured_color_2_name }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- FV 3商品プレビュー -->
+      <div class="grid grid-cols-3 gap-2 md:gap-4 max-w-xl mx-auto mb-8 md-fade">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'fv_preview_item' -%}
+            {%- assign fv_img = block.settings.image -%}
+            {%- if fv_img != blank -%}
+              {%- assign fv_url = fv_img | image_url: width: 400 -%}
+            {%- else -%}
+              {%- assign fv_url = block.settings.image_url -%}
+            {%- endif -%}
+            <a href="{{ block.settings.link }}" class="block text-center">
+              {%- if fv_url != blank -%}<img src="{{ fv_url }}" alt="{{ block.settings.name }}" width="400" height="400" class="md-aspect-1-1" loading="lazy">{%- endif -%}
+              <p class="text-[11px] md:text-xs mt-2 text-md-navy">{{ block.settings.name }}<br><span class="text-md-muted">{{ block.settings.price_note }}</span></p>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+        <a href="{{ section.settings.hero_cta1_url }}" class="md-btn md-btn-primary flex-1">{{ section.settings.hero_cta1_text }}</a>
+        <a href="{{ section.settings.hero_cta2_url }}" class="md-btn md-btn-secondary flex-1">{{ section.settings.hero_cta2_text }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 受賞バッジ -->
+  <section id="awards" class="md-section bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 text-center md-fade">{{ section.settings.awards_h2 }}</h2>
+      <p class="text-sm text-md-muted text-center mb-10 md-fade">{{ section.settings.awards_subtitle }}</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 md-fade">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'award_card' -%}
+            {%- assign aw_img = block.settings.image -%}
+            {%- if aw_img != blank -%}{%- assign aw_url = aw_img | image_url: width: 400 -%}{%- else -%}{%- assign aw_url = block.settings.image_url -%}{%- endif -%}
+            <div class="md-award-card">
+              <span class="award-badge">{{ block.settings.badge }}</span>
+              <div class="award-img-placeholder">
+                {%- if aw_url != blank -%}<img src="{{ aw_url }}" alt="{{ block.settings.title }}" loading="lazy">{%- else -%}{{ block.settings.image_placeholder_text }}{%- endif -%}
+              </div>
+              <span class="award-title">{{ block.settings.title }}</span>
+              <span class="award-note">{{ block.settings.note }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <p class="text-xs text-md-muted text-center mt-6 md-fade">
+        {{ section.settings.awards_disclaimer }}
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. MUSUBI -->
+  <section id="musubi" class="md-section">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm tracking-[0.3em] text-md-accent mb-4 md-fade">{{ section.settings.musubi_eyebrow }}</p>
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 leading-snug md-fade">
+        {{ section.settings.musubi_h2 }}
+      </h2>
+
+      {%- if musubi_main_url != blank -%}
+      <img src="{{ musubi_main_url }}"
+           alt="{{ section.settings.musubi_main_alt }}"
+           width="1600" height="900"
+           class="md-aspect-16-9 my-6" loading="lazy">
+      {%- endif -%}
+
+      <p class="mb-8 md-fade leading-loose">
+        {{ section.settings.musubi_intro }}
+      </p>
+
+      <div class="md-quote my-8 md-fade">
+        {{ section.settings.musubi_quote }}
+      </div>
+
+      <!-- 3つのポイント -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-10">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'musubi_point' -%}
+            <div class="bg-white p-5 text-center md-fade">
+              <p class="text-md-accent text-lg mb-2">◆</p>
+              <p class="font-medium text-md-navy mb-1">{{ block.settings.title }}</p>
+              <p class="text-xs text-md-muted leading-relaxed">{{ block.settings.description }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <!-- サイズ選びガイド -->
+      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">{{ section.settings.size_guide_h3 }}</h3>
+      <div class="md-size-guide md-fade">
+        <div class="size-img-placeholder">{{ section.settings.size_guide_img_placeholder }}</div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>{{ section.settings.size_col_1 }}</th>
+                <th>{{ section.settings.size_col_2 }}</th>
+                <th>{{ section.settings.size_col_3 }}</th>
+                <th>{{ section.settings.size_col_4 }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'size_row' -%}
+                  <tr>
+                    <td><strong>{{ block.settings.model }}</strong></td>
+                    <td>{{ block.settings.dimensions }}</td>
+                    <td>{{ block.settings.weight }}</td>
+                    <td>{{ block.settings.use_case }}</td>
+                  </tr>
+                {%- endif -%}
+              {%- endfor -%}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-md-muted mt-4">{{ section.settings.size_guide_note }}</p>
+      </div>
+
+      <h3 class="font-jp text-[20px] md:text-[24px] text-md-navy mt-16 mb-6 md-fade">{{ section.settings.musubi_lineup_h3 }}</h3>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'product_card' -%}
+          {%- assign pc_img = block.settings.image -%}
+          {%- if pc_img != blank -%}{%- assign pc_url = pc_img | image_url: width: 1200 -%}{%- else -%}{%- assign pc_url = block.settings.image_url -%}{%- endif -%}
+          <div id="{{ block.settings.anchor }}" class="md-product-card my-6 md-fade"{% if block.settings.highlight %} style="border-color:#B97A5C; border-width:2px;"{% endif %}>
+            {%- if block.settings.recommend_badge != blank -%}<span class="md-recommend-badge">{{ block.settings.recommend_badge }}</span>{%- endif -%}
+            {%- if block.settings.urgent_badge != blank -%}<span class="md-urgent-badge mb-2">{{ block.settings.urgent_badge }}</span>{%- endif -%}
+            {%- if pc_url != blank -%}
+            <img src="{{ pc_url }}"
+                 alt="{{ block.settings.title }}" width="1200" height="900"
+                 class="md-aspect-4-3 {% if block.settings.urgent_badge != blank %}mt-3 {% endif %}mb-4" loading="lazy">
+            {%- endif -%}
+            <h4 class="font-jp text-[20px] text-md-navy mb-1">{{ block.settings.title }}</h4>
+            <p class="text-sm text-md-muted mb-4">{{ block.settings.subtitle }}</p>
+            <p class="text-sm mb-4 leading-relaxed">{{ block.settings.description }}</p>
+            {%- if block.settings.price_html != blank -%}
+              {{ block.settings.price_html }}
+            {%- endif -%}
+            <p class="text-xs text-md-muted mb-{% if block.settings.stock_note != blank %}3{% else %}5{% endif %}">{{ block.settings.target_note }}</p>
+            {%- if block.settings.stock_note != blank -%}<p class="text-xs text-md-accent mb-5">{{ block.settings.stock_note }}</p>{%- endif -%}
+            <a href="{{ block.settings.cta_url }}" class="md-btn {% if block.settings.highlight %}md-btn-primary{% else %}md-btn-secondary{% endif %} w-full">{{ block.settings.cta_text }}</a>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <div class="md-caution-box md-fade">
+        <p class="text-sm">
+          <strong>{{ section.settings.caution_text }}</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GIFTCARD -->
+  <section id="giftcard" class="md-section bg-white">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm tracking-[0.3em] text-md-accent mb-4 md-fade">{{ section.settings.giftcard_eyebrow }}</p>
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-6 leading-snug md-fade">
+        {{ section.settings.giftcard_h2 }}
+      </h2>
+
+      {%- assign gc_img = section.settings.giftcard_image -%}
+      {%- if gc_img != blank -%}{%- assign gc_url = gc_img | image_url: width: 1600 -%}{%- else -%}{%- assign gc_url = section.settings.giftcard_image_url -%}{%- endif -%}
+      {%- if gc_url != blank -%}
+      <img src="{{ gc_url }}"
+           alt="{{ section.settings.giftcard_alt }}"
+           width="1600" height="900"
+           class="md-aspect-16-9 my-6" loading="lazy">
+      {%- endif -%}
+
+      <p class="mb-8 md-fade leading-loose">
+        {{ section.settings.giftcard_intro }}
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 my-8">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'giftcard_benefit' -%}
+            <div class="bg-md-cream p-4 text-center md-fade">
+              <p class="text-md-accent text-xs tracking-widest mb-1">{{ block.settings.number }}</p>
+              <p class="font-medium text-md-navy text-sm">{{ block.settings.label }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <a href="{{ section.settings.giftcard_cta_url }}" class="md-btn md-btn-primary w-full md:w-auto md:px-16">{{ section.settings.giftcard_cta_text }}</a>
+    </div>
+  </section>
+
+  <!-- 7. 比較表 -->
+  <section id="compare" class="md-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-4 md-fade">{{ section.settings.compare_h2 }}</h2>
+      <p class="mb-8 md-fade">{{ section.settings.compare_intro }}</p>
+
+      <div class="overflow-x-auto md-fade">
+        <table class="md-table bg-white">
+          <thead>
+            <tr><th>{{ section.settings.compare_col_1 }}</th><th>{{ section.settings.compare_col_2 }}</th></tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'compare_row' -%}
+                <tr><td>{{ block.settings.mom_type }}</td><td>{{ block.settings.recommendation }}</td></tr>
+              {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7.5 お客さまの声 -->
+  <section id="voices" class="md-section bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 md-fade">{{ section.settings.voices_h2 }}</h2>
+      <p class="text-sm text-md-muted mb-8 md-fade">{{ section.settings.voices_subtitle }}</p>
+
+      {%- assign voice_count = 0 -%}
+      {%- for block in section.blocks -%}{%- if block.type == 'voice_card' -%}{%- assign voice_count = voice_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+
+      {%- if section.settings.voices_ready and voice_count > 0 -%}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'voice_card' -%}
+            <div class="md-voice-card md-fade">
+              {{ block.settings.text }}
+              <span class="who">{{ block.settings.who }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      {%- else -%}
+      <div class="bg-md-cream p-8 text-center md-fade">
+        <p class="text-md-muted text-sm leading-relaxed">
+          {{ section.settings.voices_placeholder }}
+        </p>
+      </div>
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- 8. リカバリーウェアの次 -->
+  <section id="next-step" class="md-section bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[22px] md:text-[28px] text-md-navy mb-6 text-center md-fade">{{ section.settings.next_step_h2 }}</h2>
+
+      <p class="text-center md-fade mb-6 leading-loose">
+        {{ section.settings.next_step_body }}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 md-fade max-w-xl mx-auto">
+        <a href="{{ section.settings.next_step_cta1_url }}" class="md-btn md-btn-secondary flex-1">{{ section.settings.next_step_cta1_text }}</a>
+        <a href="{{ section.settings.next_step_cta2_url }}" class="md-btn md-btn-secondary flex-1">{{ section.settings.next_step_cta2_text }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 配送 -->
+  <section id="delivery" class="md-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-8 md-fade">{{ section.settings.delivery_h2 }}</h2>
+
+      <h3 class="font-jp text-[20px] text-md-navy mb-4 md-fade">{{ section.settings.delivery_h3_schedule }}</h3>
+      <div class="bg-white p-6 md:p-8 my-6 border-l-[3px] border-md-accent md-fade">
+        <p class="text-md-navy text-[18px] md:text-[20px] font-jp leading-relaxed mb-3">
+          <strong>{{ section.settings.delivery_cutoff }}</strong>
+        </p>
+        <p class="text-sm text-md-muted">{{ section.settings.delivery_note_1 }}</p>
+        <p class="text-sm text-md-muted">{{ section.settings.delivery_note_2 }}</p>
+      </div>
+
+      <h3 class="font-jp text-[20px] text-md-navy mt-12 mb-4 md-fade">{{ section.settings.delivery_h3_wrapping }}</h3>
+      <p class="mb-6 md-fade">
+        {{ section.settings.wrapping_body }}
+      </p>
+      {%- if wrap_url != blank -%}
+      <img src="{{ wrap_url }}"
+           alt="{{ section.settings.wrapping_alt }}"
+           width="1600" height="900"
+           class="md-aspect-16-9 mt-4" loading="lazy">
+      {%- endif -%}
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section id="faq" class="md-section bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-8 md-fade">{{ section.settings.faq_h2 }}</h2>
+
+      {%- assign current_group = '' -%}
+      {%- assign group_open = false -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          {%- if block.settings.group != current_group -%}
+            {%- if group_open -%}
+              </div>
+            {%- endif -%}
+            <div class="md-faq-group">
+              <h3 class="md-fade">{{ block.settings.group }}</h3>
+            {%- assign current_group = block.settings.group -%}
+            {%- assign group_open = true -%}
+          {%- endif -%}
+          <details class="md-faq md-fade"><summary>{{ block.settings.question }}</summary><div class="md-faq-body">{{ block.settings.answer }}</div></details>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if group_open -%}
+        </div>
+      {%- endif -%}
+
+      <p class="text-xs text-md-muted mt-8 md-fade">{{ section.settings.faq_disclaimer }}</p>
+    </div>
+  </section>
+
+  <!-- 11. 記事末尾CTA -->
+  <section class="md-section">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-10 text-center md-fade">{{ section.settings.final_h2 }}</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-8 text-center md-fade">
+          <p class="text-sm tracking-[0.3em] text-md-accent mb-3">{{ section.settings.final_card1_eyebrow }}</p>
+          <p class="font-jp text-md-navy text-[18px] mb-4 leading-relaxed">{{ section.settings.final_card1_title }}</p>
+          <p class="text-sm text-md-muted mb-6">{{ section.settings.final_card1_body }}</p>
+          <a href="{{ section.settings.final_card1_url }}" class="md-btn md-btn-primary w-full">{{ section.settings.final_card1_cta }}</a>
+        </div>
+        <div class="bg-white p-8 text-center md-fade">
+          <p class="text-sm tracking-[0.3em] text-md-accent mb-3">{{ section.settings.final_card2_eyebrow }}</p>
+          <p class="font-jp text-md-navy text-[18px] mb-4 leading-relaxed">{{ section.settings.final_card2_title }}</p>
+          <p class="text-sm text-md-muted mb-6">{{ section.settings.final_card2_body }}</p>
+          <a href="{{ section.settings.final_card2_url }}" class="md-btn md-btn-primary w-full">{{ section.settings.final_card2_cta }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. 関連情報 -->
+  <section class="md-section bg-white" style="padding-bottom: 120px;">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="font-jp text-[20px] text-md-navy mb-6 md-fade">{{ section.settings.related_h3 }}</h3>
+      <ul class="space-y-4">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'related_link' -%}
+            <li class="md-fade"><a href="{{ block.settings.url }}" class="text-md-navy border-b border-md-beige hover:text-md-accent hover:border-md-accent pb-1 transition">{{ block.settings.label }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 13. Sticky Bottom CTA (Mobile) -->
+  <div class="md-sticky-cta">
+    <a href="{{ section.settings.sticky_cta1_url }}" class="md-btn-primary">{{ section.settings.sticky_cta1_text }}</a>
+    <a href="{{ section.settings.sticky_cta2_url }}" class="md-btn-secondary">{{ section.settings.sticky_cta2_text }}</a>
+  </div>
+
+</article>
+
+{%- if section.settings.enable_structured_data -%}
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ section.settings.seo_headline | json }},
+  "description": {{ section.settings.seo_description | json }},
+  "datePublished": "{{ article.published_at | default: '2026-04-15' | date: '%Y-%m-%d' }}",
+  "dateModified": "{{ article.updated_at | default: 'now' | date: '%Y-%m-%d' }}",
+  "author": { "@type": "Organization", "name": "KAPOK KNOT", "url": "https://kapok-knot.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KAPOK KNOT",
+    "logo": { "@type": "ImageObject", "url": "{{ 'logo.png' | asset_url }}" }
+  },
+  "image": [ {{ hero_url | json }} ],
+  "mainEntityOfPage": "{{ canonical_url }}"
+}
+</script>
+{%- endif -%}
+
+<script>
+  (function(){
+    try {
+      var banner = document.getElementById('md-countdown');
+      if (!banner) return;
+      var targetDate = banner.getAttribute('data-target-date') || '2026-05-10';
+      var zeroMsg = banner.getAttribute('data-zero-message') || '本日は母の日。ありがとうの一日を。';
+      var target = new Date(targetDate + 'T00:00:00+09:00').getTime();
+      var now = Date.now();
+      var diff = Math.max(0, Math.ceil((target - now) / (1000*60*60*24)));
+      var el = document.getElementById('md-days');
+      if (el) el.textContent = diff;
+      if (diff === 0) { banner.innerHTML = zeroMsg; }
+      if (diff < 0) { banner.style.display = 'none'; }
+    } catch(e){}
+
+    var els = document.querySelectorAll('.md-fade');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+    }
+
+    var nums = document.querySelectorAll('.count-up');
+    if ('IntersectionObserver' in window) {
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (!e.isIntersecting) return;
+          var el = e.target; var target = parseFloat(el.dataset.target); if (isNaN(target)) return;
+          var start = 0; var dur = 1200; var t0 = performance.now();
+          function step(t){
+            var p = Math.min((t-t0)/dur, 1);
+            var v = (start + (target-start) * (1 - Math.pow(1-p, 3))).toFixed(1);
+            el.textContent = v + '%';
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          io2.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      nums.forEach(function(el){ io2.observe(el); });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "母の日2026 LP",
+  "settings": [
+    { "type": "header", "content": "カウントダウン" },
+    { "type": "text", "id": "countdown_target_date", "label": "対象日 (YYYY-MM-DD)", "default": "2026-05-10" },
+    { "type": "text", "id": "countdown_prefix", "label": "前テキスト", "default": "母の日（5月10日）まで あと" },
+    { "type": "text", "id": "countdown_suffix", "label": "後テキスト", "default": "日｜当日お届けは5月7日（木）中のご発送まで" },
+    { "type": "text", "id": "countdown_zero_message", "label": "当日メッセージ", "default": "本日は母の日。ありがとうの一日を。" },
+
+    { "type": "header", "content": "KV（キービジュアル）" },
+    { "type": "image_picker", "id": "kv_image", "label": "KV画像（Shopify Files優先）" },
+    { "type": "text", "id": "kv_image_url", "label": "KV画像URL（画像未設定時のフォールバック）", "default": "https://kapok-knot.com/cdn/shop/files/happy-mothers-day-kv.png" },
+    { "type": "text", "id": "kv_alt", "label": "KV画像alt", "default": "HAPPY MOTHER'S DAY｜KAPOK KNOT 2026" },
+    { "type": "text", "id": "kv_fallback_text", "label": "画像読み込み失敗時のテキスト", "default": "HAPPY MOTHER'S DAY" },
+
+    { "type": "header", "content": "リード（問いかけ）" },
+    { "type": "text", "id": "hero_eyebrow", "label": "アイブロウ", "default": "MOTHER'S DAY 2026" },
+    { "type": "textarea", "id": "lead_h1", "label": "H1（<br>改行可）", "default": "「ありがとう」を、<br>どんな形で伝えますか。" },
+    { "type": "text", "id": "lead_date_note", "label": "日付注釈", "default": "2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード" },
+    { "type": "textarea", "id": "lead_body", "label": "リード本文（<br>改行可）", "default": "お母さまの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。" },
+    { "type": "checkbox", "id": "show_toc", "label": "目次を表示", "default": true },
+    { "type": "text", "id": "toc_title", "label": "目次タイトル", "default": "この記事の目次" },
+
+    { "type": "header", "content": "ランキングセクション" },
+    { "type": "text", "id": "ranking_h2", "label": "H2", "default": "2026年 母の日ギフト・ランキング" },
+    { "type": "text", "id": "ranking_subtitle", "label": "サブタイトル", "default": "「花」から「日々を豊かにする実用品」へ。" },
+    { "type": "text", "id": "ranking_source", "label": "出典表記", "default": "※出典：母の日.me「2026年版 母の日に関するアンケート調査」" },
+    { "type": "richtext", "id": "ranking_conclusion", "label": "結びコメント", "default": "<p>いま注目を集めているのが、<strong>\"眠り\"を贈るという選択</strong>。</p>" },
+
+    { "type": "header", "content": "ヒーロー転換" },
+    { "type": "text", "id": "hero_transition_eyebrow", "label": "アイブロウ", "default": "OUR ANSWER" },
+    { "type": "text", "id": "hero_heading_line1", "label": "H2 1行目", "default": "今年の母の日は、" },
+    { "type": "text", "id": "hero_heading_line2", "label": "H2 2行目", "default": "やさしい「重み」を贈る。" },
+    { "type": "image_picker", "id": "hero_lifestyle_image", "label": "ライフスタイル画像" },
+    { "type": "text", "id": "hero_lifestyle_image_url", "label": "ライフスタイル画像URL（フォールバック）", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600" },
+    { "type": "text", "id": "hero_lifestyle_alt", "label": "画像alt", "default": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト" },
+    { "type": "textarea", "id": "hero_body", "label": "本文", "default": "植物由来のぬくもりで、ふたつの選択を。" },
+    { "type": "text", "id": "featured_colors_label", "label": "推しカラー見出し", "default": "母の日におすすめの2色" },
+    { "type": "text", "id": "featured_color_1_name", "label": "カラー1 名前", "default": "Cloud White" },
+    { "type": "image_picker", "id": "cloud_white_image", "label": "カラー1 画像" },
+    { "type": "text", "id": "cloud_white_image_url", "label": "カラー1 画像URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=800" },
+    { "type": "text", "id": "cloud_white_url", "label": "カラー1 リンク", "default": "https://kapok-knot.com/products/musubi-en?variant=cloud-white" },
+    { "type": "text", "id": "featured_color_2_name", "label": "カラー2 名前", "default": "Blossom Peach" },
+    { "type": "image_picker", "id": "blossom_peach_image", "label": "カラー2 画像" },
+    { "type": "text", "id": "blossom_peach_image_url", "label": "カラー2 画像URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=800" },
+    { "type": "text", "id": "blossom_peach_url", "label": "カラー2 リンク", "default": "https://kapok-knot.com/products/musubi-en?variant=blossom-peach" },
+    { "type": "text", "id": "hero_cta1_text", "label": "CTA1 テキスト", "default": "MUSUBIを見る →" },
+    { "type": "text", "id": "hero_cta1_url", "label": "CTA1 リンク", "default": "#musubi" },
+    { "type": "text", "id": "hero_cta2_text", "label": "CTA2 テキスト", "default": "ギフトカードを見る →" },
+    { "type": "text", "id": "hero_cta2_url", "label": "CTA2 リンク", "default": "#giftcard" },
+
+    { "type": "header", "content": "受賞バッジセクション" },
+    { "type": "text", "id": "awards_h2", "label": "H2", "default": "\"眠り\"を贈るギフトとして、選ばれています" },
+    { "type": "text", "id": "awards_subtitle", "label": "サブタイトル", "default": "主要ECサイト・メディア・各種ランキングでの評価実績" },
+    { "type": "textarea", "id": "awards_disclaimer", "label": "注釈", "default": "※掲載内容は各媒体・各集計期間による実績です。詳細は公式発表をご確認ください。" },
+
+    { "type": "header", "content": "MUSUBIセクション" },
+    { "type": "text", "id": "musubi_eyebrow", "label": "アイブロウ", "default": "CHOICE 01" },
+    { "type": "textarea", "id": "musubi_h2", "label": "H2（<br>改行可）", "default": "眠りを贈る。<br>リカバリー加重ブランケット「MUSUBI」" },
+    { "type": "image_picker", "id": "musubi_main_image", "label": "メイン画像" },
+    { "type": "text", "id": "musubi_main_image_url", "label": "メイン画像URL", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_0885.jpg?v=1771395913&width=1600" },
+    { "type": "text", "id": "musubi_main_alt", "label": "画像alt", "default": "リカバリー加重ブランケットMUSUBIの使用シーン" },
+    { "type": "richtext", "id": "musubi_intro", "label": "リード文", "default": "<p>カポック繊維を編み込んだ、<strong>特許出願中</strong>のリカバリー加重ブランケット。<br>体全体に感じる心地よい重みで、お母さまのくつろぎ時間に寄り添います。</p>" },
+    { "type": "richtext", "id": "musubi_quote", "label": "引用ブロック", "default": "<p>適度な重みのある寝具は、海外の複数の研究でリラックス時の指標との関連が報告されています。<br><span>※医学的効能を保証するものではありません。体感には個人差があります。</span></p>" },
+
+    { "type": "header", "content": "サイズ選びガイド" },
+    { "type": "text", "id": "size_guide_h3", "label": "H3", "default": "サイズ選びガイド" },
+    { "type": "text", "id": "size_guide_img_placeholder", "label": "画像プレースホルダテキスト", "default": "[Nap Size と Sleep Size の寸法比較図 / ソファ/ベッドでの使用イメージ]" },
+    { "type": "text", "id": "size_col_1", "label": "列1", "default": "モデル" },
+    { "type": "text", "id": "size_col_2", "label": "列2", "default": "寸法" },
+    { "type": "text", "id": "size_col_3", "label": "列3", "default": "重量" },
+    { "type": "text", "id": "size_col_4", "label": "列4", "default": "主な用途" },
+    { "type": "text", "id": "size_guide_note", "label": "注釈", "default": "※寸法・重量は目安です。最新仕様は各商品ページをご確認ください。" },
+
+    { "type": "header", "content": "MUSUBIラインナップ" },
+    { "type": "text", "id": "musubi_lineup_h3", "label": "H3", "default": "3つのバリエーションから、お母さまに合う一枚を" },
+    { "type": "richtext", "id": "caution_text", "label": "注意ボックス", "default": "<p>※70代以上・筋力が気になるお母さまへは、軽量な MUSUBI -PON- またはギフトカードがおすすめです。</p>" },
+
+    { "type": "header", "content": "ギフトカードセクション" },
+    { "type": "text", "id": "giftcard_eyebrow", "label": "アイブロウ", "default": "CHOICE 02" },
+    { "type": "textarea", "id": "giftcard_h2", "label": "H2（<br>改行可）", "default": "自由を贈る。<br>KAPOK KNOT ギフトカード" },
+    { "type": "image_picker", "id": "giftcard_image", "label": "ギフトカード画像" },
+    { "type": "text", "id": "giftcard_image_url", "label": "ギフトカード画像URL", "default": "https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=1600" },
+    { "type": "text", "id": "giftcard_alt", "label": "alt", "default": "KAPOK KNOT ギフトカード｜母の日の贈り物" },
+    { "type": "richtext", "id": "giftcard_intro", "label": "リード文", "default": "<p>KAPOK KNOTの<strong>全商品</strong>に使える、自由な金額で贈れるギフトカード。<br>「好みが分からない」「サイズ選びで失敗したくない」そんなときに。</p>" },
+    { "type": "text", "id": "giftcard_cta_text", "label": "CTA テキスト", "default": "ギフトカードを見る →" },
+    { "type": "text", "id": "giftcard_cta_url", "label": "CTA リンク", "default": "https://kapok-knot.com/products/gift-card" },
+
+    { "type": "header", "content": "比較表セクション" },
+    { "type": "text", "id": "compare_h2", "label": "H2", "default": "お母さまに、いちばん合うものを" },
+    { "type": "text", "id": "compare_intro", "label": "イントロ", "default": "迷ったときは、下記の表を参考に。" },
+    { "type": "text", "id": "compare_col_1", "label": "列1", "default": "お母さまのタイプ" },
+    { "type": "text", "id": "compare_col_2", "label": "列2", "default": "おすすめ" },
+
+    { "type": "header", "content": "お客さまの声セクション" },
+    { "type": "text", "id": "voices_h2", "label": "H2", "default": "お客さまの声" },
+    { "type": "text", "id": "voices_subtitle", "label": "サブタイトル", "default": "母の日にMUSUBIを贈った方からのメッセージ。" },
+    { "type": "checkbox", "id": "voices_ready", "label": "お客さまの声を表示", "default": false },
+    { "type": "textarea", "id": "voices_placeholder", "label": "非表示時のテキスト", "default": "実際のお客さまの声を準備中です。\nレビュー掲載許諾をいただき次第、こちらに掲載いたします。" },
+
+    { "type": "header", "content": "次のステップセクション" },
+    { "type": "text", "id": "next_step_h2", "label": "H2", "default": "去年、リカバリーウェアを贈った方へ" },
+    { "type": "richtext", "id": "next_step_body", "label": "本文", "default": "<p>\"着る\"の次は、<strong>\"包まれる\"</strong> という選択肢。<br>MUSUBIは、リカバリーウェアの上から掛けても心地よい一枚です。</p>" },
+    { "type": "text", "id": "next_step_cta1_text", "label": "CTA1", "default": "MUSUBIを見る →" },
+    { "type": "text", "id": "next_step_cta1_url", "label": "CTA1 リンク", "default": "#musubi" },
+    { "type": "text", "id": "next_step_cta2_text", "label": "CTA2", "default": "ギフトカードを見る →" },
+    { "type": "text", "id": "next_step_cta2_url", "label": "CTA2 リンク", "default": "#giftcard" },
+
+    { "type": "header", "content": "配送セクション" },
+    { "type": "text", "id": "delivery_h2", "label": "H2", "default": "母の日当日に、確実に届ける" },
+    { "type": "text", "id": "delivery_h3_schedule", "label": "配送H3", "default": "配送スケジュール" },
+    { "type": "textarea", "id": "delivery_cutoff", "label": "配送締切メイン", "default": "5月7日（木）中のご発送で、母の日当日（5月10日）のお届けが可能です。" },
+    { "type": "text", "id": "delivery_note_1", "label": "注記1", "default": "※GWを挟みますので、お早めのご注文をおすすめします。" },
+    { "type": "text", "id": "delivery_note_2", "label": "注記2", "default": "※ギフトカード（デジタル）は購入後すぐにお届け可能です。" },
+    { "type": "text", "id": "delivery_h3_wrapping", "label": "ラッピングH3", "default": "ラッピング・メッセージカード" },
+    { "type": "richtext", "id": "wrapping_body", "label": "ラッピング本文", "default": "<p>KAPOK KNOTの母の日ギフトは、すべて<strong>無料ラッピング対応</strong>。メッセージカードもご用意しています。</p>" },
+    { "type": "image_picker", "id": "wrapping_image", "label": "ラッピング画像" },
+    { "type": "text", "id": "wrapping_image_url", "label": "ラッピング画像URL", "default": "https://kapok-knot.com/cdn/shop/files/46_2e346ac3-e308-4c25-9a8b-e1dd4b5a85fa.png?v=1763709003&width=1600" },
+    { "type": "text", "id": "wrapping_alt", "label": "alt", "default": "KAPOK KNOT ラッピング例" },
+
+    { "type": "header", "content": "FAQセクション" },
+    { "type": "text", "id": "faq_h2", "label": "H2", "default": "よくあるご質問" },
+    { "type": "textarea", "id": "faq_disclaimer", "label": "免責注記", "default": "※本記事の内容は医学的効能を保証するものではなく、体感には個人差があります。" },
+
+    { "type": "header", "content": "記事末尾CTAセクション" },
+    { "type": "text", "id": "final_h2", "label": "H2", "default": "今年の母の日、どちらを選びますか" },
+    { "type": "text", "id": "final_card1_eyebrow", "label": "カード1 アイブロウ", "default": "MUSUBI" },
+    { "type": "textarea", "id": "final_card1_title", "label": "カード1 タイトル", "default": "眠りと癒しを、<br>形にして贈る。" },
+    { "type": "text", "id": "final_card1_body", "label": "カード1 本文", "default": "特許出願中のリカバリー加重ブランケット。" },
+    { "type": "text", "id": "final_card1_cta", "label": "カード1 CTA", "default": "MUSUBIシリーズを見る →" },
+    { "type": "text", "id": "final_card1_url", "label": "カード1 リンク", "default": "https://kapok-knot.com/collections/musubi-series" },
+    { "type": "text", "id": "final_card2_eyebrow", "label": "カード2 アイブロウ", "default": "GIFT CARD" },
+    { "type": "textarea", "id": "final_card2_title", "label": "カード2 タイトル", "default": "選ぶ時間を、<br>贈る。" },
+    { "type": "text", "id": "final_card2_body", "label": "カード2 本文", "default": "ブランド全商品に使える、自由な贈り物。" },
+    { "type": "text", "id": "final_card2_cta", "label": "カード2 CTA", "default": "ギフトカードを見る →" },
+    { "type": "text", "id": "final_card2_url", "label": "カード2 リンク", "default": "https://kapok-knot.com/products/gift-card" },
+
+    { "type": "header", "content": "関連リンクセクション" },
+    { "type": "text", "id": "related_h3", "label": "H3", "default": "関連記事・お知らせ" },
+
+    { "type": "header", "content": "Sticky CTA (モバイル)" },
+    { "type": "text", "id": "sticky_cta1_text", "label": "CTA1", "default": "MUSUBIを見る" },
+    { "type": "text", "id": "sticky_cta1_url", "label": "CTA1 リンク", "default": "https://kapok-knot.com/collections/musubi-series" },
+    { "type": "text", "id": "sticky_cta2_text", "label": "CTA2", "default": "ギフトカード" },
+    { "type": "text", "id": "sticky_cta2_url", "label": "CTA2 リンク", "default": "https://kapok-knot.com/products/gift-card" },
+
+    { "type": "header", "content": "SEO（構造化データ）" },
+    { "type": "checkbox", "id": "enable_structured_data", "label": "構造化データを出力", "default": true },
+    { "type": "text", "id": "seo_headline", "label": "headline", "default": "2026年母の日ギフト｜眠りと自由を贈る｜加重ブランケットMUSUBI＆ギフトカード" },
+    { "type": "textarea", "id": "seo_description", "label": "description", "default": "2026年5月10日(日)は母の日。特別な感謝を、植物由来のやさしさで。特許出願中のリカバリー加重ブランケットMUSUBIと、選ぶ自由を贈れるKAPOK KNOTギフトカード。" }
+  ],
+  "blocks": [
+    {
+      "type": "toc_item",
+      "name": "目次項目",
+      "settings": [
+        { "type": "text", "id": "label", "label": "ラベル" },
+        { "type": "text", "id": "anchor", "label": "アンカー（#xxx）" }
+      ]
+    },
+    {
+      "type": "ranking_item",
+      "name": "ランキング項目",
+      "settings": [
+        { "type": "text", "id": "label", "label": "カテゴリ名" },
+        { "type": "text", "id": "percentage", "label": "パーセンテージ（数字のみ）" },
+        { "type": "checkbox", "id": "highlight", "label": "強調表示", "default": false },
+        { "type": "text", "id": "tag", "label": "タグ（← 注目 等）" }
+      ]
+    },
+    {
+      "type": "fv_preview_item",
+      "name": "FVプレビュー商品",
+      "settings": [
+        { "type": "text", "id": "name", "label": "商品名" },
+        { "type": "text", "id": "price_note", "label": "価格注記" },
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL（フォールバック）" },
+        { "type": "text", "id": "link", "label": "リンク" }
+      ]
+    },
+    {
+      "type": "award_card",
+      "name": "受賞カード",
+      "settings": [
+        { "type": "text", "id": "badge", "label": "バッジ", "default": "No.1" },
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "text", "id": "image_placeholder_text", "label": "画像プレースホルダ", "default": "[受賞ロゴ画像]" },
+        { "type": "textarea", "id": "title", "label": "タイトル（<br>改行可）" },
+        { "type": "text", "id": "note", "label": "注記" }
+      ]
+    },
+    {
+      "type": "musubi_point",
+      "name": "MUSUBIポイント",
+      "settings": [
+        { "type": "text", "id": "title", "label": "タイトル" },
+        { "type": "textarea", "id": "description", "label": "説明（<br>改行可）" }
+      ]
+    },
+    {
+      "type": "size_row",
+      "name": "サイズ表行",
+      "settings": [
+        { "type": "text", "id": "model", "label": "モデル" },
+        { "type": "text", "id": "dimensions", "label": "寸法" },
+        { "type": "text", "id": "weight", "label": "重量" },
+        { "type": "text", "id": "use_case", "label": "用途" }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "商品カード",
+      "settings": [
+        { "type": "text", "id": "anchor", "label": "アンカーID（例：pon）" },
+        { "type": "checkbox", "id": "highlight", "label": "強調（ボーダー太く）", "default": false },
+        { "type": "text", "id": "recommend_badge", "label": "推奨バッジ（空欄で非表示）" },
+        { "type": "text", "id": "urgent_badge", "label": "緊急バッジ（在庫僅少等、空欄で非表示）" },
+        { "type": "image_picker", "id": "image", "label": "商品画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "text", "id": "title", "label": "商品名" },
+        { "type": "text", "id": "subtitle", "label": "サブタイトル" },
+        { "type": "textarea", "id": "description", "label": "説明" },
+        { "type": "richtext", "id": "price_html", "label": "価格HTML（<p>または<ul>）" },
+        { "type": "textarea", "id": "target_note", "label": "ターゲット注記" },
+        { "type": "text", "id": "stock_note", "label": "在庫注記（空欄で非表示）" },
+        { "type": "text", "id": "cta_text", "label": "CTAテキスト" },
+        { "type": "text", "id": "cta_url", "label": "CTAリンク" }
+      ]
+    },
+    {
+      "type": "giftcard_benefit",
+      "name": "ギフトカードベネフィット",
+      "settings": [
+        { "type": "text", "id": "number", "label": "番号", "default": "01" },
+        { "type": "text", "id": "label", "label": "ラベル" }
+      ]
+    },
+    {
+      "type": "compare_row",
+      "name": "比較表行",
+      "settings": [
+        { "type": "text", "id": "mom_type", "label": "お母さまタイプ" },
+        { "type": "text", "id": "recommendation", "label": "おすすめ" }
+      ]
+    },
+    {
+      "type": "voice_card",
+      "name": "お客さまの声",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "コメント" },
+        { "type": "text", "id": "who", "label": "贈った対象" }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ項目",
+      "settings": [
+        { "type": "text", "id": "group", "label": "グループ名（同じ値でまとめる）", "default": "— 商品・使い方について" },
+        { "type": "text", "id": "question", "label": "質問" },
+        { "type": "richtext", "id": "answer", "label": "回答" }
+      ]
+    },
+    {
+      "type": "related_link",
+      "name": "関連リンク",
+      "settings": [
+        { "type": "text", "id": "label", "label": "ラベル" },
+        { "type": "text", "id": "url", "label": "URL" }
+      ]
+    }
+  ]
+}
+{% endschema %}

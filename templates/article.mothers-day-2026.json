@@ -1,0 +1,608 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "mothers-day-2026",
+      "blocks": {
+        "toc-1": {
+          "type": "toc_item",
+          "settings": {
+            "label": "2026年、母の日ギフトの新しい選択肢（調査データ）",
+            "anchor": "#ranking"
+          }
+        },
+        "toc-2": {
+          "type": "toc_item",
+          "settings": {
+            "label": "今年の母の日は、やさしい「重み」を贈る",
+            "anchor": "#hero-transition"
+          }
+        },
+        "toc-3": {
+          "type": "toc_item",
+          "settings": {
+            "label": "\"眠り\"を贈るギフトとして、選ばれています",
+            "anchor": "#awards"
+          }
+        },
+        "toc-4": {
+          "type": "toc_item",
+          "settings": {
+            "label": "選択肢01｜MUSUBI（加重ブランケット）",
+            "anchor": "#musubi"
+          }
+        },
+        "toc-5": {
+          "type": "toc_item",
+          "settings": {
+            "label": "選択肢02｜ギフトカード",
+            "anchor": "#giftcard"
+          }
+        },
+        "toc-6": {
+          "type": "toc_item",
+          "settings": {
+            "label": "お母さまに合うものを（比較表）",
+            "anchor": "#compare"
+          }
+        },
+        "toc-7": {
+          "type": "toc_item",
+          "settings": {
+            "label": "お客さまの声",
+            "anchor": "#voices"
+          }
+        },
+        "toc-8": {
+          "type": "toc_item",
+          "settings": {
+            "label": "去年リカバリーウェアを贈った方へ",
+            "anchor": "#next-step"
+          }
+        },
+        "toc-9": {
+          "type": "toc_item",
+          "settings": {
+            "label": "母の日当日に、確実に届ける",
+            "anchor": "#delivery"
+          }
+        },
+        "toc-10": {
+          "type": "toc_item",
+          "settings": {
+            "label": "よくあるご質問",
+            "anchor": "#faq"
+          }
+        },
+        "rank-1": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "食品・グルメ",
+            "percentage": "26.1",
+            "highlight": false
+          }
+        },
+        "rank-2": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "お花・観葉植物",
+            "percentage": "20.5",
+            "highlight": false
+          }
+        },
+        "rank-3": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "スイーツ",
+            "percentage": "17.2",
+            "highlight": false
+          }
+        },
+        "rank-4": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "健康・生活雑貨",
+            "percentage": "7.8",
+            "highlight": true,
+            "tag": "← 注目"
+          }
+        },
+        "rank-5": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "ファッション",
+            "percentage": "6.2",
+            "highlight": false
+          }
+        },
+        "rank-6": {
+          "type": "ranking_item",
+          "settings": {
+            "label": "コスメ",
+            "percentage": "5.0",
+            "highlight": false
+          }
+        },
+        "fv-1": {
+          "type": "fv_preview_item",
+          "settings": {
+            "name": "MUSUBI -PON-",
+            "price_note": "¥8,900〜",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/3_c02cc721-a87a-47e2-8500-9f136361e732.png?v=1763104224&width=400",
+            "link": "#pon"
+          }
+        },
+        "fv-2": {
+          "type": "fv_preview_item",
+          "settings": {
+            "name": "MUSUBI -en-",
+            "price_note": "¥29,800〜",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1208.jpg?v=1771395913&width=400",
+            "link": "#en"
+          }
+        },
+        "fv-3": {
+          "type": "fv_preview_item",
+          "settings": {
+            "name": "ギフトカード",
+            "price_note": "任意金額",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=400",
+            "link": "#giftcard"
+          }
+        },
+        "award-1": {
+          "type": "award_card",
+          "settings": {
+            "badge": "No.1",
+            "image_placeholder_text": "[受賞ロゴ / ランキングバッジ画像]",
+            "title": "Makuake 応援購入<br>人気ランキング 1位",
+            "note": "加重ブランケット部門"
+          }
+        },
+        "award-2": {
+          "type": "award_card",
+          "settings": {
+            "badge": "受賞",
+            "image_placeholder_text": "[メディア掲載ロゴ / 受賞ロゴ]",
+            "title": "2024 グッドデザイン賞<br>（該当時）",
+            "note": "※実績に応じて編集"
+          }
+        },
+        "award-3": {
+          "type": "award_card",
+          "settings": {
+            "badge": "選定",
+            "image_placeholder_text": "[ホテル採用ロゴ等]",
+            "title": "高級宿泊施設<br>多数採用",
+            "note": "We're Smart® Green Guide認証宿にて採用"
+          }
+        },
+        "award-4": {
+          "type": "award_card",
+          "settings": {
+            "badge": "掲載",
+            "image_placeholder_text": "[メディアロゴ：大阪テレビ・雑誌等]",
+            "title": "大阪テレビ<br>「やさしいニュース」<br>にて紹介",
+            "note": "2025年3月"
+          }
+        },
+        "point-1": {
+          "type": "musubi_point",
+          "settings": {
+            "title": "通気性",
+            "description": "あみあみ構造で<br>夏も蒸れにくい"
+          }
+        },
+        "point-2": {
+          "type": "musubi_point",
+          "settings": {
+            "title": "手洗いOK",
+            "description": "ご自宅で<br>お手入れ簡単"
+          }
+        },
+        "point-3": {
+          "type": "musubi_point",
+          "settings": {
+            "title": "植物由来",
+            "description": "カポック繊維で<br>肌にも地球にも優しい"
+          }
+        },
+        "size-1": {
+          "type": "size_row",
+          "settings": {
+            "model": "MUSUBI -en- Nap",
+            "dimensions": "約 130 × 100 cm",
+            "weight": "約 3.0 kg",
+            "use_case": "ソファ / 昼寝"
+          }
+        },
+        "size-2": {
+          "type": "size_row",
+          "settings": {
+            "model": "MUSUBI -en- Sleep",
+            "dimensions": "約 170 × 100 cm",
+            "weight": "約 4.5 kg",
+            "use_case": "睡眠時 / 全身"
+          }
+        },
+        "size-3": {
+          "type": "size_row",
+          "settings": {
+            "model": "MUSUBI -ON-",
+            "dimensions": "約 170 × 100 cm",
+            "weight": "約 5.0 kg",
+            "use_case": "冷え対策・冬場"
+          }
+        },
+        "size-4": {
+          "type": "size_row",
+          "settings": {
+            "model": "MUSUBI -PON-",
+            "dimensions": "約 40 × 40 cm",
+            "weight": "約 1.5 kg",
+            "use_case": "膝掛け / クッション"
+          }
+        },
+        "prod-pon": {
+          "type": "product_card",
+          "settings": {
+            "anchor": "pon",
+            "highlight": false,
+            "image_url": "https://kapok-knot.com/cdn/shop/files/3_c02cc721-a87a-47e2-8500-9f136361e732.png?v=1763104224&width=1000",
+            "title": "MUSUBI -PON-",
+            "subtitle": "まるクッションタイプ",
+            "description": "プレミアムフランネル生地を使った、まるいクッション。膝に置くだけで、やさしい重みを体感。",
+            "price_html": "<p>価格：<strong>¥8,900</strong>（税込）</p>",
+            "target_note": "こんな方へ：初めて贈る方／追加ギフトに／70代以上のお母さまへ",
+            "cta_text": "MUSUBI -PON- を見る →",
+            "cta_url": "https://kapok-knot.com/products/musubi-pon"
+          }
+        },
+        "prod-en": {
+          "type": "product_card",
+          "settings": {
+            "anchor": "en",
+            "highlight": true,
+            "recommend_badge": "RECOMMEND｜母の日 売れ筋",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1200",
+            "title": "MUSUBI -en-",
+            "subtitle": "リカバリー加重ブランケット（定番）",
+            "description": "体全体に心地よい重みを感じる、通気性重視の定番モデル。365日オールシーズン使えます。",
+            "price_html": "<ul><li>Nap Size (M / 約3.0kg)：<strong>¥29,800</strong>（税込）</li><li>Sleep Size (L / 約4.5kg)：<strong>¥39,800</strong>（税込）</li></ul>",
+            "target_note": "こんな方へ：50〜60代のお母さま／日常的に使いたい方／睡眠の質を高めたい方",
+            "cta_text": "MUSUBI -en- を見る →",
+            "cta_url": "https://kapok-knot.com/products/musubi-en"
+          }
+        },
+        "prod-on": {
+          "type": "product_card",
+          "settings": {
+            "anchor": "on",
+            "highlight": false,
+            "urgent_badge": "在庫僅少｜完売間近",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/170.png?v=1759904635&width=1000",
+            "title": "MUSUBI -ON-",
+            "subtitle": "フランネル起毛タイプ",
+            "description": "あたたかみのあるフランネル生地。冷たい空気の中でも、包まれるようなぬくもりを感じられます。",
+            "price_html": "<p>価格：<strong>¥44,800</strong>（税込）</p>",
+            "target_note": "こんな方へ：冷え性のお母さま／寒がりのお母さまへ",
+            "stock_note": "※在庫がなくなり次第、販売終了となります。",
+            "cta_text": "MUSUBI -ON- を見る →",
+            "cta_url": "https://kapok-knot.com/products/musubi-on"
+          }
+        },
+        "gc-1": {
+          "type": "giftcard_benefit",
+          "settings": {
+            "number": "01",
+            "label": "予算自由"
+          }
+        },
+        "gc-2": {
+          "type": "giftcard_benefit",
+          "settings": {
+            "number": "02",
+            "label": "全商品対応"
+          }
+        },
+        "gc-3": {
+          "type": "giftcard_benefit",
+          "settings": {
+            "number": "03",
+            "label": "兄弟姉妹で折半OK"
+          }
+        },
+        "gc-4": {
+          "type": "giftcard_benefit",
+          "settings": {
+            "number": "04",
+            "label": "春夏秋冬使える"
+          }
+        },
+        "cmp-1": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "50代・働くお母さま",
+            "recommendation": "MUSUBI -en- Nap Size"
+          }
+        },
+        "cmp-2": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "60代・リラックス時間を大切にする方",
+            "recommendation": "MUSUBI -en- Nap / Sleep Size"
+          }
+        },
+        "cmp-3": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "60代・冷え性、寒がりの方",
+            "recommendation": "MUSUBI -ON-（在庫あれば）／ ギフトカード"
+          }
+        },
+        "cmp-4": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "70代以上のお母さま",
+            "recommendation": "ギフトカード ／ MUSUBI -PON-"
+          }
+        },
+        "cmp-5": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "好みがわからない・失敗したくない",
+            "recommendation": "ギフトカード"
+          }
+        },
+        "cmp-6": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "昨年リカバリー系ギフトを贈った方",
+            "recommendation": "MUSUBI -en- または ギフトカード"
+          }
+        },
+        "cmp-7": {
+          "type": "compare_row",
+          "settings": {
+            "mom_type": "予算を抑えたい・追加の贈り物に",
+            "recommendation": "MUSUBI -PON-"
+          }
+        },
+        "faq-a1": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. サイズはどう選べばよいですか？",
+            "answer": "<p>ソファでのリラックス用途なら <strong>Nap Size（M / 約3.0kg）</strong>、睡眠時にも使いたい場合は <strong>Sleep Size（L / 約4.5kg）</strong> が目安です。</p>"
+          }
+        },
+        "faq-a2": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. 何kgを選べばよいですか？",
+            "answer": "<p>体重の8〜12%が目安です。体重50kg前後の方なら Nap Size (約3.0kg)、体重55kg以上で睡眠時に使いたい方は Sleep Size (約4.5kg) がおすすめです。</p>"
+          }
+        },
+        "faq-a3": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. 高齢のお母さまでも使えますか？",
+            "answer": "<p>リカバリー加重ブランケットは、筋力が低下されている方にはおすすめしておりません。70代以上のお母さまへは、軽量な <strong>MUSUBI -PON-</strong> か <strong>ギフトカード</strong> をおすすめしています。</p>"
+          }
+        },
+        "faq-a4": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. 加重ブランケットはどんな体感ですか？",
+            "answer": "<p>体全体にふんわりとした重みを感じる体感です。海外の研究ではリラックス時の指標との関連が報告されていますが、体感には個人差があり、医学的効能を保証するものではありません。</p>"
+          }
+        },
+        "faq-a5": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. 夏場も使えますか？",
+            "answer": "<p>はい、<strong>365日オールシーズン使用可能</strong>です。カポック繊維の通気性と、編み構造により、夏場でも蒸れにくい仕様になっています。</p>"
+          }
+        },
+        "faq-a6": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. 洗濯はできますか？",
+            "answer": "<p>ご自宅で手洗い可能です。洗濯ネット使用、30℃以下の水温で優しく洗っていただけます。</p>"
+          }
+        },
+        "faq-a7": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. リカバリーウェアと併用できますか？",
+            "answer": "<p>はい、問題なくご併用いただけます。リカバリーウェアの上から、MUSUBIを掛けてお使いいただく方もいらっしゃいます。</p>"
+          }
+        },
+        "faq-a8": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 商品・使い方について",
+            "question": "Q. リカバリーウェアとMUSUBIの違いは？",
+            "answer": "<p>リカバリーウェア（BAKUNE等）は\"着ている時間\"全般に寄り添う衣類です。MUSUBIは\"くつろぎの時間\"に特化した加重ブランケットで、サイズ選びの失敗がありません。併用も可能です。</p>"
+          }
+        },
+        "faq-b1": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフト・贈り方について",
+            "question": "Q. 50代・60代の母が本当に喜ぶギフトは？",
+            "answer": "<p>2026年の調査では「実用的で特別感のある」ものが上位です。日常で使える睡眠・リラックスアイテム、健康・生活雑貨、自分では買わない少し贅沢な日用品が喜ばれます。</p>"
+          }
+        },
+        "faq-b2": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフト・贈り方について",
+            "question": "Q. 母の日のプレゼント予算の相場は？",
+            "answer": "<p>2026年調査では5,000〜15,000円が全体の約6割。特別感のあるギフトとして2〜5万円の枠も増えています。MUSUBI -PON-(¥8,900) は予算内、MUSUBI -en- (¥29,800〜) は特別な一回の贈り物に適した価格帯です。</p>"
+          }
+        },
+        "faq-b3": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフト・贈り方について",
+            "question": "Q. ラッピングやメッセージカードは対応していますか？",
+            "answer": "<p>はい、<strong>無料ラッピング</strong>と<strong>メッセージカード</strong>に対応しています。ご注文時にご選択ください。</p>"
+          }
+        },
+        "faq-b4": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフト・贈り方について",
+            "question": "Q. メッセージカードに何を書けばよいですか？",
+            "answer": "<p>定型例：「いつもありがとう。ゆっくり休んでね。」「今年は\"眠り\"を贈ります。体を大切にしてね。」など。無料メッセージカードにご希望の文面を印字してお届けします。</p>"
+          }
+        },
+        "faq-c1": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフトカードについて",
+            "question": "Q. ギフトカードはどの商品に使えますか？",
+            "answer": "<p>KAPOK KNOTの<strong>全商品</strong>にご利用いただけます。アウター、ブランケット、ホームコレクションなど、お母さまのお好きなものをお選びいただけます。</p>"
+          }
+        },
+        "faq-c2": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— ギフトカードについて",
+            "question": "Q. ギフトカードの有効期限はありますか？",
+            "answer": "<p>[要確認: 有効期限仕様]</p>"
+          }
+        },
+        "faq-d1": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 配送・注文について",
+            "question": "Q. 母の日当日に届けるには、いつまでに注文すればよいですか？",
+            "answer": "<p><strong>5月7日（木）中にご発送可能なタイミングでのご注文</strong>で、母の日当日のお届けが可能です。GW期間を挟みますので、確実にお届けするためお早めのご注文をおすすめします。</p>"
+          }
+        },
+        "faq-d2": {
+          "type": "faq_item",
+          "settings": {
+            "group": "— 配送・注文について",
+            "question": "Q. 配送料はかかりますか？",
+            "answer": "<p>MUSUBI各モデル、ギフトカードともに送料の詳細は注文画面でご確認ください。</p>"
+          }
+        },
+        "rel-1": {
+          "type": "related_link",
+          "settings": {
+            "label": "→ KAPOK KNOTのブランドストーリー",
+            "url": "https://kapok-knot.com/pages/about"
+          }
+        },
+        "rel-2": {
+          "type": "related_link",
+          "settings": {
+            "label": "→ カポックという素材について（Magazine一覧）",
+            "url": "https://kapok-knot.com/blogs/magazine"
+          }
+        },
+        "rel-3": {
+          "type": "related_link",
+          "settings": {
+            "label": "→ MUSUBIシリーズ一覧",
+            "url": "https://kapok-knot.com/collections/musubi-series"
+          }
+        },
+        "rel-4": {
+          "type": "related_link",
+          "settings": {
+            "label": "→ KAPOK KNOT ギフトカード",
+            "url": "https://kapok-knot.com/products/gift-card"
+          }
+        }
+      },
+      "block_order": [
+        "toc-1",
+        "toc-2",
+        "toc-3",
+        "toc-4",
+        "toc-5",
+        "toc-6",
+        "toc-7",
+        "toc-8",
+        "toc-9",
+        "toc-10",
+        "rank-1",
+        "rank-2",
+        "rank-3",
+        "rank-4",
+        "rank-5",
+        "rank-6",
+        "fv-1",
+        "fv-2",
+        "fv-3",
+        "award-1",
+        "award-2",
+        "award-3",
+        "award-4",
+        "point-1",
+        "point-2",
+        "point-3",
+        "size-1",
+        "size-2",
+        "size-3",
+        "size-4",
+        "prod-pon",
+        "prod-en",
+        "prod-on",
+        "gc-1",
+        "gc-2",
+        "gc-3",
+        "gc-4",
+        "cmp-1",
+        "cmp-2",
+        "cmp-3",
+        "cmp-4",
+        "cmp-5",
+        "cmp-6",
+        "cmp-7",
+        "faq-a1",
+        "faq-a2",
+        "faq-a3",
+        "faq-a4",
+        "faq-a5",
+        "faq-a6",
+        "faq-a7",
+        "faq-a8",
+        "faq-b1",
+        "faq-b2",
+        "faq-b3",
+        "faq-b4",
+        "faq-c1",
+        "faq-c2",
+        "faq-d1",
+        "faq-d2",
+        "rel-1",
+        "rel-2",
+        "rel-3",
+        "rel-4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
