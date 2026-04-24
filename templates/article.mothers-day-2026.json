@@ -87,7 +87,8 @@
           "settings": {
             "label": "食品・グルメ",
             "percentage": "26.1",
-            "highlight": false
+            "highlight": false,
+            "tag": ""
           }
         },
         "rank-2": {
@@ -95,7 +96,8 @@
           "settings": {
             "label": "お花・観葉植物",
             "percentage": "20.5",
-            "highlight": false
+            "highlight": false,
+            "tag": ""
           }
         },
         "rank-3": {
@@ -103,7 +105,8 @@
           "settings": {
             "label": "スイーツ",
             "percentage": "17.2",
-            "highlight": false
+            "highlight": false,
+            "tag": ""
           }
         },
         "rank-4": {
@@ -120,7 +123,8 @@
           "settings": {
             "label": "ファッション",
             "percentage": "6.2",
-            "highlight": false
+            "highlight": false,
+            "tag": ""
           }
         },
         "rank-6": {
@@ -128,7 +132,8 @@
           "settings": {
             "label": "コスメ",
             "percentage": "5.0",
-            "highlight": false
+            "highlight": false,
+            "tag": ""
           }
         },
         "fv-1": {
@@ -162,6 +167,7 @@
           "type": "award_card",
           "settings": {
             "badge": "No.1",
+            "image_url": "",
             "image_placeholder_text": "[受賞ロゴ / ランキングバッジ画像]",
             "title": "Makuake 応援購入<br>人気ランキング 1位",
             "note": "加重ブランケット部門"
@@ -171,6 +177,7 @@
           "type": "award_card",
           "settings": {
             "badge": "受賞",
+            "image_url": "",
             "image_placeholder_text": "[メディア掲載ロゴ / 受賞ロゴ]",
             "title": "2024 グッドデザイン賞<br>（該当時）",
             "note": "※実績に応じて編集"
@@ -180,6 +187,7 @@
           "type": "award_card",
           "settings": {
             "badge": "選定",
+            "image_url": "",
             "image_placeholder_text": "[ホテル採用ロゴ等]",
             "title": "高級宿泊施設<br>多数採用",
             "note": "We're Smart® Green Guide認証宿にて採用"
@@ -189,6 +197,7 @@
           "type": "award_card",
           "settings": {
             "badge": "掲載",
+            "image_url": "",
             "image_placeholder_text": "[メディアロゴ：大阪テレビ・雑誌等]",
             "title": "大阪テレビ<br>「やさしいニュース」<br>にて紹介",
             "note": "2025年3月"
@@ -256,12 +265,15 @@
           "settings": {
             "anchor": "pon",
             "highlight": false,
+            "recommend_badge": "",
+            "urgent_badge": "",
             "image_url": "https://kapok-knot.com/cdn/shop/files/3_c02cc721-a87a-47e2-8500-9f136361e732.png?v=1763104224&width=1000",
             "title": "MUSUBI -PON-",
             "subtitle": "まるクッションタイプ",
             "description": "プレミアムフランネル生地を使った、まるいクッション。膝に置くだけで、やさしい重みを体感。",
             "price_html": "<p>価格：<strong>¥8,900</strong>（税込）</p>",
             "target_note": "こんな方へ：初めて贈る方／追加ギフトに／70代以上のお母さまへ",
+            "stock_note": "",
             "cta_text": "MUSUBI -PON- を見る →",
             "cta_url": "https://kapok-knot.com/products/musubi-pon"
           }
@@ -272,12 +284,14 @@
             "anchor": "en",
             "highlight": true,
             "recommend_badge": "RECOMMEND｜母の日 売れ筋",
+            "urgent_badge": "",
             "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1200",
             "title": "MUSUBI -en-",
             "subtitle": "リカバリー加重ブランケット（定番）",
             "description": "体全体に心地よい重みを感じる、通気性重視の定番モデル。365日オールシーズン使えます。",
             "price_html": "<ul><li>Nap Size (M / 約3.0kg)：<strong>¥29,800</strong>（税込）</li><li>Sleep Size (L / 約4.5kg)：<strong>¥39,800</strong>（税込）</li></ul>",
             "target_note": "こんな方へ：50〜60代のお母さま／日常的に使いたい方／睡眠の質を高めたい方",
+            "stock_note": "",
             "cta_text": "MUSUBI -en- を見る →",
             "cta_url": "https://kapok-knot.com/products/musubi-en"
           }
@@ -287,6 +301,7 @@
           "settings": {
             "anchor": "on",
             "highlight": false,
+            "recommend_badge": "",
             "urgent_badge": "在庫僅少｜完売間近",
             "image_url": "https://kapok-knot.com/cdn/shop/files/170.png?v=1759904635&width=1000",
             "title": "MUSUBI -ON-",
@@ -599,7 +614,112 @@
         "rel-3",
         "rel-4"
       ],
-      "settings": {}
+      "settings": {
+        "countdown_target_date": "2026-05-10",
+        "countdown_prefix": "母の日（5月10日）まで あと",
+        "countdown_suffix": "日｜当日お届けは5月7日（木）中のご発送まで",
+        "countdown_zero_message": "本日は母の日。ありがとうの一日を。",
+        "kv_image": "shopify://shop_images/c_2_3x_2_7f7dd5c5-c379-4103-9176-15f1c58618f2.png",
+        "kv_image_url": "https://kapok-knot.com/cdn/shop/files/happy-mothers-day-kv.png",
+        "kv_alt": "HAPPY MOTHER'S DAY｜KAPOK KNOT 2026",
+        "kv_fallback_text": "HAPPY MOTHER'S DAY",
+        "hero_eyebrow": "MOTHER'S DAY 2026",
+        "lead_h1": "「ありがとう」を、<br>どんな形で伝えますか。",
+        "lead_date_note": "2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード",
+        "lead_body": "お母さまの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。",
+        "show_toc": true,
+        "toc_title": "この記事の目次",
+        "ranking_h2": "2026年 母の日ギフト・ランキング",
+        "ranking_subtitle": "「花」から「日々を豊かにする実用品」へ。",
+        "ranking_source": "※出典：母の日.me「2026年版 母の日に関するアンケート調査」",
+        "ranking_conclusion": "<p>いま注目を集めているのが、<strong>\"眠り\"を贈るという選択</strong>。</p>",
+        "hero_transition_eyebrow": "OUR ANSWER",
+        "hero_heading_line1": "今年の母の日は、",
+        "hero_heading_line2": "やさしい「重み」を贈る。",
+        "hero_lifestyle_image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600",
+        "hero_lifestyle_alt": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト",
+        "hero_body": "植物由来のぬくもりで、ふたつの選択を。",
+        "featured_colors_label": "母の日におすすめの2色",
+        "featured_color_1_name": "Cloud White",
+        "cloud_white_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=800",
+        "cloud_white_url": "https://kapok-knot.com/products/musubi-en?variant=cloud-white",
+        "featured_color_2_name": "Blossom Peach",
+        "blossom_peach_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=800",
+        "blossom_peach_url": "https://kapok-knot.com/products/musubi-en?variant=blossom-peach",
+        "hero_cta1_text": "MUSUBIを見る →",
+        "hero_cta1_url": "#musubi",
+        "hero_cta2_text": "ギフトカードを見る →",
+        "hero_cta2_url": "#giftcard",
+        "awards_h2": "\"眠り\"を贈るギフトとして、選ばれています",
+        "awards_subtitle": "主要ECサイト・メディア・各種ランキングでの評価実績",
+        "awards_disclaimer": "※掲載内容は各媒体・各集計期間による実績です。詳細は公式発表をご確認ください。",
+        "musubi_eyebrow": "CHOICE 01",
+        "musubi_h2": "眠りを贈る。<br>リカバリー加重ブランケット「MUSUBI」",
+        "musubi_main_image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_0885.jpg?v=1771395913&width=1600",
+        "musubi_main_alt": "リカバリー加重ブランケットMUSUBIの使用シーン",
+        "musubi_intro": "<p>カポック繊維を編み込んだ、<strong>特許出願中</strong>のリカバリー加重ブランケット。<br/>体全体に感じる心地よい重みで、お母さまのくつろぎ時間に寄り添います。</p>",
+        "musubi_quote": "<p>適度な重みのある寝具は、海外の複数の研究でリラックス時の指標との関連が報告されています。<br/>※医学的効能を保証するものではありません。体感には個人差があります。</p>",
+        "size_guide_h3": "サイズ選びガイド",
+        "size_guide_img_placeholder": "[Nap Size と Sleep Size の寸法比較図 / ソファ/ベッドでの使用イメージ]",
+        "size_col_1": "モデル",
+        "size_col_2": "寸法",
+        "size_col_3": "重量",
+        "size_col_4": "主な用途",
+        "size_guide_note": "※寸法・重量は目安です。最新仕様は各商品ページをご確認ください。",
+        "musubi_lineup_h3": "3つのバリエーションから、お母さまに合う一枚を",
+        "caution_text": "<p>※70代以上・筋力が気になるお母さまへは、軽量な MUSUBI -PON- またはギフトカードがおすすめです。</p>",
+        "giftcard_eyebrow": "CHOICE 02",
+        "giftcard_h2": "自由を贈る。<br>KAPOK KNOT ギフトカード",
+        "giftcard_image_url": "https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=1600",
+        "giftcard_alt": "KAPOK KNOT ギフトカード｜母の日の贈り物",
+        "giftcard_intro": "<p>KAPOK KNOTの<strong>全商品</strong>に使える、自由な金額で贈れるギフトカード。<br/>「好みが分からない」「サイズ選びで失敗したくない」そんなときに。</p>",
+        "giftcard_cta_text": "ギフトカードを見る →",
+        "giftcard_cta_url": "https://kapok-knot.com/products/gift-card",
+        "compare_h2": "お母さまに、いちばん合うものを",
+        "compare_intro": "迷ったときは、下記の表を参考に。",
+        "compare_col_1": "お母さまのタイプ",
+        "compare_col_2": "おすすめ",
+        "voices_h2": "お客さまの声",
+        "voices_subtitle": "母の日にMUSUBIを贈った方からのメッセージ。",
+        "voices_ready": false,
+        "voices_placeholder": "実際のお客さまの声を準備中です。\nレビュー掲載許諾をいただき次第、こちらに掲載いたします。",
+        "next_step_h2": "去年、リカバリーウェアを贈った方へ",
+        "next_step_body": "<p>\"着る\"の次は、<strong>\"包まれる\"</strong> という選択肢。<br/>MUSUBIは、リカバリーウェアの上から掛けても心地よい一枚です。</p>",
+        "next_step_cta1_text": "MUSUBIを見る →",
+        "next_step_cta1_url": "#musubi",
+        "next_step_cta2_text": "ギフトカードを見る →",
+        "next_step_cta2_url": "#giftcard",
+        "delivery_h2": "母の日当日に、確実に届ける",
+        "delivery_h3_schedule": "配送スケジュール",
+        "delivery_cutoff": "5月7日（木）中のご発送で、母の日当日（5月10日）のお届けが可能です。",
+        "delivery_note_1": "※GWを挟みますので、お早めのご注文をおすすめします。",
+        "delivery_note_2": "※ギフトカード（デジタル）は購入後すぐにお届け可能です。",
+        "delivery_h3_wrapping": "ラッピング・メッセージカード",
+        "wrapping_body": "<p>KAPOK KNOTの母の日ギフトは、すべて<strong>無料ラッピング対応</strong>。メッセージカードもご用意しています。</p>",
+        "wrapping_image_url": "https://kapok-knot.com/cdn/shop/files/46_2e346ac3-e308-4c25-9a8b-e1dd4b5a85fa.png?v=1763709003&width=1600",
+        "wrapping_alt": "KAPOK KNOT ラッピング例",
+        "faq_h2": "よくあるご質問",
+        "faq_disclaimer": "※本記事の内容は医学的効能を保証するものではなく、体感には個人差があります。",
+        "final_h2": "今年の母の日、どちらを選びますか",
+        "final_card1_eyebrow": "MUSUBI",
+        "final_card1_title": "眠りと癒しを、<br>形にして贈る。",
+        "final_card1_body": "特許出願中のリカバリー加重ブランケット。",
+        "final_card1_cta": "MUSUBIシリーズを見る →",
+        "final_card1_url": "https://kapok-knot.com/collections/musubi-series",
+        "final_card2_eyebrow": "GIFT CARD",
+        "final_card2_title": "選ぶ時間を、<br>贈る。",
+        "final_card2_body": "ブランド全商品に使える、自由な贈り物。",
+        "final_card2_cta": "ギフトカードを見る →",
+        "final_card2_url": "https://kapok-knot.com/products/gift-card",
+        "related_h3": "関連記事・お知らせ",
+        "sticky_cta1_text": "MUSUBIを見る",
+        "sticky_cta1_url": "https://kapok-knot.com/collections/musubi-series",
+        "sticky_cta2_text": "ギフトカード",
+        "sticky_cta2_url": "https://kapok-knot.com/products/gift-card",
+        "enable_structured_data": true,
+        "seo_headline": "2026年母の日ギフト｜眠りと自由を贈る｜加重ブランケットMUSUBI＆ギフトカード",
+        "seo_description": "2026年5月10日(日)は母の日。特別な感謝を、植物由来のやさしさで。特許出願中のリカバリー加重ブランケットMUSUBIと、選ぶ自由を贈れるKAPOK KNOTギフトカード。"
+      }
     }
   },
   "order": [
