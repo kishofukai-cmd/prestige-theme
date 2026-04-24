@@ -12,6 +12,33 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "image_CMTEJe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/c_2_3x_3.png",
+            "mobile_image": "shopify://shop_images/c_3x_1.png",
+            "subheading": "",
+            "title": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "https://kapok-knot.com/blogs/magazine/happymothersday2026",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 39,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": ""
+          }
+        },
         "image_dQHwjx": {
           "type": "image",
           "settings": {
@@ -150,6 +177,7 @@
         }
       },
       "block_order": [
+        "image_CMTEJe",
         "image_dQHwjx",
         "image_hpJVBD",
         "image_URHmpp",
