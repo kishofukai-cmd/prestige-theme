@@ -168,6 +168,7 @@
           "type": "award_card",
           "settings": {
             "badge": "No.1",
+            "image": "shopify://shop_images/OFFICIAL_LINE_42.png",
             "image_url": "",
             "image_placeholder_text": "[受賞ロゴ / ランキングバッジ画像]",
             "title": "Makuake 応援購入<br>人気ランキング 1位",
@@ -188,9 +189,10 @@
           "type": "award_card",
           "settings": {
             "badge": "選定",
+            "image": "shopify://shop_images/OFFICIAL_LINE_44.png",
             "image_url": "",
             "image_placeholder_text": "[ホテル採用ロゴ等]",
-            "title": "高級宿泊施設<br>多数採用",
+            "title": "全国のこだわりの宿で<br>MUSUBIの寝心地を体験",
             "note": "We're Smart® Green Guide認証宿にて採用"
           }
         },
@@ -198,6 +200,7 @@
           "type": "award_card",
           "settings": {
             "badge": "掲載",
+            "image": "shopify://shop_images/OFFICIAL_LINE_43.png",
             "image_url": "",
             "image_placeholder_text": "[メディアロゴ：大阪テレビ・雑誌等]",
             "title": "大阪テレビ<br>「やさしいニュース」<br>にて紹介",
