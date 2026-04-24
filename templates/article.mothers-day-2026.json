@@ -158,7 +158,8 @@
           "type": "fv_preview_item",
           "settings": {
             "name": "ギフトカード",
-            "price_note": "任意金額",
+            "price_note": "¥5,000〜",
+            "image": "shopify://shop_images/OFFICIAL_LINE_22_6f06d3ba-348e-418d-b384-ea7bb718e2ff.png",
             "image_url": "https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=400",
             "link": "#giftcard"
           }
@@ -220,16 +221,16 @@
         "point-3": {
           "type": "musubi_point",
           "settings": {
-            "title": "植物由来",
-            "description": "カポック繊維で<br>肌にも地球にも優しい"
+            "title": "リサイクル",
+            "description": "分別しやすい<br>単一素材"
           }
         },
         "size-1": {
           "type": "size_row",
           "settings": {
             "model": "MUSUBI -en- Nap",
-            "dimensions": "約 130 × 100 cm",
-            "weight": "約 3.0 kg",
+            "dimensions": "約 135 × 70 cm",
+            "weight": "約 3.5 kg",
             "use_case": "ソファ / 昼寝"
           }
         },
@@ -237,17 +238,17 @@
           "type": "size_row",
           "settings": {
             "model": "MUSUBI -en- Sleep",
-            "dimensions": "約 170 × 100 cm",
-            "weight": "約 4.5 kg",
+            "dimensions": "約 175 × 105 cm",
+            "weight": "約 5.0 kg",
             "use_case": "睡眠時 / 全身"
           }
         },
         "size-3": {
           "type": "size_row",
           "settings": {
-            "model": "MUSUBI -ON-",
-            "dimensions": "約 170 × 100 cm",
-            "weight": "約 5.0 kg",
+            "model": "MUSUBI -ON-Full",
+            "dimensions": "約 180 × 140 cm",
+            "weight": "約 8.0 kg",
             "use_case": "冷え対策・冬場"
           }
         },
@@ -255,9 +256,9 @@
           "type": "size_row",
           "settings": {
             "model": "MUSUBI -PON-",
-            "dimensions": "約 40 × 40 cm",
+            "dimensions": "約 20 × 15 cm",
             "weight": "約 1.5 kg",
-            "use_case": "膝掛け / クッション"
+            "use_case": "クッション"
           }
         },
         "prod-pon": {
@@ -289,7 +290,7 @@
             "title": "MUSUBI -en-",
             "subtitle": "リカバリー加重ブランケット（定番）",
             "description": "体全体に心地よい重みを感じる、通気性重視の定番モデル。365日オールシーズン使えます。",
-            "price_html": "<ul><li>Nap Size (M / 約3.0kg)：<strong>¥29,800</strong>（税込）</li><li>Sleep Size (L / 約4.5kg)：<strong>¥39,800</strong>（税込）</li></ul>",
+            "price_html": "<ul><li>Nap Size (M / 約3.5kg)：<strong>¥29,800</strong>（税込）</li><li>Sleep Size (L / 約5.0kg)：<strong>¥39,800</strong>（税込）</li></ul>",
             "target_note": "こんな方へ：50〜60代のお母さま／日常的に使いたい方／睡眠の質を高めたい方",
             "stock_note": "",
             "cta_text": "MUSUBI -en- を見る →",
@@ -307,7 +308,7 @@
             "title": "MUSUBI -ON-",
             "subtitle": "フランネル起毛タイプ",
             "description": "あたたかみのあるフランネル生地。冷たい空気の中でも、包まれるようなぬくもりを感じられます。",
-            "price_html": "<p>価格：<strong>¥44,800</strong>（税込）</p>",
+            "price_html": "<ul><li>Sleep Size (L / 約6.0kg)：<strong>¥44,800</strong>（税込）</li><li>Full Size (XL / 約8.0kg)：<strong>¥54,800</strong>（税込）</li></ul>",
             "target_note": "こんな方へ：冷え性のお母さま／寒がりのお母さまへ",
             "stock_note": "※在庫がなくなり次第、販売終了となります。",
             "cta_text": "MUSUBI -ON- を見る →",
@@ -360,7 +361,7 @@
           "type": "compare_row",
           "settings": {
             "mom_type": "60代・冷え性、寒がりの方",
-            "recommendation": "MUSUBI -ON-（在庫あれば）／ ギフトカード"
+            "recommendation": "MUSUBI -ON- Full Size／ ギフトカード"
           }
         },
         "cmp-4": {
@@ -396,7 +397,7 @@
           "settings": {
             "group": "— 商品・使い方について",
             "question": "Q. サイズはどう選べばよいですか？",
-            "answer": "<p>ソファでのリラックス用途なら <strong>Nap Size（M / 約3.0kg）</strong>、睡眠時にも使いたい場合は <strong>Sleep Size（L / 約4.5kg）</strong> が目安です。</p>"
+            "answer": "<p>ソファでのリラックス用途なら <strong>Nap Size（M / 約3.5kg）</strong>、睡眠時にも使いたい場合は <strong>Sleep Size（L / 約5.0kg）</strong> が目安です。</p>"
           }
         },
         "faq-a2": {
@@ -404,7 +405,7 @@
           "settings": {
             "group": "— 商品・使い方について",
             "question": "Q. 何kgを選べばよいですか？",
-            "answer": "<p>体重の8〜12%が目安です。体重50kg前後の方なら Nap Size (約3.0kg)、体重55kg以上で睡眠時に使いたい方は Sleep Size (約4.5kg) がおすすめです。</p>"
+            "answer": "<p>体重の8〜12%が目安です。体重50kg前後の方なら Nap Size (約3.5kg)、体重55kg以上で睡眠時に使いたい方は Sleep Size (約5.0kg) がおすすめです。</p>"
           }
         },
         "faq-a3": {
@@ -452,7 +453,7 @@
           "settings": {
             "group": "— 商品・使い方について",
             "question": "Q. リカバリーウェアとMUSUBIの違いは？",
-            "answer": "<p>リカバリーウェア（BAKUNE等）は\"着ている時間\"全般に寄り添う衣類です。MUSUBIは\"くつろぎの時間\"に特化した加重ブランケットで、サイズ選びの失敗がありません。併用も可能です。</p>"
+            "answer": "<p>リカバリーウェアは\"着ている時間\"全般に寄り添う衣類です。MUSUBIは\"くつろぎの時間\"に特化した加重ブランケットで、サイズ選びの失敗がありません。併用も可能です。</p>"
           }
         },
         "faq-b1": {
@@ -476,7 +477,7 @@
           "settings": {
             "group": "— ギフト・贈り方について",
             "question": "Q. ラッピングやメッセージカードは対応していますか？",
-            "answer": "<p>はい、<strong>無料ラッピング</strong>と<strong>メッセージカード</strong>に対応しています。ご注文時にご選択ください。</p>"
+            "answer": "<p>MUSUBIはラッピング不可です。<strong>メッセージカード</strong>は期間限定で対応しています。ご注文時にご選択ください。</p>"
           }
         },
         "faq-b4": {
@@ -484,7 +485,7 @@
           "settings": {
             "group": "— ギフト・贈り方について",
             "question": "Q. メッセージカードに何を書けばよいですか？",
-            "answer": "<p>定型例：「いつもありがとう。ゆっくり休んでね。」「今年は\"眠り\"を贈ります。体を大切にしてね。」など。無料メッセージカードにご希望の文面を印字してお届けします。</p>"
+            "answer": "<p>定型例：「いつもありがとう。ゆっくり休んでね。」「今年は\"眠り\"を贈ります。体を大切にしてね。」などがおすすめです。</p>"
           }
         },
         "faq-c1": {
@@ -500,7 +501,7 @@
           "settings": {
             "group": "— ギフトカードについて",
             "question": "Q. ギフトカードの有効期限はありますか？",
-            "answer": "<p>[要確認: 有効期限仕様]</p>"
+            "answer": "<p>購入から1年間です。</p>"
           }
         },
         "faq-d1": {
@@ -508,7 +509,7 @@
           "settings": {
             "group": "— 配送・注文について",
             "question": "Q. 母の日当日に届けるには、いつまでに注文すればよいですか？",
-            "answer": "<p><strong>5月7日（木）中にご発送可能なタイミングでのご注文</strong>で、母の日当日のお届けが可能です。GW期間を挟みますので、確実にお届けするためお早めのご注文をおすすめします。</p>"
+            "answer": "<p><strong>5月7日（木）11:59までに</strong>で、母の日当日のお届けが可能です。GW期間を挟みますので、確実にお届けするためお早めのご注文をおすすめします。</p>"
           }
         },
         "faq-d2": {
