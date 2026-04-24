@@ -178,11 +178,12 @@
         "award-2": {
           "type": "award_card",
           "settings": {
-            "badge": "受賞",
+            "badge": "コラボ",
+            "image": "shopify://shop_images/OFFICIAL_LINE_45.png",
             "image_url": "",
             "image_placeholder_text": "[メディア掲載ロゴ / 受賞ロゴ]",
-            "title": "2024 グッドデザイン賞<br>（該当時）",
-            "note": "※実績に応じて編集"
+            "title": "JOURNAL STANDARD FURNITUREコラボ<br>Makuakeにて先行予約中",
+            "note": ""
           }
         },
         "award-3": {
@@ -193,7 +194,7 @@
             "image_url": "",
             "image_placeholder_text": "[ホテル採用ロゴ等]",
             "title": "全国のこだわりの宿で<br>MUSUBIの寝心地を体験",
-            "note": "We're Smart® Green Guide認証宿にて採用"
+            "note": ""
           }
         },
         "award-4": {
@@ -204,7 +205,7 @@
             "image_url": "",
             "image_placeholder_text": "[メディアロゴ：大阪テレビ・雑誌等]",
             "title": "大阪テレビ<br>「やさしいニュース」<br>にて紹介",
-            "note": "2025年3月"
+            "note": "2025年3月放映"
           }
         },
         "point-1": {
