@@ -617,7 +617,7 @@
       "settings": {
         "countdown_target_date": "2026-05-10",
         "countdown_prefix": "母の日（5月10日）まで あと",
-        "countdown_suffix": "日｜当日お届けは5月7日（木）11:59までのご発送まで",
+        "countdown_suffix": "日｜当日お届けは5月7日（木）11:59までのご注文まで",
         "countdown_zero_message": "本日は母の日。ありがとうの一日を。",
         "kv_image": "shopify://shop_images/c_2_3x_2_7f7dd5c5-c379-4103-9176-15f1c58618f2.png",
         "kv_image_url": "https://kapok-knot.com/cdn/shop/files/happy-mothers-day-kv.png",
@@ -635,7 +635,7 @@
         "ranking_conclusion": "<p>いま注目を集めているのが、<strong>\"眠り\"を贈るという選択</strong>。</p>",
         "hero_transition_eyebrow": "OUR ANSWER",
         "hero_heading_line1": "今年の母の日は、",
-        "hero_heading_line2": "やさしい「重み」<br>を贈る。",
+        "hero_heading_line2": "やさしい「重み」を贈る。",
         "hero_lifestyle_image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600",
         "hero_lifestyle_alt": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト",
         "hero_body": "植物由来のぬくもりで、ふたつの選択を。",
