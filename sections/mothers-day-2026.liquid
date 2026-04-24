@@ -517,36 +517,6 @@
     </div>
   </section>
 
-  <!-- 7.5 お客さまの声 -->
-  <section id="voices" class="md-section bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-jp text-[24px] md:text-[32px] text-md-navy mb-3 md-fade">{{ section.settings.voices_h2 }}</h2>
-      <p class="text-sm text-md-muted mb-8 md-fade">{{ section.settings.voices_subtitle }}</p>
-
-      {%- assign voice_count = 0 -%}
-      {%- for block in section.blocks -%}{%- if block.type == 'voice_card' -%}{%- assign voice_count = voice_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
-
-      {%- if section.settings.voices_ready and voice_count > 0 -%}
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'voice_card' -%}
-            <div class="md-voice-card md-fade">
-              {{ block.settings.text }}
-              <span class="who">{{ block.settings.who }}</span>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-      {%- else -%}
-      <div class="bg-md-cream p-8 text-center md-fade">
-        <p class="text-md-muted text-sm leading-relaxed">
-          {{ section.settings.voices_placeholder }}
-        </p>
-      </div>
-      {%- endif -%}
-    </div>
-  </section>
-
   <!-- 8. リカバリーウェアの次 -->
   <section id="next-step" class="md-section bg-white">
     <div class="max-w-3xl mx-auto">
