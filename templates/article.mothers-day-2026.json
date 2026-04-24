@@ -54,13 +54,6 @@
             "anchor": "#compare"
           }
         },
-        "toc-7": {
-          "type": "toc_item",
-          "settings": {
-            "label": "お客さまの声",
-            "anchor": "#voices"
-          }
-        },
         "toc-8": {
           "type": "toc_item",
           "settings": {
@@ -560,7 +553,6 @@
         "toc-4",
         "toc-5",
         "toc-6",
-        "toc-7",
         "toc-8",
         "toc-9",
         "toc-10",
