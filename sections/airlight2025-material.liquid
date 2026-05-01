@@ -1,0 +1,295 @@
+{% comment %} AirLight 2025 (JP Domestic) — Material Story (カポック素材の解説) {% endcomment %}
+
+<style>
+  .a25-material {
+    background: {{ section.settings.bg_color | default: '#faf9f6' }};
+    padding: clamp(48px, 8vw, 96px) 0;
+  }
+
+  .a25-material__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+
+  .a25-material__intro {
+    text-align: center;
+    margin: 0 0 clamp(40px, 6vw, 72px);
+  }
+
+  .a25-material__label {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(12px, 2vw, 20px);
+  }
+
+  .a25-material__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.6vw, 2rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+    margin: 0 0 clamp(18px, 2.5vw, 24px);
+  }
+
+  .a25-material__heading p { margin: 0 0 0.4em; }
+  .a25-material__heading p:last-child { margin-bottom: 0; }
+  .a25-material__heading em {
+    font-style: normal;
+    font-weight: 700;
+    color: #c29d66;
+  }
+
+  .a25-material__intro-body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.9;
+    color: #5a5550;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .a25-material__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(36px, 6vw, 64px);
+  }
+
+  .a25-material-block {
+    display: grid;
+    gap: clamp(20px, 3vw, 36px);
+    align-items: center;
+  }
+
+  .a25-material-block--full {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .a25-material-block--left {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .a25-material-block--right {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .a25-material-block--right .a25-material-block__media {
+    order: 2;
+  }
+
+  .a25-material-block__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .a25-material-block__title {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    letter-spacing: 0.02em;
+    margin: 0 0 clamp(12px, 2vw, 18px);
+  }
+
+  .a25-material-block__text {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.9;
+    color: #5a5550;
+  }
+
+  .a25-material-block__text p { margin: 0 0 1em; }
+  .a25-material-block__text p:last-child { margin-bottom: 0; }
+  .a25-material-block__text em {
+    font-style: normal;
+    font-weight: 600;
+    color: #c29d66;
+  }
+
+  .a25-material-block__media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .a25-material-block__image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .a25-material-block__caption {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #8a7f6e;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .a25-material {
+      padding: 48px 0;
+    }
+    .a25-material-block--left,
+    .a25-material-block--right {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .a25-material-block--right .a25-material-block__media {
+      order: 0;
+    }
+    .a25-material-block__title {
+      font-size: 1.15rem;
+    }
+    .a25-material-block__text {
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+</style>
+
+<section class="a25-material" id="{{ section.settings.section_id | default: 'a25-material' }}">
+  <div class="a25-material__inner">
+    <div class="a25-material__intro">
+      {% if section.settings.label != blank %}
+        <p class="a25-material__label">{{ section.settings.label }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <div class="a25-material__heading">{{ section.settings.heading }}</div>
+      {% endif %}
+      {% if section.settings.intro != blank %}
+        <p class="a25-material__intro-body">{{ section.settings.intro | newline_to_br }}</p>
+      {% endif %}
+    </div>
+
+    <div class="a25-material__blocks">
+      {% for block in section.blocks %}
+        {% if block.type == 'material_block' %}
+          {% assign pos = block.settings.image_position | default: 'full' %}
+          <div class="a25-material-block a25-material-block--{{ pos }}" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank or block.settings.image_url != blank %}
+              <div class="a25-material-block__media">
+                {% if block.settings.image != blank %}
+                  <img class="a25-material-block__image"
+                       src="{{ block.settings.image | image_url: width: 1200 }}"
+                       alt="{{ block.settings.title }}"
+                       loading="lazy">
+                {% elsif block.settings.image_url != blank %}
+                  <img class="a25-material-block__image"
+                       src="{{ block.settings.image_url }}"
+                       alt="{{ block.settings.title }}"
+                       loading="lazy">
+                {% endif %}
+                {% if block.settings.image_caption != blank %}
+                  <p class="a25-material-block__caption">{{ block.settings.image_caption }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+            <div class="a25-material-block__body">
+              {% if block.settings.title != blank %}
+                <h3 class="a25-material-block__title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.body != blank %}
+                <div class="a25-material-block__text">{{ block.settings.body }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Material",
+  "tag": "section",
+  "class": "shopify-section--a25-material",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 背景" },
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-material" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#faf9f6" },
+
+    { "type": "header", "content": "イントロ" },
+    { "type": "text", "id": "label", "label": "ラベル (上の小さな文字)", "default": "素材について" },
+    { "type": "richtext", "id": "heading", "label": "メイン見出し", "default": "<p>長年の研究成果の末に実現した<em>新素材「カポック」</em></p>" },
+    { "type": "textarea", "id": "intro", "label": "イントロ本文", "default": "私たちのブランド、KAPOK KNOT(カポックノット)は、世界一を目指すカポック専業のブランドです。カポックという植物由来の天然の綿を使用しています。" }
+  ],
+  "blocks": [
+    {
+      "type": "material_block",
+      "name": "Material Block",
+      "settings": [
+        { "type": "text", "id": "title", "label": "見出し" },
+        { "type": "richtext", "id": "body", "label": "本文" },
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像 URL (外部フォールバック)" },
+        { "type": "text", "id": "image_caption", "label": "画像キャプション" },
+        {
+          "type": "radio",
+          "id": "image_position",
+          "label": "画像レイアウト",
+          "options": [
+            { "value": "left", "label": "左に画像" },
+            { "value": "right", "label": "右に画像" },
+            { "value": "full", "label": "フル幅 (画像上・テキスト下)" }
+          ],
+          "default": "full"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Material",
+      "blocks": [
+        {
+          "type": "material_block",
+          "settings": {
+            "title": "コットンの約8分の1の軽さ",
+            "body": "<p>エシカルダウンカポック™はとにかく軽くて暖かいのが特徴。カポック繊維は中が空洞(中空)になっており、コットンの1/8の軽さと言われています。</p>",
+            "image_position": "full"
+          }
+        },
+        {
+          "type": "material_block",
+          "settings": {
+            "title": "木になるダウン「カポック」",
+            "body": "<p>カポックは植物由来のため、化学繊維のポリエステルとは違い「呼吸」をします。湿気を吸って暖かくなる吸湿発熱という機能を持っており、軽さと暖かさの両立を実現しています。</p>",
+            "image_position": "full"
+          }
+        },
+        {
+          "type": "material_block",
+          "settings": {
+            "title": "特許申請中のシート技術",
+            "body": "<p>カポック繊維は短すぎて糸にできない — 各社が断念してきた難題を、日本有数の繊維技術者たちと5年かけて解決。ようやく生まれたのが特許申請中の中綿シート、エシカルダウンカポック™です。</p>",
+            "image_position": "full"
+          }
+        },
+        {
+          "type": "material_block",
+          "settings": {
+            "title": "動物にも優しいアニマルフリー",
+            "body": "<p>従来のダウンは水鳥の羽が使用されていました。1着のダウンジャケットには約30羽分の羽毛が使われていると言われています。カポックノットの商品で使用するカポックは木の実由来ですから、その事実に心を痛める必要はありません。</p>",
+            "image_caption": "▲カポックの木の実",
+            "image_position": "full"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

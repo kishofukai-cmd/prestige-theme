@@ -1,0 +1,227 @@
+{% comment %} AirLight 2025 (JP Domestic) — Mid-page CTA Banner {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-midcta {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  #{{ section.id }} .a25-midcta__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  #{{ section.id }} .a25-midcta__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, {{ section.settings.overlay_opacity | default: 40 | divided_by: 100.0 }});
+    z-index: 1;
+  }
+
+  #{{ section.id }} .a25-midcta__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: clamp(56px, 10vw, 120px) clamp(16px, 3vw, 24px);
+    text-align: center;
+    color: #ffffff;
+  }
+
+  #{{ section.id }} .a25-midcta__eyebrow {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(12px, 2vw, 20px);
+  }
+
+  #{{ section.id }} .a25-midcta__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.55;
+    color: #ffffff;
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-midcta__heading p { margin: 0 0 0.4em; }
+  #{{ section.id }} .a25-midcta__heading p:last-child { margin-bottom: 0; }
+  #{{ section.id }} .a25-midcta__heading em {
+    font-style: normal;
+    font-weight: 700;
+    color: #c29d66;
+  }
+
+  #{{ section.id }} .a25-midcta__sub {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.8;
+    color: #faf9f6;
+    margin: 0 auto clamp(24px, 4vw, 36px);
+    max-width: 620px;
+  }
+
+  #{{ section.id }} .a25-midcta__cta-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 0 clamp(16px, 2vw, 20px);
+  }
+
+  #{{ section.id }} .a25-midcta__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #1a1a1a;
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    min-width: 280px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #{{ section.id }} .a25-midcta__cta--accent {
+    background: #c29d66;
+    color: #1a1a1a;
+  }
+
+  #{{ section.id }} .a25-midcta__cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  #{{ section.id }} .a25-midcta__price-note {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #faf9f6;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .a25-midcta__inner {
+      padding: 64px 16px;
+    }
+    #{{ section.id }} .a25-midcta__heading {
+      font-size: clamp(1.25rem, 5vw, 1.7rem);
+      line-height: 1.6;
+    }
+    #{{ section.id }} .a25-midcta__sub {
+      font-size: 13px;
+    }
+    #{{ section.id }} .a25-midcta__cta-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+    #{{ section.id }} .a25-midcta__cta {
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+    }
+  }
+</style>
+
+<section class="a25-midcta" id="{{ section.id }}">
+  {% if section.settings.bg_image != blank %}
+    <img class="a25-midcta__bg"
+         src="{{ section.settings.bg_image | image_url: width: 2000 }}"
+         alt=""
+         loading="lazy" aria-hidden="true">
+  {% elsif section.settings.bg_image_url != blank %}
+    <img class="a25-midcta__bg"
+         src="{{ section.settings.bg_image_url }}"
+         alt=""
+         loading="lazy" aria-hidden="true">
+  {% endif %}
+
+  <div class="a25-midcta__overlay"></div>
+
+  <div class="a25-midcta__inner">
+    {% if section.settings.eyebrow != blank %}
+      <p class="a25-midcta__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <div class="a25-midcta__heading">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.sub != blank %}
+      <p class="a25-midcta__sub">{{ section.settings.sub }}</p>
+    {% endif %}
+
+    <div class="a25-midcta__cta-row">
+      {% if section.settings.cta_men_text != blank %}
+        <a class="a25-midcta__cta"
+           href="{{ section.settings.cta_men_url | default: '#' }}">
+          {{ section.settings.cta_men_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.cta_women_text != blank %}
+        <a class="a25-midcta__cta a25-midcta__cta--accent"
+           href="{{ section.settings.cta_women_url | default: '#' }}">
+          {{ section.settings.cta_women_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.settings.price_note != blank %}
+      <p class="a25-midcta__price-note">{{ section.settings.price_note }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Mid CTA",
+  "tag": "section",
+  "class": "shopify-section--a25-midcta",
+  "settings": [
+    { "type": "header", "content": "背景" },
+    { "type": "image_picker", "id": "bg_image", "label": "背景画像" },
+    { "type": "text", "id": "bg_image_url", "label": "背景画像 URL (外部フォールバック)" },
+    { "type": "range", "id": "overlay_opacity", "label": "オーバーレイ濃度 (%)", "min": 0, "max": 100, "step": 5, "default": 65 },
+
+    { "type": "header", "content": "テキスト" },
+    { "type": "text", "id": "eyebrow", "label": "アイブロー", "default": "この冬の新定番を" },
+    { "type": "richtext", "id": "heading", "label": "メイン見出し", "default": "<p>軽く、暖かく、<em>後悔しない。</em></p>" },
+    { "type": "textarea", "id": "sub", "label": "サブテキスト", "default": "植物由来のカポック素材。着心地を、もう一段上へ。" },
+
+    { "type": "header", "content": "CTA ボタン (メンズ)" },
+    { "type": "text", "id": "cta_men_text", "label": "メンズ ボタンテキスト", "default": "エアーライトジャケット-Men- 購入ページへ" },
+    { "type": "url", "id": "cta_men_url", "label": "メンズ ボタンリンク" },
+
+    { "type": "header", "content": "CTA ボタン (ウィメンズ)" },
+    { "type": "text", "id": "cta_women_text", "label": "ウィメンズ ボタンテキスト", "default": "エアーライトジャケット-Women- 購入ページへ" },
+    { "type": "url", "id": "cta_women_url", "label": "ウィメンズ ボタンリンク" },
+
+    { "type": "header", "content": "価格注記" },
+    { "type": "text", "id": "price_note", "label": "価格注記", "default": "¥39,800" }
+  ],
+  "presets": [
+    { "name": "A2025 Mid CTA" }
+  ]
+}
+{% endschema %}

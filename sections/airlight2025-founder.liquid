@@ -1,0 +1,246 @@
+{% comment %} AirLight 2025 (JP Domestic) — Founder Message + Brand Values {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-founder {
+    background: #faf9f6;
+    padding: clamp(56px, 10vw, 112px) 0;
+  }
+
+  #{{ section.id }} .a25-founder__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+  }
+
+  #{{ section.id }} .a25-founder__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    text-align: center;
+  }
+
+  #{{ section.id }} .a25-founder__card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: clamp(24px, 4vw, 48px);
+    align-items: start;
+    margin: 0 0 clamp(56px, 8vw, 96px);
+  }
+
+  #{{ section.id }} .a25-founder__image-wrap {
+    width: 100%;
+  }
+
+  #{{ section.id }} .a25-founder__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+  }
+
+  #{{ section.id }} .a25-founder__name {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 clamp(12px, 2vw, 20px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-founder__body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.95;
+    color: #5a5550;
+  }
+
+  #{{ section.id }} .a25-founder__body p {
+    margin: 0 0 1em;
+  }
+
+  #{{ section.id }} .a25-founder__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }} .a25-founder__values-heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: #1a1a1a;
+    text-align: center;
+    margin: 0 0 clamp(32px, 5vw, 56px);
+    letter-spacing: 0.04em;
+  }
+
+  #{{ section.id }} .a25-founder__values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  #{{ section.id }} .a25-founder__value {
+    background: #ffffff;
+    padding: clamp(24px, 3.5vw, 36px) clamp(20px, 2.5vw, 28px);
+    border-top: 2px solid #c29d66;
+    text-align: left;
+  }
+
+  #{{ section.id }} .a25-founder__value-title {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 clamp(12px, 1.8vw, 16px);
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-founder__value-body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1.9;
+    color: #5a5550;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .a25-founder__card {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    #{{ section.id }} .a25-founder__image-wrap {
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    #{{ section.id }} .a25-founder__name {
+      text-align: center;
+    }
+    #{{ section.id }} .a25-founder__values {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    #{{ section.id }} .a25-founder__value {
+      padding: 24px 20px;
+    }
+  }
+</style>
+
+<section class="a25-founder" id="{{ section.id }}">
+  <div class="a25-founder__inner">
+    {% if section.settings.kicker != blank %}
+      <p class="a25-founder__kicker">{{ section.settings.kicker }}</p>
+    {% endif %}
+
+    <div class="a25-founder__card">
+      <div class="a25-founder__image-wrap">
+        {% if section.settings.founder_image != blank %}
+          <img class="a25-founder__image"
+               src="{{ section.settings.founder_image | image_url: width: 800 }}"
+               alt="{{ section.settings.founder_name | default: 'Founder' }}"
+               loading="lazy">
+        {% elsif section.settings.founder_image_url != blank %}
+          <img class="a25-founder__image"
+               src="{{ section.settings.founder_image_url }}"
+               alt="{{ section.settings.founder_name | default: 'Founder' }}"
+               loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="a25-founder__text">
+        {% if section.settings.founder_name != blank %}
+          <h3 class="a25-founder__name">{{ section.settings.founder_name }}</h3>
+        {% endif %}
+        {% if section.settings.founder_body != blank %}
+          <div class="a25-founder__body">{{ section.settings.founder_body }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.values_heading != blank %}
+      <h3 class="a25-founder__values-heading">{{ section.settings.values_heading }}</h3>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="a25-founder__values">
+        {% for block in section.blocks %}
+          {% if block.type == 'value_block' %}
+            <article class="a25-founder__value" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <h4 class="a25-founder__value-title">{{ block.settings.title }}</h4>
+              {% endif %}
+              {% if block.settings.body != blank %}
+                <p class="a25-founder__value-body">{{ block.settings.body }}</p>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Founder",
+  "tag": "section",
+  "class": "shopify-section--a25-founder",
+  "settings": [
+    { "type": "header", "content": "セクション見出し" },
+    { "type": "text", "id": "kicker", "label": "キッカー (上の小さな文字)", "default": "創業者からのメッセージ" },
+
+    { "type": "header", "content": "創業者情報" },
+    { "type": "text", "id": "founder_name", "label": "創業者名", "default": "カポックノット代表 深井喜翔" },
+    { "type": "image_picker", "id": "founder_image", "label": "創業者画像" },
+    { "type": "text", "id": "founder_image_url", "label": "創業者画像 URL (外部フォールバック)" },
+    { "type": "richtext", "id": "founder_body", "label": "メッセージ本文", "default": "<p>初めまして、カポックノット創業者の深井喜翔です。</p><p>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。</p><p>そんな中、カポックと出会い「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p>" },
+
+    { "type": "header", "content": "ブランド価値観" },
+    { "type": "text", "id": "values_heading", "label": "価値観セクション見出し", "default": "カポックノットの価値観" }
+  ],
+  "blocks": [
+    {
+      "type": "value_block",
+      "name": "価値観ブロック",
+      "settings": [
+        { "type": "text", "id": "title", "label": "タイトル" },
+        { "type": "textarea", "id": "body", "label": "本文" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Founder",
+      "blocks": [
+        {
+          "type": "value_block",
+          "settings": {
+            "title": "次世代に託す地球環境への還元",
+            "body": "サステナブルな素材を活用し、持続可能なビジネスを展開し、その利益の一部で地球環境再生に貢献します。"
+          }
+        },
+        {
+          "type": "value_block",
+          "settings": {
+            "title": "生産者に優しいものづくり",
+            "body": "受け継いできた技術と革新的な技術を活かし、原料生産元からお客様の手に届くまで独自のサプライチェーンを構築し、生産者にも優しいものづくりをしていきます。"
+          }
+        },
+        {
+          "type": "value_block",
+          "settings": {
+            "title": "より軽く、より暖かく",
+            "body": "軽さと吸湿発熱の機能を持つカポックによって、着膨れしない「軽い、薄い、暖かい」スタイリッシュなアウターを実現します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,242 @@
+{% comment %} AirLight 2025 (JP Domestic) — Functional Demos (GIF 実証セクション) {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-demos {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(56px, 9vw, 100px) 0;
+    overflow: hidden;
+  }
+
+  #{{ section.id }} .a25-demos__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+  }
+
+  #{{ section.id }} .a25-demos__head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(40px, 6vw, 56px);
+  }
+
+  #{{ section.id }} .a25-demos__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(12px, 2vw, 16px);
+  }
+
+  #{{ section.id }} .a25-demos__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-demos__heading p { margin: 0 0 0.3em; }
+  #{{ section.id }} .a25-demos__heading p:last-child { margin-bottom: 0; }
+  #{{ section.id }} .a25-demos__heading em {
+    font-style: normal;
+    font-weight: 700;
+    color: #c29d66;
+  }
+
+  #{{ section.id }} .a25-demos__intro {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(13px, 1.7vw, 15px);
+    line-height: 1.85;
+    color: #5a5550;
+    margin: 0;
+  }
+
+  /* Demo list */
+  #{{ section.id }} .a25-demos__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(48px, 7vw, 80px);
+  }
+
+  #{{ section.id }} .a25-demo {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #{{ section.id }} .a25-demo__tag {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c29d66;
+    background: rgba(194, 157, 102, 0.08);
+    border: 1px solid rgba(194, 157, 102, 0.25);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin: 0 0 16px;
+  }
+
+  #{{ section.id }} .a25-demo__title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 clamp(16px, 2.5vw, 22px);
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-demo__gif-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto clamp(14px, 2vw, 20px);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0ece4;
+    box-shadow: 0 8px 32px rgba(26, 38, 64, 0.08);
+  }
+
+  #{{ section.id }} .a25-demo__gif {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #{{ section.id }} .a25-demo__caption {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    color: #8a7f6e;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    letter-spacing: 0.04em;
+  }
+
+  #{{ section.id }} .a25-demo__body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(13px, 1.7vw, 15px);
+    line-height: 1.9;
+    color: #5a5550;
+    margin: 0 auto;
+    max-width: 620px;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .a25-demos__inner { padding: 0 16px; }
+    #{{ section.id }} .a25-demos__heading { font-size: clamp(1.3rem, 5vw, 1.6rem); }
+    #{{ section.id }} .a25-demo__title { font-size: clamp(1.05rem, 4.4vw, 1.3rem); }
+    #{{ section.id }} .a25-demo__body { font-size: 13px; }
+  }
+</style>
+
+<section class="a25-demos" id="{{ section.id }}">
+  <div class="a25-demos__inner">
+    <div class="a25-demos__head">
+      {% if section.settings.kicker != blank %}
+        <p class="a25-demos__kicker">{{ section.settings.kicker }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <div class="a25-demos__heading">{{ section.settings.heading }}</div>
+      {% endif %}
+      {% if section.settings.intro != blank %}
+        <p class="a25-demos__intro">{{ section.settings.intro }}</p>
+      {% endif %}
+    </div>
+
+    <div class="a25-demos__list">
+      {% for block in section.blocks %}
+        {% if block.type == 'demo' %}
+          <div class="a25-demo" {{ block.shopify_attributes }}>
+            {% if block.settings.tag != blank %}
+              <span class="a25-demo__tag">{{ block.settings.tag }}</span>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h3 class="a25-demo__title">{{ block.settings.title }}</h3>
+            {% endif %}
+
+            <div class="a25-demo__gif-wrap">
+              {% if block.settings.gif != blank %}
+                <img class="a25-demo__gif"
+                     src="{{ block.settings.gif | image_url: width: 1200 }}"
+                     alt="{{ block.settings.title | escape }}"
+                     loading="lazy">
+              {% elsif block.settings.gif_url != blank %}
+                <img class="a25-demo__gif"
+                     src="{{ block.settings.gif_url }}"
+                     alt="{{ block.settings.title | escape }}"
+                     loading="lazy">
+              {% endif %}
+            </div>
+
+            {% if block.settings.caption != blank %}
+              <p class="a25-demo__caption">{{ block.settings.caption }}</p>
+            {% endif %}
+
+            {% if block.settings.body != blank %}
+              <p class="a25-demo__body">{{ block.settings.body }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Functional Demos",
+  "tag": "section",
+  "class": "shopify-section--a25-demos",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+    { "type": "text", "id": "kicker", "label": "キッカー", "default": "Functional Proof" },
+    { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>数字が証明する、<em>エアーライトの実力。</em></p>" },
+    { "type": "textarea", "id": "intro", "label": "リード文", "default": "実際の使用環境で検証した、確かな機能性能をご覧ください。" }
+  ],
+  "blocks": [
+    {
+      "type": "demo",
+      "name": "Demo",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "タグ (小さなラベル)", "default": "FEATURE" },
+        { "type": "text", "id": "title", "label": "見出し", "default": "デモタイトル" },
+        { "type": "image_picker", "id": "gif", "label": "GIF / 画像" },
+        { "type": "text", "id": "gif_url", "label": "GIF URL (外部フォールバック)" },
+        { "type": "text", "id": "caption", "label": "キャプション (GIF の下の注記)" },
+        { "type": "textarea", "id": "body", "label": "本文" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Functional Demos",
+      "blocks": [
+        {
+          "type": "demo",
+          "settings": {
+            "tag": "WARMTH",
+            "title": "ダウンと変わらない暖かさ",
+            "caption": "※ 3°C 環境で、着用 1 分後の様子",
+            "body": "寒冷環境での実着テストで確認。エシカルダウンカポック™は、従来のダウンジャケットと同等の保温性能を発揮します。約500gという軽さで、しっかりと暖かさを実感できます。"
+          }
+        },
+        {
+          "type": "demo",
+          "settings": {
+            "tag": "WATER RESISTANT",
+            "title": "急な雨でも大丈夫な、傘の20倍の耐水圧",
+            "caption": "※ 撥水実証動画",
+            "body": "植物由来の撥水コーティングで、急な雨でも快適。通勤からアウトドアまで、全天候で使える撥水性能を備えています。"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

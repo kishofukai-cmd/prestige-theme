@@ -1,0 +1,270 @@
+{% comment %} AirLight 2025 (JP Domestic) — FAQ Accordion (zero-JS, native details/summary) {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-faq {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(56px, 9vw, 96px) 0;
+  }
+
+  #{{ section.id }} .a25-faq__inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+  }
+
+  #{{ section.id }} .a25-faq__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(10px, 1.5vw, 14px);
+    text-align: center;
+  }
+
+  #{{ section.id }} .a25-faq__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 clamp(32px, 5vw, 56px);
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #{{ section.id }} .a25-faq__item {
+    border-top: 1px solid #e8e4dc;
+    padding: 0;
+  }
+
+  #{{ section.id }} .a25-faq__item:last-child {
+    border-bottom: 1px solid #e8e4dc;
+  }
+
+  #{{ section.id }} .a25-faq__item > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: clamp(18px, 2.5vw, 24px) 0;
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+
+  #{{ section.id }} .a25-faq__item > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #{{ section.id }} .a25-faq__item > summary:hover {
+    color: #c29d66;
+  }
+
+  #{{ section.id }} .a25-faq__q {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  #{{ section.id }} .a25-faq__q-mark {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    color: #c29d66;
+    font-size: 1.05em;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+
+  #{{ section.id }} .a25-faq__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-top: 6px;
+    transition: transform 0.3s ease;
+  }
+
+  #{{ section.id }} .a25-faq__icon::before,
+  #{{ section.id }} .a25-faq__icon::after {
+    content: '';
+    position: absolute;
+    background: #5a5550;
+    transition: transform 0.3s ease;
+  }
+
+  #{{ section.id }} .a25-faq__icon::before {
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 1.5px;
+  }
+
+  #{{ section.id }} .a25-faq__icon::after {
+    top: 0;
+    left: 9px;
+    width: 1.5px;
+    height: 20px;
+  }
+
+  #{{ section.id }} .a25-faq__item[open] .a25-faq__icon::after {
+    transform: scaleY(0);
+  }
+
+  #{{ section.id }} .a25-faq__answer {
+    padding: 0 0 clamp(20px, 3vw, 28px) clamp(24px, 3vw, 32px);
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.95;
+    color: #5a5550;
+  }
+
+  #{{ section.id }} .a25-faq__answer p {
+    margin: 0 0 1em;
+  }
+
+  #{{ section.id }} .a25-faq__answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }} .a25-faq__answer a {
+    color: #c29d66;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .a25-faq__item > summary {
+      font-size: 0.95rem;
+      padding: 18px 0;
+      gap: 12px;
+    }
+    #{{ section.id }} .a25-faq__answer {
+      font-size: 13px;
+      padding-left: 20px;
+    }
+    #{{ section.id }} .a25-faq__icon {
+      width: 18px;
+      height: 18px;
+    }
+    #{{ section.id }} .a25-faq__icon::before {
+      top: 8px;
+      width: 18px;
+    }
+    #{{ section.id }} .a25-faq__icon::after {
+      left: 8px;
+      height: 18px;
+    }
+  }
+</style>
+
+<section class="a25-faq" id="{{ section.id }}">
+  <div class="a25-faq__inner">
+    {% if section.settings.kicker != blank %}
+      <p class="a25-faq__kicker">{{ section.settings.kicker }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="a25-faq__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="a25-faq__list">
+        {% for block in section.blocks %}
+          {% if block.type == 'faq_item' %}
+            <details class="a25-faq__item" {{ block.shopify_attributes }}>
+              <summary>
+                <span class="a25-faq__q">
+                  <span class="a25-faq__q-mark">Q.</span>
+                  <span class="a25-faq__q-text">{{ block.settings.question }}</span>
+                </span>
+                <span class="a25-faq__icon" aria-hidden="true"></span>
+              </summary>
+              {% if block.settings.answer != blank %}
+                <div class="a25-faq__answer">{{ block.settings.answer }}</div>
+              {% endif %}
+            </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 FAQ",
+  "tag": "section",
+  "class": "shopify-section--a25-faq",
+  "settings": [
+    { "type": "header", "content": "セクション見出し" },
+    { "type": "text", "id": "kicker", "label": "キッカー", "default": "FAQ" },
+    { "type": "text", "id": "heading", "label": "メイン見出し", "default": "よくあるご質問" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ アイテム",
+      "settings": [
+        { "type": "text", "id": "question", "label": "質問" },
+        { "type": "richtext", "id": "answer", "label": "回答" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "カポックは洋服以外に何に使われていますか?",
+            "answer": "<p>現地では、枕の詰め物や、オイルキャッチャー(海に流れた重油などの吸収剤)として使われています。以前はベッドのマットレスにも使われていましたが、スプリング式のマットレスに変わりあまり使われなくなってしまいました。需要が減ってしまったため、木材として切り出されるといった事態も起きています。</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "配送のタイムラインを教えてください。",
+            "answer": "<p>基本的にご注文から一週間以内でお届けいたします。</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "縫製はどこで行っていますか?",
+            "answer": "<p>ほとんどの製品は、青森の工場で縫製しています。多くの工場で行われている分業型とは違い、この縫製工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得して初めて1人前とされます。そのため、分業型の工場に比べて縫製技術が高いのが特徴です。</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "ロゴにはどんな意味がありますか?",
+            "answer": "<p>KAPOK KNOT は「結び目/絆」を意味する knot(ノット)を冠しています。マークにある結び方は「あやむすび」という結び方で、結び目が非常に強く緩まないことが特徴です。日本で使用されるこの水引の形には「末永く」「永遠に続く」という意味があり、関わる全ての人が無理をせずに、地球資源の持続可能な未来を考えるブランドのあり方を体現しています。</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "手洗いはどうすればよいですか?",
+            "answer": "<p>30℃以下のぬるま湯に中性洗剤を溶かし、やさしく押し洗いしてください。乾燥機の使用は避け、風通しの良い日陰で平置き乾燥をおすすめします。</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

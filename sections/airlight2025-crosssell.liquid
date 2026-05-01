@@ -1,0 +1,341 @@
+{% comment %} AirLight 2025 (JP Domestic) — Cross-sell (Jackets & Coats) {% endcomment %}
+
+<style>
+  .a25-cross {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(40px, 7vw, 80px) 0;
+  }
+
+  .a25-cross__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+
+  .a25-cross__group {
+    margin: 0 0 clamp(40px, 6vw, 72px);
+  }
+
+  .a25-cross__group:last-child {
+    margin-bottom: 0;
+  }
+
+  .a25-cross__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0 0 clamp(20px, 3vw, 36px);
+  }
+
+  .a25-cross__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  .a25-cross-tile {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+
+  .a25-cross-tile:hover {
+    transform: translateY(-3px);
+  }
+
+  .a25-cross-tile__img-wrap {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #faf9f6;
+    margin: 0 0 12px;
+  }
+
+  .a25-cross-tile__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .a25-cross-tile:hover .a25-cross-tile__img {
+    transform: scale(1.04);
+  }
+
+  .a25-cross-tile__name {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(13px, 1.4vw, 15px);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .a25-cross-tile__colors {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #8a7f6e;
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .a25-cross-tile__price {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(13px, 1.4vw, 15px);
+    font-weight: 600;
+    color: #c29d66;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .a25-cross__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Mobile: horizontal scroll */
+  @media (max-width: 768px) {
+    .a25-cross {
+      padding: 40px 0;
+    }
+    .a25-cross__inner {
+      padding: 0;
+    }
+    .a25-cross__heading {
+      padding: 0 16px;
+    }
+    .a25-cross__grid {
+      display: flex;
+      grid-template-columns: none;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 0 16px 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .a25-cross__grid::-webkit-scrollbar {
+      height: 4px;
+    }
+    .a25-cross__grid::-webkit-scrollbar-thumb {
+      background: #ece7df;
+      border-radius: 2px;
+    }
+    .a25-cross-tile {
+      flex: 0 0 64%;
+      max-width: 64%;
+      scroll-snap-align: start;
+    }
+    .a25-cross-tile__name {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<section class="a25-cross" id="{{ section.settings.section_id | default: 'a25-cross' }}">
+  <div class="a25-cross__inner">
+    {%- comment -%} Jackets group {%- endcomment -%}
+    <div class="a25-cross__group a25-cross__group--jacket">
+      {% if section.settings.jackets_heading != blank %}
+        <h2 class="a25-cross__heading">{{ section.settings.jackets_heading }}</h2>
+      {% endif %}
+      <div class="a25-cross__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'product_tile' and block.settings.group == 'jacket' %}
+            <a class="a25-cross-tile" href="{{ block.settings.cta_url | default: '#' }}" {{ block.shopify_attributes }}>
+              <div class="a25-cross-tile__img-wrap">
+                {% if block.settings.image != blank %}
+                  <img class="a25-cross-tile__img"
+                       src="{{ block.settings.image | image_url: width: 600 }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% elsif block.settings.image_url != blank %}
+                  <img class="a25-cross-tile__img"
+                       src="{{ block.settings.image_url }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% endif %}
+              </div>
+              {% if block.settings.name != blank %}
+                <p class="a25-cross-tile__name">{{ block.settings.name }}</p>
+              {% endif %}
+              {% if block.settings.colors != blank %}
+                <p class="a25-cross-tile__colors">{{ block.settings.colors }}</p>
+              {% endif %}
+              {% if block.settings.price != blank %}
+                <p class="a25-cross-tile__price">{{ block.settings.price }}</p>
+              {% endif %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {%- comment -%} Coats group {%- endcomment -%}
+    <div class="a25-cross__group a25-cross__group--coat">
+      {% if section.settings.coats_heading != blank %}
+        <h2 class="a25-cross__heading">{{ section.settings.coats_heading }}</h2>
+      {% endif %}
+      <div class="a25-cross__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'product_tile' and block.settings.group == 'coat' %}
+            <a class="a25-cross-tile" href="{{ block.settings.cta_url | default: '#' }}" {{ block.shopify_attributes }}>
+              <div class="a25-cross-tile__img-wrap">
+                {% if block.settings.image != blank %}
+                  <img class="a25-cross-tile__img"
+                       src="{{ block.settings.image | image_url: width: 600 }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% elsif block.settings.image_url != blank %}
+                  <img class="a25-cross-tile__img"
+                       src="{{ block.settings.image_url }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% endif %}
+              </div>
+              {% if block.settings.name != blank %}
+                <p class="a25-cross-tile__name">{{ block.settings.name }}</p>
+              {% endif %}
+              {% if block.settings.colors != blank %}
+                <p class="a25-cross-tile__colors">{{ block.settings.colors }}</p>
+              {% endif %}
+              {% if block.settings.price != blank %}
+                <p class="a25-cross-tile__price">{{ block.settings.price }}</p>
+              {% endif %}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Cross-sell",
+  "tag": "section",
+  "class": "shopify-section--a25-cross",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 背景" },
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-cross" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+
+    { "type": "header", "content": "グループ見出し" },
+    { "type": "text", "id": "jackets_heading", "label": "ジャケット 見出し", "default": "【KAPOK KNOT】他のおすすめジャケットはこちら" },
+    { "type": "text", "id": "coats_heading", "label": "コート 見出し", "default": "【KAPOK KNOT】他のおすすめコートはこちら" }
+  ],
+  "blocks": [
+    {
+      "type": "product_tile",
+      "name": "Product Tile",
+      "settings": [
+        {
+          "type": "radio",
+          "id": "group",
+          "label": "グループ",
+          "options": [
+            { "value": "jacket", "label": "ジャケット" },
+            { "value": "coat", "label": "コート" }
+          ],
+          "default": "jacket"
+        },
+        { "type": "text", "id": "name", "label": "商品名" },
+        { "type": "text", "id": "colors", "label": "カラー表記" },
+        { "type": "text", "id": "price", "label": "価格" },
+        { "type": "image_picker", "id": "image", "label": "商品画像" },
+        { "type": "text", "id": "image_url", "label": "画像 URL (外部フォールバック)" },
+        { "type": "url", "id": "cta_url", "label": "商品ページ URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Cross-sell",
+      "blocks": [
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "エアーライトペプラムジャケット - Women",
+            "colors": "Ice Blue / White / Black",
+            "price": "¥49,800"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ベロアキルティングジャケット - Unisex",
+            "colors": "Khaki / Navy",
+            "price": "¥39,800"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "WARMデニムジャケット - Men",
+            "colors": "Black / Blue",
+            "price": "¥39,800"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "キルティングジャケット(チェック) - Unisex",
+            "colors": "Olive / Black",
+            "price": "¥48,000"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "スタンドカラーコート - Unisex",
+            "colors": "Black(New) / Greige / Green / Navy",
+            "price": "¥69,000"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "ポンチョコート - Unisex",
+            "colors": "Olive / Navy / Black / Greige",
+            "price": "¥65,000"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "ウエストマークパーカーコート - Women",
+            "colors": "Camel / Greige / Navy",
+            "price": "¥49,800"
+          }
+        },
+        {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "バルマカンコート - Women/Men",
+            "colors": "Dark Navy / Beige / Camel",
+            "price": "¥48,000"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

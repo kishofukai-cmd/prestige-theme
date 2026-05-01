@@ -1,0 +1,262 @@
+{% comment %} AirLight 2025 (JP Domestic) — Farm to Fashion (動画中心のサプライチェーン訴求) {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-ftf {
+    background: {{ section.settings.bg_color | default: '#faf9f6' }};
+    padding: clamp(56px, 9vw, 100px) 0;
+    overflow: hidden;
+  }
+
+  #{{ section.id }} .a25-ftf__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+  }
+
+  #{{ section.id }} .a25-ftf__head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(32px, 5vw, 44px);
+  }
+
+  #{{ section.id }} .a25-ftf__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 clamp(12px, 2vw, 16px);
+  }
+
+  #{{ section.id }} .a25-ftf__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-ftf__heading p { margin: 0 0 0.3em; }
+  #{{ section.id }} .a25-ftf__heading p:last-child { margin-bottom: 0; }
+  #{{ section.id }} .a25-ftf__heading em {
+    font-style: normal;
+    font-weight: 700;
+    color: #c29d66;
+  }
+
+  #{{ section.id }} .a25-ftf__intro {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(13px, 1.7vw, 15px);
+    line-height: 1.85;
+    color: #5a5550;
+    margin: 0;
+  }
+
+  /* Video wrap */
+  #{{ section.id }} .a25-ftf__video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(26, 38, 64, 0.12);
+  }
+
+  #{{ section.id }} .a25-ftf__video-wrap iframe,
+  #{{ section.id }} .a25-ftf__video-wrap video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+  }
+
+  #{{ section.id }} .a25-ftf__video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Steps below the video */
+  #{{ section.id }} .a25-ftf__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 28px);
+    margin-top: clamp(28px, 4vw, 40px);
+  }
+
+  #{{ section.id }} .a25-ftf__step {
+    padding: 22px 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-top: 3px solid #c29d66;
+  }
+
+  #{{ section.id }} .a25-ftf__step-label {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin: 0 0 10px;
+  }
+
+  #{{ section.id }} .a25-ftf__step-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px;
+    line-height: 1.45;
+  }
+
+  #{{ section.id }} .a25-ftf__step-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #5a5550;
+    margin: 0;
+  }
+
+  #{{ section.id }} .a25-ftf__footnote {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: #8a7f6e;
+    margin: clamp(28px, 4vw, 40px) auto 0;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .a25-ftf__inner { padding: 0 16px; }
+    #{{ section.id }} .a25-ftf__heading { font-size: clamp(1.3rem, 5vw, 1.6rem); }
+    #{{ section.id }} .a25-ftf__steps {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>
+
+<section class="a25-ftf" id="{{ section.id }}">
+  <div class="a25-ftf__inner">
+    <div class="a25-ftf__head">
+      {% if section.settings.kicker != blank %}
+        <p class="a25-ftf__kicker">{{ section.settings.kicker }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <div class="a25-ftf__heading">{{ section.settings.heading }}</div>
+      {% endif %}
+      {% if section.settings.intro != blank %}
+        <p class="a25-ftf__intro">{{ section.settings.intro }}</p>
+      {% endif %}
+    </div>
+
+    {%- assign vid = section.settings.video_url -%}
+    <div class="a25-ftf__video-wrap">
+      {%- if vid != blank -%}
+        {%- if vid.type == 'youtube' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ vid.id }}?playsinline=1&rel=0&modestbranding=1&loop=1&playlist={{ vid.id }}{% if section.settings.autoplay %}&autoplay=1&mute=1&controls=0{% endif %}"
+            title="{{ section.settings.video_title | default: 'Farm to Fashion' }}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        {%- elsif vid.type == 'vimeo' -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ vid.id }}?title=0&byline=0&portrait=0{% if section.settings.autoplay %}&autoplay=1&muted=1&loop=1&background=1{% endif %}"
+            title="{{ section.settings.video_title | default: 'Farm to Fashion' }}"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
+        {%- endif -%}
+      {%- elsif section.settings.video_shopify != blank -%}
+        {{ section.settings.video_shopify | video_tag: controls: true, loop: section.settings.autoplay, muted: section.settings.autoplay, autoplay: section.settings.autoplay, playsinline: true }}
+      {%- else -%}
+        <div class="a25-ftf__video-placeholder">[ Video — set video URL in editor ]</div>
+      {%- endif -%}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="a25-ftf__steps">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div class="a25-ftf__step" {{ block.shopify_attributes }}>
+              {% if block.settings.step_label != blank %}
+                <span class="a25-ftf__step-label">{{ block.settings.step_label }}</span>
+              {% endif %}
+              {% if block.settings.title != blank %}
+                <h3 class="a25-ftf__step-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <p class="a25-ftf__step-text">{{ block.settings.text }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.footnote != blank %}
+      <p class="a25-ftf__footnote">{{ section.settings.footnote }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Farm to Fashion",
+  "tag": "section",
+  "class": "shopify-section--a25-ftf",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#faf9f6" },
+    { "type": "text", "id": "kicker", "label": "キッカー", "default": "Farm to Fashion" },
+    { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>" },
+    { "type": "textarea", "id": "intro", "label": "リード文", "default": "カポック農園、加工工場、縫製工場まで — 実際に働く人たちの姿を、映像でご覧ください。" },
+
+    { "type": "header", "content": "動画" },
+    { "type": "video_url", "id": "video_url", "label": "動画 URL (YouTube / Vimeo)", "accept": ["youtube", "vimeo"], "default": "https://youtu.be/-ZIZcHy7w8A" },
+    { "type": "video", "id": "video_shopify", "label": "Shopify アップロード動画 (video_url を優先)" },
+    { "type": "text", "id": "video_title", "label": "動画タイトル (アクセシビリティ)", "default": "Farm to Fashion — KAPOK KNOT" },
+    { "type": "checkbox", "id": "autoplay", "label": "自動再生 (ミュート、ループ)", "default": false },
+
+    { "type": "header", "content": "任意: 動画の下に表示するサプライチェーン概要" },
+    { "type": "text", "id": "footnote", "label": "注記", "default": "※ 映像は KAPOK KNOT の公式動画です。" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Supply chain step",
+      "settings": [
+        { "type": "text", "id": "step_label", "label": "ステップ ラベル", "default": "Step 01" },
+        { "type": "text", "id": "title", "label": "見出し", "default": "ステップタイトル" },
+        { "type": "textarea", "id": "text", "label": "本文", "default": "ステップの説明文を入力" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Farm to Fashion",
+      "blocks": [
+        { "type": "step", "settings": { "step_label": "Step 01", "title": "カポック農園 (インドネシア)", "text": "代表自らが現地に足を運び、農園と直接契約。木を伐らずに種子から採取する、森と農家にやさしい収穫方法。" } },
+        { "type": "step", "settings": { "step_label": "Step 02", "title": "中綿加工 (日本国内)", "text": "日本有数の繊維技術者と 5 年かけて開発したエシカルダウンカポック™シート。特許申請中の技術で軽さと保温性を両立。" } },
+        { "type": "step", "settings": { "step_label": "Step 03", "title": "縫製 (青森の工場)", "text": "一着を一人で仕上げる「丸縫い」技術を習得した職人が、分業型より高い縫製品質を実現。" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
