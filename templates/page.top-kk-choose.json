@@ -1,0 +1,396 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "universal-campaign-lp",
+      "blocks": {
+        "image_full_1": {
+          "type": "hero",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a2eb4794-7ad9-420d-81bd-fbe01642602f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E8%A6%8B%E5%87%BA%E3%81%97%E3%82%92%E8%BF%BD%E5%8A%A0%20_3_.png",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_2": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/855123f8-9ffd-4e64-a84f-022bc402bbcd/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A%E3%81%AE%E3%83%86%E3%82%99%E3%82%B5%E3%82%99%E3%82%A4%E3%83%B3%20_7_.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_3": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "KAPOK KNOT(カポックノット)とは",
+            "text": "<p>KAPOK KNOTは「カポック」という木の実から取れるワタを使って新素材を開発し、<br>5mmの薄さで、羽毛ダウンの暖かさを実現する機能的でサステナブルなファッションブランドです。<br>機能性を妥協しない。サステナブルを妥協しない。<br>そして何より、ファッションを楽しむ心を妥協しない。<br>わずか5mmのシートでアウターの常識を再構築するブランドです。<br>アウターの常識を再構築するブランドです。<br>KAPOK KNOTは「カポック」という木の実から<br>取れるワタを使って新素材を開発し<br>使って新素材を開発し<br>5mmの薄さで、羽毛ダウンの暖かさを実現する<br>機能的でサステナブルなファッションブランドです。<br>機能性を妥協しない。サステナブルを妥協しない。<br>そして何より、ファッションを楽しむ心を妥協しない。<br>わずか5mmのシートでアウターの常識を再構築するブランドです。<br>アウターの常識を再構築するブランドです。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "features_grid_4": {
+          "type": "features_grid",
+          "settings": {
+            "icon_size": "large",
+            "columns_desktop": 2,
+            "image_url_1": "https://ucarecdn.com/99c6b49b-0216-4a70-bede-f8fd07f8d4a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-31%2012.39.56.png",
+            "image_url_2": "https://ucarecdn.com/96d62c2b-523f-45ce-ac11-7a8063318258/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-31%2012.38.34.png",
+            "margin_bottom": 80
+          }
+        },
+        "rich_text_5": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "選ばれ続ける理由がある累計2万着突破！",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "features_grid_6": {
+          "type": "features_grid",
+          "settings": {
+            "icon_size": "large",
+            "columns_desktop": 3,
+            "image_url_1": "https://ucarecdn.com/76a865d0-ddaa-4028-b4a7-daeac90ec724/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%81%AE%E6%9A%96%E3%81%8B%E3%81%95@4x.png",
+            "title_1": "",
+            "text_1": "",
+            "image_url_2": "https://ucarecdn.com/f2dea617-10ee-4af0-9176-c2c33d49261e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%90%B8%E6%B9%BF%E7%99%BA%E7%86%B1@4x.png",
+            "title_2": "",
+            "text_2": "",
+            "image_url_3": "https://ucarecdn.com/a75b5489-b6fa-41a3-a988-68ef8a8488aa/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%89%8B%E6%B4%97%E3%81%84%E5%8F%AF%E8%83%BD@4x.png",
+            "title_3": "",
+            "text_3": "",
+            "image_url_4": "https://ucarecdn.com/96847f8c-69ba-4ccc-bd8d-86efb52f2f6f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E6%A4%8D%E7%89%A9%E6%80%A7%E7%94%B1%E6%9D%A5@4x.png",
+            "title_4": "",
+            "text_4": "",
+            "margin_bottom": 80
+          }
+        },
+        "image_text_7": {
+          "type": "image_text",
+          "settings": {
+            "image_url": "https://ucarecdn.com/8bb07bb0-797b-4428-bab2-96c95411e95b/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "layout": "left",
+            "heading": "新素材「カポック」たった5mmで",
+            "text": "<p>▲3度環境の中、着用1分後の状態。エアーライトジャケット着用。</p><h3>ダウンの暖かさを実現</h3><p>この新素材1番の特徴は、軽さと暖かさ。</p><p>従来のダウンジャケットの重量は、約800g ~1200g。</p><p>KAPOK KNOTのエアーライトジャケットは、なんと約500g！</p><p>KAPOK KNOT</p><p>のエアーライトジャケットは、なんと約500g！</p><p>従来のダウンより遥かに軽く</p><p>ペットボトル1本分の差があります。</p><p>サーモグラフを見れば分かるように</p><p>軽い素材ながらダウンと同じだけの暖かさをお届けします。</p>",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_8": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "【KAPOK KNOT】おすすめコートはこちら",
+            "text": "<h3>スタンドカラーコート</h3><h3>- Unisex -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_9": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/44460247-bb92-4630-84ee-e703d125a061/-/format/auto/-/preview/3000x3000/-/quality/lighter/1.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_10": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Beige/Black/Gray/Blue",
+            "text": "<h3>¥65,000</h3><h3>リバーシブルボアキルティングコート</h3><h3>- Unisex -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_11": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/6761eac1-53dd-4d04-9f5d-50ba4db39485/-/format/auto/-/preview/3000x3000/-/quality/lighter/3.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_12": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "White/Black/Beige",
+            "text": "<h3>¥69,000</h3><h3>チェスターコート</h3><h3>- Unisex -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_13": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/cef322f9-63ad-4af7-bccb-29f79eb3b8b6/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT0338_6b29361d-8721-45ba-8bed-ddf2eee655d0.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_14": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Camel/Navy/Blue/Gray",
+            "text": "<h3>¥48,000</h3><h3>マフラーノットコート</h3><h3>- Unisex -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_15": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/ee734c8e-831d-4c0c-8d28-fa14853c6660/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_16": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/Khaki",
+            "text": "<h3>¥88,000</h3><h3>ウエストマークパーカーコート</h3><h3>- Women -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_17": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/17457bda-1a2e-41d8-81b7-7f8a137f0755/-/format/auto/-/preview/3000x3000/-/quality/lighter/11.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_18": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Camel/Greige/Navy",
+            "text": "<h3>¥49,800</h3><h3>エフォートレスコート</h3><h3>- Men -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_19": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/f0c2dfac-d630-4559-8869-a970bf2eeb7f/-/format/auto/-/preview/3000x3000/-/quality/lighter/12.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_20": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Charcoalgray/Blue",
+            "text": "<h3>¥69,000</h3><h3>【KAPOK KNOT】おすすめジャケットはこちら</h3><h3>Tenderproof ジャケット</h3><h3>- Women -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_21": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/03b3419c-23fd-4a39-873d-b20d784d60ed/-/format/auto/-/preview/3000x3000/-/quality/lighter/10.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_22": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "White/Mint/Navy",
+            "text": "<h3>¥59,000</h3><h3>エアーライトジャケット</h3><h3>- Men -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_23": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/cdbc20af-d367-41b2-a1b1-c09b0fc030d4/-/format/auto/-/preview/3000x3000/-/quality/lighter/4.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_24": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Navy/Beige/Greige/Olive/Black",
+            "text": "<h3>¥38,000</h3><h3>エアーライトペプラムジャケット</h3><h3>- Women -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_25": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_26": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Ice blue/White/Black",
+            "text": "<h3>¥49,800</h3><h3>WARMデニムジャケット</h3><h3>- Men -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_27": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_28": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Black/Blue",
+            "text": "<h3>¥39,800</h3><h3>ベロアキルティングジャケット</h3><h3>- Unisex -</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_29": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_30": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "Khaki/Navy",
+            "text": "<h3>¥39,800</h3><h3>農園からこころよい暮らしを届ける</h3>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_31": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/1d9b333a-004d-4337-befe-a8e92751836f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%AB%E3%83%9B%E3%82%9A%E3%83%83%E3%82%AF%E8%BE%B2%E5%9C%92%E3%81%A6%E3%82%99%E5%83%8D%E3%81%8F%E6%96%B9%E3%80%85.jpg",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_32": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "",
+            "text": "<p>カポックは東南アジアに自生する植物で、<br>その実のワタはコットンの1/8の軽さ<br>吸湿発熱という機能を備えています。<br>しかし、その繊維の軽さと短さ故に糸への加工が難しく<br>多くの企業が衣類への商品化を諦めてきました。<br>KAPOK JAPAN は国内大手繊維メーカーとの研究開発の末<br>カポックのシート化に成功。<br>生産者、消費者、地球環境の視点に立ち<br>関わる全ての人に寄り添ったモノづくりを目指しています。</p>",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_33": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/1573de7b-7ae4-497e-b340-1970bc5ca977/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2068.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_34": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "多くのメディアでも取り上げていただきました",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_35": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/3b625d34-e2b9-448b-86c1-faa58bad680d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-10-04%2015.59%201.png",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_36": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "SOCAL IMPACT",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "image_full_37": {
+          "type": "image_full",
+          "settings": {
+            "image_url": "https://ucarecdn.com/d4aa17b2-f3c8-411e-a785-777523767b4d/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "margin_bottom": 24
+          }
+        },
+        "rich_text_heading_39": {
+          "type": "rich_text",
+          "settings": {
+            "heading": "よくあるご質問",
+            "text": "",
+            "text_alignment": "center",
+            "margin_bottom": 24
+          }
+        },
+        "accordion_40": {
+          "type": "accordion",
+          "settings": {
+            "title": "Q. カポックは洋服以外に何に使われていますか？<br>A. 現地では、枕の詰め物や、オイルキャッチャー（海に流れた重油などの吸収剤）として使われています。<br>以前はマットレスにも使われていたが、コイル式のマットレスに変わりあまり使われなくなってしまいました。<br>需要が減ってしまったため、木材として切り出されるといったことも起きています。<br>Q. 配送のタイムラインを教えてください。<br>A. 基本的に注文から一週間以内でお届けいたします。<br>Q. 縫製はどこで行っていますか？<br>A. ほとんどの製品は、青森・岐阜の縫製工場で縫い上げています。<br>多くの工場で行われている分業型とは違い、この縫製工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得して初めて1人前とされます。そのため、完全に分業型の工場に比べて縫製技術が高いです。<br>Q. ロゴにはどんな意味がありますか？<br>A. カポックノットは 「結び目/絆」を意味するknot(ノット)を冠しています。<br>マークにある結び方は、「あやむすび」という結び方で、結び目が非常に強く、緩まないことが特徴の結び方です。<br>そのため、日本で使用されるこの水引の形には「末長く」「永遠に続く」という意味があります。<br>関わる全て人が無理をせずに関わりながら、地球資源の持続可能な未来を考えるブランドのあり方を体現しています。",
+            "content": "",
+            "open": false,
+            "margin_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "image_full_1",
+        "image_full_2",
+        "rich_text_3",
+        "features_grid_4",
+        "rich_text_5",
+        "features_grid_6",
+        "image_text_7",
+        "rich_text_8",
+        "image_full_9",
+        "rich_text_10",
+        "image_full_11",
+        "rich_text_12",
+        "image_full_13",
+        "rich_text_14",
+        "image_full_15",
+        "rich_text_16",
+        "image_full_17",
+        "rich_text_18",
+        "image_full_19",
+        "rich_text_20",
+        "image_full_21",
+        "rich_text_22",
+        "image_full_23",
+        "rich_text_24",
+        "image_full_25",
+        "rich_text_26",
+        "image_full_27",
+        "rich_text_28",
+        "image_full_29",
+        "rich_text_30",
+        "image_full_31",
+        "rich_text_32",
+        "image_full_33",
+        "rich_text_34",
+        "image_full_35",
+        "rich_text_36",
+        "image_full_37",
+        "rich_text_heading_39",
+        "accordion_40"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "container_width": 1000
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
