@@ -14,6 +14,7 @@
       "blocks": {
         "image_CMTEJe": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/c_2_3x_3.png",
             "mobile_image": "shopify://shop_images/c_3x_1.png",
