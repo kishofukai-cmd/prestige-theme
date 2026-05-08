@@ -46,7 +46,7 @@
         "brand_name": "KAPOK KNOT HOME",
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
         "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
-        "cta_url": "",
+        "cta_url": "shopify://products/musubi-en",
         "cta_text": "MUSUBI詳しく見る",
         "price_text": "¥29,800〜",
         "price_tax": "(税込)"
@@ -281,27 +281,9 @@
     },
     "story": {
       "type": "musubi-lp-story",
-      "blocks": {
-        "para_1": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>「早くスマホを手放した方がいい」<br>頭ではそう分かっていても、ギリギリまでSNSのタイムラインを見つめてしまう夜。</p>"
-          }
-        },
-        "para_2": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>だからこそ、強制的に休息へと切り替える<strong>物理的な「入り口（導入スイッチ）」</strong>がカギになると私たちは考えました。</p>"
-          }
-        }
-      },
-      "block_order": [
-        "para_1",
-        "para_2"
-      ],
       "settings": {
-        "heading": "新発見！眠りには「導入スイッチ」が必要だった",
-        "lead_text": "<p>現代の睡眠課題。<br/>瞑想やフレグランスだけでは、どこか物足りない。</p>"
+        "heading": "<p>新発見！眠りには「導入スイッチ」が必要だった</p>",
+        "body": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
       }
     },
     "trust-visual": {
