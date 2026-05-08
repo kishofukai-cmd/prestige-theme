@@ -16,14 +16,14 @@
         "proof_item_EKFgXW": {
           "type": "proof_item",
           "settings": {
-            "number": "2,000",
+            "number": "2,700",
             "label": "枚突破"
           }
         },
         "proof_2": {
           "type": "proof_item",
           "settings": {
-            "number": "408",
+            "number": "2500",
             "label": "名支援"
           }
         },
@@ -47,7 +47,7 @@
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
         "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
         "cta_url": "shopify://products/musubi-en",
-        "cta_text": "MUSUBI詳しく見る",
+        "cta_text": "商品ページから再販売通知を受け取る",
         "price_text": "¥29,800〜",
         "price_tax": "(税込)"
       }
@@ -128,7 +128,7 @@
         "sold_8"
       ],
       "settings": {
-        "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
+        "heading": "<p>2024年5月<br/>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
         "amount": "1,349万円",
         "amount_label": "応援購入総額",
         "supporters": "408名",
