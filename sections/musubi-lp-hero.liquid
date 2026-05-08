@@ -28,7 +28,6 @@
       {{ section.settings.hero_subtitle | default: '植物由来素材 × 通気構造の<br>リカバリー加重ブランケット' }}
     </p>
 
-    <!-- ソーシャルプルーフ -->
     <div class="hero__proof">
       {% for block in section.blocks %}
         {% if block.type == 'proof_item' %}
@@ -44,7 +43,6 @@
       {% endfor %}
     </div>
 
-    <!-- ヒーローCTA -->
     <div class="hero__cta-area">
 
       {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
@@ -53,9 +51,17 @@
         </p>
       {% endif %}
 
-      <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="hero__cta-btn" target="_blank" rel="noopener">
-        {{ section.settings.cta_text | default: '今すぐMUSUBIを手に入れる' }}
-      </a>
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="hero__cta-btn" target="_blank" rel="noopener">
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.cta_url_2 != blank and section.settings.cta_text_2 != blank %}
+        <a href="{{ section.settings.cta_url_2 }}" class="hero__cta-btn hero__cta-btn--second" target="_blank" rel="noopener">
+          {{ section.settings.cta_text_2 }}
+        </a>
+      {% endif %}
 
       <p class="hero__price">
         {{ section.settings.price_text | default: '¥29,800〜' }}
@@ -81,6 +87,11 @@
   text-align: center;
   margin-bottom: 12px;
   letter-spacing: 0.05em;
+  font-family: inherit;
+}
+
+.hero__cta-btn--second {
+  margin-top: 10px;
 }
 </style>
 
@@ -137,13 +148,24 @@
     {
       "type": "url",
       "id": "cta_url",
-      "label": "CTAリンク先"
+      "label": "CTAリンク先 1"
     },
     {
       "type": "text",
       "id": "cta_text",
-      "label": "CTAボタンテキスト",
-      "default": "今すぐMUSUBIを手に入れる"
+      "label": "CTAボタンテキスト 1",
+      "default": "商品ページを見る"
+    },
+    {
+      "type": "url",
+      "id": "cta_url_2",
+      "label": "CTAリンク先 2"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTAボタンテキスト 2",
+      "default": "LINEで最新情報を受け取る"
     },
     {
       "type": "text",
