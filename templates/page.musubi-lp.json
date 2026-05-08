@@ -141,8 +141,69 @@
     "story": {
       "type": "musubi-lp-story",
       "settings": {
-        "heading": "<p>眠りには「導入スイッチ」が必要だった</p>",
+        "heading": "<p>眠りには<br/>「導入スイッチ」が必要だった</p>",
         "body": "<p>瞑想でもない。<br/>フレグランスでもない。<br/>包まれる「重さ」という、<br/>物理的なスイッチ。</p>"
+      }
+    },
+    "science": {
+      "type": "musubi-lp-science",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
+            "label": "<p>均一な重み</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
+            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
+            "label": "<p>深いリラックス<br>状態の促進</p>"
+          }
+        },
+        "paper_1": {
+          "type": "paper",
+          "settings": {
+            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
+            "url": ""
+          }
+        },
+        "paper_2": {
+          "type": "paper",
+          "settings": {
+            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
+            "url": ""
+          }
+        },
+        "paper_3": {
+          "type": "paper",
+          "settings": {
+            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "paper_1",
+        "paper_2",
+        "paper_3"
+      ],
+      "settings": {
+        "heading": "<p>なぜ\"重み\"が<br/>安心感につながるのか？</p>",
+        "image_alt": "MUSUBIの使用シーン",
+        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
+        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です"
       }
     },
     "trust-visual": {
@@ -337,67 +398,6 @@
       ],
       "settings": {
         "heading": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
-      }
-    },
-    "science": {
-      "type": "musubi-lp-science",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
-            "label": "<p>均一な重み</p>"
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
-            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
-            "label": "<p>深いリラックス<br>状態の促進</p>"
-          }
-        },
-        "paper_1": {
-          "type": "paper",
-          "settings": {
-            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
-            "url": ""
-          }
-        },
-        "paper_2": {
-          "type": "paper",
-          "settings": {
-            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
-            "url": ""
-          }
-        },
-        "paper_3": {
-          "type": "paper",
-          "settings": {
-            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "paper_1",
-        "paper_2",
-        "paper_3"
-      ],
-      "settings": {
-        "heading": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>",
-        "image_alt": "MUSUBIの使用シーン",
-        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
-        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です"
       }
     },
     "comparison": {
@@ -790,12 +790,12 @@
     "1778229712a3df2da2",
     "empathy",
     "story",
+    "science",
     "trust-visual",
     "makuake",
     "video-loop",
     "ugc",
     "why",
-    "science",
     "comparison",
     "sizes",
     "colors",
