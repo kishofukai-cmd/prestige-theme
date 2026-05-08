@@ -101,6 +101,59 @@
       ],
       "settings": {}
     },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>頭のなかが<br/>ぐるぐる<br/>休まらない</p>"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>波立つように<br/>心が落ち着かない</p>"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>リラックスする<br/>習慣が続かない</p>"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ],
+      "settings": {
+        "heading": "こんな夜、ありませんか？",
+        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
+        "solution_image_alt": "MUSUBIに包まれて休息",
+        "solution_text": "<p>包まれる感覚が、<br/><strong>休息モードへ導く。</strong></p>"
+      }
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {
+        "heading": "<p>眠りには「導入スイッチ」が必要だった</p>",
+        "body": "<p>瞑想でもない。<br/>フレグランスでもない。<br/>包まれる「重さ」という、<br/>物理的なスイッチ。</p>"
+      }
+    },
+    "trust-visual": {
+      "type": "musubi-lp-trust-visual",
+      "settings": {
+        "heading": "",
+        "image_url": "",
+        "image_alt": "加重設計の図解",
+        "caption": ""
+      }
+    },
     "makuake": {
       "type": "musubi-lp-makuake",
       "blocks": {
@@ -284,59 +337,6 @@
       ],
       "settings": {
         "heading": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
-      }
-    },
-    "empathy": {
-      "type": "musubi-lp-empathy",
-      "blocks": {
-        "worry_1": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>頭のなかが<br/>ぐるぐる<br/>休まらない</p>"
-          }
-        },
-        "worry_2": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>波立つように<br/>心が落ち着かない</p>"
-          }
-        },
-        "worry_3": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>リラックスする<br/>習慣が続かない</p>"
-          }
-        }
-      },
-      "block_order": [
-        "worry_1",
-        "worry_2",
-        "worry_3"
-      ],
-      "settings": {
-        "heading": "こんな夜、ありませんか？",
-        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
-        "solution_image_alt": "MUSUBIに包まれて休息",
-        "solution_text": "<p>包まれる感覚が、<br/><strong>休息モードへ導く。</strong></p>"
-      }
-    },
-    "story": {
-      "type": "musubi-lp-story",
-      "settings": {
-        "heading": "<p>新発見！眠りには「導入スイッチ」が必要だった</p>",
-        "body": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
-      }
-    },
-    "trust-visual": {
-      "type": "musubi-lp-trust-visual",
-      "settings": {
-        "heading": "",
-        "image_url": "",
-        "image_alt": "加重設計の図解",
-        "caption": ""
       }
     },
     "science": {
@@ -788,13 +788,13 @@
     "hero",
     "guarantee",
     "1778229712a3df2da2",
+    "empathy",
+    "story",
+    "trust-visual",
     "makuake",
     "video-loop",
     "ugc",
     "why",
-    "empathy",
-    "story",
-    "trust-visual",
     "science",
     "comparison",
     "sizes",
