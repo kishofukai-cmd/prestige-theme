@@ -16,14 +16,14 @@
         "proof_item_EKFgXW": {
           "type": "proof_item",
           "settings": {
-            "number": "2,000",
+            "number": "2,700",
             "label": "枚突破"
           }
         },
         "proof_2": {
           "type": "proof_item",
           "settings": {
-            "number": "408",
+            "number": "2500",
             "label": "名支援"
           }
         },
@@ -128,7 +128,7 @@
         "sold_8"
       ],
       "settings": {
-        "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
+        "heading": "<p>2024年5月<br/>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
         "amount": "1,349万円",
         "amount_label": "応援購入総額",
         "supporters": "408名",
