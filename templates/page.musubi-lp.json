@@ -68,6 +68,16 @@
         "ai_gen_block_a9b57ce_6qe97d": {
           "type": "ai_gen_block_a9b57ce",
           "settings": {
+            "image_1": "shopify://shop_images/10_12.png",
+            "image_2": "shopify://shop_images/10_8.png",
+            "image_3": "shopify://shop_images/10_28.png",
+            "image_4": "shopify://shop_images/10_17.png",
+            "image_5": "shopify://shop_images/10_20.png",
+            "image_6": "shopify://shop_images/10_25.png",
+            "image_7": "shopify://shop_images/10_29.png",
+            "image_8": "shopify://shop_images/10_14.png",
+            "image_9": "shopify://shop_images/10_18.png",
+            "image_10": "shopify://shop_images/10_23.png",
             "columns_desktop": 5,
             "columns_mobile": "2",
             "gap": 16,
