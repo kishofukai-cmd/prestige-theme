@@ -3,13 +3,30 @@
 
 <section class="hero" id="hero">
   <div class="hero__img-wrapper">
-    <img src="{{ section.settings.hero_image | img_url: '1600x' | default: 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1600' }}"
-      alt="{{ section.settings.hero_image_alt | default: 'MUSUBIブランケットに包まれる女性' }}" class="hero__img">
+    <picture>
+      {% if section.settings.hero_image_sp != blank %}
+        <source
+          media="(max-width: 767px)"
+          srcset="{{ section.settings.hero_image_sp | img_url: '900x' }}">
+      {% endif %}
+
+      <img
+        src="{{ section.settings.hero_image | img_url: '1600x' | default: 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1600' }}"
+        alt="{{ section.settings.hero_image_alt | default: 'MUSUBIブランケットに包まれる女性' }}"
+        class="hero__img">
+    </picture>
   </div>
+
   <div class="hero__content">
     <p class="hero__brand">{{ section.settings.brand_name | default: 'KAPOK KNOT HOME' }}</p>
-    <h1 class="hero__title">{{ section.settings.hero_title | default: 'やさしい重みで、<br>休息のスイッチを入れる。' }}</h1>
-    <p class="hero__subtitle">{{ section.settings.hero_subtitle | default: '植物由来素材 × 通気構造の<br>リカバリー加重ブランケット' }}</p>
+
+    <h1 class="hero__title">
+      {{ section.settings.hero_title | default: 'やさしい重みで、<br>休息のスイッチを入れる。' }}
+    </h1>
+
+    <p class="hero__subtitle">
+      {{ section.settings.hero_subtitle | default: '植物由来素材 × 通気構造の<br>リカバリー加重ブランケット' }}
+    </p>
 
     <!-- ソーシャルプルーフ -->
     <div class="hero__proof">
@@ -26,25 +43,42 @@
 
     <!-- ヒーローCTA -->
     <div class="hero__cta-area">
-        <!-- ▼追加ここ -->
-  <p class="hero__soldout">
-    現在MUSUBI-en-は完売中です。
-  </p>
-  <!-- ▲追加ここ -->
+
+      <!-- 完売表示 -->
+      <p class="hero__soldout">
+        現在MUSUBI-en-は完売中です。
+      </p>
+
       <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="hero__cta-btn" target="_blank" rel="noopener">
         {{ section.settings.cta_text | default: '今すぐMUSUBIを手に入れる' }}
       </a>
-      <p class="hero__price">{{ section.settings.price_text | default: '¥29,800〜' }} <span class="hero__price-tax">{{ section.settings.price_tax | default: '(税込)' }}</span></p>
-        <div style= "display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:8px;letter-spacing:0.03em;">
-          <span>✓ オールシーズン</span>
-          <span>✓ アニマルフリー</span>
-          <span>✓ 通気性</span>
-          <span>✓ お手入れ簡単</span>
 
-        </div>
+      <p class="hero__price">
+        {{ section.settings.price_text | default: '¥29,800〜' }}
+        <span class="hero__price-tax">{{ section.settings.price_tax | default: '(税込)' }}</span>
+      </p>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:8px;letter-spacing:0.03em;">
+        <span>✓ オールシーズン</span>
+        <span>✓ アニマルフリー</span>
+        <span>✓ 通気性</span>
+        <span>✓ お手入れ簡単</span>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+.hero__soldout {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+</style>
 
 {% schema %}
 {
@@ -53,7 +87,12 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "ヒーロー画像"
+      "label": "ヒーロー画像（PC）"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_sp",
+      "label": "ヒーロー画像（SP）"
     },
     {
       "type": "text",
@@ -135,5 +174,3 @@
   ]
 }
 {% endschema %}
-
-
