@@ -32,7 +32,10 @@
     <div class="hero__proof">
       {% for block in section.blocks %}
         {% if block.type == 'proof_item' %}
-          {% unless forloop.first %}<div class="hero__proof-divider"></div>{% endunless %}
+          {% unless forloop.first %}
+            <div class="hero__proof-divider"></div>
+          {% endunless %}
+
           <div class="hero__proof-item" {{ block.shopify_attributes }}>
             <span class="hero__proof-number">{{ block.settings.number }}</span>
             <span class="hero__proof-label">{{ block.settings.label }}</span>
@@ -44,10 +47,11 @@
     <!-- ヒーローCTA -->
     <div class="hero__cta-area">
 
-      <!-- 完売表示 -->
-      <p class="hero__soldout">
-        現在MUSUBI-en-は完売中です。
-      </p>
+      {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
+        <p class="hero__soldout">
+          {{ section.settings.soldout_text }}
+        </p>
+      {% endif %}
 
       <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="hero__cta-btn" target="_blank" rel="noopener">
         {{ section.settings.cta_text | default: '今すぐMUSUBIを手に入れる' }}
@@ -119,6 +123,18 @@
       "default": "<p>植物由来素材 × 通気構造の<br>リカバリー加重ブランケット</p>"
     },
     {
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "完売表示を出す",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "soldout_text",
+      "label": "完売表示テキスト",
+      "default": "現在MUSUBI-en-は完売中です。"
+    },
+    {
       "type": "url",
       "id": "cta_url",
       "label": "CTAリンク先"
@@ -166,9 +182,27 @@
     {
       "name": "MUSUBI Hero",
       "blocks": [
-        { "type": "proof_item", "settings": { "number": "2,000", "label": "枚突破" } },
-        { "type": "proof_item", "settings": { "number": "408", "label": "名支援" } },
-        { "type": "proof_item", "settings": { "number": "★4.1", "label": "レビュー" } }
+        {
+          "type": "proof_item",
+          "settings": {
+            "number": "2,000",
+            "label": "枚突破"
+          }
+        },
+        {
+          "type": "proof_item",
+          "settings": {
+            "number": "408",
+            "label": "名支援"
+          }
+        },
+        {
+          "type": "proof_item",
+          "settings": {
+            "number": "★4.1",
+            "label": "レビュー"
+          }
+        }
       ]
     }
   ]
