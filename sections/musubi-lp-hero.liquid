@@ -1,4 +1,16 @@
-<section class="hero" id="hero">
+<section
+  class="hero"
+  id="hero"
+  style="
+    --hero-bg-color: {{ section.settings.hero_bg_color }};
+    --hero-title-size-pc: {{ section.settings.hero_title_font_size_pc }}px;
+    --hero-title-size-sp: {{ section.settings.hero_title_font_size_sp }}px;
+    --hero-title-weight-pc: {{ section.settings.hero_title_font_weight_pc }};
+    --hero-title-weight-sp: {{ section.settings.hero_title_font_weight_sp }};
+    --hero-button-bg-color: {{ section.settings.hero_button_bg_color }};
+    --hero-button-text-color: {{ section.settings.hero_button_text_color }};
+  "
+>
   <div class="hero__img-wrapper">
     <picture>
       {% if section.settings.hero_image_sp != blank %}
@@ -15,6 +27,7 @@
 
     <div class="hero__title-overlay">
       <p class="hero__brand">{{ section.settings.brand_name | default: 'KAPOK KNOT HOME' }}</p>
+
       <div class="hero__title">
         {{ section.settings.hero_title | default: '<p>やさしい重みで、<br>休息のスイッチを入れる。</p>' }}
       </div>
@@ -105,9 +118,9 @@
 
 .hero__title p {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: var(--hero-title-size-pc);
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: var(--hero-title-weight-pc);
   letter-spacing: 0.04em;
 }
 
@@ -115,7 +128,7 @@
   position: static;
   padding: 28px 16px 36px;
   text-align: center;
-  background: #1F2A44;
+  background: var(--hero-bg-color);
   color: #fff;
 }
 
@@ -139,8 +152,8 @@
   width: min(100%, 360px);
   padding: 14px 24px;
   border-radius: 999px;
-  background: #fff;
-  color: #1F2A44;
+  background: var(--hero-button-bg-color);
+  color: var(--hero-button-text-color);
   text-decoration: none;
   font-weight: 700;
   text-align: center;
@@ -177,6 +190,11 @@
     bottom: 24px;
   }
 
+  .hero__title p {
+    font-size: var(--hero-title-size-sp);
+    font-weight: var(--hero-title-weight-sp);
+  }
+
   .hero__content {
     padding: 24px 16px 32px;
   }
@@ -204,6 +222,12 @@
       "default": "MUSUBIブランケットに包まれる女性"
     },
     {
+      "type": "color",
+      "id": "hero_bg_color",
+      "label": "背景色",
+      "default": "#1F2A44"
+    },
+    {
       "type": "text",
       "id": "brand_name",
       "label": "ブランド名",
@@ -214,6 +238,52 @@
       "id": "hero_title",
       "label": "見出し",
       "default": "<p>やさしい重みで、<br>休息のスイッチを入れる。</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_pc",
+      "label": "見出し フォントサイズ（PC）",
+      "min": 24,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_sp",
+      "label": "見出し フォントサイズ（SP）",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_pc",
+      "label": "見出し 太さ（PC）",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_sp",
+      "label": "見出し 太さ（SP）",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
     },
     {
       "type": "richtext",
@@ -283,6 +353,18 @@
       "id": "cta_text_2",
       "label": "CTAボタンテキスト 2",
       "default": "LINEで再入荷を受け取る"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_bg_color",
+      "label": "ボタン背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_text_color",
+      "label": "ボタン文字色",
+      "default": "#1F2A44"
     },
     {
       "type": "text",
