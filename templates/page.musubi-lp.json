@@ -15,6 +15,7 @@
       "settings": {
         "hero_image": "shopify://shop_images/260312_KAPOKKNOT1205.jpg",
         "hero_image_sp": "shopify://shop_images/10_15.png",
+        "hero_image_alt": "MUSUBIブランケットに包まれる女性",
         "hero_bg_color": "#1f2a44",
         "brand_name": "KAPOK KNOT HOME",
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
@@ -37,7 +38,15 @@
         "cta2_bg_color": "#06c755",
         "cta2_text_color": "#ffffff",
         "price_text": "¥29,800〜",
-        "price_tax": "(税込)"
+        "price_tax": "(税込)",
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 20,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0
       }
     },
     "guarantee": {
