@@ -109,14 +109,14 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>休んでいても波立つように<br/>心が落ち着かない</p>"
+            "text": "<p>休んでいても波立つように<br/>心が落ち着かない。。</p>"
           }
         },
         "worry_3": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>リラックスできる<br/>タイミング、習慣がない</p>"
+            "text": "<p>リラックスできる<br/>タイミング、習慣がない。。</p>"
           }
         }
       },
@@ -151,7 +151,7 @@
         "arrow_size_pc": 28,
         "arrow_size_sp": 24,
         "arrow_color": "#b8a78a",
-        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
+        "solution_image": "shopify://shop_images/IMG_1027_KAPOKKNOT.jpg",
         "solution_image_alt": "MUSUBIに包まれて休息",
         "solution_width": 480,
         "solution_radius": 18,
