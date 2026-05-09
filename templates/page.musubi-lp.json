@@ -12,34 +12,6 @@
   "sections": {
     "hero": {
       "type": "musubi-lp-hero",
-      "blocks": {
-        "proof_item_EKFgXW": {
-          "type": "proof_item",
-          "settings": {
-            "number": "2,700",
-            "label": "枚突破"
-          }
-        },
-        "proof_2": {
-          "type": "proof_item",
-          "settings": {
-            "number": "2500",
-            "label": "名支援"
-          }
-        },
-        "proof_3": {
-          "type": "proof_item",
-          "settings": {
-            "number": "★4.1",
-            "label": "レビュー"
-          }
-        }
-      },
-      "block_order": [
-        "proof_item_EKFgXW",
-        "proof_2",
-        "proof_3"
-      ],
       "settings": {
         "hero_image": "shopify://shop_images/260312_KAPOKKNOT1205.jpg",
         "hero_image_sp": "shopify://shop_images/10_15.png",
