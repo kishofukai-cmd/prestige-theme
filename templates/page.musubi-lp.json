@@ -19,6 +19,9 @@
         "brand_name": "KAPOK KNOT HOME",
         "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
         "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
+        "hero_subtitle_font_size": 26,
+        "hero_subtitle_font_weight": "500",
+        "hero_subtitle_color": "#ffffff",
         "show_soldout": true,
         "soldout_text": "現在MUSUBI-en-は完売中です。",
         "cta_url": "shopify://products/musubi-en",
@@ -80,7 +83,7 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>頭のなかが<br/>ぐるぐる<br/>休まらない</p>"
+            "text": "<p>頭のなかがぐるぐる<br/>休まらない</p>"
           }
         },
         "worry_2": {
