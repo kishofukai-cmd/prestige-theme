@@ -1,6 +1,3 @@
-{% comment %} MUSUBI LP - Hero Section {% endcomment %}
-{% render 'musubi-lp-styles' %}
-
 <section class="hero" id="hero">
   <div class="hero__img-wrapper">
     <picture>
@@ -15,29 +12,28 @@
         alt="{{ section.settings.hero_image_alt | default: 'MUSUBIブランケットに包まれる女性' }}"
         class="hero__img">
     </picture>
+
+    <div class="hero__title-overlay">
+      <p class="hero__brand">{{ section.settings.brand_name | default: 'KAPOK KNOT HOME' }}</p>
+      <div class="hero__title">
+        {{ section.settings.hero_title | default: '<p>やさしい重みで、<br>休息のスイッチを入れる。</p>' }}
+      </div>
+    </div>
   </div>
 
   <div class="hero__content">
-    <p class="hero__brand">{{ section.settings.brand_name | default: 'KAPOK KNOT HOME' }}</p>
-
-    <h1 class="hero__title">
-      {{ section.settings.hero_title | default: 'やさしい重みで、<br>休息のスイッチを入れる。' }}
-    </h1>
-
-    <p
-  class="hero__subtitle"
-  style="
-    font-size: {{ section.settings.hero_subtitle_font_size }}px;
-    font-weight: {{ section.settings.hero_subtitle_font_weight }};
-    color: {{ section.settings.hero_subtitle_color }};
-  "
->
-  {{ section.settings.hero_subtitle }}
-</p>
-
+    <div
+      class="hero__subtitle"
+      style="
+        font-size: {{ section.settings.hero_subtitle_font_size }}px;
+        font-weight: {{ section.settings.hero_subtitle_font_weight }};
+        color: {{ section.settings.hero_subtitle_color }};
+      "
+    >
+      {{ section.settings.hero_subtitle }}
+    </div>
 
     <div class="hero__cta-area">
-
       {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
         <p class="hero__soldout">
           {{ section.settings.soldout_text }}
@@ -61,18 +57,73 @@
         <span class="hero__price-tax">{{ section.settings.price_tax | default: '(税込)' }}</span>
       </p>
 
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:8px;letter-spacing:0.03em;">
+      <div class="hero__features">
         <span>✓ オールシーズン</span>
         <span>✓ アニマルフリー</span>
         <span>✓ 通気性</span>
         <span>✓ お手入れ簡単</span>
       </div>
-
     </div>
   </div>
 </section>
 
 <style>
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero__img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__title-overlay {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 32px;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__brand {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.hero__title p {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero__content {
+  position: static;
+  padding: 28px 16px 36px;
+  text-align: center;
+  background: #1F2A44;
+  color: #fff;
+}
+
+.hero__subtitle p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
 .hero__soldout {
   font-size: 1.2rem;
   font-weight: 700;
@@ -83,8 +134,52 @@
   font-family: inherit;
 }
 
+.hero__cta-btn {
+  display: inline-block;
+  width: min(100%, 360px);
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: #fff;
+  color: #1F2A44;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+}
+
 .hero__cta-btn--second {
   margin-top: 10px;
+}
+
+.hero__price {
+  margin: 14px 0 0;
+  font-size: 1rem;
+}
+
+.hero__price-tax {
+  font-size: 0.8em;
+}
+
+.hero__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 8px;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (max-width: 767px) {
+  .hero__title-overlay {
+    left: 16px;
+    right: 16px;
+    bottom: 24px;
+  }
+
+  .hero__content {
+    padding: 24px 16px 32px;
+  }
 }
 </style>
 
@@ -123,39 +218,38 @@
     {
       "type": "richtext",
       "id": "hero_subtitle",
-      
       "label": "サブタイトル",
-      "default": "<p>植物由来素材 × 通気構造の<br>リカバリー加重ブランケット</p>"
+      "default": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>"
     },
     {
-  "type": "range",
-  "id": "hero_subtitle_font_size",
-  "label": "サブタイトル フォントサイズ",
-  "min": 12,
-  "max": 40,
-  "step": 1,
-  "unit": "px",
-  "default": 18
-},
-{
-  "type": "select",
-  "id": "hero_subtitle_font_weight",
-  "label": "サブタイトル 太さ",
-  "default": "400",
-  "options": [
-    { "value": "300", "label": "細め" },
-    { "value": "400", "label": "通常" },
-    { "value": "500", "label": "中太" },
-    { "value": "600", "label": "太め" },
-    { "value": "700", "label": "かなり太め" }
-  ]
-},
-{
-  "type": "color",
-  "id": "hero_subtitle_color",
-  "label": "サブタイトル 色",
-  "default": "#ffffff"
-},
+      "type": "range",
+      "id": "hero_subtitle_font_size",
+      "label": "サブタイトル フォントサイズ",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "hero_subtitle_font_weight",
+      "label": "サブタイトル 太さ",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "hero_subtitle_color",
+      "label": "サブタイトル 色",
+      "default": "#ffffff"
+    },
     {
       "type": "checkbox",
       "id": "show_soldout",
@@ -188,7 +282,7 @@
       "type": "text",
       "id": "cta_text_2",
       "label": "CTAボタンテキスト 2",
-      "default": "LINEで最新情報を受け取る"
+      "default": "LINEで再入荷を受け取る"
     },
     {
       "type": "text",
@@ -203,7 +297,10 @@
       "default": "(税込)"
     }
   ],
-  
-  
+  "presets": [
+    {
+      "name": "MUSUBI Hero"
+    }
+  ]
 }
 {% endschema %}
