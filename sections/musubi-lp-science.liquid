@@ -1,63 +1,558 @@
-﻿{% comment %} MUSUBI LP - Science Section (updated) {% endcomment %}
-<section class="science" id="science">
-  <div class="container">
-    <h2 class="section-title section-title--light" data-reveal>{{ section.settings.heading | default: 'なぜ"重み"が<br>安心感につながるのか？' }}</h2>
+{% comment %} MUSUBI LP - Science Section {% endcomment %}
 
-    <!-- 図解 -->
+<style>
+  .science {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+
+  .science__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .science__label {
+    display: inline-block;
+    font-size: {{ section.settings.label_size_pc }}px;
+    color: {{ section.settings.label_color }};
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .science__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 34px;
+  }
+
+  .science__heading p {
+    margin: 0;
+  }
+
+  .science__diagram {
+    max-width: 820px;
+    margin: 0 auto 36px;
+    display: grid;
+    grid-template-columns: 1fr 42px 1fr 42px 1fr;
+    align-items: center;
+    gap: 0;
+  }
+
+  .science__step {
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.card_border_color }};
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: 24px 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .science__step-circle {
+    width: {{ section.settings.icon_size_pc }}px;
+    height: {{ section.settings.icon_size_pc }}px;
+    border-radius: 50%;
+    background: {{ section.settings.icon_bg_color }};
+    color: {{ section.settings.icon_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .science__step-circle svg {
+    width: 56%;
+    height: 56%;
+    stroke: currentColor;
+  }
+
+  .science__step-label {
+    font-size: {{ section.settings.step_text_size_pc }}px;
+    color: {{ section.settings.step_text_color }};
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+  }
+
+  .science__step-label p {
+    margin: 0;
+  }
+
+  .science__connector {
+    position: relative;
+    height: 1px;
+    background: {{ section.settings.connector_color }};
+    margin: 0 10px;
+  }
+
+  .science__connector::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid {{ section.settings.connector_color }};
+    border-right: 1px solid {{ section.settings.connector_color }};
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .science__visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 28px;
+    text-align: left;
+  }
+
+  .science__img {
+    border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .science__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .science__text {
+    background: {{ section.settings.description_bg_color }};
+    border: 1px solid {{ section.settings.description_border_color }};
+    border-radius: {{ section.settings.description_radius }}px;
+    padding: 28px;
+  }
+
+  .science__text p {
+    margin: 0;
+    font-size: {{ section.settings.description_size_pc }}px;
+    color: {{ section.settings.description_color }};
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+
+  .science__text strong {
+    color: {{ section.settings.strong_color }};
+    font-weight: 700;
+  }
+
+  .science__papers {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 22px 24px;
+    background: {{ section.settings.papers_bg_color }};
+    border-radius: {{ section.settings.papers_radius }}px;
+    text-align: left;
+  }
+
+  .science__papers-title {
+    margin: 0 0 10px;
+    font-size: {{ section.settings.papers_title_size_pc }}px;
+    color: {{ section.settings.papers_title_color }};
+    font-weight: 700;
+  }
+
+  .science__papers-list {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+
+  .science__papers-list li {
+    margin: 6px 0;
+    font-size: {{ section.settings.papers_text_size_pc }}px;
+    line-height: 1.6;
+    color: {{ section.settings.papers_text_color }};
+  }
+
+  .science__papers-list a {
+    color: {{ section.settings.papers_link_color }};
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .science__papers-note {
+    margin: 12px 0 0;
+    font-size: {{ section.settings.note_size_pc }}px;
+    color: {{ section.settings.note_color }};
+    line-height: 1.7;
+  }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: all 0.8s ease;
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .science {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .science__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+      margin-bottom: 10px;
+    }
+
+    .science__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+      margin-bottom: 24px;
+    }
+
+    .science__diagram {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .science__connector {
+      width: 1px;
+      height: 22px;
+      margin: 0 auto;
+    }
+
+    .science__connector::after {
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: -1px;
+      transform: translateX(-50%) rotate(135deg);
+    }
+
+    .science__step {
+      min-height: auto;
+      padding: 18px 16px;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+      gap: 14px;
+    }
+
+    .science__step-circle {
+      width: {{ section.settings.icon_size_sp }}px;
+      height: {{ section.settings.icon_size_sp }}px;
+      flex-shrink: 0;
+    }
+
+    .science__step-label {
+      font-size: {{ section.settings.step_text_size_sp }}px;
+    }
+
+    .science__visual {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .science__img {
+      border-radius: {{ section.settings.image_radius_sp }}px;
+    }
+
+    .science__text {
+      padding: 20px;
+      border-radius: {{ section.settings.description_radius_sp }}px;
+    }
+
+    .science__text p {
+      font-size: {{ section.settings.description_size_sp }}px;
+      line-height: 1.9;
+    }
+
+    .science__papers {
+      padding: 18px;
+      border-radius: {{ section.settings.papers_radius_sp }}px;
+    }
+
+    .science__papers-title {
+      font-size: {{ section.settings.papers_title_size_sp }}px;
+    }
+
+    .science__papers-list li {
+      font-size: {{ section.settings.papers_text_size_sp }}px;
+    }
+
+    .science__papers-note {
+      font-size: {{ section.settings.note_size_sp }}px;
+    }
+  }
+</style>
+
+<section class="science" id="science">
+  <div class="science__inner">
+
+    {% if section.settings.label != blank %}
+      <div class="science__label" data-reveal>
+        {{ section.settings.label }}
+      </div>
+    {% endif %}
+
+    <h2 class="science__heading" data-reveal>
+      {{ section.settings.heading }}
+    </h2>
+
     <div class="science__diagram" data-reveal>
+      {% assign step_count = 0 %}
       {% for block in section.blocks %}
         {% if block.type == 'step' %}
-          {% unless forloop.first %}
+          {% assign step_count = step_count | plus: 1 %}
+
+          {% unless step_count == 1 %}
             <div class="science__connector" data-reveal></div>
           {% endunless %}
+
           <div class="science__step" data-reveal {{ block.shopify_attributes }}>
             <div class="science__step-circle">
-              {{ block.settings.icon_svg }}
+              {% if block.settings.icon_svg != blank %}
+                {{ block.settings.icon_svg }}
+              {% else %}
+                <svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="32" cy="32" r="18"></circle>
+                  <path d="M24 34c4 4 12 4 16 0"></path>
+                  <path d="M24 26h.01"></path>
+                  <path d="M40 26h.01"></path>
+                </svg>
+              {% endif %}
             </div>
-            <div class="science__step-label">{{ block.settings.label }}</div>
+            <div class="science__step-label">
+              {{ block.settings.label }}
+            </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
 
-    <div class="science__img" data-reveal>
-      {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | img_url: '1000x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
-      {% else %}
-        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1000" alt="MUSUBIの使用シーン" loading="lazy">
-      {% endif %}
+    <div class="science__visual">
+      <div class="science__img" data-reveal>
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '1000x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1000" alt="MUSUBIの使用シーン" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="science__text" data-reveal>
+        {{ section.settings.description }}
+      </div>
     </div>
 
-    <div class="science__text" data-reveal>
-      <p>{{ section.settings.description | default: '体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。' }}</p>
-    </div>
-
-    <!-- 参考論文 -->
     <div class="science__papers" data-reveal>
-      <p class="science__papers-title">📚 参考文献</p>
+      <p class="science__papers-title">{{ section.settings.papers_title }}</p>
       <ul class="science__papers-list">
         {% for block in section.blocks %}
           {% if block.type == 'paper' %}
             <li {{ block.shopify_attributes }}>
-              <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.title }}</a>
+              <a href="{{ block.settings.url }}" target="_blank" rel="noopener">
+                {{ block.settings.title }}
+              </a>
             </li>
           {% endif %}
         {% endfor %}
       </ul>
-      <p class="science__papers-note">{{ section.settings.papers_note | default: '※すべて「効果が示唆された」「可能性がある」との結論です' }}</p>
+      <p class="science__papers-note">
+        {{ section.settings.papers_note }}
+      </p>
     </div>
+
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-reveal]");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
 
 {% schema %}
 {
   "name": "MUSUBI 科学根拠",
   "settings": [
     {
+      "type": "header",
+      "content": "テキスト"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "WHY WEIGHT?"
+    },
+    {
       "type": "richtext",
       "id": "heading",
       "label": "見出し",
-      "default": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>"
+      "default": "<p>なぜ“重み”が<br>安心感につながるのか？</p>"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベル文字サイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベル文字サイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベルカラー",
+      "default": "#b8a78a"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 34,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "図解"
+    },
+    {
+      "type": "range",
+      "id": "step_text_size_pc",
+      "label": "ステップ文字サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "step_text_size_sp",
+      "label": "ステップ文字サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "step_text_color",
+      "label": "ステップ文字カラー",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "カード背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "カード枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "カード角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "カード角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "icon_size_pc",
+      "label": "アイコン背景サイズ（PC）",
+      "min": 44,
+      "max": 96,
+      "step": 2,
+      "default": 62
+    },
+    {
+      "type": "range",
+      "id": "icon_size_sp",
+      "label": "アイコン背景サイズ（SP）",
+      "min": 36,
+      "max": 76,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "アイコン背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "アイコンカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "connector_color",
+      "label": "矢印線カラー",
+      "default": "#d4c8b8"
+    },
+    {
+      "type": "header",
+      "content": "画像・説明文"
     },
     {
       "type": "image_picker",
@@ -71,16 +566,240 @@
       "default": "MUSUBIの使用シーン"
     },
     {
+      "type": "range",
+      "id": "image_radius",
+      "label": "画像角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_radius_sp",
+      "label": "画像角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
       "type": "richtext",
       "id": "description",
       "label": "説明文",
-      "default": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>"
+      "default": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス状態をサポートする可能性が示唆されています。</p>"
+    },
+    {
+      "type": "range",
+      "id": "description_size_pc",
+      "label": "説明文サイズ（PC）",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "description_size_sp",
+      "label": "説明文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "説明文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "description_bg_color",
+      "label": "説明文背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "description_border_color",
+      "label": "説明文枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "range",
+      "id": "description_radius",
+      "label": "説明文角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "description_radius_sp",
+      "label": "説明文角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "strong_color",
+      "label": "強調文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "header",
+      "content": "参考文献"
+    },
+    {
+      "type": "text",
+      "id": "papers_title",
+      "label": "参考文献タイトル",
+      "default": "参考文献"
+    },
+    {
+      "type": "range",
+      "id": "papers_title_size_pc",
+      "label": "参考文献タイトルサイズ（PC）",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "papers_title_size_sp",
+      "label": "参考文献タイトルサイズ（SP）",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "papers_title_color",
+      "label": "参考文献タイトルカラー",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "papers_text_size_pc",
+      "label": "参考文献本文サイズ（PC）",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "papers_text_size_sp",
+      "label": "参考文献本文サイズ（SP）",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "papers_text_color",
+      "label": "参考文献本文カラー",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "papers_link_color",
+      "label": "参考文献リンクカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "papers_bg_color",
+      "label": "参考文献背景カラー",
+      "default": "#f7f2eb"
+    },
+    {
+      "type": "range",
+      "id": "papers_radius",
+      "label": "参考文献角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "papers_radius_sp",
+      "label": "参考文献角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 14
     },
     {
       "type": "text",
       "id": "papers_note",
       "label": "論文注記",
-      "default": "※すべて「効果が示唆された」「可能性がある」との結論です"
+      "default": "※研究結果には個人差があり、効果を保証するものではありません。"
+    },
+    {
+      "type": "range",
+      "id": "note_size_pc",
+      "label": "注記サイズ（PC）",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "note_size_sp",
+      "label": "注記サイズ（SP）",
+      "min": 10,
+      "max": 15,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "note_color",
+      "label": "注記カラー",
+      "default": "#777777"
+    },
+    {
+      "type": "header",
+      "content": "全体デザイン"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "基本文字カラー",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白（PC）",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白（SP）",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
     }
   ],
   "blocks": [
@@ -122,15 +841,47 @@
     {
       "name": "MUSUBI 科学根拠",
       "blocks": [
-        { "type": "step", "settings": { "label": "<p>均一な重み</p>" } },
-        { "type": "step", "settings": { "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>" } },
-        { "type": "step", "settings": { "label": "<p>深いリラックス<br>状態の促進</p>" } },
-        { "type": "paper", "settings": { "title": "Chen et al., 2013 — \"Weighted blankets and sleep in insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/24027326/" } },
-        { "type": "paper", "settings": { "title": "Ackerley et al., 2015 — \"Positive effects of a weighted blanket on insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/25692862/" } },
-        { "type": "paper", "settings": { "title": "Ekholm et al., 2020 — \"Weighted blankets in psychiatric care\"", "url": "https://pubmed.ncbi.nlm.nih.gov/32357390/" } }
+        {
+          "type": "step",
+          "settings": {
+            "label": "<p>均一な重み</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "<p>リラックス状態を<br>サポート</p>"
+          }
+        },
+        {
+          "type": "paper",
+          "settings": {
+            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24027326/"
+          }
+        },
+        {
+          "type": "paper",
+          "settings": {
+            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25692862/"
+          }
+        },
+        {
+          "type": "paper",
+          "settings": {
+            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32357390/"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-
