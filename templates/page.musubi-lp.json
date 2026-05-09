@@ -102,21 +102,21 @@
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>頭のなかがぐるぐるで<br/>なかなか休まらない。。</p>"
+            "text": "<p>頭のなかがぐるぐるで<br>なかなか休まらない。。</p>"
           }
         },
         "worry_2": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>休んでいても波立つように<br/>心が落ち着かない。。</p>"
+            "text": "<p>休んでいても波立つように<br>心が落ち着かない。。</p>"
           }
         },
         "worry_3": {
           "type": "worry_item",
           "settings": {
             "icon_svg": "",
-            "text": "<p>リラックスできる<br/>タイミング、習慣がない。。</p>"
+            "text": "<p>リラックスできる<br>タイミング、習慣がない。。</p>"
           }
         }
       },
@@ -128,35 +128,46 @@
       "settings": {
         "label": "",
         "heading": "こんな夜、ありませんか？",
-        "label_size_pc": 12,
-        "label_size_sp": 13,
-        "label_color": "#b8a78a",
         "heading_size_pc": 26,
         "heading_size_sp": 22,
-        "heading_color": "#1a1a1a",
         "item_text_size_pc": 14,
         "item_text_size_sp": 17,
+        "heading_color": "#1a1a1a",
         "item_text_color": "#333333",
         "bg_color": "#faf9f7",
         "card_bg_color": "#ffffff",
         "card_border_color": "#eee7dd",
-        "card_radius": 18,
-        "card_radius_sp": 14,
         "padding_pc": 64,
         "padding_sp": 48,
-        "icon_size_pc": 44,
-        "icon_size_sp": 34,
-        "icon_color": "#8b7355",
-        "show_arrow": true,
-        "arrow_size_pc": 28,
-        "arrow_size_sp": 24,
-        "arrow_color": "#b8a78a",
         "solution_image": "shopify://shop_images/IMG_1027_KAPOKKNOT.jpg",
         "solution_image_alt": "MUSUBIに包まれて休息",
+        "show_arrow": true,
         "solution_width": 480,
         "solution_radius": 18,
-        "solution_radius_sp": 14
+        "solution_radius_sp": 14,
+        "icon_size_pc": 44,
+        "icon_size_sp": 34,
+        "arrow_size_pc": 28,
+        "arrow_size_sp": 24
       }
+    },
+    "177834100804c0ef0c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0034564_zhXVBe": {
+          "type": "ai_gen_block_0034564",
+          "settings": {
+            "image": "shopify://shop_images/260312_KAPOKKNOT1435.jpg",
+            "desktop_width_percent": 100,
+            "border_radius": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0034564_zhXVBe"
+      ],
+      "settings": {}
     },
     "story": {
       "type": "musubi-lp-story",
@@ -822,6 +833,7 @@
     "guarantee",
     "1778229712a3df2da2",
     "empathy",
+    "177834100804c0ef0c",
     "story",
     "science",
     "trust-visual",
