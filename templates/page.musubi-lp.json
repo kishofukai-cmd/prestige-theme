@@ -137,7 +137,7 @@
       "settings": {
         "label": "その悩みに、MUSUBIが考えたこと",
         "label_size": 13,
-        "label_size_sp": 13,
+        "label_size_sp": 12,
         "label_color": "#b8a78a",
         "heading": "<p>眠りには<br/>「導入スイッチ」が必要だった</p>",
         "heading_size": 32,
