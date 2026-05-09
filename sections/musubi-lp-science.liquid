@@ -28,7 +28,7 @@
     font-weight: 700;
     line-height: 1.55;
     letter-spacing: 0.04em;
-    margin: 0 0 34px;
+    margin: 0 0 28px;
   }
 
   .science__heading p {
@@ -37,11 +37,10 @@
 
   .science__diagram {
     max-width: 820px;
-    margin: 0 auto 36px;
+    margin: 0 auto 30px;
     display: grid;
-    grid-template-columns: 1fr 42px 1fr 42px 1fr;
-    align-items: center;
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 
   .science__step {
@@ -50,7 +49,7 @@
     border-radius: {{ section.settings.card_radius }}px;
     padding: 24px 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.04);
-    min-height: 150px;
+    min-height: 148px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,25 +84,6 @@
 
   .science__step-label p {
     margin: 0;
-  }
-
-  .science__connector {
-    position: relative;
-    height: 1px;
-    background: {{ section.settings.connector_color }};
-    margin: 0 10px;
-  }
-
-  .science__connector::after {
-    content: "";
-    position: absolute;
-    right: -1px;
-    top: 50%;
-    width: 7px;
-    height: 7px;
-    border-top: 1px solid {{ section.settings.connector_color }};
-    border-right: 1px solid {{ section.settings.connector_color }};
-    transform: translateY(-50%) rotate(45deg);
   }
 
   .science__visual {
@@ -144,6 +124,63 @@
   }
 
   .science__text strong {
+    color: {{ section.settings.strong_color }};
+    font-weight: 700;
+  }
+
+  .science__test {
+    max-width: 900px;
+    margin: 0 auto 28px;
+    background: {{ section.settings.test_bg_color }};
+    border: 1px solid {{ section.settings.test_border_color }};
+    border-radius: {{ section.settings.test_radius }}px;
+    padding: 28px;
+    text-align: left;
+  }
+
+  .science__test-title {
+    margin: 0 0 14px;
+    font-size: {{ section.settings.test_title_size_pc }}px;
+    color: {{ section.settings.test_title_color }};
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .science__test-title p {
+    margin: 0;
+  }
+
+  .science__test-body {
+    margin: 0 0 18px;
+    font-size: {{ section.settings.test_body_size_pc }}px;
+    color: {{ section.settings.test_body_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  .science__test-body p {
+    margin: 0;
+  }
+
+  .science__test-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .science__test-list li {
+    background: {{ section.settings.test_item_bg_color }};
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: {{ section.settings.test_item_size_pc }}px;
+    color: {{ section.settings.test_item_color }};
+    line-height: 1.6;
+  }
+
+  .science__test-list strong {
     color: {{ section.settings.strong_color }};
     font-weight: 700;
   }
@@ -212,27 +249,13 @@
 
     .science__heading {
       font-size: {{ section.settings.heading_size_sp }}px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .science__diagram {
       grid-template-columns: 1fr;
       gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .science__connector {
-      width: 1px;
-      height: 22px;
-      margin: 0 auto;
-    }
-
-    .science__connector::after {
-      right: auto;
-      left: 50%;
-      top: auto;
-      bottom: -1px;
-      transform: translateX(-50%) rotate(135deg);
+      margin-bottom: 24px;
     }
 
     .science__step {
@@ -275,6 +298,29 @@
       line-height: 1.9;
     }
 
+    .science__test {
+      padding: 20px;
+      border-radius: {{ section.settings.test_radius_sp }}px;
+      margin-bottom: 22px;
+    }
+
+    .science__test-title {
+      font-size: {{ section.settings.test_title_size_sp }}px;
+    }
+
+    .science__test-body {
+      font-size: {{ section.settings.test_body_size_sp }}px;
+    }
+
+    .science__test-list {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .science__test-list li {
+      font-size: {{ section.settings.test_item_size_sp }}px;
+    }
+
     .science__papers {
       padding: 18px;
       border-radius: {{ section.settings.papers_radius_sp }}px;
@@ -308,15 +354,8 @@
     </h2>
 
     <div class="science__diagram" data-reveal>
-      {% assign step_count = 0 %}
       {% for block in section.blocks %}
         {% if block.type == 'step' %}
-          {% assign step_count = step_count | plus: 1 %}
-
-          {% unless step_count == 1 %}
-            <div class="science__connector" data-reveal></div>
-          {% endunless %}
-
           <div class="science__step" data-reveal {{ block.shopify_attributes }}>
             <div class="science__step-circle">
               {% if block.settings.icon_svg != blank %}
@@ -350,6 +389,23 @@
       <div class="science__text" data-reveal>
         {{ section.settings.description }}
       </div>
+    </div>
+
+    <div class="science__test" data-reveal>
+      <div class="science__test-title">
+        {{ section.settings.test_title }}
+      </div>
+
+      <div class="science__test-body">
+        {{ section.settings.test_body }}
+      </div>
+
+      <ul class="science__test-list">
+        <li><strong>試験方法：</strong>{{ section.settings.test_method }}</li>
+        <li><strong>測定内容：</strong>{{ section.settings.test_measurement }}</li>
+        <li><strong>被験者：</strong>{{ section.settings.test_subjects }}</li>
+        <li><strong>試験期間：</strong>{{ section.settings.test_period }}</li>
+      </ul>
     </div>
 
     <div class="science__papers" data-reveal>
@@ -545,12 +601,6 @@
       "default": "#8B7355"
     },
     {
-      "type": "color",
-      "id": "connector_color",
-      "label": "矢印線カラー",
-      "default": "#d4c8b8"
-    },
-    {
       "type": "header",
       "content": "画像・説明文"
     },
@@ -648,6 +698,154 @@
       "id": "strong_color",
       "label": "強調文字カラー",
       "default": "#8B7355"
+    },
+    {
+      "type": "header",
+      "content": "睡眠検証試験"
+    },
+    {
+      "type": "richtext",
+      "id": "test_title",
+      "label": "試験タイトル",
+      "default": "<p>自宅環境での睡眠検証試験を実施</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "test_body",
+      "label": "試験説明文",
+      "default": "<p>MUSUBIの有無による睡眠状態の違いを確認するため、被験者が普段使用している寝具環境をベースに、自宅での睡眠検証試験を実施しました。</p>"
+    },
+    {
+      "type": "text",
+      "id": "test_method",
+      "label": "試験方法",
+      "default": "単盲検クロスオーバー試験"
+    },
+    {
+      "type": "text",
+      "id": "test_measurement",
+      "label": "測定内容",
+      "default": "脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など"
+    },
+    {
+      "type": "text",
+      "id": "test_subjects",
+      "label": "被験者",
+      "default": "5名（30〜50代の日本人社会人）"
+    },
+    {
+      "type": "text",
+      "id": "test_period",
+      "label": "試験期間",
+      "default": "2026年1月22日〜2月19日／有り3晩・無し3晩で比較"
+    },
+    {
+      "type": "range",
+      "id": "test_title_size_pc",
+      "label": "試験タイトルサイズ（PC）",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "test_title_size_sp",
+      "label": "試験タイトルサイズ（SP）",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "color",
+      "id": "test_title_color",
+      "label": "試験タイトルカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "test_body_size_pc",
+      "label": "試験説明文サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "test_body_size_sp",
+      "label": "試験説明文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "test_body_color",
+      "label": "試験説明文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "test_item_size_pc",
+      "label": "試験項目サイズ（PC）",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "test_item_size_sp",
+      "label": "試験項目サイズ（SP）",
+      "min": 11,
+      "max": 17,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "test_item_color",
+      "label": "試験項目カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "test_bg_color",
+      "label": "試験背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "test_border_color",
+      "label": "試験枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "test_item_bg_color",
+      "label": "試験項目背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "range",
+      "id": "test_radius",
+      "label": "試験角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "test_radius_sp",
+      "label": "試験角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
     },
     {
       "type": "header",
