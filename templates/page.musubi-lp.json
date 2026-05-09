@@ -74,8 +74,8 @@
             "columns_mobile": "2",
             "gap": 12,
             "desktop_width_percent": 100,
-            "autoplay": false,
-            "autoplay_speed": 3000,
+            "autoplay": true,
+            "autoplay_speed": 4000,
             "show_navigation": true,
             "show_dots": true,
             "nav_button_color": "#ffffff",
@@ -83,7 +83,7 @@
             "nav_button_size": 35,
             "nav_button_offset": 8,
             "dot_color": "#1c1c1c",
-            "image_border_radius": 0
+            "image_border_radius": 20
           },
           "blocks": {}
         }
