@@ -276,7 +276,7 @@
         "description_radius": 20,
         "description_radius_sp": 16,
         "strong_color": "#8b7355",
-        "test_title": "<p>自宅環境での睡眠検証試験を実施</p>",
+        "test_title": "<p>自宅環境での睡眠検証試験を実際に実施しました！</p>",
         "test_body": "<p>MUSUBIの有無による睡眠状態の違いを確認するため、被験者が普段使用している寝具環境をベースに、自宅での睡眠検証試験を実施しました。</p>",
         "test_method": "単盲検クロスオーバー試験",
         "test_measurement": "脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など",
