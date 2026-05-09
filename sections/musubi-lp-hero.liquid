@@ -43,7 +43,6 @@
     </div>
 
     <div class="hero__cta-area">
-
       {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
         <a
           href="{{ section.settings.cta_url }}"
@@ -84,9 +83,11 @@
           style="
             margin-top: {{ section.settings.soldout_margin_top }}px;
             margin-bottom: {{ section.settings.soldout_margin_bottom }}px;
+            font-size: {{ section.settings.soldout_font_size }}px;
+            color: {{ section.settings.soldout_text_color }};
           "
         >
-          {{ section.settings.soldout_text }}
+          {{ section.settings.soldout_text | newline_to_br }}
         </p>
       {% endif %}
 
@@ -109,7 +110,6 @@
         <span>✓ 通気性</span>
         <span>✓ お手入れ簡単</span>
       </div>
-
     </div>
   </div>
 </section>
@@ -169,12 +169,11 @@
 }
 
 .hero__soldout {
-  font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
   text-align: center;
   letter-spacing: 0.05em;
   font-family: inherit;
+  line-height: 1.6;
 }
 
 .hero__cta-btn {
@@ -353,10 +352,26 @@
       "default": true
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "soldout_text",
       "label": "完売文言",
       "default": "現在MUSUBI-en-は完売中です。"
+    },
+    {
+      "type": "range",
+      "id": "soldout_font_size",
+      "label": "完売文言 フォントサイズ",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "soldout_text_color",
+      "label": "完売文言 文字色",
+      "default": "#ffffff"
     },
     {
       "type": "url",
