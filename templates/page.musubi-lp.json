@@ -126,10 +126,36 @@
         "worry_3"
       ],
       "settings": {
+        "label": "",
         "heading": "こんな夜、ありませんか？",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "label_color": "#b8a78a",
+        "heading_size_pc": 26,
+        "heading_size_sp": 22,
+        "heading_color": "#1a1a1a",
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 14,
+        "item_text_color": "#333333",
+        "bg_color": "#faf9f7",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "card_radius": 18,
+        "card_radius_sp": 14,
+        "padding_pc": 64,
+        "padding_sp": 48,
+        "icon_size_pc": 44,
+        "icon_size_sp": 34,
+        "icon_color": "#8b7355",
+        "show_arrow": true,
+        "arrow_size_pc": 28,
+        "arrow_size_sp": 24,
+        "arrow_color": "#b8a78a",
         "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
         "solution_image_alt": "MUSUBIに包まれて休息",
-        "solution_text": "<p>包まれる感覚が、<br/><strong>休息モードへ導く。</strong></p>"
+        "solution_width": 480,
+        "solution_radius": 18,
+        "solution_radius_sp": 14
       }
     },
     "story": {
