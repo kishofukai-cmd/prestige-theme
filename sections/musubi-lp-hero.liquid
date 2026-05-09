@@ -31,7 +31,6 @@
   </div>
 
   <div class="hero__content">
-
     <div
       class="hero__subtitle"
       style="
@@ -45,46 +44,64 @@
 
     <div class="hero__cta-area">
 
-      {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
-        <p class="hero__soldout">
-          {{ section.settings.soldout_text }}
-        </p>
-      {% endif %}
-
-      <!-- CTA① -->
-      {% if section.settings.cta_url != blank %}
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
         <a
           href="{{ section.settings.cta_url }}"
           class="hero__cta-btn"
           style="
             background: {{ section.settings.cta1_bg_color }};
             color: {{ section.settings.cta1_text_color }};
+            margin-top: {{ section.settings.cta1_margin_top }}px;
+            margin-bottom: {{ section.settings.cta1_margin_bottom }}px;
           "
           target="_blank"
+          rel="noopener"
         >
           {{ section.settings.cta_text }}
         </a>
       {% endif %}
 
-      <!-- CTA② -->
-      {% if section.settings.cta_url_2 != blank %}
+      {% if section.settings.cta_url_2 != blank and section.settings.cta_text_2 != blank %}
         <a
           href="{{ section.settings.cta_url_2 }}"
-          class="hero__cta-btn hero__cta-btn--second"
+          class="hero__cta-btn"
           style="
             background: {{ section.settings.cta2_bg_color }};
             color: {{ section.settings.cta2_text_color }};
+            margin-top: {{ section.settings.cta2_margin_top }}px;
+            margin-bottom: {{ section.settings.cta2_margin_bottom }}px;
           "
           target="_blank"
+          rel="noopener"
         >
           {{ section.settings.cta_text_2 }}
         </a>
       {% endif %}
 
-      <p class="hero__price">
-        {{ section.settings.price_text }}
-        <span class="hero__price-tax">{{ section.settings.price_tax }}</span>
-      </p>
+      {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
+        <p
+          class="hero__soldout"
+          style="
+            margin-top: {{ section.settings.soldout_margin_top }}px;
+            margin-bottom: {{ section.settings.soldout_margin_bottom }}px;
+          "
+        >
+          {{ section.settings.soldout_text }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.price_text != blank %}
+        <p
+          class="hero__price"
+          style="
+            margin-top: {{ section.settings.price_margin_top }}px;
+            margin-bottom: {{ section.settings.price_margin_bottom }}px;
+          "
+        >
+          {{ section.settings.price_text }}
+          <span class="hero__price-tax">{{ section.settings.price_tax }}</span>
+        </p>
+      {% endif %}
 
       <div class="hero__features">
         <span>✓ オールシーズン</span>
@@ -105,10 +122,13 @@
 
 .hero__img-wrapper {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero__img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -121,48 +141,88 @@
   color: #fff;
 }
 
+.hero__brand {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
 .hero__title p {
+  margin: 0;
   font-size: var(--hero-title-size-pc);
   font-weight: var(--hero-title-weight-pc);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
 }
 
 .hero__content {
-  background: var(--hero-bg-color);
-  padding: 28px 16px;
+  background: var(--hero-bg-color) !important;
+  padding: 28px 16px 36px;
   text-align: center;
   color: #fff;
 }
 
+.hero__subtitle p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
 .hero__soldout {
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-family: inherit;
 }
 
 .hero__cta-btn {
   display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 360px;
-  padding: 14px;
+  width: min(100%, 360px);
+  padding: 14px 24px;
   border-radius: 999px;
   text-align: center;
   text-decoration: none;
   font-weight: 700;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero__cta-btn--second {
-  margin-top: 10px;
+.hero__price {
+  font-size: 1rem;
+}
+
+.hero__price-tax {
+  font-size: 0.8em;
 }
 
 .hero__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.75);
   margin-top: 8px;
-  font-size: 12px;
+  letter-spacing: 0.03em;
 }
 
 @media screen and (max-width: 767px) {
+  .hero__title-overlay {
+    left: 16px;
+    right: 16px;
+    bottom: 24px;
+  }
+
   .hero__title p {
     font-size: var(--hero-title-size-sp);
     font-weight: var(--hero-title-weight-sp);
+  }
+
+  .hero__content {
+    padding: 24px 16px 32px;
   }
 }
 </style>
@@ -171,51 +231,280 @@
 {
   "name": "MUSUBI Hero",
   "settings": [
-    { "type": "image_picker", "id": "hero_image", "label": "ヒーロー画像PC" },
-    { "type": "image_picker", "id": "hero_image_sp", "label": "ヒーロー画像SP" },
-
-    { "type": "color", "id": "hero_bg_color", "label": "背景色", "default": "#1F2A44" },
-
-    { "type": "text", "id": "brand_name", "label": "ブランド名" },
-
-    { "type": "richtext", "id": "hero_title", "label": "タイトル" },
-
-    { "type": "range", "id": "hero_title_font_size_pc", "label": "タイトルサイズPC", "min": 24, "max": 96, "step": 1, "default": 56 },
-    { "type": "range", "id": "hero_title_font_size_sp", "label": "タイトルサイズSP", "min": 20, "max": 56, "step": 1, "default": 34 },
-
-    { "type": "select", "id": "hero_title_font_weight_pc", "label": "タイトル太さPC", "default": "700",
-      "options": [{"value":"400","label":"通常"},{"value":"700","label":"太"}] },
-
-    { "type": "select", "id": "hero_title_font_weight_sp", "label": "タイトル太さSP", "default": "700",
-      "options": [{"value":"400","label":"通常"},{"value":"700","label":"太"}] },
-
-    { "type": "richtext", "id": "hero_subtitle", "label": "サブタイトル" },
-
-    { "type": "range", "id": "hero_subtitle_font_size", "label": "サブタイトルサイズ", "min": 12, "max": 40, "step": 1, "default": 18 },
-
-    { "type": "select", "id": "hero_subtitle_font_weight", "label": "サブタイトル太さ", "default": "400",
-      "options": [{"value":"300","label":"細"},{"value":"400","label":"通常"},{"value":"700","label":"太"}] },
-
-    { "type": "color", "id": "hero_subtitle_color", "label": "サブタイトル色", "default": "#ffffff" },
-
-    { "type": "checkbox", "id": "show_soldout", "label": "完売表示", "default": true },
-    { "type": "text", "id": "soldout_text", "label": "完売文言" },
-
-    { "type": "url", "id": "cta_url", "label": "CTA1リンク" },
-    { "type": "text", "id": "cta_text", "label": "CTA1テキスト" },
-
-    { "type": "color", "id": "cta1_bg_color", "label": "CTA1背景", "default": "#ffffff" },
-    { "type": "color", "id": "cta1_text_color", "label": "CTA1文字色", "default": "#1F2A44" },
-
-    { "type": "url", "id": "cta_url_2", "label": "CTA2リンク" },
-    { "type": "text", "id": "cta_text_2", "label": "CTA2テキスト" },
-
-    { "type": "color", "id": "cta2_bg_color", "label": "CTA2背景", "default": "#1F2A44" },
-    { "type": "color", "id": "cta2_text_color", "label": "CTA2文字色", "default": "#ffffff" },
-
-    { "type": "text", "id": "price_text", "label": "価格" },
-    { "type": "text", "id": "price_tax", "label": "税込表記" }
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "ヒーロー画像PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_sp",
+      "label": "ヒーロー画像SP"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "画像のalt属性",
+      "default": "MUSUBIブランケットに包まれる女性"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_color",
+      "label": "背景色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "ブランド名",
+      "default": "KAPOK KNOT HOME"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_title",
+      "label": "タイトル",
+      "default": "<p>やさしい重みで、<br>休息のスイッチを入れる。</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_pc",
+      "label": "タイトルサイズPC",
+      "min": 24,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_sp",
+      "label": "タイトルサイズSP",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_pc",
+      "label": "タイトル太さPC",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_sp",
+      "label": "タイトル太さSP",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "hero_subtitle",
+      "label": "サブタイトル",
+      "default": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_subtitle_font_size",
+      "label": "サブタイトルサイズ",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "hero_subtitle_font_weight",
+      "label": "サブタイトル太さ",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "hero_subtitle_color",
+      "label": "サブタイトル色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "完売表示を出す",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "soldout_text",
+      "label": "完売文言",
+      "default": "現在MUSUBI-en-は完売中です。"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA1リンク"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA1テキスト",
+      "default": "商品ページを見る"
+    },
+    {
+      "type": "color",
+      "id": "cta1_bg_color",
+      "label": "CTA1背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta1_text_color",
+      "label": "CTA1文字色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "url",
+      "id": "cta_url_2",
+      "label": "CTA2リンク"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA2テキスト",
+      "default": "公式LINEから再入荷通知を受け取る"
+    },
+    {
+      "type": "color",
+      "id": "cta2_bg_color",
+      "label": "CTA2背景色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "color",
+      "id": "cta2_text_color",
+      "label": "CTA2文字色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "価格",
+      "default": "¥29,800〜"
+    },
+    {
+      "type": "text",
+      "id": "price_tax",
+      "label": "税込表記",
+      "default": "(税込)"
+    },
+    {
+      "type": "header",
+      "content": "余白設定"
+    },
+    {
+      "type": "range",
+      "id": "cta1_margin_top",
+      "label": "CTA1 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cta1_margin_bottom",
+      "label": "CTA1 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "cta2_margin_top",
+      "label": "CTA2 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cta2_margin_bottom",
+      "label": "CTA2 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_top",
+      "label": "完売文言 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_bottom",
+      "label": "完売文言 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "price_margin_top",
+      "label": "価格 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "price_margin_bottom",
+      "label": "価格 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    }
   ],
-  "presets": [{ "name": "MUSUBI Hero" }]
+  "presets": [
+    {
+      "name": "MUSUBI Hero"
+    }
+  ]
 }
 {% endschema %}
