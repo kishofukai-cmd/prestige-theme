@@ -135,8 +135,21 @@
     "story": {
       "type": "musubi-lp-story",
       "settings": {
+        "label": "その悩みに、MUSUBIが考えたこと",
+        "label_size": 13,
+        "label_size_sp": 12,
+        "label_color": "#b8a78a",
         "heading": "<p>眠りには<br/>「導入スイッチ」が必要だった</p>",
-        "body": "<p>瞑想でもない。<br/>フレグランスでもない。<br/>包まれる「重さ」という、<br/>物理的なスイッチ。</p>"
+        "heading_size": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "body": "<p>瞑想でもない。<br/>フレグランスでもない。<br/>包まれる「重さ」という、<br/>物理的なスイッチ。</p>",
+        "body_size": 16,
+        "body_size_sp": 14,
+        "body_color": "#555555",
+        "accent_color": "#b8a78a",
+        "divider_color": "#d4c8b8",
+        "bg_color": "#faf7f2"
       }
     },
     "science": {
