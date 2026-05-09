@@ -1,7 +1,7 @@
 <style>
   .story {
     padding: 120px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+    background: {{ section.settings.bg_color }};
     text-align: center;
   }
 
@@ -12,17 +12,17 @@
 
   .story__label {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: {{ section.settings.label_size }}px;
+    color: {{ section.settings.label_color }};
     letter-spacing: 0.12em;
-    color: #b8a78a;
     margin-bottom: 18px;
     font-weight: 600;
   }
 
   .story__heading {
-    font-size: 2rem;
+    font-size: {{ section.settings.heading_size }}px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: {{ section.settings.heading_color }};
     line-height: 1.7;
     letter-spacing: 0.04em;
     margin-bottom: 20px;
@@ -30,23 +30,23 @@
 
   .story__heading em {
     font-style: normal;
-    color: #b8a78a;
-    border-bottom: 2px solid #b8a78a;
+    color: {{ section.settings.accent_color }};
+    border-bottom: 2px solid {{ section.settings.accent_color }};
     padding-bottom: 3px;
   }
 
   .story__divider {
     width: 40px;
     height: 2px;
-    background: #d4c8b8;
+    background: {{ section.settings.divider_color }};
     margin: 28px auto;
     border: none;
   }
 
   .story__body {
-    font-size: 1.05rem;
+    font-size: {{ section.settings.body_size }}px;
     line-height: 2.2;
-    color: #555;
+    color: {{ section.settings.body_color }};
     letter-spacing: 0.05em;
   }
 
@@ -71,17 +71,16 @@
     }
 
     .story__label {
-      font-size: 0.72rem;
-      margin-bottom: 14px;
+      font-size: {{ section.settings.label_size_sp }}px;
     }
 
     .story__heading {
-      font-size: 1.5rem;
+      font-size: {{ section.settings.heading_size_sp }}px;
       line-height: 1.6;
     }
 
     .story__body {
-      font-size: 0.95rem;
+      font-size: {{ section.settings.body_size_sp }}px;
       line-height: 2;
     }
   }
@@ -89,6 +88,7 @@
 
 <section class="story" id="story">
   <div class="story__inner">
+
     <div class="story__label" data-reveal>
       {{ section.settings.label }}
     </div>
@@ -102,6 +102,7 @@
     <div class="story__body" data-reveal>
       {{ section.settings.body }}
     </div>
+
   </div>
 </section>
 
@@ -124,24 +125,122 @@
 {
   "name": "MUSUBI ストーリー",
   "settings": [
+
     {
       "type": "text",
       "id": "label",
       "label": "ラベル",
       "default": "その悩みに、MUSUBIが考えたこと"
     },
+
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "ラベル文字サイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベル文字サイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベルカラー",
+      "default": "#b8a78a"
+    },
+
     {
       "type": "richtext",
       "id": "heading",
       "label": "見出し",
       "default": "<p>眠りには<em>「導入スイッチ」</em>が<br>必要だった</p>"
     },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+
     {
       "type": "richtext",
       "id": "body",
       "label": "本文",
       "default": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
+    },
+
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "本文サイズ（PC）",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_size_sp",
+      "label": "本文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー（em）",
+      "default": "#b8a78a"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "区切り線カラー",
+      "default": "#d4c8b8"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
     }
+
   ],
   "presets": [
     {
