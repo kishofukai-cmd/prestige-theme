@@ -24,9 +24,16 @@
       {{ section.settings.hero_title | default: 'やさしい重みで、<br>休息のスイッチを入れる。' }}
     </h1>
 
-    <p class="hero__subtitle">
-      {{ section.settings.hero_subtitle | default: '植物由来素材 × 通気構造の<br>リカバリー加重ブランケット' }}
-    </p>
+    <p
+  class="hero__subtitle"
+  style="
+    font-size: {{ section.settings.hero_subtitle_font_size }}px;
+    font-weight: {{ section.settings.hero_subtitle_font_weight }};
+    color: {{ section.settings.hero_subtitle_color }};
+  "
+>
+  {{ section.settings.hero_subtitle }}
+</p>
 
 
     <div class="hero__cta-area">
@@ -116,9 +123,39 @@
     {
       "type": "richtext",
       "id": "hero_subtitle",
+      
       "label": "サブタイトル",
       "default": "<p>植物由来素材 × 通気構造の<br>リカバリー加重ブランケット</p>"
     },
+    {
+  "type": "range",
+  "id": "hero_subtitle_font_size",
+  "label": "サブタイトル フォントサイズ",
+  "min": 12,
+  "max": 40,
+  "step": 1,
+  "unit": "px",
+  "default": 18
+},
+{
+  "type": "select",
+  "id": "hero_subtitle_font_weight",
+  "label": "サブタイトル 太さ",
+  "default": "400",
+  "options": [
+    { "value": "300", "label": "細め" },
+    { "value": "400", "label": "通常" },
+    { "value": "500", "label": "中太" },
+    { "value": "600", "label": "太め" },
+    { "value": "700", "label": "かなり太め" }
+  ]
+},
+{
+  "type": "color",
+  "id": "hero_subtitle_color",
+  "label": "サブタイトル 色",
+  "default": "#ffffff"
+},
     {
       "type": "checkbox",
       "id": "show_soldout",
