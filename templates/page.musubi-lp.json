@@ -778,74 +778,87 @@
         "size_sleep"
       ],
       "settings": {
-        "heading": "あなたに合うサイズは？"
-      }
-    },
-    "colors": {
-      "type": "musubi-lp-colors",
-      "blocks": {
-        "color_1": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Powder Beige",
-            "color_code": "#d9cfc4",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200"
-          }
-        },
-        "color_2": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Dusty Navy",
-            "color_code": "#3d4259",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0271.jpg?v=1771395913&width=1200"
-          }
-        },
-        "color_3": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Calm Brown",
-            "color_code": "#8b6b50",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1297.jpg?v=1771395913&width=1200"
-          }
-        },
-        "color_4": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Cloud White",
-            "color_code": "#e8e4de",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=1200"
-          }
-        },
-        "color_5": {
-          "type": "color_variant",
-          "settings": {
-            "name": "Blossom Peach",
-            "color_code": "#d4a5a0",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200"
-          }
-        }
-      },
-      "block_order": [
-        "color_1",
-        "color_2",
-        "color_3",
-        "color_4",
-        "color_5"
-      ],
-      "settings": {
-        "heading": "カラーバリエーション"
+        "label": "SIZE GUIDE",
+        "heading": "<p>あなたに合うサイズは？</p>",
+        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>",
+        "compare_image_url": "",
+        "compare_alt": "MUSUBIサイズ比較",
+        "colors_label": "COLOR VARIATION",
+        "colors_heading": "<p>暮らしに馴染む<br>カラーバリエーション</p>",
+        "colors_lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "color1_name": "Powder Beige",
+        "color1_code": "#d9cfc4",
+        "color1_image_url": "",
+        "color2_name": "Dusty Navy",
+        "color2_code": "#3d4259",
+        "color2_image_url": "",
+        "color3_name": "Calm Brown",
+        "color3_code": "#8b6b50",
+        "color3_image_url": "",
+        "color4_name": "Cloud White",
+        "color4_code": "#e8e4de",
+        "color4_image_url": "",
+        "color5_name": "Blossom Peach",
+        "color5_code": "#d4a5a0",
+        "color5_image_url": "",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "cta-after-colors": {
       "type": "musubi-lp-cta",
       "settings": {
-        "section_id": "cta-after-colors",
-        "heading": "あなたにぴったりの一枚を。",
+        "bg_color": "#1f2a44",
+        "subtitle": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "現在MUSUBI-en-は完売中です。",
+        "soldout_font_size": 18,
+        "soldout_text_color": "#ffffff",
         "cta_url": "",
         "cta_text": "サイズ・カラーを選ぶ",
-        "micro_1": "",
-        "micro_2": "",
-        "micro_3": ""
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#1f2a44",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     },
     "care": {
@@ -880,13 +893,45 @@
     "cta-after-care": {
       "type": "musubi-lp-cta",
       "settings": {
-        "section_id": "cta-after-care",
-        "heading": "毎日の休息が、変わる。",
+        "bg_color": "#1f2a44",
+        "subtitle": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "現在MUSUBI-en-は完売中です。",
+        "soldout_font_size": 18,
+        "soldout_text_color": "#ffffff",
         "cta_url": "",
         "cta_text": "MUSUBIを詳しく見える",
-        "micro_1": "✓ 家庭で手洗いOK",
-        "micro_2": "✓ 365日オールシーズン",
-        "micro_3": ""
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#1f2a44",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     },
     "reviews": {
@@ -943,13 +988,45 @@
     "cta-after-reviews": {
       "type": "musubi-lp-cta",
       "settings": {
-        "section_id": "cta-after-reviews",
-        "heading": "体験した人だけが知る、この安心感。",
+        "bg_color": "#1f2a44",
+        "subtitle": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "現在MUSUBI-en-は完売中です。",
+        "soldout_font_size": 18,
+        "soldout_text_color": "#ffffff",
         "cta_url": "",
         "cta_text": "MUSUBIを詳しく見る",
-        "micro_1": "",
-        "micro_2": "",
-        "micro_3": ""
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#1f2a44",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     },
     "hotels": {
@@ -1124,7 +1201,6 @@
     "why",
     "comparison",
     "sizes",
-    "colors",
     "cta-after-colors",
     "care",
     "cta-after-care",
