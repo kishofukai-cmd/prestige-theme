@@ -169,13 +169,13 @@
         {% for block in section.blocks %}
           <div class="ugc__item" {{ block.shopify_attributes }}>
             <iframe
-              src="https://www.instagram.com/{{ block.settings.post_type }}/{{ block.settings.post_id }}/embed/"
+              src="https://www.instagram.com/reel/{{ block.settings.reel_id }}/embed/"
               class="ugc__iframe"
               frameborder="0"
               scrolling="no"
               allowtransparency="true"
               loading="lazy"
-              title="{{ block.settings.caption | default: 'Instagram Post' }}">
+              title="{{ block.settings.caption | default: 'Instagram Reel' }}">
             </iframe>
 
             {% if block.settings.caption != blank %}
@@ -420,7 +420,7 @@
     {
       "type": "range",
       "id": "iframe_height_pc",
-      "label": "投稿高さ（PC）",
+      "label": "Reel高さ（PC）",
       "min": 420,
       "max": 900,
       "step": 10,
@@ -429,7 +429,7 @@
     {
       "type": "range",
       "id": "iframe_height_sp",
-      "label": "投稿高さ（SP）",
+      "label": "Reel高さ（SP）",
       "min": 380,
       "max": 900,
       "step": 10,
@@ -457,29 +457,13 @@
   "blocks": [
     {
       "type": "reel",
-      "name": "Instagram投稿",
+      "name": "Instagram Reel",
       "settings": [
         {
-          "type": "select",
-          "id": "post_type",
-          "label": "投稿タイプ",
-          "options": [
-            {
-              "value": "p",
-              "label": "通常投稿"
-            },
-            {
-              "value": "reel",
-              "label": "Reel"
-            }
-          ],
-          "default": "p"
-        },
-        {
           "type": "text",
-          "id": "post_id",
-          "label": "投稿ID",
-          "info": "URLの /p/ または /reel/ の後ろのID"
+          "id": "reel_id",
+          "label": "Reel ID",
+          "info": "Instagram URLの/reel/以降のIDを入力（例: C93rW7dvKWP）"
         },
         {
           "type": "text",
@@ -497,49 +481,43 @@
         {
           "type": "reel",
           "settings": {
-            "post_type": "p",
-            "post_id": "DRjsLiBEixO",
+            "reel_id": "C93rW7dvKWP",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
           "type": "reel",
           "settings": {
-            "post_type": "p",
-            "post_id": "DNu0zrt4gHI",
+            "reel_id": "DP5PSqAEg0b",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
           "type": "reel",
           "settings": {
-            "post_type": "p",
-            "post_id": "DLZ9rmgyvxN",
+            "reel_id": "DR6vqKrksq6",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
           "type": "reel",
           "settings": {
-            "post_type": "p",
-            "post_id": "DLYiz9ezKxP",
+            "reel_id": "DP9zolIk9E0",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
           "type": "reel",
           "settings": {
-            "post_type": "p",
-            "post_id": "DB0771Cvz1J",
+            "reel_id": "DSCaFUGj6OR",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
           "type": "reel",
           "settings": {
-            "post_type": "reel",
-            "post_id": "C93rW7dvKWP",
-            "caption": "MUSUBI Reel"
+            "reel_id": "DSHPDRyEzfF",
+            "caption": "MUSUBI使用レビュー"
           }
         }
       ]
