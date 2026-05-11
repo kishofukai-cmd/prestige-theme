@@ -189,6 +189,26 @@
         "bg_color": "#faf7f2"
       }
     },
+    "17784810450136d6c9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_839e0e3_XArWaV": {
+          "type": "ai_gen_block_839e0e3",
+          "settings": {
+            "desktop_max_width": 1200,
+            "desktop_padding_horizontal": 40,
+            "mobile_padding_horizontal": 20,
+            "gap": 16,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_839e0e3_XArWaV"
+      ],
+      "settings": {}
+    },
     "science": {
       "type": "musubi-lp-science",
       "blocks": {
@@ -784,7 +804,7 @@
         "compare_image_url": "",
         "compare_alt": "MUSUBIサイズ比較",
         "colors_label": "COLOR VARIATION",
-        "colors_heading": "<p>暮らしに馴染む<br>カラーバリエーション</p>",
+        "colors_heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
         "colors_lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
         "color1_name": "Powder Beige",
         "color1_code": "#d9cfc4",
@@ -886,8 +906,37 @@
         "care_2"
       ],
       "settings": {
+        "label": "EASY CARE",
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
-        "image_alt": "日常のケア"
+        "image_url": "",
+        "image_alt": "日常のケア",
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "icon_bg_color": "#f4eee6",
+        "title_color": "#1a1a1a",
+        "text_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "title_size_pc": 19,
+        "title_size_sp": 18,
+        "text_size_pc": 14,
+        "text_size_sp": 14,
+        "image_fit": "cover",
+        "image_height_pc": 520,
+        "image_height_sp": 320,
+        "image_radius": 26,
+        "image_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "reviews": {
@@ -1149,6 +1198,7 @@
     "empathy",
     "177834100804c0ef0c",
     "story",
+    "17784810450136d6c9",
     "science",
     "trust-visual",
     "makuake",
