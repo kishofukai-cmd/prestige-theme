@@ -16,8 +16,7 @@
 
   .care__label,
   .care-reviews__label {
-    display: inline-block;
-    margin-bottom: 14px;
+    display: inline-flex;
     padding: 8px 15px;
     border-radius: 999px;
     background: {{ section.settings.label_bg_color }};
@@ -25,6 +24,7 @@
     font-size: {{ section.settings.label_size_pc }}px;
     font-weight: 700;
     letter-spacing: 0.12em;
+    margin-bottom: 14px;
   }
 
   .care__heading,
@@ -113,16 +113,16 @@
 
   .care-reviews {
     margin-top: {{ section.settings.review_margin_top_pc }}px;
+    padding: 42px 32px;
+    border-radius: {{ section.settings.review_radius }}px;
     background: {{ section.settings.review_bg_color }};
     border: 1px solid {{ section.settings.review_border_color }};
-    border-radius: {{ section.settings.review_radius }}px;
-    padding: 38px 32px;
     box-shadow: 0 16px 44px rgba(0,0,0,0.06);
   }
 
   .care-reviews__header {
     text-align: center;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
   }
 
   .care-reviews__summary {
@@ -131,8 +131,7 @@
     align-items: center;
     gap: 14px;
     flex-wrap: wrap;
-    margin-top: 16px;
-    color: {{ section.settings.review_text_color }};
+    margin-top: 18px;
   }
 
   .care-reviews__score {
@@ -145,7 +144,7 @@
   .care-reviews__stars {
     color: {{ section.settings.review_star_color }};
     font-size: {{ section.settings.review_star_size_pc }}px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
   }
 
   .care-reviews__count {
@@ -154,32 +153,19 @@
     font-weight: 600;
   }
 
-  .care-reviews__carousel {
+  .care-reviews__wrap {
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-
-  .care-reviews__arrow {
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid {{ section.settings.review_border_color }};
-    background: #fff;
-    color: {{ section.settings.review_accent_color }};
-    font-size: 26px;
-    line-height: 1;
-    cursor: pointer;
-    flex-shrink: 0;
+    gap: 12px;
   }
 
   .care-reviews__track {
     display: flex;
-    gap: 16px;
+    gap: 18px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    -ms-overflow-style: none;
     flex: 1;
     padding: 4px 2px 8px;
   }
@@ -190,36 +176,33 @@
 
   .care-reviews__card {
     flex: 0 0 {{ section.settings.review_card_width_pc }}px;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     background: {{ section.settings.review_card_bg_color }};
+    border-radius: 22px;
+    padding: 24px;
     border: 1px solid {{ section.settings.review_border_color }};
-    border-radius: 20px;
-    padding: 22px;
     text-align: left;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
   }
 
   .care-reviews__card-stars {
     color: {{ section.settings.review_star_color }};
-    font-size: 14px;
+    margin-bottom: 12px;
     letter-spacing: 0.05em;
-    margin-bottom: 10px;
   }
 
   .care-reviews__card-title {
-    margin: 0 0 10px;
-    color: {{ section.settings.review_title_color }};
     font-size: {{ section.settings.review_title_size_pc }}px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+    color: {{ section.settings.review_title_color }};
     font-weight: 700;
-    line-height: 1.55;
   }
 
   .care-reviews__card-text {
-    margin: 0 0 14px;
-    color: {{ section.settings.review_text_color }};
     font-size: {{ section.settings.review_body_size_pc }}px;
-    line-height: 1.8;
-    letter-spacing: 0.03em;
+    line-height: 1.9;
+    color: {{ section.settings.review_text_color }};
+    margin: 0 0 14px;
   }
 
   .care-reviews__card-meta {
@@ -231,17 +214,29 @@
   .care-reviews__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
   }
 
   .care-reviews__tag {
-    display: inline-flex;
-    background: {{ section.settings.review_tag_bg_color }};
-    color: {{ section.settings.review_tag_color }};
+    padding: 6px 10px;
     border-radius: 999px;
-    padding: 5px 9px;
+    background: {{ section.settings.review_tag_bg_color }};
     font-size: 11px;
+    color: {{ section.settings.review_tag_color }};
     font-weight: 700;
+  }
+
+  .care-reviews__arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid {{ section.settings.review_border_color }};
+    background: #fff;
+    font-size: 28px;
+    color: {{ section.settings.review_accent_color }};
+    cursor: pointer;
+    flex-shrink: 0;
+    line-height: 1;
   }
 
   @media (max-width: 768px) {
@@ -290,7 +285,7 @@
 
     .care-reviews {
       margin-top: {{ section.settings.review_margin_top_sp }}px;
-      padding: 30px 16px;
+      padding: 32px 16px;
       border-radius: {{ section.settings.review_radius_sp }}px;
     }
 
@@ -306,15 +301,9 @@
       font-size: {{ section.settings.review_count_size_sp }}px;
     }
 
-    .care-reviews__arrow {
-      width: 34px;
-      height: 34px;
-      font-size: 22px;
-    }
-
     .care-reviews__card {
-      flex-basis: {{ section.settings.review_card_width_sp }}px;
-      padding: 20px;
+      flex: 0 0 {{ section.settings.review_card_width_sp }}px;
+      padding: 22px;
     }
 
     .care-reviews__card-title {
@@ -323,6 +312,10 @@
 
     .care-reviews__card-text {
       font-size: {{ section.settings.review_body_size_sp }}px;
+    }
+
+    .care-reviews__arrow {
+      display: none;
     }
   }
 </style>
@@ -366,7 +359,9 @@
       </div>
     </div>
 
-    {% if section.settings.show_reviews %}
+    {% assign review_blocks = section.blocks | where: "type", "review_card" %}
+
+    {% if section.settings.show_reviews and review_blocks.size > 0 %}
       <div class="care-reviews">
         <div class="care-reviews__header">
           {% if section.settings.review_label != blank %}
@@ -384,33 +379,39 @@
           </div>
         </div>
 
-        <div class="care-reviews__carousel">
+        <div class="care-reviews__wrap">
           <button type="button" class="care-reviews__arrow care-reviews__arrow--left" aria-label="前へ">‹</button>
 
           <div class="care-reviews__track">
-            {% for block in section.blocks %}
-              {% if block.type == 'review_card' %}
-                <div class="care-reviews__card" {{ block.shopify_attributes }}>
-                  <div class="care-reviews__card-stars">{{ block.settings.stars }}</div>
-                  <h4 class="care-reviews__card-title">{{ block.settings.title }}</h4>
-                  <p class="care-reviews__card-text">{{ block.settings.text }}</p>
+            {% for block in review_blocks %}
+              <div class="care-reviews__card" {{ block.shopify_attributes }}>
+                <div class="care-reviews__card-stars">{{ block.settings.stars }}</div>
 
-                  {% if block.settings.meta != blank %}
-                    <div class="care-reviews__card-meta">{{ block.settings.meta }}</div>
-                  {% endif %}
+                <h3 class="care-reviews__card-title">
+                  {{ block.settings.title }}
+                </h3>
 
-                  {% if block.settings.tags != blank %}
-                    <div class="care-reviews__tags">
-                      {% assign tags = block.settings.tags | split: ',' %}
-                      {% for tag in tags %}
-                        {% if tag != blank %}
-                          <span class="care-reviews__tag">{{ tag | strip }}</span>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </div>
-              {% endif %}
+                <p class="care-reviews__card-text">
+                  {{ block.settings.text }}
+                </p>
+
+                {% if block.settings.meta != blank %}
+                  <div class="care-reviews__card-meta">
+                    {{ block.settings.meta }}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.tags != blank %}
+                  <div class="care-reviews__tags">
+                    {% assign tags = block.settings.tags | split: ',' %}
+                    {% for tag in tags %}
+                      {% if tag != blank %}
+                        <span class="care-reviews__tag">{{ tag | strip }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
             {% endfor %}
           </div>
 
@@ -423,23 +424,25 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var section = document.querySelector('#care-{{ section.id }}');
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('#care-{{ section.id }}');
     if (!section) return;
 
-    var track = section.querySelector('.care-reviews__track');
-    var left = section.querySelector('.care-reviews__arrow--left');
-    var right = section.querySelector('.care-reviews__arrow--right');
+    const track = section.querySelector('.care-reviews__track');
+    const left = section.querySelector('.care-reviews__arrow--left');
+    const right = section.querySelector('.care-reviews__arrow--right');
 
-    if (left && track) {
-      left.addEventListener('click', function () {
-        track.scrollBy({ left: -320, behavior: 'smooth' });
+    if (!track) return;
+
+    if (left) {
+      left.addEventListener('click', function() {
+        track.scrollBy({ left: -360, behavior: 'smooth' });
       });
     }
 
-    if (right && track) {
-      right.addEventListener('click', function () {
-        track.scrollBy({ left: 320, behavior: 'smooth' });
+    if (right) {
+      right.addEventListener('click', function() {
+        track.scrollBy({ left: 360, behavior: 'smooth' });
       });
     }
   });
@@ -477,11 +480,6 @@
       "label": "画像alt",
       "default": "日常のケア"
     },
-
-    {
-      "type": "header",
-      "content": "レビュー"
-    },
     {
       "type": "checkbox",
       "id": "show_reviews",
@@ -517,11 +515,6 @@
       "id": "review_count",
       "label": "レビュー数",
       "default": "27件のレビュー"
-    },
-
-    {
-      "type": "header",
-      "content": "色"
     },
     {
       "type": "color",
@@ -630,11 +623,6 @@
       "id": "review_tag_color",
       "label": "タグ文字",
       "default": "#8B7355"
-    },
-
-    {
-      "type": "header",
-      "content": "サイズ・余白"
     },
     {
       "type": "range",
