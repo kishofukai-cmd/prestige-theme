@@ -245,10 +245,12 @@
           <span class="ugc__highlight-number">{{ section.settings.highlight_number_1 }}</span>
           <span class="ugc__highlight-label">{{ section.settings.highlight_label_1 }}</span>
         </div>
+
         <div class="ugc__highlight-item">
           <span class="ugc__highlight-number">{{ section.settings.highlight_number_2 }}</span>
           <span class="ugc__highlight-label">{{ section.settings.highlight_label_2 }}</span>
         </div>
+
         <div class="ugc__highlight-item">
           <span class="ugc__highlight-number">{{ section.settings.highlight_number_3 }}</span>
           <span class="ugc__highlight-label">{{ section.settings.highlight_label_3 }}</span>
@@ -258,16 +260,18 @@
 
     <div class="ugc__carousel">
       <div class="ugc__track">
+
         {% for block in section.blocks %}
           <div class="ugc__item" {{ block.shopify_attributes }}>
+
             <iframe
-              src="https://www.instagram.com/reel/{{ block.settings.reel_id }}/embed/"
+              src="https://www.instagram.com/p/{{ block.settings.post_id }}/embed/"
               class="ugc__iframe"
               frameborder="0"
               scrolling="no"
               allowtransparency="true"
               loading="lazy"
-              title="{{ block.settings.caption | default: 'Instagram Reel' }}">
+              title="{{ block.settings.caption | default: 'Instagram Post' }}">
             </iframe>
 
             {% if block.settings.caption != blank %}
@@ -275,14 +279,21 @@
                 {{ block.settings.caption }}
               </div>
             {% endif %}
+
           </div>
         {% endfor %}
+
       </div>
     </div>
 
     {% if section.settings.instagram_url != blank %}
       <div class="ugc__follow">
-        <a href="{{ section.settings.instagram_url }}" class="ugc__follow-link" target="_blank" rel="noopener">
+        <a
+          href="{{ section.settings.instagram_url }}"
+          class="ugc__follow-link"
+          target="_blank"
+          rel="noopener"
+        >
           {{ section.settings.follow_text }}
         </a>
       </div>
@@ -415,6 +426,7 @@
       "label": "バッジ背景カラー",
       "default": "#f4eee6"
     },
+
     {
       "type": "range",
       "id": "heading_size_pc",
@@ -439,6 +451,7 @@
       "label": "見出しカラー",
       "default": "#1a1a1a"
     },
+
     {
       "type": "range",
       "id": "subheading_size_pc",
@@ -463,6 +476,7 @@
       "label": "サブ見出しカラー",
       "default": "#555555"
     },
+
     {
       "type": "range",
       "id": "highlight_number_size_pc",
@@ -487,6 +501,7 @@
       "label": "UGC実績数字カラー",
       "default": "#8B7355"
     },
+
     {
       "type": "range",
       "id": "highlight_label_size_pc",
@@ -511,6 +526,7 @@
       "label": "UGC実績ラベルカラー",
       "default": "#555555"
     },
+
     {
       "type": "range",
       "id": "caption_size_pc",
@@ -535,6 +551,7 @@
       "label": "キャプションカラー",
       "default": "#333333"
     },
+
     {
       "type": "range",
       "id": "button_size_pc",
@@ -585,6 +602,7 @@
       "step": 20,
       "default": 980
     },
+
     {
       "type": "color",
       "id": "highlight_bg_color",
@@ -597,6 +615,7 @@
       "label": "UGC実績枠線カラー",
       "default": "#eee7dd"
     },
+
     {
       "type": "range",
       "id": "highlight_radius",
@@ -615,6 +634,7 @@
       "step": 1,
       "default": 16
     },
+
     {
       "type": "color",
       "id": "card_bg_color",
@@ -627,6 +647,7 @@
       "label": "Reelカード枠線カラー",
       "default": "#eee7dd"
     },
+
     {
       "type": "range",
       "id": "card_radius",
@@ -645,10 +666,11 @@
       "step": 1,
       "default": 16
     },
+
     {
       "type": "range",
       "id": "card_width_pc",
-      "label": "Reelカード幅（PC）",
+      "label": "カード幅（PC）",
       "min": 240,
       "max": 420,
       "step": 10,
@@ -657,16 +679,17 @@
     {
       "type": "range",
       "id": "card_width_sp",
-      "label": "Reelカード幅（SP）",
+      "label": "カード幅（SP）",
       "min": 220,
       "max": 340,
       "step": 10,
       "default": 280
     },
+
     {
       "type": "range",
       "id": "iframe_height_pc",
-      "label": "Reel高さ（PC）",
+      "label": "投稿高さ（PC）",
       "min": 420,
       "max": 760,
       "step": 10,
@@ -675,18 +698,20 @@
     {
       "type": "range",
       "id": "iframe_height_sp",
-      "label": "Reel高さ（SP）",
+      "label": "投稿高さ（SP）",
       "min": 380,
       "max": 720,
       "step": 10,
       "default": 520
     },
+
     {
       "type": "color",
       "id": "scrollbar_color",
       "label": "スクロールバー色",
       "default": "#d4c8b8"
     },
+
     {
       "type": "range",
       "id": "padding_pc",
@@ -706,36 +731,74 @@
       "default": 56
     }
   ],
+
   "blocks": [
     {
-      "type": "reel",
-      "name": "Instagram Reel",
+      "type": "instagram_post",
+      "name": "Instagram投稿",
       "settings": [
         {
           "type": "text",
-          "id": "reel_id",
-          "label": "Reel ID",
-          "info": "Instagram URLの/reel/以降のIDを入力（例: DP5PSqAEg0b）"
+          "id": "post_id",
+          "label": "投稿ID",
+          "info": "Instagram URLの/p/ または /reel/ 以降のID"
         },
         {
           "type": "text",
           "id": "caption",
-          "label": "キャプション（省略可）",
+          "label": "キャプション",
           "default": "MUSUBI使用レビュー"
         }
       ]
     }
   ],
+
   "presets": [
     {
       "name": "MUSUBI UGC・Instagram",
       "blocks": [
-        { "type": "reel", "settings": { "reel_id": "DP5PSqAEg0b", "caption": "MUSUBI使用レビュー" } },
-        { "type": "reel", "settings": { "reel_id": "DR6vqKrksq6", "caption": "MUSUBI使用レビュー" } },
-        { "type": "reel", "settings": { "reel_id": "DP9zolIk9E0", "caption": "MUSUBI使用レビュー" } },
-        { "type": "reel", "settings": { "reel_id": "DSCaFUGj6OR", "caption": "MUSUBI使用レビュー" } },
-        { "type": "reel", "settings": { "reel_id": "DSHPDRyEzfF", "caption": "MUSUBI使用レビュー" } },
-        { "type": "reel", "settings": { "reel_id": "C93rW7dvKWP", "caption": "MUSUBI使用レビュー" } }
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "DRjsLiBEixO",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "DNu0zrt4gHI",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "DLZ9rmgyvxN",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "DLYiz9ezKxP",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "DB0771Cvz1J",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        {
+          "type": "instagram_post",
+          "settings": {
+            "post_id": "C93rW7dvKWP",
+            "caption": "MUSUBI Reel"
+          }
+        }
       ]
     }
   ]
