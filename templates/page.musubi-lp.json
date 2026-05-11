@@ -740,7 +740,7 @@
         "button_size_sp": 14,
         "button_color": "#ffffff",
         "button_bg_color": "#1a1a1a",
-        "bg_color": "#faf7f2",
+        "bg_color": "#ffffff",
         "max_width": 980,
         "card_radius": 20,
         "card_radius_sp": 16,
@@ -774,6 +774,7 @@
           "type": "size_panel",
           "settings": {
             "tab_label": "Nap Size (M)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1182.jpg",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800",
             "badge": "ソファにおすすめ",
             "featured": false,
@@ -789,6 +790,7 @@
           "type": "size_panel",
           "settings": {
             "tab_label": "Sleep Size (L)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1299.jpg",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800",
             "badge": "ベッドにおすすめ",
             "featured": true,
@@ -916,6 +918,7 @@
       "settings": {
         "label": "EASY CARE",
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "image": "shopify://shop_images/260312_KAPOKKNOT1346.jpg",
         "image_url": "",
         "image_alt": "日常のケア",
         "bg_color": "#faf7f2",
