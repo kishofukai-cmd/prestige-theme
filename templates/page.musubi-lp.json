@@ -740,7 +740,7 @@
         "button_size_sp": 14,
         "button_color": "#ffffff",
         "button_bg_color": "#1a1a1a",
-        "bg_color": "#ffffff",
+        "bg_color": "#faf7f2",
         "max_width": 980,
         "card_radius": 20,
         "card_radius_sp": 16,
@@ -916,7 +916,6 @@
       "settings": {
         "label": "EASY CARE",
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
-        "image": "shopify://shop_images/260312_KAPOKKNOT1346.jpg",
         "image_url": "",
         "image_alt": "日常のケア",
         "bg_color": "#faf7f2",
