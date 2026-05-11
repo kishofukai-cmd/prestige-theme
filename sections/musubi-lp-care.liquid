@@ -14,9 +14,9 @@
     margin-bottom: 38px;
   }
 
-  .care__label,
-  .care-reviews__label {
-    display: inline-flex;
+  .care__label {
+    display: inline-block;
+    margin-bottom: 14px;
     padding: 8px 15px;
     border-radius: 999px;
     background: {{ section.settings.label_bg_color }};
@@ -24,11 +24,9 @@
     font-size: {{ section.settings.label_size_pc }}px;
     font-weight: 700;
     letter-spacing: 0.12em;
-    margin-bottom: 14px;
   }
 
-  .care__heading,
-  .care-reviews__heading {
+  .care__heading {
     margin: 0;
     color: {{ section.settings.heading_color }};
     font-size: {{ section.settings.heading_size_pc }}px;
@@ -37,8 +35,7 @@
     letter-spacing: 0.04em;
   }
 
-  .care__heading p,
-  .care-reviews__heading p {
+  .care__heading p {
     margin: 0;
   }
 
@@ -111,134 +108,6 @@
     letter-spacing: 0.04em;
   }
 
-  .care-reviews {
-    margin-top: {{ section.settings.review_margin_top_pc }}px;
-    padding: 42px 32px;
-    border-radius: {{ section.settings.review_radius }}px;
-    background: {{ section.settings.review_bg_color }};
-    border: 1px solid {{ section.settings.review_border_color }};
-    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
-  }
-
-  .care-reviews__header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .care-reviews__summary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 18px;
-  }
-
-  .care-reviews__score {
-    font-size: {{ section.settings.review_score_size_pc }}px;
-    font-weight: 800;
-    color: {{ section.settings.review_accent_color }};
-    line-height: 1;
-  }
-
-  .care-reviews__stars {
-    color: {{ section.settings.review_star_color }};
-    font-size: {{ section.settings.review_star_size_pc }}px;
-    letter-spacing: 0.08em;
-  }
-
-  .care-reviews__count {
-    font-size: {{ section.settings.review_count_size_pc }}px;
-    color: {{ section.settings.review_text_color }};
-    font-weight: 600;
-  }
-
-  .care-reviews__wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .care-reviews__track {
-    display: flex;
-    gap: 18px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    flex: 1;
-    padding: 4px 2px 8px;
-  }
-
-  .care-reviews__track::-webkit-scrollbar {
-    display: none;
-  }
-
-  .care-reviews__card {
-    flex: 0 0 {{ section.settings.review_card_width_pc }}px;
-    scroll-snap-align: start;
-    background: {{ section.settings.review_card_bg_color }};
-    border-radius: 22px;
-    padding: 24px;
-    border: 1px solid {{ section.settings.review_border_color }};
-    text-align: left;
-  }
-
-  .care-reviews__card-stars {
-    color: {{ section.settings.review_star_color }};
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
-  }
-
-  .care-reviews__card-title {
-    font-size: {{ section.settings.review_title_size_pc }}px;
-    line-height: 1.5;
-    margin: 0 0 12px;
-    color: {{ section.settings.review_title_color }};
-    font-weight: 700;
-  }
-
-  .care-reviews__card-text {
-    font-size: {{ section.settings.review_body_size_pc }}px;
-    line-height: 1.9;
-    color: {{ section.settings.review_text_color }};
-    margin: 0 0 14px;
-  }
-
-  .care-reviews__card-meta {
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 12px;
-  }
-
-  .care-reviews__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .care-reviews__tag {
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: {{ section.settings.review_tag_bg_color }};
-    font-size: 11px;
-    color: {{ section.settings.review_tag_color }};
-    font-weight: 700;
-  }
-
-  .care-reviews__arrow {
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid {{ section.settings.review_border_color }};
-    background: #fff;
-    font-size: 28px;
-    color: {{ section.settings.review_accent_color }};
-    cursor: pointer;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-
   @media (max-width: 768px) {
     .care {
       padding: {{ section.settings.padding_sp }}px 16px;
@@ -248,13 +117,11 @@
       margin-bottom: 28px;
     }
 
-    .care__label,
-    .care-reviews__label {
+    .care__label {
       font-size: {{ section.settings.label_size_sp }}px;
     }
 
-    .care__heading,
-    .care-reviews__heading {
+    .care__heading {
       font-size: {{ section.settings.heading_size_sp }}px;
     }
 
@@ -283,44 +150,14 @@
       font-size: {{ section.settings.title_size_sp }}px;
     }
 
-    .care-reviews {
-      margin-top: {{ section.settings.review_margin_top_sp }}px;
-      padding: 32px 16px;
-      border-radius: {{ section.settings.review_radius_sp }}px;
-    }
-
-    .care-reviews__score {
-      font-size: {{ section.settings.review_score_size_sp }}px;
-    }
-
-    .care-reviews__stars {
-      font-size: {{ section.settings.review_star_size_sp }}px;
-    }
-
-    .care-reviews__count {
-      font-size: {{ section.settings.review_count_size_sp }}px;
-    }
-
-    .care-reviews__card {
-      flex: 0 0 {{ section.settings.review_card_width_sp }}px;
-      padding: 22px;
-    }
-
-    .care-reviews__card-title {
-      font-size: {{ section.settings.review_title_size_sp }}px;
-    }
-
-    .care-reviews__card-text {
-      font-size: {{ section.settings.review_body_size_sp }}px;
-    }
-
-    .care-reviews__arrow {
-      display: none;
+    .care__icon {
+      width: 40px;
+      height: 40px;
     }
   }
 </style>
 
-<section class="care" id="care-{{ section.id }}">
+<section class="care" id="care">
   <div class="care__inner">
 
     <div class="care__header">
@@ -346,111 +183,25 @@
 
       <div class="care__content">
         {% for block in section.blocks %}
-          {% if block.type == 'care_point' %}
-            <div class="care__point" {{ block.shopify_attributes }}>
-              <span class="care__icon">{{ block.settings.icon }}</span>
-              <div>
-                <h3>{{ block.settings.title }}</h3>
-              </div>
-              <p>{{ block.settings.description }}</p>
+          <div class="care__point" {{ block.shopify_attributes }}>
+            <span class="care__icon">{{ block.settings.icon }}</span>
+
+            <div>
+              <h3>{{ block.settings.title }}</h3>
             </div>
-          {% endif %}
+
+            <p>{{ block.settings.description }}</p>
+          </div>
         {% endfor %}
       </div>
     </div>
 
-    {% assign review_blocks = section.blocks | where: "type", "review_card" %}
-
-    {% if section.settings.show_reviews and review_blocks.size > 0 %}
-      <div class="care-reviews">
-        <div class="care-reviews__header">
-          {% if section.settings.review_label != blank %}
-            <div class="care-reviews__label">{{ section.settings.review_label }}</div>
-          {% endif %}
-
-          <h2 class="care-reviews__heading">
-            {{ section.settings.review_heading }}
-          </h2>
-
-          <div class="care-reviews__summary">
-            <span class="care-reviews__score">{{ section.settings.avg_score }}</span>
-            <span class="care-reviews__stars">{{ section.settings.avg_stars }}</span>
-            <span class="care-reviews__count">{{ section.settings.review_count }}</span>
-          </div>
-        </div>
-
-        <div class="care-reviews__wrap">
-          <button type="button" class="care-reviews__arrow care-reviews__arrow--left" aria-label="前へ">‹</button>
-
-          <div class="care-reviews__track">
-            {% for block in review_blocks %}
-              <div class="care-reviews__card" {{ block.shopify_attributes }}>
-                <div class="care-reviews__card-stars">{{ block.settings.stars }}</div>
-
-                <h3 class="care-reviews__card-title">
-                  {{ block.settings.title }}
-                </h3>
-
-                <p class="care-reviews__card-text">
-                  {{ block.settings.text }}
-                </p>
-
-                {% if block.settings.meta != blank %}
-                  <div class="care-reviews__card-meta">
-                    {{ block.settings.meta }}
-                  </div>
-                {% endif %}
-
-                {% if block.settings.tags != blank %}
-                  <div class="care-reviews__tags">
-                    {% assign tags = block.settings.tags | split: ',' %}
-                    {% for tag in tags %}
-                      {% if tag != blank %}
-                        <span class="care-reviews__tag">{{ tag | strip }}</span>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-
-          <button type="button" class="care-reviews__arrow care-reviews__arrow--right" aria-label="次へ">›</button>
-        </div>
-      </div>
-    {% endif %}
-
   </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const section = document.querySelector('#care-{{ section.id }}');
-    if (!section) return;
-
-    const track = section.querySelector('.care-reviews__track');
-    const left = section.querySelector('.care-reviews__arrow--left');
-    const right = section.querySelector('.care-reviews__arrow--right');
-
-    if (!track) return;
-
-    if (left) {
-      left.addEventListener('click', function() {
-        track.scrollBy({ left: -360, behavior: 'smooth' });
-      });
-    }
-
-    if (right) {
-      right.addEventListener('click', function() {
-        track.scrollBy({ left: 360, behavior: 'smooth' });
-      });
-    }
-  });
-</script>
-
 {% schema %}
 {
-  "name": "MUSUBI ケア・レビュー",
+  "name": "MUSUBI ケア",
   "settings": [
     {
       "type": "text",
@@ -481,42 +232,6 @@
       "default": "日常のケア"
     },
     {
-      "type": "checkbox",
-      "id": "show_reviews",
-      "label": "レビューを表示する",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "review_label",
-      "label": "レビューラベル",
-      "default": "USER REVIEW"
-    },
-    {
-      "type": "richtext",
-      "id": "review_heading",
-      "label": "レビュー見出し",
-      "default": "<p>実際に使った方の声</p>"
-    },
-    {
-      "type": "text",
-      "id": "avg_score",
-      "label": "平均評価スコア",
-      "default": "4.1"
-    },
-    {
-      "type": "text",
-      "id": "avg_stars",
-      "label": "平均星表示",
-      "default": "★★★★☆"
-    },
-    {
-      "type": "text",
-      "id": "review_count",
-      "label": "レビュー数",
-      "default": "27件のレビュー"
-    },
-    {
       "type": "color",
       "id": "bg_color",
       "label": "背景カラー",
@@ -543,19 +258,19 @@
     {
       "type": "color",
       "id": "card_bg_color",
-      "label": "ケアカード背景",
+      "label": "カード背景カラー",
       "default": "#ffffff"
     },
     {
       "type": "color",
       "id": "card_border_color",
-      "label": "ケアカード枠線",
+      "label": "カード枠線カラー",
       "default": "#eee7dd"
     },
     {
       "type": "color",
       "id": "icon_bg_color",
-      "label": "アイコン背景",
+      "label": "アイコン背景カラー",
       "default": "#f4eee6"
     },
     {
@@ -569,60 +284,6 @@
       "id": "text_color",
       "label": "本文カラー",
       "default": "#555555"
-    },
-    {
-      "type": "color",
-      "id": "review_bg_color",
-      "label": "レビュー背景",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "review_card_bg_color",
-      "label": "レビューカード背景",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "review_border_color",
-      "label": "レビュー枠線",
-      "default": "#eee7dd"
-    },
-    {
-      "type": "color",
-      "id": "review_accent_color",
-      "label": "レビュー強調カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "review_star_color",
-      "label": "星カラー",
-      "default": "#c6a15b"
-    },
-    {
-      "type": "color",
-      "id": "review_title_color",
-      "label": "レビュータイトルカラー",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "review_text_color",
-      "label": "レビュー本文カラー",
-      "default": "#555555"
-    },
-    {
-      "type": "color",
-      "id": "review_tag_bg_color",
-      "label": "タグ背景",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "review_tag_color",
-      "label": "タグ文字",
-      "default": "#8B7355"
     },
     {
       "type": "range",
@@ -663,7 +324,7 @@
     {
       "type": "range",
       "id": "title_size_pc",
-      "label": "ケアタイトルサイズ PC",
+      "label": "カードタイトルサイズ PC",
       "min": 14,
       "max": 32,
       "step": 1,
@@ -672,7 +333,7 @@
     {
       "type": "range",
       "id": "title_size_sp",
-      "label": "ケアタイトルサイズ SP",
+      "label": "カードタイトルサイズ SP",
       "min": 14,
       "max": 26,
       "step": 1,
@@ -681,7 +342,7 @@
     {
       "type": "range",
       "id": "text_size_pc",
-      "label": "ケア本文サイズ PC",
+      "label": "本文サイズ PC",
       "min": 12,
       "max": 22,
       "step": 1,
@@ -690,101 +351,11 @@
     {
       "type": "range",
       "id": "text_size_sp",
-      "label": "ケア本文サイズ SP",
+      "label": "本文サイズ SP",
       "min": 12,
       "max": 20,
       "step": 1,
       "default": 14
-    },
-    {
-      "type": "range",
-      "id": "review_score_size_pc",
-      "label": "レビュー点数サイズ PC",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "review_score_size_sp",
-      "label": "レビュー点数サイズ SP",
-      "min": 18,
-      "max": 42,
-      "step": 1,
-      "default": 28
-    },
-    {
-      "type": "range",
-      "id": "review_star_size_pc",
-      "label": "星サイズ PC",
-      "min": 12,
-      "max": 28,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "review_star_size_sp",
-      "label": "星サイズ SP",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "review_count_size_pc",
-      "label": "レビュー数サイズ PC",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "review_count_size_sp",
-      "label": "レビュー数サイズ SP",
-      "min": 10,
-      "max": 18,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "review_title_size_pc",
-      "label": "レビュータイトルサイズ PC",
-      "min": 14,
-      "max": 28,
-      "step": 1,
-      "default": 17
-    },
-    {
-      "type": "range",
-      "id": "review_title_size_sp",
-      "label": "レビュータイトルサイズ SP",
-      "min": 14,
-      "max": 24,
-      "step": 1,
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "review_body_size_pc",
-      "label": "レビュー本文サイズ PC",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "review_body_size_sp",
-      "label": "レビュー本文サイズ SP",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "default": 13
     },
     {
       "type": "select",
@@ -835,7 +406,7 @@
     {
       "type": "range",
       "id": "card_radius",
-      "label": "ケアカード角丸 PC",
+      "label": "カード角丸 PC",
       "min": 0,
       "max": 40,
       "step": 1,
@@ -844,65 +415,11 @@
     {
       "type": "range",
       "id": "card_radius_sp",
-      "label": "ケアカード角丸 SP",
+      "label": "カード角丸 SP",
       "min": 0,
       "max": 32,
       "step": 1,
       "default": 18
-    },
-    {
-      "type": "range",
-      "id": "review_radius",
-      "label": "レビュー枠角丸 PC",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "range",
-      "id": "review_radius_sp",
-      "label": "レビュー枠角丸 SP",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "review_card_width_pc",
-      "label": "レビューカード幅 PC",
-      "min": 260,
-      "max": 460,
-      "step": 10,
-      "default": 340
-    },
-    {
-      "type": "range",
-      "id": "review_card_width_sp",
-      "label": "レビューカード幅 SP",
-      "min": 240,
-      "max": 340,
-      "step": 10,
-      "default": 280
-    },
-    {
-      "type": "range",
-      "id": "review_margin_top_pc",
-      "label": "レビュー上余白 PC",
-      "min": 24,
-      "max": 120,
-      "step": 4,
-      "default": 64
-    },
-    {
-      "type": "range",
-      "id": "review_margin_top_sp",
-      "label": "レビュー上余白 SP",
-      "min": 20,
-      "max": 100,
-      "step": 4,
-      "default": 44
     },
     {
       "type": "range",
@@ -956,47 +473,11 @@
           "default": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
         }
       ]
-    },
-    {
-      "type": "review_card",
-      "name": "レビュー",
-      "settings": [
-        {
-          "type": "text",
-          "id": "stars",
-          "label": "星表示",
-          "default": "★★★★★"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "タイトル",
-          "default": "重さに驚き！"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "レビュー本文",
-          "default": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！"
-        },
-        {
-          "type": "text",
-          "id": "meta",
-          "label": "レビュアー情報",
-          "default": "50代男性 / 商社勤務"
-        },
-        {
-          "type": "text",
-          "id": "tags",
-          "label": "タグ（カンマ区切り）",
-          "default": "#安心感, #よく眠れた気がする"
-        }
-      ]
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI ケア・レビュー",
+      "name": "MUSUBI ケア",
       "blocks": [
         {
           "type": "care_point",
@@ -1012,36 +493,6 @@
             "icon": "🫧",
             "title": "本気のケアは「ご家庭で手洗い」",
             "description": "汗や汚れが気になって、しっかり洗いたい時も、ご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。"
-          }
-        },
-        {
-          "type": "review_card",
-          "settings": {
-            "stars": "★★★★★",
-            "title": "重さに驚き！",
-            "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！",
-            "meta": "50代男性 / 商社勤務",
-            "tags": "#安心感, #よく眠れた気がする"
-          }
-        },
-        {
-          "type": "review_card",
-          "settings": {
-            "stars": "★★★★★",
-            "title": "新しいジャンルでときめいた！",
-            "text": "機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！",
-            "meta": "30代女性 / アパレルメーカー勤務",
-            "tags": "#ソファ時間, #蒸れにくい"
-          }
-        },
-        {
-          "type": "review_card",
-          "settings": {
-            "stars": "★★★★★",
-            "title": "一度も起きることなく…快眠！",
-            "text": "夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！",
-            "meta": "50代女性 / 主婦",
-            "tags": "#よく眠れた気がする, #安心感"
           }
         }
       ]
