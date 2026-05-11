@@ -158,7 +158,7 @@
           "type": "ai_gen_block_36ef8a5",
           "settings": {
             "image": "shopify://shop_images/10_20.png",
-            "desktop_width_percent": 65,
+            "desktop_width_percent": 40,
             "mobile_width_percent": 100
           },
           "blocks": {}
