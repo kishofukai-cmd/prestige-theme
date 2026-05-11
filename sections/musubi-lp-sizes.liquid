@@ -9,12 +9,14 @@
     margin: 0 auto;
   }
 
-  .sizes__header {
+  .sizes__header,
+  .colors__header {
     text-align: center;
     margin-bottom: 34px;
   }
 
-  .sizes__label {
+  .sizes__label,
+  .colors__label {
     display: inline-block;
     background: {{ section.settings.label_bg_color }};
     color: {{ section.settings.label_color }};
@@ -26,7 +28,8 @@
     margin-bottom: 14px;
   }
 
-  .sizes__heading {
+  .sizes__heading,
+  .colors__heading {
     font-size: {{ section.settings.heading_size_pc }}px;
     color: {{ section.settings.heading_color }};
     font-weight: 700;
@@ -36,11 +39,14 @@
   }
 
   .sizes__heading p,
-  .sizes__lead p {
+  .sizes__lead p,
+  .colors__heading p,
+  .colors__lead p {
     margin: 0;
   }
 
-  .sizes__lead {
+  .sizes__lead,
+  .colors__lead {
     max-width: 720px;
     margin: 0 auto;
     font-size: {{ section.settings.lead_size_pc }}px;
@@ -80,10 +86,6 @@
     background: {{ section.settings.tab_active_bg_color }};
     color: {{ section.settings.tab_active_color }};
     box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-  }
-
-  .sizes__panels {
-    position: relative;
   }
 
   .sizes__panel {
@@ -222,24 +224,166 @@
     height: auto;
   }
 
+  .colors {
+    margin-top: {{ section.settings.colors_margin_pc }}px;
+  }
+
+  .colors__box {
+    background: {{ section.settings.colors_box_bg_color }};
+    border: 1px solid {{ section.settings.colors_box_border_color }};
+    border-radius: {{ section.settings.colors_box_radius }}px;
+    padding: 44px 38px;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .colors__showcase {
+    max-width: {{ section.settings.colors_image_width }}px;
+    margin: 0 auto 18px;
+    border-radius: {{ section.settings.colors_image_radius }}px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .colors__showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .colors__name {
+    text-align: center;
+    font-size: {{ section.settings.color_name_size_pc }}px;
+    color: {{ section.settings.color_name_color }};
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 22px;
+  }
+
+  .colors__swatches {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .colors__swatch {
+    width: {{ section.settings.swatch_size_pc }}px;
+    height: {{ section.settings.swatch_size_pc }}px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .colors__swatch:hover {
+    transform: translateY(-2px) scale(1.06);
+  }
+
+  .colors__swatch--active {
+    outline: 2px solid {{ section.settings.swatch_active_color }};
+    outline-offset: 3px;
+  }
+
+  .colors__carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .colors__carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid {{ section.settings.arrow_border_color }};
+    background: {{ section.settings.arrow_bg_color }};
+    color: {{ section.settings.arrow_color }};
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: 0.25s ease;
+  }
+
+  .colors__carousel-arrow:hover {
+    transform: translateY(-2px);
+  }
+
+  .colors__carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 4px 2px;
+  }
+
+  .colors__carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .colors__carousel-item {
+    flex: 0 0 auto;
+    width: {{ section.settings.thumbnail_width_pc }}px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: #fff;
+    transition: 0.25s ease;
+  }
+
+  .colors__carousel-item--active {
+    border-color: {{ section.settings.swatch_active_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  }
+
+  .colors__carousel-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .colors__carousel-item span {
+    display: block;
+    font-size: {{ section.settings.thumbnail_text_size_pc }}px;
+    color: {{ section.settings.thumbnail_text_color }};
+    padding: 8px 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+
   @media (max-width: 768px) {
     .sizes {
       padding: {{ section.settings.padding_sp }}px 16px;
     }
 
-    .sizes__header {
+    .sizes__header,
+    .colors__header {
       margin-bottom: 26px;
     }
 
-    .sizes__label {
+    .sizes__label,
+    .colors__label {
       font-size: {{ section.settings.label_size_sp }}px;
     }
 
-    .sizes__heading {
+    .sizes__heading,
+    .colors__heading {
       font-size: {{ section.settings.heading_size_sp }}px;
     }
 
-    .sizes__lead {
+    .sizes__lead,
+    .colors__lead {
       font-size: {{ section.settings.lead_size_sp }}px;
     }
 
@@ -298,6 +442,46 @@
       margin-top: 24px;
       border-radius: {{ section.settings.compare_radius_sp }}px;
     }
+
+    .colors {
+      margin-top: {{ section.settings.colors_margin_sp }}px;
+    }
+
+    .colors__box {
+      padding: 32px 16px;
+      border-radius: {{ section.settings.colors_box_radius_sp }}px;
+    }
+
+    .colors__showcase {
+      border-radius: {{ section.settings.colors_image_radius_sp }}px;
+    }
+
+    .colors__name {
+      font-size: {{ section.settings.color_name_size_sp }}px;
+    }
+
+    .colors__swatch {
+      width: {{ section.settings.swatch_size_sp }}px;
+      height: {{ section.settings.swatch_size_sp }}px;
+    }
+
+    .colors__carousel-arrow {
+      width: 34px;
+      height: 34px;
+      font-size: 22px;
+    }
+
+    .colors__carousel-track {
+      gap: 10px;
+    }
+
+    .colors__carousel-item {
+      width: {{ section.settings.thumbnail_width_sp }}px;
+    }
+
+    .colors__carousel-item span {
+      font-size: {{ section.settings.thumbnail_text_size_sp }}px;
+    }
   }
 </style>
 
@@ -306,19 +490,13 @@
 
     <div class="sizes__header">
       {% if section.settings.label != blank %}
-        <div class="sizes__label">
-          {{ section.settings.label }}
-        </div>
+        <div class="sizes__label">{{ section.settings.label }}</div>
       {% endif %}
 
-      <h2 class="sizes__heading">
-        {{ section.settings.heading }}
-      </h2>
+      <h2 class="sizes__heading">{{ section.settings.heading }}</h2>
 
       {% if section.settings.lead != blank %}
-        <div class="sizes__lead">
-          {{ section.settings.lead }}
-        </div>
+        <div class="sizes__lead">{{ section.settings.lead }}</div>
       {% endif %}
     </div>
 
@@ -346,7 +524,6 @@
 
           <div
             class="sizes__panel{% if panel_index == 1 %} sizes__panel--active{% endif %}"
-            id="panel-size-{{ panel_index }}"
             data-panel="size-{{ panel_index }}"
             {{ block.shopify_attributes }}
           >
@@ -365,18 +542,14 @@
                 </div>
               {% endif %}
 
-              <h3 class="sizes__panel-name">
-                {{ block.settings.name }}
-              </h3>
+              <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
 
               <p class="sizes__panel-price">
                 {{ block.settings.price }}
                 <span>{{ block.settings.price_note }}</span>
               </p>
 
-              <p class="sizes__panel-dim">
-                {{ block.settings.dimensions }}
-              </p>
+              <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
 
               <ul class="sizes__panel-features">
                 {% assign features = block.settings.features | split: ',' %}
@@ -388,13 +561,10 @@
               </ul>
 
               {% if block.settings.note != blank %}
-                <p class="sizes__panel-note">
-                  {{ block.settings.note }}
-                </p>
+                <p class="sizes__panel-note">{{ block.settings.note }}</p>
               {% endif %}
             </div>
           </div>
-
         {% endif %}
       {% endfor %}
     </div>
@@ -408,6 +578,88 @@
         <img src="{{ section.settings.compare_image_url }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
     {% endif %}
+
+    <div class="colors" id="colors">
+      <div class="colors__box">
+        <div class="colors__header">
+          {% if section.settings.colors_label != blank %}
+            <div class="colors__label">{{ section.settings.colors_label }}</div>
+          {% endif %}
+
+          <h2 class="colors__heading">{{ section.settings.colors_heading }}</h2>
+
+          {% if section.settings.colors_lead != blank %}
+            <div class="colors__lead">{{ section.settings.colors_lead }}</div>
+          {% endif %}
+        </div>
+
+        {% assign first_color = nil %}
+        {% for block in section.blocks %}
+          {% if block.type == 'color_variant' and first_color == nil %}
+            {% assign first_color = block %}
+          {% endif %}
+        {% endfor %}
+
+        {% if first_color != nil %}
+          <div class="colors__showcase">
+            <img
+              id="colors-main-img-{{ section.id }}"
+              src="{% if first_color.settings.image != blank %}{{ first_color.settings.image | img_url: '1200x' }}{% elsif first_color.settings.image_url != blank %}{{ first_color.settings.image_url }}{% else %}https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200{% endif %}"
+              alt="{{ first_color.settings.name }}"
+              loading="lazy"
+            >
+          </div>
+
+          <p class="colors__name" id="colors-name-{{ section.id }}">
+            {{ first_color.settings.name }}
+          </p>
+        {% endif %}
+
+        <div class="colors__swatches">
+          {% assign color_index = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'color_variant' %}
+              {% assign color_index = color_index | plus: 1 %}
+              <button
+                type="button"
+                class="colors__swatch{% if color_index == 1 %} colors__swatch--active{% endif %}"
+                style="background: {{ block.settings.color_code }};"
+                data-color="{{ block.settings.name | escape }}"
+                data-img="{% if block.settings.image != blank %}{{ block.settings.image | img_url: '1200x' }}{% elsif block.settings.image_url != blank %}{{ block.settings.image_url }}{% endif %}"
+                aria-label="{{ block.settings.name }}"
+                {{ block.shopify_attributes }}
+              ></button>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="colors__carousel">
+          <button type="button" class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
+
+          <div class="colors__carousel-track">
+            {% assign color_item_index = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'color_variant' %}
+                {% assign color_item_index = color_item_index | plus: 1 %}
+                <div
+                  class="colors__carousel-item{% if color_item_index == 1 %} colors__carousel-item--active{% endif %}"
+                  data-color="{{ block.settings.name | escape }}"
+                >
+                  <img
+                    src="{% if block.settings.thumbnail != blank %}{{ block.settings.thumbnail | img_url: '400x' }}{% elsif block.settings.image != blank %}{{ block.settings.image | img_url: '400x' }}{% elsif block.settings.image_url != blank %}{{ block.settings.image_url }}{% endif %}"
+                    alt="{{ block.settings.name }}"
+                    loading="lazy"
+                  >
+                  <span>{{ block.settings.name }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -438,561 +690,199 @@
           }
         });
       });
+
+      const mainImg = section.querySelector('#colors-main-img-{{ section.id }}');
+      const nameEl = section.querySelector('#colors-name-{{ section.id }}');
+      const swatches = section.querySelectorAll('.colors__swatch');
+      const items = section.querySelectorAll('.colors__carousel-item');
+      const track = section.querySelector('.colors__carousel-track');
+      const left = section.querySelector('.colors__carousel-arrow--left');
+      const right = section.querySelector('.colors__carousel-arrow--right');
+
+      function setActiveColor(colorName) {
+        swatches.forEach(function(swatch) {
+          const isActive = swatch.dataset.color === colorName;
+          swatch.classList.toggle('colors__swatch--active', isActive);
+
+          if (isActive && swatch.dataset.img && mainImg) {
+            mainImg.src = swatch.dataset.img;
+            mainImg.alt = colorName;
+          }
+        });
+
+        items.forEach(function(item) {
+          item.classList.toggle('colors__carousel-item--active', item.dataset.color === colorName);
+        });
+
+        if (nameEl) {
+          nameEl.textContent = colorName;
+        }
+      }
+
+      swatches.forEach(function(swatch) {
+        swatch.addEventListener('click', function() {
+          setActiveColor(swatch.dataset.color);
+        });
+      });
+
+      items.forEach(function(item) {
+        item.addEventListener('click', function() {
+          setActiveColor(item.dataset.color);
+        });
+      });
+
+      if (left && track) {
+        left.addEventListener('click', function() {
+          track.scrollBy({ left: -120, behavior: 'smooth' });
+        });
+      }
+
+      if (right && track) {
+        right.addEventListener('click', function() {
+          track.scrollBy({ left: 120, behavior: 'smooth' });
+        });
+      }
     });
   });
 </script>
 
 {% schema %}
 {
-  "name": "MUSUBI サイズ選び",
+  "name": "MUSUBI サイズ・カラー",
   "settings": [
-    {
-      "type": "header",
-      "content": "テキスト"
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "ラベル",
-      "default": "SIZE GUIDE"
-    },
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "見出し",
-      "default": "<p>あなたに合うサイズは？</p>"
-    },
-    {
-      "type": "richtext",
-      "id": "lead",
-      "label": "リード文",
-      "default": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>"
-    },
-    {
-      "type": "image_picker",
-      "id": "compare_image",
-      "label": "比較画像"
-    },
-    {
-      "type": "text",
-      "id": "compare_image_url",
-      "label": "比較画像URL"
-    },
-    {
-      "type": "text",
-      "id": "compare_alt",
-      "label": "比較画像alt",
-      "default": "MUSUBIサイズ比較"
-    },
+    { "type": "header", "content": "サイズ：テキスト" },
+    { "type": "text", "id": "label", "label": "ラベル", "default": "SIZE GUIDE" },
+    { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>あなたに合うサイズは？</p>" },
+    { "type": "richtext", "id": "lead", "label": "リード文", "default": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>" },
+    { "type": "image_picker", "id": "compare_image", "label": "比較画像" },
+    { "type": "text", "id": "compare_image_url", "label": "比較画像URL" },
+    { "type": "text", "id": "compare_alt", "label": "比較画像alt", "default": "MUSUBIサイズ比較" },
 
-    {
-      "type": "header",
-      "content": "文字サイズ・カラー"
-    },
-    {
-      "type": "range",
-      "id": "label_size_pc",
-      "label": "ラベルサイズ（PC）",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "label_size_sp",
-      "label": "ラベルサイズ（SP）",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "ラベル文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_bg_color",
-      "label": "ラベル背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ（PC）",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ（SP）",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "range",
-      "id": "lead_size_pc",
-      "label": "リード文サイズ（PC）",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "lead_size_sp",
-      "label": "リード文サイズ（SP）",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "color",
-      "id": "lead_color",
-      "label": "リード文カラー",
-      "default": "#555555"
-    },
-    {
-      "type": "range",
-      "id": "tab_size_pc",
-      "label": "タブ文字サイズ（PC）",
-      "min": 11,
-      "max": 22,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "tab_size_sp",
-      "label": "タブ文字サイズ（SP）",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "tab_color",
-      "label": "タブ文字カラー",
-      "default": "#6d6258"
-    },
-    {
-      "type": "color",
-      "id": "tab_active_color",
-      "label": "選択中タブ文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "tab_active_bg_color",
-      "label": "選択中タブ背景カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "tabs_bg_color",
-      "label": "タブ全体背景カラー",
-      "default": "#f4eee6"
-    },
+    { "type": "header", "content": "カラー：テキスト" },
+    { "type": "text", "id": "colors_label", "label": "カラーラベル", "default": "COLOR VARIATION" },
+    { "type": "richtext", "id": "colors_heading", "label": "カラー見出し", "default": "<p>暮らしに馴染む<br>カラーバリエーション</p>" },
+    { "type": "richtext", "id": "colors_lead", "label": "カラーリード文", "default": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>" },
 
-    {
-      "type": "range",
-      "id": "badge_size_pc",
-      "label": "バッジサイズ（PC）",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "badge_size_sp",
-      "label": "バッジサイズ（SP）",
-      "min": 10,
-      "max": 18,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "color",
-      "id": "badge_color",
-      "label": "バッジ文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "badge_bg_color",
-      "label": "バッジ背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "color",
-      "id": "featured_badge_color",
-      "label": "強調バッジ文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "featured_badge_bg_color",
-      "label": "強調バッジ背景カラー",
-      "default": "#8B7355"
-    },
+    { "type": "header", "content": "文字サイズ・カラー" },
+    { "type": "range", "id": "label_size_pc", "label": "ラベルサイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
+    { "type": "range", "id": "label_size_sp", "label": "ラベルサイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
+    { "type": "color", "id": "label_color", "label": "ラベル文字カラー", "default": "#8B7355" },
+    { "type": "color", "id": "label_bg_color", "label": "ラベル背景カラー", "default": "#f4eee6" },
+    { "type": "range", "id": "heading_size_pc", "label": "見出しサイズ（PC）", "min": 20, "max": 52, "step": 1, "default": 32 },
+    { "type": "range", "id": "heading_size_sp", "label": "見出しサイズ（SP）", "min": 18, "max": 36, "step": 1, "default": 25 },
+    { "type": "color", "id": "heading_color", "label": "見出しカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "lead_size_pc", "label": "リード文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "lead_size_sp", "label": "リード文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "lead_color", "label": "リード文カラー", "default": "#555555" },
 
-    {
-      "type": "range",
-      "id": "name_size_pc",
-      "label": "サイズ名サイズ（PC）",
-      "min": 18,
-      "max": 42,
-      "step": 1,
-      "default": 28
-    },
-    {
-      "type": "range",
-      "id": "name_size_sp",
-      "label": "サイズ名サイズ（SP）",
-      "min": 18,
-      "max": 32,
-      "step": 1,
-      "default": 24
-    },
-    {
-      "type": "color",
-      "id": "name_color",
-      "label": "サイズ名カラー",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "range",
-      "id": "price_size_pc",
-      "label": "価格サイズ（PC）",
-      "min": 18,
-      "max": 42,
-      "step": 1,
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "price_size_sp",
-      "label": "価格サイズ（SP）",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "color",
-      "id": "price_color",
-      "label": "価格カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "price_note_color",
-      "label": "価格補足カラー",
-      "default": "#777777"
-    },
-    {
-      "type": "range",
-      "id": "dim_size_pc",
-      "label": "寸法サイズ（PC）",
-      "min": 11,
-      "max": 22,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "dim_size_sp",
-      "label": "寸法サイズ（SP）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "dim_color",
-      "label": "寸法カラー",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "dim_bg_color",
-      "label": "寸法背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "feature_size_pc",
-      "label": "特徴サイズ（PC）",
-      "min": 11,
-      "max": 22,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "feature_size_sp",
-      "label": "特徴サイズ（SP）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "feature_color",
-      "label": "特徴カラー",
-      "default": "#333333"
-    },
-    {
-      "type": "color",
-      "id": "check_color",
-      "label": "チェックカラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "range",
-      "id": "note_size_pc",
-      "label": "補足サイズ（PC）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "note_size_sp",
-      "label": "補足サイズ（SP）",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "color",
-      "id": "note_color",
-      "label": "補足カラー",
-      "default": "#666666"
-    },
+    { "type": "header", "content": "サイズ：文字設定" },
+    { "type": "range", "id": "tab_size_pc", "label": "タブ文字サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "tab_size_sp", "label": "タブ文字サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 13 },
+    { "type": "color", "id": "tab_color", "label": "タブ文字カラー", "default": "#6d6258" },
+    { "type": "color", "id": "tab_active_color", "label": "選択中タブ文字カラー", "default": "#ffffff" },
+    { "type": "color", "id": "tab_active_bg_color", "label": "選択中タブ背景カラー", "default": "#8B7355" },
+    { "type": "color", "id": "tabs_bg_color", "label": "タブ全体背景カラー", "default": "#f4eee6" },
+    { "type": "range", "id": "badge_size_pc", "label": "バッジサイズ（PC）", "min": 10, "max": 20, "step": 1, "default": 12 },
+    { "type": "range", "id": "badge_size_sp", "label": "バッジサイズ（SP）", "min": 10, "max": 18, "step": 1, "default": 11 },
+    { "type": "color", "id": "badge_color", "label": "バッジ文字カラー", "default": "#8B7355" },
+    { "type": "color", "id": "badge_bg_color", "label": "バッジ背景カラー", "default": "#f4eee6" },
+    { "type": "color", "id": "featured_badge_color", "label": "強調バッジ文字カラー", "default": "#ffffff" },
+    { "type": "color", "id": "featured_badge_bg_color", "label": "強調バッジ背景カラー", "default": "#8B7355" },
+    { "type": "range", "id": "name_size_pc", "label": "サイズ名サイズ（PC）", "min": 18, "max": 42, "step": 1, "default": 28 },
+    { "type": "range", "id": "name_size_sp", "label": "サイズ名サイズ（SP）", "min": 18, "max": 32, "step": 1, "default": 24 },
+    { "type": "color", "id": "name_color", "label": "サイズ名カラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "price_size_pc", "label": "価格サイズ（PC）", "min": 18, "max": 42, "step": 1, "default": 30 },
+    { "type": "range", "id": "price_size_sp", "label": "価格サイズ（SP）", "min": 18, "max": 36, "step": 1, "default": 26 },
+    { "type": "color", "id": "price_color", "label": "価格カラー", "default": "#8B7355" },
+    { "type": "color", "id": "price_note_color", "label": "価格補足カラー", "default": "#777777" },
+    { "type": "range", "id": "dim_size_pc", "label": "寸法サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "dim_size_sp", "label": "寸法サイズ（SP）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "color", "id": "dim_color", "label": "寸法カラー", "default": "#333333" },
+    { "type": "color", "id": "dim_bg_color", "label": "寸法背景カラー", "default": "#ffffff" },
+    { "type": "range", "id": "feature_size_pc", "label": "特徴サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "feature_size_sp", "label": "特徴サイズ（SP）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "color", "id": "feature_color", "label": "特徴カラー", "default": "#333333" },
+    { "type": "color", "id": "check_color", "label": "チェックカラー", "default": "#8B7355" },
+    { "type": "range", "id": "note_size_pc", "label": "補足サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "note_size_sp", "label": "補足サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
+    { "type": "color", "id": "note_color", "label": "補足カラー", "default": "#666666" },
 
-    {
-      "type": "header",
-      "content": "デザイン"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "panel_bg_color",
-      "label": "パネル背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "panel_border_color",
-      "label": "パネル枠線カラー",
-      "default": "#eee7dd"
-    },
-    {
-      "type": "color",
-      "id": "image_bg_color",
-      "label": "画像背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "label": "画像の表示方法",
-      "options": [
-        {
-          "value": "cover",
-          "label": "余白なく表示"
-        },
-        {
-          "value": "contain",
-          "label": "画像全体を表示"
-        }
-      ],
-      "default": "cover"
-    },
-    {
-      "type": "range",
-      "id": "image_height_pc",
-      "label": "画像高さ（PC）",
-      "min": 280,
-      "max": 680,
-      "step": 20,
-      "default": 460
-    },
-    {
-      "type": "range",
-      "id": "image_height_sp",
-      "label": "画像高さ（SP）",
-      "min": 220,
-      "max": 520,
-      "step": 20,
-      "default": 320
-    },
-    {
-      "type": "range",
-      "id": "panel_radius",
-      "label": "パネル角丸（PC）",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "range",
-      "id": "panel_radius_sp",
-      "label": "パネル角丸（SP）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "compare_radius",
-      "label": "比較画像角丸（PC）",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 22
-    },
-    {
-      "type": "range",
-      "id": "compare_radius_sp",
-      "label": "比較画像角丸（SP）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "max_width",
-      "label": "最大幅",
-      "min": 760,
-      "max": 1280,
-      "step": 20,
-      "default": 1080
-    },
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白（PC）",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 88
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白（SP）",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 60
-    }
+    { "type": "header", "content": "カラー：文字設定" },
+    { "type": "range", "id": "color_name_size_pc", "label": "カラー名サイズ（PC）", "min": 12, "max": 28, "step": 1, "default": 16 },
+    { "type": "range", "id": "color_name_size_sp", "label": "カラー名サイズ（SP）", "min": 12, "max": 24, "step": 1, "default": 15 },
+    { "type": "color", "id": "color_name_color", "label": "カラー名カラー", "default": "#333333" },
+    { "type": "range", "id": "thumbnail_text_size_pc", "label": "サムネイル文字サイズ（PC）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "range", "id": "thumbnail_text_size_sp", "label": "サムネイル文字サイズ（SP）", "min": 10, "max": 15, "step": 1, "default": 10 },
+    { "type": "color", "id": "thumbnail_text_color", "label": "サムネイル文字カラー", "default": "#555555" },
+
+    { "type": "header", "content": "デザイン" },
+    { "type": "color", "id": "bg_color", "label": "背景カラー", "default": "#faf7f2" },
+    { "type": "color", "id": "panel_bg_color", "label": "パネル背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "panel_border_color", "label": "パネル枠線カラー", "default": "#eee7dd" },
+    { "type": "color", "id": "image_bg_color", "label": "画像背景カラー", "default": "#f4eee6" },
+    { "type": "select", "id": "image_fit", "label": "画像の表示方法", "options": [{ "value": "cover", "label": "余白なく表示" }, { "value": "contain", "label": "画像全体を表示" }], "default": "cover" },
+    { "type": "range", "id": "image_height_pc", "label": "画像高さ（PC）", "min": 280, "max": 680, "step": 20, "default": 460 },
+    { "type": "range", "id": "image_height_sp", "label": "画像高さ（SP）", "min": 220, "max": 520, "step": 20, "default": 320 },
+    { "type": "range", "id": "panel_radius", "label": "パネル角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "panel_radius_sp", "label": "パネル角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "compare_radius", "label": "比較画像角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 22 },
+    { "type": "range", "id": "compare_radius_sp", "label": "比較画像角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 18 },
+    { "type": "range", "id": "max_width", "label": "最大幅", "min": 760, "max": 1280, "step": 20, "default": 1080 },
+    { "type": "range", "id": "padding_pc", "label": "上下余白（PC）", "min": 40, "max": 160, "step": 4, "default": 88 },
+    { "type": "range", "id": "padding_sp", "label": "上下余白（SP）", "min": 32, "max": 120, "step": 4, "default": 60 },
+
+    { "type": "header", "content": "カラー：デザイン" },
+    { "type": "range", "id": "colors_margin_pc", "label": "カラー上余白（PC）", "min": 32, "max": 120, "step": 4, "default": 72 },
+    { "type": "range", "id": "colors_margin_sp", "label": "カラー上余白（SP）", "min": 24, "max": 100, "step": 4, "default": 52 },
+    { "type": "color", "id": "colors_box_bg_color", "label": "カラーボックス背景", "default": "#ffffff" },
+    { "type": "color", "id": "colors_box_border_color", "label": "カラーボックス枠線", "default": "#eee7dd" },
+    { "type": "range", "id": "colors_box_radius", "label": "カラーボックス角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "colors_box_radius_sp", "label": "カラーボックス角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "colors_image_width", "label": "カラー画像最大幅", "min": 400, "max": 1000, "step": 20, "default": 720 },
+    { "type": "range", "id": "colors_image_radius", "label": "カラー画像角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 22 },
+    { "type": "range", "id": "colors_image_radius_sp", "label": "カラー画像角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 18 },
+    { "type": "range", "id": "swatch_size_pc", "label": "スウォッチサイズ（PC）", "min": 28, "max": 60, "step": 2, "default": 42 },
+    { "type": "range", "id": "swatch_size_sp", "label": "スウォッチサイズ（SP）", "min": 26, "max": 52, "step": 2, "default": 36 },
+    { "type": "color", "id": "swatch_active_color", "label": "選択中カラー枠", "default": "#8B7355" },
+    { "type": "range", "id": "thumbnail_width_pc", "label": "サムネイル幅（PC）", "min": 70, "max": 140, "step": 10, "default": 100 },
+    { "type": "range", "id": "thumbnail_width_sp", "label": "サムネイル幅（SP）", "min": 60, "max": 120, "step": 10, "default": 80 },
+    { "type": "color", "id": "arrow_color", "label": "矢印カラー", "default": "#8B7355" },
+    { "type": "color", "id": "arrow_bg_color", "label": "矢印背景", "default": "#ffffff" },
+    { "type": "color", "id": "arrow_border_color", "label": "矢印枠線", "default": "#eee7dd" }
   ],
   "blocks": [
     {
       "type": "size_panel",
       "name": "サイズパネル",
       "settings": [
-        {
-          "type": "text",
-          "id": "tab_label",
-          "label": "タブラベル",
-          "default": "Nap Size (M)"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "画像"
-        },
-        {
-          "type": "text",
-          "id": "image_url",
-          "label": "画像URL"
-        },
-        {
-          "type": "text",
-          "id": "badge",
-          "label": "バッジテキスト",
-          "default": "ソファにおすすめ"
-        },
-        {
-          "type": "checkbox",
-          "id": "featured",
-          "label": "強調バッジ",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "サイズ名",
-          "default": "Nap Size (M)"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "価格",
-          "default": "¥29,800"
-        },
-        {
-          "type": "text",
-          "id": "price_note",
-          "label": "価格補足",
-          "default": "(税込)"
-        },
-        {
-          "type": "text",
-          "id": "dimensions",
-          "label": "サイズ",
-          "default": "100 × 70 cm"
-        },
-        {
-          "type": "text",
-          "id": "features",
-          "label": "特徴（カンマ区切り）",
-          "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方"
-        },
-        {
-          "type": "textarea",
-          "id": "note",
-          "label": "補足テキスト",
-          "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
-        }
+        { "type": "text", "id": "tab_label", "label": "タブラベル", "default": "Nap Size (M)" },
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "text", "id": "badge", "label": "バッジテキスト", "default": "ソファにおすすめ" },
+        { "type": "checkbox", "id": "featured", "label": "強調バッジ", "default": false },
+        { "type": "text", "id": "name", "label": "サイズ名", "default": "Nap Size (M)" },
+        { "type": "text", "id": "price", "label": "価格", "default": "¥29,800" },
+        { "type": "text", "id": "price_note", "label": "価格補足", "default": "(税込)" },
+        { "type": "text", "id": "dimensions", "label": "サイズ", "default": "100 × 70 cm" },
+        { "type": "text", "id": "features", "label": "特徴（カンマ区切り）", "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方" },
+        { "type": "textarea", "id": "note", "label": "補足テキスト", "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" }
+      ]
+    },
+    {
+      "type": "color_variant",
+      "name": "カラー",
+      "settings": [
+        { "type": "text", "id": "name", "label": "カラー名", "default": "Powder Beige" },
+        { "type": "text", "id": "color_code", "label": "カラーコード", "default": "#d9cfc4" },
+        { "type": "image_picker", "id": "image", "label": "メイン画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "image_picker", "id": "thumbnail", "label": "サムネイル画像" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI サイズ選び",
+      "name": "MUSUBI サイズ・カラー",
       "blocks": [
         {
           "type": "size_panel",
@@ -1021,7 +911,12 @@
             "features": "ベッド利用, 重い布団が好き, 包まれたい方",
             "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
-        }
+        },
+        { "type": "color_variant", "settings": { "name": "Powder Beige", "color_code": "#d9cfc4" } },
+        { "type": "color_variant", "settings": { "name": "Dusty Navy", "color_code": "#3d4259" } },
+        { "type": "color_variant", "settings": { "name": "Calm Brown", "color_code": "#8b6b50" } },
+        { "type": "color_variant", "settings": { "name": "Cloud White", "color_code": "#e8e4de" } },
+        { "type": "color_variant", "settings": { "name": "Blossom Peach", "color_code": "#d4a5a0" } }
       ]
     }
   ]
