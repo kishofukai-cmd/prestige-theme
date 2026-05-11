@@ -127,7 +127,7 @@
       ],
       "settings": {
         "label": "",
-        "heading": "こんな夜、ありませんか？",
+        "heading": "こんな時がありませんか？",
         "heading_size_pc": 26,
         "heading_size_sp": 22,
         "item_text_size_pc": 14,
@@ -347,6 +347,86 @@
         "bad_bg_color": "#f7ebe7",
         "conclusion_bg_color": "#ffffff",
         "conclusion_border_color": "#eee7dd",
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "sizes": {
+      "type": "musubi-lp-sizes",
+      "blocks": {
+        "size_nap": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Nap Size (M)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1182.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800",
+            "badge": "ソファにおすすめ",
+            "featured": false,
+            "name": "Nap Size (M)",
+            "price": "¥29,800",
+            "price_note": "(税込)",
+            "dimensions": "約135 × 70 cm",
+            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+          }
+        },
+        "size_sleep": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1299.jpg",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "約175 × 105 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+          }
+        }
+      },
+      "block_order": [
+        "size_nap",
+        "size_sleep"
+      ],
+      "settings": {
+        "label": "SIZE GUIDE",
+        "heading": "<p>あなたに合うサイズは？</p>",
+        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>",
+        "compare_image_url": "",
+        "compare_alt": "MUSUBIサイズ比較",
+        "colors_label": "COLOR VARIATION",
+        "colors_heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
+        "colors_lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "color1_name": "Powder Beige",
+        "color1_code": "#d9cfc4",
+        "color1_image_url": "",
+        "color2_name": "Dusty Navy",
+        "color2_code": "#3d4259",
+        "color2_image_url": "",
+        "color3_name": "Calm Brown",
+        "color3_code": "#8b6b50",
+        "color3_image_url": "",
+        "color4_name": "Cloud White",
+        "color4_code": "#e8e4de",
+        "color4_image_url": "",
+        "color5_name": "Blossom Peach",
+        "color5_code": "#d4a5a0",
+        "color5_image_url": "",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
         "padding_pc": 88,
         "padding_sp": 60
       }
@@ -740,7 +820,7 @@
         "button_size_sp": 14,
         "button_color": "#ffffff",
         "button_bg_color": "#1a1a1a",
-        "bg_color": "#faf7f2",
+        "bg_color": "#ffffff",
         "max_width": 980,
         "card_radius": 20,
         "card_radius_sp": 16,
@@ -765,84 +845,6 @@
         "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
         "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
         "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
-      }
-    },
-    "sizes": {
-      "type": "musubi-lp-sizes",
-      "blocks": {
-        "size_nap": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Nap Size (M)",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800",
-            "badge": "ソファにおすすめ",
-            "featured": false,
-            "name": "Nap Size (M)",
-            "price": "¥29,800",
-            "price_note": "(税込)",
-            "dimensions": "約135 × 70 cm",
-            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
-            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
-          }
-        },
-        "size_sleep": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Sleep Size (L)",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800",
-            "badge": "ベッドにおすすめ",
-            "featured": true,
-            "name": "Sleep Size (L)",
-            "price": "¥39,800",
-            "price_note": "(税込)",
-            "dimensions": "約175 × 105 cm",
-            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
-            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
-          }
-        }
-      },
-      "block_order": [
-        "size_nap",
-        "size_sleep"
-      ],
-      "settings": {
-        "label": "SIZE GUIDE",
-        "heading": "<p>あなたに合うサイズは？</p>",
-        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>",
-        "compare_image_url": "",
-        "compare_alt": "MUSUBIサイズ比較",
-        "colors_label": "COLOR VARIATION",
-        "colors_heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
-        "colors_lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
-        "color1_name": "Powder Beige",
-        "color1_code": "#d9cfc4",
-        "color1_image_url": "",
-        "color2_name": "Dusty Navy",
-        "color2_code": "#3d4259",
-        "color2_image_url": "",
-        "color3_name": "Calm Brown",
-        "color3_code": "#8b6b50",
-        "color3_image_url": "",
-        "color4_name": "Cloud White",
-        "color4_code": "#e8e4de",
-        "color4_image_url": "",
-        "color5_name": "Blossom Peach",
-        "color5_code": "#d4a5a0",
-        "color5_image_url": "",
-        "bg_color": "#faf7f2",
-        "accent_color": "#8b7355",
-        "label_color": "#8b7355",
-        "label_bg": "#f4eee6",
-        "heading_color": "#1a1a1a",
-        "body_color": "#555555",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "heading_size_pc": 32,
-        "heading_size_sp": 25,
-        "body_size_pc": 15,
-        "body_size_sp": 14,
-        "padding_pc": 88,
-        "padding_sp": 60
       }
     },
     "cta-after-colors": {
@@ -916,6 +918,7 @@
       "settings": {
         "label": "EASY CARE",
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "image": "shopify://shop_images/260312_KAPOKKNOT1346.jpg",
         "image_url": "",
         "image_alt": "日常のケア",
         "bg_color": "#faf7f2",
@@ -1303,13 +1306,13 @@
     "story",
     "17784810450136d6c9",
     "why",
+    "sizes",
     "science",
     "trust-visual",
     "makuake",
     "video-loop",
     "ugc",
     "comparison",
-    "sizes",
     "cta-after-colors",
     "care",
     "reviews",
