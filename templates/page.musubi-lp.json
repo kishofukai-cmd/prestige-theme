@@ -95,45 +95,6 @@
       ],
       "settings": {}
     },
-    "blocks_XxVGGt": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a9b57ce_6gW9Q6": {
-          "type": "ai_gen_block_a9b57ce",
-          "settings": {
-            "image_1": "shopify://shop_images/10_12.png",
-            "image_2": "shopify://shop_images/10_8.png",
-            "image_3": "shopify://shop_images/10_28.png",
-            "image_4": "shopify://shop_images/10_17.png",
-            "image_5": "shopify://shop_images/10_20.png",
-            "image_6": "shopify://shop_images/10_25.png",
-            "image_7": "shopify://shop_images/10_29.png",
-            "image_8": "shopify://shop_images/10_14.png",
-            "image_9": "shopify://shop_images/10_18.png",
-            "image_10": "shopify://shop_images/10_23.png",
-            "columns_desktop": 5,
-            "columns_mobile": "2",
-            "gap": 12,
-            "desktop_width_percent": 100,
-            "autoplay": true,
-            "autoplay_speed": 4000,
-            "show_navigation": true,
-            "show_dots": true,
-            "nav_button_color": "#ffffff",
-            "nav_button_icon_color": "#1c1c1c",
-            "nav_button_size": 35,
-            "nav_button_offset": 8,
-            "dot_color": "#1c1c1c",
-            "image_border_radius": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a9b57ce_6gW9Q6"
-      ],
-      "settings": {}
-    },
     "empathy": {
       "type": "musubi-lp-empathy",
       "blocks": {
@@ -639,14 +600,44 @@
         "padding_sp": 60
       }
     },
-    "trust-visual": {
-      "type": "musubi-lp-trust-visual",
-      "settings": {
-        "heading": "",
-        "image_url": "",
-        "image_alt": "加重設計の図解",
-        "caption": ""
-      }
+    "blocks_XxVGGt": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a9b57ce_6gW9Q6": {
+          "type": "ai_gen_block_a9b57ce",
+          "settings": {
+            "image_1": "shopify://shop_images/10_12.png",
+            "image_2": "shopify://shop_images/10_8.png",
+            "image_3": "shopify://shop_images/10_28.png",
+            "image_4": "shopify://shop_images/10_17.png",
+            "image_5": "shopify://shop_images/10_20.png",
+            "image_6": "shopify://shop_images/10_25.png",
+            "image_7": "shopify://shop_images/10_29.png",
+            "image_8": "shopify://shop_images/10_14.png",
+            "image_9": "shopify://shop_images/10_18.png",
+            "image_10": "shopify://shop_images/10_23.png",
+            "columns_desktop": 5,
+            "columns_mobile": "2",
+            "gap": 12,
+            "desktop_width_percent": 100,
+            "autoplay": true,
+            "autoplay_speed": 4000,
+            "show_navigation": true,
+            "show_dots": true,
+            "nav_button_color": "#ffffff",
+            "nav_button_icon_color": "#1c1c1c",
+            "nav_button_size": 35,
+            "nav_button_offset": 8,
+            "dot_color": "#1c1c1c",
+            "image_border_radius": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a9b57ce_6gW9Q6"
+      ],
+      "settings": {}
     },
     "makuake": {
       "type": "musubi-lp-makuake",
@@ -781,15 +772,6 @@
         "padding_sp": 56
       }
     },
-    "video-loop": {
-      "type": "musubi-lp-video-loop",
-      "disabled": true,
-      "settings": {
-        "video_url": "",
-        "bg_image_alt": "MUSUBIの安心感",
-        "heading": "<p>やさしい安心感が、<br/>あなたを深い眠りへ<br/>いざなう。</p>"
-      }
-    },
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
@@ -869,21 +851,6 @@
         "iframe_height_sp": 520,
         "padding_pc": 80,
         "padding_sp": 56
-      }
-    },
-    "comparison": {
-      "type": "musubi-lp-comparison",
-      "disabled": true,
-      "settings": {
-        "label": "LABORATORY TEST",
-        "heading": "検証データが証明するMUSUBIの快適な湿度コントロール",
-        "musubi_value": "約47〜48%",
-        "musubi_desc": "60分間ほぼ一定で推移",
-        "other_value": "約55% → 70%",
-        "other_desc": "時間経過とともに上昇",
-        "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
-        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
-        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
       }
     },
     "cta-after-colors": {
@@ -1346,17 +1313,14 @@
     "17784810450136d6c9",
     "why",
     "sizes",
+    "musubi_lp_cta_HwYcWT",
     "science",
     "blocks_XxVGGt",
-    "trust-visual",
     "makuake",
-    "video-loop",
     "ugc",
-    "comparison",
     "cta-after-colors",
     "care",
     "reviews",
-    "musubi_lp_cta_HwYcWT",
     "hotels",
     "cross-sell",
     "faq",
