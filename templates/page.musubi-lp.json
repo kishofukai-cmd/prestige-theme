@@ -154,18 +154,18 @@
     "177834100804c0ef0c": {
       "type": "_blocks",
       "blocks": {
-        "ai_gen_block_0034564_zhXVBe": {
-          "type": "ai_gen_block_0034564",
+        "ai_gen_block_36ef8a5_pqg3KQ": {
+          "type": "ai_gen_block_36ef8a5",
           "settings": {
-            "image": "shopify://shop_images/260312_KAPOKKNOT1435.jpg",
-            "desktop_width_percent": 70,
-            "border_radius": 12
+            "image": "shopify://shop_images/260312_KAPOKKNOT1435_3e0a510a-0901-446d-af65-396dc6a3b7b7.jpg",
+            "desktop_width_percent": 65,
+            "mobile_width_percent": 100
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_0034564_zhXVBe"
+        "ai_gen_block_36ef8a5_pqg3KQ"
       ],
       "settings": {}
     },
