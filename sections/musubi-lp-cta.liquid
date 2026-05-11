@@ -1,24 +1,213 @@
-<section class="mid-cta" id="{{ section.settings.section_id | default: 'mid-cta' }}">
-  <div class="container--narrow">
-    <div class="mid-cta__box" data-reveal>
-      {% if section.settings.heading != blank %}
-        <p class="mid-cta__heading">{{ section.settings.heading }}</p>
-      {% endif %}
-      <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="mid-cta__btn" target="_blank" rel="noopener">
-        {{ section.settings.cta_text | default: '今すぐMUSUBIを手に入れる' }}
-      </a>
-      <div class="mid-cta__micro">
-        {% if section.settings.micro_1 != blank %}
-          <span class="mid-cta__micro-item">{{ section.settings.micro_1 }}</span>
-        {% endif %}
-        {% if section.settings.micro_2 != blank %}
-          <span class="mid-cta__micro-item">{{ section.settings.micro_2 }}</span>
-        {% endif %}
-        {% if section.settings.micro_3 != blank %}
-          <span class="mid-cta__micro-item">{{ section.settings.micro_3 }}</span>
-        {% endif %}
+<style>
+  .middle-cta {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+    text-align: center;
+  }
+
+  .middle-cta__inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .middle-cta__label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .middle-cta__heading {
+    margin: 0 0 14px;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+
+  .middle-cta__heading p,
+  .middle-cta__text p,
+  .middle-cta__care p {
+    margin: 0;
+  }
+
+  .middle-cta__text {
+    margin: 0 auto 22px;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size_pc }}px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  .middle-cta__price {
+    margin: 0 0 20px;
+    color: {{ section.settings.price_color }};
+    font-size: {{ section.settings.price_size_pc }}px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .middle-cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: {{ section.settings.soldout_margin_top }}px;
+  }
+
+  .middle-cta__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    font-size: {{ section.settings.button_size_pc }}px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.25s ease;
+  }
+
+  .middle-cta__button:hover {
+    opacity: 0.86;
+    transform: translateY(-2px);
+  }
+
+  .middle-cta__button--product {
+    background: {{ section.settings.product_button_bg }};
+    color: {{ section.settings.product_button_color }};
+    border: 1px solid {{ section.settings.product_button_border }};
+  }
+
+  .middle-cta__button--line {
+    background: {{ section.settings.line_button_bg }};
+    color: {{ section.settings.line_button_color }};
+    border: 1px solid {{ section.settings.line_button_border }};
+  }
+
+  .middle-cta__soldout {
+    margin: 0 0 {{ section.settings.soldout_margin_bottom }}px;
+    color: {{ section.settings.soldout_color }};
+    font-size: {{ section.settings.soldout_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+
+  .middle-cta__care {
+    background: {{ section.settings.care_bg }};
+    border: 1px solid {{ section.settings.care_border }};
+    border-radius: {{ section.settings.care_radius }}px;
+    padding: 22px 24px;
+    color: {{ section.settings.care_color }};
+    font-size: {{ section.settings.care_size_pc }}px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .middle-cta {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .middle-cta__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .middle-cta__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .middle-cta__text {
+      font-size: {{ section.settings.text_size_sp }}px;
+    }
+
+    .middle-cta__price {
+      font-size: {{ section.settings.price_size_sp }}px;
+    }
+
+    .middle-cta__buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .middle-cta__button {
+      width: 100%;
+      min-width: 0;
+      font-size: {{ section.settings.button_size_sp }}px;
+    }
+
+    .middle-cta__soldout {
+      font-size: {{ section.settings.soldout_size_sp }}px;
+    }
+
+    .middle-cta__care {
+      padding: 18px 16px;
+      border-radius: {{ section.settings.care_radius_sp }}px;
+      font-size: {{ section.settings.care_size_sp }}px;
+    }
+  }
+</style>
+
+<section class="middle-cta" id="middle-cta-{{ section.id }}">
+  <div class="middle-cta__inner">
+
+    {% if section.settings.label != blank %}
+      <div class="middle-cta__label">
+        {{ section.settings.label }}
       </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="middle-cta__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.text != blank %}
+      <div class="middle-cta__text">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.price != blank %}
+      <p class="middle-cta__price">
+        {{ section.settings.price }}
+      </p>
+    {% endif %}
+
+    <div class="middle-cta__buttons">
+      {% if section.settings.product_url != blank %}
+        <a href="{{ section.settings.product_url }}" class="middle-cta__button middle-cta__button--product">
+          {{ section.settings.product_button_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.line_url != blank %}
+        <a href="{{ section.settings.line_url }}" class="middle-cta__button middle-cta__button--line" target="_blank" rel="noopener">
+          {{ section.settings.line_button_text }}
+        </a>
+      {% endif %}
     </div>
+
+    {% if section.settings.soldout_text != blank %}
+      <p class="middle-cta__soldout">
+        {{ section.settings.soldout_text }}
+      </p>
+    {% endif %}
+
+    {% if section.settings.care_text != blank %}
+      <div class="middle-cta__care">
+        {{ section.settings.care_text }}
+      </div>
+    {% endif %}
+
   </div>
 </section>
 
@@ -28,47 +217,343 @@
   "settings": [
     {
       "type": "text",
-      "id": "section_id",
-      "label": "セクションID",
-      "default": "mid-cta"
+      "id": "label",
+      "label": "ラベル",
+      "default": "MUSUBI -en-"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>気になった方は、こちらから</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "説明文",
+      "default": "<p>商品ページでは、サイズ・カラー・在庫状況を詳しくご確認いただけます。</p>"
     },
     {
       "type": "text",
-      "id": "heading",
-      "label": "見出し（省略可）",
-      "default": "体験した人だけが知る、この安心感。"
+      "id": "price",
+      "label": "価格表示",
+      "default": "¥29,800〜"
     },
     {
       "type": "url",
-      "id": "cta_url",
-      "label": "CTAリンク先"
+      "id": "product_url",
+      "label": "商品ページURL"
     },
     {
       "type": "text",
-      "id": "cta_text",
-      "label": "CTAボタンテキスト",
-      "default": "今すぐMUSUBIを手に入れる"
+      "id": "product_button_text",
+      "label": "商品ページボタン文言",
+      "default": "商品ページを見る"
+    },
+    {
+      "type": "url",
+      "id": "line_url",
+      "label": "LINE URL"
     },
     {
       "type": "text",
-      "id": "micro_1",
-      "label": "マイクロコピー1",
-      "default": "✓ オールシーズン対応"
+      "id": "line_button_text",
+      "label": "LINEボタン文言",
+      "default": "公式LINEから再入荷通知を受け取る"
     },
     {
-      "type": "text",
-      "id": "micro_2",
-      "label": "マイクロコピー2",
-      "default": "✓ オールシーズン対応"
+      "type": "textarea",
+      "id": "soldout_text",
+      "label": "完売文言",
+      "default": "完売中です。\n再入荷通知は公式LINEよりお受け取りいただけます。"
     },
     {
-      "type": "text",
-      "id": "micro_3",
-      "label": "マイクロコピー3",
-      "default": "✓ ギフトラッピング対応"
+      "type": "richtext",
+      "id": "care_text",
+      "label": "お手入れ簡単テキスト",
+      "default": "<p><strong>お手入れも簡単。</strong><br>丸洗いOKで、速乾性があり、いつも清潔にお使いいただけます。</p>"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "label_bg",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "説明文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "価格カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "product_button_bg",
+      "label": "商品ボタン背景",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "product_button_color",
+      "label": "商品ボタン文字",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "product_button_border",
+      "label": "商品ボタン枠線",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "line_button_bg",
+      "label": "LINEボタン背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "line_button_color",
+      "label": "LINEボタン文字",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "line_button_border",
+      "label": "LINEボタン枠線",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "soldout_color",
+      "label": "完売文言カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "care_bg",
+      "label": "お手入れ背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "care_border",
+      "label": "お手入れ枠線",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "care_color",
+      "label": "お手入れ文字カラー",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "text_size_pc",
+      "label": "説明文サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "text_size_sp",
+      "label": "説明文サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "price_size_pc",
+      "label": "価格サイズ PC",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "price_size_sp",
+      "label": "価格サイズ SP",
+      "min": 18,
+      "max": 38,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "button_size_pc",
+      "label": "ボタン文字サイズ PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_size_sp",
+      "label": "ボタン文字サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "soldout_size_pc",
+      "label": "完売文言サイズ PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "soldout_size_sp",
+      "label": "完売文言サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "care_size_pc",
+      "label": "お手入れ文字サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "care_size_sp",
+      "label": "お手入れ文字サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_top",
+      "label": "ボタン下〜完売文言の余白",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_bottom",
+      "label": "完売文言下の余白",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "care_radius",
+      "label": "お手入れ角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "care_radius_sp",
+      "label": "お手入れ角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 32,
+      "max": 160,
+      "step": 4,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 24,
+      "max": 120,
+      "step": 4,
+      "default": 52
     }
   ],
-  "presets": [{ "name": "MUSUBI 中間CTA" }]
+  "presets": [
+    {
+      "name": "MUSUBI 中間CTA"
+    }
+  ]
 }
 {% endschema %}
-
