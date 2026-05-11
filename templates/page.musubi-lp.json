@@ -195,6 +195,11 @@
         "ai_gen_block_839e0e3_XArWaV": {
           "type": "ai_gen_block_839e0e3",
           "settings": {
+            "main_image": "shopify://shop_images/260312_KAPOKKNOT1697.jpg",
+            "grid_image_1": "shopify://shop_images/260312_KAPOKKNOT1292.jpg",
+            "grid_image_2": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
+            "grid_image_3": "shopify://shop_images/260312_KAPOKKNOT1107.jpg",
+            "grid_image_4": "shopify://shop_images/260312_KAPOKKNOT1571.jpg",
             "desktop_max_width": 1200,
             "desktop_padding_horizontal": 40,
             "mobile_padding_horizontal": 20,
