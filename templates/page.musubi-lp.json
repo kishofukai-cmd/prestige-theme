@@ -95,6 +95,45 @@
       ],
       "settings": {}
     },
+    "blocks_XxVGGt": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a9b57ce_6gW9Q6": {
+          "type": "ai_gen_block_a9b57ce",
+          "settings": {
+            "image_1": "shopify://shop_images/10_12.png",
+            "image_2": "shopify://shop_images/10_8.png",
+            "image_3": "shopify://shop_images/10_28.png",
+            "image_4": "shopify://shop_images/10_17.png",
+            "image_5": "shopify://shop_images/10_20.png",
+            "image_6": "shopify://shop_images/10_25.png",
+            "image_7": "shopify://shop_images/10_29.png",
+            "image_8": "shopify://shop_images/10_14.png",
+            "image_9": "shopify://shop_images/10_18.png",
+            "image_10": "shopify://shop_images/10_23.png",
+            "columns_desktop": 5,
+            "columns_mobile": "2",
+            "gap": 12,
+            "desktop_width_percent": 100,
+            "autoplay": true,
+            "autoplay_speed": 4000,
+            "show_navigation": true,
+            "show_dots": true,
+            "nav_button_color": "#ffffff",
+            "nav_button_icon_color": "#1c1c1c",
+            "nav_button_size": 35,
+            "nav_button_offset": 8,
+            "dot_color": "#1c1c1c",
+            "image_border_radius": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a9b57ce_6gW9Q6"
+      ],
+      "settings": {}
+    },
     "empathy": {
       "type": "musubi-lp-empathy",
       "blocks": {
@@ -1308,6 +1347,7 @@
     "why",
     "sizes",
     "science",
+    "blocks_XxVGGt",
     "trust-visual",
     "makuake",
     "video-loop",
