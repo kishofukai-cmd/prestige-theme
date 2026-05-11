@@ -32,7 +32,8 @@
     margin: 0 0 14px;
   }
 
-  .ugc__title p {
+  .ugc__title p,
+  .ugc__sub p {
     margin: 0;
   }
 
@@ -45,41 +46,7 @@
     letter-spacing: 0.04em;
   }
 
-  .ugc__highlight {
-    max-width: 760px;
-    margin: 0 auto 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-
-  .ugc__highlight-item {
-    background: {{ section.settings.highlight_bg_color }};
-    border: 1px solid {{ section.settings.highlight_border_color }};
-    border-radius: {{ section.settings.highlight_radius }}px;
-    padding: 18px 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-  }
-
-  .ugc__highlight-number {
-    display: block;
-    font-size: {{ section.settings.highlight_number_size_pc }}px;
-    color: {{ section.settings.highlight_number_color }};
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-
-  .ugc__highlight-label {
-    display: block;
-    font-size: {{ section.settings.highlight_label_size_pc }}px;
-    color: {{ section.settings.highlight_label_color }};
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
   .ugc__carousel {
-    position: relative;
     margin: 0 calc(50% - 50vw);
     padding: 8px 0 18px;
   }
@@ -93,20 +60,10 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .ugc__track::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .ugc__track::-webkit-scrollbar-thumb {
-    background: {{ section.settings.scrollbar_color }};
-    border-radius: 999px;
-  }
-
   .ugc__item {
     flex: 0 0 {{ section.settings.card_width_pc }}px;
     scroll-snap-align: center;
-    background: {{ section.settings.card_bg_color }};
-    border: 1px solid {{ section.settings.card_border_color }};
+    background: #fff;
     border-radius: {{ section.settings.card_radius }}px;
     overflow: hidden;
     box-shadow: 0 14px 36px rgba(0,0,0,0.08);
@@ -144,12 +101,6 @@
     text-decoration: none;
     border-radius: 999px;
     padding: 15px 30px;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
-
-  .ugc__follow-link:hover {
-    opacity: 0.86;
-    transform: translateY(-2px);
   }
 
   @media (max-width: 768px) {
@@ -159,7 +110,6 @@
 
     .ugc__badge {
       font-size: {{ section.settings.badge_size_sp }}px;
-      margin-bottom: 12px;
     }
 
     .ugc__title {
@@ -169,25 +119,6 @@
     .ugc__sub {
       font-size: {{ section.settings.subheading_size_sp }}px;
       margin-bottom: 24px;
-    }
-
-    .ugc__highlight {
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin-bottom: 22px;
-    }
-
-    .ugc__highlight-item {
-      border-radius: {{ section.settings.highlight_radius_sp }}px;
-      padding: 14px 12px;
-    }
-
-    .ugc__highlight-number {
-      font-size: {{ section.settings.highlight_number_size_sp }}px;
-    }
-
-    .ugc__highlight-label {
-      font-size: {{ section.settings.highlight_label_size_sp }}px;
     }
 
     .ugc__track {
@@ -208,10 +139,6 @@
       font-size: {{ section.settings.caption_size_sp }}px;
     }
 
-    .ugc__follow {
-      margin-top: 22px;
-    }
-
     .ugc__follow-link {
       width: 100%;
       font-size: {{ section.settings.button_size_sp }}px;
@@ -224,9 +151,7 @@
   <div class="ugc__inner">
 
     {% if section.settings.badge != blank %}
-      <div class="ugc__badge">
-        {{ section.settings.badge }}
-      </div>
+      <div class="ugc__badge">{{ section.settings.badge }}</div>
     {% endif %}
 
     <h2 class="ugc__title">
@@ -239,33 +164,12 @@
       </div>
     {% endif %}
 
-    {% if section.settings.show_highlight %}
-      <div class="ugc__highlight">
-        <div class="ugc__highlight-item">
-          <span class="ugc__highlight-number">{{ section.settings.highlight_number_1 }}</span>
-          <span class="ugc__highlight-label">{{ section.settings.highlight_label_1 }}</span>
-        </div>
-
-        <div class="ugc__highlight-item">
-          <span class="ugc__highlight-number">{{ section.settings.highlight_number_2 }}</span>
-          <span class="ugc__highlight-label">{{ section.settings.highlight_label_2 }}</span>
-        </div>
-
-        <div class="ugc__highlight-item">
-          <span class="ugc__highlight-number">{{ section.settings.highlight_number_3 }}</span>
-          <span class="ugc__highlight-label">{{ section.settings.highlight_label_3 }}</span>
-        </div>
-      </div>
-    {% endif %}
-
     <div class="ugc__carousel">
       <div class="ugc__track">
-
         {% for block in section.blocks %}
           <div class="ugc__item" {{ block.shopify_attributes }}>
-
             <iframe
-              src="https://www.instagram.com/p/{{ block.settings.post_id }}/embed/"
+              src="https://www.instagram.com/{{ block.settings.post_type }}/{{ block.settings.post_id }}/embed/"
               class="ugc__iframe"
               frameborder="0"
               scrolling="no"
@@ -279,21 +183,14 @@
                 {{ block.settings.caption }}
               </div>
             {% endif %}
-
           </div>
         {% endfor %}
-
       </div>
     </div>
 
     {% if section.settings.instagram_url != blank %}
       <div class="ugc__follow">
-        <a
-          href="{{ section.settings.instagram_url }}"
-          class="ugc__follow-link"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href="{{ section.settings.instagram_url }}" class="ugc__follow-link" target="_blank" rel="noopener">
           {{ section.settings.follow_text }}
         </a>
       </div>
@@ -306,10 +203,6 @@
 {
   "name": "MUSUBI UGC・Instagram",
   "settings": [
-    {
-      "type": "header",
-      "content": "テキスト"
-    },
     {
       "type": "text",
       "id": "badge",
@@ -326,59 +219,7 @@
       "type": "richtext",
       "id": "subheading",
       "label": "サブ見出し",
-      "default": "<p>実際にMUSUBIを体験した方々の投稿から、使い心地や暮らしへの馴染み方をご紹介します。</p>"
-    },
-
-    {
-      "type": "header",
-      "content": "UGC実績表示"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_highlight",
-      "label": "UGC実績を表示する",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "highlight_number_1",
-      "label": "実績1 数字",
-      "default": "多数"
-    },
-    {
-      "type": "text",
-      "id": "highlight_label_1",
-      "label": "実績1 ラベル",
-      "default": "Instagram投稿"
-    },
-    {
-      "type": "text",
-      "id": "highlight_number_2",
-      "label": "実績2 数字",
-      "default": "レビュー"
-    },
-    {
-      "type": "text",
-      "id": "highlight_label_2",
-      "label": "実績2 ラベル",
-      "default": "愛用者の声"
-    },
-    {
-      "type": "text",
-      "id": "highlight_number_3",
-      "label": "実績3 数字",
-      "default": "実感"
-    },
-    {
-      "type": "text",
-      "id": "highlight_label_3",
-      "label": "実績3 ラベル",
-      "default": "暮らしに馴染む使い心地"
-    },
-
-    {
-      "type": "header",
-      "content": "リンク"
+      "default": "<p>実際にMUSUBIを体験した方々の投稿をご紹介します。</p>"
     },
     {
       "type": "url",
@@ -392,10 +233,6 @@
       "default": "@kapok_knot_jp をフォロー →"
     },
 
-    {
-      "type": "header",
-      "content": "文字サイズ・カラー"
-    },
     {
       "type": "range",
       "id": "badge_size_pc",
@@ -426,7 +263,6 @@
       "label": "バッジ背景カラー",
       "default": "#f4eee6"
     },
-
     {
       "type": "range",
       "id": "heading_size_pc",
@@ -451,7 +287,6 @@
       "label": "見出しカラー",
       "default": "#1a1a1a"
     },
-
     {
       "type": "range",
       "id": "subheading_size_pc",
@@ -476,57 +311,6 @@
       "label": "サブ見出しカラー",
       "default": "#555555"
     },
-
-    {
-      "type": "range",
-      "id": "highlight_number_size_pc",
-      "label": "UGC実績数字サイズ（PC）",
-      "min": 16,
-      "max": 42,
-      "step": 1,
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "highlight_number_size_sp",
-      "label": "UGC実績数字サイズ（SP）",
-      "min": 16,
-      "max": 36,
-      "step": 1,
-      "default": 22
-    },
-    {
-      "type": "color",
-      "id": "highlight_number_color",
-      "label": "UGC実績数字カラー",
-      "default": "#8B7355"
-    },
-
-    {
-      "type": "range",
-      "id": "highlight_label_size_pc",
-      "label": "UGC実績ラベルサイズ（PC）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "highlight_label_size_sp",
-      "label": "UGC実績ラベルサイズ（SP）",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "highlight_label_color",
-      "label": "UGC実績ラベルカラー",
-      "default": "#555555"
-    },
-
     {
       "type": "range",
       "id": "caption_size_pc",
@@ -551,7 +335,6 @@
       "label": "キャプションカラー",
       "default": "#333333"
     },
-
     {
       "type": "range",
       "id": "button_size_pc",
@@ -584,10 +367,6 @@
     },
 
     {
-      "type": "header",
-      "content": "デザイン"
-    },
-    {
       "type": "color",
       "id": "bg_color",
       "label": "背景カラー",
@@ -602,56 +381,10 @@
       "step": 20,
       "default": 980
     },
-
-    {
-      "type": "color",
-      "id": "highlight_bg_color",
-      "label": "UGC実績背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "highlight_border_color",
-      "label": "UGC実績枠線カラー",
-      "default": "#eee7dd"
-    },
-
-    {
-      "type": "range",
-      "id": "highlight_radius",
-      "label": "UGC実績角丸（PC）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "highlight_radius_sp",
-      "label": "UGC実績角丸（SP）",
-      "min": 0,
-      "max": 28,
-      "step": 1,
-      "default": 16
-    },
-
-    {
-      "type": "color",
-      "id": "card_bg_color",
-      "label": "Reelカード背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "card_border_color",
-      "label": "Reelカード枠線カラー",
-      "default": "#eee7dd"
-    },
-
     {
       "type": "range",
       "id": "card_radius",
-      "label": "Reelカード角丸（PC）",
+      "label": "カード角丸（PC）",
       "min": 0,
       "max": 32,
       "step": 1,
@@ -660,13 +393,12 @@
     {
       "type": "range",
       "id": "card_radius_sp",
-      "label": "Reelカード角丸（SP）",
+      "label": "カード角丸（SP）",
       "min": 0,
       "max": 28,
       "step": 1,
       "default": 16
     },
-
     {
       "type": "range",
       "id": "card_width_pc",
@@ -685,33 +417,24 @@
       "step": 10,
       "default": 280
     },
-
     {
       "type": "range",
       "id": "iframe_height_pc",
       "label": "投稿高さ（PC）",
       "min": 420,
-      "max": 760,
+      "max": 900,
       "step": 10,
-      "default": 560
+      "default": 650
     },
     {
       "type": "range",
       "id": "iframe_height_sp",
       "label": "投稿高さ（SP）",
       "min": 380,
-      "max": 720,
+      "max": 900,
       "step": 10,
-      "default": 520
+      "default": 620
     },
-
-    {
-      "type": "color",
-      "id": "scrollbar_color",
-      "label": "スクロールバー色",
-      "default": "#d4c8b8"
-    },
-
     {
       "type": "range",
       "id": "padding_pc",
@@ -731,17 +454,32 @@
       "default": 56
     }
   ],
-
   "blocks": [
     {
-      "type": "instagram_post",
+      "type": "reel",
       "name": "Instagram投稿",
       "settings": [
+        {
+          "type": "select",
+          "id": "post_type",
+          "label": "投稿タイプ",
+          "options": [
+            {
+              "value": "p",
+              "label": "通常投稿"
+            },
+            {
+              "value": "reel",
+              "label": "Reel"
+            }
+          ],
+          "default": "p"
+        },
         {
           "type": "text",
           "id": "post_id",
           "label": "投稿ID",
-          "info": "Instagram URLの/p/ または /reel/ 以降のID"
+          "info": "URLの /p/ または /reel/ の後ろのID"
         },
         {
           "type": "text",
@@ -752,49 +490,54 @@
       ]
     }
   ],
-
   "presets": [
     {
       "name": "MUSUBI UGC・Instagram",
       "blocks": [
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "p",
             "post_id": "DRjsLiBEixO",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "p",
             "post_id": "DNu0zrt4gHI",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "p",
             "post_id": "DLZ9rmgyvxN",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "p",
             "post_id": "DLYiz9ezKxP",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "p",
             "post_id": "DB0771Cvz1J",
             "caption": "MUSUBI使用レビュー"
           }
         },
         {
-          "type": "instagram_post",
+          "type": "reel",
           "settings": {
+            "post_type": "reel",
             "post_id": "C93rW7dvKWP",
             "caption": "MUSUBI Reel"
           }
