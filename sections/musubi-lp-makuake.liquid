@@ -36,32 +36,26 @@
     font-weight: 700;
     line-height: 1.55;
     letter-spacing: 0.04em;
-    margin: 0 0 34px;
+    margin: 0 0 28px;
   }
 
   .makuake__title p {
     margin: 0;
   }
-  .makuake__hero-image {
-  margin: 0 auto 34px;
-  max-width: {{ section.settings.hero_image_width }}px;
-  border-radius: {{ section.settings.hero_image_radius }}px;
-  overflow: hidden;
-  box-shadow: 0 16px 42px rgba(0,0,0,0.10);
-}
 
-.makuake__hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
   .makuake__hero-image {
-    margin-bottom: 24px;
-    border-radius: {{ section.settings.hero_image_radius_sp }}px;
+    margin: 0 auto 34px;
+    max-width: {{ section.settings.hero_image_width }}px;
+    border-radius: {{ section.settings.hero_image_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0,0,0,0.10);
   }
-}
+
+  .makuake__hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
   .makuake__stats {
     display: grid;
@@ -186,7 +180,12 @@
 
     .makuake__title {
       font-size: {{ section.settings.heading_size_sp }}px;
-      margin-bottom: 26px;
+      margin-bottom: 20px;
+    }
+
+    .makuake__hero-image {
+      margin-bottom: 24px;
+      border-radius: {{ section.settings.hero_image_radius_sp }}px;
     }
 
     .makuake__stats {
@@ -244,6 +243,7 @@
     <div class="makuake__box">
 
       <div class="makuake__header">
+
         {% if section.settings.badge != blank %}
           <span class="makuake__badge">
             {{ section.settings.badge }}
@@ -253,55 +253,80 @@
         <h2 class="makuake__title">
           {{ section.settings.heading }}
         </h2>
+
         {% if section.settings.hero_image != blank %}
-  <div class="makuake__hero-image">
-    <img
-      src="{{ section.settings.hero_image | img_url: '1200x' }}"
-      alt="{{ section.settings.hero_image_alt }}"
-      loading="lazy"
-    >
-  </div>
-{% endif %}
+          <div class="makuake__hero-image">
+            <img
+              src="{{ section.settings.hero_image | img_url: '1200x' }}"
+              alt="{{ section.settings.hero_image_alt }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
       </div>
 
       <div class="makuake__stats">
+
         <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.amount }}</span>
-          <span class="makuake__stat-label">{{ section.settings.amount_label }}</span>
+          <span class="makuake__stat-number">
+            {{ section.settings.amount }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.amount_label }}
+          </span>
         </div>
 
         <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.supporters }}</span>
-          <span class="makuake__stat-label">{{ section.settings.supporters_label }}</span>
+          <span class="makuake__stat-number">
+            {{ section.settings.supporters }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.supporters_label }}
+          </span>
         </div>
 
         <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.percent }}</span>
-          <span class="makuake__stat-label">{{ section.settings.percent_label }}</span>
+          <span class="makuake__stat-number">
+            {{ section.settings.percent }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.percent_label }}
+          </span>
         </div>
+
       </div>
 
       <div class="makuake__soldout">
+
         <p class="makuake__soldout-title">
           {{ section.settings.soldout_heading }}
         </p>
 
         <div class="makuake__soldout-list">
+
           {% for block in section.blocks %}
             <div class="makuake__soldout-item" {{ block.shopify_attributes }}>
               <span class="makuake__soldout-date">
                 {{ block.settings.date }}
               </span>
+
               <span class="makuake__soldout-tag">
                 {{ block.settings.status }}
               </span>
             </div>
           {% endfor %}
+
         </div>
       </div>
 
       {% if section.settings.makuake_url != blank %}
-        <a href="{{ section.settings.makuake_url }}" class="makuake__link" target="_blank" rel="noopener">
+        <a
+          href="{{ section.settings.makuake_url }}"
+          class="makuake__link"
+          target="_blank"
+          rel="noopener"
+        >
           {{ section.settings.link_text }}
         </a>
       {% endif %}
@@ -318,7 +343,6 @@
       "type": "header",
       "content": "テキスト"
     },
-    
     {
       "type": "text",
       "id": "badge",
@@ -329,9 +353,52 @@
       "type": "richtext",
       "id": "heading",
       "label": "見出し",
-      "default": "<p>クラウドファンディングで<br>圧倒的支持を獲得</p>"
+      "default": "<p>2024年5月<br>クラウドファンディングで<br>圧倒的支持を獲得</p>"
     },
-    
+
+    {
+      "type": "header",
+      "content": "実績画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "実績画像"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "画像alt",
+      "default": "Makuake実績画像"
+    },
+    {
+      "type": "range",
+      "id": "hero_image_width",
+      "label": "画像最大幅",
+      "min": 400,
+      "max": 1200,
+      "step": 20,
+      "default": 820
+    },
+    {
+      "type": "range",
+      "id": "hero_image_radius",
+      "label": "画像角丸（PC）",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "hero_image_radius_sp",
+      "label": "画像角丸（SP）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 16
+    },
+
     {
       "type": "text",
       "id": "amount",
@@ -368,12 +435,14 @@
       "label": "達成率ラベル",
       "default": "達成率"
     },
+
     {
       "type": "text",
       "id": "soldout_heading",
       "label": "完売履歴見出し",
       "default": "販売するたびに即完売"
     },
+
     {
       "type": "url",
       "id": "makuake_url",
@@ -386,10 +455,6 @@
       "default": "Makuakeプロジェクトページを見る →"
     },
 
-    {
-      "type": "header",
-      "content": "文字サイズ・カラー"
-    },
     {
       "type": "range",
       "id": "badge_size_pc",
@@ -420,6 +485,7 @@
       "label": "バッジ背景カラー",
       "default": "#f4eee6"
     },
+
     {
       "type": "range",
       "id": "heading_size_pc",
@@ -444,6 +510,7 @@
       "label": "見出しカラー",
       "default": "#1a1a1a"
     },
+
     {
       "type": "range",
       "id": "stat_number_size_pc",
@@ -468,6 +535,7 @@
       "label": "実績数字カラー",
       "default": "#8B7355"
     },
+
     {
       "type": "range",
       "id": "stat_label_size_pc",
@@ -492,6 +560,7 @@
       "label": "実績ラベルカラー",
       "default": "#555555"
     },
+
     {
       "type": "range",
       "id": "soldout_heading_size_pc",
@@ -516,6 +585,7 @@
       "label": "完売見出しカラー",
       "default": "#1a1a1a"
     },
+
     {
       "type": "range",
       "id": "soldout_text_size_pc",
@@ -540,6 +610,7 @@
       "label": "完売履歴テキストカラー",
       "default": "#333333"
     },
+
     {
       "type": "range",
       "id": "soldout_tag_size_pc",
@@ -570,6 +641,7 @@
       "label": "完売タグ背景カラー",
       "default": "#8B7355"
     },
+
     {
       "type": "range",
       "id": "link_size_pc",
@@ -602,10 +674,6 @@
     },
 
     {
-      "type": "header",
-      "content": "デザイン"
-    },
-    {
       "type": "color",
       "id": "bg_color",
       "label": "背景カラー",
@@ -623,6 +691,7 @@
       "label": "ボックス枠線カラー",
       "default": "#eee7dd"
     },
+
     {
       "type": "range",
       "id": "box_radius",
@@ -641,6 +710,7 @@
       "step": 1,
       "default": 20
     },
+
     {
       "type": "range",
       "id": "max_width",
@@ -650,6 +720,7 @@
       "step": 20,
       "default": 960
     },
+
     {
       "type": "color",
       "id": "stat_bg_color",
@@ -662,6 +733,7 @@
       "label": "実績カード枠線カラー",
       "default": "#eee7dd"
     },
+
     {
       "type": "range",
       "id": "stat_radius",
@@ -680,12 +752,14 @@
       "step": 1,
       "default": 16
     },
+
     {
       "type": "color",
       "id": "soldout_bg_color",
       "label": "完売履歴背景カラー",
       "default": "#ffffff"
     },
+
     {
       "type": "range",
       "id": "soldout_radius",
@@ -704,6 +778,7 @@
       "step": 1,
       "default": 16
     },
+
     {
       "type": "color",
       "id": "soldout_item_bg_color",
@@ -716,6 +791,7 @@
       "label": "完売履歴アイテム枠線カラー",
       "default": "#eee7dd"
     },
+
     {
       "type": "range",
       "id": "padding_pc",
@@ -734,8 +810,8 @@
       "step": 4,
       "default": 56
     }
-    
   ],
+
   "blocks": [
     {
       "type": "soldout_record",
@@ -756,18 +832,32 @@
       ]
     }
   ],
+
   "presets": [
     {
       "name": "MUSUBI Makuake実績",
       "blocks": [
-        { "type": "soldout_record", "settings": { "date": "2024年10月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2024年11月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年1月 一般販売", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年5月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年6月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年7月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年9月 一般販売", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年10月 先行予約", "status": "完売" } }
+        {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年11月 先行予約",
+            "status": "完売"
+          }
+        },
+        {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年1月 一般販売",
+            "status": "完売"
+          }
+        }
       ]
     }
   ]
