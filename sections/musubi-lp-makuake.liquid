@@ -233,6 +233,15 @@
         <h2 class="makuake__title">
           {{ section.settings.heading }}
         </h2>
+        {% if section.settings.hero_image != blank %}
+  <div class="makuake__hero-image">
+    <img
+      src="{{ section.settings.hero_image | img_url: '1200x' }}"
+      alt="{{ section.settings.hero_image_alt }}"
+      loading="lazy"
+    >
+  </div>
+{% endif %}
       </div>
 
       <div class="makuake__stats">
