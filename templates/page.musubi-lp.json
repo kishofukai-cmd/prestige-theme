@@ -189,6 +189,26 @@
         "bg_color": "#ffffff"
       }
     },
+    "17784810450136d6c9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_839e0e3_XArWaV": {
+          "type": "ai_gen_block_839e0e3",
+          "settings": {
+            "desktop_max_width": 1200,
+            "desktop_padding_horizontal": 40,
+            "mobile_padding_horizontal": 20,
+            "gap": 16,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_839e0e3_XArWaV"
+      ],
+      "settings": {}
+    },
     "why": {
       "type": "musubi-lp-why",
       "blocks": {
@@ -322,26 +342,6 @@
         "padding_pc": 88,
         "padding_sp": 60
       }
-    },
-    "17784810450136d6c9": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_839e0e3_XArWaV": {
-          "type": "ai_gen_block_839e0e3",
-          "settings": {
-            "desktop_max_width": 1200,
-            "desktop_padding_horizontal": 40,
-            "mobile_padding_horizontal": 20,
-            "gap": 16,
-            "border_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_839e0e3_XArWaV"
-      ],
-      "settings": {}
     },
     "science": {
       "type": "musubi-lp-science",
@@ -910,12 +910,6 @@
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
         "image_url": "",
         "image_alt": "日常のケア",
-        "show_reviews": true,
-        "review_label": "USER REVIEW",
-        "review_heading": "<p>実際に使った方の声</p>",
-        "avg_score": "4.1",
-        "avg_stars": "★★★★☆",
-        "review_count": "27件のレビュー",
         "bg_color": "#faf7f2",
         "label_bg_color": "#f4eee6",
         "label_color": "#8b7355",
@@ -925,15 +919,6 @@
         "icon_bg_color": "#f4eee6",
         "title_color": "#1a1a1a",
         "text_color": "#555555",
-        "review_bg_color": "#ffffff",
-        "review_card_bg_color": "#faf7f2",
-        "review_border_color": "#eee7dd",
-        "review_accent_color": "#8b7355",
-        "review_star_color": "#c6a15b",
-        "review_title_color": "#1a1a1a",
-        "review_text_color": "#555555",
-        "review_tag_bg_color": "#ffffff",
-        "review_tag_color": "#8b7355",
         "label_size_pc": 12,
         "label_size_sp": 11,
         "heading_size_pc": 32,
@@ -942,16 +927,6 @@
         "title_size_sp": 18,
         "text_size_pc": 14,
         "text_size_sp": 14,
-        "review_score_size_pc": 32,
-        "review_score_size_sp": 28,
-        "review_star_size_pc": 18,
-        "review_star_size_sp": 16,
-        "review_count_size_pc": 13,
-        "review_count_size_sp": 12,
-        "review_title_size_pc": 17,
-        "review_title_size_sp": 16,
-        "review_body_size_pc": 13,
-        "review_body_size_sp": 13,
         "image_fit": "cover",
         "image_height_pc": 520,
         "image_height_sp": 320,
@@ -959,12 +934,6 @@
         "image_radius_sp": 20,
         "card_radius": 22,
         "card_radius_sp": 18,
-        "review_radius": 26,
-        "review_radius_sp": 20,
-        "review_card_width_pc": 340,
-        "review_card_width_sp": 280,
-        "review_margin_top_pc": 64,
-        "review_margin_top_sp": 44,
         "max_width": 1080,
         "padding_pc": 88,
         "padding_sp": 60
@@ -1010,7 +979,9 @@
         "review_3"
       ],
       "settings": {
-        "heading": "実際の声",
+        "label": "USER REVIEW",
+        "heading": "<p>実際の声</p>",
+        "show_graph": true,
         "avg_score": "4.1",
         "avg_stars": "★★★★☆",
         "review_count": "27件のレビュー",
@@ -1018,7 +989,44 @@
         "star4_pct": 30,
         "star3_pct": 4,
         "star2_pct": 7,
-        "star1_pct": 7
+        "star1_pct": 7,
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "accent_color": "#8b7355",
+        "star_color": "#c6a15b",
+        "text_color": "#555555",
+        "title_color": "#1a1a1a",
+        "meta_color": "#777777",
+        "graph_bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "bar_bg_color": "#f1ebe4",
+        "tag_bg_color": "#f4eee6",
+        "tag_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "score_size_pc": 46,
+        "score_size_sp": 38,
+        "star_size_pc": 18,
+        "star_size_sp": 16,
+        "count_size_pc": 13,
+        "count_size_sp": 12,
+        "title_size_pc": 18,
+        "title_size_sp": 17,
+        "body_size_pc": 14,
+        "body_size_sp": 14,
+        "columns_pc": 3,
+        "graph_radius": 26,
+        "graph_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "musubi_lp_cta_HwYcWT": {
@@ -1105,8 +1113,42 @@
         "hotel_3"
       ],
       "settings": {
-        "heading": "MUSUBIを体験できる宿",
-        "description": "全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。"
+        "label": "STAY EXPERIENCE",
+        "heading": "<p>MUSUBIを体験できる宿</p>",
+        "description": "<p>全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。</p>",
+        "bg_color": "#faf7f2",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "desc_color": "#666666",
+        "type_bg_color": "#f4eee6",
+        "type_color": "#8b7355",
+        "name_color": "#1a1a1a",
+        "detail_color": "#666666",
+        "columns_pc": 3,
+        "max_width": 1180,
+        "padding_pc": 88,
+        "padding_sp": 60,
+        "heading_size_pc": 34,
+        "heading_size_sp": 26,
+        "desc_size_pc": 15,
+        "desc_size_sp": 14,
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "type_size_pc": 12,
+        "type_size_sp": 11,
+        "name_size_pc": 22,
+        "name_size_sp": 20,
+        "detail_size_pc": 14,
+        "detail_size_sp": 13,
+        "card_radius_pc": 24,
+        "card_radius_sp": 20,
+        "image_ratio_pc": 72,
+        "image_ratio_sp": 100,
+        "image_fit": "cover",
+        "image_fit_sp": "cover"
       }
     },
     "cross-sell": {
@@ -1114,16 +1156,6 @@
       "disabled": true,
       "settings": {
         "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
-      }
-    },
-    "gift": {
-      "type": "musubi-lp-gift",
-      "settings": {
-        "image": "shopify://shop_images/188.webp",
-        "image_alt": "ギフトイメージ",
-        "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>専用のギフトラッピングを追加で手配可能です。</p>",
-        "note": ""
       }
     },
     "faq": {
@@ -1181,7 +1213,32 @@
         "faq_6"
       ],
       "settings": {
-        "heading": "よくあるご質問"
+        "label": "FAQ",
+        "heading": "<p>よくあるご質問</p>",
+        "bg_color": "#ffffff",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#faf7f2",
+        "border_color": "#eee7dd",
+        "question_color": "#1a1a1a",
+        "answer_color": "#555555",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#8b7355",
+        "link_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "question_size_pc": 16,
+        "question_size_sp": 15,
+        "answer_size_pc": 14,
+        "answer_size_sp": 14,
+        "card_radius_pc": 18,
+        "card_radius_sp": 16,
+        "max_width": 860,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "closing": {
@@ -1244,7 +1301,6 @@
     "musubi_lp_cta_HwYcWT",
     "hotels",
     "cross-sell",
-    "gift",
     "faq",
     "closing"
   ]
