@@ -825,11 +825,11 @@
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
-        "reel_4B6Vgf": {
+        "reel_ehrVg9": {
           "type": "reel",
           "settings": {
-            "reel_id": "DP6KXQLk0oC",
-            "caption": "MUSUBI使用レビュー"
+            "reel_id": "DVIng-EDw6_",
+            "caption": ""
           }
         },
         "reel_1": {
@@ -839,11 +839,18 @@
             "caption": "MUSUBI使用レビュー"
           }
         },
-        "reel_ehrVg9": {
+        "reel_6": {
           "type": "reel",
           "settings": {
-            "reel_id": "DVIng-EDw6_",
-            "caption": ""
+            "reel_id": "C93rW7dvKWP",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_4B6Vgf": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP6KXQLk0oC",
+            "caption": "MUSUBI使用レビュー"
           }
         },
         "reel_5": {
@@ -852,21 +859,14 @@
             "reel_id": "DSHPDRyEzfF",
             "caption": "MUSUBI使用レビュー"
           }
-        },
-        "reel_6": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "C93rW7dvKWP",
-            "caption": "MUSUBI使用レビュー"
-          }
         }
       },
       "block_order": [
-        "reel_4B6Vgf",
-        "reel_1",
         "reel_ehrVg9",
-        "reel_5",
-        "reel_6"
+        "reel_1",
+        "reel_6",
+        "reel_4B6Vgf",
+        "reel_5"
       ],
       "settings": {
         "heading": "<p>たくさんの方に選ばれています</p>",
