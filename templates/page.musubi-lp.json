@@ -198,13 +198,13 @@
             "main_image": "shopify://shop_images/260312_KAPOKKNOT1697.jpg",
             "grid_image_1": "shopify://shop_images/260312_KAPOKKNOT1292.jpg",
             "grid_image_2": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
-            "grid_image_3": "shopify://shop_images/260312_KAPOKKNOT1107.jpg",
+            "grid_image_3": "shopify://shop_images/260312_KAPOKKNOT1102.jpg",
             "grid_image_4": "shopify://shop_images/260312_KAPOKKNOT1571.jpg",
             "desktop_max_width": 1200,
             "desktop_padding_horizontal": 40,
-            "mobile_padding_horizontal": 20,
-            "gap": 16,
-            "border_radius": 0
+            "mobile_padding_horizontal": 10,
+            "gap": 8,
+            "border_radius": 4
           },
           "blocks": {}
         }
@@ -220,6 +220,7 @@
         "reason_1": {
           "type": "reason_card",
           "settings": {
+            "image": "shopify://shop_images/260312_KAPOKKNOT1107.jpg",
             "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
             "number": "01",
             "title": "やさしい重み設計",
@@ -229,6 +230,7 @@
         "reason_2": {
           "type": "reason_card",
           "settings": {
+            "image": "shopify://shop_images/260312_KAPOKKNOT1419.jpg",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
             "number": "02",
             "title": "あみあみ構造",
@@ -238,6 +240,7 @@
         "reason_3": {
           "type": "reason_card",
           "settings": {
+            "image": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
             "number": "03",
             "title": "日本の暮らし基準サイズ",
