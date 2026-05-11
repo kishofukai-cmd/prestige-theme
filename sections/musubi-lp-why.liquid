@@ -166,7 +166,6 @@
     margin: 0;
   }
 
-  /* グラフ */
   .why__comparison-chart {
     background: #fff;
     border-radius: 22px;
@@ -180,6 +179,21 @@
     font-weight: 700;
     text-align: center;
     margin: 0 0 18px;
+  }
+
+  .why__graph-message {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 12px 16px;
+    background: rgba(139,115,85,0.10);
+    color: #8B7355;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
   }
 
   .why__humidity-graph {
@@ -496,6 +510,12 @@
       font-size: {{ section.settings.chart_title_size_sp }}px;
     }
 
+    .why__graph-message {
+      font-size: 13px;
+      line-height: 1.6;
+      border-radius: 14px;
+    }
+
     .why__humidity-graph {
       padding: 24px 14px 18px 44px;
     }
@@ -602,6 +622,10 @@
         <div class="why__comparison-chart">
           <p class="why__comparison-chart-title">{{ section.settings.chart_title }}</p>
 
+          <p class="why__graph-message">
+            発汗量が増えても、MUSUBIは湿度が上がりにくい
+          </p>
+
           <div class="why__humidity-graph">
             <div class="why__graph-grid">
               <span>70%</span>
@@ -619,17 +643,17 @@
               </svg>
 
               <div class="why__graph-line why__graph-line--musubi">
-                <span class="why__graph-point" style="left: 8%; bottom: 36%;"></span>
-                <span class="why__graph-point" style="left: 38%; bottom: 37%;"></span>
-                <span class="why__graph-point" style="left: 68%; bottom: 38%;"></span>
-                <span class="why__graph-point" style="left: 92%; bottom: 38%;"></span>
+                <span class="why__graph-point" style="left:8%; bottom:36%;"></span>
+                <span class="why__graph-point" style="left:38%; bottom:37%;"></span>
+                <span class="why__graph-point" style="left:68%; bottom:38%;"></span>
+                <span class="why__graph-point" style="left:92%; bottom:38%;"></span>
               </div>
 
               <div class="why__graph-line why__graph-line--other">
-                <span class="why__graph-point" style="left: 8%; bottom: 50%;"></span>
-                <span class="why__graph-point" style="left: 38%; bottom: 62%;"></span>
-                <span class="why__graph-point" style="left: 68%; bottom: 76%;"></span>
-                <span class="why__graph-point" style="left: 92%; bottom: 92%;"></span>
+                <span class="why__graph-point" style="left:8%; bottom:50%;"></span>
+                <span class="why__graph-point" style="left:38%; bottom:62%;"></span>
+                <span class="why__graph-point" style="left:68%; bottom:76%;"></span>
+                <span class="why__graph-point" style="left:92%; bottom:92%;"></span>
               </div>
             </div>
 
