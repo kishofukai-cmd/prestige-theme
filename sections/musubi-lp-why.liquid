@@ -36,7 +36,9 @@
   }
 
   .why__heading p,
-  .why__lead p {
+  .why__lead p,
+  .why__comparison-heading p,
+  .why__comparison-conclusion p {
     margin: 0;
   }
 
@@ -53,6 +55,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 28px;
+    margin-bottom: 64px;
   }
 
   .why__card {
@@ -92,14 +95,6 @@
     display: block;
   }
 
-  .why__card-img::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.16) 100%);
-    pointer-events: none;
-  }
-
   .why__card-content {
     padding: 42px 38px;
     display: flex;
@@ -111,8 +106,6 @@
   .why__card-num {
     display: inline-flex;
     width: fit-content;
-    align-items: center;
-    justify-content: center;
     color: {{ section.settings.number_color }};
     background: {{ section.settings.number_bg_color }};
     font-size: {{ section.settings.number_size_pc }}px;
@@ -140,6 +133,179 @@
     margin: 0;
   }
 
+  .why__comparison {
+    background: {{ section.settings.comparison_bg_color }};
+    border: 1px solid {{ section.settings.comparison_border_color }};
+    border-radius: {{ section.settings.comparison_radius }}px;
+    padding: 48px 38px;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .why__comparison-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .why__comparison-label {
+    display: inline-block;
+    color: {{ section.settings.comparison_label_color }};
+    background: {{ section.settings.comparison_label_bg_color }};
+    font-size: {{ section.settings.comparison_label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    border-radius: 999px;
+    padding: 8px 15px;
+    margin-bottom: 14px;
+  }
+
+  .why__comparison-heading {
+    font-size: {{ section.settings.comparison_heading_size_pc }}px;
+    color: {{ section.settings.comparison_heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  .why__comparison-cards {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .why__comparison-card {
+    background: {{ section.settings.comparison_card_bg_color }};
+    border: 1px solid {{ section.settings.comparison_card_border_color }};
+    border-radius: 22px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .why__comparison-card--musubi {
+    border-color: {{ section.settings.musubi_accent_color }};
+  }
+
+  .why__comparison-badge {
+    display: inline-block;
+    font-size: {{ section.settings.comparison_badge_size_pc }}px;
+    color: {{ section.settings.comparison_badge_color }};
+    font-weight: 700;
+    margin: 0 0 14px;
+  }
+
+  .why__comparison-value {
+    font-size: {{ section.settings.comparison_value_size_pc }}px;
+    color: {{ section.settings.comparison_value_color }};
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+
+  .why__comparison-desc {
+    font-size: {{ section.settings.comparison_desc_size_pc }}px;
+    color: {{ section.settings.comparison_desc_color }};
+    line-height: 1.6;
+    margin: 0 0 14px;
+  }
+
+  .why__comparison-verdict {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: {{ section.settings.comparison_verdict_size_pc }}px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 7px 13px;
+    margin: 0;
+  }
+
+  .why__comparison-verdict--good {
+    color: {{ section.settings.good_text_color }};
+    background: {{ section.settings.good_bg_color }};
+  }
+
+  .why__comparison-verdict--bad {
+    color: {{ section.settings.bad_text_color }};
+    background: {{ section.settings.bad_bg_color }};
+  }
+
+  .why__comparison-vs {
+    color: {{ section.settings.vs_color }};
+    font-size: {{ section.settings.vs_size_pc }}px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .why__comparison-chart {
+    background: #fff;
+    border-radius: 22px;
+    padding: 24px;
+    margin-bottom: 26px;
+  }
+
+  .why__comparison-chart-title {
+    font-size: {{ section.settings.chart_title_size_pc }}px;
+    color: {{ section.settings.chart_title_color }};
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 18px;
+  }
+
+  .why__comparison-chart img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ section.settings.chart_radius }}px;
+  }
+
+  .why__chart-placeholder {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #faf7f2;
+    border: 1px dashed #d4c8b8;
+    border-radius: 16px;
+    color: #8B7355;
+    font-weight: 700;
+  }
+
+  .why__comparison-note {
+    font-size: {{ section.settings.chart_note_size_pc }}px;
+    color: {{ section.settings.chart_note_color }};
+    line-height: 1.7;
+    text-align: center;
+    margin: 14px 0 0;
+  }
+
+  .why__comparison-conclusion {
+    background: {{ section.settings.conclusion_bg_color }};
+    border: 1px solid {{ section.settings.conclusion_border_color }};
+    border-radius: 22px;
+    padding: 26px;
+    text-align: center;
+  }
+
+  .why__comparison-conclusion-label {
+    font-size: {{ section.settings.conclusion_label_size_pc }}px;
+    color: {{ section.settings.conclusion_label_color }};
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  .why__comparison-conclusion-text {
+    font-size: {{ section.settings.conclusion_text_size_pc }}px;
+    color: {{ section.settings.conclusion_text_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  .why__comparison-conclusion-text strong {
+    color: {{ section.settings.strong_color }};
+  }
+
   @media (max-width: 768px) {
     .why {
       padding: {{ section.settings.padding_sp }}px 16px;
@@ -151,7 +317,6 @@
 
     .why__label {
       font-size: {{ section.settings.label_size_sp }}px;
-      margin-bottom: 12px;
     }
 
     .why__heading {
@@ -164,6 +329,7 @@
 
     .why__cards {
       gap: 22px;
+      margin-bottom: 44px;
     }
 
     .why__card,
@@ -187,7 +353,6 @@
 
     .why__card-num {
       font-size: {{ section.settings.number_size_sp }}px;
-      margin-bottom: 14px;
     }
 
     .why__card-title {
@@ -196,7 +361,64 @@
 
     .why__card-desc {
       font-size: {{ section.settings.description_size_sp }}px;
-      line-height: 1.8;
+    }
+
+    .why__comparison {
+      padding: 32px 16px;
+      border-radius: {{ section.settings.comparison_radius_sp }}px;
+    }
+
+    .why__comparison-label {
+      font-size: {{ section.settings.comparison_label_size_sp }}px;
+    }
+
+    .why__comparison-heading {
+      font-size: {{ section.settings.comparison_heading_size_sp }}px;
+    }
+
+    .why__comparison-cards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .why__comparison-vs {
+      font-size: {{ section.settings.vs_size_sp }}px;
+    }
+
+    .why__comparison-value {
+      font-size: {{ section.settings.comparison_value_size_sp }}px;
+    }
+
+    .why__comparison-badge {
+      font-size: {{ section.settings.comparison_badge_size_sp }}px;
+    }
+
+    .why__comparison-desc {
+      font-size: {{ section.settings.comparison_desc_size_sp }}px;
+    }
+
+    .why__comparison-verdict {
+      font-size: {{ section.settings.comparison_verdict_size_sp }}px;
+    }
+
+    .why__comparison-chart {
+      padding: 16px;
+    }
+
+    .why__comparison-chart-title {
+      font-size: {{ section.settings.chart_title_size_sp }}px;
+    }
+
+    .why__comparison-note {
+      font-size: {{ section.settings.chart_note_size_sp }}px;
+    }
+
+    .why__comparison-conclusion-label {
+      font-size: {{ section.settings.conclusion_label_size_sp }}px;
+    }
+
+    .why__comparison-conclusion-text {
+      font-size: {{ section.settings.conclusion_text_size_sp }}px;
     }
   }
 </style>
@@ -206,26 +428,19 @@
 
     <div class="why__header">
       {% if section.settings.label != blank %}
-        <div class="why__label">
-          {{ section.settings.label }}
-        </div>
+        <div class="why__label">{{ section.settings.label }}</div>
       {% endif %}
 
-      <h2 class="why__heading">
-        {{ section.settings.heading }}
-      </h2>
+      <h2 class="why__heading">{{ section.settings.heading }}</h2>
 
       {% if section.settings.lead != blank %}
-        <div class="why__lead">
-          {{ section.settings.lead }}
-        </div>
+        <div class="why__lead">{{ section.settings.lead }}</div>
       {% endif %}
     </div>
 
     <div class="why__cards">
       {% for block in section.blocks %}
         <div class="why__card" {{ block.shopify_attributes }}>
-
           <div class="why__card-img">
             {% if block.settings.image != blank %}
               <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.title }}" loading="lazy">
@@ -235,22 +450,59 @@
           </div>
 
           <div class="why__card-content">
-            <span class="why__card-num">
-              {{ block.settings.number }}
-            </span>
-
-            <h3 class="why__card-title">
-              {{ block.settings.title }}
-            </h3>
-
-            <p class="why__card-desc">
-              {{ block.settings.description }}
-            </p>
+            <span class="why__card-num">{{ block.settings.number }}</span>
+            <h3 class="why__card-title">{{ block.settings.title }}</h3>
+            <p class="why__card-desc">{{ block.settings.description }}</p>
           </div>
-
         </div>
       {% endfor %}
     </div>
+
+    {% if section.settings.show_comparison %}
+      <div class="why__comparison">
+        <div class="why__comparison-header">
+          <div class="why__comparison-label">{{ section.settings.comparison_label }}</div>
+          <h3 class="why__comparison-heading">{{ section.settings.comparison_heading }}</h3>
+        </div>
+
+        <div class="why__comparison-cards">
+          <div class="why__comparison-card why__comparison-card--musubi">
+            <p class="why__comparison-badge">MUSUBI -en-</p>
+            <p class="why__comparison-value">{{ section.settings.musubi_value }}</p>
+            <p class="why__comparison-desc">{{ section.settings.musubi_desc }}</p>
+            <p class="why__comparison-verdict why__comparison-verdict--good">{{ section.settings.musubi_verdict }}</p>
+          </div>
+
+          <div class="why__comparison-vs">VS</div>
+
+          <div class="why__comparison-card">
+            <p class="why__comparison-badge">他社加重ブランケット</p>
+            <p class="why__comparison-value">{{ section.settings.other_value }}</p>
+            <p class="why__comparison-desc">{{ section.settings.other_desc }}</p>
+            <p class="why__comparison-verdict why__comparison-verdict--bad">{{ section.settings.other_verdict }}</p>
+          </div>
+        </div>
+
+        <div class="why__comparison-chart">
+          <p class="why__comparison-chart-title">{{ section.settings.chart_title }}</p>
+
+          {% if section.settings.chart_image != blank %}
+            <img src="{{ section.settings.chart_image | img_url: '1200x' }}" alt="{{ section.settings.chart_alt }}" loading="lazy">
+          {% elsif section.settings.chart_image_url != blank %}
+            <img src="{{ section.settings.chart_image_url }}" alt="{{ section.settings.chart_alt }}" loading="lazy">
+          {% else %}
+            <div class="why__chart-placeholder">検証グラフ画像を設定してください</div>
+          {% endif %}
+
+          <p class="why__comparison-note">{{ section.settings.chart_note }}</p>
+        </div>
+
+        <div class="why__comparison-conclusion">
+          <p class="why__comparison-conclusion-label">{{ section.settings.conclusion_label }}</p>
+          <div class="why__comparison-conclusion-text">{{ section.settings.conclusion }}</div>
+        </div>
+      </div>
+    {% endif %}
 
   </div>
 </section>
@@ -259,336 +511,128 @@
 {
   "name": "MUSUBI 選ばれる理由",
   "settings": [
-    {
-      "type": "header",
-      "content": "テキスト"
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "ラベル",
-      "default": "WHY MUSUBI"
-    },
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "セクション見出し",
-      "default": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
-    },
-    {
-      "type": "richtext",
-      "id": "lead",
-      "label": "リード文",
-      "default": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>"
-    },
+    { "type": "header", "content": "選ばれる理由：テキスト" },
+    { "type": "text", "id": "label", "label": "ラベル", "default": "WHY MUSUBI" },
+    { "type": "richtext", "id": "heading", "label": "セクション見出し", "default": "<p>なぜMUSUBIは<br>選ばれているのか？</p>" },
+    { "type": "richtext", "id": "lead", "label": "リード文", "default": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>" },
 
-    {
-      "type": "header",
-      "content": "文字サイズ・カラー"
-    },
-    {
-      "type": "range",
-      "id": "label_size_pc",
-      "label": "ラベルサイズ（PC）",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "label_size_sp",
-      "label": "ラベルサイズ（SP）",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "ラベル文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_bg_color",
-      "label": "ラベル背景カラー",
-      "default": "#f4eee6"
-    },
+    { "type": "header", "content": "検証データ比較" },
+    { "type": "checkbox", "id": "show_comparison", "label": "検証データ比較を表示する", "default": true },
+    { "type": "text", "id": "comparison_label", "label": "検証ラベル", "default": "LABORATORY TEST" },
+    { "type": "richtext", "id": "comparison_heading", "label": "検証見出し", "default": "<p>検証データが示す<br>MUSUBIの快適性</p>" },
+    { "type": "text", "id": "musubi_value", "label": "MUSUBI 数値", "default": "約47〜48%" },
+    { "type": "text", "id": "musubi_desc", "label": "MUSUBI 説明", "default": "60分間ほぼ一定で推移" },
+    { "type": "text", "id": "musubi_verdict", "label": "MUSUBI 判定", "default": "✓ 理想的な範囲内" },
+    { "type": "text", "id": "other_value", "label": "他社 数値", "default": "55% → 70%" },
+    { "type": "text", "id": "other_desc", "label": "他社 説明", "default": "時間経過とともに上昇" },
+    { "type": "text", "id": "other_verdict", "label": "他社 判定", "default": "✗ ムレやすい" },
+    { "type": "text", "id": "chart_title", "label": "グラフタイトル", "default": "寝床内湿度（空間）比較データ" },
+    { "type": "image_picker", "id": "chart_image", "label": "グラフ画像" },
+    { "type": "text", "id": "chart_image_url", "label": "グラフ画像URL" },
+    { "type": "text", "id": "chart_alt", "label": "グラフ画像alt", "default": "寝床内湿度比較グラフ" },
+    { "type": "text", "id": "chart_note", "label": "グラフ注記", "default": "※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測" },
+    { "type": "text", "id": "conclusion_label", "label": "結論ラベル", "default": "理想的な寝床内湿度：50% ± 5%" },
+    { "type": "richtext", "id": "conclusion", "label": "結論テキスト", "default": "<p>MUSUBIの「あみあみ構造」は、重みによるムレを軽減。<br><strong>365日・オールシーズン快適に使える加重ブランケット</strong>を目指しました。</p>" },
 
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ（PC）",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ（SP）",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
-    },
+    { "type": "header", "content": "文字サイズ・カラー" },
+    { "type": "range", "id": "label_size_pc", "label": "ラベルサイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
+    { "type": "range", "id": "label_size_sp", "label": "ラベルサイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
+    { "type": "color", "id": "label_color", "label": "ラベル文字カラー", "default": "#8B7355" },
+    { "type": "color", "id": "label_bg_color", "label": "ラベル背景カラー", "default": "#f4eee6" },
+    { "type": "range", "id": "heading_size_pc", "label": "見出しサイズ（PC）", "min": 20, "max": 52, "step": 1, "default": 32 },
+    { "type": "range", "id": "heading_size_sp", "label": "見出しサイズ（SP）", "min": 18, "max": 36, "step": 1, "default": 25 },
+    { "type": "color", "id": "heading_color", "label": "見出しカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "lead_size_pc", "label": "リード文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "lead_size_sp", "label": "リード文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "lead_color", "label": "リード文カラー", "default": "#555555" },
+    { "type": "range", "id": "number_size_pc", "label": "番号サイズ（PC）", "min": 11, "max": 24, "step": 1, "default": 13 },
+    { "type": "range", "id": "number_size_sp", "label": "番号サイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 12 },
+    { "type": "color", "id": "number_color", "label": "番号文字カラー", "default": "#ffffff" },
+    { "type": "color", "id": "number_bg_color", "label": "番号背景カラー", "default": "#8B7355" },
+    { "type": "range", "id": "title_size_pc", "label": "カードタイトルサイズ（PC）", "min": 16, "max": 36, "step": 1, "default": 24 },
+    { "type": "range", "id": "title_size_sp", "label": "カードタイトルサイズ（SP）", "min": 16, "max": 28, "step": 1, "default": 21 },
+    { "type": "color", "id": "title_color", "label": "カードタイトルカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "description_size_pc", "label": "説明文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "description_size_sp", "label": "説明文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "description_color", "label": "説明文カラー", "default": "#555555" },
 
-    {
-      "type": "range",
-      "id": "lead_size_pc",
-      "label": "リード文サイズ（PC）",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "lead_size_sp",
-      "label": "リード文サイズ（SP）",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "color",
-      "id": "lead_color",
-      "label": "リード文カラー",
-      "default": "#555555"
-    },
+    { "type": "header", "content": "検証：文字サイズ・カラー" },
+    { "type": "range", "id": "comparison_label_size_pc", "label": "検証ラベルサイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
+    { "type": "range", "id": "comparison_label_size_sp", "label": "検証ラベルサイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
+    { "type": "color", "id": "comparison_label_color", "label": "検証ラベル文字カラー", "default": "#8B7355" },
+    { "type": "color", "id": "comparison_label_bg_color", "label": "検証ラベル背景カラー", "default": "#f4eee6" },
+    { "type": "range", "id": "comparison_heading_size_pc", "label": "検証見出しサイズ（PC）", "min": 18, "max": 44, "step": 1, "default": 28 },
+    { "type": "range", "id": "comparison_heading_size_sp", "label": "検証見出しサイズ（SP）", "min": 16, "max": 32, "step": 1, "default": 23 },
+    { "type": "color", "id": "comparison_heading_color", "label": "検証見出しカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "comparison_value_size_pc", "label": "比較数値サイズ（PC）", "min": 22, "max": 56, "step": 1, "default": 36 },
+    { "type": "range", "id": "comparison_value_size_sp", "label": "比較数値サイズ（SP）", "min": 20, "max": 42, "step": 1, "default": 30 },
+    { "type": "color", "id": "comparison_value_color", "label": "比較数値カラー", "default": "#8B7355" },
+    { "type": "range", "id": "comparison_badge_size_pc", "label": "比較バッジサイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "comparison_badge_size_sp", "label": "比較バッジサイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
+    { "type": "color", "id": "comparison_badge_color", "label": "比較バッジカラー", "default": "#333333" },
+    { "type": "range", "id": "comparison_desc_size_pc", "label": "比較説明サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "comparison_desc_size_sp", "label": "比較説明サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
+    { "type": "color", "id": "comparison_desc_color", "label": "比較説明カラー", "default": "#555555" },
+    { "type": "range", "id": "comparison_verdict_size_pc", "label": "判定サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "comparison_verdict_size_sp", "label": "判定サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
+    { "type": "range", "id": "vs_size_pc", "label": "VSサイズ（PC）", "min": 16, "max": 36, "step": 1, "default": 22 },
+    { "type": "range", "id": "vs_size_sp", "label": "VSサイズ（SP）", "min": 14, "max": 30, "step": 1, "default": 18 },
+    { "type": "color", "id": "vs_color", "label": "VSカラー", "default": "#8B7355" },
+    { "type": "range", "id": "chart_title_size_pc", "label": "グラフタイトルサイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 16 },
+    { "type": "range", "id": "chart_title_size_sp", "label": "グラフタイトルサイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "chart_title_color", "label": "グラフタイトルカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "chart_note_size_pc", "label": "グラフ注記サイズ（PC）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "range", "id": "chart_note_size_sp", "label": "グラフ注記サイズ（SP）", "min": 10, "max": 15, "step": 1, "default": 11 },
+    { "type": "color", "id": "chart_note_color", "label": "グラフ注記カラー", "default": "#777777" },
+    { "type": "range", "id": "conclusion_label_size_pc", "label": "結論ラベルサイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 16 },
+    { "type": "range", "id": "conclusion_label_size_sp", "label": "結論ラベルサイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "conclusion_label_color", "label": "結論ラベルカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "conclusion_text_size_pc", "label": "結論本文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "conclusion_text_size_sp", "label": "結論本文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "conclusion_text_color", "label": "結論本文カラー", "default": "#555555" },
+    { "type": "color", "id": "strong_color", "label": "強調カラー", "default": "#8B7355" },
 
-    {
-      "type": "range",
-      "id": "number_size_pc",
-      "label": "番号サイズ（PC）",
-      "min": 11,
-      "max": 24,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "number_size_sp",
-      "label": "番号サイズ（SP）",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "color",
-      "id": "number_color",
-      "label": "番号文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "number_bg_color",
-      "label": "番号背景カラー",
-      "default": "#8B7355"
-    },
+    { "type": "header", "content": "デザイン" },
+    { "type": "color", "id": "bg_color", "label": "背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "card_bg_color", "label": "カード背景カラー", "default": "#faf7f2" },
+    { "type": "color", "id": "card_border_color", "label": "カード枠線カラー", "default": "#eee7dd" },
+    { "type": "color", "id": "image_bg_color", "label": "画像背景カラー", "default": "#f4eee6" },
+    { "type": "select", "id": "image_fit", "label": "画像の表示方法", "options": [{ "value": "cover", "label": "余白なく表示" }, { "value": "contain", "label": "画像全体を表示" }], "default": "cover" },
+    { "type": "range", "id": "image_height_pc", "label": "画像高さ（PC）", "min": 280, "max": 680, "step": 20, "default": 460 },
+    { "type": "range", "id": "image_height_sp", "label": "画像高さ（SP）", "min": 220, "max": 520, "step": 20, "default": 320 },
+    { "type": "range", "id": "card_radius", "label": "カード角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "card_radius_sp", "label": "カード角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "max_width", "label": "最大幅", "min": 760, "max": 1280, "step": 20, "default": 1080 },
 
-    {
-      "type": "range",
-      "id": "title_size_pc",
-      "label": "カードタイトルサイズ（PC）",
-      "min": 16,
-      "max": 36,
-      "step": 1,
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "title_size_sp",
-      "label": "カードタイトルサイズ（SP）",
-      "min": 16,
-      "max": 28,
-      "step": 1,
-      "default": 21
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "カードタイトルカラー",
-      "default": "#1a1a1a"
-    },
+    { "type": "header", "content": "検証：デザイン" },
+    { "type": "color", "id": "comparison_bg_color", "label": "検証背景カラー", "default": "#faf7f2" },
+    { "type": "color", "id": "comparison_border_color", "label": "検証枠線カラー", "default": "#eee7dd" },
+    { "type": "range", "id": "comparison_radius", "label": "検証角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "comparison_radius_sp", "label": "検証角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "color", "id": "comparison_card_bg_color", "label": "比較カード背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "comparison_card_border_color", "label": "比較カード枠線カラー", "default": "#eee7dd" },
+    { "type": "color", "id": "musubi_accent_color", "label": "MUSUBI強調カラー", "default": "#8B7355" },
+    { "type": "color", "id": "good_text_color", "label": "良い判定文字カラー", "default": "#2f6b4f" },
+    { "type": "color", "id": "good_bg_color", "label": "良い判定背景カラー", "default": "#e7f3ec" },
+    { "type": "color", "id": "bad_text_color", "label": "悪い判定文字カラー", "default": "#8a4a3a" },
+    { "type": "color", "id": "bad_bg_color", "label": "悪い判定背景カラー", "default": "#f7ebe7" },
+    { "type": "range", "id": "chart_radius", "label": "グラフ画像角丸", "min": 0, "max": 32, "step": 1, "default": 16 },
+    { "type": "color", "id": "conclusion_bg_color", "label": "結論背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "conclusion_border_color", "label": "結論枠線カラー", "default": "#eee7dd" },
 
-    {
-      "type": "range",
-      "id": "description_size_pc",
-      "label": "説明文サイズ（PC）",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "description_size_sp",
-      "label": "説明文サイズ（SP）",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "color",
-      "id": "description_color",
-      "label": "説明文カラー",
-      "default": "#555555"
-    },
-
-    {
-      "type": "header",
-      "content": "デザイン"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "card_bg_color",
-      "label": "カード背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "card_border_color",
-      "label": "カード枠線カラー",
-      "default": "#eee7dd"
-    },
-    {
-      "type": "color",
-      "id": "image_bg_color",
-      "label": "画像背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "label": "画像の表示方法",
-      "options": [
-        {
-          "value": "cover",
-          "label": "余白なく表示（cover）"
-        },
-        {
-          "value": "contain",
-          "label": "画像全体を表示（contain）"
-        }
-      ],
-      "default": "cover"
-    },
-    {
-      "type": "range",
-      "id": "image_height_pc",
-      "label": "画像高さ（PC）",
-      "min": 280,
-      "max": 680,
-      "step": 20,
-      "default": 460
-    },
-    {
-      "type": "range",
-      "id": "image_height_sp",
-      "label": "画像高さ（SP）",
-      "min": 220,
-      "max": 520,
-      "step": 20,
-      "default": 320
-    },
-    {
-      "type": "range",
-      "id": "card_radius",
-      "label": "カード角丸（PC）",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "range",
-      "id": "card_radius_sp",
-      "label": "カード角丸（SP）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "max_width",
-      "label": "最大幅",
-      "min": 760,
-      "max": 1280,
-      "step": 20,
-      "default": 1080
-    },
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白（PC）",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 88
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白（SP）",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 60
-    }
+    { "type": "range", "id": "padding_pc", "label": "上下余白（PC）", "min": 40, "max": 160, "step": 4, "default": 88 },
+    { "type": "range", "id": "padding_sp", "label": "上下余白（SP）", "min": 32, "max": 120, "step": 4, "default": 60 }
   ],
   "blocks": [
     {
       "type": "reason_card",
       "name": "理由カード",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "画像"
-        },
-        {
-          "type": "text",
-          "id": "image_url",
-          "label": "画像URL（image_pickerが空の場合に使用）"
-        },
-        {
-          "type": "text",
-          "id": "number",
-          "label": "番号",
-          "default": "01"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "タイトル",
-          "default": "やさしい重み設計"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "説明文",
-          "default": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
-        }
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "text", "id": "number", "label": "番号", "default": "01" },
+        { "type": "text", "id": "title", "label": "タイトル", "default": "やさしい重み設計" },
+        { "type": "textarea", "id": "description", "label": "説明文", "default": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" }
       ]
     }
   ],
@@ -596,30 +640,9 @@
     {
       "name": "MUSUBI 選ばれる理由",
       "blocks": [
-        {
-          "type": "reason_card",
-          "settings": {
-            "number": "01",
-            "title": "やさしい重み設計",
-            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
-          }
-        },
-        {
-          "type": "reason_card",
-          "settings": {
-            "number": "02",
-            "title": "あみあみ構造",
-            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
-          }
-        },
-        {
-          "type": "reason_card",
-          "settings": {
-            "number": "03",
-            "title": "日本の暮らし基準サイズ",
-            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
-          }
-        }
+        { "type": "reason_card", "settings": { "number": "01", "title": "やさしい重み設計", "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" } },
+        { "type": "reason_card", "settings": { "number": "02", "title": "あみあみ構造", "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。" } },
+        { "type": "reason_card", "settings": { "number": "03", "title": "日本の暮らし基準サイズ", "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。" } }
       ]
     }
   ]
