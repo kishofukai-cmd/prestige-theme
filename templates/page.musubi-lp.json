@@ -85,7 +85,7 @@
             "nav_button_size": 35,
             "nav_button_offset": 8,
             "dot_color": "#1c1c1c",
-            "image_border_radius": 20
+            "image_border_radius": 0
           },
           "blocks": {}
         }
