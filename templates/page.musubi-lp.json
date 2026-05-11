@@ -440,6 +440,11 @@
       "settings": {
         "badge": "Makuake Success",
         "heading": "<p>2024年5月<br/>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
+        "hero_image": "shopify://shop_images/Makuake_MUSUBI.png",
+        "hero_image_alt": "Makuake実績画像",
+        "hero_image_width": 820,
+        "hero_image_radius": 20,
+        "hero_image_radius_sp": 16,
         "amount": "1,349万円",
         "amount_label": "応援購入総額",
         "supporters": "408名",
