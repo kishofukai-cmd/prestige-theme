@@ -1241,41 +1241,48 @@
         "padding_sp": 60
       }
     },
-    "closing": {
-      "type": "musubi-lp-closing",
-      "blocks": {
-        "proof_line_1": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>"
-          }
-        },
-        "proof_line_2": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>Makuake <strong>408名</strong>支援</p>"
-          }
-        },
-        "proof_line_3": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>レビュー <strong>★4.1</strong></p>"
-          }
-        }
-      },
-      "block_order": [
-        "proof_line_1",
-        "proof_line_2",
-        "proof_line_3"
-      ],
+    "musubi_lp_cta_zUJQPK": {
+      "type": "musubi-lp-cta",
       "settings": {
-        "bg_image_alt": "MUSUBI -en- カラーバリエーション",
-        "label": "Recovery Weighted Blanket",
-        "product_suffix": "-en-",
-        "price_text": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800",
-        "price_note": "(税込)",
-        "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見る→"
+        "bg_color": "#1f2a44",
+        "subtitle": "<p>【次回先行予約は5月下旬を予定】</p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "現在MUSUBI-en-は完売中です。\n再入荷通知をご登録の上、告知をお待ちください。",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "https://kapok-knot.com/products/musubi-en",
+        "cta_text": "MUSUBI-en- 商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "https://page.line.me/258kaxeg",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     }
   },
@@ -1302,6 +1309,6 @@
     "hotels",
     "cross-sell",
     "faq",
-    "closing"
+    "musubi_lp_cta_zUJQPK"
   ]
 }
