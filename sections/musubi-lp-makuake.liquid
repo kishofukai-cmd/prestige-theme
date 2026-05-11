@@ -42,6 +42,26 @@
   .makuake__title p {
     margin: 0;
   }
+  .makuake__hero-image {
+  margin: 0 auto 34px;
+  max-width: {{ section.settings.hero_image_width }}px;
+  border-radius: {{ section.settings.hero_image_radius }}px;
+  overflow: hidden;
+  box-shadow: 0 16px 42px rgba(0,0,0,0.10);
+}
+
+.makuake__hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .makuake__hero-image {
+    margin-bottom: 24px;
+    border-radius: {{ section.settings.hero_image_radius_sp }}px;
+  }
+}
 
   .makuake__stats {
     display: grid;
