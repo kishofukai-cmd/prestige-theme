@@ -1,25 +1,257 @@
+<style>
+  .why {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
+
+  .why__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .why__header {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .why__label {
+    display: inline-block;
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 8px 15px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .why__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 14px;
+  }
+
+  .why__heading p,
+  .why__lead p {
+    margin: 0;
+  }
+
+  .why__lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.lead_size_pc }}px;
+    color: {{ section.settings.lead_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .why__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .why__card {
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    align-items: stretch;
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.card_border_color }};
+    border-radius: {{ section.settings.card_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.07);
+  }
+
+  .why__card:nth-child(even) {
+    grid-template-columns: 0.88fr 1.12fr;
+  }
+
+  .why__card:nth-child(even) .why__card-img {
+    order: 2;
+  }
+
+  .why__card:nth-child(even) .why__card-content {
+    order: 1;
+  }
+
+  .why__card-img {
+    position: relative;
+    min-height: {{ section.settings.image_height_pc }}px;
+    background: {{ section.settings.image_bg_color }};
+    overflow: hidden;
+  }
+
+  .why__card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    display: block;
+  }
+
+  .why__card-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.16) 100%);
+    pointer-events: none;
+  }
+
+  .why__card-content {
+    padding: 42px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .why__card-num {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.number_color }};
+    background: {{ section.settings.number_bg_color }};
+    font-size: {{ section.settings.number_size_pc }}px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    padding: 7px 14px;
+    margin-bottom: 18px;
+  }
+
+  .why__card-title {
+    font-size: {{ section.settings.title_size_pc }}px;
+    color: {{ section.settings.title_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 14px;
+  }
+
+  .why__card-desc {
+    font-size: {{ section.settings.description_size_pc }}px;
+    color: {{ section.settings.description_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .why {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .why__header {
+      margin-bottom: 30px;
+    }
+
+    .why__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+      margin-bottom: 12px;
+    }
+
+    .why__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .why__lead {
+      font-size: {{ section.settings.lead_size_sp }}px;
+    }
+
+    .why__cards {
+      gap: 22px;
+    }
+
+    .why__card,
+    .why__card:nth-child(even) {
+      grid-template-columns: 1fr;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+    }
+
+    .why__card:nth-child(even) .why__card-img,
+    .why__card:nth-child(even) .why__card-content {
+      order: initial;
+    }
+
+    .why__card-img {
+      min-height: {{ section.settings.image_height_sp }}px;
+    }
+
+    .why__card-content {
+      padding: 26px 20px 28px;
+    }
+
+    .why__card-num {
+      font-size: {{ section.settings.number_size_sp }}px;
+      margin-bottom: 14px;
+    }
+
+    .why__card-title {
+      font-size: {{ section.settings.title_size_sp }}px;
+    }
+
+    .why__card-desc {
+      font-size: {{ section.settings.description_size_sp }}px;
+      line-height: 1.8;
+    }
+  }
+</style>
+
 <section class="why" id="why">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'なぜMUSUBIは<br>選ばれているのか？' }}</h2>
+  <div class="why__inner">
+
+    <div class="why__header">
+      {% if section.settings.label != blank %}
+        <div class="why__label">
+          {{ section.settings.label }}
+        </div>
+      {% endif %}
+
+      <h2 class="why__heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      {% if section.settings.lead != blank %}
+        <div class="why__lead">
+          {{ section.settings.lead }}
+        </div>
+      {% endif %}
+    </div>
 
     <div class="why__cards">
       {% for block in section.blocks %}
-        <div class="why__card" data-reveal {{ block.shopify_attributes }}>
+        <div class="why__card" {{ block.shopify_attributes }}>
+
           <div class="why__card-img">
             {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" loading="lazy">
+              <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.title }}" loading="lazy">
             {% elsif block.settings.image_url != blank %}
               <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }}" loading="lazy">
             {% endif %}
           </div>
+
           <div class="why__card-content">
-            <span class="why__card-num">{{ block.settings.number | default: forloop.index | prepend: '0' }}</span>
-            <h3 class="why__card-title">{{ block.settings.title }}</h3>
-            <p class="why__card-desc">{{ block.settings.description }}</p>
+            <span class="why__card-num">
+              {{ block.settings.number }}
+            </span>
+
+            <h3 class="why__card-title">
+              {{ block.settings.title }}
+            </h3>
+
+            <p class="why__card-desc">
+              {{ block.settings.description }}
+            </p>
           </div>
+
         </div>
       {% endfor %}
     </div>
+
   </div>
 </section>
 
@@ -28,10 +260,300 @@
   "name": "MUSUBI 選ばれる理由",
   "settings": [
     {
+      "type": "header",
+      "content": "テキスト"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "WHY MUSUBI"
+    },
+    {
       "type": "richtext",
       "id": "heading",
       "label": "セクション見出し",
       "default": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "リード文",
+      "default": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>"
+    },
+
+    {
+      "type": "header",
+      "content": "文字サイズ・カラー"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+
+    {
+      "type": "range",
+      "id": "lead_size_pc",
+      "label": "リード文サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "lead_size_sp",
+      "label": "リード文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "lead_color",
+      "label": "リード文カラー",
+      "default": "#555555"
+    },
+
+    {
+      "type": "range",
+      "id": "number_size_pc",
+      "label": "番号サイズ（PC）",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "number_size_sp",
+      "label": "番号サイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "番号文字カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "number_bg_color",
+      "label": "番号背景カラー",
+      "default": "#8B7355"
+    },
+
+    {
+      "type": "range",
+      "id": "title_size_pc",
+      "label": "カードタイトルサイズ（PC）",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "title_size_sp",
+      "label": "カードタイトルサイズ（SP）",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "default": 21
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "カードタイトルカラー",
+      "default": "#1a1a1a"
+    },
+
+    {
+      "type": "range",
+      "id": "description_size_pc",
+      "label": "説明文サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "description_size_sp",
+      "label": "説明文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "説明文カラー",
+      "default": "#555555"
+    },
+
+    {
+      "type": "header",
+      "content": "デザイン"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "カード背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "カード枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "画像背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "画像の表示方法",
+      "options": [
+        {
+          "value": "cover",
+          "label": "余白なく表示（cover）"
+        },
+        {
+          "value": "contain",
+          "label": "画像全体を表示（contain）"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "image_height_pc",
+      "label": "画像高さ（PC）",
+      "min": 280,
+      "max": 680,
+      "step": 20,
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "image_height_sp",
+      "label": "画像高さ（SP）",
+      "min": 220,
+      "max": 520,
+      "step": 20,
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "カード角丸（PC）",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "カード角丸（SP）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 760,
+      "max": 1280,
+      "step": 20,
+      "default": 1080
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白（PC）",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白（SP）",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
     }
   ],
   "blocks": [
@@ -74,12 +596,32 @@
     {
       "name": "MUSUBI 選ばれる理由",
       "blocks": [
-        { "type": "reason_card", "settings": { "number": "01", "title": "やさしい重み設計", "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" } },
-        { "type": "reason_card", "settings": { "number": "02", "title": "あみあみ構造", "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。" } },
-        { "type": "reason_card", "settings": { "number": "03", "title": "日本の暮らし基準サイズ", "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。" } }
+        {
+          "type": "reason_card",
+          "settings": {
+            "number": "01",
+            "title": "やさしい重み設計",
+            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+          }
+        },
+        {
+          "type": "reason_card",
+          "settings": {
+            "number": "02",
+            "title": "あみあみ構造",
+            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+          }
+        },
+        {
+          "type": "reason_card",
+          "settings": {
+            "number": "03",
+            "title": "日本の暮らし基準サイズ",
+            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-
