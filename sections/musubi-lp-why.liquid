@@ -1,52 +1,52 @@
 <style>
-  .why {
+  .sizes {
     padding: {{ section.settings.padding_pc }}px 20px;
     background: {{ section.settings.bg_color }};
   }
 
-  .why__inner {
+  .sizes__inner {
     max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
   }
 
-  .why__header {
+  .sizes__header,
+  .colors__header {
     text-align: center;
-    margin-bottom: 42px;
+    margin-bottom: 34px;
   }
 
-  .why__label,
-  .why__comparison-label {
+  .sizes__label,
+  .colors__label {
     display: inline-block;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    border-radius: 999px;
-    padding: 8px 15px;
-  }
-
-  .why__label {
     background: {{ section.settings.label_bg_color }};
     color: {{ section.settings.label_color }};
     font-size: {{ section.settings.label_size_pc }}px;
-    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 8px 15px;
+    border-radius: 999px;
+    margin-bottom: 14px;
   }
 
-  .why__heading {
+  .sizes__heading,
+  .colors__heading {
     font-size: {{ section.settings.heading_size_pc }}px;
     color: {{ section.settings.heading_color }};
     font-weight: 700;
     line-height: 1.55;
     letter-spacing: 0.04em;
-    margin: 0 0 14px;
+    margin: 0 0 12px;
   }
 
-  .why__heading p,
-  .why__lead p,
-  .why__comparison-heading p,
-  .why__comparison-conclusion p {
+  .sizes__heading p,
+  .sizes__lead p,
+  .colors__heading p,
+  .colors__lead p {
     margin: 0;
   }
 
-  .why__lead {
+  .sizes__lead,
+  .colors__lead {
     max-width: 720px;
     margin: 0 auto;
     font-size: {{ section.settings.lead_size_pc }}px;
@@ -55,51 +55,66 @@
     letter-spacing: 0.04em;
   }
 
-  .why__cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 64px;
+  .sizes__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+    background: {{ section.settings.tabs_bg_color }};
+    border-radius: 999px;
+    padding: 6px;
+    width: fit-content;
+    max-width: 100%;
   }
 
-  .why__card {
-    display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
-    align-items: stretch;
-    background: {{ section.settings.card_bg_color }};
-    border: 1px solid {{ section.settings.card_border_color }};
-    border-radius: {{ section.settings.card_radius }}px;
+  .sizes__tab {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: transparent;
+    color: {{ section.settings.tab_color }};
+    font-size: {{ section.settings.tab_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .sizes__tab--active {
+    background: {{ section.settings.tab_active_bg_color }};
+    color: {{ section.settings.tab_active_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+
+  .sizes__panel {
+    display: none;
+    grid-template-columns: 1.08fr 0.92fr;
+    background: {{ section.settings.panel_bg_color }};
+    border: 1px solid {{ section.settings.panel_border_color }};
+    border-radius: {{ section.settings.panel_radius }}px;
     overflow: hidden;
     box-shadow: 0 16px 44px rgba(0,0,0,0.07);
   }
 
-  .why__card:nth-child(even) {
-    grid-template-columns: 0.88fr 1.12fr;
+  .sizes__panel--active {
+    display: grid;
   }
 
-  .why__card:nth-child(even) .why__card-img {
-    order: 2;
-  }
-
-  .why__card:nth-child(even) .why__card-content {
-    order: 1;
-  }
-
-  .why__card-img {
-    position: relative;
-    min-height: {{ section.settings.image_height_pc }}px;
+  .sizes__panel-img {
     background: {{ section.settings.image_bg_color }};
+    min-height: {{ section.settings.image_height_pc }}px;
     overflow: hidden;
   }
 
-  .why__card-img img {
+  .sizes__panel-img img {
     width: 100%;
     height: 100%;
     object-fit: {{ section.settings.image_fit }};
     display: block;
   }
 
-  .why__card-content {
+  .sizes__panel-content {
     padding: 42px 38px;
     display: flex;
     flex-direction: column;
@@ -107,625 +122,657 @@
     text-align: left;
   }
 
-  .why__card-num {
+  .sizes__panel-badge {
     display: inline-flex;
     width: fit-content;
-    color: {{ section.settings.number_color }};
-    background: {{ section.settings.number_bg_color }};
-    font-size: {{ section.settings.number_size_pc }}px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    border-radius: 999px;
-    padding: 7px 14px;
-    margin-bottom: 18px;
-  }
-
-  .why__card-title {
-    font-size: {{ section.settings.title_size_pc }}px;
-    color: {{ section.settings.title_color }};
-    font-weight: 700;
-    line-height: 1.55;
-    letter-spacing: 0.04em;
-    margin: 0 0 14px;
-  }
-
-  .why__card-desc {
-    font-size: {{ section.settings.description_size_pc }}px;
-    color: {{ section.settings.description_color }};
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-    margin: 0;
-  }
-
-  .why__comparison {
-    background: {{ section.settings.comparison_bg_color }};
-    border: 1px solid {{ section.settings.comparison_border_color }};
-    border-radius: {{ section.settings.comparison_radius }}px;
-    padding: 48px 38px;
-    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
-  }
-
-  .why__comparison-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .why__comparison-label {
-    color: {{ section.settings.comparison_label_color }};
-    background: {{ section.settings.comparison_label_bg_color }};
-    font-size: {{ section.settings.comparison_label_size_pc }}px;
-    margin-bottom: 14px;
-  }
-
-  .why__comparison-heading {
-    font-size: {{ section.settings.comparison_heading_size_pc }}px;
-    color: {{ section.settings.comparison_heading_color }};
-    font-weight: 700;
-    line-height: 1.55;
-    letter-spacing: 0.04em;
-    margin: 0;
-  }
-
-  .why__comparison-chart {
-    background: #fff;
-    border-radius: 22px;
-    padding: 24px;
-    margin: 0 0 28px;
-  }
-
-  .why__comparison-chart-title {
-    font-size: {{ section.settings.chart_title_size_pc }}px;
-    color: {{ section.settings.chart_title_color }};
-    font-weight: 700;
-    text-align: center;
-    margin: 0 0 18px;
-  }
-
-  .why__graph-message {
-    display: inline-block;
-    width: 100%;
-    margin: 0 0 18px;
-    padding: 12px 16px;
-    background: rgba(139,115,85,0.10);
-    color: #8B7355;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 0.04em;
-    line-height: 1.7;
-  }
-
-  .why__humidity-graph {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid #eee7dd;
-    border-radius: 20px;
-    padding: 28px 20px 22px 54px;
-  }
-
-  .why__graph-area {
-    position: relative;
-    height: 280px;
-    border-left: 1px solid #d8cfc3;
-    border-bottom: 1px solid #d8cfc3;
-    background: linear-gradient(to bottom, rgba(216,207,195,0.35) 1px, transparent 1px);
-    background-size: 100% 25%;
-  }
-
-  .why__graph-grid {
-    position: absolute;
-    left: 20px;
-    top: 78px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #8a8178;
-  }
-
-  .why__ideal-zone {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 28%;
-    height: 22%;
-    background: rgba(139,115,85,0.10);
-    color: #8B7355;
-    font-size: 12px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  .why__graph-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-
-  .why__graph-path {
-    fill: none;
-    stroke-width: 3;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .why__graph-path--musubi {
-    stroke: #8B7355;
-  }
-
-  .why__graph-path--other {
-    stroke: #b9b1a8;
-    stroke-dasharray: 5 5;
-  }
-
-  .why__graph-point {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    transform: translate(-50%, 50%);
-    z-index: 3;
-  }
-
-  .why__graph-line--musubi .why__graph-point {
-    background: #8B7355;
-  }
-
-  .why__graph-line--other .why__graph-point {
-    background: #b9b1a8;
-  }
-
-  .why__graph-axis {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 12px;
-    color: #8a8178;
-  }
-
-  .why__graph-legend {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 18px;
-    font-size: 13px;
-    color: #333;
-    font-weight: 700;
-    flex-wrap: wrap;
-  }
-
-  .why__legend-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    margin-right: 6px;
-  }
-
-  .why__legend-dot--musubi {
-    background: #8B7355;
-  }
-
-  .why__legend-dot--other {
-    background: #b9b1a8;
-  }
-
-  .why__comparison-note {
-    font-size: {{ section.settings.chart_note_size_pc }}px;
-    color: {{ section.settings.chart_note_color }};
-    line-height: 1.7;
-    text-align: center;
-    margin: 14px 0 0;
-  }
-
-  .why__comparison-conclusion {
-    background: {{ section.settings.conclusion_bg_color }};
-    border: 1px solid {{ section.settings.conclusion_border_color }};
-    border-radius: 22px;
-    padding: 26px;
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .why__comparison-conclusion-label {
-    font-size: {{ section.settings.conclusion_label_size_pc }}px;
-    color: {{ section.settings.conclusion_label_color }};
-    font-weight: 700;
-    margin: 0 0 12px;
-  }
-
-  .why__comparison-conclusion-text {
-    font-size: {{ section.settings.conclusion_text_size_pc }}px;
-    color: {{ section.settings.conclusion_text_color }};
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-  }
-
-  .why__comparison-conclusion-text strong {
-    color: {{ section.settings.strong_color }};
-  }
-
-  .why__comparison-cards {
-    display: grid;
-    grid-template-columns: 1fr 64px 1fr;
-    gap: 18px;
-    align-items: stretch;
-  }
-
-  .why__comparison-card {
-    background: {{ section.settings.comparison_card_bg_color }};
-    border: 1px solid {{ section.settings.comparison_card_border_color }};
-    border-radius: 22px;
-    padding: 28px 20px;
-    text-align: center;
-  }
-
-  .why__comparison-card--musubi {
-    border-color: {{ section.settings.musubi_accent_color }};
-  }
-
-  .why__comparison-badge {
-    display: inline-block;
-    font-size: {{ section.settings.comparison_badge_size_pc }}px;
-    color: {{ section.settings.comparison_badge_color }};
-    font-weight: 700;
-    margin: 0 0 14px;
-  }
-
-  .why__comparison-value {
-    font-size: {{ section.settings.comparison_value_size_pc }}px;
-    color: {{ section.settings.comparison_value_color }};
-    font-weight: 800;
-    line-height: 1.2;
-    margin: 0 0 10px;
-  }
-
-  .why__comparison-desc {
-    font-size: {{ section.settings.comparison_desc_size_pc }}px;
-    color: {{ section.settings.comparison_desc_color }};
-    line-height: 1.6;
-    margin: 0 0 14px;
-  }
-
-  .why__comparison-verdict {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: {{ section.settings.comparison_verdict_size_pc }}px;
+    background: {{ section.settings.badge_bg_color }};
+    color: {{ section.settings.badge_color }};
+    font-size: {{ section.settings.badge_size_pc }}px;
     font-weight: 700;
     border-radius: 999px;
     padding: 7px 13px;
+    margin-bottom: 16px;
+  }
+
+  .sizes__panel-badge--featured {
+    background: {{ section.settings.featured_badge_bg_color }};
+    color: {{ section.settings.featured_badge_color }};
+  }
+
+  .sizes__panel-name {
+    font-size: {{ section.settings.name_size_pc }}px;
+    color: {{ section.settings.name_color }};
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.03em;
+    margin: 0 0 12px;
+  }
+
+  .sizes__panel-price {
+    font-size: {{ section.settings.price_size_pc }}px;
+    color: {{ section.settings.price_color }};
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 10px;
+  }
+
+  .sizes__panel-price span {
+    font-size: 0.5em;
+    font-weight: 600;
+    color: {{ section.settings.price_note_color }};
+  }
+
+  .sizes__panel-dim {
+    display: inline-flex;
+    width: fit-content;
+    background: {{ section.settings.dim_bg_color }};
+    color: {{ section.settings.dim_color }};
+    font-size: {{ section.settings.dim_size_pc }}px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 9px 13px;
+    margin: 0 0 18px;
+  }
+
+  .sizes__panel-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .sizes__panel-features li {
+    position: relative;
+    padding-left: 1.4em;
+    font-size: {{ section.settings.feature_size_pc }}px;
+    color: {{ section.settings.feature_color }};
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+  }
+
+  .sizes__panel-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: {{ section.settings.check_color }};
+    font-weight: 800;
+  }
+
+  .sizes__panel-note {
+    font-size: {{ section.settings.note_size_pc }}px;
+    color: {{ section.settings.note_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
     margin: 0;
   }
 
-  .why__comparison-verdict--good {
-    color: {{ section.settings.good_text_color }};
-    background: {{ section.settings.good_bg_color }};
-  }
-
-  .why__comparison-verdict--bad {
-    color: {{ section.settings.bad_text_color }};
-    background: {{ section.settings.bad_bg_color }};
-  }
-
-  .why__comparison-vs {
-    width: 64px;
-    height: 64px;
-    border-radius: 999px;
+  .sizes__compare {
+    margin: 34px auto 0;
+    border-radius: {{ section.settings.compare_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
     background: #fff;
-    border: 1px solid #eee7dd;
-    color: {{ section.settings.vs_color }};
-    font-size: {{ section.settings.vs_size_pc }}px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+  }
+
+  .sizes__compare img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .colors {
+    margin-top: {{ section.settings.colors_margin_pc }}px;
+  }
+
+  .colors__box {
+    background: {{ section.settings.colors_box_bg_color }};
+    border: 1px solid {{ section.settings.colors_box_border_color }};
+    border-radius: {{ section.settings.colors_box_radius }}px;
+    padding: 44px 38px;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .colors__showcase {
+    max-width: {{ section.settings.colors_image_width }}px;
+    margin: 0 auto 18px;
+    border-radius: {{ section.settings.colors_image_radius }}px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .colors__showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .colors__name {
+    text-align: center;
+    font-size: {{ section.settings.color_name_size_pc }}px;
+    color: {{ section.settings.color_name_color }};
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 22px;
+  }
+
+  .colors__swatches {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .colors__swatch {
+    width: {{ section.settings.swatch_size_pc }}px;
+    height: {{ section.settings.swatch_size_pc }}px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .colors__swatch--active {
+    outline: 2px solid {{ section.settings.swatch_active_color }};
+    outline-offset: 3px;
+  }
+
+  .colors__carousel {
     display: flex;
     align-items: center;
-    justify-content: center;
-    align-self: center;
-    justify-self: center;
+    gap: 10px;
+  }
+
+  .colors__carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid {{ section.settings.arrow_border_color }};
+    background: {{ section.settings.arrow_bg_color }};
+    color: {{ section.settings.arrow_color }};
+    font-size: 26px;
     line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .colors__carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 4px 2px;
+  }
+
+  .colors__carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .colors__carousel-item {
+    flex: 0 0 auto;
+    width: {{ section.settings.thumbnail_width_pc }}px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: #fff;
+  }
+
+  .colors__carousel-item--active {
+    border-color: {{ section.settings.swatch_active_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  }
+
+  .colors__carousel-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .colors__carousel-item span {
+    display: block;
+    font-size: {{ section.settings.thumbnail_text_size_pc }}px;
+    color: {{ section.settings.thumbnail_text_color }};
+    padding: 8px 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
   }
 
   @media (max-width: 768px) {
-    .why {
+    .sizes {
       padding: {{ section.settings.padding_sp }}px 16px;
     }
 
-    .why__header {
-      margin-bottom: 30px;
+    .sizes__header,
+    .colors__header {
+      margin-bottom: 26px;
     }
 
-    .why__label {
+    .sizes__label,
+    .colors__label {
       font-size: {{ section.settings.label_size_sp }}px;
     }
 
-    .why__heading {
+    .sizes__heading,
+    .colors__heading {
       font-size: {{ section.settings.heading_size_sp }}px;
     }
 
-    .why__lead {
+    .sizes__lead,
+    .colors__lead {
       font-size: {{ section.settings.lead_size_sp }}px;
     }
 
-    .why__cards {
-      gap: 22px;
-      margin-bottom: 44px;
+    .sizes__tabs {
+      width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      border-radius: 18px;
     }
 
-    .why__card,
-    .why__card:nth-child(even) {
+    .sizes__tab {
+      font-size: {{ section.settings.tab_size_sp }}px;
+      padding: 11px 16px;
+      flex: 1 0 auto;
+    }
+
+    .sizes__panel,
+    .sizes__panel--active {
       grid-template-columns: 1fr;
-      border-radius: {{ section.settings.card_radius_sp }}px;
+      border-radius: {{ section.settings.panel_radius_sp }}px;
     }
 
-    .why__card:nth-child(even) .why__card-img,
-    .why__card:nth-child(even) .why__card-content {
-      order: initial;
-    }
-
-    .why__card-img {
+    .sizes__panel-img {
       min-height: {{ section.settings.image_height_sp }}px;
     }
 
-    .why__card-content {
-      padding: 26px 20px 28px;
+    .sizes__panel-content {
+      padding: 28px 20px;
     }
 
-    .why__card-num {
-      font-size: {{ section.settings.number_size_sp }}px;
+    .sizes__panel-badge {
+      font-size: {{ section.settings.badge_size_sp }}px;
     }
 
-    .why__card-title {
-      font-size: {{ section.settings.title_size_sp }}px;
+    .sizes__panel-name {
+      font-size: {{ section.settings.name_size_sp }}px;
     }
 
-    .why__card-desc {
-      font-size: {{ section.settings.description_size_sp }}px;
+    .sizes__panel-price {
+      font-size: {{ section.settings.price_size_sp }}px;
     }
 
-    .why__comparison {
+    .sizes__panel-dim {
+      font-size: {{ section.settings.dim_size_sp }}px;
+    }
+
+    .sizes__panel-features li {
+      font-size: {{ section.settings.feature_size_sp }}px;
+    }
+
+    .sizes__panel-note {
+      font-size: {{ section.settings.note_size_sp }}px;
+    }
+
+    .sizes__compare {
+      margin-top: 24px;
+      border-radius: {{ section.settings.compare_radius_sp }}px;
+    }
+
+    .colors {
+      margin-top: {{ section.settings.colors_margin_sp }}px;
+    }
+
+    .colors__box {
       padding: 32px 16px;
-      border-radius: {{ section.settings.comparison_radius_sp }}px;
+      border-radius: {{ section.settings.colors_box_radius_sp }}px;
     }
 
-    .why__comparison-label {
-      font-size: {{ section.settings.comparison_label_size_sp }}px;
+    .colors__showcase {
+      border-radius: {{ section.settings.colors_image_radius_sp }}px;
     }
 
-    .why__comparison-heading {
-      font-size: {{ section.settings.comparison_heading_size_sp }}px;
+    .colors__name {
+      font-size: {{ section.settings.color_name_size_sp }}px;
     }
 
-    .why__comparison-chart {
-      padding: 16px;
+    .colors__swatch {
+      width: {{ section.settings.swatch_size_sp }}px;
+      height: {{ section.settings.swatch_size_sp }}px;
     }
 
-    .why__comparison-chart-title {
-      font-size: {{ section.settings.chart_title_size_sp }}px;
+    .colors__carousel-arrow {
+      width: 34px;
+      height: 34px;
+      font-size: 22px;
     }
 
-    .why__graph-message {
-      font-size: 13px;
-      line-height: 1.6;
-      border-radius: 14px;
+    .colors__carousel-item {
+      width: {{ section.settings.thumbnail_width_sp }}px;
     }
 
-    .why__humidity-graph {
-      padding: 24px 14px 18px 44px;
-    }
-
-    .why__graph-area {
-      height: 220px;
-    }
-
-    .why__graph-grid {
-      left: 12px;
-      top: 72px;
-      height: 220px;
-      font-size: 11px;
-    }
-
-    .why__ideal-zone {
-      font-size: 10px;
-    }
-
-    .why__comparison-note {
-      font-size: {{ section.settings.chart_note_size_sp }}px;
-    }
-
-    .why__comparison-conclusion-label {
-      font-size: {{ section.settings.conclusion_label_size_sp }}px;
-    }
-
-    .why__comparison-conclusion-text {
-      font-size: {{ section.settings.conclusion_text_size_sp }}px;
-    }
-
-    .why__comparison-cards {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .why__comparison-vs {
-      width: 52px;
-      height: 52px;
-      font-size: {{ section.settings.vs_size_sp }}px;
-      margin: 0 auto;
-    }
-
-    .why__comparison-value {
-      font-size: {{ section.settings.comparison_value_size_sp }}px;
-    }
-
-    .why__comparison-badge {
-      font-size: {{ section.settings.comparison_badge_size_sp }}px;
-    }
-
-    .why__comparison-desc {
-      font-size: {{ section.settings.comparison_desc_size_sp }}px;
-    }
-
-    .why__comparison-verdict {
-      font-size: {{ section.settings.comparison_verdict_size_sp }}px;
+    .colors__carousel-item span {
+      font-size: {{ section.settings.thumbnail_text_size_sp }}px;
     }
   }
 </style>
 
-<section class="why" id="why">
-  <div class="why__inner">
+<section class="sizes" id="sizes">
+  <div class="sizes__inner">
 
-    <div class="why__header">
+    <div class="sizes__header">
       {% if section.settings.label != blank %}
-        <div class="why__label">{{ section.settings.label }}</div>
+        <div class="sizes__label">{{ section.settings.label }}</div>
       {% endif %}
 
-      <h2 class="why__heading">{{ section.settings.heading }}</h2>
+      <h2 class="sizes__heading">{{ section.settings.heading }}</h2>
 
       {% if section.settings.lead != blank %}
-        <div class="why__lead">{{ section.settings.lead }}</div>
+        <div class="sizes__lead">{{ section.settings.lead }}</div>
       {% endif %}
     </div>
 
-    <div class="why__cards">
+    <div class="sizes__tabs">
+      {% assign tab_index = 0 %}
       {% for block in section.blocks %}
-        <div class="why__card" {{ block.shopify_attributes }}>
-          <div class="why__card-img">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.title }}" loading="lazy">
-            {% elsif block.settings.image_url != blank %}
-              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.title }}" loading="lazy">
-            {% endif %}
-          </div>
-
-          <div class="why__card-content">
-            <span class="why__card-num">{{ block.settings.number }}</span>
-            <h3 class="why__card-title">{{ block.settings.title }}</h3>
-            <p class="why__card-desc">{{ block.settings.description }}</p>
-          </div>
-        </div>
+        {% if block.type == 'size_panel' %}
+          {% assign tab_index = tab_index | plus: 1 %}
+          <button
+            type="button"
+            class="sizes__tab{% if tab_index == 1 %} sizes__tab--active{% endif %}"
+            data-tab="size-{{ tab_index }}"
+          >
+            {{ block.settings.tab_label }}
+          </button>
+        {% endif %}
       {% endfor %}
     </div>
 
-    {% if section.settings.show_comparison %}
-      <div class="why__comparison">
-        <div class="why__comparison-header">
-          <div class="why__comparison-label">{{ section.settings.comparison_label }}</div>
-          <h3 class="why__comparison-heading">{{ section.settings.comparison_heading }}</h3>
-        </div>
-
-        <div class="why__comparison-chart">
-          <p class="why__comparison-chart-title">{{ section.settings.chart_title }}</p>
-
-          <p class="why__graph-message">
-            発汗量が増えても、MUSUBIは湿度が上がりにくい
-          </p>
-
-          <div class="why__humidity-graph">
-            <div class="why__graph-grid">
-              <span>70%</span>
-              <span>60%</span>
-              <span>50%</span>
-              <span>40%</span>
+    <div class="sizes__panels">
+      {% assign panel_index = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'size_panel' %}
+          {% assign panel_index = panel_index | plus: 1 %}
+          <div
+            class="sizes__panel{% if panel_index == 1 %} sizes__panel--active{% endif %}"
+            data-panel="size-{{ panel_index }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="sizes__panel-img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% elsif block.settings.image_url != blank %}
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1200" alt="{{ block.settings.name }}" loading="lazy">
+              {% endif %}
             </div>
 
-            <div class="why__graph-area">
-              <div class="why__ideal-zone">理想的な湿度帯 50% ±5%</div>
+            <div class="sizes__panel-content">
+              {% if block.settings.badge != blank %}
+                <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">
+                  {{ block.settings.badge }}
+                </div>
+              {% endif %}
 
-              <svg class="why__graph-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polyline points="8,64 38,63 68,62 92,62" class="why__graph-path why__graph-path--musubi" />
-                <polyline points="8,50 38,38 68,24 92,8" class="why__graph-path why__graph-path--other" />
-              </svg>
+              <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
 
-              <div class="why__graph-line why__graph-line--musubi">
-                <span class="why__graph-point" style="left:8%; bottom:36%;"></span>
-                <span class="why__graph-point" style="left:38%; bottom:37%;"></span>
-                <span class="why__graph-point" style="left:68%; bottom:38%;"></span>
-                <span class="why__graph-point" style="left:92%; bottom:38%;"></span>
-              </div>
+              <p class="sizes__panel-price">
+                {{ block.settings.price }}
+                <span>{{ block.settings.price_note }}</span>
+              </p>
 
-              <div class="why__graph-line why__graph-line--other">
-                <span class="why__graph-point" style="left:8%; bottom:50%;"></span>
-                <span class="why__graph-point" style="left:38%; bottom:62%;"></span>
-                <span class="why__graph-point" style="left:68%; bottom:76%;"></span>
-                <span class="why__graph-point" style="left:92%; bottom:92%;"></span>
-              </div>
-            </div>
+              <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
 
-            <div class="why__graph-axis">
-              <span>開始</span>
-              <span>20分</span>
-              <span>40分</span>
-              <span>60分</span>
-            </div>
+              <ul class="sizes__panel-features">
+                {% assign features = block.settings.features | split: ',' %}
+                {% for feature in features %}
+                  {% if feature != blank %}
+                    <li>{{ feature | strip }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
 
-            <div class="why__graph-legend">
-              <span><i class="why__legend-dot why__legend-dot--musubi"></i>MUSUBI -en-</span>
-              <span><i class="why__legend-dot why__legend-dot--other"></i>他社加重ブランケット</span>
+              {% if block.settings.note != blank %}
+                <p class="sizes__panel-note">{{ block.settings.note }}</p>
+              {% endif %}
             </div>
           </div>
+        {% endif %}
+      {% endfor %}
+    </div>
 
-          <p class="why__comparison-note">{{ section.settings.chart_note }}</p>
-        </div>
-
-        <div class="why__comparison-conclusion">
-          <p class="why__comparison-conclusion-label">{{ section.settings.conclusion_label }}</p>
-          <div class="why__comparison-conclusion-text">{{ section.settings.conclusion }}</div>
-        </div>
-
-        <div class="why__comparison-cards">
-          <div class="why__comparison-card why__comparison-card--musubi">
-            <p class="why__comparison-badge">MUSUBI -en-</p>
-            <p class="why__comparison-value">{{ section.settings.musubi_value }}</p>
-            <p class="why__comparison-desc">{{ section.settings.musubi_desc }}</p>
-            <p class="why__comparison-verdict why__comparison-verdict--good">{{ section.settings.musubi_verdict }}</p>
-          </div>
-
-          <div class="why__comparison-vs">VS</div>
-
-          <div class="why__comparison-card">
-            <p class="why__comparison-badge">他社加重ブランケット</p>
-            <p class="why__comparison-value">{{ section.settings.other_value }}</p>
-            <p class="why__comparison-desc">{{ section.settings.other_desc }}</p>
-            <p class="why__comparison-verdict why__comparison-verdict--bad">{{ section.settings.other_verdict }}</p>
-          </div>
-        </div>
+    {% if section.settings.compare_image != blank %}
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image | img_url: '1400x' }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
+      </div>
+    {% elsif section.settings.compare_image_url != blank %}
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image_url }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
     {% endif %}
+
+    <div class="colors" id="colors">
+      <div class="colors__box">
+        <div class="colors__header">
+          {% if section.settings.colors_label != blank %}
+            <div class="colors__label">{{ section.settings.colors_label }}</div>
+          {% endif %}
+
+          <h2 class="colors__heading">{{ section.settings.colors_heading }}</h2>
+
+          {% if section.settings.colors_lead != blank %}
+            <div class="colors__lead">{{ section.settings.colors_lead }}</div>
+          {% endif %}
+        </div>
+
+        {% assign first_color_image = '' %}
+        {% assign first_color_name = '' %}
+        {% assign color_count = 0 %}
+
+        {% for block in section.blocks %}
+          {% if block.type == 'color_variant' %}
+            {% assign color_count = color_count | plus: 1 %}
+            {% if color_count == 1 %}
+              {% assign first_color_name = block.settings.name %}
+              {% if block.settings.image != blank %}
+                {% assign first_color_image = block.settings.image | img_url: '1200x' %}
+              {% elsif block.settings.image_url != blank %}
+                {% assign first_color_image = block.settings.image_url %}
+              {% else %}
+                {% assign first_color_image = 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200' %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if color_count > 0 %}
+          <div class="colors__showcase">
+            <img
+              id="colors-main-img-{{ section.id }}"
+              src="{{ first_color_image }}"
+              alt="{{ first_color_name }}"
+              loading="lazy"
+            >
+          </div>
+
+          <p class="colors__name" id="colors-name-{{ section.id }}">
+            {{ first_color_name }}
+          </p>
+
+          <div class="colors__swatches">
+            {% assign color_index = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'color_variant' %}
+                {% assign color_index = color_index | plus: 1 %}
+                {% assign color_img = '' %}
+                {% if block.settings.image != blank %}
+                  {% assign color_img = block.settings.image | img_url: '1200x' %}
+                {% elsif block.settings.image_url != blank %}
+                  {% assign color_img = block.settings.image_url %}
+                {% else %}
+                  {% assign color_img = first_color_image %}
+                {% endif %}
+
+                <button
+                  type="button"
+                  class="colors__swatch{% if color_index == 1 %} colors__swatch--active{% endif %}"
+                  style="background: {{ block.settings.color_code }};"
+                  data-color="{{ block.settings.name | escape }}"
+                  data-img="{{ color_img }}"
+                  aria-label="{{ block.settings.name }}"
+                  {{ block.shopify_attributes }}
+                ></button>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="colors__carousel">
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
+
+            <div class="colors__carousel-track">
+              {% assign color_item_index = 0 %}
+              {% for block in section.blocks %}
+                {% if block.type == 'color_variant' %}
+                  {% assign color_item_index = color_item_index | plus: 1 %}
+                  {% assign thumb_img = '' %}
+                  {% if block.settings.thumbnail != blank %}
+                    {% assign thumb_img = block.settings.thumbnail | img_url: '400x' %}
+                  {% elsif block.settings.image != blank %}
+                    {% assign thumb_img = block.settings.image | img_url: '400x' %}
+                  {% elsif block.settings.image_url != blank %}
+                    {% assign thumb_img = block.settings.image_url %}
+                  {% else %}
+                    {% assign thumb_img = first_color_image %}
+                  {% endif %}
+
+                  <div
+                    class="colors__carousel-item{% if color_item_index == 1 %} colors__carousel-item--active{% endif %}"
+                    data-color="{{ block.settings.name | escape }}"
+                  >
+                    <img src="{{ thumb_img }}" alt="{{ block.settings.name }}" loading="lazy">
+                    <span>{{ block.settings.name }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
 
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.sizes').forEach(function(section) {
+      const tabs = section.querySelectorAll('.sizes__tab');
+      const panels = section.querySelectorAll('.sizes__panel');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const target = tab.getAttribute('data-tab');
+
+          tabs.forEach(function(item) {
+            item.classList.remove('sizes__tab--active');
+          });
+
+          panels.forEach(function(panel) {
+            panel.classList.remove('sizes__panel--active');
+          });
+
+          tab.classList.add('sizes__tab--active');
+
+          const activePanel = section.querySelector('[data-panel="' + target + '"]');
+          if (activePanel) activePanel.classList.add('sizes__panel--active');
+        });
+      });
+
+      const mainImg = section.querySelector('#colors-main-img-{{ section.id }}');
+      const nameEl = section.querySelector('#colors-name-{{ section.id }}');
+      const swatches = section.querySelectorAll('.colors__swatch');
+      const items = section.querySelectorAll('.colors__carousel-item');
+      const track = section.querySelector('.colors__carousel-track');
+      const left = section.querySelector('.colors__carousel-arrow--left');
+      const right = section.querySelector('.colors__carousel-arrow--right');
+
+      function setActiveColor(colorName) {
+        swatches.forEach(function(swatch) {
+          const isActive = swatch.dataset.color === colorName;
+          swatch.classList.toggle('colors__swatch--active', isActive);
+
+          if (isActive && swatch.dataset.img && mainImg) {
+            mainImg.src = swatch.dataset.img;
+            mainImg.alt = colorName;
+          }
+        });
+
+        items.forEach(function(item) {
+          item.classList.toggle('colors__carousel-item--active', item.dataset.color === colorName);
+        });
+
+        if (nameEl) nameEl.textContent = colorName;
+      }
+
+      swatches.forEach(function(swatch) {
+        swatch.addEventListener('click', function() {
+          setActiveColor(swatch.dataset.color);
+        });
+      });
+
+      items.forEach(function(item) {
+        item.addEventListener('click', function() {
+          setActiveColor(item.dataset.color);
+        });
+      });
+
+      if (left && track) {
+        left.addEventListener('click', function() {
+          track.scrollBy({ left: -120, behavior: 'smooth' });
+        });
+      }
+
+      if (right && track) {
+        right.addEventListener('click', function() {
+          track.scrollBy({ left: 120, behavior: 'smooth' });
+        });
+      }
+    });
+  });
+</script>
+
 {% schema %}
 {
-  "name": "MUSUBI 選ばれる理由",
+  "name": "MUSUBI サイズ・カラー",
   "settings": [
-    { "type": "header", "content": "選ばれる理由：テキスト" },
-    { "type": "text", "id": "label", "label": "ラベル", "default": "WHY MUSUBI" },
-    { "type": "richtext", "id": "heading", "label": "セクション見出し", "default": "<p>なぜMUSUBIは<br>選ばれているのか？</p>" },
-    { "type": "richtext", "id": "lead", "label": "リード文", "default": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>" },
+    { "type": "header", "content": "サイズ：テキスト" },
+    { "type": "text", "id": "label", "label": "ラベル", "default": "SIZE GUIDE" },
+    { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>あなたに合うサイズは？</p>" },
+    { "type": "richtext", "id": "lead", "label": "リード文", "default": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>" },
+    { "type": "image_picker", "id": "compare_image", "label": "比較画像" },
+    { "type": "text", "id": "compare_image_url", "label": "比較画像URL" },
+    { "type": "text", "id": "compare_alt", "label": "比較画像alt", "default": "MUSUBIサイズ比較" },
 
-    { "type": "header", "content": "検証データ比較" },
-    { "type": "checkbox", "id": "show_comparison", "label": "検証データ比較を表示する", "default": true },
-    { "type": "text", "id": "comparison_label", "label": "検証ラベル", "default": "LABORATORY TEST" },
-    { "type": "richtext", "id": "comparison_heading", "label": "検証見出し", "default": "<p>検証データが示す<br>MUSUBIの快適性</p>" },
-    { "type": "text", "id": "chart_title", "label": "グラフタイトル", "default": "寝床内湿度（空間）比較データ" },
-    { "type": "text", "id": "chart_note", "label": "グラフ注記", "default": "※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測" },
-    { "type": "text", "id": "conclusion_label", "label": "結論ラベル", "default": "理想的な寝床内湿度：50% ± 5%" },
-    { "type": "richtext", "id": "conclusion", "label": "結論テキスト", "default": "<p>MUSUBIの「あみあみ構造」は、重みによるムレを軽減。<br><strong>365日・オールシーズン快適に使える加重ブランケット</strong>を目指しました。</p>" },
-    { "type": "text", "id": "musubi_value", "label": "MUSUBI 数値", "default": "約47〜48%" },
-    { "type": "text", "id": "musubi_desc", "label": "MUSUBI 説明", "default": "60分間ほぼ一定で推移" },
-    { "type": "text", "id": "musubi_verdict", "label": "MUSUBI 判定", "default": "✓ 理想的な範囲内" },
-    { "type": "text", "id": "other_value", "label": "他社 数値", "default": "55% → 70%" },
-    { "type": "text", "id": "other_desc", "label": "他社 説明", "default": "時間経過とともに上昇" },
-    { "type": "text", "id": "other_verdict", "label": "他社 判定", "default": "✗ ムレやすい" },
+    { "type": "header", "content": "カラー：テキスト" },
+    { "type": "text", "id": "colors_label", "label": "カラーラベル", "default": "COLOR VARIATION" },
+    { "type": "richtext", "id": "colors_heading", "label": "カラー見出し", "default": "<p>暮らしに馴染む<br>カラーバリエーション</p>" },
+    { "type": "richtext", "id": "colors_lead", "label": "カラーリード文", "default": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>" },
 
-    { "type": "header", "content": "文字サイズ・カラー" },
+    { "type": "header", "content": "共通：文字サイズ・カラー" },
     { "type": "range", "id": "label_size_pc", "label": "ラベルサイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
     { "type": "range", "id": "label_size_sp", "label": "ラベルサイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
     { "type": "color", "id": "label_color", "label": "ラベル文字カラー", "default": "#8B7355" },
@@ -736,103 +783,123 @@
     { "type": "range", "id": "lead_size_pc", "label": "リード文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
     { "type": "range", "id": "lead_size_sp", "label": "リード文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
     { "type": "color", "id": "lead_color", "label": "リード文カラー", "default": "#555555" },
-    { "type": "range", "id": "number_size_pc", "label": "番号サイズ（PC）", "min": 11, "max": 24, "step": 1, "default": 13 },
-    { "type": "range", "id": "number_size_sp", "label": "番号サイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 12 },
-    { "type": "color", "id": "number_color", "label": "番号文字カラー", "default": "#ffffff" },
-    { "type": "color", "id": "number_bg_color", "label": "番号背景カラー", "default": "#8B7355" },
-    { "type": "range", "id": "title_size_pc", "label": "カードタイトルサイズ（PC）", "min": 16, "max": 36, "step": 1, "default": 24 },
-    { "type": "range", "id": "title_size_sp", "label": "カードタイトルサイズ（SP）", "min": 16, "max": 28, "step": 1, "default": 21 },
-    { "type": "color", "id": "title_color", "label": "カードタイトルカラー", "default": "#1a1a1a" },
-    { "type": "range", "id": "description_size_pc", "label": "説明文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
-    { "type": "range", "id": "description_size_sp", "label": "説明文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
-    { "type": "color", "id": "description_color", "label": "説明文カラー", "default": "#555555" },
 
-    { "type": "header", "content": "検証：文字サイズ・カラー" },
-    { "type": "range", "id": "comparison_label_size_pc", "label": "検証ラベルサイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
-    { "type": "range", "id": "comparison_label_size_sp", "label": "検証ラベルサイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
-    { "type": "color", "id": "comparison_label_color", "label": "検証ラベル文字カラー", "default": "#8B7355" },
-    { "type": "color", "id": "comparison_label_bg_color", "label": "検証ラベル背景カラー", "default": "#f4eee6" },
-    { "type": "range", "id": "comparison_heading_size_pc", "label": "検証見出しサイズ（PC）", "min": 18, "max": 44, "step": 1, "default": 28 },
-    { "type": "range", "id": "comparison_heading_size_sp", "label": "検証見出しサイズ（SP）", "min": 16, "max": 32, "step": 1, "default": 23 },
-    { "type": "color", "id": "comparison_heading_color", "label": "検証見出しカラー", "default": "#1a1a1a" },
-    { "type": "range", "id": "comparison_value_size_pc", "label": "比較数値サイズ（PC）", "min": 22, "max": 56, "step": 1, "default": 36 },
-    { "type": "range", "id": "comparison_value_size_sp", "label": "比較数値サイズ（SP）", "min": 20, "max": 42, "step": 1, "default": 30 },
-    { "type": "color", "id": "comparison_value_color", "label": "比較数値カラー", "default": "#8B7355" },
-    { "type": "range", "id": "comparison_badge_size_pc", "label": "比較バッジサイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
-    { "type": "range", "id": "comparison_badge_size_sp", "label": "比較バッジサイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
-    { "type": "color", "id": "comparison_badge_color", "label": "比較バッジカラー", "default": "#333333" },
-    { "type": "range", "id": "comparison_desc_size_pc", "label": "比較説明サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
-    { "type": "range", "id": "comparison_desc_size_sp", "label": "比較説明サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
-    { "type": "color", "id": "comparison_desc_color", "label": "比較説明カラー", "default": "#555555" },
-    { "type": "range", "id": "comparison_verdict_size_pc", "label": "判定サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
-    { "type": "range", "id": "comparison_verdict_size_sp", "label": "判定サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
-    { "type": "range", "id": "vs_size_pc", "label": "VSサイズ（PC）", "min": 16, "max": 36, "step": 1, "default": 22 },
-    { "type": "range", "id": "vs_size_sp", "label": "VSサイズ（SP）", "min": 14, "max": 30, "step": 1, "default": 18 },
-    { "type": "color", "id": "vs_color", "label": "VSカラー", "default": "#8B7355" },
-    { "type": "range", "id": "chart_title_size_pc", "label": "グラフタイトルサイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 16 },
-    { "type": "range", "id": "chart_title_size_sp", "label": "グラフタイトルサイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
-    { "type": "color", "id": "chart_title_color", "label": "グラフタイトルカラー", "default": "#1a1a1a" },
-    { "type": "range", "id": "chart_note_size_pc", "label": "グラフ注記サイズ（PC）", "min": 10, "max": 16, "step": 1, "default": 11 },
-    { "type": "range", "id": "chart_note_size_sp", "label": "グラフ注記サイズ（SP）", "min": 10, "max": 15, "step": 1, "default": 11 },
-    { "type": "color", "id": "chart_note_color", "label": "グラフ注記カラー", "default": "#777777" },
-    { "type": "range", "id": "conclusion_label_size_pc", "label": "結論ラベルサイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 16 },
-    { "type": "range", "id": "conclusion_label_size_sp", "label": "結論ラベルサイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
-    { "type": "color", "id": "conclusion_label_color", "label": "結論ラベルカラー", "default": "#1a1a1a" },
-    { "type": "range", "id": "conclusion_text_size_pc", "label": "結論本文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
-    { "type": "range", "id": "conclusion_text_size_sp", "label": "結論本文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
-    { "type": "color", "id": "conclusion_text_color", "label": "結論本文カラー", "default": "#555555" },
-    { "type": "color", "id": "strong_color", "label": "強調カラー", "default": "#8B7355" },
+    { "type": "header", "content": "サイズ：設定" },
+    { "type": "range", "id": "tab_size_pc", "label": "タブ文字サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "tab_size_sp", "label": "タブ文字サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 13 },
+    { "type": "color", "id": "tab_color", "label": "タブ文字カラー", "default": "#6d6258" },
+    { "type": "color", "id": "tab_active_color", "label": "選択中タブ文字カラー", "default": "#ffffff" },
+    { "type": "color", "id": "tab_active_bg_color", "label": "選択中タブ背景カラー", "default": "#8B7355" },
+    { "type": "color", "id": "tabs_bg_color", "label": "タブ全体背景カラー", "default": "#f4eee6" },
+    { "type": "range", "id": "badge_size_pc", "label": "バッジサイズ（PC）", "min": 10, "max": 20, "step": 1, "default": 12 },
+    { "type": "range", "id": "badge_size_sp", "label": "バッジサイズ（SP）", "min": 10, "max": 18, "step": 1, "default": 11 },
+    { "type": "color", "id": "badge_color", "label": "バッジ文字カラー", "default": "#8B7355" },
+    { "type": "color", "id": "badge_bg_color", "label": "バッジ背景カラー", "default": "#f4eee6" },
+    { "type": "color", "id": "featured_badge_color", "label": "強調バッジ文字カラー", "default": "#ffffff" },
+    { "type": "color", "id": "featured_badge_bg_color", "label": "強調バッジ背景カラー", "default": "#8B7355" },
+    { "type": "range", "id": "name_size_pc", "label": "サイズ名サイズ（PC）", "min": 18, "max": 42, "step": 1, "default": 28 },
+    { "type": "range", "id": "name_size_sp", "label": "サイズ名サイズ（SP）", "min": 18, "max": 32, "step": 1, "default": 24 },
+    { "type": "color", "id": "name_color", "label": "サイズ名カラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "price_size_pc", "label": "価格サイズ（PC）", "min": 18, "max": 42, "step": 1, "default": 30 },
+    { "type": "range", "id": "price_size_sp", "label": "価格サイズ（SP）", "min": 18, "max": 36, "step": 1, "default": 26 },
+    { "type": "color", "id": "price_color", "label": "価格カラー", "default": "#8B7355" },
+    { "type": "color", "id": "price_note_color", "label": "価格補足カラー", "default": "#777777" },
+    { "type": "range", "id": "dim_size_pc", "label": "寸法サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "dim_size_sp", "label": "寸法サイズ（SP）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "color", "id": "dim_color", "label": "寸法カラー", "default": "#333333" },
+    { "type": "color", "id": "dim_bg_color", "label": "寸法背景カラー", "default": "#ffffff" },
+    { "type": "range", "id": "feature_size_pc", "label": "特徴サイズ（PC）", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "feature_size_sp", "label": "特徴サイズ（SP）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "color", "id": "feature_color", "label": "特徴カラー", "default": "#333333" },
+    { "type": "color", "id": "check_color", "label": "チェックカラー", "default": "#8B7355" },
+    { "type": "range", "id": "note_size_pc", "label": "補足サイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "note_size_sp", "label": "補足サイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 12 },
+    { "type": "color", "id": "note_color", "label": "補足カラー", "default": "#666666" },
+
+    { "type": "header", "content": "カラー：設定" },
+    { "type": "range", "id": "color_name_size_pc", "label": "カラー名サイズ（PC）", "min": 12, "max": 28, "step": 1, "default": 16 },
+    { "type": "range", "id": "color_name_size_sp", "label": "カラー名サイズ（SP）", "min": 12, "max": 24, "step": 1, "default": 15 },
+    { "type": "color", "id": "color_name_color", "label": "カラー名カラー", "default": "#333333" },
+    { "type": "range", "id": "thumbnail_text_size_pc", "label": "サムネイル文字サイズ（PC）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "range", "id": "thumbnail_text_size_sp", "label": "サムネイル文字サイズ（SP）", "min": 10, "max": 15, "step": 1, "default": 10 },
+    { "type": "color", "id": "thumbnail_text_color", "label": "サムネイル文字カラー", "default": "#555555" },
 
     { "type": "header", "content": "デザイン" },
-    { "type": "color", "id": "bg_color", "label": "背景カラー", "default": "#ffffff" },
-    { "type": "color", "id": "card_bg_color", "label": "カード背景カラー", "default": "#faf7f2" },
-    { "type": "color", "id": "card_border_color", "label": "カード枠線カラー", "default": "#eee7dd" },
+    { "type": "color", "id": "bg_color", "label": "背景カラー", "default": "#faf7f2" },
+    { "type": "color", "id": "panel_bg_color", "label": "パネル背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "panel_border_color", "label": "パネル枠線カラー", "default": "#eee7dd" },
     { "type": "color", "id": "image_bg_color", "label": "画像背景カラー", "default": "#f4eee6" },
     { "type": "select", "id": "image_fit", "label": "画像の表示方法", "options": [{ "value": "cover", "label": "余白なく表示" }, { "value": "contain", "label": "画像全体を表示" }], "default": "cover" },
     { "type": "range", "id": "image_height_pc", "label": "画像高さ（PC）", "min": 280, "max": 680, "step": 20, "default": 460 },
     { "type": "range", "id": "image_height_sp", "label": "画像高さ（SP）", "min": 220, "max": 520, "step": 20, "default": 320 },
-    { "type": "range", "id": "card_radius", "label": "カード角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
-    { "type": "range", "id": "card_radius_sp", "label": "カード角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "panel_radius", "label": "パネル角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "panel_radius_sp", "label": "パネル角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "compare_radius", "label": "比較画像角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 22 },
+    { "type": "range", "id": "compare_radius_sp", "label": "比較画像角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 18 },
     { "type": "range", "id": "max_width", "label": "最大幅", "min": 760, "max": 1280, "step": 20, "default": 1080 },
-
-    { "type": "header", "content": "検証：デザイン" },
-    { "type": "color", "id": "comparison_bg_color", "label": "検証背景カラー", "default": "#faf7f2" },
-    { "type": "color", "id": "comparison_border_color", "label": "検証枠線カラー", "default": "#eee7dd" },
-    { "type": "range", "id": "comparison_radius", "label": "検証角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
-    { "type": "range", "id": "comparison_radius_sp", "label": "検証角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
-    { "type": "color", "id": "comparison_card_bg_color", "label": "比較カード背景カラー", "default": "#ffffff" },
-    { "type": "color", "id": "comparison_card_border_color", "label": "比較カード枠線カラー", "default": "#eee7dd" },
-    { "type": "color", "id": "musubi_accent_color", "label": "MUSUBI強調カラー", "default": "#8B7355" },
-    { "type": "color", "id": "good_text_color", "label": "良い判定文字カラー", "default": "#2f6b4f" },
-    { "type": "color", "id": "good_bg_color", "label": "良い判定背景カラー", "default": "#e7f3ec" },
-    { "type": "color", "id": "bad_text_color", "label": "悪い判定文字カラー", "default": "#8a4a3a" },
-    { "type": "color", "id": "bad_bg_color", "label": "悪い判定背景カラー", "default": "#f7ebe7" },
-    { "type": "color", "id": "conclusion_bg_color", "label": "結論背景カラー", "default": "#ffffff" },
-    { "type": "color", "id": "conclusion_border_color", "label": "結論枠線カラー", "default": "#eee7dd" },
-
     { "type": "range", "id": "padding_pc", "label": "上下余白（PC）", "min": 40, "max": 160, "step": 4, "default": 88 },
-    { "type": "range", "id": "padding_sp", "label": "上下余白（SP）", "min": 32, "max": 120, "step": 4, "default": 60 }
+    { "type": "range", "id": "padding_sp", "label": "上下余白（SP）", "min": 32, "max": 120, "step": 4, "default": 60 },
+
+    { "type": "header", "content": "カラー：デザイン" },
+    { "type": "range", "id": "colors_margin_pc", "label": "カラー上余白（PC）", "min": 32, "max": 120, "step": 4, "default": 72 },
+    { "type": "range", "id": "colors_margin_sp", "label": "カラー上余白（SP）", "min": 24, "max": 100, "step": 4, "default": 52 },
+    { "type": "color", "id": "colors_box_bg_color", "label": "カラーボックス背景", "default": "#ffffff" },
+    { "type": "color", "id": "colors_box_border_color", "label": "カラーボックス枠線", "default": "#eee7dd" },
+    { "type": "range", "id": "colors_box_radius", "label": "カラーボックス角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 26 },
+    { "type": "range", "id": "colors_box_radius_sp", "label": "カラーボックス角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "colors_image_width", "label": "カラー画像最大幅", "min": 400, "max": 1000, "step": 20, "default": 720 },
+    { "type": "range", "id": "colors_image_radius", "label": "カラー画像角丸（PC）", "min": 0, "max": 40, "step": 1, "default": 22 },
+    { "type": "range", "id": "colors_image_radius_sp", "label": "カラー画像角丸（SP）", "min": 0, "max": 32, "step": 1, "default": 18 },
+    { "type": "range", "id": "swatch_size_pc", "label": "スウォッチサイズ（PC）", "min": 28, "max": 60, "step": 2, "default": 42 },
+    { "type": "range", "id": "swatch_size_sp", "label": "スウォッチサイズ（SP）", "min": 26, "max": 52, "step": 2, "default": 36 },
+    { "type": "color", "id": "swatch_active_color", "label": "選択中カラー枠", "default": "#8B7355" },
+    { "type": "range", "id": "thumbnail_width_pc", "label": "サムネイル幅（PC）", "min": 70, "max": 140, "step": 10, "default": 100 },
+    { "type": "range", "id": "thumbnail_width_sp", "label": "サムネイル幅（SP）", "min": 60, "max": 120, "step": 10, "default": 80 },
+    { "type": "color", "id": "arrow_color", "label": "矢印カラー", "default": "#8B7355" },
+    { "type": "color", "id": "arrow_bg_color", "label": "矢印背景", "default": "#ffffff" },
+    { "type": "color", "id": "arrow_border_color", "label": "矢印枠線", "default": "#eee7dd" }
   ],
   "blocks": [
     {
-      "type": "reason_card",
-      "name": "理由カード",
+      "type": "size_panel",
+      "name": "サイズパネル",
       "settings": [
+        { "type": "text", "id": "tab_label", "label": "タブラベル", "default": "Nap Size (M)" },
         { "type": "image_picker", "id": "image", "label": "画像" },
         { "type": "text", "id": "image_url", "label": "画像URL" },
-        { "type": "text", "id": "number", "label": "番号", "default": "01" },
-        { "type": "text", "id": "title", "label": "タイトル", "default": "やさしい重み設計" },
-        { "type": "textarea", "id": "description", "label": "説明文", "default": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" }
+        { "type": "text", "id": "badge", "label": "バッジテキスト", "default": "ソファにおすすめ" },
+        { "type": "checkbox", "id": "featured", "label": "強調バッジ", "default": false },
+        { "type": "text", "id": "name", "label": "サイズ名", "default": "Nap Size (M)" },
+        { "type": "text", "id": "price", "label": "価格", "default": "¥29,800" },
+        { "type": "text", "id": "price_note", "label": "価格補足", "default": "(税込)" },
+        { "type": "text", "id": "dimensions", "label": "サイズ", "default": "100 × 70 cm" },
+        { "type": "text", "id": "features", "label": "特徴（カンマ区切り）", "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方" },
+        { "type": "textarea", "id": "note", "label": "補足テキスト", "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" }
+      ]
+    },
+    {
+      "type": "color_variant",
+      "name": "カラー",
+      "settings": [
+        { "type": "text", "id": "name", "label": "カラー名", "default": "Powder Beige" },
+        { "type": "text", "id": "color_code", "label": "カラーコード", "default": "#d9cfc4" },
+        { "type": "image_picker", "id": "image", "label": "メイン画像" },
+        { "type": "text", "id": "image_url", "label": "画像URL" },
+        { "type": "image_picker", "id": "thumbnail", "label": "サムネイル画像" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI 選ばれる理由",
+      "name": "MUSUBI サイズ・カラー",
       "blocks": [
-        { "type": "reason_card", "settings": { "number": "01", "title": "やさしい重み設計", "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。" } },
-        { "type": "reason_card", "settings": { "number": "02", "title": "あみあみ構造", "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。" } },
-        { "type": "reason_card", "settings": { "number": "03", "title": "日本の暮らし基準サイズ", "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。" } }
+        { "type": "size_panel", "settings": { "tab_label": "Nap Size (M)", "badge": "ソファにおすすめ", "featured": false, "name": "Nap Size (M)", "price": "¥29,800", "price_note": "(税込)", "dimensions": "100 × 70 cm", "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方", "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" } },
+        { "type": "size_panel", "settings": { "tab_label": "Sleep Size (L)", "badge": "ベッドにおすすめ", "featured": true, "name": "Sleep Size (L)", "price": "¥39,800", "price_note": "(税込)", "dimensions": "150 × 100 cm", "features": "ベッド利用, 重い布団が好き, 包まれたい方", "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。" } },
+        { "type": "color_variant", "settings": { "name": "Powder Beige", "color_code": "#d9cfc4" } },
+        { "type": "color_variant", "settings": { "name": "Dusty Navy", "color_code": "#3d4259" } },
+        { "type": "color_variant", "settings": { "name": "Calm Brown", "color_code": "#8b6b50" } },
+        { "type": "color_variant", "settings": { "name": "Cloud White", "color_code": "#e8e4de" } },
+        { "type": "color_variant", "settings": { "name": "Blossom Peach", "color_code": "#d4a5a0" } }
       ]
     }
   ]
