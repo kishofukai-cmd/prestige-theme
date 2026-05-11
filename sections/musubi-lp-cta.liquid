@@ -1,553 +1,475 @@
-<style>
-  .middle-cta {
-    padding: {{ section.settings.padding_pc }}px 20px;
-    background: {{ section.settings.bg_color }};
-    text-align: center;
-  }
-
-  .middle-cta__inner {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .middle-cta__label {
-    display: inline-block;
-    margin-bottom: 14px;
-    padding: 8px 15px;
-    border-radius: 999px;
-    background: {{ section.settings.label_bg }};
-    color: {{ section.settings.label_color }};
-    font-size: {{ section.settings.label_size_pc }}px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-  }
-
-  .middle-cta__heading {
-    margin: 0 0 14px;
-    color: {{ section.settings.heading_color }};
-    font-size: {{ section.settings.heading_size_pc }}px;
-    font-weight: 700;
-    line-height: 1.55;
-    letter-spacing: 0.04em;
-  }
-
-  .middle-cta__heading p,
-  .middle-cta__text p,
-  .middle-cta__care p {
-    margin: 0;
-  }
-
-  .middle-cta__text {
-    margin: 0 auto 22px;
-    color: {{ section.settings.text_color }};
-    font-size: {{ section.settings.text_size_pc }}px;
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-  }
-
-  .middle-cta__price {
-    margin: 0 0 20px;
-    color: {{ section.settings.price_color }};
-    font-size: {{ section.settings.price_size_pc }}px;
-    font-weight: 800;
-    line-height: 1.3;
-  }
-
-  .middle-cta__buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: {{ section.settings.soldout_margin_top }}px;
-  }
-
-  .middle-cta__button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 220px;
-    padding: 15px 28px;
-    border-radius: 999px;
-    font-size: {{ section.settings.button_size_pc }}px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.25s ease;
-  }
-
-  .middle-cta__button:hover {
-    opacity: 0.86;
-    transform: translateY(-2px);
-  }
-
-  .middle-cta__button--product {
-    background: {{ section.settings.product_button_bg }};
-    color: {{ section.settings.product_button_color }};
-    border: 1px solid {{ section.settings.product_button_border }};
-  }
-
-  .middle-cta__button--line {
-    background: {{ section.settings.line_button_bg }};
-    color: {{ section.settings.line_button_color }};
-    border: 1px solid {{ section.settings.line_button_border }};
-  }
-
-  .middle-cta__soldout {
-    margin: 0 0 {{ section.settings.soldout_margin_bottom }}px;
-    color: {{ section.settings.soldout_color }};
-    font-size: {{ section.settings.soldout_size_pc }}px;
-    font-weight: 700;
-    line-height: 1.7;
-    white-space: pre-line;
-  }
-
-  .middle-cta__care {
-    background: {{ section.settings.care_bg }};
-    border: 1px solid {{ section.settings.care_border }};
-    border-radius: {{ section.settings.care_radius }}px;
-    padding: 22px 24px;
-    color: {{ section.settings.care_color }};
-    font-size: {{ section.settings.care_size_pc }}px;
-    line-height: 1.9;
-    letter-spacing: 0.04em;
-  }
-
-  @media (max-width: 768px) {
-    .middle-cta {
-      padding: {{ section.settings.padding_sp }}px 16px;
-    }
-
-    .middle-cta__label {
-      font-size: {{ section.settings.label_size_sp }}px;
-    }
-
-    .middle-cta__heading {
-      font-size: {{ section.settings.heading_size_sp }}px;
-    }
-
-    .middle-cta__text {
-      font-size: {{ section.settings.text_size_sp }}px;
-    }
-
-    .middle-cta__price {
-      font-size: {{ section.settings.price_size_sp }}px;
-    }
-
-    .middle-cta__buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .middle-cta__button {
-      width: 100%;
-      min-width: 0;
-      font-size: {{ section.settings.button_size_sp }}px;
-    }
-
-    .middle-cta__soldout {
-      font-size: {{ section.settings.soldout_size_sp }}px;
-    }
-
-    .middle-cta__care {
-      padding: 18px 16px;
-      border-radius: {{ section.settings.care_radius_sp }}px;
-      font-size: {{ section.settings.care_size_sp }}px;
-    }
-  }
-</style>
-
-<section class="middle-cta" id="middle-cta-{{ section.id }}">
-  <div class="middle-cta__inner">
-
-    {% if section.settings.label != blank %}
-      <div class="middle-cta__label">
-        {{ section.settings.label }}
-      </div>
-    {% endif %}
-
-    {% if section.settings.heading != blank %}
-      <h2 class="middle-cta__heading">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
-
-    {% if section.settings.text != blank %}
-      <div class="middle-cta__text">
-        {{ section.settings.text }}
-      </div>
-    {% endif %}
-
-    {% if section.settings.price != blank %}
-      <p class="middle-cta__price">
-        {{ section.settings.price }}
-      </p>
-    {% endif %}
-
-    <div class="middle-cta__buttons">
-      {% if section.settings.product_url != blank %}
-        <a href="{{ section.settings.product_url }}" class="middle-cta__button middle-cta__button--product">
-          {{ section.settings.product_button_text }}
-        </a>
-      {% endif %}
-
-      {% if section.settings.line_url != blank %}
-        <a href="{{ section.settings.line_url }}" class="middle-cta__button middle-cta__button--line" target="_blank" rel="noopener">
-          {{ section.settings.line_button_text }}
-        </a>
-      {% endif %}
+<section
+  class="middle-hero-cta"
+  id="middle-hero-cta-{{ section.id }}"
+  style="
+    --middle-bg-color: {{ section.settings.bg_color }};
+  "
+>
+  <div class="middle-hero-cta__content">
+    <div
+      class="middle-hero-cta__subtitle"
+      style="
+        font-size: {{ section.settings.subtitle_font_size }}px;
+        font-weight: {{ section.settings.subtitle_font_weight }};
+        color: {{ section.settings.subtitle_color }};
+      "
+    >
+      {{ section.settings.subtitle }}
     </div>
 
-    {% if section.settings.soldout_text != blank %}
-      <p class="middle-cta__soldout">
-        {{ section.settings.soldout_text }}
-      </p>
-    {% endif %}
+    <div class="middle-hero-cta__cta-area">
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a
+          href="{{ section.settings.cta_url }}"
+          class="middle-hero-cta__btn"
+          style="
+            background: {{ section.settings.cta1_bg_color }};
+            color: {{ section.settings.cta1_text_color }};
+            margin-top: {{ section.settings.cta1_margin_top }}px;
+            margin-bottom: {{ section.settings.cta1_margin_bottom }}px;
+          "
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
 
-    {% if section.settings.care_text != blank %}
-      <div class="middle-cta__care">
-        {{ section.settings.care_text }}
+      {% if section.settings.cta_url_2 != blank and section.settings.cta_text_2 != blank %}
+        <a
+          href="{{ section.settings.cta_url_2 }}"
+          class="middle-hero-cta__btn"
+          style="
+            background: {{ section.settings.cta2_bg_color }};
+            color: {{ section.settings.cta2_text_color }};
+            margin-top: {{ section.settings.cta2_margin_top }}px;
+            margin-bottom: {{ section.settings.cta2_margin_bottom }}px;
+          "
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.cta_text_2 }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
+        <p
+          class="middle-hero-cta__soldout"
+          style="
+            margin-top: {{ section.settings.soldout_margin_top }}px;
+            margin-bottom: {{ section.settings.soldout_margin_bottom }}px;
+            font-size: {{ section.settings.soldout_font_size }}px;
+            color: {{ section.settings.soldout_text_color }};
+          "
+        >
+          {{ section.settings.soldout_text | newline_to_br }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.price_text != blank %}
+        <p
+          class="middle-hero-cta__price"
+          style="
+            margin-top: {{ section.settings.price_margin_top }}px;
+            margin-bottom: {{ section.settings.price_margin_bottom }}px;
+            color: {{ section.settings.price_color }};
+          "
+        >
+          {{ section.settings.price_text }}
+          <span class="middle-hero-cta__price-tax">{{ section.settings.price_tax }}</span>
+        </p>
+      {% endif %}
+
+      <div
+        class="middle-hero-cta__features"
+        style="color: {{ section.settings.features_color }};"
+      >
+        {% if section.settings.feature_1 != blank %}<span>✓ {{ section.settings.feature_1 }}</span>{% endif %}
+        {% if section.settings.feature_2 != blank %}<span>✓ {{ section.settings.feature_2 }}</span>{% endif %}
+        {% if section.settings.feature_3 != blank %}<span>✓ {{ section.settings.feature_3 }}</span>{% endif %}
+        {% if section.settings.feature_4 != blank %}<span>✓ {{ section.settings.feature_4 }}</span>{% endif %}
       </div>
-    {% endif %}
-
+    </div>
   </div>
 </section>
+
+<style>
+.middle-hero-cta {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-hero-cta__content {
+  background: var(--middle-bg-color) !important;
+  padding: {{ section.settings.padding_top_pc }}px 16px {{ section.settings.padding_bottom_pc }}px;
+  text-align: center;
+  color: #fff;
+}
+
+.middle-hero-cta__subtitle p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.middle-hero-cta__btn {
+  display: block;
+  width: min(100%, 360px);
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.middle-hero-cta__soldout {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.middle-hero-cta__price {
+  font-size: {{ section.settings.price_font_size }}px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.middle-hero-cta__price-tax {
+  font-size: 0.8em;
+  font-weight: 400;
+}
+
+.middle-hero-cta__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  font-size: {{ section.settings.features_font_size }}px;
+  margin-top: 8px;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (max-width: 767px) {
+  .middle-hero-cta__content {
+    padding: {{ section.settings.padding_top_sp }}px 16px {{ section.settings.padding_bottom_sp }}px;
+  }
+}
+</style>
 
 {% schema %}
 {
   "name": "MUSUBI 中間CTA",
   "settings": [
     {
-      "type": "text",
-      "id": "label",
-      "label": "ラベル",
-      "default": "MUSUBI -en-"
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景色",
+      "default": "#1F2A44"
     },
     {
       "type": "richtext",
-      "id": "heading",
-      "label": "見出し",
-      "default": "<p>気になった方は、こちらから</p>"
+      "id": "subtitle",
+      "label": "サブタイトル",
+      "default": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>"
     },
     {
-      "type": "richtext",
-      "id": "text",
-      "label": "説明文",
-      "default": "<p>商品ページでは、サイズ・カラー・在庫状況を詳しくご確認いただけます。</p>"
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "サブタイトルサイズ",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
     },
     {
-      "type": "text",
-      "id": "price",
-      "label": "価格表示",
-      "default": "¥29,800〜"
+      "type": "select",
+      "id": "subtitle_font_weight",
+      "label": "サブタイトル太さ",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
     },
     {
-      "type": "url",
-      "id": "product_url",
-      "label": "商品ページURL"
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "サブタイトル色",
+      "default": "#ffffff"
     },
     {
-      "type": "text",
-      "id": "product_button_text",
-      "label": "商品ページボタン文言",
-      "default": "商品ページを見る"
-    },
-    {
-      "type": "url",
-      "id": "line_url",
-      "label": "LINE URL"
-    },
-    {
-      "type": "text",
-      "id": "line_button_text",
-      "label": "LINEボタン文言",
-      "default": "公式LINEから再入荷通知を受け取る"
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "完売表示を出す",
+      "default": true
     },
     {
       "type": "textarea",
       "id": "soldout_text",
       "label": "完売文言",
-      "default": "完売中です。\n再入荷通知は公式LINEよりお受け取りいただけます。"
+      "default": "現在MUSUBI-en-は完売中です。"
     },
     {
-      "type": "richtext",
-      "id": "care_text",
-      "label": "お手入れ簡単テキスト",
-      "default": "<p><strong>お手入れも簡単。</strong><br>丸洗いOKで、速乾性があり、いつも清潔にお使いいただけます。</p>"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "label_bg",
-      "label": "ラベル背景カラー",
-      "default": "#f4eee6"
+      "type": "range",
+      "id": "soldout_font_size",
+      "label": "完売文言 フォントサイズ",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
     },
     {
       "type": "color",
-      "id": "label_color",
-      "label": "ラベル文字カラー",
-      "default": "#8B7355"
+      "id": "soldout_text_color",
+      "label": "完売文言 文字色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA1リンク"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA1テキスト",
+      "default": "商品ページを見る"
     },
     {
       "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
+      "id": "cta1_bg_color",
+      "label": "CTA1背景色",
+      "default": "#ffffff"
     },
     {
       "type": "color",
-      "id": "text_color",
-      "label": "説明文カラー",
-      "default": "#555555"
+      "id": "cta1_text_color",
+      "label": "CTA1文字色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "url",
+      "id": "cta_url_2",
+      "label": "CTA2リンク"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA2テキスト",
+      "default": "公式LINEから再入荷通知を受け取る"
+    },
+    {
+      "type": "color",
+      "id": "cta2_bg_color",
+      "label": "CTA2背景色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "color",
+      "id": "cta2_text_color",
+      "label": "CTA2文字色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "price_text",
+      "label": "価格",
+      "default": "¥29,800〜"
+    },
+    {
+      "type": "text",
+      "id": "price_tax",
+      "label": "税込表記",
+      "default": "(税込)"
     },
     {
       "type": "color",
       "id": "price_color",
-      "label": "価格カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "product_button_bg",
-      "label": "商品ボタン背景",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "product_button_color",
-      "label": "商品ボタン文字",
+      "label": "価格文字色",
       "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "product_button_border",
-      "label": "商品ボタン枠線",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "line_button_bg",
-      "label": "LINEボタン背景",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "line_button_color",
-      "label": "LINEボタン文字",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "line_button_border",
-      "label": "LINEボタン枠線",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "soldout_color",
-      "label": "完売文言カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "care_bg",
-      "label": "お手入れ背景",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "care_border",
-      "label": "お手入れ枠線",
-      "default": "#eee7dd"
-    },
-    {
-      "type": "color",
-      "id": "care_color",
-      "label": "お手入れ文字カラー",
-      "default": "#333333"
     },
     {
       "type": "range",
-      "id": "label_size_pc",
-      "label": "ラベルサイズ PC",
+      "id": "price_font_size",
+      "label": "価格フォントサイズ",
       "min": 10,
-      "max": 24,
+      "max": 32,
       "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "特徴1",
+      "default": "オールシーズン"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "特徴2",
+      "default": "アニマルフリー"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "特徴3",
+      "default": "通気性"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "特徴4",
+      "default": "お手入れ簡単"
+    },
+    {
+      "type": "color",
+      "id": "features_color",
+      "label": "特徴文字色",
+      "default": "rgba(255,255,255,0.75)"
+    },
+    {
+      "type": "range",
+      "id": "features_font_size",
+      "label": "特徴フォントサイズ",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
       "default": 12
     },
     {
-      "type": "range",
-      "id": "label_size_sp",
-      "label": "ラベルサイズ SP",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
+      "type": "header",
+      "content": "余白設定"
     },
     {
       "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ PC",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 30
+      "id": "cta1_margin_top",
+      "label": "CTA1 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ SP",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 24
+      "id": "cta1_margin_bottom",
+      "label": "CTA1 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
     },
     {
       "type": "range",
-      "id": "text_size_pc",
-      "label": "説明文サイズ PC",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
+      "id": "cta2_margin_top",
+      "label": "CTA2 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "range",
-      "id": "text_size_sp",
-      "label": "説明文サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "price_size_pc",
-      "label": "価格サイズ PC",
-      "min": 18,
-      "max": 48,
-      "step": 1,
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "price_size_sp",
-      "label": "価格サイズ SP",
-      "min": 18,
-      "max": 38,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "range",
-      "id": "button_size_pc",
-      "label": "ボタン文字サイズ PC",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "button_size_sp",
-      "label": "ボタン文字サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "soldout_size_pc",
-      "label": "完売文言サイズ PC",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "soldout_size_sp",
-      "label": "完売文言サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "care_size_pc",
-      "label": "お手入れ文字サイズ PC",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "care_size_sp",
-      "label": "お手入れ文字サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
+      "id": "cta2_margin_bottom",
+      "label": "CTA2 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 12
     },
     {
       "type": "range",
       "id": "soldout_margin_top",
-      "label": "ボタン下〜完売文言の余白",
+      "label": "完売文言 上余白",
       "min": 0,
-      "max": 48,
+      "max": 60,
       "step": 2,
-      "default": 12
+      "unit": "px",
+      "default": 10
     },
     {
       "type": "range",
       "id": "soldout_margin_bottom",
-      "label": "完売文言下の余白",
+      "label": "完売文言 下余白",
       "min": 0,
-      "max": 48,
+      "max": 60,
       "step": 2,
-      "default": 22
+      "unit": "px",
+      "default": 10
     },
     {
       "type": "range",
-      "id": "care_radius",
-      "label": "お手入れ角丸 PC",
+      "id": "price_margin_top",
+      "label": "価格 上余白",
       "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 22
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "range",
-      "id": "care_radius_sp",
-      "label": "お手入れ角丸 SP",
+      "id": "price_margin_bottom",
+      "label": "価格 下余白",
       "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 18
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白 PC",
-      "min": 32,
-      "max": 160,
-      "step": 4,
-      "default": 72
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白 SP",
-      "min": 24,
+      "id": "padding_top_pc",
+      "label": "上余白 PC",
+      "min": 0,
       "max": 120,
       "step": 4,
-      "default": 52
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_pc",
+      "label": "下余白 PC",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_sp",
+      "label": "上余白 SP",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_sp",
+      "label": "下余白 SP",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     }
   ],
   "presets": [
