@@ -1,11 +1,262 @@
+<style>
+  .ugc {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+    overflow: hidden;
+  }
+
+  .ugc__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ugc__badge {
+    display: inline-block;
+    background: {{ section.settings.badge_bg_color }};
+    color: {{ section.settings.badge_color }};
+    font-size: {{ section.settings.badge_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 8px 15px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .ugc__title {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 14px;
+  }
+
+  .ugc__title p {
+    margin: 0;
+  }
+
+  .ugc__sub {
+    max-width: 700px;
+    margin: 0 auto 34px;
+    font-size: {{ section.settings.subheading_size_pc }}px;
+    color: {{ section.settings.subheading_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .ugc__highlight {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .ugc__highlight-item {
+    background: {{ section.settings.highlight_bg_color }};
+    border: 1px solid {{ section.settings.highlight_border_color }};
+    border-radius: {{ section.settings.highlight_radius }}px;
+    padding: 18px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
+
+  .ugc__highlight-number {
+    display: block;
+    font-size: {{ section.settings.highlight_number_size_pc }}px;
+    color: {{ section.settings.highlight_number_color }};
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .ugc__highlight-label {
+    display: block;
+    font-size: {{ section.settings.highlight_label_size_pc }}px;
+    color: {{ section.settings.highlight_label_color }};
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .ugc__carousel {
+    position: relative;
+    margin: 0 calc(50% - 50vw);
+    padding: 8px 0 18px;
+  }
+
+  .ugc__track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 max(20px, calc((100vw - {{ section.settings.max_width }}px) / 2)) 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ugc__track::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .ugc__track::-webkit-scrollbar-thumb {
+    background: {{ section.settings.scrollbar_color }};
+    border-radius: 999px;
+  }
+
+  .ugc__item {
+    flex: 0 0 {{ section.settings.card_width_pc }}px;
+    scroll-snap-align: center;
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.card_border_color }};
+    border-radius: {{ section.settings.card_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .ugc__iframe {
+    width: 100%;
+    height: {{ section.settings.iframe_height_pc }}px;
+    display: block;
+    border: 0;
+    background: #fff;
+  }
+
+  .ugc__caption {
+    padding: 12px 14px 14px;
+    font-size: {{ section.settings.caption_size_pc }}px;
+    color: {{ section.settings.caption_color }};
+    line-height: 1.6;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .ugc__follow {
+    margin-top: 28px;
+  }
+
+  .ugc__follow-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_color }};
+    font-size: {{ section.settings.button_size_pc }}px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 15px 30px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .ugc__follow-link:hover {
+    opacity: 0.86;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .ugc {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .ugc__badge {
+      font-size: {{ section.settings.badge_size_sp }}px;
+      margin-bottom: 12px;
+    }
+
+    .ugc__title {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .ugc__sub {
+      font-size: {{ section.settings.subheading_size_sp }}px;
+      margin-bottom: 24px;
+    }
+
+    .ugc__highlight {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .ugc__highlight-item {
+      border-radius: {{ section.settings.highlight_radius_sp }}px;
+      padding: 14px 12px;
+    }
+
+    .ugc__highlight-number {
+      font-size: {{ section.settings.highlight_number_size_sp }}px;
+    }
+
+    .ugc__highlight-label {
+      font-size: {{ section.settings.highlight_label_size_sp }}px;
+    }
+
+    .ugc__track {
+      gap: 12px;
+      padding: 0 16px 8px;
+    }
+
+    .ugc__item {
+      flex-basis: {{ section.settings.card_width_sp }}px;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+    }
+
+    .ugc__iframe {
+      height: {{ section.settings.iframe_height_sp }}px;
+    }
+
+    .ugc__caption {
+      font-size: {{ section.settings.caption_size_sp }}px;
+    }
+
+    .ugc__follow {
+      margin-top: 22px;
+    }
+
+    .ugc__follow-link {
+      width: 100%;
+      font-size: {{ section.settings.button_size_sp }}px;
+      padding: 14px 18px;
+    }
+  }
+</style>
+
 <section class="ugc" id="ugc">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'たくさんの方に選ばれています' }}</h2>
-    {% if section.settings.subheading != blank %}
-      <p class="ugc__sub" data-reveal>{{ section.settings.subheading }}</p>
+  <div class="ugc__inner">
+
+    {% if section.settings.badge != blank %}
+      <div class="ugc__badge">
+        {{ section.settings.badge }}
+      </div>
     {% endif %}
 
-    <div class="ugc__carousel" data-reveal>
+    <h2 class="ugc__title">
+      {{ section.settings.heading }}
+    </h2>
+
+    {% if section.settings.subheading != blank %}
+      <div class="ugc__sub">
+        {{ section.settings.subheading }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.show_highlight %}
+      <div class="ugc__highlight">
+        <div class="ugc__highlight-item">
+          <span class="ugc__highlight-number">{{ section.settings.highlight_number_1 }}</span>
+          <span class="ugc__highlight-label">{{ section.settings.highlight_label_1 }}</span>
+        </div>
+        <div class="ugc__highlight-item">
+          <span class="ugc__highlight-number">{{ section.settings.highlight_number_2 }}</span>
+          <span class="ugc__highlight-label">{{ section.settings.highlight_label_2 }}</span>
+        </div>
+        <div class="ugc__highlight-item">
+          <span class="ugc__highlight-number">{{ section.settings.highlight_number_3 }}</span>
+          <span class="ugc__highlight-label">{{ section.settings.highlight_label_3 }}</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="ugc__carousel">
       <div class="ugc__track">
         {% for block in section.blocks %}
           <div class="ugc__item" {{ block.shopify_attributes }}>
@@ -18,18 +269,25 @@
               loading="lazy"
               title="{{ block.settings.caption | default: 'Instagram Reel' }}">
             </iframe>
+
+            {% if block.settings.caption != blank %}
+              <div class="ugc__caption">
+                {{ block.settings.caption }}
+              </div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>
     </div>
 
     {% if section.settings.instagram_url != blank %}
-      <div class="ugc__follow" data-reveal>
+      <div class="ugc__follow">
         <a href="{{ section.settings.instagram_url }}" class="ugc__follow-link" target="_blank" rel="noopener">
-          {{ section.settings.follow_text | default: '@kapokknot をフォロー →' }}
+          {{ section.settings.follow_text }}
         </a>
       </div>
     {% endif %}
+
   </div>
 </section>
 
@@ -38,16 +296,78 @@
   "name": "MUSUBI UGC・Instagram",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "見出し",
-      "default": "たくさんの方に選ばれています"
+      "type": "header",
+      "content": "テキスト"
     },
     {
       "type": "text",
+      "id": "badge",
+      "label": "バッジ",
+      "default": "USER VOICE"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>SNSでも、MUSUBIのある暮らしが<br>広がっています</p>"
+    },
+    {
+      "type": "richtext",
       "id": "subheading",
-      "label": "サブ見出し（省略可）",
-      "default": "実際にMUSUBIを体験した皆さまの声をご紹介します"
+      "label": "サブ見出し",
+      "default": "<p>実際にMUSUBIを体験した方々の投稿から、使い心地や暮らしへの馴染み方をご紹介します。</p>"
+    },
+
+    {
+      "type": "header",
+      "content": "UGC実績表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_highlight",
+      "label": "UGC実績を表示する",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "highlight_number_1",
+      "label": "実績1 数字",
+      "default": "多数"
+    },
+    {
+      "type": "text",
+      "id": "highlight_label_1",
+      "label": "実績1 ラベル",
+      "default": "Instagram投稿"
+    },
+    {
+      "type": "text",
+      "id": "highlight_number_2",
+      "label": "実績2 数字",
+      "default": "レビュー"
+    },
+    {
+      "type": "text",
+      "id": "highlight_label_2",
+      "label": "実績2 ラベル",
+      "default": "愛用者の声"
+    },
+    {
+      "type": "text",
+      "id": "highlight_number_3",
+      "label": "実績3 数字",
+      "default": "実感"
+    },
+    {
+      "type": "text",
+      "id": "highlight_label_3",
+      "label": "実績3 ラベル",
+      "default": "暮らしに馴染む使い心地"
+    },
+
+    {
+      "type": "header",
+      "content": "リンク"
     },
     {
       "type": "url",
@@ -58,7 +378,332 @@
       "type": "text",
       "id": "follow_text",
       "label": "フォローリンクテキスト",
-      "default": "@kapokknot をフォロー →"
+      "default": "@kapok_knot_jp をフォロー →"
+    },
+
+    {
+      "type": "header",
+      "content": "文字サイズ・カラー"
+    },
+    {
+      "type": "range",
+      "id": "badge_size_pc",
+      "label": "バッジ文字サイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "badge_size_sp",
+      "label": "バッジ文字サイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "バッジ文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "バッジ背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_pc",
+      "label": "サブ見出しサイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_sp",
+      "label": "サブ見出しサイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "サブ見出しカラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "highlight_number_size_pc",
+      "label": "UGC実績数字サイズ（PC）",
+      "min": 16,
+      "max": 42,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "highlight_number_size_sp",
+      "label": "UGC実績数字サイズ（SP）",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "highlight_number_color",
+      "label": "UGC実績数字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "range",
+      "id": "highlight_label_size_pc",
+      "label": "UGC実績ラベルサイズ（PC）",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "highlight_label_size_sp",
+      "label": "UGC実績ラベルサイズ（SP）",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "highlight_label_color",
+      "label": "UGC実績ラベルカラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "caption_size_pc",
+      "label": "キャプションサイズ（PC）",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "caption_size_sp",
+      "label": "キャプションサイズ（SP）",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "キャプションカラー",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "button_size_pc",
+      "label": "ボタン文字サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_size_sp",
+      "label": "ボタン文字サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "ボタン文字カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "ボタン背景カラー",
+      "default": "#1a1a1a"
+    },
+
+    {
+      "type": "header",
+      "content": "デザイン"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 720,
+      "max": 1200,
+      "step": 20,
+      "default": 980
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg_color",
+      "label": "UGC実績背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "highlight_border_color",
+      "label": "UGC実績枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius",
+      "label": "UGC実績角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "highlight_radius_sp",
+      "label": "UGC実績角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Reelカード背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Reelカード枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Reelカード角丸（PC）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "Reelカード角丸（SP）",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_width_pc",
+      "label": "Reelカード幅（PC）",
+      "min": 240,
+      "max": 420,
+      "step": 10,
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "card_width_sp",
+      "label": "Reelカード幅（SP）",
+      "min": 220,
+      "max": 340,
+      "step": 10,
+      "default": 280
+    },
+    {
+      "type": "range",
+      "id": "iframe_height_pc",
+      "label": "Reel高さ（PC）",
+      "min": 420,
+      "max": 760,
+      "step": 10,
+      "default": 560
+    },
+    {
+      "type": "range",
+      "id": "iframe_height_sp",
+      "label": "Reel高さ（SP）",
+      "min": 380,
+      "max": 720,
+      "step": 10,
+      "default": 520
+    },
+    {
+      "type": "color",
+      "id": "scrollbar_color",
+      "label": "スクロールバー色",
+      "default": "#d4c8b8"
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白（PC）",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白（SP）",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 56
     }
   ],
   "blocks": [
@@ -75,7 +720,8 @@
         {
           "type": "text",
           "id": "caption",
-          "label": "キャプション（省略可）"
+          "label": "キャプション（省略可）",
+          "default": "MUSUBI使用レビュー"
         }
       ]
     }
@@ -95,4 +741,3 @@
   ]
 }
 {% endschema %}
-
