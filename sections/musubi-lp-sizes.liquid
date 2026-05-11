@@ -1,71 +1,921 @@
-<section class="sizes" id="sizes">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'あなたに合うサイズは？' }}</h2>
+<style>
+  .sizes {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
 
-    <!-- タブUI -->
-    <div class="sizes__tabs" data-reveal>
+  .sizes__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .sizes__header {
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .sizes__label {
+    display: inline-block;
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 8px 15px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .sizes__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+
+  .sizes__heading p,
+  .sizes__lead p {
+    margin: 0;
+  }
+
+  .sizes__lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.lead_size_pc }}px;
+    color: {{ section.settings.lead_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .sizes__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+    background: {{ section.settings.tabs_bg_color }};
+    border-radius: 999px;
+    padding: 6px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .sizes__tab {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: transparent;
+    color: {{ section.settings.tab_color }};
+    font-size: {{ section.settings.tab_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .sizes__tab--active {
+    background: {{ section.settings.tab_active_bg_color }};
+    color: {{ section.settings.tab_active_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+
+  .sizes__panels {
+    position: relative;
+  }
+
+  .sizes__panel {
+    display: none;
+    grid-template-columns: 1.08fr 0.92fr;
+    background: {{ section.settings.panel_bg_color }};
+    border: 1px solid {{ section.settings.panel_border_color }};
+    border-radius: {{ section.settings.panel_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.07);
+  }
+
+  .sizes__panel--active {
+    display: grid;
+  }
+
+  .sizes__panel-img {
+    background: {{ section.settings.image_bg_color }};
+    min-height: {{ section.settings.image_height_pc }}px;
+    overflow: hidden;
+  }
+
+  .sizes__panel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    display: block;
+  }
+
+  .sizes__panel-content {
+    padding: 42px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .sizes__panel-badge {
+    display: inline-flex;
+    width: fit-content;
+    background: {{ section.settings.badge_bg_color }};
+    color: {{ section.settings.badge_color }};
+    font-size: {{ section.settings.badge_size_pc }}px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 7px 13px;
+    margin-bottom: 16px;
+  }
+
+  .sizes__panel-badge--featured {
+    background: {{ section.settings.featured_badge_bg_color }};
+    color: {{ section.settings.featured_badge_color }};
+  }
+
+  .sizes__panel-name {
+    font-size: {{ section.settings.name_size_pc }}px;
+    color: {{ section.settings.name_color }};
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.03em;
+    margin: 0 0 12px;
+  }
+
+  .sizes__panel-price {
+    font-size: {{ section.settings.price_size_pc }}px;
+    color: {{ section.settings.price_color }};
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 10px;
+  }
+
+  .sizes__panel-price span {
+    font-size: 0.5em;
+    font-weight: 600;
+    color: {{ section.settings.price_note_color }};
+  }
+
+  .sizes__panel-dim {
+    display: inline-flex;
+    width: fit-content;
+    background: {{ section.settings.dim_bg_color }};
+    color: {{ section.settings.dim_color }};
+    font-size: {{ section.settings.dim_size_pc }}px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 9px 13px;
+    margin: 0 0 18px;
+  }
+
+  .sizes__panel-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .sizes__panel-features li {
+    position: relative;
+    padding-left: 1.4em;
+    font-size: {{ section.settings.feature_size_pc }}px;
+    color: {{ section.settings.feature_color }};
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+  }
+
+  .sizes__panel-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: {{ section.settings.check_color }};
+    font-weight: 800;
+  }
+
+  .sizes__panel-note {
+    font-size: {{ section.settings.note_size_pc }}px;
+    color: {{ section.settings.note_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  .sizes__compare {
+    margin: 34px auto 0;
+    border-radius: {{ section.settings.compare_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .sizes__compare img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .sizes {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .sizes__header {
+      margin-bottom: 26px;
+    }
+
+    .sizes__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .sizes__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .sizes__lead {
+      font-size: {{ section.settings.lead_size_sp }}px;
+    }
+
+    .sizes__tabs {
+      width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      border-radius: 18px;
+    }
+
+    .sizes__tab {
+      font-size: {{ section.settings.tab_size_sp }}px;
+      padding: 11px 16px;
+      flex: 1 0 auto;
+    }
+
+    .sizes__panel,
+    .sizes__panel--active {
+      grid-template-columns: 1fr;
+      border-radius: {{ section.settings.panel_radius_sp }}px;
+    }
+
+    .sizes__panel-img {
+      min-height: {{ section.settings.image_height_sp }}px;
+    }
+
+    .sizes__panel-content {
+      padding: 28px 20px;
+    }
+
+    .sizes__panel-badge {
+      font-size: {{ section.settings.badge_size_sp }}px;
+    }
+
+    .sizes__panel-name {
+      font-size: {{ section.settings.name_size_sp }}px;
+    }
+
+    .sizes__panel-price {
+      font-size: {{ section.settings.price_size_sp }}px;
+    }
+
+    .sizes__panel-dim {
+      font-size: {{ section.settings.dim_size_sp }}px;
+    }
+
+    .sizes__panel-features li {
+      font-size: {{ section.settings.feature_size_sp }}px;
+    }
+
+    .sizes__panel-note {
+      font-size: {{ section.settings.note_size_sp }}px;
+    }
+
+    .sizes__compare {
+      margin-top: 24px;
+      border-radius: {{ section.settings.compare_radius_sp }}px;
+    }
+  }
+</style>
+
+<section class="sizes" id="sizes">
+  <div class="sizes__inner">
+
+    <div class="sizes__header">
+      {% if section.settings.label != blank %}
+        <div class="sizes__label">
+          {{ section.settings.label }}
+        </div>
+      {% endif %}
+
+      <h2 class="sizes__heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      {% if section.settings.lead != blank %}
+        <div class="sizes__lead">
+          {{ section.settings.lead }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="sizes__tabs">
+      {% assign tab_index = 0 %}
       {% for block in section.blocks %}
         {% if block.type == 'size_panel' %}
-          <button class="sizes__tab{% if forloop.first %} sizes__tab--active{% endif %}" data-tab="size-{{ forloop.index }}" id="tab-size-{{ forloop.index }}">{{ block.settings.tab_label }}</button>
+          {% assign tab_index = tab_index | plus: 1 %}
+          <button
+            type="button"
+            class="sizes__tab{% if tab_index == 1 %} sizes__tab--active{% endif %}"
+            data-tab="size-{{ tab_index }}"
+          >
+            {{ block.settings.tab_label }}
+          </button>
         {% endif %}
       {% endfor %}
     </div>
 
-    <!-- パネル -->
-    {% for block in section.blocks %}
-      {% if block.type == 'size_panel' %}
-        <div class="sizes__panel{% if forloop.first %} sizes__panel--active{% endif %}" id="panel-size-{{ forloop.index }}" data-reveal {{ block.shopify_attributes }}>
-          <div class="sizes__panel-img">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.name }}" loading="lazy">
-            {% elsif block.settings.image_url != blank %}
-              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
-            {% endif %}
-          </div>
-          <div class="sizes__panel-content">
-            <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">{{ block.settings.badge }}</div>
-            <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
-            <p class="sizes__panel-price">{{ block.settings.price }} <span>{{ block.settings.price_note }}</span></p>
-            <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
-            <ul class="sizes__panel-features">
-              {% assign features = block.settings.features | split: ',' %}
-              {% for feature in features %}
-                <li>{{ feature | strip }}</li>
-              {% endfor %}
-            </ul>
-            <p class="sizes__panel-note">{{ block.settings.note }}</p>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+    <div class="sizes__panels">
+      {% assign panel_index = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'size_panel' %}
+          {% assign panel_index = panel_index | plus: 1 %}
 
-    <!-- 比較画像 -->
+          <div
+            class="sizes__panel{% if panel_index == 1 %} sizes__panel--active{% endif %}"
+            id="panel-size-{{ panel_index }}"
+            data-panel="size-{{ panel_index }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="sizes__panel-img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% elsif block.settings.image_url != blank %}
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% endif %}
+            </div>
+
+            <div class="sizes__panel-content">
+              {% if block.settings.badge != blank %}
+                <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">
+                  {{ block.settings.badge }}
+                </div>
+              {% endif %}
+
+              <h3 class="sizes__panel-name">
+                {{ block.settings.name }}
+              </h3>
+
+              <p class="sizes__panel-price">
+                {{ block.settings.price }}
+                <span>{{ block.settings.price_note }}</span>
+              </p>
+
+              <p class="sizes__panel-dim">
+                {{ block.settings.dimensions }}
+              </p>
+
+              <ul class="sizes__panel-features">
+                {% assign features = block.settings.features | split: ',' %}
+                {% for feature in features %}
+                  {% if feature != blank %}
+                    <li>{{ feature | strip }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+
+              {% if block.settings.note != blank %}
+                <p class="sizes__panel-note">
+                  {{ block.settings.note }}
+                </p>
+              {% endif %}
+            </div>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+    </div>
+
     {% if section.settings.compare_image != blank %}
-      <div class="sizes__compare" data-reveal>
-        <img src="{{ section.settings.compare_image | img_url: '1000x' }}" alt="サイズ比較" loading="lazy">
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image | img_url: '1400x' }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
-    {% else %}
-      <div class="sizes__compare" data-reveal>
-        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1000" alt="M/Lサイズ比較" loading="lazy">
+    {% elsif section.settings.compare_image_url != blank %}
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image_url }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
     {% endif %}
+
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.sizes').forEach(function(section) {
+      const tabs = section.querySelectorAll('.sizes__tab');
+      const panels = section.querySelectorAll('.sizes__panel');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const target = tab.getAttribute('data-tab');
+
+          tabs.forEach(function(item) {
+            item.classList.remove('sizes__tab--active');
+          });
+
+          panels.forEach(function(panel) {
+            panel.classList.remove('sizes__panel--active');
+          });
+
+          tab.classList.add('sizes__tab--active');
+
+          const activePanel = section.querySelector('[data-panel="' + target + '"]');
+          if (activePanel) {
+            activePanel.classList.add('sizes__panel--active');
+          }
+        });
+      });
+    });
+  });
+</script>
 
 {% schema %}
 {
   "name": "MUSUBI サイズ選び",
   "settings": [
     {
+      "type": "header",
+      "content": "テキスト"
+    },
+    {
       "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "SIZE GUIDE"
+    },
+    {
+      "type": "richtext",
       "id": "heading",
       "label": "見出し",
-      "default": "あなたに合うサイズは？"
+      "default": "<p>あなたに合うサイズは？</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "リード文",
+      "default": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>"
     },
     {
       "type": "image_picker",
       "id": "compare_image",
       "label": "比較画像"
+    },
+    {
+      "type": "text",
+      "id": "compare_image_url",
+      "label": "比較画像URL"
+    },
+    {
+      "type": "text",
+      "id": "compare_alt",
+      "label": "比較画像alt",
+      "default": "MUSUBIサイズ比較"
+    },
+
+    {
+      "type": "header",
+      "content": "文字サイズ・カラー"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "lead_size_pc",
+      "label": "リード文サイズ（PC）",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "lead_size_sp",
+      "label": "リード文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "lead_color",
+      "label": "リード文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "tab_size_pc",
+      "label": "タブ文字サイズ（PC）",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "tab_size_sp",
+      "label": "タブ文字サイズ（SP）",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "tab_color",
+      "label": "タブ文字カラー",
+      "default": "#6d6258"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_color",
+      "label": "選択中タブ文字カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_bg_color",
+      "label": "選択中タブ背景カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "tabs_bg_color",
+      "label": "タブ全体背景カラー",
+      "default": "#f4eee6"
+    },
+
+    {
+      "type": "range",
+      "id": "badge_size_pc",
+      "label": "バッジサイズ（PC）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "badge_size_sp",
+      "label": "バッジサイズ（SP）",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "バッジ文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "バッジ背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "featured_badge_color",
+      "label": "強調バッジ文字カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "featured_badge_bg_color",
+      "label": "強調バッジ背景カラー",
+      "default": "#8B7355"
+    },
+
+    {
+      "type": "range",
+      "id": "name_size_pc",
+      "label": "サイズ名サイズ（PC）",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "name_size_sp",
+      "label": "サイズ名サイズ（SP）",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "サイズ名カラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "price_size_pc",
+      "label": "価格サイズ（PC）",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "price_size_sp",
+      "label": "価格サイズ（SP）",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "価格カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "price_note_color",
+      "label": "価格補足カラー",
+      "default": "#777777"
+    },
+    {
+      "type": "range",
+      "id": "dim_size_pc",
+      "label": "寸法サイズ（PC）",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "dim_size_sp",
+      "label": "寸法サイズ（SP）",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "dim_color",
+      "label": "寸法カラー",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "dim_bg_color",
+      "label": "寸法背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "feature_size_pc",
+      "label": "特徴サイズ（PC）",
+      "min": 11,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "feature_size_sp",
+      "label": "特徴サイズ（SP）",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "color",
+      "id": "feature_color",
+      "label": "特徴カラー",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "check_color",
+      "label": "チェックカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "range",
+      "id": "note_size_pc",
+      "label": "補足サイズ（PC）",
+      "min": 11,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "note_size_sp",
+      "label": "補足サイズ（SP）",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "note_color",
+      "label": "補足カラー",
+      "default": "#666666"
+    },
+
+    {
+      "type": "header",
+      "content": "デザイン"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "panel_bg_color",
+      "label": "パネル背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "panel_border_color",
+      "label": "パネル枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "画像背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "画像の表示方法",
+      "options": [
+        {
+          "value": "cover",
+          "label": "余白なく表示"
+        },
+        {
+          "value": "contain",
+          "label": "画像全体を表示"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "image_height_pc",
+      "label": "画像高さ（PC）",
+      "min": 280,
+      "max": 680,
+      "step": 20,
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "image_height_sp",
+      "label": "画像高さ（SP）",
+      "min": 220,
+      "max": 520,
+      "step": 20,
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "panel_radius",
+      "label": "パネル角丸（PC）",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "panel_radius_sp",
+      "label": "パネル角丸（SP）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "compare_radius",
+      "label": "比較画像角丸（PC）",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "compare_radius_sp",
+      "label": "比較画像角丸（SP）",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 760,
+      "max": 1280,
+      "step": 20,
+      "default": 1080
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白（PC）",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白（SP）",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
     }
   ],
   "blocks": [
@@ -87,7 +937,7 @@
         {
           "type": "text",
           "id": "image_url",
-          "label": "画像URL（image_pickerが空の場合に使用）"
+          "label": "画像URL"
         },
         {
           "type": "text",
@@ -144,11 +994,36 @@
     {
       "name": "MUSUBI サイズ選び",
       "blocks": [
-        { "type": "size_panel", "settings": { "tab_label": "Nap Size (M)", "badge": "ソファにおすすめ", "featured": false, "name": "Nap Size (M)", "price": "¥29,800", "price_note": "(税込)", "dimensions": "100 × 70 cm", "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方", "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" } },
-        { "type": "size_panel", "settings": { "tab_label": "Sleep Size (L)", "badge": "ベッドにおすすめ", "featured": true, "name": "Sleep Size (L)", "price": "¥39,800", "price_note": "(税込)", "dimensions": "150 × 100 cm", "features": "ベッド利用, 重い布団が好き, 包まれたい方", "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。" } }
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Nap Size (M)",
+            "badge": "ソファにおすすめ",
+            "featured": false,
+            "name": "Nap Size (M)",
+            "price": "¥29,800",
+            "price_note": "(税込)",
+            "dimensions": "100 × 70 cm",
+            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+          }
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-
