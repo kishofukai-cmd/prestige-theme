@@ -41,6 +41,12 @@
         "cta2_text_color": "#ffffff",
         "price_text": "¥29,800〜",
         "price_tax": "(税込)",
+        "feature_1": "✓ オールシーズン",
+        "feature_2": "✓ 単一素材",
+        "feature_3": "✓ 通気性",
+        "feature_4": "✓ お手入れ簡単",
+        "features_text_color": "#ffffffbf",
+        "features_font_size": 12,
         "cta1_margin_top": 0,
         "cta1_margin_bottom": 10,
         "cta2_margin_top": 20,
@@ -1311,7 +1317,7 @@
     "musubi_lp_cta_zUJQPK": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#00afec",
+        "bg_color": "#b7d9ff",
         "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
