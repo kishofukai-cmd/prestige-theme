@@ -1080,50 +1080,6 @@
         "heading": "カラーバリエーション"
       }
     },
-    "cta-after-colors": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "bg_color": "#1f2a44",
-        "subtitle": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>",
-        "subtitle_font_size": 18,
-        "subtitle_font_weight": "400",
-        "subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "現在MUSUBI-en-は完売中です。",
-        "soldout_font_size": 18,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "",
-        "cta_text": "サイズ・カラーを選ぶ",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#1f2a44",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜",
-        "price_tax": "(税込)",
-        "price_color": "#ffffff",
-        "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
-        "features_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0,
-        "padding_top_pc": 28,
-        "padding_bottom_pc": 36,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
-      }
-    },
     "care": {
       "type": "musubi-lp-care",
       "blocks": {
@@ -1180,50 +1136,6 @@
         "max_width": 1080,
         "padding_pc": 88,
         "padding_sp": 60
-      }
-    },
-    "cta-after-care": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "bg_color": "#1f2a44",
-        "subtitle": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>",
-        "subtitle_font_size": 18,
-        "subtitle_font_weight": "400",
-        "subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "現在MUSUBI-en-は完売中です。",
-        "soldout_font_size": 18,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見える",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#1f2a44",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜",
-        "price_tax": "(税込)",
-        "price_color": "#ffffff",
-        "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
-        "features_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0,
-        "padding_top_pc": 28,
-        "padding_bottom_pc": 36,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
       }
     },
     "hotels": {
@@ -1302,16 +1214,6 @@
         "image_ratio_sp": 100,
         "image_fit": "cover",
         "image_fit_sp": "cover"
-      }
-    },
-    "gift": {
-      "type": "musubi-lp-gift",
-      "settings": {
-        "image": "shopify://shop_images/188.webp",
-        "image_alt": "ギフトイメージ",
-        "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>専用のギフトボックス（ラッピング）を追加で手配可能です。</p>",
-        "note": ""
       }
     },
     "faq": {
@@ -1397,43 +1299,6 @@
         "padding_sp": 60
       }
     },
-    "closing": {
-      "type": "musubi-lp-closing",
-      "blocks": {
-        "proof_line_1": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>"
-          }
-        },
-        "proof_line_2": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>Makuake <strong>408名</strong>支援</p>"
-          }
-        },
-        "proof_line_3": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>レビュー <strong>★4.1</strong></p>"
-          }
-        }
-      },
-      "block_order": [
-        "proof_line_1",
-        "proof_line_2",
-        "proof_line_3"
-      ],
-      "settings": {
-        "bg_image_alt": "MUSUBI -en- カラーバリエーション",
-        "label": "Recovery Weighted Blanket",
-        "product_suffix": "-en-",
-        "price_text": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800",
-        "price_note": "(税込)",
-        "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見る→"
-      }
-    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -1468,52 +1333,6 @@
         "content": ""
       }
     },
-    "hero": {
-      "type": "musubi-lp-hero",
-      "settings": {
-        "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
-        "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "hero_bg_color": "#1f2a44",
-        "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
-        "hero_title_font_size_pc": 56,
-        "hero_title_font_size_sp": 34,
-        "hero_title_font_weight_pc": "700",
-        "hero_title_font_weight_sp": "700",
-        "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
-        "hero_subtitle_font_size": 18,
-        "hero_subtitle_font_weight": "400",
-        "hero_subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "現在MUSUBI-en-は完売中です。",
-        "soldout_font_size": 18,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "",
-        "cta_text": "MUSUBI詳しく見る",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#1f2a44",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜",
-        "price_tax": "(税込)",
-        "feature_1": "✓ オールシーズン",
-        "feature_2": "✓ 単一素材",
-        "feature_3": "✓ 通気性",
-        "feature_4": "✓ お手入れ簡単",
-        "features_text_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0
-      }
-    },
     "video-loop": {
       "type": "musubi-lp-video-loop",
       "disabled": true,
@@ -1538,16 +1357,11 @@
     "cta-after-reviews",
     "sizes",
     "colors",
-    "cta-after-colors",
     "care",
-    "cta-after-care",
     "hotels",
-    "gift",
     "faq",
-    "closing",
     "related-products",
     "recently-viewed",
-    "hero",
     "video-loop"
   ]
 }
