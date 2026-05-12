@@ -190,7 +190,7 @@
       border-radius: {{ section.settings.hero_image_radius_sp }}px;
     }
 
-    /* 実績数字を小さく横並び */
+    /* 実績数字をコンパクト化 */
     .makuake__stats {
       grid-template-columns: repeat(3, 1fr);
       gap: 6px;
@@ -250,3 +250,100 @@
     }
   }
 </style>
+
+<section class="makuake" id="makuake">
+  <div class="makuake__inner">
+    <div class="makuake__box">
+
+      <div class="makuake__header">
+
+        {% if section.settings.badge != blank %}
+          <span class="makuake__badge">
+            {{ section.settings.badge }}
+          </span>
+        {% endif %}
+
+        <h2 class="makuake__title">
+          {{ section.settings.heading }}
+        </h2>
+
+        {% if section.settings.hero_image != blank %}
+          <div class="makuake__hero-image">
+            <img
+              src="{{ section.settings.hero_image | img_url: '1200x' }}"
+              alt="{{ section.settings.hero_image_alt }}"
+              loading="lazy"
+            >
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="makuake__stats">
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.amount }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.amount_label }}
+          </span>
+        </div>
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.supporters }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.supporters_label }}
+          </span>
+        </div>
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.percent }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.percent_label }}
+          </span>
+        </div>
+
+      </div>
+
+      <div class="makuake__soldout">
+
+        <p class="makuake__soldout-title">
+          {{ section.settings.soldout_heading }}
+        </p>
+
+        <div class="makuake__soldout-list">
+
+          {% for block in section.blocks %}
+            <div class="makuake__soldout-item" {{ block.shopify_attributes }}>
+              <span class="makuake__soldout-date">
+                {{ block.settings.date }}
+              </span>
+
+              <span class="makuake__soldout-tag">
+                {{ block.settings.status }}
+              </span>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+      {% if section.settings.makuake_url != blank %}
+        <a
+          href="{{ section.settings.makuake_url }}"
+          class="makuake__link"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.link_text }}
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
