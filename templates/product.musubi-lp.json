@@ -1075,6 +1075,7 @@
         "color_4",
         "color_5"
       ],
+      "disabled": true,
       "settings": {
         "heading": "カラーバリエーション"
       }
