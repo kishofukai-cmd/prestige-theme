@@ -1112,7 +1112,8 @@
       ],
       "settings": {
         "label": "EASY CARE",
-        "heading": "<p>「重い＝手入れが大変」<br>その常識を変えます</p>",
+        "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "image": "shopify://shop_images/10_20.png",
         "image_url": "",
         "image_alt": "日常のケア",
         "bg_color": "#faf7f2",
