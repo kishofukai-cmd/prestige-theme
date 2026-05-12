@@ -400,11 +400,11 @@
         "reel_6"
       ],
       "settings": {
-        "badge": "USER VOICE",
-        "heading": "<p>たくさんの方に選ばれています</p>",
-        "subheading": "<p>実際にMUSUBIを体験した皆さまの声をご紹介します</p>",
-        "instagram_url": "",
-        "follow_text": "@kapokknot をフォロー →",
+        "badge": "USER REEL",
+        "heading": "",
+        "subheading": "",
+        "instagram_url": "https://www.instagram.com/kapokknot_home/",
+        "follow_text": "@kapokknot_home をフォロー →",
         "badge_size_pc": 12,
         "badge_size_sp": 11,
         "badge_color": "#8b7355",
