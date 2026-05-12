@@ -1,402 +1,81 @@
-<style>
-  .soldout-history {
-    padding: {{ section.settings.padding_pc }}px 20px;
-    background: {{ section.settings.bg_color }};
-  }
+{%- if section.settings.liquid != blank -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-  .soldout-history__inner {
-    max-width: {{ section.settings.max_width }}px;
-    margin: 0 auto;
-  }
-
-  .soldout-history__box {
-    background: {{ section.settings.box_bg_color }};
-    border-radius: {{ section.settings.box_radius_pc }}px;
-    padding: 48px 40px;
-    box-shadow: 0 18px 48px rgba(0,0,0,0.06);
-    text-align: center;
-  }
-
-  .soldout-history__heading {
-    margin: 0 0 24px;
-    font-size: {{ section.settings.heading_size_pc }}px;
-    line-height: 1.55;
-    letter-spacing: 0.04em;
-    color: {{ section.settings.heading_color }};
-    font-weight: 700;
-  }
-
-  .soldout-history__heading p {
-    margin: 0;
-  }
-
-  .soldout-history__lead {
-    margin: 0 auto 28px;
-    max-width: 680px;
-    font-size: {{ section.settings.lead_size_pc }}px;
-    line-height: 1.9;
-    color: {{ section.settings.lead_color }};
-    letter-spacing: 0.04em;
-  }
-
-  .soldout-history__lead p {
-    margin: 0;
-  }
-
-  .soldout-history__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .soldout-history__item {
-    background: {{ section.settings.item_bg_color }};
-    border: 1px solid {{ section.settings.item_border_color }};
-    border-radius: 14px;
-    padding: 14px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .soldout-history__date {
-    font-size: {{ section.settings.item_text_size_pc }}px;
-    line-height: 1.5;
-    color: {{ section.settings.item_text_color }};
-    font-weight: 600;
-    text-align: left;
-  }
-
-  .soldout-history__tag {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: {{ section.settings.tag_bg_color }};
-    color: {{ section.settings.tag_color }};
-    border-radius: 999px;
-    padding: 5px 10px;
-    font-size: {{ section.settings.tag_size_pc }}px;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  @media (max-width: 768px) {
-    .soldout-history {
-      padding: {{ section.settings.padding_sp }}px 16px;
-    }
-
-    .soldout-history__box {
-      padding: 32px 16px;
-      border-radius: {{ section.settings.box_radius_sp }}px;
-    }
-
-    .soldout-history__heading {
-      font-size: {{ section.settings.heading_size_sp }}px;
-      margin-bottom: 16px;
-    }
-
-    .soldout-history__lead {
-      font-size: {{ section.settings.lead_size_sp }}px;
-      margin-bottom: 22px;
-    }
-
-    .soldout-history__list {
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .soldout-history__item {
-      padding: 10px 12px;
-    }
-
-    .soldout-history__date {
-      font-size: {{ section.settings.item_text_size_sp }}px;
-    }
-
-    .soldout-history__tag {
-      font-size: {{ section.settings.tag_size_sp }}px;
-      padding: 4px 8px;
-    }
-  }
-</style>
-
-<section class="soldout-history" id="soldout-history-{{ section.id }}">
-  <div class="soldout-history__inner">
-    <div class="soldout-history__box">
-
-      <h2 class="soldout-history__heading">
-        {{ section.settings.heading }}
-      </h2>
-
-      {% if section.settings.lead != blank %}
-        <div class="soldout-history__lead">
-          {{ section.settings.lead }}
-        </div>
-      {% endif %}
-
-      <div class="soldout-history__list">
-        {% for block in section.blocks %}
-          <div class="soldout-history__item" {{ block.shopify_attributes }}>
-            <span class="soldout-history__date">
-              {{ block.settings.date }}
-            </span>
-
-            <span class="soldout-history__tag">
-              {{ block.settings.status }}
-            </span>
-          </div>
-        {% endfor %}
+  <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="{% unless section.settings.remove_horizontal_spacing %}container{% endunless %}">
+      <div class="text-{{ section.settings.text_alignment }}">
+        {{- section.settings.liquid -}}
       </div>
-
     </div>
   </div>
-</section>
+{%- endif -%}
 
 {% schema %}
 {
-  "name": "MUSUBI 完売履歴",
+  "name": "t:sections.custom_liquid.name",
+  "class": "shopify-section--custom-liquid",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["custom.overlay"]
+  },
   "settings": [
     {
-      "type": "richtext",
-      "id": "heading",
-      "label": "見出し",
-      "default": "<p>完売が続いております</p>"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
     },
     {
-      "type": "richtext",
-      "id": "lead",
-      "label": "説明文",
-      "default": "<p>販売のたびに多くの反響をいただき、MUSUBIはこれまで何度も完売を重ねてきました。</p>"
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
     },
     {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#f8f5ef"
+      "type": "checkbox",
+      "id": "remove_vertical_spacing",
+      "label": "t:global.spacing.remove_vertical_spacing",
+      "default": false
     },
     {
-      "type": "color",
-      "id": "box_bg_color",
-      "label": "ボックス背景カラー",
-      "default": "#ffffff"
+      "type": "checkbox",
+      "id": "remove_horizontal_spacing",
+      "label": "t:global.spacing.remove_horizontal_spacing",
+      "default": false
     },
     {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
+      "type": "liquid",
+      "id": "liquid",
+      "label": "t:global.code.liquid",
+      "info": "t:global.code.liquid_info",
+      "default": "<p>Write or copy/paste Liquid code</p>"
     },
     {
-      "type": "color",
-      "id": "lead_color",
-      "label": "説明文カラー",
-      "default": "#666666"
-    },
-    {
-      "type": "color",
-      "id": "item_bg_color",
-      "label": "履歴背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "item_border_color",
-      "label": "履歴枠線カラー",
-      "default": "#ece7de"
-    },
-    {
-      "type": "color",
-      "id": "item_text_color",
-      "label": "履歴テキストカラー",
-      "default": "#444444"
-    },
-    {
-      "type": "color",
-      "id": "tag_bg_color",
-      "label": "タグ背景カラー",
-      "default": "#1f2a44"
-    },
-    {
-      "type": "color",
-      "id": "tag_color",
-      "label": "タグ文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ PC",
-      "min": 20,
-      "max": 56,
-      "step": 1,
-      "unit": "px",
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ SP",
-      "min": 18,
-      "max": 40,
-      "step": 1,
-      "unit": "px",
-      "default": 24
-    },
-    {
-      "type": "range",
-      "id": "lead_size_pc",
-      "label": "説明文サイズ PC",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "unit": "px",
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "lead_size_sp",
-      "label": "説明文サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "item_text_size_pc",
-      "label": "履歴テキストサイズ PC",
-      "min": 11,
-      "max": 22,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "item_text_size_sp",
-      "label": "履歴テキストサイズ SP",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "tag_size_pc",
-      "label": "タグサイズ PC",
-      "min": 10,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "tag_size_sp",
-      "label": "タグサイズ SP",
-      "min": 10,
-      "max": 16,
-      "step": 1,
-      "unit": "px",
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "box_radius_pc",
-      "label": "ボックス角丸 PC",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 28
-    },
-    {
-      "type": "range",
-      "id": "box_radius_sp",
-      "label": "ボックス角丸 SP",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "max_width",
-      "label": "最大幅",
-      "min": 640,
-      "max": 1200,
-      "step": 20,
-      "default": 960
-    },
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白 PC",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白 SP",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 56
-    }
-  ],
-  "blocks": [
-    {
-      "type": "soldout_record",
-      "name": "販売記録",
-      "settings": [
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:global.text.alignment",
+      "options": [
         {
-          "type": "text",
-          "id": "date",
-          "label": "日付・内容",
-          "default": "2025年5月 先行予約"
+          "value": "start",
+          "label": "t:global.position.left"
         },
         {
-          "type": "text",
-          "id": "status",
-          "label": "ステータス",
-          "default": "完売"
+          "value": "center",
+          "label": "t:global.position.center"
+        },
+        {
+          "value": "end",
+          "label": "t:global.position.right"
         }
-      ]
+      ],
+      "default": "center"
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI 完売履歴",
-      "blocks": [
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年5月 先行予約",
-            "status": "完売"
-          }
-        },
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年6月 先行予約",
-            "status": "完売"
-          }
-        },
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年7月 先行予約",
-            "status": "完売"
-          }
-        }
-      ]
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name"
     }
   ]
 }
 {% endschema %}
+
