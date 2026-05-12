@@ -319,6 +319,20 @@
             "date": "2025年10月 先行予約",
             "status": "完売"
           }
+        },
+        "soldout_record_Rr47tV": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年12月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_xzzJhT": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年5月下旬 先行予約予定",
+            "status": "準備中"
+          }
         }
       },
       "block_order": [
@@ -329,7 +343,9 @@
         "sold_5",
         "sold_6",
         "sold_7",
-        "sold_8"
+        "sold_8",
+        "soldout_record_Rr47tV",
+        "soldout_record_xzzJhT"
       ],
       "settings": {
         "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
