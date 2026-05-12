@@ -16,14 +16,14 @@
         "hero_image": "shopify://shop_images/260312_KAPOKKNOT1205.jpg",
         "hero_image_sp": "shopify://shop_images/10_15.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "hero_bg_color": "#00afec",
+        "hero_bg_color": "#b7d9ff",
         "brand_name": "KAPOK KNOT HOME",
         "hero_title": "<p>夏にやさしい重みで<br/>休息のスイッチを入れる。</p>",
         "hero_title_font_size_pc": 56,
         "hero_title_font_size_sp": 25,
         "hero_title_font_weight_pc": "700",
         "hero_title_font_weight_sp": "700",
-        "hero_subtitle": "<p>立体あみあみ通気構造による<br/>リカバリー加重ブランケット</p>",
+        "hero_subtitle": "<p><strong>立体あみあみ通気構造による<br/>リカバリー加重ブランケット</strong></p>",
         "hero_subtitle_font_size": 16,
         "hero_subtitle_font_weight": "500",
         "hero_subtitle_color": "#ffffff",
@@ -217,8 +217,8 @@
     "musubi_lp_cta_HwYcWT": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#00afec",
-        "subtitle": "<p>【次回先行予約は5月下旬を予定】</p>",
+        "bg_color": "#b7d9ff",
+        "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
@@ -484,8 +484,8 @@
     "musubi_lp_cta_JGY9PM": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#00afec",
-        "subtitle": "<p>【次回先行予約は5月下旬を予定】</p>",
+        "bg_color": "#b7d9ff",
+        "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
@@ -950,8 +950,8 @@
     "cta-after-colors": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#00afec",
-        "subtitle": "<p>【次回先行予約は5月下旬を予定】</p>",
+        "bg_color": "#b7d9ff",
+        "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
@@ -1312,7 +1312,7 @@
       "type": "musubi-lp-cta",
       "settings": {
         "bg_color": "#00afec",
-        "subtitle": "<p>【次回先行予約は5月下旬を予定】</p>",
+        "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
