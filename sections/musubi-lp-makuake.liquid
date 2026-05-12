@@ -1,42 +1,43 @@
 <style>
   .makuake {
-    padding: {{ section.settings.padding_pc }}px 20px;
-    background: {{ section.settings.bg_color }};
+    padding: 96px 20px;
+    background: #f8f5ef;
   }
 
   .makuake__inner {
-    max-width: {{ section.settings.max_width }}px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   .makuake__box {
-    background: {{ section.settings.box_bg_color }};
-    border: 1px solid {{ section.settings.box_border_color }};
-    border-radius: {{ section.settings.box_radius }}px;
+    background: #fff;
+    border-radius: 28px;
     padding: 56px 44px;
-    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.06);
     text-align: center;
   }
 
   .makuake__badge {
-    display: inline-block;
-    background: {{ section.settings.badge_bg_color }};
-    color: {{ section.settings.badge_color }};
-    font-size: {{ section.settings.badge_size_pc }}px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #f2ece3;
+    color: #8b7355;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.12em;
-    padding: 9px 16px;
-    border-radius: 999px;
     margin-bottom: 18px;
   }
 
   .makuake__title {
-    font-size: {{ section.settings.heading_size_pc }}px;
-    color: {{ section.settings.heading_color }};
-    font-weight: 700;
-    line-height: 1.55;
+    margin: 0 0 26px;
+    font-size: 42px;
+    line-height: 1.45;
     letter-spacing: 0.04em;
-    margin: 0 0 28px;
+    color: #1a1a1a;
+    font-weight: 700;
   }
 
   .makuake__title p {
@@ -44,79 +45,74 @@
   }
 
   .makuake__hero-image {
-    margin: 0 auto 34px;
-    max-width: {{ section.settings.hero_image_width }}px;
-    border-radius: {{ section.settings.hero_image_radius }}px;
+    margin: 0 auto 30px;
+    max-width: 760px;
     overflow: hidden;
+    border-radius: 22px;
     box-shadow: 0 16px 42px rgba(0,0,0,0.10);
   }
 
   .makuake__hero-image img {
     width: 100%;
-    height: auto;
     display: block;
+    height: auto;
   }
 
   .makuake__stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 14px;
     margin-bottom: 34px;
   }
 
   .makuake__stat {
-    background: {{ section.settings.stat_bg_color }};
-    border-radius: {{ section.settings.stat_radius }}px;
-    padding: 28px 16px;
-    border: 1px solid {{ section.settings.stat_border_color }};
+    background: #faf7f2;
+    border-radius: 18px;
+    padding: 26px 16px;
   }
 
   .makuake__stat-number {
     display: block;
-    font-size: {{ section.settings.stat_number_size_pc }}px;
-    color: {{ section.settings.stat_number_color }};
+    font-size: 34px;
     font-weight: 800;
     line-height: 1.2;
-    letter-spacing: 0.02em;
+    color: #1a1a1a;
     margin-bottom: 8px;
   }
 
   .makuake__stat-label {
     display: block;
-    font-size: {{ section.settings.stat_label_size_pc }}px;
-    color: {{ section.settings.stat_label_color }};
-    font-weight: 600;
+    font-size: 13px;
+    color: #777;
     letter-spacing: 0.04em;
   }
 
   .makuake__soldout {
-    background: {{ section.settings.soldout_bg_color }};
-    border-radius: {{ section.settings.soldout_radius }}px;
-    padding: 28px;
+    background: #faf7f2;
+    border-radius: 22px;
+    padding: 30px;
     margin-bottom: 28px;
-    text-align: left;
   }
 
   .makuake__soldout-title {
     margin: 0 0 18px;
-    text-align: center;
-    font-size: {{ section.settings.soldout_heading_size_pc }}px;
-    color: {{ section.settings.soldout_heading_color }};
-    font-weight: 700;
+    font-size: 24px;
     line-height: 1.5;
+    color: #1a1a1a;
+    font-weight: 700;
   }
 
   .makuake__soldout-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 10px;
   }
 
   .makuake__soldout-item {
-    background: {{ section.settings.soldout_item_bg_color }};
-    border: 1px solid {{ section.settings.soldout_item_border_color }};
-    border-radius: 12px;
-    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid #ece7de;
+    border-radius: 14px;
+    padding: 14px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,82 +120,81 @@
   }
 
   .makuake__soldout-date {
-    font-size: {{ section.settings.soldout_text_size_pc }}px;
-    color: {{ section.settings.soldout_text_color }};
+    font-size: 14px;
     line-height: 1.5;
+    color: #444;
     font-weight: 600;
+    text-align: left;
   }
 
   .makuake__soldout-tag {
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    background: {{ section.settings.soldout_tag_bg_color }};
-    color: {{ section.settings.soldout_tag_color }};
-    font-size: {{ section.settings.soldout_tag_size_pc }}px;
-    font-weight: 700;
+    background: #1f2a44;
+    color: #fff;
     border-radius: 999px;
     padding: 5px 10px;
-    line-height: 1;
+    font-size: 11px;
+    font-weight: 700;
   }
 
   .makuake__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: {{ section.settings.link_bg_color }};
-    color: {{ section.settings.link_color }};
-    font-size: {{ section.settings.link_size_pc }}px;
-    font-weight: 700;
+    background: #1f2a44;
+    color: #fff;
     text-decoration: none;
     border-radius: 999px;
     padding: 15px 28px;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all .25s ease;
   }
 
   .makuake__link:hover {
-    opacity: 0.86;
+    opacity: .9;
     transform: translateY(-2px);
   }
 
   @media (max-width: 768px) {
 
     .makuake {
-      padding: {{ section.settings.padding_sp }}px 16px;
+      padding: 64px 16px;
     }
 
     .makuake__box {
       padding: 28px 14px;
-      border-radius: {{ section.settings.box_radius_sp }}px;
+      border-radius: 20px;
     }
 
     .makuake__badge {
-      font-size: {{ section.settings.badge_size_sp }}px;
-      margin-bottom: 12px;
+      font-size: 10px;
+      margin-bottom: 10px;
     }
 
     .makuake__title {
-      font-size: {{ section.settings.heading_size_sp }}px;
-      margin-bottom: 16px;
+      font-size: 28px;
       line-height: 1.45;
+      margin-bottom: 18px;
     }
 
     .makuake__hero-image {
       margin-bottom: 18px;
-      border-radius: {{ section.settings.hero_image_radius_sp }}px;
+      border-radius: 16px;
     }
 
-    /* 実績数字をコンパクト化 */
+    /* 実績数字を小さく */
     .makuake__stats {
-      grid-template-columns: repeat(3, 1fr);
       gap: 6px;
       margin-bottom: 20px;
     }
 
     .makuake__stat {
       padding: 12px 6px;
-      border-radius: {{ section.settings.stat_radius_sp }}px;
+      border-radius: 12px;
     }
 
     .makuake__stat-number {
@@ -216,12 +211,12 @@
 
     .makuake__soldout {
       padding: 18px 12px;
-      border-radius: {{ section.settings.soldout_radius_sp }}px;
+      border-radius: 16px;
       margin-bottom: 20px;
     }
 
     .makuake__soldout-title {
-      font-size: {{ section.settings.soldout_heading_size_sp }}px;
+      font-size: 18px;
       margin-bottom: 14px;
     }
 
@@ -235,49 +230,44 @@
     }
 
     .makuake__soldout-date {
-      font-size: {{ section.settings.soldout_text_size_sp }}px;
+      font-size: 12px;
     }
 
     .makuake__soldout-tag {
-      font-size: {{ section.settings.soldout_tag_size_sp }}px;
+      font-size: 10px;
       padding: 4px 8px;
     }
 
     .makuake__link {
       width: 100%;
-      font-size: {{ section.settings.link_size_sp }}px;
       padding: 14px 18px;
+      font-size: 14px;
     }
   }
 </style>
 
 <section class="makuake" id="makuake">
   <div class="makuake__inner">
+
     <div class="makuake__box">
 
-      <div class="makuake__header">
+      <span class="makuake__badge">
+        Makuake Success
+      </span>
 
-        {% if section.settings.badge != blank %}
-          <span class="makuake__badge">
-            {{ section.settings.badge }}
-          </span>
-        {% endif %}
+      <h2 class="makuake__title">
+        {{ section.settings.heading }}
+      </h2>
 
-        <h2 class="makuake__title">
-          {{ section.settings.heading }}
-        </h2>
-
-        {% if section.settings.hero_image != blank %}
-          <div class="makuake__hero-image">
-            <img
-              src="{{ section.settings.hero_image | img_url: '1200x' }}"
-              alt="{{ section.settings.hero_image_alt }}"
-              loading="lazy"
-            >
-          </div>
-        {% endif %}
-
-      </div>
+      {% if section.settings.hero_image != blank %}
+        <div class="makuake__hero-image">
+          <img
+            src="{{ section.settings.hero_image | img_url: '1400x' }}"
+            alt="{{ section.settings.hero_image_alt }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
 
       <div class="makuake__stats">
 
@@ -347,3 +337,106 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "MUSUBI Makuake実績",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>2024年5月クラウドファンディングで<br>圧倒的支持を獲得</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "メイン画像"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "画像alt",
+      "default": "MUSUBI Makuake"
+    },
+    {
+      "type": "text",
+      "id": "amount",
+      "label": "応援購入総額",
+      "default": "1,300万円"
+    },
+    {
+      "type": "text",
+      "id": "amount_label",
+      "label": "ラベル",
+      "default": "応援購入総額"
+    },
+    {
+      "type": "text",
+      "id": "supporters",
+      "label": "サポーター",
+      "default": "408名"
+    },
+    {
+      "type": "text",
+      "id": "supporters_label",
+      "label": "ラベル",
+      "default": "サポーター"
+    },
+    {
+      "type": "text",
+      "id": "percent",
+      "label": "達成率",
+      "default": "2,698%"
+    },
+    {
+      "type": "text",
+      "id": "percent_label",
+      "label": "ラベル",
+      "default": "達成率"
+    },
+    {
+      "type": "text",
+      "id": "soldout_heading",
+      "label": "完売見出し",
+      "default": "販売するたびに即完売"
+    },
+    {
+      "type": "url",
+      "id": "makuake_url",
+      "label": "Makuakeリンク"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "リンクテキスト",
+      "default": "Makuakeプロジェクトを見る →"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "soldout_record",
+      "name": "販売記録",
+      "settings": [
+        {
+          "type": "text",
+          "id": "date",
+          "label": "日付",
+          "default": "2025年5月 先行予約"
+        },
+        {
+          "type": "text",
+          "id": "status",
+          "label": "ステータス",
+          "default": "完売"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI Makuake実績"
+    }
+  ]
+}
+{% endschema %}
