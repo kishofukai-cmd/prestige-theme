@@ -101,6 +101,120 @@
       ],
       "settings": {}
     },
+    "musubi_soldout_history_mDymEi": {
+      "type": "musubi-soldout-history",
+      "blocks": {
+        "soldout_record_qrf9zD": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_FLVKmD": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年11月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_LfETT8": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年1月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_TjEUik": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年5月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_LFFwWa": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年6月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_rALwqj": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年7月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_Dqc7at": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年9月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_6X3RAc": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_TwRJD4": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年12月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_fch9E4": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年5月下旬 先行予約開始を予定",
+            "status": "準備中"
+          }
+        }
+      },
+      "block_order": [
+        "soldout_record_qrf9zD",
+        "soldout_record_FLVKmD",
+        "soldout_record_LfETT8",
+        "soldout_record_TjEUik",
+        "soldout_record_LFFwWa",
+        "soldout_record_rALwqj",
+        "soldout_record_Dqc7at",
+        "soldout_record_6X3RAc",
+        "soldout_record_TwRJD4",
+        "soldout_record_fch9E4"
+      ],
+      "name": "MUSUBI 完売履歴",
+      "settings": {
+        "heading": "",
+        "lead": "<p>多くの反響をいただき、MUSUBIは<br/>これまで何度も完売を重ねてきました。</p>",
+        "bg_color": "#f8f5ef",
+        "box_bg_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "lead_color": "#666666",
+        "item_bg_color": "#faf7f2",
+        "item_border_color": "#ece7de",
+        "item_text_color": "#444444",
+        "tag_bg_color": "#1f2a44",
+        "tag_color": "#ffffff",
+        "heading_size_pc": 32,
+        "heading_size_sp": 21,
+        "lead_size_pc": 15,
+        "lead_size_sp": 12,
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 13,
+        "tag_size_pc": 11,
+        "tag_size_sp": 10,
+        "box_radius_pc": 28,
+        "box_radius_sp": 20,
+        "max_width": 960,
+        "padding_pc": 80,
+        "padding_sp": 56
+      }
+    },
     "empathy": {
       "type": "musubi-lp-empathy",
       "blocks": {
@@ -1280,6 +1394,120 @@
         "padding_sp": 60
       }
     },
+    "musubi_soldout_history_B86dW3": {
+      "type": "musubi-soldout-history",
+      "blocks": {
+        "soldout_record_hAPMBM": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_zWRBJW": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2024年11月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_4ntpLP": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年1月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_hrmbkU": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年5月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_zMfAbj": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年6月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_W3JXPk": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年7月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_4qrWbR": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年9月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_aL6CM8": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年10月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_gNDyBy": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年12月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_N3rKwr": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年5月下旬 先行予約開始を予定",
+            "status": "準備中"
+          }
+        }
+      },
+      "block_order": [
+        "soldout_record_hAPMBM",
+        "soldout_record_zWRBJW",
+        "soldout_record_4ntpLP",
+        "soldout_record_hrmbkU",
+        "soldout_record_zMfAbj",
+        "soldout_record_W3JXPk",
+        "soldout_record_4qrWbR",
+        "soldout_record_aL6CM8",
+        "soldout_record_gNDyBy",
+        "soldout_record_N3rKwr"
+      ],
+      "name": "MUSUBI 完売履歴",
+      "settings": {
+        "heading": "<p>次回先行予約が決定！</p>",
+        "lead": "<p>多くの反響をいただき、MUSUBIは<br/>これまで何度も完売を重ねてきました。</p>",
+        "bg_color": "#f8f5ef",
+        "box_bg_color": "#ffffff",
+        "heading_color": "#1a1a1a",
+        "lead_color": "#666666",
+        "item_bg_color": "#faf7f2",
+        "item_border_color": "#ece7de",
+        "item_text_color": "#444444",
+        "tag_bg_color": "#1f2a44",
+        "tag_color": "#ffffff",
+        "heading_size_pc": 32,
+        "heading_size_sp": 21,
+        "lead_size_pc": 15,
+        "lead_size_sp": 12,
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 13,
+        "tag_size_pc": 11,
+        "tag_size_sp": 10,
+        "box_radius_pc": 28,
+        "box_radius_sp": 20,
+        "max_width": 960,
+        "padding_pc": 80,
+        "padding_sp": 56
+      }
+    },
     "musubi_lp_cta_zUJQPK": {
       "type": "musubi-lp-cta",
       "settings": {
@@ -1333,6 +1561,7 @@
     "177834100804c0ef0c",
     "story",
     "17784810450136d6c9",
+    "musubi_soldout_history_mDymEi",
     "musubi_lp_cta_HwYcWT",
     "why",
     "sizes",
@@ -1348,6 +1577,7 @@
     "hotels",
     "cross-sell",
     "faq",
+    "musubi_soldout_history_B86dW3",
     "musubi_lp_cta_zUJQPK"
   ]
 }
