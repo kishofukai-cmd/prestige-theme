@@ -33,7 +33,7 @@
 
   .makuake__title {
     margin: 0 0 26px;
-    font-size: 42px;
+    font-size: {{ section.settings.heading_size_pc }}px;
     line-height: 1.45;
     letter-spacing: 0.04em;
     color: #1a1a1a;
@@ -176,7 +176,7 @@
     }
 
     .makuake__title {
-      font-size: 28px;
+      font-size: {{ section.settings.heading_size_sp }}px;
       line-height: 1.45;
       margin-bottom: 18px;
     }
@@ -186,7 +186,6 @@
       border-radius: 16px;
     }
 
-    /* 実績数字を小さく */
     .makuake__stats {
       gap: 6px;
       margin-bottom: 20px;
@@ -347,6 +346,26 @@
       "id": "heading",
       "label": "見出し",
       "default": "<p>2024年5月クラウドファンディングで<br>圧倒的支持を獲得</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
     },
     {
       "type": "image_picker",
