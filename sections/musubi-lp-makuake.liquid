@@ -164,62 +164,74 @@
   }
 
   @media (max-width: 768px) {
+
     .makuake {
       padding: {{ section.settings.padding_sp }}px 16px;
     }
 
     .makuake__box {
-      padding: 36px 18px;
+      padding: 28px 14px;
       border-radius: {{ section.settings.box_radius_sp }}px;
     }
 
     .makuake__badge {
       font-size: {{ section.settings.badge_size_sp }}px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .makuake__title {
       font-size: {{ section.settings.heading_size_sp }}px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      line-height: 1.45;
     }
 
     .makuake__hero-image {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       border-radius: {{ section.settings.hero_image_radius_sp }}px;
     }
 
+    /* 実績数字を小さく横並び */
     .makuake__stats {
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 20px;
     }
 
     .makuake__stat {
-      padding: 22px 14px;
+      padding: 12px 6px;
       border-radius: {{ section.settings.stat_radius_sp }}px;
     }
 
     .makuake__stat-number {
-      font-size: {{ section.settings.stat_number_size_sp }}px;
+      font-size: 18px;
+      margin-bottom: 4px;
+      line-height: 1.2;
     }
 
     .makuake__stat-label {
-      font-size: {{ section.settings.stat_label_size_sp }}px;
+      font-size: 10px;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
     }
 
     .makuake__soldout {
-      padding: 20px 14px;
+      padding: 18px 12px;
       border-radius: {{ section.settings.soldout_radius_sp }}px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .makuake__soldout-title {
       font-size: {{ section.settings.soldout_heading_size_sp }}px;
+      margin-bottom: 14px;
     }
 
     .makuake__soldout-list {
       grid-template-columns: 1fr;
       gap: 8px;
+    }
+
+    .makuake__soldout-item {
+      padding: 10px 12px;
     }
 
     .makuake__soldout-date {
@@ -228,6 +240,7 @@
 
     .makuake__soldout-tag {
       font-size: {{ section.settings.soldout_tag_size_sp }}px;
+      padding: 4px 8px;
     }
 
     .makuake__link {
@@ -237,629 +250,3 @@
     }
   }
 </style>
-
-<section class="makuake" id="makuake">
-  <div class="makuake__inner">
-    <div class="makuake__box">
-
-      <div class="makuake__header">
-
-        {% if section.settings.badge != blank %}
-          <span class="makuake__badge">
-            {{ section.settings.badge }}
-          </span>
-        {% endif %}
-
-        <h2 class="makuake__title">
-          {{ section.settings.heading }}
-        </h2>
-
-        {% if section.settings.hero_image != blank %}
-          <div class="makuake__hero-image">
-            <img
-              src="{{ section.settings.hero_image | img_url: '1200x' }}"
-              alt="{{ section.settings.hero_image_alt }}"
-              loading="lazy"
-            >
-          </div>
-        {% endif %}
-
-      </div>
-
-      <div class="makuake__stats">
-
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">
-            {{ section.settings.amount }}
-          </span>
-          <span class="makuake__stat-label">
-            {{ section.settings.amount_label }}
-          </span>
-        </div>
-
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">
-            {{ section.settings.supporters }}
-          </span>
-          <span class="makuake__stat-label">
-            {{ section.settings.supporters_label }}
-          </span>
-        </div>
-
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">
-            {{ section.settings.percent }}
-          </span>
-          <span class="makuake__stat-label">
-            {{ section.settings.percent_label }}
-          </span>
-        </div>
-
-      </div>
-
-      <div class="makuake__soldout">
-
-        <p class="makuake__soldout-title">
-          {{ section.settings.soldout_heading }}
-        </p>
-
-        <div class="makuake__soldout-list">
-
-          {% for block in section.blocks %}
-            <div class="makuake__soldout-item" {{ block.shopify_attributes }}>
-              <span class="makuake__soldout-date">
-                {{ block.settings.date }}
-              </span>
-
-              <span class="makuake__soldout-tag">
-                {{ block.settings.status }}
-              </span>
-            </div>
-          {% endfor %}
-
-        </div>
-      </div>
-
-      {% if section.settings.makuake_url != blank %}
-        <a
-          href="{{ section.settings.makuake_url }}"
-          class="makuake__link"
-          target="_blank"
-          rel="noopener"
-        >
-          {{ section.settings.link_text }}
-        </a>
-      {% endif %}
-
-    </div>
-  </div>
-</section>
-
-{% schema %}
-{
-  "name": "MUSUBI Makuake実績",
-  "settings": [
-    {
-      "type": "header",
-      "content": "テキスト"
-    },
-    {
-      "type": "text",
-      "id": "badge",
-      "label": "バッジ",
-      "default": "Makuake Success"
-    },
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "見出し",
-      "default": "<p>2024年5月<br>クラウドファンディングで<br>圧倒的支持を獲得</p>"
-    },
-
-    {
-      "type": "header",
-      "content": "実績画像"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "実績画像"
-    },
-    {
-      "type": "text",
-      "id": "hero_image_alt",
-      "label": "画像alt",
-      "default": "Makuake実績画像"
-    },
-    {
-      "type": "range",
-      "id": "hero_image_width",
-      "label": "画像最大幅",
-      "min": 400,
-      "max": 1200,
-      "step": 20,
-      "default": 820
-    },
-    {
-      "type": "range",
-      "id": "hero_image_radius",
-      "label": "画像角丸（PC）",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "hero_image_radius_sp",
-      "label": "画像角丸（SP）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 16
-    },
-
-    {
-      "type": "text",
-      "id": "amount",
-      "label": "支援総額",
-      "default": "1,300万円"
-    },
-    {
-      "type": "text",
-      "id": "amount_label",
-      "label": "支援総額ラベル",
-      "default": "応援購入総額"
-    },
-    {
-      "type": "text",
-      "id": "supporters",
-      "label": "サポーター数",
-      "default": "408名"
-    },
-    {
-      "type": "text",
-      "id": "supporters_label",
-      "label": "サポーターラベル",
-      "default": "サポーター"
-    },
-    {
-      "type": "text",
-      "id": "percent",
-      "label": "達成率",
-      "default": "2,698%"
-    },
-    {
-      "type": "text",
-      "id": "percent_label",
-      "label": "達成率ラベル",
-      "default": "達成率"
-    },
-
-    {
-      "type": "text",
-      "id": "soldout_heading",
-      "label": "完売履歴見出し",
-      "default": "販売するたびに即完売"
-    },
-
-    {
-      "type": "url",
-      "id": "makuake_url",
-      "label": "MakuakeプロジェクトURL"
-    },
-    {
-      "type": "text",
-      "id": "link_text",
-      "label": "リンクテキスト",
-      "default": "Makuakeプロジェクトページを見る →"
-    },
-
-    {
-      "type": "range",
-      "id": "badge_size_pc",
-      "label": "バッジ文字サイズ（PC）",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "badge_size_sp",
-      "label": "バッジ文字サイズ（SP）",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "color",
-      "id": "badge_color",
-      "label": "バッジ文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "badge_bg_color",
-      "label": "バッジ背景カラー",
-      "default": "#f4eee6"
-    },
-
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ（PC）",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ（SP）",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
-    },
-
-    {
-      "type": "range",
-      "id": "stat_number_size_pc",
-      "label": "実績数字サイズ（PC）",
-      "min": 24,
-      "max": 64,
-      "step": 1,
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "stat_number_size_sp",
-      "label": "実績数字サイズ（SP）",
-      "min": 22,
-      "max": 48,
-      "step": 1,
-      "default": 34
-    },
-    {
-      "type": "color",
-      "id": "stat_number_color",
-      "label": "実績数字カラー",
-      "default": "#8B7355"
-    },
-
-    {
-      "type": "range",
-      "id": "stat_label_size_pc",
-      "label": "実績ラベルサイズ（PC）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "stat_label_size_sp",
-      "label": "実績ラベルサイズ（SP）",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "stat_label_color",
-      "label": "実績ラベルカラー",
-      "default": "#555555"
-    },
-
-    {
-      "type": "range",
-      "id": "soldout_heading_size_pc",
-      "label": "完売見出しサイズ（PC）",
-      "min": 14,
-      "max": 30,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "soldout_heading_size_sp",
-      "label": "完売見出しサイズ（SP）",
-      "min": 14,
-      "max": 24,
-      "step": 1,
-      "default": 17
-    },
-    {
-      "type": "color",
-      "id": "soldout_heading_color",
-      "label": "完売見出しカラー",
-      "default": "#1a1a1a"
-    },
-
-    {
-      "type": "range",
-      "id": "soldout_text_size_pc",
-      "label": "完売履歴テキストサイズ（PC）",
-      "min": 11,
-      "max": 20,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "range",
-      "id": "soldout_text_size_sp",
-      "label": "完売履歴テキストサイズ（SP）",
-      "min": 11,
-      "max": 18,
-      "step": 1,
-      "default": 13
-    },
-    {
-      "type": "color",
-      "id": "soldout_text_color",
-      "label": "完売履歴テキストカラー",
-      "default": "#333333"
-    },
-
-    {
-      "type": "range",
-      "id": "soldout_tag_size_pc",
-      "label": "完売タグサイズ（PC）",
-      "min": 10,
-      "max": 18,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "soldout_tag_size_sp",
-      "label": "完売タグサイズ（SP）",
-      "min": 10,
-      "max": 16,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "color",
-      "id": "soldout_tag_color",
-      "label": "完売タグ文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "soldout_tag_bg_color",
-      "label": "完売タグ背景カラー",
-      "default": "#8B7355"
-    },
-
-    {
-      "type": "range",
-      "id": "link_size_pc",
-      "label": "リンクボタン文字サイズ（PC）",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "link_size_sp",
-      "label": "リンクボタン文字サイズ（SP）",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "color",
-      "id": "link_color",
-      "label": "リンクボタン文字カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "link_bg_color",
-      "label": "リンクボタン背景カラー",
-      "default": "#1a1a1a"
-    },
-
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "box_bg_color",
-      "label": "ボックス背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "box_border_color",
-      "label": "ボックス枠線カラー",
-      "default": "#eee7dd"
-    },
-
-    {
-      "type": "range",
-      "id": "box_radius",
-      "label": "ボックス角丸（PC）",
-      "min": 0,
-      "max": 40,
-      "step": 1,
-      "default": 26
-    },
-    {
-      "type": "range",
-      "id": "box_radius_sp",
-      "label": "ボックス角丸（SP）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-
-    {
-      "type": "range",
-      "id": "max_width",
-      "label": "最大幅",
-      "min": 720,
-      "max": 1200,
-      "step": 20,
-      "default": 960
-    },
-
-    {
-      "type": "color",
-      "id": "stat_bg_color",
-      "label": "実績カード背景カラー",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "stat_border_color",
-      "label": "実績カード枠線カラー",
-      "default": "#eee7dd"
-    },
-
-    {
-      "type": "range",
-      "id": "stat_radius",
-      "label": "実績カード角丸（PC）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 18
-    },
-    {
-      "type": "range",
-      "id": "stat_radius_sp",
-      "label": "実績カード角丸（SP）",
-      "min": 0,
-      "max": 28,
-      "step": 1,
-      "default": 16
-    },
-
-    {
-      "type": "color",
-      "id": "soldout_bg_color",
-      "label": "完売履歴背景カラー",
-      "default": "#ffffff"
-    },
-
-    {
-      "type": "range",
-      "id": "soldout_radius",
-      "label": "完売履歴角丸（PC）",
-      "min": 0,
-      "max": 32,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "soldout_radius_sp",
-      "label": "完売履歴角丸（SP）",
-      "min": 0,
-      "max": 28,
-      "step": 1,
-      "default": 16
-    },
-
-    {
-      "type": "color",
-      "id": "soldout_item_bg_color",
-      "label": "完売履歴アイテム背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "soldout_item_border_color",
-      "label": "完売履歴アイテム枠線カラー",
-      "default": "#eee7dd"
-    },
-
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白（PC）",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 80
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白（SP）",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 56
-    }
-  ],
-
-  "blocks": [
-    {
-      "type": "soldout_record",
-      "name": "販売/完売記録",
-      "settings": [
-        {
-          "type": "text",
-          "id": "date",
-          "label": "日付・内容",
-          "default": "2024年10月 先行予約"
-        },
-        {
-          "type": "text",
-          "id": "status",
-          "label": "ステータス",
-          "default": "完売"
-        }
-      ]
-    }
-  ],
-
-  "presets": [
-    {
-      "name": "MUSUBI Makuake実績",
-      "blocks": [
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年10月 先行予約",
-            "status": "完売"
-          }
-        },
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年11月 先行予約",
-            "status": "完売"
-          }
-        },
-        {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年1月 一般販売",
-            "status": "完売"
-          }
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
