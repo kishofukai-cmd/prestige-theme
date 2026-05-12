@@ -16,7 +16,7 @@
         "hero_image": "shopify://shop_images/260312_KAPOKKNOT1205.jpg",
         "hero_image_sp": "shopify://shop_images/10_15.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "hero_bg_color": "#b7d9ff",
+        "hero_bg_color": "#72a4dc",
         "brand_name": "KAPOK KNOT HOME",
         "hero_title": "<p>夏にやさしい重みで<br/>休息のスイッチを入れる。</p>",
         "hero_title_font_size_pc": 56,
@@ -223,7 +223,7 @@
     "musubi_lp_cta_HwYcWT": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#b7d9ff",
+        "bg_color": "#72a4dc",
         "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -490,7 +490,7 @@
     "musubi_lp_cta_JGY9PM": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#b7d9ff",
+        "bg_color": "#72a4dc",
         "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -956,7 +956,7 @@
     "cta-after-colors": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#b7d9ff",
+        "bg_color": "#72a4dc",
         "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -973,8 +973,8 @@
         "cta_text_2": "公式LINEから再入荷通知を受け取る",
         "cta2_bg_color": "#06c755",
         "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜",
-        "price_tax": "(税込)",
+        "price_text": "¥29,800〜(税込)",
+        "price_tax": "特許出願中",
         "price_color": "#ffffff",
         "price_font_size": 16,
         "feature_1": "オールシーズン",
@@ -1317,7 +1317,7 @@
     "musubi_lp_cta_zUJQPK": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#b7d9ff",
+        "bg_color": "#72a4dc",
         "subtitle": "<p><strong>【次回先行予約は5月下旬を予定】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
