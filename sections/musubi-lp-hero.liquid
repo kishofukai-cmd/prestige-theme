@@ -105,10 +105,18 @@
       {% endif %}
 
       <div class="hero__features">
-        <span>✓ オールシーズン</span>
-        <span>✓ 単一素材</span>
-        <span>✓ 通気性</span>
-        <span>✓ お手入れ簡単</span>
+        {% if section.settings.feature_1 != blank %}
+          <span>{{ section.settings.feature_1 }}</span>
+        {% endif %}
+        {% if section.settings.feature_2 != blank %}
+          <span>{{ section.settings.feature_2 }}</span>
+        {% endif %}
+        {% if section.settings.feature_3 != blank %}
+          <span>{{ section.settings.feature_3 }}</span>
+        {% endif %}
+        {% if section.settings.feature_4 != blank %}
+          <span>{{ section.settings.feature_4 }}</span>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -202,8 +210,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 4px 12px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.75);
+  font-size: {{ section.settings.features_font_size }}px;
+  color: {{ section.settings.features_text_color }};
   margin-top: 8px;
   letter-spacing: 0.03em;
 }
@@ -430,6 +438,50 @@
       "id": "price_tax",
       "label": "税込表記",
       "default": "(税込)"
+    },
+    {
+      "type": "header",
+      "content": "特徴テキスト"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "特徴1",
+      "default": "✓ オールシーズン"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "特徴2",
+      "default": "✓ 単一素材"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "特徴3",
+      "default": "✓ 通気性"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "特徴4",
+      "default": "✓ お手入れ簡単"
+    },
+    {
+      "type": "color",
+      "id": "features_text_color",
+      "label": "特徴テキスト色",
+      "default": "rgba(255,255,255,0.75)"
+    },
+    {
+      "type": "range",
+      "id": "features_font_size",
+      "label": "特徴フォントサイズ",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
     },
     {
       "type": "header",
