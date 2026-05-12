@@ -828,8 +828,15 @@
     },
     "custom_liquid_AiQ4Eg": {
       "type": "custom-liquid",
-      "name": "完売実績",
-      "settings": {}
+      "name": "custom liquid",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<p>Write or copy/paste Liquid code</p>",
+        "text_alignment": "center"
+      }
     },
     "ugc": {
       "type": "musubi-lp-ugc",
