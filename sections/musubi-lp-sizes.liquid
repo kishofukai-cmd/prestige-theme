@@ -55,11 +55,26 @@
     letter-spacing: 0.04em;
   }
 
+  .sizes__chart {
+    margin: 26px auto 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sizes__chart img {
+    width: {{ section.settings.size_chart_width_pc }}%;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: {{ section.settings.size_chart_radius_pc }}px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
   .sizes__tabs {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 0 auto 26px;
+    margin: 32px auto 26px;
     background: #f4eee6;
     border-radius: 999px;
     padding: 6px;
@@ -360,11 +375,21 @@
       font-size: {{ section.settings.body_size_sp }}px;
     }
 
+    .sizes__chart {
+      margin-top: 20px;
+    }
+
+    .sizes__chart img {
+      width: {{ section.settings.size_chart_width_sp }}%;
+      border-radius: {{ section.settings.size_chart_radius_sp }}px;
+    }
+
     .sizes__tabs {
       width: 100%;
       overflow-x: auto;
       justify-content: flex-start;
       border-radius: 18px;
+      margin-top: 28px;
     }
 
     .sizes__tab {
@@ -437,6 +462,24 @@
 
       {% if section.settings.lead != blank %}
         <div class="sizes__lead">{{ section.settings.lead }}</div>
+      {% endif %}
+
+      {% if section.settings.size_chart_image != blank %}
+        <div class="sizes__chart">
+          <img
+            src="{{ section.settings.size_chart_image | img_url: '1400x' }}"
+            alt="{{ section.settings.size_chart_alt }}"
+            loading="lazy"
+          >
+        </div>
+      {% elsif section.settings.size_chart_image_url != blank %}
+        <div class="sizes__chart">
+          <img
+            src="{{ section.settings.size_chart_image_url }}"
+            alt="{{ section.settings.size_chart_alt }}"
+            loading="lazy"
+          >
+        </div>
       {% endif %}
     </div>
 
@@ -735,6 +778,60 @@
     },
     {
       "type": "image_picker",
+      "id": "size_chart_image",
+      "label": "サイズ表画像"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_image_url",
+      "label": "サイズ表画像URL"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_alt",
+      "label": "サイズ表alt",
+      "default": "MUSUBI サイズ表"
+    },
+    {
+      "type": "range",
+      "id": "size_chart_width_pc",
+      "label": "サイズ表 横幅 PC",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "size_chart_width_sp",
+      "label": "サイズ表 横幅 SP",
+      "min": 60,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "size_chart_radius_pc",
+      "label": "サイズ表 角丸 PC",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "size_chart_radius_sp",
+      "label": "サイズ表 角丸 SP",
+      "min": 0,
+      "max": 28,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "image_picker",
       "id": "compare_image",
       "label": "サイズ比較画像"
     },
@@ -748,293 +845,6 @@
       "id": "compare_alt",
       "label": "サイズ比較画像alt",
       "default": "MUSUBIサイズ比較"
-    },
-    {
-      "type": "text",
-      "id": "colors_label",
-      "label": "カラーラベル",
-      "default": "COLOR VARIATION"
-    },
-    {
-      "type": "richtext",
-      "id": "colors_heading",
-      "label": "カラー見出し",
-      "default": "<p>暮らしに馴染む<br>カラーバリエーション</p>"
-    },
-    {
-      "type": "richtext",
-      "id": "colors_lead",
-      "label": "カラーリード文",
-      "default": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>"
-    },
-
-    {
-      "type": "header",
-      "content": "カラー1"
-    },
-    {
-      "type": "text",
-      "id": "color1_name",
-      "label": "カラー名",
-      "default": "Powder Beige"
-    },
-    {
-      "type": "text",
-      "id": "color1_code",
-      "label": "カラーコード",
-      "default": "#d9cfc4"
-    },
-    {
-      "type": "image_picker",
-      "id": "color1_image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "color1_image_url",
-      "label": "画像URL"
-    },
-    {
-      "type": "image_picker",
-      "id": "color1_thumbnail",
-      "label": "サムネイル画像"
-    },
-
-    {
-      "type": "header",
-      "content": "カラー2"
-    },
-    {
-      "type": "text",
-      "id": "color2_name",
-      "label": "カラー名",
-      "default": "Dusty Navy"
-    },
-    {
-      "type": "text",
-      "id": "color2_code",
-      "label": "カラーコード",
-      "default": "#3d4259"
-    },
-    {
-      "type": "image_picker",
-      "id": "color2_image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "color2_image_url",
-      "label": "画像URL"
-    },
-    {
-      "type": "image_picker",
-      "id": "color2_thumbnail",
-      "label": "サムネイル画像"
-    },
-
-    {
-      "type": "header",
-      "content": "カラー3"
-    },
-    {
-      "type": "text",
-      "id": "color3_name",
-      "label": "カラー名",
-      "default": "Calm Brown"
-    },
-    {
-      "type": "text",
-      "id": "color3_code",
-      "label": "カラーコード",
-      "default": "#8b6b50"
-    },
-    {
-      "type": "image_picker",
-      "id": "color3_image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "color3_image_url",
-      "label": "画像URL"
-    },
-    {
-      "type": "image_picker",
-      "id": "color3_thumbnail",
-      "label": "サムネイル画像"
-    },
-
-    {
-      "type": "header",
-      "content": "カラー4"
-    },
-    {
-      "type": "text",
-      "id": "color4_name",
-      "label": "カラー名",
-      "default": "Cloud White"
-    },
-    {
-      "type": "text",
-      "id": "color4_code",
-      "label": "カラーコード",
-      "default": "#e8e4de"
-    },
-    {
-      "type": "image_picker",
-      "id": "color4_image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "color4_image_url",
-      "label": "画像URL"
-    },
-    {
-      "type": "image_picker",
-      "id": "color4_thumbnail",
-      "label": "サムネイル画像"
-    },
-
-    {
-      "type": "header",
-      "content": "カラー5"
-    },
-    {
-      "type": "text",
-      "id": "color5_name",
-      "label": "カラー名",
-      "default": "Blossom Peach"
-    },
-    {
-      "type": "text",
-      "id": "color5_code",
-      "label": "カラーコード",
-      "default": "#d4a5a0"
-    },
-    {
-      "type": "image_picker",
-      "id": "color5_image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "color5_image_url",
-      "label": "画像URL"
-    },
-    {
-      "type": "image_picker",
-      "id": "color5_thumbnail",
-      "label": "サムネイル画像"
-    },
-
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "背景カラー",
-      "default": "#faf7f2"
-    },
-    {
-      "type": "color",
-      "id": "accent_color",
-      "label": "アクセントカラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "ラベル文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_bg",
-      "label": "ラベル背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "body_color",
-      "label": "本文カラー",
-      "default": "#555555"
-    },
-    {
-      "type": "range",
-      "id": "label_size_pc",
-      "label": "ラベルサイズ PC",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "label_size_sp",
-      "label": "ラベルサイズ SP",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ PC",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ SP",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "range",
-      "id": "body_size_pc",
-      "label": "本文サイズ PC",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "body_size_sp",
-      "label": "本文サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白 PC",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 88
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白 SP",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 60
     }
   ],
   "blocks": [
@@ -1047,101 +857,13 @@
           "id": "tab_label",
           "label": "タブラベル",
           "default": "Nap Size (M)"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "画像"
-        },
-        {
-          "type": "text",
-          "id": "image_url",
-          "label": "画像URL"
-        },
-        {
-          "type": "text",
-          "id": "badge",
-          "label": "バッジ",
-          "default": "ソファにおすすめ"
-        },
-        {
-          "type": "checkbox",
-          "id": "featured",
-          "label": "強調バッジ",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "サイズ名",
-          "default": "Nap Size (M)"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "価格",
-          "default": "¥29,800"
-        },
-        {
-          "type": "text",
-          "id": "price_note",
-          "label": "価格補足",
-          "default": "(税込)"
-        },
-        {
-          "type": "text",
-          "id": "dimensions",
-          "label": "サイズ",
-          "default": "100 × 70 cm"
-        },
-        {
-          "type": "text",
-          "id": "features",
-          "label": "特徴（カンマ区切り）",
-          "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方"
-        },
-        {
-          "type": "textarea",
-          "id": "note",
-          "label": "補足",
-          "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI サイズ・カラー",
-      "blocks": [
-        {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Nap Size (M)",
-            "badge": "ソファにおすすめ",
-            "featured": false,
-            "name": "Nap Size (M)",
-            "price": "¥29,800",
-            "price_note": "(税込)",
-            "dimensions": "100 × 70 cm",
-            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
-            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
-          }
-        },
-        {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Sleep Size (L)",
-            "badge": "ベッドにおすすめ",
-            "featured": true,
-            "name": "Sleep Size (L)",
-            "price": "¥39,800",
-            "price_note": "(税込)",
-            "dimensions": "150 × 100 cm",
-            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
-            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
-          }
-        }
-      ]
+      "name": "MUSUBI サイズ・カラー"
     }
   ]
 }
