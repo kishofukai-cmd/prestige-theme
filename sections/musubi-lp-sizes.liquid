@@ -535,9 +535,9 @@
           {% endif %}
         </div>
 
+        {% assign color_count = 0 %}
         {% assign first_color_image = '' %}
         {% assign first_color_name = '' %}
-        {% assign color_count = 0 %}
 
         {% for block in section.blocks %}
           {% if block.type == 'color_variant' %}
@@ -557,17 +557,10 @@
 
         {% if color_count > 0 %}
           <div class="colors__showcase">
-            <img
-              id="colors-main-img-{{ section.id }}"
-              src="{{ first_color_image }}"
-              alt="{{ first_color_name }}"
-              loading="lazy"
-            >
+            <img id="colors-main-img-{{ section.id }}" src="{{ first_color_image }}" alt="{{ first_color_name }}" loading="lazy">
           </div>
 
-          <p class="colors__name" id="colors-name-{{ section.id }}">
-            {{ first_color_name }}
-          </p>
+          <p class="colors__name" id="colors-name-{{ section.id }}">{{ first_color_name }}</p>
 
           <div class="colors__swatches">
             {% assign color_index = 0 %}
@@ -605,6 +598,14 @@
                 {% if block.type == 'color_variant' %}
                   {% assign color_item_index = color_item_index | plus: 1 %}
 
+                  {% if block.settings.image != blank %}
+                    {% assign color_img = block.settings.image | img_url: '1200x' %}
+                  {% elsif block.settings.image_url != blank %}
+                    {% assign color_img = block.settings.image_url %}
+                  {% else %}
+                    {% assign color_img = first_color_image %}
+                  {% endif %}
+
                   {% if block.settings.thumbnail != blank %}
                     {% assign thumb_img = block.settings.thumbnail | img_url: '400x' %}
                   {% elsif block.settings.image != blank %}
@@ -618,6 +619,7 @@
                   <div
                     class="colors__carousel-item{% if color_item_index == 1 %} colors__carousel-item--active{% endif %}"
                     data-color="{{ block.settings.name | escape }}"
+                    data-img="{{ color_img }}"
                   >
                     <img src="{{ thumb_img }}" alt="{{ block.settings.name }}" loading="lazy">
                     <span>{{ block.settings.name }}</span>
@@ -628,6 +630,54 @@
 
             <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
           </div>
+
+        {% else %}
+
+          {% assign default_img = 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200' %}
+
+          <div class="colors__showcase">
+            <img id="colors-main-img-{{ section.id }}" src="{{ default_img }}" alt="Powder Beige" loading="lazy">
+          </div>
+
+          <p class="colors__name" id="colors-name-{{ section.id }}">Powder Beige</p>
+
+          <div class="colors__swatches">
+            <button type="button" class="colors__swatch colors__swatch--active" style="background:#d9cfc4;" data-color="Powder Beige" data-img="{{ default_img }}" aria-label="Powder Beige"></button>
+            <button type="button" class="colors__swatch" style="background:#3d4259;" data-color="Dusty Navy" data-img="{{ default_img }}" aria-label="Dusty Navy"></button>
+            <button type="button" class="colors__swatch" style="background:#8b6b50;" data-color="Calm Brown" data-img="{{ default_img }}" aria-label="Calm Brown"></button>
+            <button type="button" class="colors__swatch" style="background:#e8e4de;" data-color="Cloud White" data-img="{{ default_img }}" aria-label="Cloud White"></button>
+            <button type="button" class="colors__swatch" style="background:#d4a5a0;" data-color="Blossom Peach" data-img="{{ default_img }}" aria-label="Blossom Peach"></button>
+          </div>
+
+          <div class="colors__carousel">
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
+
+            <div class="colors__carousel-track">
+              <div class="colors__carousel-item colors__carousel-item--active" data-color="Powder Beige" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Powder Beige" loading="lazy">
+                <span>Powder Beige</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Dusty Navy" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Dusty Navy" loading="lazy">
+                <span>Dusty Navy</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Calm Brown" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Calm Brown" loading="lazy">
+                <span>Calm Brown</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Cloud White" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Cloud White" loading="lazy">
+                <span>Cloud White</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Blossom Peach" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Blossom Peach" loading="lazy">
+                <span>Blossom Peach</span>
+              </div>
+            </div>
+
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
+          </div>
+
         {% endif %}
       </div>
     </div>
@@ -668,33 +718,35 @@
       const left = section.querySelector('.colors__carousel-arrow--left');
       const right = section.querySelector('.colors__carousel-arrow--right');
 
-      function setActiveColor(colorName) {
+      function setActiveColor(colorName, imageUrl) {
         swatches.forEach(function(swatch) {
           const isActive = swatch.dataset.color === colorName;
           swatch.classList.toggle('colors__swatch--active', isActive);
-
-          if (isActive && swatch.dataset.img && mainImg) {
-            mainImg.src = swatch.dataset.img;
-            mainImg.alt = colorName;
-          }
         });
 
         items.forEach(function(item) {
           item.classList.toggle('colors__carousel-item--active', item.dataset.color === colorName);
         });
 
-        if (nameEl) nameEl.textContent = colorName;
+        if (mainImg && imageUrl) {
+          mainImg.src = imageUrl;
+          mainImg.alt = colorName;
+        }
+
+        if (nameEl) {
+          nameEl.textContent = colorName;
+        }
       }
 
       swatches.forEach(function(swatch) {
         swatch.addEventListener('click', function() {
-          setActiveColor(swatch.dataset.color);
+          setActiveColor(swatch.dataset.color, swatch.dataset.img);
         });
       });
 
       items.forEach(function(item) {
         item.addEventListener('click', function() {
-          setActiveColor(item.dataset.color);
+          setActiveColor(item.dataset.color, item.dataset.img);
         });
       });
 
@@ -985,72 +1037,7 @@
   ],
   "presets": [
     {
-      "name": "MUSUBI サイズ・カラー",
-      "blocks": [
-        {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Nap Size (M)",
-            "badge": "ソファにおすすめ",
-            "featured": false,
-            "name": "Nap Size (M)",
-            "price": "¥29,800",
-            "price_note": "(税込)",
-            "dimensions": "100 × 70 cm",
-            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
-            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
-          }
-        },
-        {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Sleep Size (L)",
-            "badge": "ベッドにおすすめ",
-            "featured": true,
-            "name": "Sleep Size (L)",
-            "price": "¥39,800",
-            "price_note": "(税込)",
-            "dimensions": "150 × 100 cm",
-            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
-            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
-          }
-        },
-        {
-          "type": "color_variant",
-          "settings": {
-            "name": "Powder Beige",
-            "color_code": "#d9cfc4"
-          }
-        },
-        {
-          "type": "color_variant",
-          "settings": {
-            "name": "Dusty Navy",
-            "color_code": "#3d4259"
-          }
-        },
-        {
-          "type": "color_variant",
-          "settings": {
-            "name": "Calm Brown",
-            "color_code": "#8b6b50"
-          }
-        },
-        {
-          "type": "color_variant",
-          "settings": {
-            "name": "Cloud White",
-            "color_code": "#e8e4de"
-          }
-        },
-        {
-          "type": "color_variant",
-          "settings": {
-            "name": "Blossom Peach",
-            "color_code": "#d4a5a0"
-          }
-        }
-      ]
+      "name": "MUSUBI サイズ・カラー"
     }
   ]
 }
