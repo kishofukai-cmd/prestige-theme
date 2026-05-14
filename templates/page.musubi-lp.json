@@ -576,8 +576,8 @@
         "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIはサイズをお選びいただけます。</p>",
         "compare_alt": "MUSUBIサイズ比較",
         "bg_color": "#faf7f2",
-        "accent_color": "#8B7355",
-        "label_color": "#8B7355",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
         "label_bg": "#f4eee6",
         "heading_color": "#1a1a1a",
         "body_color": "#555555",
@@ -648,8 +648,8 @@
         "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
         "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
         "bg_color": "#faf7f2",
-        "accent_color": "#8B7355",
-        "label_color": "#8B7355",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
         "label_bg": "#f4eee6",
         "heading_color": "#1a1a1a",
         "body_color": "#555555",
@@ -1561,7 +1561,7 @@
         "soldout_record_N3rKwr": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月下旬 先行予約開始を予定",
+            "date": "2026年5月22日 先行予約開始を予定",
             "status": "準備中"
           }
         }
