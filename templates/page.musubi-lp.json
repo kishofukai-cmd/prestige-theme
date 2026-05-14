@@ -1005,6 +1005,48 @@
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
+        "reel_hRpnmj": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DR6vqKrksq6",
+            "caption": ""
+          }
+        },
+        "reel_HAz9qg": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DRjsLiBEixO",
+            "caption": ""
+          }
+        },
+        "reel_HwKU7B": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DXJuvtuE75f",
+            "caption": ""
+          }
+        },
+        "reel_ij3N9i": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DXWjD85EwjA",
+            "caption": ""
+          }
+        },
+        "reel_HCkUny": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DW56UDukU5X",
+            "caption": ""
+          }
+        },
+        "reel_XWbaqd": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DWoRc3tklfy",
+            "caption": ""
+          }
+        },
         "reel_ehrVg9": {
           "type": "reel",
           "settings": {
@@ -1016,32 +1058,38 @@
           "type": "reel",
           "settings": {
             "reel_id": "DP5PSqAEg0b",
-            "caption": "MUSUBI使用レビュー"
+            "caption": ""
           }
         },
         "reel_6": {
           "type": "reel",
           "settings": {
             "reel_id": "C93rW7dvKWP",
-            "caption": "MUSUBI使用レビュー"
+            "caption": ""
           }
         },
         "reel_4B6Vgf": {
           "type": "reel",
           "settings": {
             "reel_id": "DP6KXQLk0oC",
-            "caption": "MUSUBI使用レビュー"
+            "caption": ""
           }
         },
         "reel_5": {
           "type": "reel",
           "settings": {
             "reel_id": "DSHPDRyEzfF",
-            "caption": "MUSUBI使用レビュー"
+            "caption": ""
           }
         }
       },
       "block_order": [
+        "reel_hRpnmj",
+        "reel_HAz9qg",
+        "reel_HwKU7B",
+        "reel_ij3N9i",
+        "reel_HCkUny",
+        "reel_XWbaqd",
         "reel_ehrVg9",
         "reel_1",
         "reel_6",
@@ -1052,8 +1100,8 @@
         "badge": "USER VOICE",
         "heading": "<p>たくさんの方に選ばれています</p>",
         "subheading": "",
-        "instagram_url": "",
-        "follow_text": "@kapokknot をフォロー →",
+        "instagram_url": "https://www.instagram.com/kapokknot_home/",
+        "follow_text": "@kapokknot_homeをフォロー →",
         "badge_size_pc": 12,
         "badge_size_sp": 11,
         "badge_color": "#8b7355",
