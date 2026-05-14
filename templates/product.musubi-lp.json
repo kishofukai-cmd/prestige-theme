@@ -1016,25 +1016,11 @@
     "musubi_size_guide_JJVm9k": {
       "type": "musubi-size-guide",
       "blocks": {
-        "size_panel_DnqqUq": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "新登場！Full Size (XL)",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1153_c978336c-d2a5-43cd-a312-df4dbb00b143.jpg",
-            "badge": "包まれたい方におすすめ",
-            "featured": false,
-            "name": "Full Size(XL)",
-            "price": "¥44,800",
-            "price_note": "(税込)",
-            "dimensions": "約140 × 180 cm",
-            "features": "ベッドで全身を包まれたい方に,大柄な方にも,全身を預ける心地よさ",
-            "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
-          }
-        },
         "size_panel_CM4kJE": {
           "type": "size_panel",
           "settings": {
             "tab_label": "Nap Size (M)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT0618.jpg",
             "badge": "ソファにおすすめ",
             "featured": false,
             "name": "Nap Size (M)",
@@ -1049,6 +1035,7 @@
           "type": "size_panel",
           "settings": {
             "tab_label": "Sleep Size (L)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1198.jpg",
             "badge": "ベッドにおすすめ",
             "featured": true,
             "name": "Sleep Size (L)",
@@ -1058,12 +1045,27 @@
             "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
             "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
+        },
+        "size_panel_DnqqUq": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "新登場！Full Size (XL)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1153_c978336c-d2a5-43cd-a312-df4dbb00b143.jpg",
+            "badge": "包まれたい方におすすめ",
+            "featured": false,
+            "name": "Full Size(XL)",
+            "price": "¥44,800",
+            "price_note": "(税込)",
+            "dimensions": "約140 × 180 cm",
+            "features": "ベッドで全身を包まれたい方に,大柄な方にも,全身を預ける心地よさ",
+            "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
+          }
         }
       },
       "block_order": [
-        "size_panel_DnqqUq",
         "size_panel_CM4kJE",
-        "size_panel_xR7Pe7"
+        "size_panel_xR7Pe7",
+        "size_panel_DnqqUq"
       ],
       "name": "MUSUBI サイズのみ",
       "settings": {
