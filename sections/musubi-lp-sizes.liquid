@@ -832,102 +832,6 @@
       "id": "accent_color",
       "label": "アクセントカラー",
       "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "ラベル文字カラー",
-      "default": "#8B7355"
-    },
-    {
-      "type": "color",
-      "id": "label_bg",
-      "label": "ラベル背景カラー",
-      "default": "#f4eee6"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "見出しカラー",
-      "default": "#1a1a1a"
-    },
-    {
-      "type": "color",
-      "id": "body_color",
-      "label": "本文カラー",
-      "default": "#555555"
-    },
-    {
-      "type": "range",
-      "id": "label_size_pc",
-      "label": "ラベルサイズ PC",
-      "min": 10,
-      "max": 24,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "label_size_sp",
-      "label": "ラベルサイズ SP",
-      "min": 10,
-      "max": 20,
-      "step": 1,
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "heading_size_pc",
-      "label": "見出しサイズ PC",
-      "min": 20,
-      "max": 52,
-      "step": 1,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "heading_size_sp",
-      "label": "見出しサイズ SP",
-      "min": 18,
-      "max": 36,
-      "step": 1,
-      "default": 25
-    },
-    {
-      "type": "range",
-      "id": "body_size_pc",
-      "label": "本文サイズ PC",
-      "min": 12,
-      "max": 22,
-      "step": 1,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "body_size_sp",
-      "label": "本文サイズ SP",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "padding_pc",
-      "label": "上下余白 PC",
-      "min": 40,
-      "max": 160,
-      "step": 4,
-      "default": 88
-    },
-    {
-      "type": "range",
-      "id": "padding_sp",
-      "label": "上下余白 SP",
-      "min": 32,
-      "max": 120,
-      "step": 4,
-      "default": 60
     }
   ],
   "blocks": [
@@ -945,11 +849,6 @@
           "type": "image_picker",
           "id": "image",
           "label": "画像"
-        },
-        {
-          "type": "text",
-          "id": "image_url",
-          "label": "画像URL"
         },
         {
           "type": "text",
@@ -1012,7 +911,7 @@
           "default": "Powder Beige"
         },
         {
-          "type": "text",
+          "type": "color",
           "id": "color_code",
           "label": "カラーコード",
           "default": "#d9cfc4"
@@ -1021,11 +920,6 @@
           "type": "image_picker",
           "id": "image",
           "label": "メイン画像"
-        },
-        {
-          "type": "text",
-          "id": "image_url",
-          "label": "画像URL"
         },
         {
           "type": "image_picker",
@@ -1037,7 +931,61 @@
   ],
   "presets": [
     {
-      "name": "MUSUBI サイズ・カラー"
+      "name": "MUSUBI サイズ・カラー",
+      "blocks": [
+        {
+          "type": "size_panel"
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Powder Beige",
+            "color_code": "#d9cfc4"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Dusty Navy",
+            "color_code": "#3d4259"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Calm Brown",
+            "color_code": "#8b6b50"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Cloud White",
+            "color_code": "#e8e4de"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Blossom Peach",
+            "color_code": "#d4a5a0"
+          }
+        }
+      ]
     }
   ]
 }
