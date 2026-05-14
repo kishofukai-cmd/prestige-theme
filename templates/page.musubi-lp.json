@@ -937,6 +937,18 @@
         "link_text": "Makuakeプロジェクトページを見る →"
       }
     },
+    "custom_liquid_AiQ4Eg": {
+      "type": "custom-liquid",
+      "name": "custom liquid",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<p>Write or copy/paste Liquid code</p>",
+        "text_alignment": "center"
+      }
+    },
     "ugc": {
       "type": "musubi-lp-ugc",
       "blocks": {
@@ -1554,6 +1566,7 @@
     "science",
     "blocks_XxVGGt",
     "makuake",
+    "custom_liquid_AiQ4Eg",
     "ugc",
     "cta-after-colors",
     "care",
