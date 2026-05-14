@@ -1,37 +1,6 @@
-<style>
-  .sizes__chart {
-    margin: 26px auto 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .sizes__chart img {
-    width: {{ section.settings.size_chart_width_pc }}%;
-    max-width: 100%;
-    height: auto;
-    display: inline-block;
-    border-radius: {{ section.settings.size_chart_radius_pc }}px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  }
-
-  @media (max-width: 768px) {
-    .sizes__chart {
-      margin-top: 20px;
-    }
-
-    .sizes__chart img {
-      width: {{ section.settings.size_chart_width_sp }}%;
-      border-radius: {{ section.settings.size_chart_radius_sp }}px;
-    }
-  }
-</style>
-
 <section class="sizes" id="sizes">
   <div class="container">
-
-    <h2 class="section-title" data-reveal>
-      {{ section.settings.heading | default: 'あなたに合うサイズは？' }}
-    </h2>
+    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'あなたに合うサイズは？' }}</h2>
 
     {% if section.settings.lead != blank %}
       <div class="sizes__lead">
@@ -64,11 +33,7 @@
     <div class="sizes__tabs" data-reveal>
       {% for block in section.blocks %}
         {% if block.type == 'size_panel' %}
-          <button
-            class="sizes__tab{% if forloop.first %} sizes__tab--active{% endif %}"
-            data-tab="size-{{ forloop.index }}"
-            id="tab-size-{{ forloop.index }}"
-          >
+          <button class="sizes__tab{% if forloop.first %} sizes__tab--active{% endif %}" data-tab="size-{{ forloop.index }}" id="tab-size-{{ forloop.index }}">
             {{ block.settings.tab_label }}
           </button>
         {% endif %}
@@ -78,33 +43,16 @@
     <!-- パネル -->
     {% for block in section.blocks %}
       {% if block.type == 'size_panel' %}
-        <div
-          class="sizes__panel{% if forloop.first %} sizes__panel--active{% endif %}"
-          id="panel-size-{{ forloop.index }}"
-          data-reveal
-          {{ block.shopify_attributes }}
-        >
-
+        <div class="sizes__panel{% if forloop.first %} sizes__panel--active{% endif %}" id="panel-size-{{ forloop.index }}" data-reveal {{ block.shopify_attributes }}>
           <div class="sizes__panel-img">
             {% if block.settings.image != blank %}
-              <img
-                src="{{ block.settings.image | img_url: '800x' }}"
-                alt="{{ block.settings.name }}"
-                loading="lazy"
-              >
-
+              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.name }}" loading="lazy">
             {% elsif block.settings.image_url != blank %}
-
-              <img
-                src="{{ block.settings.image_url }}"
-                alt="{{ block.settings.name }}"
-                loading="lazy"
-              >
+              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
             {% endif %}
           </div>
 
           <div class="sizes__panel-content">
-
             <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">
               {{ block.settings.badge }}
             </div>
@@ -132,7 +80,6 @@
             <p class="sizes__panel-note">
               {{ block.settings.note }}
             </p>
-
           </div>
         </div>
       {% endif %}
@@ -141,27 +88,43 @@
     <!-- 比較画像 -->
     {% if section.settings.compare_image != blank %}
       <div class="sizes__compare" data-reveal>
-        <img
-          src="{{ section.settings.compare_image | img_url: '1000x' }}"
-          alt="サイズ比較"
-          loading="lazy"
-        >
+        <img src="{{ section.settings.compare_image | img_url: '1000x' }}" alt="サイズ比較" loading="lazy">
       </div>
-
     {% else %}
-
       <div class="sizes__compare" data-reveal>
-        <img
-          src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1000"
-          alt="M/Lサイズ比較"
-          loading="lazy"
-        >
+        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1000" alt="M/Lサイズ比較" loading="lazy">
       </div>
-
     {% endif %}
-
   </div>
 </section>
+
+<style>
+  .sizes__chart {
+    margin: 26px auto 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sizes__chart img {
+    width: {{ section.settings.size_chart_width_pc }}%;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: {{ section.settings.size_chart_radius_pc }}px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  @media (max-width: 768px) {
+    .sizes__chart {
+      margin-top: 20px;
+    }
+
+    .sizes__chart img {
+      width: {{ section.settings.size_chart_width_sp }}%;
+      border-radius: {{ section.settings.size_chart_radius_sp }}px;
+    }
+  }
+</style>
 
 {% schema %}
 {
