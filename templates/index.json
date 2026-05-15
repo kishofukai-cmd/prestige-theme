@@ -196,6 +196,84 @@
         "controls_color": "#ffffff"
       }
     },
+    "176197798489aaedc1": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_422275c_V6fHCB": {
+          "type": "ai_gen_block_422275c",
+          "disabled": true,
+          "settings": {
+            "section_padding": 40,
+            "outer_background_color": "#f5f5f5",
+            "background_color": "#ffffff",
+            "side_image": "shopify://shop_images/shutterstock_613923647.jpg",
+            "survey_title": "おすすめアウター診断",
+            "title_size": 28,
+            "question_1_text": "今回、KAPOK KNOTのサイトに来てくれたキッカケはなんですか？",
+            "question_1_option_1": "KAPOK KNOTに興味があったから",
+            "question_1_option_2": "薄くて軽いコートがあると聞いて",
+            "question_1_option_3": "サステナブルダウンコートというものが気になったから",
+            "question_2_text": "どんな気温で着られるコートを探していますか？",
+            "question_2_option_a": "春まで着られる（5~20度）",
+            "question_2_option_b": "冬用（10度を下回る日が多い）",
+            "question_2_option_c": "極寒対応（0度前後）",
+            "result_title": "あなたにおすすめのスタイル",
+            "result_title_size": 24,
+            "product_a_1": "men-air-smooth-shirts",
+            "product_a_2": "unisex-shirt-blouson-22",
+            "product_a_3": "women-long-vest-22",
+            "product_b_1": "_downpant_men",
+            "product_b_2": "unisex-chester-coat",
+            "product_b_3": "2waymiddle-down-coat",
+            "product_c_1": "men-hooded-jacket",
+            "product_c_2": "standcollar",
+            "product_c_3": "reversible_boa_quiltingcoat",
+            "text_color": "#1c1c1c",
+            "accent_color": "#04358d",
+            "question_size": 20,
+            "button_background": "#ffffff",
+            "button_text_color": "#1c1c1c",
+            "button_border_color": "#e0e0e0",
+            "button_hover_background": "#f8f8f8",
+            "button_radius": 8
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_6ad359c_BRGBhg": {
+          "type": "ai_gen_block_6ad359c",
+          "settings": {
+            "title": "Ranking TOP5",
+            "product_1": "musubi-en",
+            "product_2": "new-kapok-sleep-ket",
+            "product_3": "women-gizacotton-blousetshirt-23",
+            "product_4": "musubi-on",
+            "product_5": "kapok-sleep-ket-border",
+            "grid_gap": 10,
+            "image_border_radius": 16,
+            "badge_size": 50,
+            "badge_color": "#04358d",
+            "badge_text_color": "#ffffff",
+            "nav_button_color": "#1c1c1c",
+            "nav_button_hover_color": "#04358d",
+            "nav_button_icon_color": "#ffffff",
+            "dot_color": "#1c1c1c",
+            "title_size": 32,
+            "product_title_size": 15,
+            "price_size": 15,
+            "background_color": "#ffffff",
+            "title_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "price_color": "#1c1c1c"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_422275c_V6fHCB",
+        "ai_gen_block_6ad359c_BRGBhg"
+      ],
+      "settings": {}
+    },
     "177311566060d11062": {
       "type": "_blocks",
       "blocks": {
@@ -332,84 +410,6 @@
         "ai_gen_block_f585367_LLDymi"
       ],
       "disabled": true,
-      "settings": {}
-    },
-    "176197798489aaedc1": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_422275c_V6fHCB": {
-          "type": "ai_gen_block_422275c",
-          "disabled": true,
-          "settings": {
-            "section_padding": 40,
-            "outer_background_color": "#f5f5f5",
-            "background_color": "#ffffff",
-            "side_image": "shopify://shop_images/shutterstock_613923647.jpg",
-            "survey_title": "おすすめアウター診断",
-            "title_size": 28,
-            "question_1_text": "今回、KAPOK KNOTのサイトに来てくれたキッカケはなんですか？",
-            "question_1_option_1": "KAPOK KNOTに興味があったから",
-            "question_1_option_2": "薄くて軽いコートがあると聞いて",
-            "question_1_option_3": "サステナブルダウンコートというものが気になったから",
-            "question_2_text": "どんな気温で着られるコートを探していますか？",
-            "question_2_option_a": "春まで着られる（5~20度）",
-            "question_2_option_b": "冬用（10度を下回る日が多い）",
-            "question_2_option_c": "極寒対応（0度前後）",
-            "result_title": "あなたにおすすめのスタイル",
-            "result_title_size": 24,
-            "product_a_1": "men-air-smooth-shirts",
-            "product_a_2": "unisex-shirt-blouson-22",
-            "product_a_3": "women-long-vest-22",
-            "product_b_1": "_downpant_men",
-            "product_b_2": "unisex-chester-coat",
-            "product_b_3": "2waymiddle-down-coat",
-            "product_c_1": "men-hooded-jacket",
-            "product_c_2": "standcollar",
-            "product_c_3": "reversible_boa_quiltingcoat",
-            "text_color": "#1c1c1c",
-            "accent_color": "#04358d",
-            "question_size": 20,
-            "button_background": "#ffffff",
-            "button_text_color": "#1c1c1c",
-            "button_border_color": "#e0e0e0",
-            "button_hover_background": "#f8f8f8",
-            "button_radius": 8
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_6ad359c_BRGBhg": {
-          "type": "ai_gen_block_6ad359c",
-          "settings": {
-            "title": "Ranking TOP5",
-            "product_1": "musubi-en",
-            "product_2": "new-kapok-sleep-ket",
-            "product_3": "unisex-airlight-poncho-23",
-            "product_4": "musubi-on",
-            "product_5": "kapok-sleep-ket-border",
-            "grid_gap": 10,
-            "image_border_radius": 16,
-            "badge_size": 50,
-            "badge_color": "#04358d",
-            "badge_text_color": "#ffffff",
-            "nav_button_color": "#1c1c1c",
-            "nav_button_hover_color": "#04358d",
-            "nav_button_icon_color": "#ffffff",
-            "dot_color": "#1c1c1c",
-            "title_size": 32,
-            "product_title_size": 15,
-            "price_size": 15,
-            "background_color": "#ffffff",
-            "title_color": "#1c1c1c",
-            "text_color": "#1c1c1c",
-            "price_color": "#1c1c1c"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_422275c_V6fHCB",
-        "ai_gen_block_6ad359c_BRGBhg"
-      ],
       "settings": {}
     },
     "rich_text_WchhXf": {
