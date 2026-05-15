@@ -331,6 +331,7 @@
       "block_order": [
         "ai_gen_block_f585367_LLDymi"
       ],
+      "disabled": true,
       "settings": {}
     },
     "176197798489aaedc1": {
@@ -894,12 +895,12 @@
   },
   "order": [
     "slideshow",
+    "176197798489aaedc1",
     "177311566060d11062",
     "1771982131a896470f",
     "1773105372c5188bbf",
     "featured_collections_cW6bCK",
     "177310552042ea7e7d",
-    "176197798489aaedc1",
     "rich_text_WchhXf",
     "scrolling_content_TaycRN",
     "1761989724901eeb13",
