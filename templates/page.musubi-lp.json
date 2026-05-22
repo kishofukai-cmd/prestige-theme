@@ -289,8 +289,8 @@
         "soldout_record_fch9E4": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月下旬 先行予約開始を予定",
-            "status": "準備中"
+            "date": "2026年5月22日 先行予約開始",
+            "status": "開催中"
           }
         }
       },
@@ -338,19 +338,19 @@
       "type": "musubi-lp-cta",
       "settings": {
         "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【次回先行予約は5月22日12:00を予定】</strong></p>",
+        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "現在MUSUBI-en-は完売中です。\n再入荷通知をご登録の上、告知をお待ちください。",
+        "soldout_text": "お届け予定：6月22日より順次配送予定",
         "soldout_font_size": 13,
         "soldout_text_color": "#ffffff",
         "cta_url": "https://kapok-knot.com/products/musubi-en",
         "cta_text": "MUSUBI-en- 商品ページへ",
         "cta1_bg_color": "#ffffff",
         "cta1_text_color": "#1f2a44",
-        "cta_url_2": "https://page.line.me/258kaxeg",
+        "cta_url_2": "",
         "cta_text_2": "公式LINEから再入荷通知を受け取る",
         "cta2_bg_color": "#06c755",
         "cta2_text_color": "#ffffff",
