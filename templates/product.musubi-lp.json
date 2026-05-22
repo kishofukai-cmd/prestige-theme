@@ -418,8 +418,8 @@
         "soldout_record_xzzJhT": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月下旬 先行予約予定",
-            "status": "準備中"
+            "date": "2026年5月下旬 先行予約開始",
+            "status": "開催中"
           }
         }
       },
