@@ -213,10 +213,22 @@
             "border_radius": 0
           },
           "blocks": {}
+        },
+        "ai_gen_block_eae1015_3Bdc6n": {
+          "type": "ai_gen_block_eae1015",
+          "settings": {
+            "image": "shopify://shop_images/2_12_2x_274b3ae0-4653-4cb8-8af5-29077cd4623e.png",
+            "desktop_width_percent": 65,
+            "mobile_width_percent": 100,
+            "padding_top": 20,
+            "padding_bottom": 20
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_839e0e3_XArWaV"
+        "ai_gen_block_839e0e3_XArWaV",
+        "ai_gen_block_eae1015_3Bdc6n"
       ],
       "settings": {}
     },
