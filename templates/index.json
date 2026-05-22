@@ -41,6 +41,7 @@
         },
         "image_dQHwjx": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/2_20_4x_2c17a79e-6eec-4710-9c83-b13de520621a.png",
             "mobile_image": "shopify://shop_images/46_2_4x_5586fe98-ed80-4637-829e-e9326ef22238.png",
