@@ -1055,7 +1055,7 @@
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "【先行予約商品】\nお届け：6月22日より順次配送予定",
+        "soldout_text": "【先行予約中】\nお届け：6月22日より順次配送予定",
         "soldout_font_size": 18,
         "soldout_text_color": "#ffffff",
         "cta_url": "",
