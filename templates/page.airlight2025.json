@@ -16,13 +16,14 @@
         "bg_color": "#ffffff",
         "kv_image_url": "https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
         "kv_image_alt": "エアーライトジャケット · KAPOK KNOT",
-        "eyebrow": "KAPOK KNOT — AirLight Jacket 2025",
+        "eyebrow": "KAPOK KNOT — AirLight Jacket 2026",
         "eyebrow_color": "#c29d66",
-        "heading": "<p>今までに着ていたアウターの常識を覆す。</p><p>“空気のように軽くて暖かい”<br><em>エアーライトジャケット</em></p>",
+        "heading": "<p>今までに着ていたアウターの常識を覆す。</p><p>“空気のように軽くて暖かい”<br/><em>エアーライトジャケット</em></p>",
         "heading_color": "#1a1a1a",
         "sub_text": "植物由来のカポック素材で実現した、約500gの冬アウター。軽く、暖かく、動物も地球も傷つけない。",
         "sub_color": "#5a5550",
         "cta_text": "商品を見る →",
+        "cta_url": "",
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
         "cta_note": "¥39,800〜"
@@ -78,6 +79,7 @@
             "price": "¥39,800",
             "description": "エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触り。",
             "cta_text": "購入ページへ",
+            "cta_url": "",
             "image_1_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
             "color_1": "Navy",
             "image_2_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
@@ -98,6 +100,7 @@
             "price": "¥39,800",
             "description": "エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触り。また Women はウエストにスピンドルが付いていますので、ウエストを調節して絞ることができます。",
             "cta_text": "購入ページへ",
+            "cta_url": "",
             "image_1_url": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
             "color_1": "Navy",
             "image_2_url": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
@@ -118,6 +121,7 @@
             "price": "¥49,800",
             "description": "エアーライトペプラムジャケットは Women シリーズならではの特長として、ウエストにはスピンドルを搭載。ウエストラインをキュッと絞って女性らしいシルエットをつくることも、ゆったり着ることも自由自在です。",
             "cta_text": "購入ページへ",
+            "cta_url": "",
             "image_1_url": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
             "color_1": "White",
             "image_2_url": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
@@ -125,7 +129,9 @@
             "image_3_url": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
             "color_3": "Black",
             "image_4_url": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png",
-            "color_4": "khaki"
+            "color_4": "khaki",
+            "image_5_url": "",
+            "color_5": ""
           }
         }
       },
@@ -149,6 +155,7 @@
             "title": "コットンの約8分の1の軽さ",
             "body": "<p>エシカルダウンカポック™はとにかく軽くて暖かいのが特徴。</p><p>カポック繊維は中が空洞(中空)になっており、コットンの1/8の軽さと言われています。</p>",
             "image_url": "https://ucarecdn.com/dea0315a-8b99-48e9-b01e-e5cc3d6e4cef/",
+            "image_caption": "",
             "image_position": "full"
           }
         },
@@ -158,6 +165,7 @@
             "title": "暖かく、温もりを感じる木になるダウン「カポック」",
             "body": "<p>カポックは植物由来のため、化学繊維のポリエステルとは違い「呼吸」をします。</p><p>湿気を吸って暖かくなる吸湿発熱という機能を持っており、軽さと暖かさの両立を実現しています。カポックはこれらの特徴から、「木に実るダウン」や「ホワイトシルクコットン」とも呼ばれています。</p><p>このカポックをリサイクルのポリエステルと混ぜてシート状にしたものが、エシカルダウンカポック™です。</p>",
             "image_url": "https://ucarecdn.com/a21ea9da-ddb5-4657-ab56-b163a7666035/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "image_caption": "",
             "image_position": "full"
           }
         },
@@ -185,6 +193,54 @@
         "intro": "私たちのブランド、KAPOK KNOT(カポックノット)は、世界一を目指すカポック専業のブランドです。\n\nその名前の通り、カポックという植物由来の天然の綿を使用しています。カポックとは、主に東南アジアに自生しており、日本でも観葉植物として扱われています。\n\nカポックの生成する綿は、高機能かつエコという特性は非常に注目されていましたが、その繊維の短さから糸にすることが難しく、各社の商品化はこれまで難航していました。そのため、救命胴衣の詰め物や、クッションなど、限られた用途のみで使用されてきました。\n\n今回、長年かけて大手企業と共同開発を続け、ようやく生まれたエシカルダウンカポック™というシート(特許申請中)を使用しています。"
       }
     },
+    "demos": {
+      "type": "airlight2025-demos",
+      "blocks": {
+        "demo_1": {
+          "type": "demo",
+          "settings": {
+            "tag": "THERMAL TEST",
+            "title": "ダウンと変わらない暖かさ",
+            "gif_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
+            "caption": "※ 3度環境の中、着用1分後の状態",
+            "body": "サーモカメラで撮影した3者比較テスト。同じ重さで素材がポリエステルのダウン・コートと比較しても、カポック中綿シートを使った商品は変わらない暖かさを保っています。※ この検証は当社のカポック中綿シートを使用した別商品による測定結果です。"
+          }
+        },
+        "demo_2": {
+          "type": "demo",
+          "settings": {
+            "tag": "WATER RESISTANT",
+            "title": "急な雨でも大丈夫な、傘の20倍の耐水圧",
+            "gif_url": "https://ucarecdn.com/f61ed291-912e-40eb-a433-1d0867b808a2/Kapok_0907_03.gif",
+            "caption": "※ 撥水実証動画",
+            "body": "植物由来の撥水コーティングで、急な雨でも快適。通勤からアウトドアまで、全天候で使える撥水性能を備えています。"
+          }
+        }
+      },
+      "block_order": [
+        "demo_1",
+        "demo_2"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "kicker": "Functional Proof",
+        "heading": "<p>数字が証明する、<em>エアーライトの実力。</em></p>",
+        "intro": "実際の使用環境で検証した、確かな機能性能をご覧ください。"
+      }
+    },
+    "farm-to-fashion": {
+      "type": "airlight2025-farm-to-fashion",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "kicker": "Farm to Fashion",
+        "heading": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>",
+        "intro": "カポック農園、加工工場、縫製工場まで — 実際に働く人たちの姿を、映像でご覧ください。",
+        "video_url": "https://youtu.be/-ZIZcHy7w8A",
+        "video_title": "Farm to Fashion — KAPOK KNOT",
+        "autoplay": false,
+        "footnote": "※ 映像は KAPOK KNOT の公式動画です。"
+      }
+    },
     "mid-cta": {
       "type": "airlight2025-mid-cta",
       "settings": {
@@ -194,7 +250,9 @@
         "heading": "<p>軽く、暖かく、<em>後悔しない。</em></p>",
         "sub": "植物由来のカポック素材。着心地を、もう一段上へ。",
         "cta_men_text": "エアーライトジャケット-Men- 購入ページへ",
+        "cta_men_url": "",
         "cta_women_text": "エアーライトジャケット-Women- 購入ページへ",
+        "cta_women_url": "",
         "price_note": "¥39,800"
       }
     },
@@ -208,7 +266,8 @@
             "name": "エアーライトペプラムジャケット - Women",
             "colors": "Ice Blue / White / Black",
             "price": "¥49,800",
-            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg"
+            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_2": {
@@ -218,7 +277,8 @@
             "name": "ベロアキルティングジャケット - Unisex",
             "colors": "Khaki / Navy",
             "price": "¥39,800",
-            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg"
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_3": {
@@ -228,7 +288,8 @@
             "name": "WARMデニムジャケット - Men",
             "colors": "Black / Blue",
             "price": "¥39,800",
-            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg"
+            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_4": {
@@ -238,7 +299,8 @@
             "name": "キルティングジャケット(チェック) - Unisex",
             "colors": "Olive / Black",
             "price": "¥48,000",
-            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png"
+            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png",
+            "cta_url": ""
           }
         },
         "product_tile_5": {
@@ -248,7 +310,8 @@
             "name": "スタンドカラーコート - Unisex",
             "colors": "Black(New) / Greige / Green / Navy",
             "price": "¥69,000",
-            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg"
+            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_6": {
@@ -258,7 +321,8 @@
             "name": "ポンチョコート - Unisex",
             "colors": "Olive / Navy / Black / Greige",
             "price": "¥65,000",
-            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg"
+            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_7": {
@@ -268,7 +332,8 @@
             "name": "ウエストマークパーカーコート - Women",
             "colors": "Camel / Greige / Navy",
             "price": "¥49,800",
-            "image_url": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg"
+            "image_url": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg",
+            "cta_url": ""
           }
         },
         "product_tile_8": {
@@ -278,7 +343,8 @@
             "name": "バルマカンコート - Women/Men",
             "colors": "Dark Navy / Beige / Camel",
             "price": "¥48,000",
-            "image_url": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg"
+            "image_url": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg",
+            "cta_url": ""
           }
         }
       },
@@ -435,7 +501,8 @@
         "kicker": "EVENT",
         "heading": "<p>軽くて暖かいアウターを<em>体験してみませんか?</em></p>",
         "sub": "期間限定 POP UP を全国で開催中！",
-        "cta_text": "POPUP開催情報はこちら"
+        "cta_text": "POPUP開催情報はこちら",
+        "cta_url": ""
       }
     },
     "faq": {
@@ -488,54 +555,6 @@
         "kicker": "FAQ",
         "heading": "よくあるご質問",
         "bg_color": "#ffffff"
-      }
-    },
-    "farm-to-fashion": {
-      "type": "airlight2025-farm-to-fashion",
-      "settings": {
-        "bg_color": "#faf9f6",
-        "kicker": "Farm to Fashion",
-        "heading": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>",
-        "intro": "カポック農園、加工工場、縫製工場まで — 実際に働く人たちの姿を、映像でご覧ください。",
-        "video_url": "https://youtu.be/-ZIZcHy7w8A",
-        "video_title": "Farm to Fashion — KAPOK KNOT",
-        "autoplay": false,
-        "footnote": "※ 映像は KAPOK KNOT の公式動画です。"
-      }
-    },
-    "demos": {
-      "type": "airlight2025-demos",
-      "blocks": {
-        "demo_1": {
-          "type": "demo",
-          "settings": {
-            "tag": "THERMAL TEST",
-            "title": "ダウンと変わらない暖かさ",
-            "gif_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
-            "caption": "※ 3度環境の中、着用1分後の状態",
-            "body": "サーモカメラで撮影した3者比較テスト。同じ重さで素材がポリエステルのダウン・コートと比較しても、カポック中綿シートを使った商品は変わらない暖かさを保っています。※ この検証は当社のカポック中綿シートを使用した別商品による測定結果です。"
-          }
-        },
-        "demo_2": {
-          "type": "demo",
-          "settings": {
-            "tag": "WATER RESISTANT",
-            "title": "急な雨でも大丈夫な、傘の20倍の耐水圧",
-            "gif_url": "https://ucarecdn.com/f61ed291-912e-40eb-a433-1d0867b808a2/Kapok_0907_03.gif",
-            "caption": "※ 撥水実証動画",
-            "body": "植物由来の撥水コーティングで、急な雨でも快適。通勤からアウトドアまで、全天候で使える撥水性能を備えています。"
-          }
-        }
-      },
-      "block_order": [
-        "demo_1",
-        "demo_2"
-      ],
-      "settings": {
-        "bg_color": "#ffffff",
-        "kicker": "Functional Proof",
-        "heading": "<p>数字が証明する、<em>エアーライトの実力。</em></p>",
-        "intro": "実際の使用環境で検証した、確かな機能性能をご覧ください。"
       }
     }
   },
