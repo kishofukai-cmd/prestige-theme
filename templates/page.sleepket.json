@@ -13,38 +13,38 @@
     "hero": {
       "type": "musubi-lp-hero",
       "settings": {
-        "hero_image": "shopify://shop_images/260312_KAPOKKNOT1205.jpg",
-        "hero_image_sp": "shopify://shop_images/10_15.png",
+        "hero_image": "shopify://shop_images/EC_PC_8.png",
+        "hero_image_sp": "shopify://shop_images/KVSP_7.png",
         "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "hero_bg_color": "#72a4dc",
+        "hero_bg_color": "#82827e",
         "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>夏にやさしい重みで<br/>休息のスイッチを入れる。</p>",
+        "hero_title": "",
         "hero_title_font_size_pc": 56,
         "hero_title_font_size_sp": 25,
         "hero_title_font_weight_pc": "700",
         "hero_title_font_weight_sp": "700",
-        "hero_subtitle": "<p><strong>立体あみあみ通気構造による<br/>リカバリー加重ブランケット</strong></p>",
+        "hero_subtitle": "<h4>植物の力で肌から眠る</h4>",
         "hero_subtitle_font_size": 16,
         "hero_subtitle_font_weight": "500",
         "hero_subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "【5/22 12:00より先行予約開始】\nお届け予定：6月22日より順次配送予定",
+        "soldout_text": "KAPOK Sleep Ketは植物由来の素材にこだわって作った「肌掛け布団」",
         "soldout_font_size": 14,
         "soldout_text_color": "#efefef",
-        "cta_url": "https://kapok-knot.com/products/musubi-en",
-        "cta_text": "MUSUBI-en- 商品ページへ",
+        "cta_url": "https://kapok-knot.com/products/new-kapok-sleep-ket",
+        "cta_text": "Sleep  Ket 商品ページへ",
         "cta1_bg_color": "#ffffff",
         "cta1_text_color": "#1f2a44",
         "cta_url_2": "",
         "cta_text_2": "公式LINEから再入荷通知を受け取る",
         "cta2_bg_color": "#06c755",
         "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜(税込)",
-        "price_tax": "特許出願中",
+        "price_text": "¥39,800",
+        "price_tax": "",
         "feature_1": "✓ オールシーズン",
-        "feature_2": "✓ 単一素材",
+        "feature_2": "✓ とろける肌触り",
         "feature_3": "✓ 通気性",
-        "feature_4": "✓ お手入れ簡単",
+        "feature_4": "✓ 洗濯機で丸洗い",
         "features_text_color": "#ffffffbf",
         "features_font_size": 12,
         "cta1_margin_top": 0,
@@ -131,6 +131,7 @@
         "worry_2",
         "worry_3"
       ],
+      "disabled": true,
       "settings": {
         "label": "",
         "heading": "こんな時がありませんか？",
@@ -157,28 +158,11 @@
         "arrow_size_sp": 24
       }
     },
-    "177834100804c0ef0c": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_36ef8a5_pqg3KQ": {
-          "type": "ai_gen_block_36ef8a5",
-          "settings": {
-            "image": "shopify://shop_images/10_20.png",
-            "desktop_width_percent": 40,
-            "mobile_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_36ef8a5_pqg3KQ"
-      ],
-      "settings": {}
-    },
     "story": {
       "type": "musubi-lp-story",
+      "disabled": true,
       "settings": {
-        "label": "その悩みに、MUSUBIが考えたこと",
+        "label": "KAPOK KNOT HOME",
         "label_size": 13,
         "label_size_sp": 12,
         "label_color": "#b8a78a",
@@ -195,244 +179,60 @@
         "bg_color": "#ffffff"
       }
     },
-    "17784810450136d6c9": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_839e0e3_XArWaV": {
-          "type": "ai_gen_block_839e0e3",
-          "settings": {
-            "main_image": "shopify://shop_images/260312_KAPOKKNOT1697.jpg",
-            "grid_image_1": "shopify://shop_images/260312_KAPOKKNOT1292.jpg",
-            "grid_image_2": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
-            "grid_image_3": "shopify://shop_images/260312_KAPOKKNOT1102.jpg",
-            "grid_image_4": "shopify://shop_images/260312_KAPOKKNOT1571.jpg",
-            "desktop_max_width": 1200,
-            "desktop_padding_horizontal": 40,
-            "mobile_padding_horizontal": 10,
-            "gap": 8,
-            "border_radius": 0
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_eae1015_3Bdc6n": {
-          "type": "ai_gen_block_eae1015",
-          "settings": {
-            "image": "shopify://shop_images/2_12_2x_274b3ae0-4653-4cb8-8af5-29077cd4623e.png",
-            "desktop_width_percent": 65,
-            "mobile_width_percent": 100,
-            "padding_top": 20,
-            "padding_bottom": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_839e0e3_XArWaV",
-        "ai_gen_block_eae1015_3Bdc6n"
-      ],
-      "settings": {}
-    },
-    "musubi_soldout_history_mDymEi": {
-      "type": "musubi-soldout-history",
-      "blocks": {
-        "soldout_record_qrf9zD": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年10月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_FLVKmD": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年11月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_LfETT8": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年1月 一般販売",
-            "status": "完売"
-          }
-        },
-        "soldout_record_TjEUik": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年5月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_LFFwWa": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年6月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_rALwqj": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年7月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_Dqc7at": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年9月 一般販売",
-            "status": "完売"
-          }
-        },
-        "soldout_record_6X3RAc": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年10月 先行予約",
-            "status": "完売"
-          }
-        },
-        "soldout_record_TwRJD4": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年12月 一般販売",
-            "status": "完売"
-          }
-        },
-        "soldout_record_fch9E4": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2026年5月22日 先行予約開始",
-            "status": "開催中"
-          }
-        }
-      },
-      "block_order": [
-        "soldout_record_qrf9zD",
-        "soldout_record_FLVKmD",
-        "soldout_record_LfETT8",
-        "soldout_record_TjEUik",
-        "soldout_record_LFFwWa",
-        "soldout_record_rALwqj",
-        "soldout_record_Dqc7at",
-        "soldout_record_6X3RAc",
-        "soldout_record_TwRJD4",
-        "soldout_record_fch9E4"
-      ],
-      "name": "MUSUBI 完売履歴",
-      "settings": {
-        "heading": "",
-        "lead": "<p>多くの反響をいただき、MUSUBIは<br/>これまで何度も完売を重ねてきました。</p>",
-        "bg_color": "#f8f5ef",
-        "box_bg_color": "#ffffff",
-        "heading_color": "#1a1a1a",
-        "lead_color": "#666666",
-        "item_bg_color": "#faf7f2",
-        "item_border_color": "#ece7de",
-        "item_text_color": "#444444",
-        "tag_bg_color": "#1f2a44",
-        "tag_color": "#ffffff",
-        "heading_size_pc": 32,
-        "heading_size_sp": 21,
-        "lead_size_pc": 15,
-        "lead_size_sp": 12,
-        "item_text_size_pc": 14,
-        "item_text_size_sp": 13,
-        "tag_size_pc": 11,
-        "tag_size_sp": 10,
-        "box_radius_pc": 28,
-        "box_radius_sp": 20,
-        "max_width": 960,
-        "padding_pc": 80,
-        "padding_sp": 56
-      }
-    },
-    "musubi_lp_cta_HwYcWT": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
-        "subtitle_font_size": 18,
-        "subtitle_font_weight": "400",
-        "subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "お届け予定：6月22日より順次配送予定",
-        "soldout_font_size": 13,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "https://kapok-knot.com/products/musubi-en",
-        "cta_text": "MUSUBI-en- 商品ページへ",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#06c755",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜(税込)",
-        "price_tax": "特許出願中",
-        "price_color": "#ffffff",
-        "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
-        "features_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0,
-        "padding_top_pc": 28,
-        "padding_bottom_pc": 36,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
-      }
-    },
     "why": {
       "type": "musubi-lp-why",
       "blocks": {
         "reason_1": {
           "type": "reason_card",
           "settings": {
-            "image": "shopify://shop_images/260312_KAPOKKNOT1107.jpg",
+            "image": "shopify://shop_images/1_2_2x_10a50492-5b1a-4741-bdd6-5531c25eb6d1.png",
             "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
             "number": "01",
-            "title": "やさしい重み設計",
-            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+            "title": "とろけるような、極上の肌馴染み",
+            "description": ""
           }
         },
         "reason_2": {
           "type": "reason_card",
           "settings": {
-            "image": "shopify://shop_images/260312_KAPOKKNOT1419.jpg",
+            "image": "shopify://shop_images/1_3_2x_3ecd95da-0ac9-4d45-9c03-48a0044c714d.png",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
             "number": "02",
-            "title": "あみあみ構造",
-            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+            "title": "カポック繊維の中空構造",
+            "description": ""
           }
         },
         "reason_3": {
           "type": "reason_card",
           "settings": {
-            "image": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
+            "image": "shopify://shop_images/1_2x_72050b75-64d8-45a1-9285-87ffdbba3e23.png",
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
             "number": "03",
-            "title": "日本の暮らし基準サイズ",
+            "title": "カポックシートの秘密",
             "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+          }
+        },
+        "reason_card_88QYrx": {
+          "type": "reason_card",
+          "settings": {
+            "image": "shopify://shop_images/1_2x_8.png",
+            "image_url": "",
+            "number": "04",
+            "title": "ちょうどいい一枚を",
+            "description": ""
           }
         }
       },
       "block_order": [
         "reason_1",
         "reason_2",
-        "reason_3"
+        "reason_3",
+        "reason_card_88QYrx"
       ],
       "settings": {
         "label": "WHY MUSUBI",
-        "heading": "<p>なぜMUSUBIは<br/>選ばれているのか？</p>",
-        "lead": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>",
+        "heading": "<p>KAPOK Sleep Ketが<br/>いいと言われる理由</p>",
+        "lead": "<p>日々の暮らしに自然になじむよう、素材・構造・サイズ感にこだわった布団。<br/>とろける肌触りで起きていても夢見心地に。</p>",
         "show_comparison": true,
         "comparison_label": "LABORATORY TEST",
         "comparison_heading": "<p>検証データが示す<br/>MUSUBIの快適性</p>",
@@ -525,6 +325,103 @@
         "conclusion_border_color": "#eee7dd",
         "padding_pc": 88,
         "padding_sp": 60
+      }
+    },
+    "177834100804c0ef0c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_36ef8a5_pqg3KQ": {
+          "type": "ai_gen_block_36ef8a5",
+          "settings": {
+            "image": "shopify://shop_images/1_2_2x_10a50492-5b1a-4741-bdd6-5531c25eb6d1.png",
+            "desktop_width_percent": 60,
+            "mobile_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_36ef8a5_VVEXPH": {
+          "type": "ai_gen_block_36ef8a5",
+          "settings": {
+            "image": "shopify://shop_images/1_3_2x_3ecd95da-0ac9-4d45-9c03-48a0044c714d.png",
+            "desktop_width_percent": 60,
+            "mobile_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_36ef8a5_pqg3KQ",
+        "ai_gen_block_36ef8a5_VVEXPH"
+      ],
+      "settings": {}
+    },
+    "17784810450136d6c9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_839e0e3_XArWaV": {
+          "type": "ai_gen_block_839e0e3",
+          "settings": {
+            "main_image": "shopify://shop_images/260312_KAPOKKNOT1697.jpg",
+            "grid_image_1": "shopify://shop_images/260312_KAPOKKNOT1292.jpg",
+            "grid_image_2": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
+            "grid_image_3": "shopify://shop_images/260312_KAPOKKNOT1102.jpg",
+            "grid_image_4": "shopify://shop_images/260312_KAPOKKNOT1571.jpg",
+            "desktop_max_width": 1200,
+            "desktop_padding_horizontal": 40,
+            "mobile_padding_horizontal": 10,
+            "gap": 8,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_839e0e3_XArWaV"
+      ],
+      "settings": {}
+    },
+    "musubi_lp_cta_HwYcWT": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "bg_color": "#72a4dc",
+        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "お届け予定：6月22日より順次配送予定",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "https://kapok-knot.com/products/musubi-en",
+        "cta_text": "MUSUBI-en- 商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜(税込)",
+        "price_tax": "特許出願中",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     },
     "musubi_lp_cta_8ETwxc": {
@@ -719,175 +616,6 @@
         "padding_sp": 60
       }
     },
-    "science": {
-      "type": "musubi-lp-science",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
-            "label": "<p>均一な重み</p>"
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
-            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
-            "label": "<p>深いリラックス<br>状態の促進</p>"
-          }
-        },
-        "paper_1": {
-          "type": "paper",
-          "settings": {
-            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
-            "url": ""
-          }
-        },
-        "paper_2": {
-          "type": "paper",
-          "settings": {
-            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
-            "url": ""
-          }
-        },
-        "paper_3": {
-          "type": "paper",
-          "settings": {
-            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "paper_1",
-        "paper_2",
-        "paper_3"
-      ],
-      "settings": {
-        "label": "WHY WEIGHT?",
-        "heading": "<p>なぜ\"重み\"が<br/>安心感につながるのか？</p>",
-        "lead": "<p>睡眠課題を抱える人の多くが軽めの寝具を使用している一方で、寝具選びにおいて「重さ」に着目している人はまだ多くありません。MUSUBIは、睡眠環境に“重み”という新しい選択肢を提案します。</p>",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "label_color": "#b8a78a",
-        "heading_size_pc": 30,
-        "heading_size_sp": 24,
-        "heading_color": "#1a1a1a",
-        "lead_size_pc": 15,
-        "lead_size_sp": 14,
-        "lead_color": "#555555",
-        "step_text_size_pc": 14,
-        "step_text_size_sp": 14,
-        "step_text_color": "#333333",
-        "card_bg_color": "#ffffff",
-        "card_border_color": "#eee7dd",
-        "card_radius": 20,
-        "card_radius_sp": 16,
-        "icon_size_pc": 62,
-        "icon_size_sp": 48,
-        "icon_bg_color": "#f4eee6",
-        "icon_color": "#8b7355",
-        "image": "shopify://shop_images/260312_KAPOKKNOT1435.jpg",
-        "image_alt": "MUSUBIの使用シーン",
-        "image_radius": 20,
-        "image_radius_sp": 16,
-        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
-        "description_size_pc": 15,
-        "description_size_sp": 14,
-        "description_color": "#555555",
-        "description_bg_color": "#ffffff",
-        "description_border_color": "#eee7dd",
-        "description_radius": 20,
-        "description_radius_sp": 16,
-        "strong_color": "#8b7355",
-        "result_badge": "検証結果",
-        "result_title": "<p>自宅での睡眠検証でも、<br/>MUSUBIの“重み”による変化が見られました。</p>",
-        "result_label_1": "中途覚醒時間",
-        "result_value_1": "36% 改善",
-        "result_label_2": "入眠スピード",
-        "result_value_2": "15% 減少 ↓",
-        "result_label_3": "深いノンレム睡眠",
-        "result_value_3": "13% UP ↑",
-        "result_label_4": "睡眠効率",
-        "result_value_4": "2% UP ↑",
-        "result_copy": "<p>ただ重いだけではなく、<br/>重さ・通気性・フィット感のバランスが、MUSUBIの心地よさです。</p>",
-        "result_note": "<p>※研究結果には個人差があり、効果を保証するものではありません。<br/>※深い睡眠（N3）は、睡眠の質を評価する代表的な指標の一つとされています。</p>",
-        "result_bg_color": "#ded6cc",
-        "result_radius": 22,
-        "result_radius_sp": 16,
-        "result_badge_bg_color": "#ffffff",
-        "result_badge_color": "#1a1a1a",
-        "result_badge_size_pc": 22,
-        "result_badge_size_sp": 20,
-        "result_title_size_pc": 18,
-        "result_title_size_sp": 16,
-        "result_title_color": "#1a1a1a",
-        "result_border_color": "#e8e1d8",
-        "result_label_color": "#1a1a1a",
-        "result_value_color": "#1a1a1a",
-        "result_text_size_pc": 18,
-        "result_text_size_sp": 15,
-        "result_copy_size_pc": 16,
-        "result_copy_size_sp": 14,
-        "result_copy_color": "#1a1a1a",
-        "result_note_size_pc": 12,
-        "result_note_size_sp": 11,
-        "result_note_color": "#333333",
-        "test_title": "<p>検証内容</p>",
-        "test_method": "単盲検クロスオーバー試験",
-        "test_measurement": "脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など",
-        "test_subjects": "5名（30〜50代の日本人社会人）",
-        "test_period": "2026年1月22日〜2月19日／MUSUBI有り3晩・MUSUBI無し3晩で比較",
-        "test_title_size_pc": 18,
-        "test_title_size_sp": 17,
-        "test_title_color": "#1a1a1a",
-        "test_item_size_pc": 13,
-        "test_item_size_sp": 12,
-        "test_item_color": "#555555",
-        "test_bg_color": "#ffffff",
-        "test_border_color": "#eee7dd",
-        "test_item_bg_color": "#faf7f2",
-        "test_radius": 20,
-        "test_radius_sp": 16,
-        "closing_text": "<p>MUSUBIは、睡眠環境に「重み」という新しい選択肢を取り入れるために開発された加重ブランケットです。</p>",
-        "closing_size_pc": 17,
-        "closing_size_sp": 15,
-        "closing_color": "#1a1a1a",
-        "closing_bg_color": "#ffffff",
-        "closing_border_color": "#eee7dd",
-        "closing_radius": 20,
-        "closing_radius_sp": 16,
-        "papers_title": "参考文献",
-        "papers_title_size_pc": 13,
-        "papers_title_size_sp": 13,
-        "papers_title_color": "#333333",
-        "papers_text_size_pc": 12,
-        "papers_text_size_sp": 11,
-        "papers_text_color": "#666666",
-        "papers_link_color": "#8b7355",
-        "papers_bg_color": "#f7f2eb",
-        "papers_radius": 18,
-        "papers_radius_sp": 14,
-        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です",
-        "note_size_pc": 11,
-        "note_size_sp": 11,
-        "note_color": "#777777",
-        "bg_color": "#faf7f2",
-        "text_color": "#333333",
-        "padding_pc": 80,
-        "padding_sp": 60
-      }
-    },
     "blocks_XxVGGt": {
       "type": "_blocks",
       "blocks": {
@@ -926,222 +654,6 @@
         "ai_gen_block_a9b57ce_6gW9Q6"
       ],
       "settings": {}
-    },
-    "makuake": {
-      "type": "musubi-lp-makuake",
-      "blocks": {
-        "sold_1": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年10月 先行予約",
-            "status": "完売"
-          }
-        },
-        "sold_2": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2024年11月 先行予約",
-            "status": "完売"
-          }
-        },
-        "sold_3": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年1月 一般販売",
-            "status": "完売"
-          }
-        },
-        "sold_4": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年5月 先行予約",
-            "status": "完売"
-          }
-        },
-        "sold_5": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年6月 先行予約",
-            "status": "完売"
-          }
-        },
-        "sold_6": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年7月 先行予約",
-            "status": "完売"
-          }
-        },
-        "sold_7": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年9月 一般販売",
-            "status": "完売"
-          }
-        },
-        "sold_8": {
-          "type": "soldout_record",
-          "settings": {
-            "date": "2025年10月 先行予約",
-            "status": "完売"
-          }
-        }
-      },
-      "block_order": [
-        "sold_1",
-        "sold_2",
-        "sold_3",
-        "sold_4",
-        "sold_5",
-        "sold_6",
-        "sold_7",
-        "sold_8"
-      ],
-      "settings": {
-        "heading": "<p>2024年5月初公開の<br/>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
-        "heading_size_pc": 32,
-        "heading_size_sp": 24,
-        "hero_image": "shopify://shop_images/Makuake_MUSUBI.png",
-        "hero_image_alt": "Makuake実績画像",
-        "amount": "1,349万円",
-        "amount_label": "応援購入総額",
-        "supporters": "408名",
-        "supporters_label": "サポーター",
-        "percent": "2,698%",
-        "percent_label": "達成率",
-        "soldout_heading": "ご好評につき完売が続いております",
-        "makuake_url": "",
-        "link_text": "Makuakeプロジェクトページを見る →"
-      }
-    },
-    "ugc": {
-      "type": "musubi-lp-ugc",
-      "blocks": {
-        "reel_hRpnmj": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DR6vqKrksq6",
-            "caption": ""
-          }
-        },
-        "reel_HAz9qg": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DRjsLiBEixO",
-            "caption": ""
-          }
-        },
-        "reel_HwKU7B": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DXJuvtuE75f",
-            "caption": ""
-          }
-        },
-        "reel_ij3N9i": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DXWjD85EwjA",
-            "caption": ""
-          }
-        },
-        "reel_HCkUny": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DW56UDukU5X",
-            "caption": ""
-          }
-        },
-        "reel_XWbaqd": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DWoRc3tklfy",
-            "caption": ""
-          }
-        },
-        "reel_ehrVg9": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DVIng-EDw6_",
-            "caption": ""
-          }
-        },
-        "reel_1": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DP5PSqAEg0b",
-            "caption": ""
-          }
-        },
-        "reel_6": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "C93rW7dvKWP",
-            "caption": ""
-          }
-        },
-        "reel_4B6Vgf": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DP6KXQLk0oC",
-            "caption": ""
-          }
-        },
-        "reel_5": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DSHPDRyEzfF",
-            "caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "reel_hRpnmj",
-        "reel_HAz9qg",
-        "reel_HwKU7B",
-        "reel_ij3N9i",
-        "reel_HCkUny",
-        "reel_XWbaqd",
-        "reel_ehrVg9",
-        "reel_1",
-        "reel_6",
-        "reel_4B6Vgf",
-        "reel_5"
-      ],
-      "settings": {
-        "badge": "USER VOICE",
-        "heading": "<p>たくさんの方に選ばれています</p>",
-        "subheading": "",
-        "instagram_url": "https://www.instagram.com/kapokknot_home/",
-        "follow_text": "@kapokknot_homeをフォロー →",
-        "badge_size_pc": 12,
-        "badge_size_sp": 11,
-        "badge_color": "#8b7355",
-        "badge_bg_color": "#f4eee6",
-        "heading_size_pc": 32,
-        "heading_size_sp": 21,
-        "heading_color": "#1a1a1a",
-        "subheading_size_pc": 15,
-        "subheading_size_sp": 14,
-        "subheading_color": "#555555",
-        "caption_size_pc": 12,
-        "caption_size_sp": 12,
-        "caption_color": "#333333",
-        "button_size_pc": 15,
-        "button_size_sp": 14,
-        "button_color": "#ffffff",
-        "button_bg_color": "#1a1a1a",
-        "bg_color": "#ffffff",
-        "max_width": 980,
-        "card_radius": 20,
-        "card_radius_sp": 16,
-        "card_width_pc": 330,
-        "card_width_sp": 280,
-        "iframe_height_pc": 650,
-        "iframe_height_sp": 620,
-        "padding_pc": 80,
-        "padding_sp": 56
-      }
     },
     "musubi_lp_cta_8Fft8y": {
       "type": "musubi-lp-cta",
@@ -1668,19 +1180,15 @@
     "guarantee",
     "1778229712a3df2da2",
     "empathy",
-    "177834100804c0ef0c",
     "story",
-    "17784810450136d6c9",
-    "musubi_soldout_history_mDymEi",
-    "musubi_lp_cta_HwYcWT",
     "why",
+    "177834100804c0ef0c",
+    "17784810450136d6c9",
+    "musubi_lp_cta_HwYcWT",
     "musubi_lp_cta_8ETwxc",
     "musubi_size_guide_XQqjpz",
     "musubi_color_variation_TGeHXq",
-    "science",
     "blocks_XxVGGt",
-    "makuake",
-    "ugc",
     "musubi_lp_cta_8Fft8y",
     "care",
     "reviews",
