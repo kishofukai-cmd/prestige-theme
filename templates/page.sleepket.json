@@ -404,106 +404,34 @@
         "padding_sp": 60
       }
     },
-    "musubi_color_variation_TGeHXq": {
-      "type": "musubi-color-variation",
-      "blocks": {
-        "color_item_mkiapY": {
-          "type": "color_item",
-          "settings": {
-            "name": "Powder Beige",
-            "color_code": "#d9cfc4",
-            "image": "shopify://shop_images/260312_KAPOKKNOT0894.jpg"
-          }
-        },
-        "color_item_aEXViX": {
-          "type": "color_item",
-          "settings": {
-            "name": "Dusty Navy",
-            "color_code": "#3d4259",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1272.jpg"
-          }
-        },
-        "color_item_Jdnc9y": {
-          "type": "color_item",
-          "settings": {
-            "name": "Calm Brown",
-            "color_code": "#8b6b50",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1140.jpg"
-          }
-        },
-        "color_item_AYn78k": {
-          "type": "color_item",
-          "settings": {
-            "name": "Cloud White",
-            "color_code": "#e8e4de",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1205_2b57dc7a-d79a-4a8a-8088-4540444d1beb.jpg"
-          }
-        },
-        "color_item_hU9zGx": {
-          "type": "color_item",
-          "settings": {
-            "name": "Blossom Peach",
-            "color_code": "#d4a5a0",
-            "image": "shopify://shop_images/260312_KAPOKKNOT0584.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "color_item_mkiapY",
-        "color_item_aEXViX",
-        "color_item_Jdnc9y",
-        "color_item_AYn78k",
-        "color_item_hU9zGx"
-      ],
-      "name": "MUSUBI カラーのみ",
-      "settings": {
-        "label": "COLOR VARIATION",
-        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
-        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
-        "bg_color": "#faf7f2",
-        "accent_color": "#8b7355",
-        "label_color": "#8b7355",
-        "label_bg": "#f4eee6",
-        "heading_color": "#1a1a1a",
-        "body_color": "#555555",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "heading_size_pc": 32,
-        "heading_size_sp": 25,
-        "body_size_pc": 15,
-        "body_size_sp": 14,
-        "padding_pc": 88,
-        "padding_sp": 60
-      }
-    },
     "musubi_lp_cta_8Fft8y": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
+        "bg_color": "#7f8286",
+        "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "お届け予定：6月22日より順次配送予定",
+        "soldout_text": "",
         "soldout_font_size": 13,
         "soldout_text_color": "#ffffff",
         "cta_url": "https://kapok-knot.com/products/musubi-en",
-        "cta_text": "MUSUBI-en- 商品ページへ",
+        "cta_text": "Kapok Sleep Ket 商品ページへ",
         "cta1_bg_color": "#ffffff",
         "cta1_text_color": "#1f2a44",
         "cta_url_2": "",
         "cta_text_2": "公式LINEから再入荷通知を受け取る",
         "cta2_bg_color": "#06c755",
         "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜(税込)",
-        "price_tax": "特許出願中",
+        "price_text": "",
+        "price_tax": "",
         "price_color": "#ffffff",
         "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "feature_4": "",
         "features_color": "#ffffffbf",
         "features_font_size": 12,
         "cta1_margin_top": 0,
@@ -518,6 +446,60 @@
         "padding_bottom_pc": 36,
         "padding_top_sp": 24,
         "padding_bottom_sp": 32
+      }
+    },
+    "musubi_color_variation_ha696Q": {
+      "type": "musubi-color-variation",
+      "blocks": {
+        "color_item_P4qCCK": {
+          "type": "color_item",
+          "settings": {
+            "name": "ネイビー",
+            "color_code": "#2a4071",
+            "image": "shopify://shop_images/IMG_4349_475588c8-1743-4e79-abd3-0aaed44d9872_1.jpg"
+          }
+        },
+        "color_item_BMfwtH": {
+          "type": "color_item",
+          "settings": {
+            "name": "グレー",
+            "color_code": "#888994",
+            "image": "shopify://shop_images/IMG_4355_4a7f630b-37be-4a54-b026-3dd669ffb714_1.jpg"
+          }
+        },
+        "color_item_BMBJwg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ブルー",
+            "color_code": "#214aa1",
+            "image": "shopify://shop_images/IMG_4351_bb33fbcf-7103-40d0-963c-38bc6da7dd3e_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "color_item_P4qCCK",
+        "color_item_BMfwtH",
+        "color_item_BMBJwg"
+      ],
+      "name": "MUSUBI カラーのみ",
+      "settings": {
+        "label": "VARIATION",
+        "heading": "<p>ボーダー柄も</p>",
+        "lead": "<p>アクセントが欲しい方にはおすすめ</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "care": {
@@ -544,6 +526,7 @@
         "care_1",
         "care_2"
       ],
+      "disabled": true,
       "settings": {
         "label": "EASY CARE",
         "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
@@ -771,8 +754,8 @@
     "17784810450136d6c9",
     "musubi_color_variation_EeKdRH",
     "musubi_lp_cta_8Fft8y",
+    "musubi_color_variation_ha696Q",
     "care",
-    "musubi_color_variation_TGeHXq",
     "reviews",
     "cross-sell",
     "faq"
