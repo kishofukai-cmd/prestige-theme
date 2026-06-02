@@ -158,27 +158,6 @@
         "arrow_size_sp": 24
       }
     },
-    "story": {
-      "type": "musubi-lp-story",
-      "disabled": true,
-      "settings": {
-        "label": "KAPOK KNOT HOME",
-        "label_size": 13,
-        "label_size_sp": 12,
-        "label_color": "#b8a78a",
-        "heading": "<p>眠りには<br/>「導入スイッチ」が必要だった</p>",
-        "heading_size": 32,
-        "heading_size_sp": 20,
-        "heading_color": "#1a1a1a",
-        "body": "<p>瞑想でもない。<br/>フレグランスでもない。<br/>包まれる「重さ」という、<br/>物理的なスイッチ。</p>",
-        "body_size": 16,
-        "body_size_sp": 14,
-        "body_color": "#555555",
-        "accent_color": "#b8a78a",
-        "divider_color": "#d4c8b8",
-        "bg_color": "#ffffff"
-      }
-    },
     "why": {
       "type": "musubi-lp-why",
       "blocks": {
@@ -327,34 +306,6 @@
         "padding_sp": 60
       }
     },
-    "177834100804c0ef0c": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_36ef8a5_pqg3KQ": {
-          "type": "ai_gen_block_36ef8a5",
-          "settings": {
-            "image": "shopify://shop_images/1_2_2x_10a50492-5b1a-4741-bdd6-5531c25eb6d1.png",
-            "desktop_width_percent": 60,
-            "mobile_width_percent": 100
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_36ef8a5_VVEXPH": {
-          "type": "ai_gen_block_36ef8a5",
-          "settings": {
-            "image": "shopify://shop_images/1_3_2x_3ecd95da-0ac9-4d45-9c03-48a0044c714d.png",
-            "desktop_width_percent": 60,
-            "mobile_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_36ef8a5_pqg3KQ",
-        "ai_gen_block_36ef8a5_VVEXPH"
-      ],
-      "settings": {}
-    },
     "17784810450136d6c9": {
       "type": "_blocks",
       "blocks": {
@@ -378,171 +329,8 @@
       "block_order": [
         "ai_gen_block_839e0e3_XArWaV"
       ],
+      "disabled": true,
       "settings": {}
-    },
-    "musubi_lp_cta_HwYcWT": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
-        "subtitle_font_size": 18,
-        "subtitle_font_weight": "400",
-        "subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "お届け予定：6月22日より順次配送予定",
-        "soldout_font_size": 13,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "https://kapok-knot.com/products/musubi-en",
-        "cta_text": "MUSUBI-en- 商品ページへ",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#06c755",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜(税込)",
-        "price_tax": "特許出願中",
-        "price_color": "#ffffff",
-        "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
-        "features_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0,
-        "padding_top_pc": 28,
-        "padding_bottom_pc": 36,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
-      }
-    },
-    "musubi_lp_cta_8ETwxc": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
-        "subtitle_font_size": 18,
-        "subtitle_font_weight": "400",
-        "subtitle_color": "#ffffff",
-        "show_soldout": true,
-        "soldout_text": "お届け予定：6月22日より順次配送予定",
-        "soldout_font_size": 13,
-        "soldout_text_color": "#ffffff",
-        "cta_url": "https://kapok-knot.com/products/musubi-en",
-        "cta_text": "MUSUBI-en- 商品ページへ",
-        "cta1_bg_color": "#ffffff",
-        "cta1_text_color": "#1f2a44",
-        "cta_url_2": "",
-        "cta_text_2": "公式LINEから再入荷通知を受け取る",
-        "cta2_bg_color": "#06c755",
-        "cta2_text_color": "#ffffff",
-        "price_text": "¥29,800〜(税込)",
-        "price_tax": "特許出願中",
-        "price_color": "#ffffff",
-        "price_font_size": 16,
-        "feature_1": "オールシーズン",
-        "feature_2": "アニマルフリー",
-        "feature_3": "通気性",
-        "feature_4": "お手入れ簡単",
-        "features_color": "#ffffffbf",
-        "features_font_size": 12,
-        "cta1_margin_top": 0,
-        "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
-        "cta2_margin_bottom": 12,
-        "soldout_margin_top": 10,
-        "soldout_margin_bottom": 10,
-        "price_margin_top": 8,
-        "price_margin_bottom": 0,
-        "padding_top_pc": 28,
-        "padding_bottom_pc": 36,
-        "padding_top_sp": 24,
-        "padding_bottom_sp": 32
-      }
-    },
-    "musubi_size_guide_XQqjpz": {
-      "type": "musubi-size-guide",
-      "blocks": {
-        "size_panel_9XPzeX": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Nap Size (M)",
-            "image": "shopify://shop_images/260312_KAPOKKNOT0603.jpg",
-            "badge": "ソファにおすすめ",
-            "featured": false,
-            "name": "Nap Size (M)",
-            "price": "¥29,800",
-            "price_note": "(税込)",
-            "dimensions": "約135 × 70 cm",
-            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
-            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
-          }
-        },
-        "size_panel_7QGJjx": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "Sleep Size (L)",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1167.jpg",
-            "badge": "ベッドにおすすめ",
-            "featured": true,
-            "name": "Sleep Size (L)",
-            "price": "¥39,800",
-            "price_note": "(税込)",
-            "dimensions": "約175 × 105 cm",
-            "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
-            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
-          }
-        },
-        "size_panel_MQXeak": {
-          "type": "size_panel",
-          "settings": {
-            "tab_label": "新登場！Full Size(XL)",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1153.jpg",
-            "badge": "包まれたい方におすすめ",
-            "featured": false,
-            "name": "Full Size(XL)",
-            "price": "¥44,800",
-            "price_note": "(税込)",
-            "dimensions": "約180 × 140 cm",
-            "features": "ベッドで全身を包まれたい方に, 大柄な方にも,全身を預ける心地よさ,",
-            "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
-          }
-        }
-      },
-      "block_order": [
-        "size_panel_9XPzeX",
-        "size_panel_7QGJjx",
-        "size_panel_MQXeak"
-      ],
-      "name": "MUSUBI サイズのみ",
-      "settings": {
-        "label": "SIZE GUIDE",
-        "heading": "<p>あなたに合うサイズは？</p>",
-        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIはサイズをお選びいただけます。</p>",
-        "compare_alt": "MUSUBIサイズ比較",
-        "bg_color": "#faf7f2",
-        "accent_color": "#8b7355",
-        "label_color": "#8b7355",
-        "label_bg": "#f4eee6",
-        "heading_color": "#1a1a1a",
-        "body_color": "#555555",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "heading_size_pc": 32,
-        "heading_size_sp": 25,
-        "body_size_pc": 15,
-        "body_size_sp": 14,
-        "padding_pc": 88,
-        "padding_sp": 60
-      }
     },
     "musubi_color_variation_TGeHXq": {
       "type": "musubi-color-variation",
@@ -765,30 +553,30 @@
           "type": "review_card",
           "settings": {
             "stars": "★★★★★",
-            "title": "重さに驚き！",
-            "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！",
-            "meta": "50代男性 / 商社勤務",
-            "tags": "#安心感, #よく眠れた気がする"
+            "title": "夏に快適",
+            "text": "とても肌触りよく、夏には一枚でエアコン負けせずに使えますし、冬は羽毛布団の下に入れると気持ちよく暖かく感じるので、重宝。洗濯も簡単にできて良いですよ。",
+            "meta": "",
+            "tags": "#肌触り, #選択簡単"
           }
         },
         "review_2": {
           "type": "review_card",
           "settings": {
             "stars": "★★★★★",
-            "title": "新しいジャンルでときめいた！",
-            "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！",
-            "meta": "30代女性 / アパレルメーカー勤務",
-            "tags": "#ソファ時間, #蒸れにくい"
+            "title": "大満足！",
+            "text": "ふんわり軽く、薄いのに暖かく、肌触りもすごくいい感じ、綿が中で偏ることもなく、確かなお品に大満足です。\nこれを使用してしまうと、今まで使っていたものにはもう戻れそうにありません。",
+            "meta": "",
+            "tags": "#軽い, #暖かい"
           }
         },
         "review_3": {
           "type": "review_card",
           "settings": {
-            "stars": "★★★★★",
-            "title": "一度も起きることなく…快眠！",
-            "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！",
-            "meta": "50代女性 / 主婦",
-            "tags": "#よく眠れた気がする, #安心感"
+            "stars": "★★★★",
+            "title": "快眠できる",
+            "text": "肌触りがよく、ほど良く暖かく、寒暖差のある今の時期にピッタリです。快眠できていると思います。\nリバーシブルなので、気分に合わせてカラーを変えられるのも良いです。",
+            "meta": "",
+            "tags": "#快眠, #カラー展開"
           }
         }
       },
@@ -846,84 +634,6 @@
         "max_width": 1080,
         "padding_pc": 88,
         "padding_sp": 60
-      }
-    },
-    "hotels": {
-      "type": "musubi-lp-hotels",
-      "blocks": {
-        "hotel_1": {
-          "type": "hotel_card",
-          "settings": {
-            "image": "shopify://shop_images/ruufu.jpg",
-            "image_url": "",
-            "name": "古民家宿 るうふ",
-            "type": "一棟貸し古民家宿",
-            "detail": "時が刻まれた壮麗な空間で、地域に伝わる食と自然の恵みを味わう"
-          }
-        },
-        "hotel_2": {
-          "type": "hotel_card",
-          "settings": {
-            "image": "shopify://shop_images/erbastella.jpg",
-            "image_url": "",
-            "name": "オーベルジュ エルバステラ",
-            "type": "全3室の小さな宿",
-            "detail": "野菜ソムリエプロ夫婦が営む滞在型リトリート"
-          }
-        },
-        "hotel_3": {
-          "type": "hotel_card",
-          "settings": {
-            "image": "shopify://shop_images/tactile.jpg",
-            "image_url": "",
-            "name": "TACTILE HOUSE",
-            "type": "工芸建材の体験宿",
-            "detail": "産地の工芸・建材を空間で体験できる宿泊施設"
-          }
-        }
-      },
-      "block_order": [
-        "hotel_1",
-        "hotel_2",
-        "hotel_3"
-      ],
-      "settings": {
-        "label": "STAY EXPERIENCE",
-        "heading": "<p>MUSUBIを体験できる宿</p>",
-        "description": "<p>全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。</p>",
-        "bg_color": "#faf7f2",
-        "card_bg_color": "#ffffff",
-        "border_color": "#eee7dd",
-        "label_bg_color": "#f4eee6",
-        "label_color": "#8b7355",
-        "heading_color": "#1a1a1a",
-        "desc_color": "#666666",
-        "type_bg_color": "#f4eee6",
-        "type_color": "#8b7355",
-        "name_color": "#1a1a1a",
-        "detail_color": "#666666",
-        "columns_pc": 3,
-        "max_width": 1180,
-        "padding_pc": 88,
-        "padding_sp": 60,
-        "heading_size_pc": 34,
-        "heading_size_sp": 26,
-        "desc_size_pc": 15,
-        "desc_size_sp": 14,
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "type_size_pc": 12,
-        "type_size_sp": 11,
-        "name_size_pc": 22,
-        "name_size_sp": 20,
-        "detail_size_pc": 14,
-        "detail_size_sp": 13,
-        "card_radius_pc": 24,
-        "card_radius_sp": 20,
-        "image_ratio_pc": 72,
-        "image_ratio_sp": 100,
-        "image_fit": "cover",
-        "image_fit_sp": "cover"
       }
     },
     "cross-sell": {
@@ -1180,19 +890,13 @@
     "guarantee",
     "1778229712a3df2da2",
     "empathy",
-    "story",
     "why",
-    "177834100804c0ef0c",
     "17784810450136d6c9",
-    "musubi_lp_cta_HwYcWT",
-    "musubi_lp_cta_8ETwxc",
-    "musubi_size_guide_XQqjpz",
     "musubi_color_variation_TGeHXq",
     "blocks_XxVGGt",
     "musubi_lp_cta_8Fft8y",
     "care",
     "reviews",
-    "hotels",
     "cross-sell",
     "faq",
     "musubi_soldout_history_B86dW3",
