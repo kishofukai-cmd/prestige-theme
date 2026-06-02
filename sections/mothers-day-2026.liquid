@@ -196,7 +196,7 @@
 
   <!-- KV (Key Visual) -->
   {%- if kv_url != blank -%}
-  <section class="md-kv" aria-label="{{ section.settings.kv_alt | default: '母の日キービジュアル' }}">
+  <section class="md-kv" aria-label="{{ section.settings.kv_alt | default: '父の日キービジュアル' }}">
     <img src="{{ kv_url }}"
          alt="{{ section.settings.kv_alt }}"
          width="1600" height="800"
@@ -661,7 +661,7 @@
       var banner = document.getElementById('md-countdown');
       if (!banner) return;
       var targetDate = banner.getAttribute('data-target-date') || '2026-05-10';
-      var zeroMsg = banner.getAttribute('data-zero-message') || '本日は母の日。ありがとうの一日を。';
+      var zeroMsg = banner.getAttribute('data-zero-message') || '本日は父の日。ありがとうの一日を。';
       var target = new Date(targetDate + 'T00:00:00+09:00').getTime();
       var now = Date.now();
       var diff = Math.max(0, Math.ceil((target - now) / (1000*60*60*24)));
@@ -707,13 +707,13 @@
 
 {% schema %}
 {
-  "name": "母の日2026 LP",
+  "name": "父の日2026 LP",
   "settings": [
     { "type": "header", "content": "カウントダウン" },
     { "type": "text", "id": "countdown_target_date", "label": "対象日 (YYYY-MM-DD)", "default": "2026-05-10" },
-    { "type": "text", "id": "countdown_prefix", "label": "前テキスト", "default": "母の日（5月10日）まで あと" },
-    { "type": "text", "id": "countdown_suffix", "label": "後テキスト", "default": "日｜当日お届けは5月7日（木）中のご発送まで" },
-    { "type": "text", "id": "countdown_zero_message", "label": "当日メッセージ", "default": "本日は母の日。ありがとうの一日を。" },
+    { "type": "text", "id": "countdown_prefix", "label": "前テキスト", "default": "父の日（6月21日）まで あと" },
+    { "type": "text", "id": "countdown_suffix", "label": "後テキスト", "default": "日｜当日お届けは6月18日（木）中のご発送まで" },
+    { "type": "text", "id": "countdown_zero_message", "label": "当日メッセージ", "default": "本日は父の日。ありがとうの一日を。" },
 
     { "type": "header", "content": "KV（キービジュアル）" },
     { "type": "image_picker", "id": "kv_image", "label": "KV画像（Shopify Files優先）" },
@@ -724,26 +724,26 @@
     { "type": "header", "content": "リード（問いかけ）" },
     { "type": "text", "id": "hero_eyebrow", "label": "アイブロウ", "default": "MOTHER'S DAY 2026" },
     { "type": "textarea", "id": "lead_h1", "label": "H1（<br>改行可）", "default": "「ありがとう」を、<br>どんな形で伝えますか。" },
-    { "type": "text", "id": "lead_date_note", "label": "日付注釈", "default": "2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード" },
-    { "type": "textarea", "id": "lead_body", "label": "リード本文（<br>改行可）", "default": "お母さまの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。" },
+    { "type": "text", "id": "lead_date_note", "label": "日付注釈", "default": "2026年6月21日（日）— 父の日ギフト特集｜加重ブランケット・ギフトカード" },
+    { "type": "textarea", "id": "lead_body", "label": "リード本文（<br>改行可）", "default": "お父さんの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。" },
     { "type": "checkbox", "id": "show_toc", "label": "目次を表示", "default": true },
     { "type": "text", "id": "toc_title", "label": "目次タイトル", "default": "この記事の目次" },
 
     { "type": "header", "content": "ランキングセクション" },
-    { "type": "text", "id": "ranking_h2", "label": "H2", "default": "2026年 母の日ギフト・ランキング" },
+    { "type": "text", "id": "ranking_h2", "label": "H2", "default": "2026年 父の日ギフト・ランキング" },
     { "type": "text", "id": "ranking_subtitle", "label": "サブタイトル", "default": "「花」から「日々を豊かにする実用品」へ。" },
-    { "type": "text", "id": "ranking_source", "label": "出典表記", "default": "※出典：母の日.me「2026年版 母の日に関するアンケート調査」" },
+    { "type": "text", "id": "ranking_source", "label": "出典表記", "default": "※出典：父の日.me「2026年版 父の日に関するアンケート調査」" },
     { "type": "richtext", "id": "ranking_conclusion", "label": "結びコメント", "default": "<p>いま注目を集めているのが、<strong>\"眠り\"を贈るという選択</strong>。</p>" },
 
     { "type": "header", "content": "ヒーロー転換" },
     { "type": "text", "id": "hero_transition_eyebrow", "label": "アイブロウ", "default": "OUR ANSWER" },
-    { "type": "text", "id": "hero_heading_line1", "label": "H2 1行目", "default": "今年の母の日は、" },
+    { "type": "text", "id": "hero_heading_line1", "label": "H2 1行目", "default": "今年の父の日は、" },
     { "type": "text", "id": "hero_heading_line2", "label": "H2 2行目", "default": "やさしい「重み」を贈る。" },
     { "type": "image_picker", "id": "hero_lifestyle_image", "label": "ライフスタイル画像" },
     { "type": "text", "id": "hero_lifestyle_image_url", "label": "ライフスタイル画像URL（フォールバック）", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600" },
-    { "type": "text", "id": "hero_lifestyle_alt", "label": "画像alt", "default": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト" },
+    { "type": "text", "id": "hero_lifestyle_alt", "label": "画像alt", "default": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年父の日ギフト" },
     { "type": "textarea", "id": "hero_body", "label": "本文", "default": "植物由来のぬくもりで、ふたつの選択を。" },
-    { "type": "text", "id": "featured_colors_label", "label": "推しカラー見出し", "default": "母の日におすすめの2色" },
+    { "type": "text", "id": "featured_colors_label", "label": "推しカラー見出し", "default": "父の日におすすめの2色" },
     { "type": "text", "id": "featured_color_1_name", "label": "カラー1 名前", "default": "Cloud White" },
     { "type": "image_picker", "id": "cloud_white_image", "label": "カラー1 画像" },
     { "type": "text", "id": "cloud_white_image_url", "label": "カラー1 画像URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=800" },
@@ -768,7 +768,7 @@
     { "type": "image_picker", "id": "musubi_main_image", "label": "メイン画像" },
     { "type": "text", "id": "musubi_main_image_url", "label": "メイン画像URL", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_0885.jpg?v=1771395913&width=1600" },
     { "type": "text", "id": "musubi_main_alt", "label": "画像alt", "default": "リカバリー加重ブランケットMUSUBIの使用シーン" },
-    { "type": "richtext", "id": "musubi_intro", "label": "リード文", "default": "<p>カポック繊維を編み込んだ、<strong>特許出願中</strong>のリカバリー加重ブランケット。<br>体全体に感じる心地よい重みで、お母さまのくつろぎ時間に寄り添います。</p>" },
+    { "type": "richtext", "id": "musubi_intro", "label": "リード文", "default": "<p>カポック繊維を編み込んだ、<strong>特許出願中</strong>のリカバリー加重ブランケット。<br>体全体に感じる心地よい重みで、お父さんのくつろぎ時間に寄り添います。</p>" },
     { "type": "richtext", "id": "musubi_quote", "label": "引用ブロック", "default": "<p>適度な重みのある寝具は、海外の複数の研究でリラックス時の指標との関連が報告されています。<br><span>※医学的効能を保証するものではありません。体感には個人差があります。</span></p>" },
 
     { "type": "header", "content": "サイズ選びガイド" },
@@ -780,28 +780,28 @@
     { "type": "text", "id": "size_guide_note", "label": "注釈", "default": "※寸法・重量は目安です。最新仕様は各商品ページをご確認ください。" },
 
     { "type": "header", "content": "MUSUBIラインナップ" },
-    { "type": "text", "id": "musubi_lineup_h3", "label": "H3", "default": "3つのバリエーションから、お母さまに合う一枚を" },
-    { "type": "richtext", "id": "caution_text", "label": "注意ボックス", "default": "<p>※70代以上・筋力が気になるお母さまへは、軽量な MUSUBI -PON- またはギフトカードがおすすめです。</p>" },
+    { "type": "text", "id": "musubi_lineup_h3", "label": "H3", "default": "3つのバリエーションから、お父さんに合う一枚を" },
+    { "type": "richtext", "id": "caution_text", "label": "注意ボックス", "default": "<p>※70代以上・筋力が気になるお父さんへは、軽量な MUSUBI -PON- またはギフトカードがおすすめです。</p>" },
 
     { "type": "header", "content": "ギフトカードセクション" },
     { "type": "text", "id": "giftcard_eyebrow", "label": "アイブロウ", "default": "CHOICE 02" },
     { "type": "textarea", "id": "giftcard_h2", "label": "H2（<br>改行可）", "default": "自由を贈る。<br>KAPOK KNOT ギフトカード" },
     { "type": "image_picker", "id": "giftcard_image", "label": "ギフトカード画像" },
     { "type": "text", "id": "giftcard_image_url", "label": "ギフトカード画像URL", "default": "https://kapok-knot.com/cdn/shop/files/45_5258c5b7-fdd2-47d8-a57b-10aac5d651a8.png?v=1763708950&width=1600" },
-    { "type": "text", "id": "giftcard_alt", "label": "alt", "default": "KAPOK KNOT ギフトカード｜母の日の贈り物" },
+    { "type": "text", "id": "giftcard_alt", "label": "alt", "default": "KAPOK KNOT ギフトカード｜父の日の贈り物" },
     { "type": "richtext", "id": "giftcard_intro", "label": "リード文", "default": "<p>KAPOK KNOTの<strong>全商品</strong>に使える、自由な金額で贈れるギフトカード。<br>「好みが分からない」「サイズ選びで失敗したくない」そんなときに。</p>" },
     { "type": "text", "id": "giftcard_cta_text", "label": "CTA テキスト", "default": "ギフトカードを見る →" },
     { "type": "text", "id": "giftcard_cta_url", "label": "CTA リンク", "default": "https://kapok-knot.com/products/gift-card" },
 
     { "type": "header", "content": "比較表セクション" },
-    { "type": "text", "id": "compare_h2", "label": "H2", "default": "お母さまに、いちばん合うものを" },
+    { "type": "text", "id": "compare_h2", "label": "H2", "default": "お父さんに、いちばん合うものを" },
     { "type": "text", "id": "compare_intro", "label": "イントロ", "default": "迷ったときは、下記の表を参考に。" },
-    { "type": "text", "id": "compare_col_1", "label": "列1", "default": "お母さまのタイプ" },
+    { "type": "text", "id": "compare_col_1", "label": "列1", "default": "お父さんのタイプ" },
     { "type": "text", "id": "compare_col_2", "label": "列2", "default": "おすすめ" },
 
     { "type": "header", "content": "お客さまの声セクション" },
     { "type": "text", "id": "voices_h2", "label": "H2", "default": "お客さまの声" },
-    { "type": "text", "id": "voices_subtitle", "label": "サブタイトル", "default": "母の日にMUSUBIを贈った方からのメッセージ。" },
+    { "type": "text", "id": "voices_subtitle", "label": "サブタイトル", "default": "父の日にMUSUBIを贈った方からのメッセージ。" },
     { "type": "checkbox", "id": "voices_ready", "label": "お客さまの声を表示", "default": false },
     { "type": "textarea", "id": "voices_placeholder", "label": "非表示時のテキスト", "default": "実際のお客さまの声を準備中です。\nレビュー掲載許諾をいただき次第、こちらに掲載いたします。" },
 
@@ -814,13 +814,13 @@
     { "type": "text", "id": "next_step_cta2_url", "label": "CTA2 リンク", "default": "#giftcard" },
 
     { "type": "header", "content": "配送セクション" },
-    { "type": "text", "id": "delivery_h2", "label": "H2", "default": "母の日当日に、確実に届ける" },
+    { "type": "text", "id": "delivery_h2", "label": "H2", "default": "父の日当日に、確実に届ける" },
     { "type": "text", "id": "delivery_h3_schedule", "label": "配送H3", "default": "配送スケジュール" },
-    { "type": "textarea", "id": "delivery_cutoff", "label": "配送締切メイン", "default": "5月7日（木）中のご発送で、母の日当日（5月10日）のお届けが可能です。" },
+    { "type": "textarea", "id": "delivery_cutoff", "label": "配送締切メイン", "default": "6月18日（木）中のご発送で、父の日当日（6月21日）のお届けが可能です。" },
     { "type": "text", "id": "delivery_note_1", "label": "注記1", "default": "※GWを挟みますので、お早めのご注文をおすすめします。" },
     { "type": "text", "id": "delivery_note_2", "label": "注記2", "default": "※ギフトカード（デジタル）は購入後すぐにお届け可能です。" },
     { "type": "text", "id": "delivery_h3_wrapping", "label": "ラッピングH3", "default": "ラッピング・メッセージカード" },
-    { "type": "richtext", "id": "wrapping_body", "label": "ラッピング本文", "default": "<p>KAPOK KNOTの母の日ギフトは、すべて<strong>無料ラッピング対応</strong>。メッセージカードもご用意しています。</p>" },
+    { "type": "richtext", "id": "wrapping_body", "label": "ラッピング本文", "default": "<p>KAPOK KNOTの父の日ギフトは、すべて<strong>無料ラッピング対応</strong>。メッセージカードもご用意しています。</p>" },
     { "type": "image_picker", "id": "wrapping_image", "label": "ラッピング画像" },
     { "type": "text", "id": "wrapping_image_url", "label": "ラッピング画像URL", "default": "https://kapok-knot.com/cdn/shop/files/46_2e346ac3-e308-4c25-9a8b-e1dd4b5a85fa.png?v=1763709003&width=1600" },
     { "type": "text", "id": "wrapping_alt", "label": "alt", "default": "KAPOK KNOT ラッピング例" },
@@ -830,7 +830,7 @@
     { "type": "textarea", "id": "faq_disclaimer", "label": "免責注記", "default": "※本記事の内容は医学的効能を保証するものではなく、体感には個人差があります。" },
 
     { "type": "header", "content": "記事末尾CTAセクション" },
-    { "type": "text", "id": "final_h2", "label": "H2", "default": "今年の母の日、どちらを選びますか" },
+    { "type": "text", "id": "final_h2", "label": "H2", "default": "今年の父の日、どちらを選びますか" },
     { "type": "text", "id": "final_card1_eyebrow", "label": "カード1 アイブロウ", "default": "MUSUBI" },
     { "type": "textarea", "id": "final_card1_title", "label": "カード1 タイトル", "default": "眠りと癒しを、<br>形にして贈る。" },
     { "type": "text", "id": "final_card1_body", "label": "カード1 本文", "default": "特許出願中のリカバリー加重ブランケット。" },
@@ -853,8 +853,8 @@
 
     { "type": "header", "content": "SEO（構造化データ）" },
     { "type": "checkbox", "id": "enable_structured_data", "label": "構造化データを出力", "default": true },
-    { "type": "text", "id": "seo_headline", "label": "headline", "default": "2026年母の日ギフト｜眠りと自由を贈る｜加重ブランケットMUSUBI＆ギフトカード" },
-    { "type": "textarea", "id": "seo_description", "label": "description", "default": "2026年5月10日(日)は母の日。特別な感謝を、植物由来のやさしさで。特許出願中のリカバリー加重ブランケットMUSUBIと、選ぶ自由を贈れるKAPOK KNOTギフトカード。" }
+    { "type": "text", "id": "seo_headline", "label": "headline", "default": "2026年父の日ギフト｜眠りと自由を贈る｜加重ブランケットMUSUBI＆ギフトカード" },
+    { "type": "textarea", "id": "seo_description", "label": "description", "default": "2026年6月21日(日)は父の日。特別な感謝を、植物由来のやさしさで。特許出願中のリカバリー加重ブランケットMUSUBIと、選ぶ自由を贈れるKAPOK KNOTギフトカード。" }
   ],
   "blocks": [
     {
@@ -948,7 +948,7 @@
       "type": "compare_row",
       "name": "比較表行",
       "settings": [
-        { "type": "text", "id": "mom_type", "label": "お母さまタイプ" },
+        { "type": "text", "id": "mom_type", "label": "お父さんタイプ" },
         { "type": "text", "id": "recommendation", "label": "おすすめ" }
       ]
     },
