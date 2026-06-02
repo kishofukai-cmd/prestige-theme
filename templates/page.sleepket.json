@@ -168,7 +168,7 @@
             "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
             "number": "01",
             "title": "とろけるような、極上の肌馴染み",
-            "description": ""
+            "description": "独自配合したユーカリ由来の生地とカポック中綿の組み合わせ。ここちよく、質の高い睡眠へと導いてくれます。"
           }
         },
         "reason_2": {
@@ -178,7 +178,7 @@
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
             "number": "02",
             "title": "カポック繊維の中空構造",
-            "description": ""
+            "description": "ユーカリ由来の生地とカポックは、ともに呼吸すると言われる繊維で、吸放湿性・通気性に優れているため熱帯夜も爽やかにサポートしてくれます。"
           }
         },
         "reason_3": {
@@ -188,7 +188,7 @@
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
             "number": "03",
             "title": "カポックシートの秘密",
-            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+            "description": "カポックコットンを特殊技術で加工したシートをテンセルで包み込んでいます。"
           }
         },
         "reason_card_88QYrx": {
@@ -198,7 +198,7 @@
             "image_url": "",
             "number": "04",
             "title": "ちょうどいい一枚を",
-            "description": ""
+            "description": "ソファやベッドの上にサラッと掛けてあるだけで、洗練された印象に。ファッション感覚でお部屋をコーディネートできるカラーリングでインテリア性も抜群です。"
           }
         }
       },
@@ -209,10 +209,10 @@
         "reason_card_88QYrx"
       ],
       "settings": {
-        "label": "WHY MUSUBI",
+        "label": "Recommend",
         "heading": "<p>KAPOK Sleep Ketの<br/>こだわった特徴</p>",
         "lead": "<p>日々の暮らしに自然になじむよう、素材・構造・サイズ感にこだわった布団。<br/>とろける肌触りで起きていても夢見心地に。</p>",
-        "show_comparison": true,
+        "show_comparison": false,
         "comparison_label": "LABORATORY TEST",
         "comparison_heading": "<p>検証データが示す<br/>MUSUBIの快適性</p>",
         "chart_title": "寝床内湿度（空間）比較データ",
@@ -329,6 +329,7 @@
       "block_order": [
         "ai_gen_block_839e0e3_XArWaV"
       ],
+      "disabled": true,
       "settings": {}
     },
     "musubi_color_variation_TGeHXq": {
@@ -402,117 +403,6 @@
         "padding_pc": 88,
         "padding_sp": 60
       }
-    },
-    "musubi_color_variation_EeKdRH": {
-      "type": "musubi-color-variation",
-      "blocks": {
-        "color_item_q88bqg": {
-          "type": "color_item",
-          "settings": {
-            "name": "Powder Beige",
-            "color_code": "#d9cfc4",
-            "image": "shopify://shop_images/260312_KAPOKKNOT0894.jpg"
-          }
-        },
-        "color_item_zD4hJf": {
-          "type": "color_item",
-          "settings": {
-            "name": "Dusty Navy",
-            "color_code": "#3d4259",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1272.jpg"
-          }
-        },
-        "color_item_aphDzK": {
-          "type": "color_item",
-          "settings": {
-            "name": "Calm Brown",
-            "color_code": "#8b6b50",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1140.jpg"
-          }
-        },
-        "color_item_WabkMb": {
-          "type": "color_item",
-          "settings": {
-            "name": "Cloud White",
-            "color_code": "#e8e4de",
-            "image": "shopify://shop_images/260312_KAPOKKNOT1205_2b57dc7a-d79a-4a8a-8088-4540444d1beb.jpg"
-          }
-        },
-        "color_item_cd4aLg": {
-          "type": "color_item",
-          "settings": {
-            "name": "Blossom Peach",
-            "color_code": "#d4a5a0",
-            "image": "shopify://shop_images/260312_KAPOKKNOT0584.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "color_item_q88bqg",
-        "color_item_zD4hJf",
-        "color_item_aphDzK",
-        "color_item_WabkMb",
-        "color_item_cd4aLg"
-      ],
-      "name": "MUSUBI カラーのみ",
-      "settings": {
-        "label": "VARIATION",
-        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
-        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
-        "bg_color": "#faf7f2",
-        "accent_color": "#8b7355",
-        "label_color": "#8b7355",
-        "label_bg": "#f4eee6",
-        "heading_color": "#1a1a1a",
-        "body_color": "#555555",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "heading_size_pc": 32,
-        "heading_size_sp": 25,
-        "body_size_pc": 15,
-        "body_size_sp": 14,
-        "padding_pc": 88,
-        "padding_sp": 60
-      }
-    },
-    "blocks_XxVGGt": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_a9b57ce_6gW9Q6": {
-          "type": "ai_gen_block_a9b57ce",
-          "settings": {
-            "image_1": "shopify://shop_images/10_12.png",
-            "image_2": "shopify://shop_images/10_8.png",
-            "image_3": "shopify://shop_images/10_28.png",
-            "image_4": "shopify://shop_images/10_17.png",
-            "image_5": "shopify://shop_images/10_20.png",
-            "image_6": "shopify://shop_images/10_25.png",
-            "image_7": "shopify://shop_images/10_29.png",
-            "image_8": "shopify://shop_images/10_14.png",
-            "image_9": "shopify://shop_images/10_18.png",
-            "image_10": "shopify://shop_images/10_23.png",
-            "columns_desktop": 5,
-            "columns_mobile": "2",
-            "gap": 12,
-            "desktop_width_percent": 100,
-            "autoplay": true,
-            "autoplay_speed": 4000,
-            "show_navigation": true,
-            "show_dots": true,
-            "nav_button_color": "#ffffff",
-            "nav_button_icon_color": "#1c1c1c",
-            "nav_button_size": 35,
-            "nav_button_offset": 8,
-            "dot_color": "#1c1c1c",
-            "image_border_radius": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_a9b57ce_6gW9Q6"
-      ],
-      "settings": {}
     },
     "musubi_lp_cta_8Fft8y": {
       "type": "musubi-lp-cta",
@@ -613,6 +503,78 @@
         "card_radius": 22,
         "card_radius_sp": 18,
         "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "musubi_color_variation_EeKdRH": {
+      "type": "musubi-color-variation",
+      "blocks": {
+        "color_item_q88bqg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ピスタチオ",
+            "color_code": "#afcd5a",
+            "image": "shopify://shop_images/DSC_50765_2_1_2.webp"
+          }
+        },
+        "color_item_zD4hJf": {
+          "type": "color_item",
+          "settings": {
+            "name": "グレー",
+            "color_code": "#737377",
+            "image": "shopify://shop_images/IMG_7236.webp"
+          }
+        },
+        "color_item_aphDzK": {
+          "type": "color_item",
+          "settings": {
+            "name": "カイブルー",
+            "color_code": "#ace4e2",
+            "image": "shopify://shop_images/621_1_c4351096-8474-415f-9ab4-3ebf2b89f82e_4.webp"
+          }
+        },
+        "color_item_WabkMb": {
+          "type": "color_item",
+          "settings": {
+            "name": "ディープネイビー",
+            "color_code": "#212554",
+            "image": "shopify://shop_images/DSC_2988_3x_1_1_1_2fe3201d-85b8-4abb-b98c-f16d50382315_1.webp"
+          }
+        },
+        "color_item_cd4aLg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ムードパープル",
+            "color_code": "#d8c3f2",
+            "image": "shopify://shop_images/DSC_2991_3x_2_1_a44d73d9-81da-42eb-9b4c-357929128e07_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "color_item_q88bqg",
+        "color_item_zD4hJf",
+        "color_item_aphDzK",
+        "color_item_WabkMb",
+        "color_item_cd4aLg"
+      ],
+      "name": "MUSUBI カラーのみ",
+      "settings": {
+        "label": "VARIATION",
+        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
+        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
         "padding_pc": 88,
         "padding_sp": 60
       }
@@ -806,10 +768,9 @@
     "why",
     "17784810450136d6c9",
     "musubi_color_variation_TGeHXq",
-    "musubi_color_variation_EeKdRH",
-    "blocks_XxVGGt",
     "musubi_lp_cta_8Fft8y",
     "care",
+    "musubi_color_variation_EeKdRH",
     "reviews",
     "cross-sell",
     "faq"
