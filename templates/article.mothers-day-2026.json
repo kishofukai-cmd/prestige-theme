@@ -12,17 +12,10 @@
     "main": {
       "type": "mothers-day-2026",
       "blocks": {
-        "toc-1": {
-          "type": "toc_item",
-          "settings": {
-            "label": "2026年、母の日ギフトの新しい選択肢（調査データ）",
-            "anchor": "#ranking"
-          }
-        },
         "toc-2": {
           "type": "toc_item",
           "settings": {
-            "label": "今年の母の日は、やさしい「重み」を贈る",
+            "label": "今年の父の日は、やさしい「重み」を贈る",
             "anchor": "#hero-transition"
           }
         },
@@ -547,7 +540,6 @@
         }
       },
       "block_order": [
-        "toc-1",
         "toc-2",
         "toc-3",
         "toc-4",
@@ -613,17 +605,17 @@
       ],
       "settings": {
         "countdown_target_date": "2026-05-10",
-        "countdown_prefix": "母の日（5月10日）まで あと",
-        "countdown_suffix": "日｜当日お届けは5月7日（木）11:59までのご注文まで",
-        "countdown_zero_message": "本日は母の日。ありがとうの一日を。",
-        "kv_image": "shopify://shop_images/c_2_3x_2_7f7dd5c5-c379-4103-9176-15f1c58618f2.png",
+        "countdown_prefix": "父の日（6月21日）まで あと",
+        "countdown_suffix": "日｜当日お届けは6月18日（木）11:59までのご注文まで",
+        "countdown_zero_message": "本日は父の日。ありがとうの一日を。",
+        "kv_image": "shopify://shop_images/c_2_3x_5.png",
         "kv_image_url": "https://kapok-knot.com/cdn/shop/files/happy-mothers-day-kv.png",
-        "kv_alt": "HAPPY MOTHER'S DAY｜KAPOK KNOT 2026",
-        "kv_fallback_text": "HAPPY MOTHER'S DAY",
-        "hero_eyebrow": "HAPPY MOTHER'S DAY 2026",
+        "kv_alt": "HAPPY FATHER'S DAY｜KAPOK KNOT 2026",
+        "kv_fallback_text": "HAPPY FATHER'S DAY",
+        "hero_eyebrow": "HAPPY FATHER'S DAY 2026",
         "lead_h1": "「ありがとう」を、<br>どんな形で伝えますか。",
-        "lead_date_note": "2026年5月10日（日）— 母の日ギフト特集｜加重ブランケット・ギフトカード",
-        "lead_body": "お母さまの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。",
+        "lead_date_note": "2026年6月21日（日）— 父の日ギフト特集｜加重ブランケット・ギフトカード",
+        "lead_body": "いつも頑張っているお父さんの日常を、ほんの少し豊かにする贈り物。<br>いつもと違う選択肢を、ご用意しました。",
         "show_toc": true,
         "toc_title": "この記事の目次",
         "ranking_h2": "2026年 母の日ギフト・ランキング",
@@ -631,12 +623,12 @@
         "ranking_source": "※出典：母の日.me「2026年版 母の日に関するアンケート調査」",
         "ranking_conclusion": "<p>いま注目を集めているのが、<strong>\"眠り\"を贈るという選択</strong>。</p>",
         "hero_transition_eyebrow": "OUR ANSWER",
-        "hero_heading_line1": "今年の母の日は、",
+        "hero_heading_line1": "今年の父の日は、",
         "hero_heading_line2": "やさしい「重み」を贈る。",
         "hero_lifestyle_image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600",
         "hero_lifestyle_alt": "リカバリー加重ブランケットMUSUBIをかけてくつろぐシーン｜2026年母の日ギフト",
         "hero_body": "植物由来のぬくもりで、ふたつの選択を。",
-        "featured_colors_label": "母の日におすすめの2色",
+        "featured_colors_label": "おすすめの2色",
         "featured_color_1_name": "Cloud White",
         "cloud_white_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=800",
         "cloud_white_url": "https://kapok-knot.com/products/musubi-en?variant=cloud-white",
