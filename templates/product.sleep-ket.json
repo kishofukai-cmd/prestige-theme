@@ -116,7 +116,6 @@
         },
         "c4dc4d29-3cf6-4fc3-99f8-ed00028b0fc6": {
           "type": "accordion_size",
-          "disabled": true,
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-pin",
@@ -127,7 +126,6 @@
         },
         "c5a5fa44-a0a3-4e8c-a05c-d0507553fa8c": {
           "type": "accordion",
-          "disabled": true,
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-recycle",
@@ -138,7 +136,6 @@
         },
         "3c9a6d8c-00bf-46b1-845d-f137c5a676d7": {
           "type": "accordion_care",
-          "disabled": true,
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-love",
@@ -149,7 +146,6 @@
         },
         "6cb9a9f6-89a5-438e-8426-9ceae0412002": {
           "type": "accordion",
-          "disabled": true,
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-leaf",
@@ -160,7 +156,6 @@
         },
         "01b1ccc4-09e2-41aa-971f-e116272ac242": {
           "type": "accordion",
-          "disabled": true,
           "settings": {
             "show_below_gallery": false,
             "icon": "picto-delivery-truck",
