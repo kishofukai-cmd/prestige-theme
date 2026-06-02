@@ -332,6 +332,78 @@
       "disabled": true,
       "settings": {}
     },
+    "musubi_color_variation_EeKdRH": {
+      "type": "musubi-color-variation",
+      "blocks": {
+        "color_item_q88bqg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ピスタチオ",
+            "color_code": "#afcd5a",
+            "image": "shopify://shop_images/DSC_50765_2_1_2.webp"
+          }
+        },
+        "color_item_zD4hJf": {
+          "type": "color_item",
+          "settings": {
+            "name": "グレー",
+            "color_code": "#737377",
+            "image": "shopify://shop_images/IMG_7236.webp"
+          }
+        },
+        "color_item_aphDzK": {
+          "type": "color_item",
+          "settings": {
+            "name": "カイブルー",
+            "color_code": "#ace4e2",
+            "image": "shopify://shop_images/621_1_c4351096-8474-415f-9ab4-3ebf2b89f82e_4.webp"
+          }
+        },
+        "color_item_WabkMb": {
+          "type": "color_item",
+          "settings": {
+            "name": "ディープネイビー",
+            "color_code": "#212554",
+            "image": "shopify://shop_images/DSC_2988_3x_1_1_1_2fe3201d-85b8-4abb-b98c-f16d50382315_1.webp"
+          }
+        },
+        "color_item_cd4aLg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ムードパープル",
+            "color_code": "#d8c3f2",
+            "image": "shopify://shop_images/DSC_2991_3x_2_1_a44d73d9-81da-42eb-9b4c-357929128e07_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "color_item_q88bqg",
+        "color_item_zD4hJf",
+        "color_item_aphDzK",
+        "color_item_WabkMb",
+        "color_item_cd4aLg"
+      ],
+      "name": "MUSUBI カラーのみ",
+      "settings": {
+        "label": "VARIATION",
+        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
+        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
     "musubi_color_variation_TGeHXq": {
       "type": "musubi-color-variation",
       "blocks": {
@@ -503,78 +575,6 @@
         "card_radius": 22,
         "card_radius_sp": 18,
         "max_width": 1080,
-        "padding_pc": 88,
-        "padding_sp": 60
-      }
-    },
-    "musubi_color_variation_EeKdRH": {
-      "type": "musubi-color-variation",
-      "blocks": {
-        "color_item_q88bqg": {
-          "type": "color_item",
-          "settings": {
-            "name": "ピスタチオ",
-            "color_code": "#afcd5a",
-            "image": "shopify://shop_images/DSC_50765_2_1_2.webp"
-          }
-        },
-        "color_item_zD4hJf": {
-          "type": "color_item",
-          "settings": {
-            "name": "グレー",
-            "color_code": "#737377",
-            "image": "shopify://shop_images/IMG_7236.webp"
-          }
-        },
-        "color_item_aphDzK": {
-          "type": "color_item",
-          "settings": {
-            "name": "カイブルー",
-            "color_code": "#ace4e2",
-            "image": "shopify://shop_images/621_1_c4351096-8474-415f-9ab4-3ebf2b89f82e_4.webp"
-          }
-        },
-        "color_item_WabkMb": {
-          "type": "color_item",
-          "settings": {
-            "name": "ディープネイビー",
-            "color_code": "#212554",
-            "image": "shopify://shop_images/DSC_2988_3x_1_1_1_2fe3201d-85b8-4abb-b98c-f16d50382315_1.webp"
-          }
-        },
-        "color_item_cd4aLg": {
-          "type": "color_item",
-          "settings": {
-            "name": "ムードパープル",
-            "color_code": "#d8c3f2",
-            "image": "shopify://shop_images/DSC_2991_3x_2_1_a44d73d9-81da-42eb-9b4c-357929128e07_1.webp"
-          }
-        }
-      },
-      "block_order": [
-        "color_item_q88bqg",
-        "color_item_zD4hJf",
-        "color_item_aphDzK",
-        "color_item_WabkMb",
-        "color_item_cd4aLg"
-      ],
-      "name": "MUSUBI カラーのみ",
-      "settings": {
-        "label": "VARIATION",
-        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
-        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
-        "bg_color": "#faf7f2",
-        "accent_color": "#8b7355",
-        "label_color": "#8b7355",
-        "label_bg": "#f4eee6",
-        "heading_color": "#1a1a1a",
-        "body_color": "#555555",
-        "label_size_pc": 12,
-        "label_size_sp": 11,
-        "heading_size_pc": 32,
-        "heading_size_sp": 25,
-        "body_size_pc": 15,
-        "body_size_sp": 14,
         "padding_pc": 88,
         "padding_sp": 60
       }
@@ -769,10 +769,10 @@
     "empathy",
     "why",
     "17784810450136d6c9",
-    "musubi_color_variation_TGeHXq",
+    "musubi_color_variation_EeKdRH",
     "musubi_lp_cta_8Fft8y",
     "care",
-    "musubi_color_variation_EeKdRH",
+    "musubi_color_variation_TGeHXq",
     "reviews",
     "cross-sell",
     "faq"
