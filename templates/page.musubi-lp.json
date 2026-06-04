@@ -350,7 +350,7 @@
       "type": "musubi-lp-cta",
       "settings": {
         "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【5/22 12:00より先行予約開始】</strong></p>",
+        "subtitle": "<p><strong>【先行予約受付中】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
