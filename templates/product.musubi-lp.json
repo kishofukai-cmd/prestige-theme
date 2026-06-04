@@ -94,6 +94,7 @@
         },
         "image_h8JqEN": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Makuake_408_1_300_5.png",
             "alignment": "center",
