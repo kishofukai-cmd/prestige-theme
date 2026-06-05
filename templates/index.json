@@ -41,7 +41,6 @@
         },
         "image_dQHwjx": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/EC_PC_9.png",
             "mobile_image": "shopify://shop_images/KVSP_7_ad326330-e03a-42b6-bf1e-11120b1880fe.png",
