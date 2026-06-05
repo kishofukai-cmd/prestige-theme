@@ -587,7 +587,7 @@
     "musubi_lp_cta_CYFm6K": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#7f8286",
+        "bg_color": "#56aa9c",
         "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
