@@ -489,8 +489,8 @@
     "musubi_lp_cta_8Fft8y": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#7f8286",
-        "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
+        "bg_color": "#56aa9c",
+        "subtitle": "",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
@@ -516,9 +516,9 @@
         "feature_4": "",
         "features_color": "#ffffffbf",
         "features_font_size": 12,
-        "cta1_margin_top": 0,
+        "cta1_margin_top": 10,
         "cta1_margin_bottom": 10,
-        "cta2_margin_top": 0,
+        "cta2_margin_top": 12,
         "cta2_margin_bottom": 12,
         "soldout_margin_top": 10,
         "soldout_margin_bottom": 10,
