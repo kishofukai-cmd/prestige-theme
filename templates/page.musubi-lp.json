@@ -28,7 +28,7 @@
         "hero_subtitle_font_weight": "500",
         "hero_subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "【先行予約受付中】\nお届け予定：6月22日より順次配送予定",
+        "soldout_text": "",
         "soldout_font_size": 14,
         "soldout_text_color": "#efefef",
         "cta_url": "https://kapok-knot.com/products/musubi-en",
