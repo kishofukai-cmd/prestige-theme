@@ -1049,6 +1049,7 @@
     },
     "cta-after-reviews": {
       "type": "musubi-lp-cta",
+      "disabled": true,
       "settings": {
         "bg_color": "#1f2a44",
         "subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット<br/>MUSUBI-en-</p>",
