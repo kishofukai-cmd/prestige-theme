@@ -91,6 +91,11 @@
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "6039504038531703324": {
+        "type": "shopify://apps/channel-talk/blocks/channel_script/019f129d-5c28-72c6-9c19-1612b3c96e0c",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
