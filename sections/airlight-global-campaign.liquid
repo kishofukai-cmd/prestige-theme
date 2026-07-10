@@ -1,0 +1,788 @@
+<section class="ag-campaign" id="ag-campaign">
+  <div class="ag-campaign__inner" data-ag-reveal>
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="ag-campaign__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ag-campaign__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="ag-campaign__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <!-- Countdown -->
+    <div class="ag-campaign__countdown" id="ag-countdown-{{ section.id }}">
+      <div class="ag-campaign__countdown-box">
+        <span class="ag-campaign__countdown-num" data-days>00</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_days_label | default: 'Days' }}</span>
+      </div>
+      <span class="ag-campaign__countdown-sep">:</span>
+      <div class="ag-campaign__countdown-box">
+        <span class="ag-campaign__countdown-num" data-hours>00</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_hours_label | default: 'Hrs' }}</span>
+      </div>
+      <span class="ag-campaign__countdown-sep">:</span>
+      <div class="ag-campaign__countdown-box">
+        <span class="ag-campaign__countdown-num" data-minutes>00</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_min_label | default: 'Min' }}</span>
+      </div>
+      <span class="ag-campaign__countdown-sep">:</span>
+      <div class="ag-campaign__countdown-box">
+        <span class="ag-campaign__countdown-num" data-seconds>00</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_sec_label | default: 'Sec' }}</span>
+      </div>
+    </div>
+
+    <div class="ag-campaign__ended" style="display:none;">
+      <p>{{ section.settings.ended_text | default: 'Campaign Ended — Join the Waitlist' }}</p>
+    </div>
+
+    <!-- Spots remaining -->
+    <p class="ag-campaign__spots">
+      {{ section.settings.spots_remaining }} {{ section.settings.spots_of_label | default: 'of' }} {{ section.settings.spots_total }} {{ section.settings.spots_remaining_label | default: 'spots remaining' }}
+    </p>
+
+    <!-- CTA -->
+    {%- if section.settings.cta_text != blank -%}
+      {%- if section.settings.product_handle != blank -%}
+        <button
+          type="button"
+          class="ag-campaign__cta"
+          id="ag-campaign-cta-{{ section.id }}"
+          data-product-handle="{{ section.settings.product_handle }}"
+          data-cta-text="{{ section.settings.cta_text | escape }}"
+        >
+          {{ section.settings.cta_text }}
+        </button>
+      {%- elsif section.settings.cta_url != blank -%}
+        <a
+          class="ag-campaign__cta"
+          href="{{ section.settings.cta_url }}"
+          id="ag-campaign-cta-{{ section.id }}"
+        >
+          {{ section.settings.cta_text }}
+        </a>
+      {%- else -%}
+        <a
+          class="ag-campaign__cta"
+          href="#ag-products"
+          id="ag-campaign-cta-{{ section.id }}"
+        >
+          {{ section.settings.cta_text }}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    <!-- Note -->
+    {%- if section.settings.note != blank -%}
+      <p class="ag-campaign__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<!-- Variant Selection Modal -->
+<div class="ag-variant-modal" id="ag-variant-modal-{{ section.id }}" role="dialog" aria-modal="true" aria-label="Select a variant">
+  <div class="ag-variant-modal__backdrop" id="ag-variant-modal-backdrop-{{ section.id }}"></div>
+  <div class="ag-variant-modal__box">
+    <button class="ag-variant-modal__close" id="ag-variant-modal-close-{{ section.id }}" aria-label="Close">&#x2715;</button>
+    <p class="ag-variant-modal__label" id="ag-variant-modal-label-{{ section.id }}">{{ section.settings.modal_label | default: 'Select Your Option' }}</p>
+    <h3 class="ag-variant-modal__name" id="ag-variant-modal-name-{{ section.id }}"></h3>
+    <p class="ag-variant-modal__price" id="ag-variant-modal-price-{{ section.id }}"></p>
+    <div id="ag-variant-modal-groups-{{ section.id }}"></div>
+    <button class="ag-variant-modal__add" id="ag-variant-modal-add-{{ section.id }}" disabled>{{ section.settings.modal_add_text | default: 'Add to Cart' }}</button>
+    <p class="ag-variant-modal__error" id="ag-variant-modal-error-{{ section.id }}"></p>
+  </div>
+</div>
+
+<style>
+  .ag-campaign {
+    background: #0a0a0a;
+    color: #fff;
+    padding: clamp(64px, 10vw, 120px) 20px;
+    text-align: center;
+  }
+
+  .ag-campaign__inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .ag-campaign__eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ag-gold, #c29d66);
+    margin: 0 0 16px;
+  }
+
+  .ag-campaign__heading {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+
+  .ag-campaign__sub {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0 0 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ag-campaign__countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 0 0 32px;
+  }
+
+  .ag-campaign__countdown-box {
+    color: #fff;
+    padding: 12px 16px;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ag-campaign__countdown-sep {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: var(--ag-gold, #c29d66);
+    line-height: 1;
+    padding-bottom: 18px;
+    user-select: none;
+  }
+
+  .ag-campaign__countdown-num {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+  }
+
+  .ag-campaign__countdown-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ag-gold, #c29d66);
+    opacity: 0.9;
+  }
+
+  .ag-campaign__spots {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-gold, #c29d66);
+    margin: 0 0 32px;
+  }
+
+  .ag-campaign__cta {
+    display: inline-block;
+    background: var(--ag-gold, #c29d66);
+    color: #0a0a0a;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 48px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    margin: 0 0 24px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .ag-campaign__cta:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  .ag-campaign__cta:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ag-campaign__note {
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .ag-campaign__ended {
+    display: none;
+    color: #c29d66;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 32px 0;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 768px) {
+    .ag-campaign {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+
+    .ag-campaign__countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
+
+    .ag-campaign__countdown-box {
+      min-width: 0;
+      padding: 8px 10px;
+    }
+
+    .ag-campaign__countdown-sep {
+      font-size: 1.2rem;
+      padding-bottom: 14px;
+    }
+
+    .ag-campaign__sub,
+    .ag-campaign__note,
+    .ag-campaign__spots {
+      font-size: 14px;
+    }
+
+    .ag-campaign__cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .ag-campaign img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /* ── Variant Modal ── */
+  .ag-variant-modal {
+    display: none; position: fixed; inset: 0; z-index: 10000;
+    align-items: flex-end; justify-content: center;
+    background: rgba(0,0,0,0.7);
+  }
+  .ag-variant-modal.is-open { display: flex; }
+  @media(min-width:600px) { .ag-variant-modal { align-items: center; } }
+
+  .ag-variant-modal__backdrop { position:absolute; inset:0; }
+
+  .ag-variant-modal__box {
+    position: relative; background: #1a2640; color:#fff;
+    border-radius: 16px 16px 0 0; padding: 32px 24px 40px;
+    width: 100%; max-width: 480px; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.5);
+  }
+  @media(min-width:600px) { .ag-variant-modal__box { border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.5); } }
+
+  .ag-variant-modal__close {
+    position:absolute; top:16px; right:16px; background:none; border:none;
+    color:rgba(255,255,255,0.5); font-size:20px; cursor:pointer; padding:4px; line-height:1;
+  }
+  .ag-variant-modal__close:hover { color:#fff; }
+
+  .ag-variant-modal__label {
+    font-family:'Outfit',sans-serif; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:#c29d66; margin:0 0 8px;
+  }
+  .ag-variant-modal__name {
+    font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600;
+    color:#fff; margin:0 0 4px; line-height:1.2;
+  }
+  .ag-variant-modal__price {
+    font-family:'Outfit',sans-serif; font-size:1.1rem; font-weight:700;
+    color:#fff; margin:0 0 20px;
+  }
+  .ag-variant-modal__group-label {
+    font-family:'Outfit',sans-serif; font-size:10px; letter-spacing:0.1em;
+    text-transform:uppercase; color:rgba(255,255,255,0.45); margin:16px 0 8px;
+  }
+  .ag-variant-modal__chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .ag-variant-modal__chip {
+    font-family:'Outfit',sans-serif; font-size:13px; color:#fff;
+    border:1px solid rgba(255,255,255,0.3); border-radius:4px;
+    padding:8px 14px; background:none; cursor:pointer;
+    transition:border-color 0.15s,background 0.15s,color 0.15s;
+  }
+  .ag-variant-modal__chip:hover:not(:disabled) { border-color:rgba(194,157,102,0.6); }
+  .ag-variant-modal__chip.is-selected { border-color:#c29d66; background:rgba(194,157,102,0.15); color:#c29d66; }
+  .ag-variant-modal__chip:disabled,
+  .ag-variant-modal__chip.is-unavailable {
+    border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.2);
+    cursor:not-allowed; text-decoration:line-through;
+  }
+  .ag-variant-modal__add {
+    display:block; width:100%; margin-top:24px;
+    background:#c29d66; color:#1a2640;
+    font-family:'Outfit',sans-serif; font-weight:700; font-size:14px;
+    letter-spacing:0.08em; text-transform:uppercase;
+    padding:16px; border:none; border-radius:4px; cursor:pointer;
+    transition:background 0.2s,opacity 0.2s;
+  }
+  .ag-variant-modal__add:hover:not(:disabled) { background:#d4b078; }
+  .ag-variant-modal__add:disabled { background:rgba(194,157,102,0.3); cursor:not-allowed; }
+  .ag-variant-modal__error {
+    font-family:'Outfit',sans-serif; font-size:12px; color:#e88;
+    text-align:center; margin-top:12px; min-height:1.5em;
+  }
+</style>
+
+<script>
+  (function () {
+    var deadline = new Date("{{ section.settings.deadline }}");
+    var container = document.getElementById("ag-countdown-{{ section.id }}");
+    if (!container) return;
+
+    var daysEl = container.querySelector("[data-days]");
+    var hoursEl = container.querySelector("[data-hours]");
+    var minutesEl = container.querySelector("[data-minutes]");
+    var secondsEl = container.querySelector("[data-seconds]");
+
+    function pad(n) {
+      return n < 10 ? "0" + n : n;
+    }
+
+    function tick() {
+      var now = new Date();
+      var diff = deadline - now;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        container.style.display = 'none';
+        var endedEl = document.querySelector('.ag-campaign__ended');
+        if (endedEl) endedEl.style.display = 'block';
+        return;
+      }
+
+      var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      var m = Math.floor((diff / (1000 * 60)) % 60);
+      var s = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = pad(d);
+      hoursEl.textContent = pad(h);
+      minutesEl.textContent = pad(m);
+      secondsEl.textContent = pad(s);
+    }
+
+    tick();
+    var timer = setInterval(tick, 1000);
+  })();
+</script>
+
+<script>
+  (function () {
+    var sid = '{{ section.id }}';
+    var btn = document.getElementById('ag-campaign-cta-' + sid);
+    if (!btn || !btn.dataset.productHandle) return;
+
+    var modal       = document.getElementById('ag-variant-modal-' + sid);
+    var backdrop    = document.getElementById('ag-variant-modal-backdrop-' + sid);
+    var closeBtn    = document.getElementById('ag-variant-modal-close-' + sid);
+    var modalName   = document.getElementById('ag-variant-modal-name-' + sid);
+    var modalPrice  = document.getElementById('ag-variant-modal-price-' + sid);
+    var modalGroups = document.getElementById('ag-variant-modal-groups-' + sid);
+    var addBtn      = document.getElementById('ag-variant-modal-add-' + sid);
+    var errorEl     = document.getElementById('ag-variant-modal-error-' + sid);
+
+    var product = null;
+    var sel = {};   // { optionIndex: 'value', ... }
+
+    /* ── helpers ── */
+    function formatMoney(cents) {
+      return '$' + (cents / 100).toFixed(2);
+    }
+
+    function openModal() {
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('keydown', onEsc);
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onEsc);
+      errorEl.textContent = '';
+    }
+
+    function onEsc(e) {
+      if (e.key === 'Escape') closeModal();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    /* ── find a variant that matches all currently selected options ── */
+    function findVariant(selection) {
+      if (!product) return null;
+      var keys = Object.keys(selection);
+      return product.variants.find(function (v) {
+        return keys.every(function (idx) {
+          return v.options[parseInt(idx)] === selection[idx];
+        });
+      }) || null;
+    }
+
+    /* ── check if a given (optionIndex, value) combo can ever appear
+          in an available variant, given the OTHER currently-selected options ── */
+    function isComboAvailable(optIdx, value, currentSel) {
+      var testSel = {};
+      Object.keys(currentSel).forEach(function (k) {
+        if (parseInt(k) !== optIdx) testSel[k] = currentSel[k];
+      });
+      testSel[optIdx] = value;
+      return product.variants.some(function (v) {
+        return v.available && Object.keys(testSel).every(function (k) {
+          return v.options[parseInt(k)] === testSel[k];
+        });
+      });
+    }
+
+    /* ── re-evaluate chip disabled/unavailable state across all groups ── */
+    function updateChipStates() {
+      var groups = modalGroups.querySelectorAll('.ag-variant-modal__chips');
+      groups.forEach(function (group, gIdx) {
+        var chips = group.querySelectorAll('.ag-variant-modal__chip');
+        chips.forEach(function (chip) {
+          var val = chip.dataset.value;
+          var available = isComboAvailable(gIdx, val, sel);
+          if (!available) {
+            chip.classList.add('is-unavailable');
+            chip.disabled = true;
+          } else {
+            chip.classList.remove('is-unavailable');
+            chip.disabled = false;
+          }
+        });
+      });
+
+      /* enable Add button only if every option group has a selection */
+      var allSelected = product.options.every(function (_, i) {
+        return sel.hasOwnProperty(i);
+      });
+      addBtn.disabled = !allSelected;
+    }
+
+    /* ── build option chips inside the modal ── */
+    function buildModal(p) {
+      modalName.textContent  = p.title;
+      var priceMin = Math.min.apply(null, p.variants.map(function (v) { return v.price; }));
+      modalPrice.textContent = formatMoney(priceMin);
+
+      modalGroups.innerHTML = '';
+      sel = {};
+
+      p.options.forEach(function (optName, optIdx) {
+        var labelEl = document.createElement('p');
+        labelEl.className = 'ag-variant-modal__group-label';
+        labelEl.textContent = optName;
+        modalGroups.appendChild(labelEl);
+
+        var chipsEl = document.createElement('div');
+        chipsEl.className = 'ag-variant-modal__chips';
+
+        /* collect unique values for this option */
+        var seen = [];
+        p.variants.forEach(function (v) {
+          if (seen.indexOf(v.options[optIdx]) === -1) seen.push(v.options[optIdx]);
+        });
+
+        seen.forEach(function (val) {
+          var chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'ag-variant-modal__chip';
+          chip.textContent = val;
+          chip.dataset.value = val;
+
+          chip.addEventListener('click', function () {
+            /* deselect other chips in same group */
+            chipsEl.querySelectorAll('.ag-variant-modal__chip').forEach(function (c) {
+              c.classList.remove('is-selected');
+            });
+            chip.classList.add('is-selected');
+            sel[optIdx] = val;
+            updateChipStates();
+          });
+
+          chipsEl.appendChild(chip);
+        });
+
+        modalGroups.appendChild(chipsEl);
+      });
+
+      addBtn.disabled = true;
+      errorEl.textContent = '';
+    }
+
+    /* ── open the Prestige cart drawer ── */
+    function openCartDrawer(cartData) {
+      var cartDrawerEl = document.querySelector('cart-drawer');
+      if (!cartDrawerEl) {
+        /* fallback: update button text */
+        var originalText = btn.dataset.ctaText;
+        btn.textContent = '\u2713 Added to Cart \u2014 View Cart \u2192';
+        btn.disabled = false;
+        setTimeout(function () {
+          btn.textContent = originalText;
+        }, 4000);
+        return;
+      }
+
+      var sectionId = cartDrawerEl
+        .closest('[id^="shopify-section-"]')
+        .id.replace('shopify-section-', '');
+
+      document.dispatchEvent(new CustomEvent('cart:change', {
+        bubbles: true,
+        detail: {
+          baseEvent: 'variant:add',
+          onSuccessDo: 'force_open_drawer',
+          cart: cartData,
+          sectionId: sectionId
+        }
+      }));
+    }
+
+    /* ── POST to cart/add.js ── */
+    function addToCart(variantId) {
+      var cartDrawerEl = document.querySelector('cart-drawer');
+      var sectionId = cartDrawerEl
+        ? (cartDrawerEl.closest('[id^="shopify-section-"]') || {}).id || ''
+        : '';
+      sectionId = sectionId.replace('shopify-section-', '');
+
+      var payload = {
+        items: [{ id: variantId, quantity: 1 }]
+      };
+      if (sectionId) {
+        payload.sections = sectionId;
+      }
+
+      /* show loading state */
+      var prevAddText = addBtn.textContent;
+      addBtn.textContent = 'Adding\u2026';
+      addBtn.disabled = true;
+      btn.textContent = '\u2026';
+      btn.disabled = true;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) {
+          if (!r.ok) {
+            return r.json().then(function (d) { throw new Error(d.description || 'Could not add to cart.'); });
+          }
+          return r.json();
+        })
+        .then(function (data) {
+          btn.textContent = btn.dataset.ctaText;
+          btn.disabled = false;
+          addBtn.textContent = prevAddText;
+          closeModal();
+
+          /* build cart object expected by Prestige */
+          var cartObj = data;
+          if (data.items) {
+            cartObj = data; /* /cart/add.js with sections returns { items, sections } */
+          }
+          openCartDrawer(cartObj);
+        })
+        .catch(function (err) {
+          btn.textContent = btn.dataset.ctaText;
+          btn.disabled = false;
+          addBtn.textContent = prevAddText;
+          addBtn.disabled = false;
+          errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+        });
+    }
+
+    /* ── Add button inside modal ── */
+    addBtn.addEventListener('click', function () {
+      var variant = findVariant(sel);
+      if (!variant) { errorEl.textContent = 'Please select all options.'; return; }
+      if (!variant.available) { errorEl.textContent = 'This variant is sold out.'; return; }
+      addToCart(variant.id);
+    });
+
+    /* ── Main CTA click ── */
+    btn.addEventListener('click', function () {
+      var handle = btn.dataset.productHandle;
+      if (!handle) return;
+
+      btn.textContent = '\u2026';
+      btn.disabled = true;
+
+      fetch('/products/' + handle + '.js')
+        .then(function (r) { return r.json(); })
+        .then(function (p) {
+          btn.textContent = btn.dataset.ctaText;
+          btn.disabled = false;
+          product = p;
+
+          if (p.variants.length === 1) {
+            if (!p.variants[0].available) {
+              btn.textContent = 'Sold Out';
+              btn.disabled = true;
+              return;
+            }
+            addToCart(p.variants[0].id);
+            return;
+          }
+
+          buildModal(p);
+          openModal();
+        })
+        .catch(function () {
+          btn.textContent = btn.dataset.ctaText;
+          btn.disabled = false;
+          window.location.href = '/products/' + handle;
+        });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "AG Campaign",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Global Launch Campaign"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The World's First Kapok Jacket. Now Available Worldwide."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "deadline",
+      "label": "Countdown Deadline (ISO 8601 UTC)",
+      "default": "2026-04-19T23:59:59Z"
+    },
+    {
+      "type": "number",
+      "id": "spots_remaining",
+      "label": "Spots Remaining",
+      "default": 47
+    },
+    {
+      "type": "number",
+      "id": "spots_total",
+      "label": "Total Spots",
+      "default": 100
+    },
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Product Handle (Ajax Cart)",
+      "info": "Product handle (e.g. airlight-jacket-mens). Leave blank to use CTA URL."
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Claim Your Spot — $398"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note",
+      "default": "This is not a flash sale. This is the first time AirLight Jacket has ever been available outside Japan."
+    },
+    {
+      "type": "text",
+      "id": "countdown_days_label",
+      "label": "Countdown — Days Label",
+      "default": "Days"
+    },
+    {
+      "type": "text",
+      "id": "countdown_hours_label",
+      "label": "Countdown — Hours Label",
+      "default": "Hrs"
+    },
+    {
+      "type": "text",
+      "id": "countdown_min_label",
+      "label": "Countdown — Minutes Label",
+      "default": "Min"
+    },
+    {
+      "type": "text",
+      "id": "countdown_sec_label",
+      "label": "Countdown — Seconds Label",
+      "default": "Sec"
+    },
+    {
+      "type": "text",
+      "id": "ended_text",
+      "label": "Campaign Ended Text",
+      "default": "Campaign Ended — Join the Waitlist"
+    },
+    {
+      "type": "text",
+      "id": "spots_of_label",
+      "label": "Spots — \"of\" Word",
+      "default": "of"
+    },
+    {
+      "type": "text",
+      "id": "spots_remaining_label",
+      "label": "Spots — \"spots remaining\" Label",
+      "default": "spots remaining"
+    },
+    {
+      "type": "text",
+      "id": "modal_label",
+      "label": "Variant Modal — Label",
+      "default": "Select Your Option"
+    },
+    {
+      "type": "text",
+      "id": "modal_add_text",
+      "label": "Variant Modal — Add Button Text",
+      "default": "Add to Cart"
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Campaign"
+    }
+  ]
+}
+{% endschema %}

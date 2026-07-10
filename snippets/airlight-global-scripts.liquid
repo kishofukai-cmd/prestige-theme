@@ -1,0 +1,66 @@
+<script>
+/* ============================================================
+   KAPOK KNOT | AirLight Jacket — Global LP Script (和モダン版)
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // === Scroll Reveal ===
+  const reveals = document.querySelectorAll('[data-ag-reveal]');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('ag-revealed');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // === Sticky Bottom CTA ===
+  const stickyCta = document.getElementById('ag-sticky-cta');
+  const hero = document.getElementById('ag-hero');
+  const closing = document.getElementById('ag-closing');
+  if (stickyCta && hero) {
+    const heroObs = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) {
+        stickyCta.style.transform = 'translateY(0)';
+      } else {
+        stickyCta.style.transform = 'translateY(100%)';
+      }
+    }, { threshold: 0 });
+    heroObs.observe(hero);
+
+    if (closing) {
+      const closingObs = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          stickyCta.style.transform = 'translateY(100%)';
+        }
+      }, { threshold: 0.3 });
+      closingObs.observe(closing);
+    }
+  }
+
+  // === Smooth Scroll ===
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 68, behavior: 'smooth' });
+    });
+  });
+
+  // === FAQ Accordion ===
+  document.querySelectorAll('.ag-faq__question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.ag-faq__item');
+      const wasOpen = item.classList.contains('ag-faq__item--open');
+      // close all
+      document.querySelectorAll('.ag-faq__item--open').forEach(i => i.classList.remove('ag-faq__item--open'));
+      if (!wasOpen) item.classList.add('ag-faq__item--open');
+    });
+  });
+
+});
+</script>

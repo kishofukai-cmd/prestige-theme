@@ -1,0 +1,722 @@
+{% comment %} AirLight Global LP — Products with Buy Button {% endcomment %}
+
+<style>
+  .ag-products {
+    background: #faf9f6;
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+  .ag-products__header {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 64px);
+  }
+  .ag-products__label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c29d66;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .ag-products__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    color: #1a2640;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .ag-products__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(40px, 6vw, 64px);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (min-width: 800px) {
+    .ag-products__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .ag-product-line {
+    background: #fff;
+    border: 1px solid #e5e0d8;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ag-product-line__gallery {
+    position: relative;
+    overflow: hidden;
+    background: #f0ede6;
+  }
+  .ag-product-line__gallery-inner {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+  .ag-product-line__gallery-img {
+    width: 100%;
+    flex-shrink: 0;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+  .ag-product-line__gallery-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #e8e4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #b0aa9f;
+  }
+  .ag-product-line__dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+  }
+  .ag-product-line__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+  .ag-product-line__dot.is-active {
+    background: #fff;
+  }
+  .ag-product-line__info {
+    padding: 24px;
+  }
+  .ag-product-line__gender {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c29d66;
+    margin-bottom: 6px;
+  }
+  .ag-product-line__name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 400;
+    color: #1a2640;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .ag-product-line__price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a2640;
+    margin-bottom: 16px;
+  }
+
+  /* ── Color swatches ── */
+  .ag-buy__colors-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    color: #8a8580;
+    margin-bottom: 8px;
+  }
+  .ag-buy__colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .ag-buy__color-btn {
+    padding: 8px 16px;
+    border: 1px solid #d6cfc3;
+    border-radius: 100px;
+    background: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: #5a5550;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .ag-buy__color-btn:hover {
+    border-color: #1a2640;
+    color: #1a2640;
+  }
+  .ag-buy__color-btn.is-active {
+    background: #1a2640;
+    border-color: #1a2640;
+    color: #fff;
+  }
+  .ag-buy__color-btn.is-soldout {
+    opacity: 0.35;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+
+  /* ── Size selector ── */
+  .ag-buy__sizes-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    color: #8a8580;
+    margin-bottom: 8px;
+  }
+  .ag-buy__sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .ag-buy__size-btn {
+    min-width: 48px;
+    padding: 10px 14px;
+    border: 1px solid #d6cfc3;
+    border-radius: 6px;
+    background: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5a5550;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .ag-buy__size-btn:hover {
+    border-color: #1a2640;
+    color: #1a2640;
+  }
+  .ag-buy__size-btn.is-active {
+    background: #1a2640;
+    border-color: #1a2640;
+    color: #fff;
+  }
+  .ag-buy__size-btn.is-soldout {
+    opacity: 0.35;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+
+  /* ── Size guide link ── */
+  .ag-product-line__size-guide {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    color: #8a8580;
+    text-decoration: underline;
+    margin-bottom: 8px;
+    text-underline-offset: 2px;
+  }
+  .ag-product-line__size-guide:hover {
+    color: #1a2640;
+  }
+  .ag-product-line__details-link {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a2640;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .ag-product-line__details-link:hover {
+    color: #c29d66;
+  }
+
+  /* ── Add to Cart button ── */
+  .ag-buy__atc {
+    display: block;
+    width: 100%;
+    background: #1a2640;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .ag-buy__atc:hover {
+    background: #c29d66;
+  }
+  .ag-buy__atc:disabled {
+    background: #b0aa9f;
+    cursor: not-allowed;
+  }
+  .ag-buy__atc--loading {
+    position: relative;
+    color: transparent !important;
+  }
+  .ag-buy__atc--loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: ag-spin 0.6s linear infinite;
+  }
+  @keyframes ag-spin {
+    to { transform: rotate(360deg); }
+  }
+  .ag-buy__success {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: #2a7d4f;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+  .ag-buy__success.is-visible {
+    display: block;
+    animation: ag-fadeIn 0.3s ease;
+  }
+  @keyframes ag-fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .ag-buy__checkout-link {
+    display: block;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: #c29d66;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-top: 8px;
+  }
+  .ag-buy__payment-note {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: #8a8580;
+    margin: 10px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .ag-products {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .ag-products__heading {
+      font-size: 1.8rem;
+    }
+    .ag-products__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .ag-buy__atc {
+      width: 100%;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+<section class="ag-products" id="ag-products">
+  <div class="ag-container">
+    <div class="ag-products__header" data-ag-reveal>
+      <span class="ag-products__label">{{ section.settings.label | default: 'The Collection' }}</span>
+      <h2 class="ag-products__heading">{{ section.settings.heading | default: 'Your AirLight Jacket.' }}</h2>
+    </div>
+
+    <div class="ag-products__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'product_line' %}
+          {%- assign product = block.settings.product -%}
+          <div class="ag-product-line" {{ block.shopify_attributes }} data-ag-reveal>
+
+            <!-- ══ Gallery ══ -->
+            <div class="ag-product-line__gallery">
+              {% assign has_images = false %}
+              {% if block.settings.image_1 or block.settings.image_2 or block.settings.image_3 or block.settings.image_4 or block.settings.fallback_url_1 != blank %}
+                {% assign has_images = true %}
+              {% endif %}
+
+              {% if has_images %}
+                <div class="ag-product-line__gallery-inner" id="gallery-{{ forloop.index }}">
+                  {% if block.settings.image_1 %}
+                    {{ block.settings.image_1 | image_url: width: 1200 | image_tag: class: 'ag-product-line__gallery-img', alt: block.settings.product_name, loading: 'lazy' }}
+                  {% elsif block.settings.fallback_url_1 != blank %}
+                    <img class="ag-product-line__gallery-img" src="{{ block.settings.fallback_url_1 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+                  {% endif %}
+                  {% if block.settings.image_2 %}
+                    {{ block.settings.image_2 | image_url: width: 1200 | image_tag: class: 'ag-product-line__gallery-img', alt: block.settings.product_name, loading: 'lazy' }}
+                  {% elsif block.settings.fallback_url_2 != blank %}
+                    <img class="ag-product-line__gallery-img" src="{{ block.settings.fallback_url_2 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+                  {% endif %}
+                  {% if block.settings.image_3 %}
+                    {{ block.settings.image_3 | image_url: width: 1200 | image_tag: class: 'ag-product-line__gallery-img', alt: block.settings.product_name, loading: 'lazy' }}
+                  {% elsif block.settings.fallback_url_3 != blank %}
+                    <img class="ag-product-line__gallery-img" src="{{ block.settings.fallback_url_3 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+                  {% endif %}
+                  {% if block.settings.image_4 %}
+                    {{ block.settings.image_4 | image_url: width: 1200 | image_tag: class: 'ag-product-line__gallery-img', alt: block.settings.product_name, loading: 'lazy' }}
+                  {% elsif block.settings.fallback_url_4 != blank %}
+                    <img class="ag-product-line__gallery-img" src="{{ block.settings.fallback_url_4 }}" alt="{{ block.settings.product_name }}" loading="lazy">
+                  {% endif %}
+                </div>
+                {% assign img_count = 0 %}
+                {% if block.settings.image_1 or block.settings.fallback_url_1 != blank %}{% assign img_count = img_count | plus: 1 %}{% endif %}
+                {% if block.settings.image_2 or block.settings.fallback_url_2 != blank %}{% assign img_count = img_count | plus: 1 %}{% endif %}
+                {% if block.settings.image_3 or block.settings.fallback_url_3 != blank %}{% assign img_count = img_count | plus: 1 %}{% endif %}
+                {% if block.settings.image_4 or block.settings.fallback_url_4 != blank %}{% assign img_count = img_count | plus: 1 %}{% endif %}
+                {% if img_count > 1 %}
+                  <div class="ag-product-line__dots" id="dots-{{ forloop.index }}">
+                    {% for i in (1..img_count) %}
+                      <button class="ag-product-line__dot {% if forloop.first %}is-active{% endif %}" data-gallery="gallery-{{ forloop.parentloop.index }}" data-dots="dots-{{ forloop.parentloop.index }}" data-index="{{ forloop.index0 }}" aria-label="Image {{ forloop.index }}"></button>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% else %}
+                <div class="ag-product-line__gallery-placeholder">🧥</div>
+              {% endif %}
+            </div>
+
+            <!-- ══ Product Info + Buy ══ -->
+            <div class="ag-product-line__info">
+              <div class="ag-product-line__gender">{{ block.settings.gender_label }}</div>
+              <div class="ag-product-line__name">{{ block.settings.product_name }}</div>
+              <div class="ag-product-line__price">{{ block.settings.price | default: '$398' }}</div>
+
+              {% if product != blank and product.available %}
+                {%- comment -%} Build color & size option lists {%- endcomment -%}
+                {%- assign color_option_index = nil -%}
+                {%- assign size_option_index = nil -%}
+                {%- for option in product.options_with_values -%}
+                  {%- assign option_name_lower = option.name | downcase -%}
+                  {%- if option_name_lower == 'color' or option_name_lower == 'colour' or option_name_lower == 'カラー' or option_name_lower == '色' -%}
+                    {%- assign color_option_index = forloop.index0 -%}
+                  {%- elsif option_name_lower == 'size' or option_name_lower == 'サイズ' -%}
+                    {%- assign size_option_index = forloop.index0 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                <div class="ag-buy" data-product-id="{{ product.id }}" data-block-index="{{ forloop.index }}">
+
+                  {%- if color_option_index != nil -%}
+                    <div class="ag-buy__colors-label">{{ section.settings.color_label | default: 'Color:' }} <span class="ag-buy__color-selected"></span></div>
+                    <div class="ag-buy__colors" data-option-index="{{ color_option_index }}">
+                      {%- for value in product.options_with_values[color_option_index].values -%}
+                        {%- capture en_color -%}{%- render 'airlight-global-color-map', color_name: value -%}{%- endcapture -%}
+                        <button type="button"
+                          class="ag-buy__color-btn {% if forloop.first %}is-active{% endif %}"
+                          data-value="{{ value }}"
+                          data-en-label="{{ en_color | strip }}">
+                          {{ en_color | strip }}
+                        </button>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if size_option_index != nil -%}
+                    <div class="ag-buy__sizes-label">{{ section.settings.size_label | default: 'Size:' }} <span class="ag-buy__size-selected"></span></div>
+                    <div class="ag-buy__sizes" data-option-index="{{ size_option_index }}">
+                      {%- for value in product.options_with_values[size_option_index].values -%}
+                        <button type="button"
+                          class="ag-buy__size-btn"
+                          data-value="{{ value }}">
+                          {{ value }}
+                        </button>
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+
+                  <a href="#ag-size-guide" class="ag-product-line__size-guide">{{ section.settings.size_guide_text | default: 'Size Guide →' }}</a>
+
+                  <a class="ag-product-line__details-link"
+                     href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/products/{{ product.handle }}{% else %}/en/products/{{ product.handle }}{% endif %}">
+                    {{ section.settings.details_link_text | default: 'View Full Details →' }}
+                  </a>
+
+                  <button type="button" class="ag-buy__atc" disabled data-atc>
+                    {{ section.settings.atc_select_size_text | default: 'Select size to continue' }}
+                  </button>
+                  <div class="ag-buy__success" data-success>
+                    ✓ {{ section.settings.added_text | default: 'Added to cart!' }}
+                    <a href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/checkout{% else %}/en/checkout{% endif %}" class="ag-buy__checkout-link">{{ section.settings.checkout_link_text | default: 'Proceed to Checkout →' }}</a>
+                  </div>
+                  <!-- EDITABLE: 決済手段マイクロコピー（空にすると非表示） -->
+                  {% if section.settings.payment_note != blank %}
+                    <p class="ag-buy__payment-note">{{ section.settings.payment_note }}</p>
+                  {% endif %}
+                </div>
+
+                <script type="application/json" data-variants-{{ forloop.index }}>
+                  [
+                    {%- for variant in product.variants -%}
+                      {
+                        "id": {{ variant.id }},
+                        "available": {{ variant.available }},
+                        "options": {{ variant.options | json }}
+                      }{% unless forloop.last %},{% endunless %}
+                    {%- endfor -%}
+                  ]
+                </script>
+
+              {% elsif product != blank %}
+                {%- comment -%} Product exists but sold out {%- endcomment -%}
+                <button type="button" class="ag-buy__atc" disabled>{{ section.settings.sold_out_text | default: 'Sold Out' }}</button>
+
+              {% else %}
+                {%- comment -%} No product linked — fallback CTA link {%- endcomment -%}
+                {% if block.settings.size_range != blank %}
+                  <div style="font-family:'Outfit',sans-serif;font-size:12px;color:#8a8580;margin-bottom:10px;">{{ section.settings.sizes_label | default: 'Sizes:' }} {{ block.settings.size_range }}</div>
+                {% endif %}
+                {% if block.settings.colors != blank %}
+                  <div style="font-family:'Outfit',sans-serif;font-size:13px;color:#5a5550;margin-bottom:16px;">{{ block.settings.colors }}</div>
+                {% endif %}
+                <a href="#ag-size-guide" class="ag-product-line__size-guide">{{ section.settings.size_guide_text | default: 'Size Guide →' }}</a>
+                <a class="ag-product-line__details-link"
+                   href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/products/{{ product.handle }}{% else %}/en/products/{{ product.handle }}{% endif %}">
+                  {{ section.settings.details_link_text | default: 'View Full Details →' }}
+                </a>
+                <a href="{{ block.settings.cta_url | default: '#' }}" class="ag-buy__atc" style="text-decoration:none;">
+                  {{ block.settings.cta_text | default: 'Shop Now — $398 →' }}
+                </a>
+                {% if section.settings.payment_note != blank %}
+                  <p class="ag-buy__payment-note">{{ section.settings.payment_note }}</p>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  /* ── Gallery dots ── */
+  document.querySelectorAll('.ag-product-line__dot').forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var gallery = document.getElementById(this.getAttribute('data-gallery'));
+      var dotsWrap = document.getElementById(this.getAttribute('data-dots'));
+      var idx = parseInt(this.getAttribute('data-index'), 10);
+      if (!gallery) return;
+      var w = gallery.querySelector('.ag-product-line__gallery-img');
+      if (w) gallery.style.transform = 'translateX(-' + (idx * w.offsetWidth) + 'px)';
+      if (dotsWrap) {
+        dotsWrap.querySelectorAll('.ag-product-line__dot').forEach(function(d) { d.classList.remove('is-active'); });
+        this.classList.add('is-active');
+      }
+    });
+  });
+
+  /* ── Buy Button logic ── */
+  document.querySelectorAll('.ag-buy').forEach(function(buyEl) {
+    var blockIdx = buyEl.dataset.blockIndex;
+    var variantsJson = document.querySelector('[data-variants-' + blockIdx + ']');
+    if (!variantsJson) return;
+
+    var variants = JSON.parse(variantsJson.textContent);
+    var colorBtns = buyEl.querySelectorAll('.ag-buy__color-btn');
+    var sizeBtns  = buyEl.querySelectorAll('.ag-buy__size-btn');
+    var atcBtn    = buyEl.querySelector('[data-atc]');
+    var successEl = buyEl.querySelector('[data-success]');
+    var colorLabel = buyEl.querySelector('.ag-buy__color-selected');
+    var sizeLabel  = buyEl.querySelector('.ag-buy__size-selected');
+
+    var selectedColor = colorBtns.length ? colorBtns[0].dataset.value : null;
+    var selectedSize  = null;
+
+    if (colorLabel && colorBtns.length) {
+      colorLabel.textContent = colorBtns[0].dataset.enLabel;
+    }
+
+    function findVariant() {
+      if (!selectedSize) return null;
+      return variants.find(function(v) {
+        var colorMatch = !selectedColor || v.options.indexOf(selectedColor) !== -1;
+        var sizeMatch  = v.options.indexOf(selectedSize) !== -1;
+        return colorMatch && sizeMatch;
+      });
+    }
+
+    function updateUI() {
+      var variant = findVariant();
+      /* Update size availability based on selected color */
+      sizeBtns.forEach(function(btn) {
+        var sizeVal = btn.dataset.value;
+        var available = variants.some(function(v) {
+          var colorOk = !selectedColor || v.options.indexOf(selectedColor) !== -1;
+          return colorOk && v.options.indexOf(sizeVal) !== -1 && v.available;
+        });
+        btn.classList.toggle('is-soldout', !available);
+      });
+
+      if (!selectedSize) {
+        atcBtn.disabled = true;
+        atcBtn.textContent = 'Select size to continue';
+      } else if (variant && variant.available) {
+        atcBtn.disabled = false;
+        atcBtn.textContent = 'Add to Cart — $398';
+      } else {
+        atcBtn.disabled = true;
+        atcBtn.textContent = 'Sold Out';
+      }
+    }
+
+    /* Color click */
+    colorBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (btn.classList.contains('is-soldout')) return;
+        colorBtns.forEach(function(b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        selectedColor = btn.dataset.value;
+        if (colorLabel) colorLabel.textContent = btn.dataset.enLabel;
+        updateUI();
+      });
+    });
+
+    /* Size click */
+    sizeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (btn.classList.contains('is-soldout')) return;
+        sizeBtns.forEach(function(b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        selectedSize = btn.dataset.value;
+        if (sizeLabel) sizeLabel.textContent = btn.dataset.value;
+        updateUI();
+      });
+    });
+
+    /* Add to Cart */
+    atcBtn.addEventListener('click', function() {
+      var variant = findVariant();
+      if (!variant || !variant.available || atcBtn.disabled) return;
+
+      atcBtn.classList.add('ag-buy__atc--loading');
+      atcBtn.disabled = true;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: variant.id, quantity: 1 }] })
+      })
+      .then(function(res) { return res.json(); })
+      .then(function() {
+        atcBtn.classList.remove('ag-buy__atc--loading');
+        atcBtn.textContent = '✓ Added!';
+        atcBtn.disabled = true;
+        successEl.classList.add('is-visible');
+
+        /* Try to open cart drawer if available */
+        try {
+          document.documentElement.dispatchEvent(new CustomEvent('cart:refresh'));
+          var cartDrawer = document.querySelector('cart-drawer');
+          if (cartDrawer && typeof cartDrawer.open === 'function') cartDrawer.open();
+        } catch(e) { /* fallback: success message shown */ }
+
+        /* Reset after 3s */
+        setTimeout(function() {
+          successEl.classList.remove('is-visible');
+          atcBtn.disabled = false;
+          atcBtn.textContent = 'Add to Cart — $398';
+        }, 3000);
+      })
+      .catch(function() {
+        atcBtn.classList.remove('ag-buy__atc--loading');
+        atcBtn.textContent = 'Error — try again';
+        atcBtn.disabled = false;
+      });
+    });
+
+    updateUI();
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "AG Products",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section Label", "default": "The Collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your AirLight Jacket." },
+    { "type": "text", "id": "color_label", "label": "Color Label", "default": "Color:" },
+    { "type": "text", "id": "size_label", "label": "Size Label", "default": "Size:" },
+    { "type": "text", "id": "sizes_label", "label": "Sizes (fallback) Label", "default": "Sizes:" },
+    { "type": "text", "id": "size_guide_text", "label": "Size Guide Link Text", "default": "Size Guide →" },
+    { "type": "text", "id": "details_link_text", "label": "View Details Link Text", "default": "View Full Details →" },
+    { "type": "text", "id": "atc_select_size_text", "label": "ATC — Select Size Placeholder", "default": "Select size to continue" },
+    { "type": "text", "id": "sold_out_text", "label": "Sold Out Text", "default": "Sold Out" },
+    { "type": "text", "id": "added_text", "label": "Added to Cart Text", "default": "Added to cart!" },
+    { "type": "text", "id": "checkout_link_text", "label": "Proceed to Checkout Link Text", "default": "Proceed to Checkout →" },
+    { "type": "text", "id": "discount_code", "label": "Auto-apply Discount Code", "default": "FOUNDERS20", "info": "設定するとView Full Details/Checkoutリンクが /discount/CODE 経由になりコードが自動適用される。空にすると通常リンク" },
+    { "type": "text", "id": "payment_note", "label": "Payment Methods Note", "default": "Apple Pay · Google Pay · Shop Pay · PayPal accepted" }
+  ],
+  "blocks": [
+    {
+      "type": "product_line",
+      "name": "Product Line",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Shopify Product" },
+        { "type": "text", "id": "gender_label", "label": "Gender Label", "default": "Men's" },
+        { "type": "text", "id": "product_name", "label": "Product Name", "default": "AirLight Jacket — Men" },
+        { "type": "text", "id": "price", "label": "Display Price", "default": "$398" },
+        { "type": "text", "id": "size_range", "label": "Size Range (fallback)", "default": "M–3L" },
+        { "type": "text", "id": "colors", "label": "Colors Info (fallback)", "default": "5 Colors: Navy / Beige / Olive / Black / Greige" },
+        { "type": "text", "id": "cta_text", "label": "CTA Text (fallback)", "default": "Shop Now — $398 →" },
+        { "type": "url", "id": "cta_url", "label": "CTA URL (fallback)" },
+        { "type": "image_picker", "id": "image_1", "label": "Image 1" },
+        { "type": "text", "id": "fallback_url_1", "label": "Image 1 URL (fallback)" },
+        { "type": "image_picker", "id": "image_2", "label": "Image 2" },
+        { "type": "text", "id": "fallback_url_2", "label": "Image 2 URL (fallback)" },
+        { "type": "image_picker", "id": "image_3", "label": "Image 3" },
+        { "type": "text", "id": "fallback_url_3", "label": "Image 3 URL (fallback)" },
+        { "type": "image_picker", "id": "image_4", "label": "Image 4" },
+        { "type": "text", "id": "fallback_url_4", "label": "Image 4 URL (fallback)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Products",
+      "blocks": [
+        {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "price": "$398",
+            "size_range": "M–3L",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now — $398 →"
+          }
+        },
+        {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "price": "$398",
+            "size_range": "S–LL",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now — $398 →"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

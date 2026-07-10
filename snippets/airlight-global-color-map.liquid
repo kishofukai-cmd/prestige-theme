@@ -1,0 +1,16 @@
+{% comment %}
+  AirLight Global — Japanese → English color name mapping
+  Usage: {% render 'airlight-global-color-map', color_name: variant.option1 %}
+{% endcomment %}
+
+{%- case color_name -%}
+  {%- when 'ベージュ' -%}Beige
+  {%- when 'ネイビー' -%}Navy
+  {%- when 'グレージュ' -%}Greige
+  {%- when 'ブラック' -%}Black
+  {%- when 'オリーブ' -%}Olive
+  {%- when 'ホワイト' -%}White
+  {%- when 'グレー' -%}Gray
+  {%- when 'カーキ' -%}Khaki
+  {%- else -%}{{ color_name }}
+{%- endcase -%}

@@ -1,0 +1,234 @@
+{% comment %} AirLight Global LP — Brand Story (Dark section) {% endcomment %}
+
+<style>
+  .ag-brand {
+    background: var(--ag-bg-dark, #1a2640);
+    color: #fff;
+    padding: clamp(64px, 10vw, 120px) 0;
+  }
+
+  .ag-brand .ag-container {
+    max-width: 780px;
+  }
+
+  .ag-brand__kicker {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ag-gold, #c29d66);
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+  }
+
+  .ag-brand__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    margin: 0 0 clamp(24px, 4vw, 40px);
+  }
+
+  .ag-brand__heading em {
+    font-style: italic;
+    color: var(--ag-gold, #c29d66);
+  }
+
+  .ag-brand__body {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 clamp(32px, 5vw, 48px);
+  }
+
+  .ag-brand__body p {
+    margin: 0 0 1.2em;
+  }
+
+  .ag-brand__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ag-brand__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ag-brand__tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ag-gold, #c29d66);
+    border: 1px solid rgba(194, 157, 102, 0.4);
+    border-radius: 100px;
+    padding: 6px 18px;
+    background: rgba(194, 157, 102, 0.06);
+    white-space: nowrap;
+  }
+
+  .ag-brand__founder-img {
+    max-width: 400px;
+    margin: 32px auto 0;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .ag-brand__founder-caption {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .ag-brand {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+    .ag-brand__heading {
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      margin-bottom: 20px;
+    }
+    .ag-brand__body {
+      font-size: 14px;
+    }
+    .ag-brand__tags {
+      gap: 8px;
+    }
+    .ag-brand__tag {
+      font-size: 0.72rem;
+      padding: 5px 14px;
+    }
+    .ag-brand__founder-img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 32px auto 0;
+    }
+  }
+</style>
+
+<section class="ag-brand" id="ag-brand">
+  <div class="ag-container" data-ag-reveal>
+    <p class="ag-brand__kicker">{{ section.settings.kicker | default: "The KAPOK KNOT Story" }}</p>
+
+    <h2 class="ag-brand__heading">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div class="ag-brand__body">
+      {{ section.settings.body }}
+    </div>
+
+    <div class="ag-brand__tags">
+      {% for block in section.blocks %}
+        {% if block.type == 'tag_item' %}
+          <span class="ag-brand__tag" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.founder_image != blank %}
+      <img class="ag-brand__founder-img" src="{{ section.settings.founder_image | image_url: width: 800 }}" alt="{{ section.settings.founder_caption | default: 'KAPOK KNOT Founder' }}" loading="lazy" width="400">
+      {% if section.settings.founder_caption != blank %}
+        <p class="ag-brand__founder-caption">{{ section.settings.founder_caption }}</p>
+      {% endif %}
+    {% elsif section.settings.founder_image_url != blank %}
+      <img class="ag-brand__founder-img" src="{{ section.settings.founder_image_url | asset_url }}" alt="{{ section.settings.founder_caption | default: 'KAPOK KNOT Founder' }}" loading="lazy" width="400">
+      {% if section.settings.founder_caption != blank %}
+        <p class="ag-brand__founder-caption">{{ section.settings.founder_caption }}</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Brand Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "The KAPOK KNOT Story"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Why I Spent 5 Years <em>Making a Jacket.</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>The first time I held a kapok fiber, I knew this would change everything.</p><p>We spent five years working alongside Japan's leading textile engineers — through countless failed prototypes, dead ends, and small breakthroughs. The challenge: kapok fibers are too short to spin into thread. Every manufacturer we approached said it was impossible.</p><p>We didn't listen.</p><p>The result was KapokFill™ — a patent-pending insulation sheet made entirely from plant fiber, with no spinning required. We launched in Japan. Sold out. Three times in a row. Over $400,000 raised from people who believed in what we were building.</p><p>Now, for the first time, we're ready to share it with the world — starting with 100 jackets.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder Image"
+    },
+    {
+      "type": "text",
+      "id": "founder_image_url",
+      "label": "Founder Image URL (fallback)",
+      "default": "airlight-brand-factory.png"
+    },
+    {
+      "type": "text",
+      "id": "founder_caption",
+      "label": "Founder Caption",
+      "default": "Kishow Fukai — Founder, KAPOK KNOT"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tag_item",
+      "name": "Credibility Tag",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tag Text",
+          "default": "🏆 10+ Design Awards"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Brand Story",
+      "blocks": [
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "🏆 10+ Design Awards"
+          }
+        },
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "Sold Out 3× in Japan"
+          }
+        },
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "$400K+ Raised"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

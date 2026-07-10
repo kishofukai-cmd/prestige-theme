@@ -1,0 +1,311 @@
+{% comment %} AirLight Global LP — Size Guide (Men + Women tabs) {% endcomment %}
+
+<style>
+  .ag-size-guide {
+    background: #faf9f6;
+    padding: clamp(48px, 8vw, 96px) 20px;
+  }
+  .ag-size-guide__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    color: #1a2640;
+    margin: 8px 0 16px;
+    line-height: 1.15;
+  }
+  .ag-size-guide__intro {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    color: #5a5550;
+    margin: 0 0 36px;
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ── Tab switcher ── */
+  .ag-size-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+  .ag-size-tab {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #d6cfc3;
+    background: transparent;
+    color: #8a7f6e;
+    transition: all 0.25s ease;
+  }
+  .ag-size-tab:first-child { border-radius: 6px 0 0 6px; }
+  .ag-size-tab:last-child  { border-radius: 0 6px 6px 0; }
+  .ag-size-tab--active {
+    background: #1a2640;
+    border-color: #1a2640;
+    color: #fff;
+  }
+
+  /* ── Table panels ── */
+  .ag-size-panel { display: none; }
+  .ag-size-panel--active { display: block; }
+
+  .ag-size-guide__unit-note {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    color: #8a7f6e;
+    text-align: right;
+    margin-bottom: 8px;
+  }
+
+  .ag-size-guide__models {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .ag-size-guide__model-card {
+    flex: 1 1 200px;
+    padding: 14px 18px;
+    background: #f0ece4;
+    border-left: 3px solid #c29d66;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: #5a5550;
+    line-height: 1.6;
+  }
+  .ag-size-guide__model-card strong {
+    display: block;
+    font-weight: 600;
+    color: #1a2640;
+    margin-bottom: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .ag-size-guide__fit-tip {
+    margin-top: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: #8a7f6e;
+    font-style: italic;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .ag-size-guide {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .ag-size-guide__heading {
+      font-size: 1.7rem;
+    }
+    .ag-size-guide .ag-comparison__table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -16px;
+      padding: 0 16px;
+    }
+    .ag-size-guide .ag-comparison__table {
+      min-width: 420px;
+    }
+    .ag-size-guide .ag-comparison__table th,
+    .ag-size-guide .ag-comparison__table td {
+      font-size: 11px;
+      padding: 8px 6px;
+      white-space: nowrap;
+    }
+    .ag-size-guide__models {
+      flex-direction: column;
+    }
+    .ag-size-guide__model-card {
+      flex: 1 1 auto;
+    }
+  }
+</style>
+
+<section class="ag-size-guide" id="ag-size-guide">
+  <div class="ag-container--narrow" data-ag-reveal>
+
+    <span class="ag-label">{{ section.settings.label | default: 'Sizing' }}</span>
+    <h2 class="ag-size-guide__heading">{{ section.settings.heading | default: 'Find your fit.' }}</h2>
+
+    {% if section.settings.intro != blank %}
+      <p class="ag-size-guide__intro">{{ section.settings.intro }}</p>
+    {% endif %}
+
+    <!-- ── Tab buttons ── -->
+    <div class="ag-size-tabs">
+      <button class="ag-size-tab ag-size-tab--active" data-ag-size-tab="men" type="button">{{ section.settings.tab_men | default: "Men's" }}</button>
+      <button class="ag-size-tab" data-ag-size-tab="women" type="button">{{ section.settings.tab_women | default: "Women's" }}</button>
+    </div>
+
+    <!-- ══ MEN'S TABLE ══ -->
+    <div id="ag-size-men" class="ag-size-panel ag-size-panel--active">
+      <p class="ag-size-guide__unit-note">{{ section.settings.unit_note | default: 'Unit: cm' }}</p>
+      <div class="ag-comparison__table-wrap">
+        <table class="ag-comparison__table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ section.settings.men_size_m  | default: 'M' }}</th>
+              <th>{{ section.settings.men_size_l  | default: 'L' }}</th>
+              <th>{{ section.settings.men_size_ll | default: 'LL' }}</th>
+              <th>{{ section.settings.men_size_3l | default: '3L' }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>{{ section.settings.row_body_length | default: 'Body Length' }}</td><td>{{ section.settings.men_length_m  | default: '65' }}</td><td>{{ section.settings.men_length_l  | default: '66.5' }}</td><td>{{ section.settings.men_length_ll | default: '68' }}</td><td>{{ section.settings.men_length_3l | default: '71' }}</td></tr>
+            <tr><td>{{ section.settings.row_shoulder | default: 'Shoulder' }}</td>   <td>{{ section.settings.men_shoulder_m  | default: '49' }}</td><td>{{ section.settings.men_shoulder_l  | default: '50.5' }}</td><td>{{ section.settings.men_shoulder_ll | default: '52' }}</td><td>{{ section.settings.men_shoulder_3l | default: '54' }}</td></tr>
+            <tr><td>{{ section.settings.row_chest | default: 'Chest' }}</td>      <td>{{ section.settings.men_chest_m  | default: '110' }}</td><td>{{ section.settings.men_chest_l  | default: '115' }}</td><td>{{ section.settings.men_chest_ll | default: '120' }}</td><td>{{ section.settings.men_chest_3l | default: '125' }}</td></tr>
+            <tr><td>{{ section.settings.row_sleeve | default: 'Sleeve' }}</td>     <td>{{ section.settings.men_sleeve_m  | default: '64' }}</td><td>{{ section.settings.men_sleeve_l  | default: '65' }}</td><td>{{ section.settings.men_sleeve_ll | default: '66' }}</td><td>{{ section.settings.men_sleeve_3l | default: '68' }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      {% if section.settings.men_model_note != blank %}
+        <div class="ag-size-guide__models">
+          <div class="ag-size-guide__model-card">
+            <strong>{{ section.settings.men_model_label | default: "Men's Model" }}</strong>
+            {{ section.settings.men_model_note }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- ══ WOMEN'S TABLE ══ -->
+    <div id="ag-size-women" class="ag-size-panel">
+      <p class="ag-size-guide__unit-note">{{ section.settings.unit_note | default: 'Unit: cm' }}</p>
+      <div class="ag-comparison__table-wrap">
+        <table class="ag-comparison__table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ section.settings.women_size_s  | default: 'S' }}</th>
+              <th>{{ section.settings.women_size_m  | default: 'M' }}</th>
+              <th>{{ section.settings.women_size_l  | default: 'L' }}</th>
+              <th>{{ section.settings.women_size_ll | default: 'LL' }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>{{ section.settings.row_body_length | default: 'Body Length' }}</td><td>{{ section.settings.women_length_s  | default: '61' }}</td><td>{{ section.settings.women_length_m  | default: '62' }}</td><td>{{ section.settings.women_length_l  | default: '64' }}</td><td>{{ section.settings.women_length_ll | default: '66' }}</td></tr>
+            <tr><td>{{ section.settings.row_shoulder | default: 'Shoulder' }}</td>   <td>{{ section.settings.women_shoulder_s  | default: '42' }}</td><td>{{ section.settings.women_shoulder_m  | default: '44' }}</td><td>{{ section.settings.women_shoulder_l  | default: '46' }}</td><td>{{ section.settings.women_shoulder_ll | default: '48' }}</td></tr>
+            <tr><td>{{ section.settings.row_chest | default: 'Chest' }}</td>      <td>{{ section.settings.women_chest_s  | default: '99.5' }}</td><td>{{ section.settings.women_chest_m  | default: '103.5' }}</td><td>{{ section.settings.women_chest_l  | default: '109.5' }}</td><td>{{ section.settings.women_chest_ll | default: '115.5' }}</td></tr>
+            <tr><td>{{ section.settings.row_sleeve | default: 'Sleeve' }}</td>     <td>{{ section.settings.women_sleeve_s  | default: '56' }}</td><td>{{ section.settings.women_sleeve_m  | default: '58.5' }}</td><td>{{ section.settings.women_sleeve_l  | default: '60' }}</td><td>{{ section.settings.women_sleeve_ll | default: '61.5' }}</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      {% if section.settings.women_model_note != blank %}
+        <div class="ag-size-guide__models">
+          <div class="ag-size-guide__model-card">
+            <strong>{{ section.settings.women_model_label | default: "Women's Model" }}</strong>
+            {{ section.settings.women_model_note }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.fit_tip != blank %}
+      <p class="ag-size-guide__fit-tip">{{ section.settings.fit_tip }}</p>
+    {% endif %}
+
+  </div>
+</section>
+
+<script>
+  (function() {
+    var tabs = document.querySelectorAll('[data-ag-size-tab]');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var target = this.getAttribute('data-ag-size-tab');
+        // toggle tab active
+        tabs.forEach(function(t) { t.classList.remove('ag-size-tab--active'); });
+        this.classList.add('ag-size-tab--active');
+        // toggle panel
+        document.getElementById('ag-size-men').classList.toggle('ag-size-panel--active', target === 'men');
+        document.getElementById('ag-size-women').classList.toggle('ag-size-panel--active', target === 'women');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "AG Size Guide",
+  "settings": [
+    { "type": "text",     "id": "label",   "label": "Section Label", "default": "Size Guide" },
+    { "type": "text",     "id": "heading", "label": "Heading",       "default": "Find Your Size" },
+    { "type": "textarea", "id": "intro",   "label": "Intro Text",    "default": "If you're between sizes, we recommend sizing up for layering flexibility." },
+    { "type": "textarea", "id": "fit_tip", "label": "Fit Tip",       "default": "When in doubt, size up — AirLight is designed with room to layer." },
+    { "type": "text",     "id": "tab_men",    "label": "Tab — Men's",   "default": "Men's" },
+    { "type": "text",     "id": "tab_women",  "label": "Tab — Women's", "default": "Women's" },
+    { "type": "text",     "id": "unit_note",  "label": "Unit Note",     "default": "Unit: cm" },
+    { "type": "text",     "id": "row_body_length", "label": "Row Label — Body Length", "default": "Body Length" },
+    { "type": "text",     "id": "row_shoulder",    "label": "Row Label — Shoulder",    "default": "Shoulder" },
+    { "type": "text",     "id": "row_chest",       "label": "Row Label — Chest",       "default": "Chest" },
+    { "type": "text",     "id": "row_sleeve",      "label": "Row Label — Sleeve",      "default": "Sleeve" },
+    { "type": "text",     "id": "men_model_label",   "label": "Men's Model Label",   "default": "Men's Model" },
+    { "type": "text",     "id": "women_model_label", "label": "Women's Model Label", "default": "Women's Model" },
+
+    { "type": "header", "content": "── Men's Size Column Headers ──" },
+    { "type": "text", "id": "men_size_m",  "label": "Men's Header — M",  "default": "M" },
+    { "type": "text", "id": "men_size_l",  "label": "Men's Header — L",  "default": "L" },
+    { "type": "text", "id": "men_size_ll", "label": "Men's Header — LL", "default": "LL" },
+    { "type": "text", "id": "men_size_3l", "label": "Men's Header — 3L", "default": "3L" },
+
+    { "type": "header", "content": "── Women's Size Column Headers ──" },
+    { "type": "text", "id": "women_size_s",  "label": "Women's Header — S",  "default": "S" },
+    { "type": "text", "id": "women_size_m",  "label": "Women's Header — M",  "default": "M" },
+    { "type": "text", "id": "women_size_l",  "label": "Women's Header — L",  "default": "L" },
+    { "type": "text", "id": "women_size_ll", "label": "Women's Header — LL", "default": "LL" },
+
+    { "type": "header", "content": "── Men's Sizes (cm) ──" },
+    { "type": "text", "id": "men_length_m",    "label": "Body Length — M",  "default": "65" },
+    { "type": "text", "id": "men_length_l",    "label": "Body Length — L",  "default": "66.5" },
+    { "type": "text", "id": "men_length_ll",   "label": "Body Length — LL", "default": "68" },
+    { "type": "text", "id": "men_length_3l",   "label": "Body Length — 3L", "default": "71" },
+    { "type": "text", "id": "men_shoulder_m",  "label": "Shoulder — M",  "default": "49" },
+    { "type": "text", "id": "men_shoulder_l",  "label": "Shoulder — L",  "default": "50.5" },
+    { "type": "text", "id": "men_shoulder_ll", "label": "Shoulder — LL", "default": "52" },
+    { "type": "text", "id": "men_shoulder_3l", "label": "Shoulder — 3L", "default": "54" },
+    { "type": "text", "id": "men_chest_m",     "label": "Chest — M",  "default": "110" },
+    { "type": "text", "id": "men_chest_l",     "label": "Chest — L",  "default": "115" },
+    { "type": "text", "id": "men_chest_ll",    "label": "Chest — LL", "default": "120" },
+    { "type": "text", "id": "men_chest_3l",    "label": "Chest — 3L", "default": "125" },
+    { "type": "text", "id": "men_sleeve_m",    "label": "Sleeve — M",  "default": "64" },
+    { "type": "text", "id": "men_sleeve_l",    "label": "Sleeve — L",  "default": "65" },
+    { "type": "text", "id": "men_sleeve_ll",   "label": "Sleeve — LL", "default": "66" },
+    { "type": "text", "id": "men_sleeve_3l",   "label": "Sleeve — 3L", "default": "68" },
+    { "type": "textarea", "id": "men_model_note", "label": "Men's Model Note" },
+
+    { "type": "header", "content": "── Women's Sizes (cm) ──" },
+    { "type": "text", "id": "women_length_s",    "label": "Body Length — S",  "default": "61" },
+    { "type": "text", "id": "women_length_m",    "label": "Body Length — M",  "default": "62" },
+    { "type": "text", "id": "women_length_l",    "label": "Body Length — L",  "default": "64" },
+    { "type": "text", "id": "women_length_ll",   "label": "Body Length — LL", "default": "66" },
+    { "type": "text", "id": "women_shoulder_s",  "label": "Shoulder — S",  "default": "42" },
+    { "type": "text", "id": "women_shoulder_m",  "label": "Shoulder — M",  "default": "44" },
+    { "type": "text", "id": "women_shoulder_l",  "label": "Shoulder — L",  "default": "46" },
+    { "type": "text", "id": "women_shoulder_ll", "label": "Shoulder — LL", "default": "48" },
+    { "type": "text", "id": "women_chest_s",     "label": "Chest — S",  "default": "99.5" },
+    { "type": "text", "id": "women_chest_m",     "label": "Chest — M",  "default": "103.5" },
+    { "type": "text", "id": "women_chest_l",     "label": "Chest — L",  "default": "109.5" },
+    { "type": "text", "id": "women_chest_ll",    "label": "Chest — LL", "default": "115.5" },
+    { "type": "text", "id": "women_sleeve_s",    "label": "Sleeve — S",  "default": "56" },
+    { "type": "text", "id": "women_sleeve_m",    "label": "Sleeve — M",  "default": "58.5" },
+    { "type": "text", "id": "women_sleeve_l",    "label": "Sleeve — L",  "default": "60" },
+    { "type": "text", "id": "women_sleeve_ll",   "label": "Sleeve — LL", "default": "61.5" },
+    { "type": "textarea", "id": "women_model_note", "label": "Women's Model Note" }
+  ],
+  "presets": [
+    {
+      "name": "AG Size Guide"
+    }
+  ]
+}
+{% endschema %}

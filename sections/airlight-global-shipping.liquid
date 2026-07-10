@@ -1,0 +1,233 @@
+{% comment %} AirLight Global LP — Shipping, Duties & Returns {% endcomment %}
+
+<style>
+  .ag-shipping {
+    background: #faf9f6;
+    padding: clamp(60px, 8vw, 100px) 0;
+  }
+  .ag-shipping__label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c29d66;
+    display: block;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .ag-shipping__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    color: #1a2640;
+    text-align: center;
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+  .ag-shipping__sub {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    color: #5a5550;
+    text-align: center;
+    margin: 0 0 clamp(40px, 6vw, 56px);
+  }
+  .ag-shipping__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .ag-shipping__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .ag-shipping__item {
+    background: #fff;
+    border: 1px solid #e5e0d8;
+    border-radius: 8px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left-width: 3px;
+  }
+  .ag-shipping__item--standard {
+    border-left-color: #c29d66;
+  }
+  .ag-shipping__item--warning {
+    border-left-color: #e2a000;
+  }
+  .ag-shipping__item-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+  .ag-shipping__item-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2640;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+  .ag-shipping__item-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    color: #5a5550;
+    line-height: 1.75;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .ag-shipping {
+      padding-left: 16px;
+      padding-right: 16px;
+      overflow-x: hidden;
+    }
+    .ag-shipping__heading {
+      font-size: 1.7rem;
+    }
+    .ag-shipping__grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .ag-shipping__item {
+      padding: 16px;
+      flex-direction: column;
+    }
+    .ag-shipping__item-title {
+      font-size: 0.95rem;
+    }
+    .ag-shipping__item-text {
+      font-size: 14px;
+    }
+    .ag-shipping__sub {
+      font-size: 14px;
+    }
+    .ag-shipping img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
+<section class="ag-shipping" id="ag-shipping">
+  <div class="ag-container" data-ag-reveal>
+    <span class="ag-shipping__label">{{ section.settings.label | default: 'Shipping & Returns' }}</span>
+    <h2 class="ag-shipping__heading">{{ section.settings.heading | default: 'Shipping, Duties & Returns' }}</h2>
+    <p class="ag-shipping__sub">{{ section.settings.subtext | default: 'Everything you need to know before you order.' }}</p>
+
+    <div class="ag-shipping__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'info_item' %}
+          {% if block.settings.is_warning %}
+            <div class="ag-shipping__item ag-shipping__item--warning" {{ block.shopify_attributes }}>
+          {% else %}
+            <div class="ag-shipping__item ag-shipping__item--standard" {{ block.shopify_attributes }}>
+          {% endif %}
+            <div class="ag-shipping__item-icon">{{ block.settings.icon }}</div>
+            <div class="ag-shipping__item-title">{{ block.settings.title }}</div>
+            <p class="ag-shipping__item-text">{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "AG Shipping Info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shipping, Duties & Returns"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Everything you need to know before you order."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_item",
+      "name": "Info Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "📦"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ships from Japan via DHL"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Body Text",
+          "default": "Estimated delivery: 5–10 business days to North America and Europe. Tracking number provided by email."
+        },
+        {
+          "type": "checkbox",
+          "id": "is_warning",
+          "label": "Warning Style (orange border)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Shipping Info",
+      "blocks": [
+        {
+          "type": "info_item",
+          "settings": {
+            "icon": "📦",
+            "title": "Ships from Japan via DHL",
+            "text": "Estimated delivery: 5–10 business days to North America and Europe. Tracking number provided by email.",
+            "is_warning": false
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "icon": "🌍",
+            "title": "",
+            "text": "",
+            "is_warning": false
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "icon": "⚠️",
+            "title": "Import Duties (DDU — Delivered Duty Unpaid)",
+            "text": "Duties and taxes are billed at delivery by DHL — not included in your order total. USA: typically $0–40. Canada: typically $0–50 CAD. Please check your local customs rates before ordering.",
+            "is_warning": true
+          }
+        },
+        {
+          "type": "info_item",
+          "settings": {
+            "icon": "↩️",
+            "title": "30-Day Returns",
+            "text": "Not in love with it? Return within 30 days, unworn and in original condition. Return shipping is at the customer's expense. Contact: support@kapokknot.com",
+            "is_warning": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

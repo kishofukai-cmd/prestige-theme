@@ -1,0 +1,120 @@
+<style>
+/* ============================================================
+   KAPOK KNOT — AirLight Global LP | Base Utilities Only
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+:root {
+  --ag-bg:           #f7f9fc;
+  --ag-bg-warm:      #faf9f6;
+  --ag-bg-cream:     #f4f1ec;
+  --ag-bg-dark:      #1a2640;
+  --ag-bg-dark2:     #243352;
+  --ag-text:         #1a2640;
+  --ag-text-sub:     #5a6678;
+  --ag-text-light:   #faf8f5;
+  --ag-accent:       #c29d66;
+  --ag-accent-light: #d4c2ab;
+  --ag-gold:         #c29d66;
+  --ag-border:       #dfe4eb;
+  --ag-tag-bg:       #eaecf1;
+  --ag-tag-text:     #3d506e;
+  --ag-card:         #fff;
+  --ag-font-display: 'Cormorant Garamond', Georgia, serif;
+  --ag-font-body:    'Outfit', 'Helvetica Neue', sans-serif;
+  --ag-pad:          clamp(16px, 5vw, 48px);
+  --ag-max:          1080px;
+  --ag-narrow:       700px;
+  --ag-ease:         cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--ag-font-body);
+  color: var(--ag-text);
+  background: var(--ag-bg);
+  line-height: 1.8;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--ag-accent-light); border-radius: 2px; }
+
+/* Containers */
+.ag-container {
+  max-width: var(--ag-max);
+  margin: 0 auto;
+  padding: 0 var(--ag-pad);
+}
+.ag-container--narrow {
+  max-width: var(--ag-narrow);
+  margin: 0 auto;
+  padding: 0 var(--ag-pad);
+}
+
+/* Reveal animation */
+[data-ag-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ag-ease), transform 0.7s var(--ag-ease);
+}
+[data-ag-reveal].ag-revealed { opacity: 1; transform: translateY(0); }
+[data-ag-reveal].ag-delay-1 { transition-delay: 0.1s; }
+[data-ag-reveal].ag-delay-2 { transition-delay: 0.2s; }
+[data-ag-reveal].ag-delay-3 { transition-delay: 0.3s; }
+
+/* Label pill */
+.ag-label {
+  display: inline-block;
+  font-family: var(--ag-font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ag-tag-text);
+  background: var(--ag-tag-bg);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.ag-label--gold {
+  color: var(--ag-gold);
+  background: rgba(194,157,102,0.1);
+  border: 1px solid rgba(194,157,102,0.2);
+}
+.ag-label--light {
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Footer overrides */
+#shopify-section-footer-group .footer,
+.shopify-section-group-footer-group .footer,
+.footer {
+  background-color: var(--ag-bg-dark) !important;
+  color: var(--ag-text-light) !important;
+}
+.footer *, .footer svg {
+  color: rgba(250,248,245,0.8) !important;
+  fill: currentColor !important;
+  border-color: rgba(250,248,245,0.1) !important;
+}
+.footer a:hover { color: var(--ag-gold) !important; }
+</style>

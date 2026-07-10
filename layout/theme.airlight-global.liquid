@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDITABLE: 検索避け。広告・正式ローンチ開始時にこの1行を削除すること -->
+  <meta name="robots" content="noindex, nofollow">
   <title>{{ page_title }} | {{ shop.name }}</title>
-  <meta name="description" content="{{ page_description | default: 'AirLight Jacket by KAPOK KNOT — Japan Material Innovation. Plant-based warmth, zero compromise.' }}">
+  <meta name="description" content="{{ page_description | default: 'AirLight Jacket by KAPOK KNOT — Designed in Tokyo, Japan. Kapok-powered warmth, zero compromise.' }}">
 
   <!-- OGP -->
   <meta property="og:title" content="{{ page_title }} | {{ shop.name }}">
-  <meta property="og:description" content="{{ page_description | default: 'AirLight Jacket by KAPOK KNOT — Japan Material Innovation. Plant-based warmth, zero compromise.' }}">
+  <meta property="og:description" content="{{ page_description | default: 'AirLight Jacket by KAPOK KNOT — Designed in Tokyo, Japan. Kapok-powered warmth, zero compromise.' }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_url }}">
-  <meta property="og:image" content="https://ucarecdn.com/d7a640a6-76bb-47b6-8fd8-9fe27a5ce497/-/format/auto/-/preview/1200x630/-/quality/lighter/_240802_KAPOKKNOT2156-2.jpg">
+  <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/24_ba67f3cc-bda9-4080-b25f-8f8b653d054f.png?v=1759313538&width=1200">
   <meta name="twitter:card" content="summary_large_image">
 
   {{ content_for_header }}

@@ -1,0 +1,417 @@
+{% comment %} AirLight Global LP · Hero Section {% endcomment %}
+{% render 'airlight-global-styles' %}
+{% render 'airlight-global-scripts' %}
+
+<section class="ag-hero" id="ag-hero">
+  <div class="ag-hero__img-wrapper">
+    {% if section.settings.hero_image != blank %}
+      <img src="{{ section.settings.hero_image | img_url: '1600x' }}"
+           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' }}"
+           class="ag-hero__img" fetchpriority="high">
+    {% elsif section.settings.fallback_url != blank %}
+      <img src="{{ section.settings.fallback_url }}"
+           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' }}"
+           class="ag-hero__img" fetchpriority="high">
+    {% else %}
+      <img src="{{ 'airlight-hero-bg.jpg' | asset_url }}"
+           alt="AirLight Jacket · KAPOK KNOT" class="ag-hero__img" fetchpriority="high">
+    {% endif %}
+  </div>
+
+  <div class="ag-hero__content">
+    <p class="ag-hero__eyebrow">{{ section.settings.eyebrow | default: "KAPOK KNOT — Japan Material Innovation" }}</p>
+
+    {% if section.settings.launch_spot != blank %}
+      <div class="ag-hero__launch-badge">
+        <span class="ag-hero__launch-spot">{{ section.settings.launch_spot_icon | default: '⬡' }} {{ section.settings.launch_spot }}</span>
+      </div>
+    {% endif %}
+
+    <p class="ag-hero__pre-headline">{{ section.settings.pre_headline | default: 'Still freezing in a jacket that weighs you down?' }}</p>
+
+    <h1 class="ag-hero__title">
+      {{ section.settings.hero_title }}
+    </h1>
+
+    <div class="ag-hero__proof">
+      {% for block in section.blocks %}
+        {% if block.type == 'proof_item' %}
+          {% unless forloop.first %}<div class="ag-hero__proof-div"></div>{% endunless %}
+          <div class="ag-hero__proof-item" {{ block.shopify_attributes }}>
+            <span class="ag-hero__proof-num">{{ block.settings.number }}</span>
+            <span class="ag-hero__proof-label">{{ block.settings.label }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="ag-hero__sub">{{ section.settings.hero_sub | default: '500g. Kapok-powered warmth.' }}</p>
+
+    {% assign highlights = section.blocks | where: 'type', 'highlight_item' %}
+    {% if highlights.size > 0 %}
+      <div class="ag-hero__highlights">
+        {% for block in highlights %}
+          <div class="ag-hero__highlight-item" {{ block.shopify_attributes }}>
+            <span class="ag-hero__highlight-check">{{ section.settings.highlight_check_icon | default: '✓' }}</span>
+            <span class="ag-hero__highlight-text">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="ag-hero__cta-wrap">
+      <a href="{{ section.settings.cta_url | default: '#ag-products' }}" class="ag-hero__cta-btn">
+        {{ section.settings.cta_label | default: 'Get My AirLight Jacket →' }}
+      </a>
+      <p class="ag-hero__cta-price">{{ section.settings.cta_price | default: '$398' }}</p>
+      {% if section.settings.offer_note != blank %}
+        <p class="ag-hero__cta-note">{{ section.settings.offer_note }}</p>
+      {% endif %}
+      <!-- EDITABLE: クイック購入リンク（商品ページ直行。ラベルを空にすると非表示） -->
+      {% if section.settings.quick_link_1_label != blank or section.settings.quick_link_2_label != blank %}
+        <div class="ag-hero__quick-links">
+          {% if section.settings.quick_link_1_label != blank %}
+            <a href="{{ section.settings.quick_link_1_url | default: '/en/products/men-hooded-jacket' }}" class="ag-hero__quick-link">{{ section.settings.quick_link_1_label }}</a>
+          {% endif %}
+          {% if section.settings.quick_link_2_label != blank %}
+            <a href="{{ section.settings.quick_link_2_url | default: '/en/products/women-hooded-jacket' }}" class="ag-hero__quick-link">{{ section.settings.quick_link_2_label }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ag-hero__scroll-hint">
+    <span>{{ section.settings.scroll_hint | default: '↓ See how it works' }}</span>
+  </div>
+</section>
+
+<style>
+/* ── Hero base layout ── */
+.ag-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--ag-bg-dark);
+  color: var(--ag-text-light);
+  overflow: hidden;
+}
+.ag-hero__img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.ag-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.82;
+}
+.ag-hero__img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26,38,64,0.97) 0%,
+    rgba(26,38,64,0.82) 28%,
+    rgba(26,38,64,0.15) 60%,
+    rgba(26,38,64,0.04) 100%
+  );
+}
+.ag-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--ag-pad) clamp(40px, 10vw, 80px);
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.ag-hero__eyebrow {
+  font-family: var(--ag-font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ag-gold);
+  margin-bottom: 20px;
+}
+.ag-hero__title {
+  font-family: var(--ag-font-display);
+  font-size: clamp(2.4rem, 9vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+.ag-hero__title em { font-style: italic; color: var(--ag-gold); }
+.ag-hero__title p { font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; margin: 0; }
+.ag-hero__sub {
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  color: rgba(250,248,245,0.82);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.ag-hero__sub p { font-size: inherit; margin: 0; }
+
+/* Pre-headline */
+.ag-hero__pre-headline {
+  font-family: var(--ag-font-display);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* Proof bar */
+.ag-hero__proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 12px 0;
+  max-width: 460px;
+  margin: 0 auto 28px;
+}
+.ag-hero__proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 10px;
+}
+.ag-hero__proof-num {
+  font-family: var(--ag-font-display);
+  font-size: clamp(0.85rem, 3vw, 1.05rem);
+  font-weight: 500;
+  color: #fff;
+}
+.ag-hero__proof-label {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+.ag-hero__proof-div {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+/* CTA */
+.ag-hero__cta-wrap { text-align: center; }
+.ag-hero__cta-btn {
+  display: inline-block;
+  padding: 16px 52px;
+  font-family: var(--ag-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ag-bg-dark);
+  background: linear-gradient(135deg, var(--ag-gold) 0%, #d4b78a 100%);
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(194,157,102,0.4);
+  transition: all 0.3s var(--ag-ease);
+}
+.ag-hero__cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(194,157,102,0.55);
+}
+.ag-hero__cta-price {
+  font-family: var(--ag-font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  margin: 10px 0 4px;
+}
+.ag-hero__cta-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+.ag-hero__quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 14px;
+}
+.ag-hero__quick-link {
+  font-family: var(--ag-font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(194,157,102,0.6);
+}
+.ag-hero__quick-link:hover { color: #fff; text-decoration-color: #c29d66; }
+
+/* Launch badge */
+.ag-hero__launch-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(194,157,102,0.12);
+  border: 1px solid rgba(194,157,102,0.35);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+}
+.ag-hero__launch-spot {
+  font-family: var(--ag-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #c29d66;
+  letter-spacing: 0.06em;
+}
+
+/* Highlights */
+.ag-hero__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.06);
+  border-left: 3px solid var(--ag-gold);
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+.ag-hero__highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.ag-hero__highlight-check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ag-gold);
+  color: #0a0a0a;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.ag-hero__highlight-text {
+  font-family: var(--ag-font-body);
+  font-size: clamp(0.82rem, 2vw, 0.92rem);
+  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+}
+
+/* Scroll hint */
+.ag-hero__scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation: ag-scroll-fade 2s ease-in-out infinite;
+  z-index: 2;
+}
+.ag-hero__scroll-hint span {
+  font-family: var(--ag-font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+@keyframes ag-scroll-fade {
+  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+  50%       { opacity: 1;   transform: translateX(-50%) translateY(5px); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ag-hero { overflow-x: hidden; }
+  .ag-hero__content { padding: 80px 16px 120px; }
+  .ag-hero__title { font-size: 2rem; margin-bottom: 16px; }
+  .ag-hero__sub { font-size: 14px; margin-bottom: 24px; }
+  .ag-hero__proof { flex-wrap: nowrap; max-width: 100%; margin-bottom: 20px; padding: 10px 0; }
+  .ag-hero__proof-num { font-size: 0.85rem; }
+  .ag-hero__cta-btn {
+    width: 100%; min-height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box; padding: 16px 24px;
+  }
+  .ag-hero__highlights { padding: 14px 16px; gap: 8px; margin-bottom: 20px; }
+  .ag-hero__highlight-text { font-size: 13px; }
+  .ag-hero__scroll-hint { bottom: 16px; }
+}
+</style>
+
+{% schema %}
+{
+  "name": "AG Hero",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
+    { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket · KAPOK KNOT" },
+    { "type": "text", "id": "fallback_url", "label": "Fallback Image URL (external)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "KAPOK KNOT — Japan Material Innovation" },
+    { "type": "text", "id": "launch_spot_icon", "label": "Launch Badge Icon", "default": "⬡" },
+    { "type": "text", "id": "launch_spot", "label": "Launch Badge Text" },
+    { "type": "text", "id": "highlight_check_icon", "label": "Highlight Check Icon", "default": "✓" },
+    { "type": "text", "id": "pre_headline", "label": "Pre-headline (italic, above title)", "default": "Still freezing in a jacket that weighs you down?" },
+    { "type": "richtext", "id": "hero_title", "label": "Headline", "default": "<p>Down Warmth.<br><em>Reinvented in Japan.</em></p>" },
+    { "type": "richtext", "id": "hero_sub", "label": "Subheadline", "default": "<p>500g plant-based jacket. Engineered with Japanese precision.<br>Ethical insulation. Zero compromise.</p>" },
+    { "type": "url", "id": "cta_url", "label": "CTA Link" },
+    { "type": "text", "id": "cta_label", "label": "CTA Button Text", "default": "Get My AirLight Jacket →" },
+    { "type": "text", "id": "cta_price", "label": "Price Line (below button)", "default": "$398" },
+    { "type": "text", "id": "offer_note", "label": "Offer Note" },
+    { "type": "text", "id": "quick_link_1_label", "label": "Quick Link 1 Label", "default": "Shop Men's →" },
+    { "type": "url", "id": "quick_link_1_url", "label": "Quick Link 1 URL" },
+    { "type": "text", "id": "quick_link_2_label", "label": "Quick Link 2 Label", "default": "Shop Women's →" },
+    { "type": "url", "id": "quick_link_2_url", "label": "Quick Link 2 URL" },
+    { "type": "text", "id": "scroll_hint", "label": "Scroll Hint Text", "default": "↓ See how it works" }
+  ],
+  "blocks": [
+    {
+      "type": "proof_item",
+      "name": "Proof Number",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "¥50M+" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Crowdfunded in Japan" }
+      ]
+    },
+    {
+      "type": "highlight_item",
+      "name": "Key Highlight",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Highlight Text", "default": "Just 500g — down-level warmth in a plant-based jacket you'll forget you're wearing." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AG Hero",
+      "blocks": [
+        { "type": "proof_item", "settings": { "number": "¥50M+", "label": "Crowdfunded in Japan" } },
+        { "type": "proof_item", "settings": { "number": "10+", "label": "Design Awards" } },
+        { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Review Score" } },
+        { "type": "highlight_item", "settings": { "text": "Just 500g — down-level warmth in a kapok-powered jacket you'll forget you're wearing." } },
+        { "type": "highlight_item", "settings": { "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator." } },
+        { "type": "highlight_item", "settings": { "text": "No animal feathers. No tree cutting. A sustainable brand from Japan changing fashion with plant innovation." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

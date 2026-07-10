@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "color_scheme": "",
+        "show_image": false,
+        "enable_parallax": false,
+        "image_size": "medium",
+        "content_width": "xs",
+        "show_date": true,
+        "show_category": false,
+        "show_author": false,
+        "show_share_buttons": false,
+        "show_sticky_bar": true,
+        "toolbar_color_scheme": ""
+      }
+    },
+    "prev-next-blog-posts": {
+      "type": "prev-next-blog-posts",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "Read more",
+        "show_category": true,
+        "show_excerpt": true,
+        "show_read_more": true
+      }
+    },
+    "sticky-cta": {
+      "type": "article-sticky-cta",
+      "settings": {
+        "product_name": "リカバリー加重ブランケット MUSUBI",
+        "product_price": "¥39,800〜",
+        "cta_text": "商品ページはこちら →",
+        "cta_url": "/collections/musubi-series",
+        "cta_bg_color": "#1c1c1c",
+        "cta_text_color": "#ffffff",
+        "bg_color": "#ffffff",
+        "text_color": "#1c1c1c",
+        "max_width": 720,
+        "bottom_offset": 16,
+        "show_on_load": true,
+        "show_close": false,
+        "hide_price_on_mobile": false,
+        "aria_label": "関連商品へのリンク"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "prev-next-blog-posts",
+    "sticky-cta"
+  ]
+}

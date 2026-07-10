@@ -1,0 +1,774 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.airlight-global",
+  "sections": {
+    "hero": {
+      "type": "airlight-global-hero",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "¥50M+",
+            "label": "Crowdfunded in Japan"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "10+",
+            "label": "Design Awards"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★ 4.6",
+            "label": "Verified Reviews (Japan)"
+          }
+        },
+        "highlight_1": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "Just 500g — down-level warmth in a kapok-powered jacket you'll forget you're wearing."
+          }
+        },
+        "highlight_2": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "Kapok: a hollow-core plant fiber that absorbs moisture and generates heat — nature's lightest insulator."
+          }
+        },
+        "highlight_3": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "100% cruelty-free & vegan-friendly. No feathers, no tree cutting — a sustainable brand from Japan changing fashion with plant innovation."
+          }
+        }
+      },
+      "block_order": [
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "highlight_1",
+        "highlight_2",
+        "highlight_3"
+      ],
+      "settings": {
+        "eyebrow": "KAPOK KNOT — From Japan to the World",
+        "pre_headline": "¥50M+ crowdfunded. 10+ design awards. Loved in Japan —",
+        "hero_title": "<p>Born from a tree nut.<br><em>Now going global.</em></p>",
+        "hero_sub": "<p>Kapok — a wild-growing tree-nut fiber — engineered in Tokyo into down-level warmth at just 500g.<br>Japan's material innovation brand now ships worldwide, for the first time.</p>",
+        "cta_text": "Get My AirLight Jacket →",
+        "cta_price": "$318 — 20% Launch Offer (reg. $398)",
+        "offer_note": "Code FOUNDERS20 applied automatically · First 100 orders only",
+        "scroll_hint": "↓ See how it works",
+        "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
+        "hero_image_alt": "AirLight Jacket · KAPOK KNOT",
+        "launch_spot_icon": "⬡",
+        "launch_spot": "",
+        "highlight_check_icon": "✓",
+        "cta_label": "Get My AirLight Jacket →",
+        "quick_link_1_label": "Shop Men's →",
+        "quick_link_2_label": "Shop Women's →",
+        "quick_link_1_url": "/discount/FOUNDERS20?redirect=/en/products/men-hooded-jacket",
+        "quick_link_2_url": "/discount/FOUNDERS20?redirect=/en/products/women-hooded-jacket"
+      }
+    },
+    "trust-bar": {
+      "type": "airlight-global-trust",
+      "blocks": {
+        "trust_1": {
+          "type": "item",
+          "settings": {
+            "text": "Ships Worldwide from Japan"
+          }
+        },
+        "trust_2": {
+          "type": "item",
+          "settings": {
+            "text": "Plant-Powered Kapok Fill"
+          }
+        },
+        "trust_3": {
+          "type": "item",
+          "settings": {
+            "text": "Japan Engineered"
+          }
+        },
+        "trust_4": {
+          "type": "item",
+          "settings": {
+            "text": "10+ Design Awards"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
+      "settings": {
+        "trust_image_alt": "KAPOK KNOT"
+      }
+    },
+    "brand": {
+      "type": "airlight-global-brand",
+      "blocks": {
+        "tag_1": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🏆 10+ Design Awards"
+          }
+        },
+        "tag_2": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🇯🇵 Japan Material Innovation"
+          }
+        },
+        "tag_3": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🌿 Milano Unica Exhibitor"
+          }
+        },
+        "tag_4": {
+          "type": "tag_item",
+          "settings": {
+            "text": "⭐ Fumi Nikaido Collab"
+          }
+        },
+        "tag_5": {
+          "type": "tag_item",
+          "settings": {
+            "text": "💴 ¥50M+ Crowdfunded"
+          }
+        }
+      },
+      "block_order": [
+        "tag_1",
+        "tag_2",
+        "tag_3",
+        "tag_4",
+        "tag_5"
+      ],
+      "settings": {
+        "kicker": "Japan's Tree-Nut Fashion Brand — World Debut",
+        "heading": "<p>A material revolution,<br><em>finally going global.</em></p>",
+        "body": "<p>KAPOK KNOT was born from a singular obsession: replace down with something better. After ¥50M+ raised on crowdfunding, 10+ design awards, and a debut at Milano Unica — the world's leading fabric fair — we're bringing Japan's most innovative jacket to the world.</p>",
+        "founder_image_url": "airlight-brand-factory.png",
+        "founder_caption": "Kishow Fukai — Founder, KAPOK KNOT"
+      }
+    },
+    "awards": {
+      "type": "airlight-global-awards",
+      "blocks": {
+        "award_1": {
+          "type": "award_item",
+          "settings": {
+            "meta": "METI · JETRO — Shido Next Innovator 2019",
+            "title": "🏆 Silicon Valley Selection — Grand Prize"
+          }
+        },
+        "award_2": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2021",
+            "title": "🏆 Grand Prix (Crafted Catapult)"
+          }
+        },
+        "award_3": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Nikkei Shimbun — Star Startup Japan 2021",
+            "title": "🏆 Next-Generation Venture Award"
+          }
+        },
+        "award_4": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Ministry of Environment — Startup Award 2021",
+            "title": "🏆 Outstanding Startup"
+          }
+        }
+      },
+      "block_order": [
+        "award_1",
+        "award_2",
+        "award_3",
+        "award_4"
+      ],
+      "settings": {
+        "label": "Recognition",
+        "heading": "10+ International Awards.",
+        "subtext": "Recognized by governments, investors, and innovation bodies across Japan and the world — 10+ awards in total.",
+        "show_cta": true,
+        "cta_text": "Claim Your Spot — $398 →"
+      }
+    },
+    "features": {
+      "type": "airlight-global-features",
+      "blocks": {
+        "feat_1": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🪶",
+            "tag": "ULTRALIGHT",
+            "title": "Lighter Than a Sweater",
+            "description": "Traditional down jackets weigh 800g–1kg. The AirLight Jacket weighs just 500g — the same as a water bottle. You'll forget you're wearing it.",
+            "stat_num": "500g",
+            "stat_label": "vs 800–1000g for down",
+            "fallback_url": "https://ucarecdn.com/f098945b-b320-4d70-aa7b-8caa9802c2a4/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0303%20_1_.jpg"
+          }
+        },
+        "feat_2": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🌡️",
+            "tag": "DOWN-LEVEL WARMTH",
+            "title": "As Warm as Down. Proven.",
+            "description": "Thermographic testing at 3°C confirms identical heat retention to traditional down — just 1 minute after putting it on. Kapok's hollow fiber structure traps heat naturally.",
+            "stat_num": "3°C",
+            "stat_label": "Test environment — matches down",
+            "fallback_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png"
+          }
+        },
+        "feat_3": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🌿",
+            "tag": "100% CRUELTY-FREE",
+            "title": "100% Cruelty-Free. Zero Feathers. Ever.",
+            "description": "One down jacket uses feathers from ~30 birds. Ours uses zero. Vegan-friendly kapok fiber grows on trees and is harvested from seed pods — no cutting, no cruelty, no compromise.",
+            "stat_num": "0",
+            "stat_label": "Animals involved",
+            "fallback_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png"
+          }
+        },
+        "feat_4": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "☂️",
+            "tag": "ALL-WEATHER",
+            "title": "Rain? No Problem.",
+            "description": "Plant-based DWR coating delivers 20x the water resistance of a standard umbrella. Down collapses when wet and takes days to dry. The AirLight keeps performing — and washes easily at home.",
+            "stat_num": "20×",
+            "stat_label": "Water resistance vs umbrella",
+            "fallback_url": "https://ucarecdn.com/d9780751-672f-41f1-adae-afe3fc503e5b/test_airlight.gif"
+          }
+        },
+        "feat_5": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🏭",
+            "tag": "FARM TO FASHION",
+            "title": "Transparent from Field to You",
+            "description": "Our founder personally visits the kapok farms, processing factories, and garment makers in Southeast Asia — cutting out middlemen to guarantee quality and fair pricing.",
+            "stat_num": "3",
+            "stat_label": "Direct partnerships",
+            "fallback_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png"
+          }
+        },
+        "feat_6": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🍂",
+            "tag": "3-SEASON VERSATILITY",
+            "title": "One Jacket. Autumn Through Spring.",
+            "description": "Built for cities like Sydney and Melbourne, where a 10°C morning turns into a 22°C afternoon. At just 500g, the AirLight layers over a tee in autumn, under a shell on cold winter days, and packs flat for spring trips — one jacket that earns its place three seasons a year.",
+            "stat_num": "3",
+            "stat_label": "Seasons of wear per year",
+            "fallback_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "feat_1",
+        "feat_2",
+        "feat_3",
+        "feat_4",
+        "feat_5",
+        "feat_6"
+      ],
+      "settings": {
+        "heading": "<p>Everything down promises.<br>Finally delivered.</p>"
+      }
+    },
+    "material": {
+      "type": "airlight-global-material",
+      "blocks": {
+        "origin_story": {
+          "type": "origin_story",
+          "settings": {}
+        },
+        "fiber": {
+          "type": "fiber",
+          "settings": {}
+        },
+        "japanese_engineering": {
+          "type": "japanese_engineering",
+          "settings": {
+            "body": "Kapok fiber is too short to spin into thread — or so we were told. We spent five years working with Japan's leading textile engineers to solve this. The result: KapokFill™, a patent-pending insulation sheet that holds fiber without spinning it — 30% kapok blended with recycled fibers. Designed and engineered in Tokyo, Japan.",
+            "image2_caption": "Craftsmanship at our partner factory"
+          }
+        },
+        "heat_test": {
+          "type": "heat_test",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "origin_story",
+        "fiber",
+        "japanese_engineering",
+        "heat_test"
+      ],
+      "settings": {
+        "label": "Farm to Fashion — Where It Begins",
+        "fallback_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png"
+      }
+    },
+    "cta-mid": {
+      "type": "airlight-global-cta",
+      "settings": {
+        "section_id": "ag-cta-mid",
+        "eyebrow": "Global Launch Offer — 20% Off",
+        "heading": "<p>Join the first 100 people<br>to own an AirLight Jacket.</p>",
+        "subheading": "First 100 orders get 20% off with code FOUNDERS20 (applied automatically) + free worldwide shipping. After that: $398 and standard shipping.",
+        "offer_main": "",
+        "offer_note": "Regular price $398 · Code FOUNDERS20 · One per customer",
+        "show_progress": false,
+        "progress_taken": "73",
+        "progress_remaining": "27 remaining",
+        "progress_pct": 73,
+        "cta_text": "Shop Now — 20% Off",
+        "micro_1": "✓ Ships worldwide from Japan",
+        "micro_2": "✓ Apple Pay · Google Pay · Shop Pay · PayPal",
+        "micro_3": "✓ Secure checkout",
+        "launch_price": "$318",
+        "launch_ends": "",
+        "show_launch_price": true
+      }
+    },
+    "ethics": {
+      "type": "airlight-global-ethics",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "97%",
+            "label": "Less CO₂ vs Down"
+          }
+        },
+        "stat_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "30",
+            "label": "Geese saved / jacket"
+          }
+        },
+        "stat_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "80%",
+            "label": "Hollow fiber structure"
+          }
+        },
+        "stat_4": {
+          "type": "stat_item",
+          "settings": {
+            "number": "1/8",
+            "label": "Weight of cotton"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "footnote": "*Based on life cycle analysis vs conventional goose down insulation."
+      }
+    },
+    "comparison": {
+      "type": "airlight-global-comparison",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Weight",
+            "airlight": "✅ ~500g",
+            "down": "❌ 800–1000g",
+            "synthetic": "⚠️ ~700g"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Warmth at 3°C",
+            "airlight": "✅ Down-equivalent",
+            "down": "✅ Excellent",
+            "synthetic": "⚠️ Good"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Wet performance",
+            "airlight": "✅ Maintains warmth",
+            "down": "❌ Collapses when wet",
+            "synthetic": "⚠️ Varies"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Machine washable",
+            "airlight": "✅ Yes",
+            "down": "❌ Dry-clean only",
+            "synthetic": "⚠️ Often yes"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Vegan & cruelty-free",
+            "airlight": "✅ 100% Cruelty-Free",
+            "down": "❌ Bird feathers",
+            "synthetic": "⚠️ Petroleum-based"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Sustainable origin",
+            "airlight": "✅ Plant-powered (kapok + recycled fibers)",
+            "down": "❌ Animal byproduct",
+            "synthetic": "❌ Fossil fuels"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "feature": "Designed & engineered in",
+            "airlight": "✅ Tokyo, Japan",
+            "down": "— Various",
+            "synthetic": "— Various"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7"
+      ],
+      "settings": {
+        "heading": "How does it compare?",
+        "header_airlight_desktop": "★ OUR PICK",
+        "header_airlight_mobile": "AirLight",
+        "header_down": "Down",
+        "header_synthetic": "Synthetic"
+      }
+    },
+    "reviews": {
+      "type": "airlight-global-reviews",
+      "blocks": {
+        "rev_1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "I finally found my animal-free jacket",
+            "text": "I'd been searching for animal-free outerwear for so long — and I finally found it. Thank you to everyone who made this jacket.",
+            "meta": "Verified buyer, Japan · AirLight Jacket — Women"
+          }
+        },
+        "rev_2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Light, warm, and easy to live with",
+            "text": "What surprised me first: it's so light yet properly warm, and wind barely gets through. My down jacket was too bulky for packed trains — the AirLight slips on and off easily. And in sudden rain it beaded water like a brand-new umbrella. (178cm / 78kg, size LL)",
+            "meta": "M. · Verified buyer, Japan"
+          }
+        },
+        "rev_3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Worth every yen",
+            "text": "Lighter, warmer and better-looking than I imagined. I honestly think everyone should stop buying new real-down jackets and switch to kapok. I wear mine with confidence.",
+            "meta": "Verified buyer, Japan · AirLight Jacket — Women"
+          }
+        },
+        "rev_4": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Warm without the stuffiness",
+            "text": "As warm as down, but none of that sweaty feeling when you step indoors from the cold. And it's so light I kept checking whether I was actually wearing it.",
+            "meta": "Verified buyer, Japan · AirLight Jacket — Men"
+          }
+        },
+        "rev_5": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Skeptical until I put it on",
+            "text": "I saw it on TV and doubted something this thin could be warm — then I tried it. The cinchable waist and zip pockets are lovely details. I want to buy one for my parents in snow country.",
+            "meta": "Verified buyer, Japan · AirLight Jacket — Women"
+          }
+        },
+        "rev_6": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "Perfect for travel",
+            "text": "Down is too hot on planes and trains, and heavy once you take it off. Light down was too cold. This jacket solved both — even cold gusts didn't get through.",
+            "meta": "Verified buyer, Japan · AirLight Jacket — Men"
+          }
+        }
+      },
+      "block_order": [
+        "rev_1",
+        "rev_2",
+        "rev_3",
+        "rev_4",
+        "rev_5",
+        "rev_6"
+      ],
+      "settings": {
+        "heading": "Rated 4.6 by verified customers in Japan",
+        "avg_stars": "★★★★★",
+        "avg_label": "4.6 / 5 average — 40+ verified reviews on our Japan store (collected via Judge.me, translated from Japanese)",
+        "verified_badge": "✓ Verified Purchase · Japan"
+      }
+    },
+    "products": {
+      "type": "airlight-global-products",
+      "blocks": {
+        "product_men": {
+          "type": "product_line",
+          "settings": {
+            "product": "men-hooded-jacket",
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now — 20% Off →",
+            "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/24_ba67f3cc-bda9-4080-b25f-8f8b653d054f.png?v=1759313538&width=1200",
+            "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/21_2881c2cc-d5c8-4f06-a236-939da709210f.png?v=1759313538&width=1200",
+            "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/19_e178f109-4bfb-48ef-bbc9-a640d037a0bd.png?v=1759313538&width=1200",
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/16_8338e182-7739-4e31-a088-928a6b99b677.png?v=1759313538&width=1200",
+            "price": "$318 launch (reg. $398)"
+          }
+        },
+        "product_women": {
+          "type": "product_line",
+          "settings": {
+            "product": "women-hooded-jacket",
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now — 20% Off →",
+            "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/2_aaa1bf76-72a5-49ca-b62d-5d1ef6ef6022.png?v=1759904978&width=1200",
+            "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/1_eceda4b5-ae86-4bff-aa91-0bd0b7da74a6.png?v=1759904978&width=1200",
+            "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/6_8a1e4b87-37e4-4e6f-bd92-6348250ec632.png?v=1759904978&width=1200",
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/7_987d5510-5e6e-4c06-a29e-394020ed55b6.png?v=1759904978&width=1200",
+            "price": "$318 launch (reg. $398)"
+          }
+        },
+        "product_peplum": {
+          "type": "product_line",
+          "settings": {
+            "product": "airlight-peplum-jacket",
+            "gender_label": "Women's — Peplum",
+            "product_name": "AirLight Peplum Jacket",
+            "colors": "4 Colors: White / Ice Blue / Black / Khaki",
+            "cta_text": "Shop Now — 20% Off →",
+            "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8436.jpg?v=1772162658&width=1200",
+            "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8445.jpg?v=1772162658&width=1200",
+            "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8446.jpg?v=1772162658&width=1200",
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8438.jpg?v=1767941123&width=1200",
+            "price": "$318 launch (reg. $398)"
+          }
+        }
+      },
+      "block_order": [
+        "product_men",
+        "product_women",
+        "product_peplum"
+      ],
+      "settings": {
+        "label": "The Collection",
+        "heading": "Find your AirLight Jacket.",
+        "color_label": "Color:",
+        "size_label": "Size:",
+        "sizes_label": "Sizes:",
+        "size_guide_text": "Size Guide →",
+        "details_link_text": "View Full Details →",
+        "atc_select_size_text": "Select size to continue",
+        "sold_out_text": "Sold Out",
+        "added_text": "Added to cart!",
+        "checkout_link_text": "Proceed to Checkout →",
+        "discount_code": "FOUNDERS20",
+        "payment_note": "Apple Pay · Google Pay · Shop Pay · PayPal accepted"
+      }
+    },
+    "faq": {
+      "type": "airlight-global-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How warm is the AirLight Jacket exactly?",
+            "answer": "<p>Thermographic testing at 3°C shows the AirLight Jacket reaches the same surface temperature as a traditional down jacket within 1 minute of wear. It's designed to cover you comfortably from around 0°C to 15°C depending on your activity level.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What exactly is kapok fiber?",
+            "answer": "<p>Kapok is a natural fiber harvested from the seed pods of the kapok tree, native to Southeast Asia. Unlike cotton, no tree cutting is required — the pods simply fall and the fluff is collected. The fiber is hollow, making it naturally lightweight and thermally efficient. KAPOK KNOT has developed a process to transform this fiber into a high-performance insulation sheet called EthicalDown Kapok™.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it machine washable?",
+            "answer": "<p>Yes. Unlike down jackets that require dry cleaning, the AirLight Jacket can be machine washed on a gentle, cold-water cycle. Kapok fiber does not clump or degrade with repeated washing.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your shipping and return policy?",
+            "answer": "<p><strong>Shipping:</strong> Free worldwide shipping on the first 100 launch orders (standard rate applies afterwards). Orders are dispatched from Japan within 3–5 business days; international delivery typically takes 7–14 days.</p><p><strong>Returns:</strong> As a special launch-edition offer at 20% off, we are unable to accept change-of-mind returns on launch orders. If your item arrives faulty, damaged or not as described, we will replace or refund it at our cost — this always applies, including your rights under the Australian Consumer Law. Questions about sizing before you order? Email service@kapok-knot.com — we respond within 2 business days.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does sizing work?",
+            "answer": "<p>The AirLight Jacket is designed with a relaxed, slightly oversized fit. If you prefer a fitted look, we recommend sizing down. Detailed size charts are available on the product page.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is KAPOK KNOT really sustainable?",
+            "answer": "<p>Yes, on multiple levels. Kapok requires no irrigation, no pesticides, and no tree cutting. Our founder personally maintains direct contracts with farms and processing facilities in Southeast Asia. Increased kapok demand also drives reforestation in the region.</p>"
+          }
+        },
+        "faq_duties": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I have to pay customs duties or import taxes?",
+            "answer": "<p>Depending on your country, customs duties and import taxes may be charged when your parcel arrives — these are set by your local customs authority and are not included in our prices. As a guide: the US applies duties on apparel imports, the EU applies VAT plus duty above €150, and Australia applies 10% GST. We mark all parcels accurately and are working to bring duty-inclusive checkout to our store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_duties",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "heading": "Your questions, answered."
+      }
+    },
+    "closing": {
+      "type": "airlight-global-closing",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_line",
+          "settings": {
+            "text": "¥50M+ Crowdfunded in Japan"
+          }
+        },
+        "proof_2": {
+          "type": "proof_line",
+          "settings": {
+            "text": "10+ Design Awards"
+          }
+        },
+        "proof_3": {
+          "type": "proof_line",
+          "settings": {
+            "text": "Milano Unica Exhibitor"
+          }
+        },
+        "proof_4": {
+          "type": "proof_line",
+          "settings": {
+            "text": "★ Fumi Nikaido Collab"
+          }
+        }
+      },
+      "block_order": [
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "proof_4"
+      ],
+      "settings": {
+        "eyebrow": "KAPOK KNOT",
+        "title": "<p>The jacket that changes<br><em>what warmth means.</em></p>",
+        "cta_text": "Shop Now →",
+        "micro_1": "",
+        "micro_2": "",
+        "micro_3": "✓ Secure checkout",
+        "fallback_url": "https://ucarecdn.com/dd2fb320-7d90-475d-a328-25ba8af70422/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3729.jpg",
+        "spots_text": "Only 100 Global Launch Spots Available."
+      }
+    },
+    "airlight_sticky": {
+      "type": "airlight-global-sticky",
+      "settings": {
+        "enabled": true,
+        "product_name": "AirLight Jacket",
+        "price_text": "$318",
+        "sub_text": "20% off first 100 orders · Apple Pay / Google Pay",
+        "cta_text": "Shop Now →",
+        "show_on_desktop": false,
+        "bg_color": "#1a2640",
+        "text_color": "#ffffff",
+        "accent_color": "#c9a86a",
+        "show_after_px": 700
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "brand",
+    "material",
+    "features",
+    "ethics",
+    "reviews",
+    "comparison",
+    "awards",
+    "cta-mid",
+    "products",
+    "faq",
+    "closing",
+    "airlight_sticky"
+  ]
+}
