@@ -1528,6 +1528,9 @@ button {
   background: var(--color-card);
   border: 1px solid var(--color-border);
   transition: transform 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .hotels__card:hover {
@@ -1571,8 +1574,9 @@ button {
 .hotels__card-detail {
   font-size: 0.8125rem;
   color: var(--color-text-sub);
-  padding: 0 20px 20px;
+  padding: 0 20px 24px;
   line-height: 1.7;
+  flex: 1;
 }
 
 @media (min-width: 640px) {

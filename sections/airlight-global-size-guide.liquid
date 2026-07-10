@@ -140,29 +140,29 @@
 
     <!-- ── Tab buttons ── -->
     <div class="ag-size-tabs">
-      <button class="ag-size-tab ag-size-tab--active" data-ag-size-tab="men" type="button">Men's</button>
-      <button class="ag-size-tab" data-ag-size-tab="women" type="button">Women's</button>
+      <button class="ag-size-tab ag-size-tab--active" data-ag-size-tab="men" type="button">{{ section.settings.tab_men | default: "Men's" }}</button>
+      <button class="ag-size-tab" data-ag-size-tab="women" type="button">{{ section.settings.tab_women | default: "Women's" }}</button>
     </div>
 
     <!-- ══ MEN'S TABLE ══ -->
     <div id="ag-size-men" class="ag-size-panel ag-size-panel--active">
-      <p class="ag-size-guide__unit-note">Unit: cm</p>
+      <p class="ag-size-guide__unit-note">{{ section.settings.unit_note | default: 'Unit: cm' }}</p>
       <div class="ag-comparison__table-wrap">
         <table class="ag-comparison__table">
           <thead>
             <tr>
               <th></th>
-              <th>M</th>
-              <th>L</th>
-              <th>LL</th>
-              <th>3L</th>
+              <th>{{ section.settings.men_size_m  | default: 'M' }}</th>
+              <th>{{ section.settings.men_size_l  | default: 'L' }}</th>
+              <th>{{ section.settings.men_size_ll | default: 'LL' }}</th>
+              <th>{{ section.settings.men_size_3l | default: '3L' }}</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Body Length</td><td>{{ section.settings.men_length_m  | default: '65' }}</td><td>{{ section.settings.men_length_l  | default: '66.5' }}</td><td>{{ section.settings.men_length_ll | default: '68' }}</td><td>{{ section.settings.men_length_3l | default: '71' }}</td></tr>
-            <tr><td>Shoulder</td>   <td>{{ section.settings.men_shoulder_m  | default: '49' }}</td><td>{{ section.settings.men_shoulder_l  | default: '50.5' }}</td><td>{{ section.settings.men_shoulder_ll | default: '52' }}</td><td>{{ section.settings.men_shoulder_3l | default: '54' }}</td></tr>
-            <tr><td>Chest</td>      <td>{{ section.settings.men_chest_m  | default: '110' }}</td><td>{{ section.settings.men_chest_l  | default: '115' }}</td><td>{{ section.settings.men_chest_ll | default: '120' }}</td><td>{{ section.settings.men_chest_3l | default: '125' }}</td></tr>
-            <tr><td>Sleeve</td>     <td>{{ section.settings.men_sleeve_m  | default: '64' }}</td><td>{{ section.settings.men_sleeve_l  | default: '65' }}</td><td>{{ section.settings.men_sleeve_ll | default: '66' }}</td><td>{{ section.settings.men_sleeve_3l | default: '68' }}</td></tr>
+            <tr><td>{{ section.settings.row_body_length | default: 'Body Length' }}</td><td>{{ section.settings.men_length_m  | default: '65' }}</td><td>{{ section.settings.men_length_l  | default: '66.5' }}</td><td>{{ section.settings.men_length_ll | default: '68' }}</td><td>{{ section.settings.men_length_3l | default: '71' }}</td></tr>
+            <tr><td>{{ section.settings.row_shoulder | default: 'Shoulder' }}</td>   <td>{{ section.settings.men_shoulder_m  | default: '49' }}</td><td>{{ section.settings.men_shoulder_l  | default: '50.5' }}</td><td>{{ section.settings.men_shoulder_ll | default: '52' }}</td><td>{{ section.settings.men_shoulder_3l | default: '54' }}</td></tr>
+            <tr><td>{{ section.settings.row_chest | default: 'Chest' }}</td>      <td>{{ section.settings.men_chest_m  | default: '110' }}</td><td>{{ section.settings.men_chest_l  | default: '115' }}</td><td>{{ section.settings.men_chest_ll | default: '120' }}</td><td>{{ section.settings.men_chest_3l | default: '125' }}</td></tr>
+            <tr><td>{{ section.settings.row_sleeve | default: 'Sleeve' }}</td>     <td>{{ section.settings.men_sleeve_m  | default: '64' }}</td><td>{{ section.settings.men_sleeve_l  | default: '65' }}</td><td>{{ section.settings.men_sleeve_ll | default: '66' }}</td><td>{{ section.settings.men_sleeve_3l | default: '68' }}</td></tr>
           </tbody>
         </table>
       </div>
@@ -170,7 +170,7 @@
       {% if section.settings.men_model_note != blank %}
         <div class="ag-size-guide__models">
           <div class="ag-size-guide__model-card">
-            <strong>Men's Model</strong>
+            <strong>{{ section.settings.men_model_label | default: "Men's Model" }}</strong>
             {{ section.settings.men_model_note }}
           </div>
         </div>
@@ -179,23 +179,23 @@
 
     <!-- ══ WOMEN'S TABLE ══ -->
     <div id="ag-size-women" class="ag-size-panel">
-      <p class="ag-size-guide__unit-note">Unit: cm</p>
+      <p class="ag-size-guide__unit-note">{{ section.settings.unit_note | default: 'Unit: cm' }}</p>
       <div class="ag-comparison__table-wrap">
         <table class="ag-comparison__table">
           <thead>
             <tr>
               <th></th>
-              <th>S</th>
-              <th>M</th>
-              <th>L</th>
-              <th>LL</th>
+              <th>{{ section.settings.women_size_s  | default: 'S' }}</th>
+              <th>{{ section.settings.women_size_m  | default: 'M' }}</th>
+              <th>{{ section.settings.women_size_l  | default: 'L' }}</th>
+              <th>{{ section.settings.women_size_ll | default: 'LL' }}</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Body Length</td><td>{{ section.settings.women_length_s  | default: '61' }}</td><td>{{ section.settings.women_length_m  | default: '62' }}</td><td>{{ section.settings.women_length_l  | default: '64' }}</td><td>{{ section.settings.women_length_ll | default: '66' }}</td></tr>
-            <tr><td>Shoulder</td>   <td>{{ section.settings.women_shoulder_s  | default: '42' }}</td><td>{{ section.settings.women_shoulder_m  | default: '44' }}</td><td>{{ section.settings.women_shoulder_l  | default: '46' }}</td><td>{{ section.settings.women_shoulder_ll | default: '48' }}</td></tr>
-            <tr><td>Chest</td>      <td>{{ section.settings.women_chest_s  | default: '99.5' }}</td><td>{{ section.settings.women_chest_m  | default: '103.5' }}</td><td>{{ section.settings.women_chest_l  | default: '109.5' }}</td><td>{{ section.settings.women_chest_ll | default: '115.5' }}</td></tr>
-            <tr><td>Sleeve</td>     <td>{{ section.settings.women_sleeve_s  | default: '56' }}</td><td>{{ section.settings.women_sleeve_m  | default: '58.5' }}</td><td>{{ section.settings.women_sleeve_l  | default: '60' }}</td><td>{{ section.settings.women_sleeve_ll | default: '61.5' }}</td></tr>
+            <tr><td>{{ section.settings.row_body_length | default: 'Body Length' }}</td><td>{{ section.settings.women_length_s  | default: '61' }}</td><td>{{ section.settings.women_length_m  | default: '62' }}</td><td>{{ section.settings.women_length_l  | default: '64' }}</td><td>{{ section.settings.women_length_ll | default: '66' }}</td></tr>
+            <tr><td>{{ section.settings.row_shoulder | default: 'Shoulder' }}</td>   <td>{{ section.settings.women_shoulder_s  | default: '42' }}</td><td>{{ section.settings.women_shoulder_m  | default: '44' }}</td><td>{{ section.settings.women_shoulder_l  | default: '46' }}</td><td>{{ section.settings.women_shoulder_ll | default: '48' }}</td></tr>
+            <tr><td>{{ section.settings.row_chest | default: 'Chest' }}</td>      <td>{{ section.settings.women_chest_s  | default: '99.5' }}</td><td>{{ section.settings.women_chest_m  | default: '103.5' }}</td><td>{{ section.settings.women_chest_l  | default: '109.5' }}</td><td>{{ section.settings.women_chest_ll | default: '115.5' }}</td></tr>
+            <tr><td>{{ section.settings.row_sleeve | default: 'Sleeve' }}</td>     <td>{{ section.settings.women_sleeve_s  | default: '56' }}</td><td>{{ section.settings.women_sleeve_m  | default: '58.5' }}</td><td>{{ section.settings.women_sleeve_l  | default: '60' }}</td><td>{{ section.settings.women_sleeve_ll | default: '61.5' }}</td></tr>
           </tbody>
         </table>
       </div>
@@ -203,7 +203,7 @@
       {% if section.settings.women_model_note != blank %}
         <div class="ag-size-guide__models">
           <div class="ag-size-guide__model-card">
-            <strong>Women's Model</strong>
+            <strong>{{ section.settings.women_model_label | default: "Women's Model" }}</strong>
             {{ section.settings.women_model_note }}
           </div>
         </div>
@@ -242,6 +242,27 @@
     { "type": "text",     "id": "heading", "label": "Heading",       "default": "Find Your Size" },
     { "type": "textarea", "id": "intro",   "label": "Intro Text",    "default": "If you're between sizes, we recommend sizing up for layering flexibility." },
     { "type": "textarea", "id": "fit_tip", "label": "Fit Tip",       "default": "When in doubt, size up — AirLight is designed with room to layer." },
+    { "type": "text",     "id": "tab_men",    "label": "Tab — Men's",   "default": "Men's" },
+    { "type": "text",     "id": "tab_women",  "label": "Tab — Women's", "default": "Women's" },
+    { "type": "text",     "id": "unit_note",  "label": "Unit Note",     "default": "Unit: cm" },
+    { "type": "text",     "id": "row_body_length", "label": "Row Label — Body Length", "default": "Body Length" },
+    { "type": "text",     "id": "row_shoulder",    "label": "Row Label — Shoulder",    "default": "Shoulder" },
+    { "type": "text",     "id": "row_chest",       "label": "Row Label — Chest",       "default": "Chest" },
+    { "type": "text",     "id": "row_sleeve",      "label": "Row Label — Sleeve",      "default": "Sleeve" },
+    { "type": "text",     "id": "men_model_label",   "label": "Men's Model Label",   "default": "Men's Model" },
+    { "type": "text",     "id": "women_model_label", "label": "Women's Model Label", "default": "Women's Model" },
+
+    { "type": "header", "content": "── Men's Size Column Headers ──" },
+    { "type": "text", "id": "men_size_m",  "label": "Men's Header — M",  "default": "M" },
+    { "type": "text", "id": "men_size_l",  "label": "Men's Header — L",  "default": "L" },
+    { "type": "text", "id": "men_size_ll", "label": "Men's Header — LL", "default": "LL" },
+    { "type": "text", "id": "men_size_3l", "label": "Men's Header — 3L", "default": "3L" },
+
+    { "type": "header", "content": "── Women's Size Column Headers ──" },
+    { "type": "text", "id": "women_size_s",  "label": "Women's Header — S",  "default": "S" },
+    { "type": "text", "id": "women_size_m",  "label": "Women's Header — M",  "default": "M" },
+    { "type": "text", "id": "women_size_l",  "label": "Women's Header — L",  "default": "L" },
+    { "type": "text", "id": "women_size_ll", "label": "Women's Header — LL", "default": "LL" },
 
     { "type": "header", "content": "── Men's Sizes (cm) ──" },
     { "type": "text", "id": "men_length_m",    "label": "Body Length — M",  "default": "65" },
@@ -260,7 +281,7 @@
     { "type": "text", "id": "men_sleeve_l",    "label": "Sleeve — L",  "default": "65" },
     { "type": "text", "id": "men_sleeve_ll",   "label": "Sleeve — LL", "default": "66" },
     { "type": "text", "id": "men_sleeve_3l",   "label": "Sleeve — 3L", "default": "68" },
-    { "type": "textarea", "id": "men_model_note", "label": "Men's Model Note", "default": "" },
+    { "type": "textarea", "id": "men_model_note", "label": "Men's Model Note" },
 
     { "type": "header", "content": "── Women's Sizes (cm) ──" },
     { "type": "text", "id": "women_length_s",    "label": "Body Length — S",  "default": "61" },
@@ -279,7 +300,7 @@
     { "type": "text", "id": "women_sleeve_m",    "label": "Sleeve — M",  "default": "58.5" },
     { "type": "text", "id": "women_sleeve_l",    "label": "Sleeve — L",  "default": "60" },
     { "type": "text", "id": "women_sleeve_ll",   "label": "Sleeve — LL", "default": "61.5" },
-    { "type": "textarea", "id": "women_model_note", "label": "Women's Model Note", "default": "" }
+    { "type": "textarea", "id": "women_model_note", "label": "Women's Model Note" }
   ],
   "presets": [
     {

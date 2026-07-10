@@ -207,9 +207,9 @@
         <thead>
           <tr>
             <th></th>
-            <th class="ag-comparison__th--hero">★ OUR PICK</th>
-            <th>Down</th>
-            <th>Synthetic</th>
+            <th class="ag-comparison__th--hero">{{ section.settings.header_airlight_desktop | default: '★ OUR PICK' }}</th>
+            <th>{{ section.settings.header_down | default: 'Down' }}</th>
+            <th>{{ section.settings.header_synthetic | default: 'Synthetic' }}</th>
           </tr>
         </thead>
         <tbody>
@@ -231,9 +231,9 @@
     <div class="ag-comparison__cards">
       <!-- Column headers -->
       <div class="ag-comp-header">
-        <div class="ag-comp-header__cell ag-comp-header__cell--hero">AirLight</div>
-        <div class="ag-comp-header__cell">Down</div>
-        <div class="ag-comp-header__cell">Synthetic</div>
+        <div class="ag-comp-header__cell ag-comp-header__cell--hero">{{ section.settings.header_airlight_mobile | default: 'AirLight' }}</div>
+        <div class="ag-comp-header__cell">{{ section.settings.header_down | default: 'Down' }}</div>
+        <div class="ag-comp-header__cell">{{ section.settings.header_synthetic | default: 'Synthetic' }}</div>
       </div>
 
       {% for block in section.blocks %}
@@ -264,6 +264,10 @@
   "name": "AG Comparison",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "How AirLight Compares." },
+    { "type": "text", "id": "header_airlight_desktop", "label": "Desktop Column Header — AirLight", "default": "★ OUR PICK" },
+    { "type": "text", "id": "header_airlight_mobile", "label": "Mobile Column Header — AirLight", "default": "AirLight" },
+    { "type": "text", "id": "header_down", "label": "Column Header — Down", "default": "Down" },
+    { "type": "text", "id": "header_synthetic", "label": "Column Header — Synthetic", "default": "Synthetic" },
     {
       "type": "textarea",
       "id": "custom_css",
@@ -289,7 +293,7 @@
         { "type": "row", "settings": { "feature": "Warmth", "airlight": "✅ Proven in -20°C winters", "down": "✅ Effective", "synthetic": "⚠️ Adequate" } },
         { "type": "row", "settings": { "feature": "Water Resistance", "airlight": "✅ Maintained when wet", "down": "❌ Collapses", "synthetic": "✅ Maintained" } },
         { "type": "row", "settings": { "feature": "Machine Washable", "airlight": "✅ Yes — cold cycle", "down": "❌ Dry-clean only", "synthetic": "⚠️ Often yes" } },
-        { "type": "row", "settings": { "feature": "Allergen-Free", "airlight": "✅ 100% plant-based", "down": "❌ No", "synthetic": "✅ Yes" } },
+        { "type": "row", "settings": { "feature": "Allergen-Free", "airlight": "✅ Kapok plant fiber", "down": "❌ No", "synthetic": "✅ Yes" } },
         { "type": "row", "settings": { "feature": "Animal-Free", "airlight": "✅ Yes", "down": "❌ No", "synthetic": "✅ Yes" } },
         { "type": "row", "settings": { "feature": "Price", "airlight": "✅ $398", "down": "❌ $350–600", "synthetic": "⚠️ $200–400" } }
       ]

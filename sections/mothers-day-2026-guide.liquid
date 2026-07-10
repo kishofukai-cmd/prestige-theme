@@ -1,0 +1,518 @@
+{% comment %}
+  Mother's Day 2026 SEO Guide Article — Editable Section
+  Use via templates/article.mothers-day-2026-guide.json
+{% endcomment %}
+
+{%- liquid
+  assign cw_img = section.settings.kv_left_image
+  if cw_img != blank
+    assign cw_url = cw_img | image_url: width: 1200
+  else
+    assign cw_url = section.settings.kv_left_image_url
+  endif
+
+  assign bp_img = section.settings.kv_right_image
+  if bp_img != blank
+    assign bp_url = bp_img | image_url: width: 1200
+  else
+    assign bp_url = section.settings.kv_right_image_url
+  endif
+
+  assign life_img = section.settings.lifestyle_image
+  if life_img != blank
+    assign life_url = life_img | image_url: width: 1600
+  else
+    assign life_url = section.settings.lifestyle_image_url
+  endif
+
+  assign mv_img = section.settings.musubi_variations_image
+  if mv_img != blank
+    assign mv_url = mv_img | image_url: width: 1600
+  else
+    assign mv_url = section.settings.musubi_variations_image_url
+  endif
+-%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  header-sidebar#sidebar-menu:not([open]),
+  x-drawer:not([open]),
+  #sidebar-menu:not([open]),
+  .header-sidebar:not([open]),
+  cart-drawer:not([open]),
+  #cart-drawer:not([open]) { display: none !important; }
+  @media screen and (max-width: 999px) {
+    .md-max\:hidden { display: none !important; }
+  }
+
+  .seo-article { font-family: 'Noto Sans JP', sans-serif; color: #2B2B2B; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; font-size: 16px; position:relative; z-index:1; isolation:isolate; }
+  .seo-article h1 { font-family: 'Noto Serif JP', serif; font-size: 26px; color: #1F2A44; line-height: 1.5; margin: 24px 0 12px; letter-spacing: 0.02em; }
+  .seo-article h2 { font-family: 'Noto Serif JP', serif; font-size: 22px; color: #1F2A44; line-height: 1.5; margin: 56px 0 20px; padding-top: 20px; border-top: 1px solid #E8DFD1; letter-spacing: 0.02em; }
+  .seo-article h3 { font-family: 'Noto Serif JP', serif; font-size: 17px; color: #1F2A44; margin: 32px 0 12px; }
+  .seo-article p { margin: 0 0 18px; text-align: left; }
+  .seo-article ul, .seo-article ol { margin: 0 0 18px; padding-left: 24px; }
+  .seo-article li { margin: 6px 0; line-height: 1.9; }
+  .seo-article a { color: #B97A5C; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .seo-article strong { color: #1F2A44; font-weight: 500; }
+  .seo-article table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0 24px; }
+  .seo-article th, .seo-article td { padding: 10px 12px; border: 1px solid #E8DFD1; text-align: left; }
+  .seo-article th { background: #F7F3EC; color: #1F2A44; font-weight: 500; }
+  .seo-article blockquote { border-left: 3px solid #B97A5C; padding: 16px 20px; background: #F7F3EC; margin: 20px 0; font-size: 15px; }
+  .seo-article blockquote p { margin: 0 0 8px; }
+  .seo-article blockquote p:last-child { margin: 0; color: #6B6B6B; font-size: 13px; }
+  .seo-article hr { border: 0; border-top: 1px solid #E8DFD1; margin: 48px 0; }
+  .seo-meta { color: #6B6B6B; font-size: 13px; display: block; margin-bottom: 32px; }
+  .seo-article img { display: block; max-width: 100%; height: auto; margin: 24px 0; }
+
+  .seo-kv { background: linear-gradient(135deg, #FAF4EE 0%, #F9E6E4 100%); padding: 40px 24px; margin: 24px 0 40px; border-radius: 4px; }
+  .seo-kv-eyebrow { color: #B97A5C; font-size: 12px; letter-spacing: 0.3em; text-align: center; margin-bottom: 16px; }
+  .seo-kv-colors { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; margin: 0 auto; }
+  .seo-kv-card { background: #fff; padding: 16px; text-align: center; }
+  .seo-kv-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; margin: 0 0 12px; }
+  .seo-kv-card .color-label { font-family: 'Noto Serif JP', serif; font-size: 14px; color: #1F2A44; display: block; margin-bottom: 4px; }
+  .seo-kv-card .color-ja { font-size: 11px; color: #6B6B6B; }
+  .seo-kv-caption { text-align: center; margin-top: 20px; font-size: 13px; color: #6B6B6B; }
+
+  .seo-row-highlight { background: #FAF4EE !important; }
+
+  .seo-cta-block { text-align: center; margin: 40px 0; }
+  .seo-article a.seo-btn { display: inline-block; padding: 14px 32px; text-decoration: none !important; margin: 6px 4px; font-size: 15px; font-weight: 500; border: 1px solid #1F2A44; min-height: 48px; letter-spacing: 0.06em; line-height: 1.4; transition: all .2s ease; }
+  .seo-article a.seo-btn-primary,
+  .seo-article a.seo-btn-primary:link,
+  .seo-article a.seo-btn-primary:visited { background: #1F2A44 !important; color: #ffffff !important; border-color: #1F2A44 !important; }
+  .seo-article a.seo-btn-primary *,
+  .seo-article a.seo-btn-primary strong { color: #ffffff !important; }
+  .seo-article a.seo-btn-primary:hover { background: #2a3657 !important; color: #ffffff !important; }
+  .seo-article a.seo-btn-secondary,
+  .seo-article a.seo-btn-secondary:link,
+  .seo-article a.seo-btn-secondary:visited { background: #ffffff !important; color: #1F2A44 !important; border-color: #1F2A44 !important; }
+  .seo-article a.seo-btn-secondary *,
+  .seo-article a.seo-btn-secondary strong { color: #1F2A44 !important; }
+  .seo-article a.seo-btn-secondary:hover { background: #1F2A44 !important; color: #ffffff !important; }
+  .seo-article a.seo-btn-secondary:hover * { color: #ffffff !important; }
+
+  .seo-footnote { font-size: 13px; color: #6B6B6B; }
+  .seo-toc { background: #F7F3EC; padding: 20px 24px; margin: 32px 0; border-left: 3px solid #B97A5C; }
+  .seo-toc summary { cursor: pointer; font-weight: 500; color: #1F2A44; font-size: 14px; padding: 4px 0; list-style: none; }
+  .seo-toc summary::-webkit-details-marker { display: none; }
+  .seo-toc summary::after { content: ' ▼'; color: #B97A5C; font-size: 10px; }
+  .seo-toc[open] summary::after { content: ' ▲'; }
+  .seo-toc ol { margin: 16px 0 0; padding-left: 20px; }
+  .seo-toc a { color: #2B2B2B; text-decoration: none; font-size: 14px; }
+  .seo-toc a:hover { color: #B97A5C; }
+</style>
+
+<article class="seo-article">
+
+  <h1>{{ section.settings.article_title }}</h1>
+  <span class="seo-meta">{{ section.settings.article_meta }}</span>
+
+  {{ section.settings.lead_paragraphs }}
+
+  <!-- KV -->
+  {%- assign has_kv_img = false -%}
+  {%- if cw_url != blank or bp_url != blank -%}{%- assign has_kv_img = true -%}{%- endif -%}
+  {%- if section.settings.show_kv and has_kv_img -%}
+  <div class="seo-kv">
+    <p class="seo-kv-eyebrow">{{ section.settings.kv_eyebrow }}</p>
+    <div class="seo-kv-colors">
+      <a href="{{ section.settings.kv_left_link }}" target="_blank" class="seo-kv-card">
+        {%- if cw_url != blank -%}<img src="{{ cw_url }}" alt="{{ section.settings.kv_left_alt }}" width="800" height="800" loading="eager" fetchpriority="high">{%- endif -%}
+        <span class="color-label">{{ section.settings.kv_left_label }}</span>
+        <span class="color-ja">{{ section.settings.kv_left_desc }}</span>
+      </a>
+      <a href="{{ section.settings.kv_right_link }}" target="_blank" class="seo-kv-card">
+        {%- if bp_url != blank -%}<img src="{{ bp_url }}" alt="{{ section.settings.kv_right_alt }}" width="800" height="800" loading="eager">{%- endif -%}
+        <span class="color-label">{{ section.settings.kv_right_label }}</span>
+        <span class="color-ja">{{ section.settings.kv_right_desc }}</span>
+      </a>
+    </div>
+    <p class="seo-kv-caption">{{ section.settings.kv_caption }}</p>
+  </div>
+  {%- endif -%}
+
+  <!-- 目次 -->
+  {%- if section.settings.show_toc -%}
+  <details class="seo-toc">
+    <summary>{{ section.settings.toc_title }}</summary>
+    <ol>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'toc_item' -%}
+          <li><a href="{{ block.settings.anchor }}">{{ block.settings.label }}</a></li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ol>
+  </details>
+  {%- endif -%}
+
+  <!-- Section 1: ランキング -->
+  <h2 id="sec1">{{ section.settings.sec1_h2 }}</h2>
+  {{ section.settings.sec1_intro }}
+
+  <table>
+    <thead>
+      <tr>
+        <th>{{ section.settings.sec1_col_1 }}</th>
+        <th>{{ section.settings.sec1_col_2 }}</th>
+        <th style="text-align:right;">{{ section.settings.sec1_col_3 }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'rank_row' -%}
+          <tr{% if block.settings.highlight %} class="seo-row-highlight"{% endif %}>
+            <td>{% if block.settings.highlight %}<strong>{{ block.settings.rank }}</strong>{% else %}{{ block.settings.rank }}{% endif %}</td>
+            <td>{% if block.settings.highlight %}<strong>{{ block.settings.category }}</strong>{% else %}{{ block.settings.category }}{% endif %}</td>
+            <td style="text-align:right;">{% if block.settings.highlight %}<strong>{{ block.settings.percentage }}</strong>{% else %}{{ block.settings.percentage }}{% endif %}</td>
+          </tr>
+        {%- endif -%}
+      {%- endfor -%}
+    </tbody>
+  </table>
+
+  {{ section.settings.sec1_body_after }}
+
+  <!-- Section 2: 眠りのギフト -->
+  <h2 id="sec2">{{ section.settings.sec2_h2 }}</h2>
+  {{ section.settings.sec2_body_before_image }}
+
+  {%- if life_url != blank -%}
+  <img src="{{ life_url }}" alt="{{ section.settings.lifestyle_alt }}" width="1600" height="900" loading="lazy">
+  {%- endif -%}
+
+  {{ section.settings.sec2_body_after_image }}
+
+  <!-- Section 3: 3つのポイント -->
+  <h2 id="sec3">{{ section.settings.sec3_h2 }}</h2>
+  {{ section.settings.sec3_body }}
+
+  <!-- Section 4: MUSUBI -->
+  <h2 id="sec4">{{ section.settings.sec4_h2 }}</h2>
+
+  {%- if mv_url != blank -%}
+  <img src="{{ mv_url }}" alt="{{ section.settings.musubi_variations_alt }}" width="1600" height="900" loading="lazy">
+  {%- endif -%}
+
+  {{ section.settings.sec4_intro }}
+
+  <h3>{{ section.settings.sec4_features_h3 }}</h3>
+  {{ section.settings.sec4_features_body }}
+
+  <h3>{{ section.settings.sec4_models_h3 }}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>{{ section.settings.sec4_col_1 }}</th>
+        <th>{{ section.settings.sec4_col_2 }}</th>
+        <th>{{ section.settings.sec4_col_3 }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'model_row' -%}
+          <tr>
+            <td>{{ block.settings.model }}</td>
+            <td>{{ block.settings.target }}</td>
+            <td>{{ block.settings.price }}</td>
+          </tr>
+        {%- endif -%}
+      {%- endfor -%}
+    </tbody>
+  </table>
+
+  {{ section.settings.sec4_body_after }}
+
+  <div class="seo-cta-block">
+    <a href="{{ section.settings.sec4_cta_url }}" target="_blank" class="seo-btn seo-btn-primary"><strong>{{ section.settings.sec4_cta_text }}</strong></a>
+  </div>
+
+  <!-- Section 5: 比較表 -->
+  <h2 id="sec5">{{ section.settings.sec5_h2 }}</h2>
+  {{ section.settings.sec5_intro }}
+
+  <table>
+    <thead>
+      <tr>
+        <th>{{ section.settings.sec5_col_1 }}</th>
+        <th>{{ section.settings.sec5_col_2 }}</th>
+        <th>{{ section.settings.sec5_col_3 }}</th>
+        <th>{{ section.settings.sec5_col_4 }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'compare_row' -%}
+          <tr{% if block.settings.highlight %} class="seo-row-highlight"{% endif %}>
+            <td>{% if block.settings.highlight %}<strong>{{ block.settings.item }}</strong>{% else %}{{ block.settings.item }}{% endif %}</td>
+            <td>{{ block.settings.price_range }}</td>
+            <td>{{ block.settings.all_season }}</td>
+            <td>{{ block.settings.size_risk }}</td>
+          </tr>
+        {%- endif -%}
+      {%- endfor -%}
+    </tbody>
+  </table>
+
+  {{ section.settings.sec5_body_after }}
+
+  <!-- Section 6: お客さまの声 -->
+  <h2 id="sec6">{{ section.settings.sec6_h2 }}</h2>
+
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'voice' -%}
+      <blockquote>
+        <p>{{ block.settings.quote }}</p>
+        <p>— {{ block.settings.who }}</p>
+      </blockquote>
+    {%- endif -%}
+  {%- endfor -%}
+
+  <p class="seo-footnote">{{ section.settings.sec6_footnote }}</p>
+
+  <!-- Section 7: 配送 -->
+  <h2 id="sec7">{{ section.settings.sec7_h2 }}</h2>
+  {{ section.settings.sec7_body }}
+
+  <!-- Section 8: まとめ -->
+  <h2 id="sec8">{{ section.settings.sec8_h2 }}</h2>
+  {{ section.settings.sec8_body }}
+
+  <hr>
+
+  <div class="seo-cta-block">
+    <a href="{{ section.settings.final_lp_cta_url }}" target="_blank" class="seo-btn seo-btn-primary"><strong>{{ section.settings.final_lp_cta_text }}</strong></a>
+  </div>
+
+  <div class="seo-cta-block">
+    <a href="{{ section.settings.final_cta1_url }}" target="_blank" class="seo-btn seo-btn-secondary">{{ section.settings.final_cta1_text }}</a>
+    <a href="{{ section.settings.final_cta2_url }}" target="_blank" class="seo-btn seo-btn-secondary">{{ section.settings.final_cta2_text }}</a>
+  </div>
+
+  <hr>
+
+  <h3>{{ section.settings.references_h3 }}</h3>
+  <ul class="seo-footnote">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'reference' -%}
+        <li>{{ block.settings.text }}</li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+  <h3>{{ section.settings.related_h3 }}</h3>
+  <ul>
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'related_link' -%}
+        <li><a href="{{ block.settings.url }}" target="_blank">{{ block.settings.label }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+
+</article>
+
+{%- if section.settings.enable_structured_data -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ section.settings.article_title | json }},
+  "description": {{ section.settings.seo_description | json }},
+  "datePublished": "{{ article.published_at | default: '2026-04-28' | date: '%Y-%m-%d' }}",
+  "dateModified": "{{ article.updated_at | default: 'now' | date: '%Y-%m-%d' }}",
+  "author": { "@type": "Organization", "name": "KAPOK KNOT", "url": "https://kapok-knot.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KAPOK KNOT",
+    "logo": { "@type": "ImageObject", "url": "{{ 'logo.png' | asset_url }}" }
+  },
+  "image": [{{ cw_url | json }}, {{ bp_url | json }}],
+  "mainEntityOfPage": "{{ canonical_url }}"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://kapok-knot.com/"},
+    {"@type":"ListItem","position":2,"name":"Magazine","item":"https://kapok-knot.com/blogs/magazine"},
+    {"@type":"ListItem","position":3,"name":{{ section.settings.article_title | json }},"item":"{{ canonical_url }}"}
+  ]
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "母の日2026 ガイド記事",
+  "settings": [
+    { "type": "header", "content": "🎛 セクション表示ON/OFF", "info": "各セクションを丸ごと非表示にできます。個別のテキスト編集は下の各セクション設定を開いてください。" },
+    { "type": "checkbox", "id": "show_kv", "label": "KV（2色推し）", "default": true },
+    { "type": "checkbox", "id": "show_toc", "label": "目次", "default": true },
+
+    { "type": "header", "content": "記事ヘッダー" },
+    { "type": "text", "id": "article_title", "label": "タイトル", "default": "2026年の母の日ギフト｜50代・60代のお母さまが本当に喜ぶ「眠り」の贈り物とは" },
+    { "type": "text", "id": "article_meta", "label": "メタ（公開日｜著者）", "default": "公開日：2026年4月28日｜KAPOK KNOT編集部" },
+    { "type": "richtext", "id": "lead_paragraphs", "label": "リード段落", "default": "<p>「今年の母の日、どんなプレゼントにしよう？」</p><p>毎年5月の第2日曜日が近づくと、決まってこの悩みがやってきます。お花、スイーツ、洋服……定番は色々あるけれど、<strong>去年と同じになっていませんか？</strong></p><p>この記事では、2026年の母の日に選ばれはじめている新しい選択肢、<strong>「眠り」を贈るギフト</strong>についてご紹介します。50代・60代のお母さまに「それ、本当に欲しかった」と言ってもらえる贈り方のヒントを、調査データと共にお届けします。</p>" },
+
+    { "type": "header", "content": "KV（2色推し）" },
+    { "type": "text", "id": "kv_eyebrow", "label": "アイブロウ", "default": "— 母の日2026 限定推しカラー —" },
+    { "type": "image_picker", "id": "kv_left_image", "label": "左画像" },
+    { "type": "text", "id": "kv_left_image_url", "label": "左画像URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=1200" },
+    { "type": "text", "id": "kv_left_alt", "label": "左 alt", "default": "MUSUBI -en- Cloud White｜母の日2026" },
+    { "type": "text", "id": "kv_left_label", "label": "左 ラベル", "default": "Cloud White" },
+    { "type": "text", "id": "kv_left_desc", "label": "左 説明", "default": "清潔感のある上品な白" },
+    { "type": "text", "id": "kv_left_link", "label": "左 リンク", "default": "https://kapok-knot.com/products/musubi-en?variant=cloud-white" },
+    { "type": "image_picker", "id": "kv_right_image", "label": "右画像" },
+    { "type": "text", "id": "kv_right_image_url", "label": "右画像URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200" },
+    { "type": "text", "id": "kv_right_alt", "label": "右 alt", "default": "MUSUBI -en- Blossom Peach｜母の日2026" },
+    { "type": "text", "id": "kv_right_label", "label": "右 ラベル", "default": "Blossom Peach" },
+    { "type": "text", "id": "kv_right_desc", "label": "右 説明", "default": "母の日らしい、やさしいピーチ" },
+    { "type": "text", "id": "kv_right_link", "label": "右 リンク", "default": "https://kapok-knot.com/products/musubi-en?variant=blossom-peach" },
+    { "type": "richtext", "id": "kv_caption", "label": "キャプション", "default": "<p>母の日のお気持ちに寄り添う、KAPOK KNOTが厳選した2色。<br>リカバリー加重ブランケット「MUSUBI -en-」より。</p>" },
+
+    { "type": "header", "content": "目次" },
+    { "type": "text", "id": "toc_title", "label": "目次タイトル", "default": "この記事の目次", "info": "目次項目は下のブロックで追加/削除/並べ替え可" },
+
+    { "type": "header", "content": "Section 1: ランキング" },
+    { "type": "text", "id": "sec1_h2", "label": "H2", "default": "1. 2026年、お母さまが\"本当に\"欲しいものは？" },
+    { "type": "richtext", "id": "sec1_intro", "label": "本文（表の前）", "default": "<p>最新の調査（「母の日.me 2026年版 母の日に関するアンケート」）によると、もらって嬉しい母の日ギフトのランキングは以下のとおりです。</p>" },
+    { "type": "text", "id": "sec1_col_1", "label": "表 列1", "default": "順位" },
+    { "type": "text", "id": "sec1_col_2", "label": "表 列2", "default": "カテゴリ" },
+    { "type": "text", "id": "sec1_col_3", "label": "表 列3", "default": "割合" },
+    { "type": "richtext", "id": "sec1_body_after", "label": "本文（表の後）", "default": "<p>注目したいのは4位の<strong>「健康・生活雑貨」</strong>。30〜40代の贈り手が選ぶ傾向として、「お母さまのライフスタイルに寄り添う、実用的かつ特別感のあるギフト」が静かに支持を集めています。</p><p>花束は美しいけれど、数日で枯れてしまう。スイーツは嬉しいけれど、一瞬で消えてしまう。<strong>\"毎日使える、でも自分では買わないような少し贅沢なもの\"</strong>が、いま50代・60代のお母さまに求められているのです。</p>" },
+
+    { "type": "header", "content": "Section 2: 眠りのギフト" },
+    { "type": "text", "id": "sec2_h2", "label": "H2", "default": "2. 50代・60代のお母さまに今、贈りたい「眠りのギフト」" },
+    { "type": "richtext", "id": "sec2_body_before_image", "label": "画像前 本文", "default": "<p>「お母さま、最近ちゃんと眠れているかな？」</p><p>年齢とともに、睡眠の質は変わっていきます。50代・60代は、ホルモンバランスの変化や日々の疲れで、「朝すっきり起きられない」「夜、途中で目が覚める」といった声が増える世代。でも、<strong>お母さま自身から\"眠りのグッズが欲しい\"と口に出すことは、ほとんどありません。</strong></p><p>だからこそ、贈り手から先回りして届けるのが優しさ。いま注目されているのが、<strong>「加重ブランケット」</strong>というアイテムです。</p><h3>加重ブランケットとは？</h3><p>加重ブランケットは、一般的な布団より<strong>少し重いブランケット</strong>のこと。約3〜5kgの適度な重みが、体全体にやさしく寄り添います。海外では\"Weighted Blanket\"と呼ばれ、欧米を中心にリラックスタイムの新定番として広まりました。</p>" },
+    { "type": "image_picker", "id": "lifestyle_image", "label": "ライフスタイル画像" },
+    { "type": "text", "id": "lifestyle_image_url", "label": "画像URL", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1664.jpg?v=1750302860&width=1600" },
+    { "type": "text", "id": "lifestyle_alt", "label": "alt", "default": "MUSUBIをかけてくつろぐシーン｜2026年母の日ギフト" },
+    { "type": "richtext", "id": "sec2_body_after_image", "label": "画像後 本文", "default": "<h3>科学が示唆する、「重み」のやすらぎ効果</h3><p>適度な重みのある寝具は、海外の複数の研究で<strong>リラックス時の心理的指標との関連が報告されています</strong>。たとえば：</p><ul><li>就寝前の副交感神経活動との関連を示した研究（※1）</li><li>深い呼吸状態への関連を示唆した報告（※2）</li><li>メラトニン濃度との関連を示唆する研究（※3）</li></ul><p>もちろん、これらは医学的効能を保証するものではなく、<strong>体感には個人差があります</strong>。ただ、「適度な重みに包まれて安心する」という感覚は、多くの人が共通して感じるものとして知られています。</p>" },
+
+    { "type": "header", "content": "Section 3: 選び方ポイント" },
+    { "type": "text", "id": "sec3_h2", "label": "H2", "default": "3. 選び方に迷わない！母の日ギフト 3つのポイント" },
+    { "type": "richtext", "id": "sec3_body", "label": "本文", "default": "<p>「買ってみたけれど、母が気に入ってくれなかった」——そんな残念な結果を避けるために、母の日ギフトを選ぶときに押さえたい3つのポイントをまとめました。</p><h3>ポイント 1｜お母さまの\"身体の状態\"を基準にする</h3><p>加重ブランケットは、重みを体で感じるアイテム。そのため、<strong>70代以上や、筋力が気になる方には軽量タイプ</strong>を、<strong>50〜60代の元気なお母さま</strong>には一般サイズをおすすめします。</p><h3>ポイント 2｜\"毎日使える\"実用性を意識する</h3><p>一度きりで終わるものより、毎日・毎週お母さまの生活に溶け込むもの。<strong>ソファ用の昼寝サイズ、または睡眠時に使えるサイズ</strong>を、お母さまのライフスタイルに合わせて選びましょう。</p><h3>ポイント 3｜サイズや好みに迷ったら「ギフトカード」</h3><p>「色やサイズで失敗したくない」「遠方に住んでいるお母さまに自分で選んでほしい」——そんなときは、<strong>ブランドのギフトカード</strong>という選択肢もあります。金額を自由に設定でき、兄弟姉妹で折半することも可能です。</p>" },
+
+    { "type": "header", "content": "Section 4: MUSUBI" },
+    { "type": "text", "id": "sec4_h2", "label": "H2", "default": "4. 特別な母の日に、「重み」を贈るという選択：MUSUBIという答え" },
+    { "type": "image_picker", "id": "musubi_variations_image", "label": "MUSUBI画像" },
+    { "type": "text", "id": "musubi_variations_image_url", "label": "画像URL", "default": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_0885.jpg?v=1771395913&width=1600" },
+    { "type": "text", "id": "musubi_variations_alt", "label": "alt", "default": "リカバリー加重ブランケットMUSUBI" },
+    { "type": "richtext", "id": "sec4_intro", "label": "イントロ", "default": "<p>KAPOK KNOTが開発した<strong>リカバリー加重ブランケット「MUSUBI」</strong>は、2026年の母の日に\"眠り\"を贈りたい方からの支持を集めているアイテムです。</p>" },
+    { "type": "text", "id": "sec4_features_h3", "label": "H3 特徴", "default": "MUSUBIの特徴" },
+    { "type": "richtext", "id": "sec4_features_body", "label": "特徴本文", "default": "<ul><li><strong>植物由来のカポック繊維</strong>を使用（動物を傷つけない素材）</li><li><strong>あみあみ構造</strong>による通気性で、夏も蒸れにくい365日仕様</li><li>体重の約8〜12%が目安の<strong>適度な重み</strong>（3.0〜4.5kg）</li><li>ご自宅で<strong>手洗い可能</strong>、お手入れもシンプル</li><li>特許出願中のリカバリー加重ブランケット</li></ul>" },
+    { "type": "text", "id": "sec4_models_h3", "label": "H3 モデル", "default": "母の日におすすめのモデル" },
+    { "type": "text", "id": "sec4_col_1", "label": "表 列1", "default": "モデル" },
+    { "type": "text", "id": "sec4_col_2", "label": "表 列2", "default": "こんなお母さまに" },
+    { "type": "text", "id": "sec4_col_3", "label": "表 列3", "default": "価格（税込）" },
+    { "type": "richtext", "id": "sec4_body_after", "label": "表の後", "default": "<p>特に<strong>Cloud White</strong>と<strong>Blossom Peach</strong>は、母の日にお贈りする1枚として選ばれています。どちらもお母さまのお部屋に馴染みやすく、季節を問わず使いやすいカラーです。</p>" },
+    { "type": "text", "id": "sec4_cta_text", "label": "CTA テキスト", "default": "MUSUBI -en- を見る →" },
+    { "type": "text", "id": "sec4_cta_url", "label": "CTA リンク", "default": "https://kapok-knot.com/products/musubi-en" },
+
+    { "type": "header", "content": "Section 5: 比較表" },
+    { "type": "text", "id": "sec5_h2", "label": "H2", "default": "5. 【比較表】母の日に贈りたい\"リラックスギフト\"を比較" },
+    { "type": "richtext", "id": "sec5_intro", "label": "イントロ", "default": "<p>加重ブランケット以外にも、母の日の\"リラックス系ギフト\"は様々。シーンごとに比較してみましょう。</p>" },
+    { "type": "text", "id": "sec5_col_1", "label": "表 列1", "default": "アイテム" },
+    { "type": "text", "id": "sec5_col_2", "label": "表 列2", "default": "価格帯" },
+    { "type": "text", "id": "sec5_col_3", "label": "表 列3", "default": "オールシーズン" },
+    { "type": "text", "id": "sec5_col_4", "label": "表 列4", "default": "サイズの失敗" },
+    { "type": "richtext", "id": "sec5_body_after", "label": "表の後", "default": "<p>MUSUBIが他のリラックス系ギフトと比較して優れているのは、<strong>サイズ選びの失敗がほぼなく、一年中使える</strong>点。さらに、他ブランドのリカバリーウェアと併用可能で、去年別ジャンルのリラックスギフトを贈った方にも、自然に\"続き\"として贈れます。</p>" },
+
+    { "type": "header", "content": "Section 6: お客さまの声" },
+    { "type": "text", "id": "sec6_h2", "label": "H2", "default": "6. MUSUBIを贈った方のメッセージ" },
+    { "type": "text", "id": "sec6_footnote", "label": "注記", "default": "※掲載内容は掲載許諾をいただいた実際のお客さまの声です。" },
+
+    { "type": "header", "content": "Section 7: 配送" },
+    { "type": "text", "id": "sec7_h2", "label": "H2", "default": "7. 母の日当日（5月10日）に届けるには？" },
+    { "type": "richtext", "id": "sec7_body", "label": "本文", "default": "<p>2026年の母の日は<strong>5月10日（日）</strong>。当日にお届けするには：</p><ul><li><strong>5月7日（木）中にご発送可能なタイミング</strong>でのご注文が目安です</li><li>GW期間を挟むため、<strong>早めのご注文を推奨</strong>します</li><li>全商品、<strong>無料ラッピング・メッセージカード対応</strong></li><li>ギフトカード（デジタル）は<strong>購入後すぐにお届け可能</strong></li></ul>" },
+
+    { "type": "header", "content": "Section 8: まとめ" },
+    { "type": "text", "id": "sec8_h2", "label": "H2", "default": "8. まとめ：今年の母の日、どう選ぶ？" },
+    { "type": "richtext", "id": "sec8_body", "label": "本文", "default": "<p>2026年の母の日ギフトは、<strong>「毎日使える、でも自分では買わない少し贅沢なもの」</strong>が求められています。MUSUBIのような<strong>植物由来のリカバリー加重ブランケット</strong>は、50代・60代のお母さまの\"くつろぎ時間\"に寄り添う、新しい母の日の定番として選ばれはじめています。</p><p><strong>選ぶときの3つのポイント：</strong></p><ol><li>お母さまの身体の状態に合わせて、サイズ・重量を選ぶ</li><li>毎日使える実用性を意識する</li><li>迷ったら「ギフトカード」という選択肢も</li></ol><p>この記事が、お母さまへの\"ありがとう\"を伝える一助になりますように。</p>" },
+
+    { "type": "header", "content": "記事末CTA" },
+    { "type": "text", "id": "final_lp_cta_text", "label": "LP CTAテキスト", "default": "▶ 2026年 母の日ギフト特集LPを見る" },
+    { "type": "text", "id": "final_lp_cta_url", "label": "LP CTAリンク", "default": "https://kapok-knot.com/blogs/magazine/happymothersday2024" },
+    { "type": "text", "id": "final_cta1_text", "label": "CTA1", "default": "MUSUBIシリーズ一覧" },
+    { "type": "text", "id": "final_cta1_url", "label": "CTA1 リンク", "default": "https://kapok-knot.com/collections/musubi-series" },
+    { "type": "text", "id": "final_cta2_text", "label": "CTA2", "default": "ギフトカードを見る" },
+    { "type": "text", "id": "final_cta2_url", "label": "CTA2 リンク", "default": "https://kapok-knot.com/products/gift-card" },
+
+    { "type": "header", "content": "フッター" },
+    { "type": "text", "id": "references_h3", "label": "参考文献H3", "default": "参考文献" },
+    { "type": "text", "id": "related_h3", "label": "関連記事H3", "default": "関連記事" },
+
+    { "type": "header", "content": "SEO" },
+    { "type": "checkbox", "id": "enable_structured_data", "label": "構造化データを出力", "default": true },
+    { "type": "textarea", "id": "seo_description", "label": "description", "default": "2026年5月10日は母の日。花でも食事でもない『眠り』を贈る新しい選択肢、リカバリー加重ブランケットMUSUBIを、調査データと比較表でご紹介。50〜60代のお母さまにおすすめの母の日ギフトを選ぶポイントも解説。" }
+  ],
+  "blocks": [
+    {
+      "type": "toc_item",
+      "name": "目次項目",
+      "settings": [
+        { "type": "text", "id": "label", "label": "ラベル" },
+        { "type": "text", "id": "anchor", "label": "アンカー" }
+      ]
+    },
+    {
+      "type": "rank_row",
+      "name": "ランキング行",
+      "settings": [
+        { "type": "text", "id": "rank", "label": "順位" },
+        { "type": "text", "id": "category", "label": "カテゴリ" },
+        { "type": "text", "id": "percentage", "label": "割合" },
+        { "type": "checkbox", "id": "highlight", "label": "強調", "default": false }
+      ]
+    },
+    {
+      "type": "model_row",
+      "name": "MUSUBIモデル行",
+      "settings": [
+        { "type": "richtext", "id": "model", "label": "モデル" },
+        { "type": "text", "id": "target", "label": "こんな方に" },
+        { "type": "text", "id": "price", "label": "価格" }
+      ]
+    },
+    {
+      "type": "compare_row",
+      "name": "比較表行",
+      "settings": [
+        { "type": "text", "id": "item", "label": "アイテム" },
+        { "type": "text", "id": "price_range", "label": "価格帯" },
+        { "type": "text", "id": "all_season", "label": "オールシーズン" },
+        { "type": "text", "id": "size_risk", "label": "サイズ失敗" },
+        { "type": "checkbox", "id": "highlight", "label": "強調", "default": false }
+      ]
+    },
+    {
+      "type": "voice",
+      "name": "お客さまの声",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "引用" },
+        { "type": "text", "id": "who", "label": "投稿者" }
+      ]
+    },
+    {
+      "type": "reference",
+      "name": "参考文献",
+      "settings": [
+        { "type": "text", "id": "text", "label": "テキスト" }
+      ]
+    },
+    {
+      "type": "related_link",
+      "name": "関連記事リンク",
+      "settings": [
+        { "type": "text", "id": "label", "label": "ラベル" },
+        { "type": "text", "id": "url", "label": "URL" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,209 @@
+{% comment %} AirLight 2025 (JP Domestic) — Hero / KV {% endcomment %}
+
+<style>
+  .a25-hero {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: 0 0 clamp(24px, 5vw, 56px);
+    overflow: hidden;
+  }
+
+  .a25-hero__kv-wrap {
+    width: 100%;
+    margin: 0 auto clamp(24px, 4vw, 48px);
+  }
+
+  .a25-hero__kv {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .a25-hero__inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+    text-align: center;
+  }
+
+  .a25-hero__eyebrow {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: {{ section.settings.eyebrow_color | default: '#c29d66' }};
+    margin: 0 0 clamp(12px, 2vw, 20px);
+  }
+
+  .a25-hero__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.8vw, 2.1rem);
+    font-weight: 500;
+    line-height: 1.55;
+    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    letter-spacing: 0.02em;
+  }
+
+  .a25-hero__heading p { margin: 0 0 0.4em; }
+  .a25-hero__heading p:last-child { margin-bottom: 0; }
+  .a25-hero__heading em {
+    font-style: normal;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 0.2em;
+    font-size: 1.15em;
+  }
+
+  .a25-hero__sub {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.8;
+    color: {{ section.settings.sub_color | default: '#5a5550' }};
+    margin: 0 0 clamp(20px, 3vw, 32px);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .a25-hero__cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: clamp(20px, 3vw, 32px);
+  }
+
+  .a25-hero__cta {
+    display: inline-block;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: {{ section.settings.cta_text_color | default: '#ffffff' }};
+    background: {{ section.settings.cta_bg_color | default: '#1a1a1a' }};
+    border-radius: 100px;
+    padding: 14px 40px;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    min-width: 260px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .a25-hero__cta:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+  }
+
+  .a25-hero__cta-note {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #8a7f6e;
+    margin: 0;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .a25-hero__inner {
+      padding: 0 16px;
+    }
+    .a25-hero__heading {
+      font-size: clamp(1.2rem, 4.8vw, 1.6rem);
+      line-height: 1.6;
+    }
+    .a25-hero__sub {
+      font-size: 13px;
+    }
+    .a25-hero__cta {
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>
+
+<section class="a25-hero" id="{{ section.settings.section_id | default: 'a25-hero' }}">
+  <div class="a25-hero__kv-wrap">
+    {% if section.settings.kv_image != blank %}
+      <img class="a25-hero__kv"
+           src="{{ section.settings.kv_image | image_url: width: 2000 }}"
+           alt="{{ section.settings.kv_image_alt }}"
+           width="1585" height="1057"
+           loading="eager" fetchpriority="high">
+    {% elsif section.settings.kv_image_url != blank %}
+      <img class="a25-hero__kv"
+           src="{{ section.settings.kv_image_url }}"
+           alt="{{ section.settings.kv_image_alt }}"
+           width="1585" height="1057"
+           loading="eager" fetchpriority="high">
+    {% endif %}
+  </div>
+
+  <div class="a25-hero__inner">
+    {% if section.settings.eyebrow != blank %}
+      <p class="a25-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <div class="a25-hero__heading">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.sub_text != blank %}
+      <p class="a25-hero__sub">{{ section.settings.sub_text }}</p>
+    {% endif %}
+
+    {% if section.settings.cta_text != blank %}
+      <div class="a25-hero__cta-wrap">
+        <a class="a25-hero__cta"
+           href="{{ section.settings.cta_url | default: '#' }}">
+          {{ section.settings.cta_text }}
+        </a>
+        {% if section.settings.cta_note != blank %}
+          <p class="a25-hero__cta-note">{{ section.settings.cta_note }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Hero",
+  "tag": "section",
+  "class": "shopify-section--a25-hero",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 背景" },
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-hero" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+
+    { "type": "header", "content": "KV 画像" },
+    { "type": "image_picker", "id": "kv_image", "label": "KV 画像 (推奨 1585x1057)" },
+    { "type": "text", "id": "kv_image_url", "label": "KV 画像 URL (外部フォールバック)", "default": "https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/3000x3000/-/quality/lighter/" },
+    { "type": "text", "id": "kv_image_alt", "label": "KV 画像の代替テキスト", "default": "エアーライトジャケット · KAPOK KNOT" },
+
+    { "type": "header", "content": "見出しテキスト" },
+    { "type": "text", "id": "eyebrow", "label": "アイブロー (上の小さな文字)", "default": "KAPOK KNOT — AirLight Jacket 2025" },
+    { "type": "color", "id": "eyebrow_color", "label": "アイブロー色", "default": "#c29d66" },
+    { "type": "richtext", "id": "heading", "label": "メイン見出し", "default": "<p>今までに着ていたアウターの常識を覆す。</p><p>“空気のように軽くて暖かい”<br><em>エアーライトジャケット</em></p>" },
+    { "type": "color", "id": "heading_color", "label": "見出し色", "default": "#1a1a1a" },
+    { "type": "textarea", "id": "sub_text", "label": "サブテキスト", "default": "植物由来のカポック素材で実現した、約500gの冬アウター。軽く、暖かく、動物も地球も傷つけない。" },
+    { "type": "color", "id": "sub_color", "label": "サブテキスト色", "default": "#5a5550" },
+
+    { "type": "header", "content": "CTA ボタン" },
+    { "type": "text", "id": "cta_text", "label": "ボタンテキスト", "default": "商品を見る →" },
+    { "type": "url", "id": "cta_url", "label": "ボタンリンク" },
+    { "type": "color", "id": "cta_bg_color", "label": "ボタン背景色", "default": "#1a1a1a" },
+    { "type": "color", "id": "cta_text_color", "label": "ボタン文字色", "default": "#ffffff" },
+    { "type": "text", "id": "cta_note", "label": "ボタン下の注記", "default": "¥39,800〜" }
+  ],
+  "presets": [
+    { "name": "A2025 Hero" }
+  ]
+}
+{% endschema %}

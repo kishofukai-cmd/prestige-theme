@@ -1,5 +1,131 @@
 {% comment %} AirLight Global LP — CTA Section {% endcomment %}
 
+<style>
+  .ag-cta {
+    padding: clamp(56px, 8vw, 96px) 0;
+    background: var(--ag-bg-cream, #f4f1ec);
+    text-align: center;
+    overflow: hidden;
+  }
+  .ag-cta__eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ag-gold, #c29d66);
+    margin-bottom: 16px;
+  }
+  .ag-cta__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 500;
+    margin-bottom: 12px;
+    line-height: 1.35;
+    color: var(--ag-text, #1a2640);
+  }
+  .ag-cta__heading em { font-style: italic; color: var(--ag-gold, #c29d66); }
+  .ag-cta__heading p { font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; margin: 0; }
+  .ag-cta__subheading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    color: var(--ag-text-sub, #5a6678);
+    margin: 0 auto 28px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+  /* Progress bar */
+  .ag-cta__progress {
+    max-width: 360px;
+    margin: 0 auto 28px;
+  }
+  .ag-cta__progress-bar {
+    height: 6px;
+    background: var(--ag-border, #dfe4eb);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .ag-cta__progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ag-gold, #c29d66), #d4b78a);
+    border-radius: 3px;
+  }
+  .ag-cta__progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    color: var(--ag-text-sub, #5a6678);
+  }
+  /* Offer box */
+  .ag-cta__offer {
+    background: rgba(194,157,102,0.08);
+    border: 1px solid rgba(194,157,102,0.2);
+    border-radius: 14px;
+    padding: 16px 20px;
+    max-width: 420px;
+    margin: 0 auto 28px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ag-text, #1a2640);
+  }
+  .ag-cta__offer-note {
+    font-size: 0.75rem;
+    color: var(--ag-text-sub, #5a6678);
+    font-weight: 400;
+    margin-top: 4px;
+  }
+  /* Button */
+  .ag-cta__btn {
+    display: inline-block;
+    padding: 16px 56px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ag-bg-dark, #1a2640);
+    background: linear-gradient(135deg, var(--ag-gold, #c29d66), #d4b78a);
+    border-radius: 100px;
+    box-shadow: 0 4px 20px rgba(194,157,102,0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .ag-cta__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(194,157,102,0.5);
+  }
+  /* Micros */
+  .ag-cta__micros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 16px;
+    margin-top: 16px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    color: var(--ag-text-sub, #5a6678);
+  }
+
+  @media (max-width: 768px) {
+    .ag-cta { padding-left: 16px; padding-right: 16px; }
+    .ag-cta__heading { font-size: 1.7rem; }
+    .ag-cta__subheading { font-size: 0.92rem; }
+    .ag-cta__btn {
+      width: 100%;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 16px 24px;
+    }
+    .ag-cta__micros { flex-direction: column; gap: 6px; align-items: center; }
+    .ag-cta__offer { font-size: 13px; }
+  }
+</style>
+
 <section class="ag-cta" id="{{ section.settings.section_id | default: 'ag-cta' }}">
   <div class="ag-container--narrow" data-ag-reveal>
     {% if section.settings.eyebrow != blank %}
@@ -22,12 +148,23 @@
       border-radius: 12px;
       padding: 14px 28px;
       margin-bottom: 24px;
-      font-family: var(--ag-font-head);
+      font-family: var(--ag-font-body);
     ">
-      <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ag-gold); display:block; margin-bottom:4px;">LAUNCH PRICE</span>
+      <span style="font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ag-gold); display:block; margin-bottom:4px;">LAUNCH PRICE</span>
       <span style="font-size:1.8rem; font-weight:700; color:#fff; letter-spacing:0.02em;">{{ section.settings.launch_price | default: '$398' }}</span>
-      <span style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-left:8px;">— {{ section.settings.launch_ends | default: 'First 100 customers only' }}</span>
     </div>
+    {% endif %}
+
+    {% if section.settings.show_progress %}
+      <div class="ag-cta__progress">
+        <div class="ag-cta__progress-bar">
+          <div class="ag-cta__progress-fill" style="width:{{ section.settings.progress_pct | default: 73 }}%;"></div>
+        </div>
+        <div class="ag-cta__progress-text">
+          <span>{{ section.settings.progress_taken | default: '73' }} spots taken</span>
+          <span>{{ section.settings.progress_remaining | default: '27 remaining' }}</span>
+        </div>
+      </div>
     {% endif %}
 
     {% if section.settings.offer_main != blank %}
@@ -40,7 +177,7 @@
     {% endif %}
 
     <a href="{{ section.settings.cta_url | default: '#ag-products' }}" class="ag-cta__btn">
-      {{ section.settings.cta_text | default: 'Claim Your Spot — $398' }}
+      {{ section.settings.cta_text | default: 'Shop Now' }}
     </a>
 
     <div class="ag-cta__micros">
@@ -51,66 +188,27 @@
   </div>
 </section>
 
-<style>
-.ag-cta__subheading {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  margin: 0 0 32px;
-  line-height: 1.65;
-  max-width: 540px;
-}
-
-/* --- Mobile --- */
-@media (max-width: 768px) {
-  .ag-cta {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .ag-cta__heading {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
-  }
-  .ag-cta__subheading {
-    font-size: 0.95rem;
-  }
-  .ag-cta__btn {
-    width: 100%;
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    font-size: 1rem;
-  }
-  .ag-cta__micros {
-    flex-direction: column;
-    gap: 6px;
-    align-items: center;
-  }
-  .ag-cta__offer {
-    font-size: 13px;
-  }
-}
-</style>
-
 {% schema %}
 {
   "name": "AG CTA",
   "settings": [
     { "type": "text", "id": "section_id", "label": "Section ID", "default": "ag-cta" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Global Launch — First 100 Customers" },
-    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Join the First 100 <em>Global Members.</em></p>" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "This is not a flash sale. This is the first time AirLight Jacket has ever been available outside Japan." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Limited Launch Offer" },
+    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Join the first 100 people<br>to own an AirLight Jacket.</p>" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
     { "type": "text", "id": "launch_price", "label": "Launch Price", "default": "$398" },
-    { "type": "text", "id": "launch_ends", "label": "Launch Ends Date", "default": "First 100 customers only" },
     { "type": "checkbox", "id": "show_launch_price", "label": "Show Launch Price Banner", "default": true },
-    { "type": "text", "id": "offer_main", "label": "Offer Main", "default": "✓ Free Worldwide Shipping on All Orders" },
-    { "type": "text", "id": "offer_note", "label": "Offer Note", "default": "No code needed. Applied automatically at checkout." },
+    { "type": "checkbox", "id": "show_progress", "label": "Show Progress Bar", "default": true },
+    { "type": "text", "id": "progress_taken", "label": "Progress — Taken", "default": "73" },
+    { "type": "text", "id": "progress_remaining", "label": "Progress — Remaining", "default": "27 remaining" },
+    { "type": "range", "id": "progress_pct", "label": "Progress %", "min": 0, "max": 100, "step": 1, "default": 73 },
+    { "type": "text", "id": "offer_main", "label": "Offer Main" },
+    { "type": "text", "id": "offer_note", "label": "Offer Note" },
     { "type": "url", "id": "cta_url", "label": "CTA URL" },
-    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Claim Your Spot — $398" },
-    { "type": "text", "id": "micro_1", "label": "Micro 1", "default": "✓ 30-day return guarantee" },
-    { "type": "text", "id": "micro_2", "label": "Micro 2", "default": "✓ All Made in Japan" },
-    { "type": "text", "id": "micro_3", "label": "Micro 3", "default": "✓ Import duties billed at delivery (DDU)" }
+    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now" },
+    { "type": "text", "id": "micro_1", "label": "Micro 1" },
+    { "type": "text", "id": "micro_2", "label": "Micro 2" },
+    { "type": "text", "id": "micro_3", "label": "Micro 3", "default": "✓ Secure checkout" }
   ],
   "presets": [{ "name": "AG CTA" }]
 }

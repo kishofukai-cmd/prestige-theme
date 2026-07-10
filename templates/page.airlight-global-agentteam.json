@@ -45,13 +45,13 @@
         "hero_image_alt": "AirLight Jacket — KAPOK KNOT",
         "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
         "eyebrow": "The World's First Kapok-Insulated Jacket",
-        "launch_spot": "Only 100 spots available globally",
+        "launch_spot": "",
         "hero_title": "<p>Warmer. Lighter. <em>Completely Animal-Free.</em></p>",
         "hero_sub": "<p>500g. Machine washable. No animals, no allergens. Designed in Japan.</p>",
         "cta_url": "",
         "cta_text": "Get My AirLight Jacket — $398",
-        "offer_main": "Free Worldwide Shipping on All Orders",
-        "offer_note": "· 30-day returns guaranteed"
+        "offer_main": "",
+        "offer_note": ""
       }
     },
     "video_8WWPL3": {
@@ -89,7 +89,7 @@
       "settings": {
         "eyebrow": "Global Launch Campaign",
         "heading": "The World's First Kapok Jacket. Now Available Worldwide.",
-        "subheading": "First 100 customers worldwide get the AirLight Jacket at our Japan launch price — before we open to the public.",
+        "subheading": "",
         "deadline": "2026-04-19T23:59:59Z",
         "spots_remaining": 47,
         "spots_total": 100,
@@ -105,7 +105,7 @@
         "trust_1": {
           "type": "item",
           "settings": {
-            "text": "Free Worldwide Shipping"
+            "text": ""
           }
         },
         "trust_2": {
@@ -509,13 +509,13 @@
         "heading": "<p>Own the jacket Japan sold out three times.</p>",
         "subheading": "Launch price for early adopters. Free worldwide shipping included.",
         "launch_price": "$398",
-        "launch_ends": "Limited time",
+        "launch_ends": "",
         "show_launch_price": true,
-        "offer_main": "✓ Free Worldwide Shipping on All Orders",
-        "offer_note": "No code needed. Applied automatically at checkout.",
+        "offer_main": "",
+        "offer_note": "",
         "cta_url": "",
         "cta_text": "Shop Now — $398",
-        "micro_1": "✓ 30-day returns guaranteed",
+        "micro_1": "",
         "micro_2": "✓ Designed & Developed in Japan",
         "micro_3": "✓ Customs billed at delivery (DDU)"
       }
@@ -581,7 +581,7 @@
           "type": "info_item",
           "settings": {
             "icon": "🌍",
-            "title": "Free Worldwide Shipping",
+            "title": "",
             "text": "All orders qualify. No minimum, no code needed. Free shipping is applied automatically at checkout.",
             "is_warning": false
           }
@@ -624,15 +624,39 @@
         "heading": "Find Your Size",
         "intro": "If you're between sizes, we recommend sizing up for layering flexibility.",
         "fit_tip": "When in doubt, size up — AirLight is designed with room to layer.",
-        "men_length_m": "65", "men_length_l": "66.5", "men_length_ll": "68", "men_length_3l": "71",
-        "men_shoulder_m": "49", "men_shoulder_l": "50.5", "men_shoulder_ll": "52", "men_shoulder_3l": "54",
-        "men_chest_m": "110", "men_chest_l": "115", "men_chest_ll": "120", "men_chest_3l": "125",
-        "men_sleeve_m": "64", "men_sleeve_l": "65", "men_sleeve_ll": "66", "men_sleeve_3l": "68",
+        "men_length_m": "65",
+        "men_length_l": "66.5",
+        "men_length_ll": "68",
+        "men_length_3l": "71",
+        "men_shoulder_m": "49",
+        "men_shoulder_l": "50.5",
+        "men_shoulder_ll": "52",
+        "men_shoulder_3l": "54",
+        "men_chest_m": "110",
+        "men_chest_l": "115",
+        "men_chest_ll": "120",
+        "men_chest_3l": "125",
+        "men_sleeve_m": "64",
+        "men_sleeve_l": "65",
+        "men_sleeve_ll": "66",
+        "men_sleeve_3l": "68",
         "men_model_note": "",
-        "women_length_s": "61", "women_length_m": "62", "women_length_l": "64", "women_length_ll": "66",
-        "women_shoulder_s": "42", "women_shoulder_m": "44", "women_shoulder_l": "46", "women_shoulder_ll": "48",
-        "women_chest_s": "99.5", "women_chest_m": "103.5", "women_chest_l": "109.5", "women_chest_ll": "115.5",
-        "women_sleeve_s": "56", "women_sleeve_m": "58.5", "women_sleeve_l": "60", "women_sleeve_ll": "61.5",
+        "women_length_s": "61",
+        "women_length_m": "62",
+        "women_length_l": "64",
+        "women_length_ll": "66",
+        "women_shoulder_s": "42",
+        "women_shoulder_m": "44",
+        "women_shoulder_l": "46",
+        "women_shoulder_ll": "48",
+        "women_chest_s": "99.5",
+        "women_chest_m": "103.5",
+        "women_chest_l": "109.5",
+        "women_chest_ll": "115.5",
+        "women_sleeve_s": "56",
+        "women_sleeve_m": "58.5",
+        "women_sleeve_l": "60",
+        "women_sleeve_ll": "61.5",
         "women_model_note": ""
       }
     },
@@ -671,7 +695,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What is your return policy?",
-            "answer": "<p>30-day returns, no questions asked. Items must be unworn and in original condition. Return shipping is at the customer's expense. Contact us at support@kapokknot.com to initiate a return.</p>"
+            "answer": "<p>Please see our returns policy page for the latest terms.</p>"
           }
         },
         "faq_6": {
@@ -823,11 +847,11 @@
         "eyebrow": "KAPOK KNOT — AirLight Jacket",
         "title": "<p>Lighter. Warmer. Washable. <em>The jacket you'll wear every day.</em></p>",
         "cta_url": "",
-        "cta_text": "Shop Now — Free Shipping →",
+        "cta_text": "Shop Now →",
         "fallback_url": "https://ucarecdn.com/dd2fb320-7d90-475d-a328-25ba8af70422/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3729.jpg",
         "spots_text": "Only 100 Global Launch Spots Available.",
-        "micro_1": "✓ Free worldwide shipping",
-        "micro_2": "✓ 30-day returns guaranteed",
+        "micro_1": "",
+        "micro_2": "",
         "micro_3": "✓ Customs duties billed at delivery (DDU)"
       }
     },

@@ -1,0 +1,127 @@
+<div id="shopify-section-airlight-2025-native" class="shopify-section ag-native-section">
+
+<style>
+/* Base */
+.ag-native-section { font-family: var(--heading-font-family), "Inter", sans-serif; color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+.ag-native-section img { max-width: 100%; height: auto; object-fit: cover; margin:0 auto; }
+.ag-native-section p { margin-bottom: 0.5em; }
+
+/* Grid System - Updated to use Gap instead of Padding */
+.ag-row { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; box-sizing: border-box; gap: 24px; justify-content: center; }
+.ag-row-fluid { max-width: 100%; gap: 24px; }
+.ag-col { box-sizing: border-box; }
+
+/* Mobile Grid (xs) - Adjusted for gap */
+.ag-col-xs-1 { width: calc(8.333333% - 24px); }
+.ag-col-xs-2 { width: calc(16.666667% - 24px); }
+.ag-col-xs-3 { width: calc(25.000000% - 24px); }
+.ag-col-xs-4 { width: calc(33.333333% - 24px); }
+.ag-col-xs-5 { width: calc(41.666667% - 24px); }
+.ag-col-xs-6 { width: calc(50.000000% - 12px); } /* For 2 cols mobile */
+.ag-col-xs-7 { width: calc(58.333333% - 24px); }
+.ag-col-xs-8 { width: calc(66.666667% - 24px); }
+.ag-col-xs-9 { width: calc(75.000000% - 24px); }
+.ag-col-xs-10 { width: calc(83.333333% - 24px); }
+.ag-col-xs-11 { width: calc(91.666667% - 24px); }
+.ag-col-xs-12 { width: 100%; }
+
+/* PC Grid (lg, md, sm) - Adjusted for gap */
+@media (min-width: 768px) {
+  .ag-col-md-1, .ag-col-lg-1, .ag-col-sm-1 { width: calc(8.333333% - 24px); }
+  .ag-col-md-2, .ag-col-lg-2, .ag-col-sm-2 { width: calc(16.666667% - 24px); }
+  .ag-col-md-3, .ag-col-lg-3, .ag-col-sm-3 { width: calc(25.000000% - 24px); }
+  .ag-col-md-4, .ag-col-lg-4, .ag-col-sm-4 { width: calc(33.333333% - 16px); } /* 3 cols gap fix */
+  .ag-col-md-5, .ag-col-lg-5, .ag-col-sm-5 { width: calc(41.666667% - 24px); }
+  .ag-col-md-6, .ag-col-lg-6, .ag-col-sm-6 { width: calc(50.000000% - 12px); } /* 2 cols gap fix */
+  .ag-col-md-7, .ag-col-lg-7, .ag-col-sm-7 { width: calc(58.333333% - 24px); }
+  .ag-col-md-8, .ag-col-lg-8, .ag-col-sm-8 { width: calc(66.666667% - 24px); }
+  .ag-col-md-9, .ag-col-lg-9, .ag-col-sm-9 { width: calc(75.000000% - 24px); }
+  .ag-col-md-10, .ag-col-lg-10, .ag-col-sm-10 { width: calc(83.333333% - 24px); }
+  .ag-col-md-11, .ag-col-lg-11, .ag-col-sm-11 { width: calc(91.666667% - 24px); }
+  .ag-col-md-12, .ag-col-lg-12, .ag-col-sm-12 { width: 100%; }
+}
+
+/* Alignment */
+.ag-elm-center, .ag-elm-center-lg, .ag-elm-center-md, .ag-elm-center-sm { text-align: center; }
+.ag-elm-left, .ag-elm-left-lg, .ag-elm-left-md, .ag-elm-left-sm { text-align: left; }
+.ag-elm-right, .ag-elm-right-lg, .ag-elm-right-md, .ag-elm-right-sm { text-align: right; }
+@media (max-width: 767px) {
+  .ag-elm-center-xs { text-align: center !important; }
+  .ag-elm-left-xs { text-align: left !important; }
+  .ag-elm-right-xs { text-align: right !important; }
+}
+
+/* Typography Overrides */
+.ag-text-heading-2 { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5em; line-height: 1.4; }
+.ag-text-paragraph-1 { font-size: 1rem; }
+
+/* Buttons */
+.ag-button { display: inline-block; padding: 14px 32px; border-radius: 4px; text-decoration: none; text-align: center; font-weight: bold; transition: opacity 0.2s; }
+.ag-button:hover { opacity: 0.8; }
+
+/* Responsive Hide Rules */
+@media (min-width: 1200px) { .ag-hide-pc, .hidden-lg { display: none !important; } }
+@media (max-width: 1199px) and (min-width: 992px) { .ag-hide-laptop { display: none !important; } }
+@media (max-width: 991px) and (min-width: 768px) { .ag-hide-tb, .hidden-sm { display: none !important; } }
+@media (max-width: 767px) { .ag-hide-sp, .hidden-xs { display: none !important; } }
+
+/* Carousel (CSS Scroll Snap) */
+.ag-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 16px; scrollbar-width: none; }
+.ag-carousel::-webkit-scrollbar { display: none; }
+.ag-carousel-item { scroll-snap-align: center; flex: 0 0 80%; }
+.ag-carousel[data-colxs="1"] > .ag-carousel-item { flex: 0 0 calc(100% - 16px); }
+.ag-carousel[data-colxs="2"] > .ag-carousel-item { flex: 0 0 calc(50% - 8px); }
+@media (min-width: 768px) {
+  .ag-carousel-item { flex: 0 0 300px; }
+  .ag-carousel[data-collg="1"] > .ag-carousel-item { flex: 0 0 calc(100% - 16px); }
+  .ag-carousel[data-collg="2"] > .ag-carousel-item { flex: 0 0 calc(50% - 8px); }
+  .ag-carousel[data-collg="3"] > .ag-carousel-item { flex: 0 0 calc(33.333333% - 11px); }
+  .ag-carousel[data-collg="4"] > .ag-carousel-item { flex: 0 0 calc(25% - 12px); }
+}
+
+/* Icon List */
+ul.ag-icon-list { list-style: none; padding: 0; margin: 0; }
+.ag-icon-list { padding: 0; margin: 0; }
+.ag-icon-list > li,
+.ag-icon-list .ag-il-item { display: flex !important; align-items: flex-start !important; gap: 16px !important; margin-bottom: 24px !important; }
+.ag-il-icon { flex: 0 0 80px !important; max-width: 80px !important; display: block !important; }
+.ag-il-icon img { width: 100% !important; height: auto !important; display: block !important; }
+.ag-il-text { flex: 1 !important; }
+.ag-il-text h3, .ag-il-text h4 { margin-top: 0; margin-bottom: 8px; font-size: 1.1rem; }
+
+/* ===== Mobile-First Overrides (Top Section) ===== */
+@media screen and (max-width: 768px) {
+  .ag-native-section { padding: 0 !important; }
+  .ag-text-heading-2 {
+    font-size: 1.15rem !important;
+    line-height: 1.5 !important;
+    padding: 0 16px !important;
+    letter-spacing: 0.03em !important;
+  }
+  h3.ag-text-heading-2 {
+    font-size: 1.15rem !important;
+  }
+  .ag-text-paragraph-1 {
+    padding: 0 16px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.8 !important;
+  }
+  .ag-row {
+    gap: 12px !important;
+  }
+}
+</style>
+
+<div style=""><div class="ag-elm-left-xs" data-exc=""><img src="https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%A2%E3%83%BC%E3%83%88%E3%83%9C%E3%83%BC%E3%83%89%2021@3x.png" alt="" width="1585" height="1057" data-width="100%" data-height="auto" title="" loading="lazy"></div></div><!--gfsplit--><div class="ag-row"><div class="ag-col ag-col-lg-12 ag-col-md-12 ag-col-sm-12 ag-col-xs-12"><div style=""><div data-exc=""><h3 class="ag-text-heading-2">今までに着ていたアウターの常識を覆す。<br>“空気のように軽くて暖かい”<span style="letter-spacing: 0px; text-align: inherit; background-color: rgb(var(--background));">エアーライトジャケット</span></h3></div></div><div class="ag-row" data-layout-lg="6+6" data-extraclass="" data-layout-md="6+6" data-layout-sm="6+6" data-layout-xs="12+12" style="display: flex; flex-wrap: wrap; visibility: visible;"><div class="ag-col ag-col-lg-6 ag-col-md-6 ag-col-sm-6 ag-col-xs-12" style="display: flex; flex-direction: column; justify-content: center; min-height: auto;"><div style=""><div class="ag-elm-left-xs" data-exc=""><img src="https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png" alt="" width="1080" height="1080" data-width="100%" data-height="auto" title="" loading="lazy"></div></div></div>
+</div></div></div></div>
+</div>
+{% schema %}
+{
+  "name": "Airlight Top",
+  "presets": [
+    {
+      "name": "Airlight Top"
+    }
+  ]
+}
+{% endschema %}

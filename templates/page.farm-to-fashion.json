@@ -101,10 +101,8 @@
             "heading": "Coats",
             "columns_desktop": 4,
             "margin_bottom": 80,
-            "product_1": "reversible_boa_quiltingcoat",
-            "product_2": "standcollar",
-            "product_3": "widearmp-coat",
-            "product_4": "mufflerknot-coat"
+            "collection": "coat",
+            "collection_limit": 4
           }
         },
         "product_grid_11": {
@@ -113,10 +111,8 @@
             "heading": "Jackets",
             "columns_desktop": 4,
             "margin_bottom": 80,
-            "product_1": "airlight-peplum-jacket",
-            "product_2": "takibi_jacket",
-            "product_3": "unisex-shirt-blouson-22",
-            "product_4": "tenderproof-jacket"
+            "collection": "jacket",
+            "collection_limit": 4
           }
         },
         "image_full_12": {
@@ -390,17 +386,15 @@
             "margin_bottom": 16
           }
         },
-        "features_grid_36": {
-          "type": "features_grid",
+        "product_grid_recommended": {
+          "type": "product_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
+            "heading": "他のおすすめ商品",
             "columns_desktop": 4,
-            "icon_size": "small",
-            "image_url_1": "//kapok-knot.com/cdn/shop/products/shirts_pdp_M04_1024x1024.jpg?v=1750303226",
-            "image_url_2": "//kapok-knot.com/cdn/shop/products/shirts_pdp_M05_1024x1024.jpg?v=1750303226",
-            "image_url_3": "//kapok-knot.com/cdn/shop/products/04-006_1024x1024.png?v=1761880585",
-            "image_url_4": "//kapok-knot.com/cdn/shop/products/03_9c0b1094-1688-4f15-8660-1330feea4ee6_1024x1024.jpg?v=1750303280"
+            "margin_top": 40,
+            "margin_bottom": 80,
+            "collection": "ranking",
+            "collection_limit": 4
           }
         }
       },
@@ -444,7 +438,7 @@
         "accordion_39",
         "accordion_40",
         "accordion_41",
-        "features_grid_36"
+        "product_grid_recommended"
       ],
       "settings": {
         "bg_color": "#ffffff",

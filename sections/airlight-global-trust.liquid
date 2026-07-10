@@ -4,62 +4,82 @@
   <div class="ag-container">
     {% if section.settings.trust_image != blank %}
       <div class="ag-trust-bar__image-wrap">
-        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image | image_url: width: 800 }}" alt="{{ section.settings.trust_image_alt | default: 'Made in Japan — Master Craftsmanship' }}" loading="lazy" width="640">
+        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image | image_url: width: 800 }}" alt="{{ section.settings.trust_image_alt | default: 'KAPOK KNOT' }}" loading="lazy" width="640">
       </div>
     {% elsif section.settings.trust_image_url != blank %}
       <div class="ag-trust-bar__image-wrap">
-        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image_url | asset_url }}" alt="{{ section.settings.trust_image_alt | default: 'Made in Japan — Master Craftsmanship' }}" loading="lazy" width="640">
+        <img class="ag-trust-bar__image" src="{{ section.settings.trust_image_url | asset_url }}" alt="{{ section.settings.trust_image_alt | default: 'KAPOK KNOT' }}" loading="lazy" width="640">
       </div>
     {% endif %}
     <div class="ag-trust-bar__list">
       {% for block in section.blocks %}
-        <div class="ag-trust-bar__item" {{ block.shopify_attributes }}>
-          <span class="ag-trust-bar__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          </span>
-          <span class="ag-trust-bar__text">{{ block.settings.text }}</span>
-        </div>
+        {% if block.settings.text != blank %}
+          <div class="ag-trust-bar__item" {{ block.shopify_attributes }}>
+            <span class="ag-trust-bar__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <span class="ag-trust-bar__text">{{ block.settings.text }}</span>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
 </section>
 
 <style>
+  .ag-trust-bar {
+    background: var(--ag-bg, #f7f9fc);
+    border-bottom: 1px solid var(--ag-border, #dfe4eb);
+    padding: 22px 0;
+    overflow: hidden;
+  }
+  .ag-trust-bar__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+  }
+  .ag-trust-bar__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ag-trust-bar__icon {
+    color: var(--ag-gold, #c29d66);
+    flex-shrink: 0;
+  }
+  .ag-trust-bar__icon svg { width: 18px; height: 18px; }
+  .ag-trust-bar__text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ag-text, #1a2640);
+    white-space: nowrap;
+  }
   .ag-trust-bar__image-wrap {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
-
   .ag-trust-bar__image {
     max-width: 560px;
     width: 100%;
     border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    margin: 0 auto;
   }
 
-  /* --- Mobile --- */
+  @media (min-width: 768px) {
+    .ag-trust-bar { padding: 28px 0; }
+    .ag-trust-bar__icon svg { width: 20px; height: 20px; }
+    .ag-trust-bar__text { font-size: 0.9rem; }
+  }
   @media (max-width: 768px) {
-    .ag-trust-bar {
-      padding: 16px;
-      overflow-x: hidden;
-    }
-    .ag-trust-bar__list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      justify-content: center;
-    }
-    .ag-trust-bar__item {
-      flex: 0 1 auto;
-      white-space: nowrap;
-    }
-    .ag-trust-bar__text {
-      font-size: 14px;
-    }
-    .ag-trust-bar__image {
-      max-width: 100%;
-      height: auto;
-    }
+    .ag-trust-bar { padding: 16px; }
+    .ag-trust-bar__list { gap: 10px 20px; justify-content: center; }
+    .ag-trust-bar__text { font-size: 13px; }
+    .ag-trust-bar__image { max-width: 100%; }
   }
 </style>
 
@@ -69,14 +89,14 @@
   "settings": [
     { "type": "image_picker", "id": "trust_image", "label": "Trust Image" },
     { "type": "text", "id": "trust_image_url", "label": "Trust Image URL (fallback)" },
-    { "type": "text", "id": "trust_image_alt", "label": "Trust Image Alt Text", "default": "Made in Japan — Master Craftsmanship" }
+    { "type": "text", "id": "trust_image_alt", "label": "Trust Image Alt Text" }
   ],
   "blocks": [
     {
       "type": "item",
       "name": "Trust Item",
       "settings": [
-        { "type": "text", "id": "text", "label": "Text", "default": "Free Worldwide Shipping" }
+        { "type": "text", "id": "text", "label": "Text" }
       ]
     }
   ],
@@ -86,8 +106,8 @@
       "blocks": [
         { "type": "item", "settings": { "text": "$400K+ Raised in Japan" } },
         { "type": "item", "settings": { "text": "Sold Out 3× Consecutively" } },
-        { "type": "item", "settings": { "text": "5 Years of R&D" } },
-        { "type": "item", "settings": { "text": "All Made in Japan" } }
+        { "type": "item", "settings": { "text": "Plant-Powered Kapok Fill" } },
+        { "type": "item", "settings": { "text": "10+ Design Awards" } }
       ]
     }
   ]

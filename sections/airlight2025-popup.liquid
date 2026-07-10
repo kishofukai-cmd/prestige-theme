@@ -1,0 +1,145 @@
+{% comment %} AirLight 2025 (JP Domestic) — POP UP Event Banner {% endcomment %}
+
+<style>
+  #{{ section.id }}.a25-popup {
+    background: {{ section.settings.bg_color | default: '#faf9f6' }};
+    padding: clamp(48px, 7vw, 80px) 0;
+  }
+
+  #{{ section.id }} .a25-popup__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+    text-align: center;
+  }
+
+  #{{ section.id }} .a25-popup__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    margin: 0 0 clamp(12px, 2vw, 20px);
+  }
+
+  #{{ section.id }} .a25-popup__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.55;
+    color: #1a1a1a;
+    margin: 0 0 clamp(14px, 2.2vw, 22px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .a25-popup__heading p { margin: 0 0 0.3em; }
+  #{{ section.id }} .a25-popup__heading p:last-child { margin-bottom: 0; }
+  #{{ section.id }} .a25-popup__heading em {
+    font-style: normal;
+    font-weight: 700;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+  }
+
+  #{{ section.id }} .a25-popup__sub {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.7vw, 15px);
+    line-height: 1.8;
+    color: #5a5550;
+    margin: 0 auto clamp(24px, 3.5vw, 32px);
+    max-width: 560px;
+  }
+
+  #{{ section.id }} .a25-popup__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: #1a1a1a;
+    border-radius: 100px;
+    padding: 14px 40px;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    min-width: 280px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #{{ section.id }} .a25-popup__cta:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }}.a25-popup {
+      padding: 56px 0;
+    }
+    #{{ section.id }} .a25-popup__inner {
+      padding: 0 16px;
+    }
+    #{{ section.id }} .a25-popup__heading {
+      font-size: clamp(1.15rem, 5vw, 1.55rem);
+      line-height: 1.6;
+    }
+    #{{ section.id }} .a25-popup__sub {
+      font-size: 13px;
+    }
+    #{{ section.id }} .a25-popup__cta {
+      width: 100%;
+      min-width: 0;
+      min-height: 52px;
+    }
+  }
+</style>
+
+<section class="a25-popup" id="{{ section.id }}">
+  <div class="a25-popup__inner">
+    {% if section.settings.kicker != blank %}
+      <p class="a25-popup__kicker">{{ section.settings.kicker }}</p>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <div class="a25-popup__heading">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.sub != blank %}
+      <p class="a25-popup__sub">{{ section.settings.sub }}</p>
+    {% endif %}
+
+    {% if section.settings.cta_text != blank %}
+      <a class="a25-popup__cta"
+         href="{{ section.settings.cta_url | default: '#' }}">
+        {{ section.settings.cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Popup Banner",
+  "tag": "section",
+  "class": "shopify-section--a25-popup",
+  "settings": [
+    { "type": "header", "content": "カラー" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#faf9f6" },
+    { "type": "color", "id": "accent_color", "label": "アクセント色", "default": "#c29d66" },
+
+    { "type": "header", "content": "テキスト" },
+    { "type": "text", "id": "kicker", "label": "キッカー", "default": "EVENT" },
+    { "type": "richtext", "id": "heading", "label": "メイン見出し", "default": "<p>軽くて暖かいアウターを<em>体験してみませんか?</em></p>" },
+    { "type": "text", "id": "sub", "label": "サブテキスト", "default": "期間限定 POP UP を全国で開催中！" },
+
+    { "type": "header", "content": "CTA" },
+    { "type": "text", "id": "cta_text", "label": "ボタンテキスト", "default": "POPUP開催情報はこちら" },
+    { "type": "url", "id": "cta_url", "label": "ボタンリンク" }
+  ],
+  "presets": [
+    { "name": "A2025 Popup Banner" }
+  ]
+}
+{% endschema %}

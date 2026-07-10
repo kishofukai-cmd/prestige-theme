@@ -125,21 +125,18 @@
             "image_on": true,
             "margin_bottom": 24,
             "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
+            "columns_desktop": 3,
+            "columns_mobile": 1,
             "swipe_on_mobile": true,
             "image_url_1": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
             "title_1": "古民家宿るうふ",
-            "text_1": "<p>るうふ / 一棟貸し古民家宿<br>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、<br>地域に伝わる食を楽しんだり、<br>火を囲んで談笑したり、<br>土地が育む自然の恵みや日本ならではの<br>土地が育む自然の恵みや<br>日本ならではの<br>生活文化を味わう体験できる。</p>",
+            "text_1": "<p>るうふ / 一棟貸し古民家宿<br>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、土地が育む自然の恵みや日本ならではの生活文化を味わう体験ができる。</p>",
             "image_url_2": "https://ucarecdn.com/2e14f59a-b78f-4277-81ec-9728636fc66e/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202025-07-23%2017.06.13.jpeg",
             "title_2": "オーベルジュ エルバステラ",
             "text_2": "<p>野菜ソムリエプロ夫婦が営む全3室の宿<br>We're Smart® Green Guide ★4radish<br>全食材の9割以上オーガニック<br>動物性食品不使用<br>合成添加物・溶剤抽出油・白砂糖不使用<br>滞在型リトリート(心身デトックス)<br>自然栽培の自家菜園(100種以上)</p>",
             "image_url_3": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
             "title_3": "TACTILE HOUSE",
-            "text_3": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>",
-            "image_url_4": "https://ucarecdn.com/c0f50971-1357-448b-885a-555331f4bdc8/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202024-10-31%2022.29.36.png",
-            "title_4": "Makuakeにて408名,1300万円を超える",
-            "text_4": "<h3>応援購入をいただいたブランケットになります。</h3><h3>【現在までの販売実績】</h3><h3>2024年10月先行予約/完売</h3><h3>2024年11月先行予約/完売</h3><h3>2025年1月一般販売/完売</h3><h3>2025年5月23日先行予約/完売</h3><h3>2025年6月27日先行予約/完売</h3><h3>2025年7月25日先行予約/完売2025年9月12日一般販売/完売</h3><p>2025年7月25日先行予約/完売<br>2025年9月12日一般販売/完売</p><h3>2025年10月17日先行予約/完売</h3>"
+            "text_3": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>"
           }
         },
         "features_grid_23": {
@@ -188,249 +185,88 @@
             "margin_bottom": 24
           }
         },
-        "image_full_29": {
-          "type": "image_full",
+        "carousel_color_1": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/99955a26-1bf2-4b88-a181-6ef6fd70b7a9/-/format/auto/-/preview/3000x3000/-/quality/lighter/2.png",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/99955a26-1bf2-4b88-a181-6ef6fd70b7a9/-/format/auto/-/preview/3000x3000/-/quality/lighter/2.png",
+            "image_url_2": "https://ucarecdn.com/af3784ac-ddd7-4497-989e-a2192e1e9e26/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1255.JPG",
+            "image_url_3": "https://ucarecdn.com/6fc5861a-9f4d-4bcc-a13e-27aaf4668a7c/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1810.JPG",
+            "image_url_4": "https://ucarecdn.com/1fa026da-e92f-496f-9b7a-e0fde1ae8ce5/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0974%20_1_.JPG",
+            "image_url_5": "https://ucarecdn.com/b5aecc59-8904-40de-9387-883e78cd5826/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1266.JPG"
           }
         },
-        "image_full_30": {
-          "type": "image_full",
+        "carousel_color_2": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/af3784ac-ddd7-4497-989e-a2192e1e9e26/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1255.JPG",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/34a470d5-13a3-491f-b50c-f2b1a8571261/-/format/auto/-/preview/3000x3000/-/quality/lighter/3.png",
+            "image_url_2": "https://ucarecdn.com/102412a5-b03e-4bc6-a32c-e6f945275d5b/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0871.JPG",
+            "image_url_3": "https://ucarecdn.com/98f969f9-0058-46db-8625-5f3a00eb9db8/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0498.JPG",
+            "image_url_4": "https://ucarecdn.com/c9c2d758-3fc3-42c3-ad49-3a055fd67e55/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0323%20_1_.JPG",
+            "image_url_5": "https://ucarecdn.com/692c3e74-ac6d-4d72-9c35-5ef17fdf5bd9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0591.JPG"
           }
         },
-        "image_full_31": {
-          "type": "image_full",
+        "carousel_color_3": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/6fc5861a-9f4d-4bcc-a13e-27aaf4668a7c/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1810.JPG",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/2cc971a4-95bb-40ac-9301-720cbf5930be/-/format/auto/-/preview/3000x3000/-/quality/lighter/4.png",
+            "image_url_2": "https://ucarecdn.com/3c29474a-5c1f-45f0-a7b1-86d940971c36/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1218.JPG",
+            "image_url_3": "https://ucarecdn.com/d496959f-3383-4f5f-97ef-857dba8c7972/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0389.JPG",
+            "image_url_4": "https://ucarecdn.com/42726473-5bb5-4d65-912a-8bc3808c2bdb/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1245.JPG",
+            "image_url_5": "https://ucarecdn.com/b2b5907e-87af-4419-9f8e-cc8d9fdfa94f/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0944.JPG"
           }
         },
-        "image_full_32": {
-          "type": "image_full",
+        "carousel_color_4": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/1fa026da-e92f-496f-9b7a-e0fde1ae8ce5/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0974%20_1_.JPG",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/10d3ebb9-bf0d-4818-b030-5e70cfb24b2b/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.png",
+            "image_url_2": "https://ucarecdn.com/b61673aa-2c75-4990-ab3b-58d873996c15/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1041.JPG",
+            "image_url_3": "https://ucarecdn.com/7810c42d-07f7-4175-b0ff-4df7e2853b04/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1203.JPG",
+            "image_url_4": "https://ucarecdn.com/920e5fc1-2437-4f45-bcb6-4b075d2fc304/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1750.JPG",
+            "image_url_5": "https://ucarecdn.com/873537e4-a6a3-47cf-bc52-f3b1f7e160d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1290.JPG"
           }
         },
-        "image_full_33": {
-          "type": "image_full",
+        "carousel_color_5": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/b5aecc59-8904-40de-9387-883e78cd5826/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1266.JPG",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/2942497e-b42e-43fe-9867-e8946ff03ca5/-/format/auto/-/preview/3000x3000/-/quality/lighter/6.png",
+            "image_url_2": "https://ucarecdn.com/766d06cf-79fd-49bf-8f21-67659fb6073d/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0214.JPG",
+            "image_url_3": "https://ucarecdn.com/07f0da46-0155-48d2-bf04-ce0ba4473dff/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1145.JPG",
+            "image_url_4": "https://ucarecdn.com/bf61b6fe-6cb9-4c71-a808-085a67e550e9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1360.JPG",
+            "image_url_5": "https://ucarecdn.com/72cebb49-38b8-4649-aabb-789b7b364bfe/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0371.JPG"
           }
         },
-        "image_full_34": {
-          "type": "image_full",
+        "carousel_color_6": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/34a470d5-13a3-491f-b50c-f2b1a8571261/-/format/auto/-/preview/3000x3000/-/quality/lighter/3.png",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/6de01b7b-4612-4f50-bbf4-86415e53393b/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
+            "image_url_2": "https://ucarecdn.com/d7917f70-f5ef-42e9-8c0d-cdc6c194612a/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03624.jpg",
+            "image_url_3": "https://ucarecdn.com/8164250c-c97b-4d32-906c-e6f0aa8d2deb/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03460.jpg",
+            "image_url_4": "https://ucarecdn.com/23e911f4-acbe-4ea8-a0e9-e02d96d307dc/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-04120%20_1_.jpg",
+            "image_url_5": "https://ucarecdn.com/ad5b4913-20ec-4b41-85d3-58aa59ec6237/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03527%20_1_.jpg"
           }
         },
-        "image_full_35": {
-          "type": "image_full",
+        "carousel_color_7": {
+          "type": "image_carousel",
           "settings": {
-            "image_url": "https://ucarecdn.com/102412a5-b03e-4bc6-a32c-e6f945275d5b/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0871.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_36": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/98f969f9-0058-46db-8625-5f3a00eb9db8/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0498.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_37": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/c9c2d758-3fc3-42c3-ad49-3a055fd67e55/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0323%20_1_.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_38": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/692c3e74-ac6d-4d72-9c35-5ef17fdf5bd9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0591.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_39": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/2cc971a4-95bb-40ac-9301-720cbf5930be/-/format/auto/-/preview/3000x3000/-/quality/lighter/4.png",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_40": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/3c29474a-5c1f-45f0-a7b1-86d940971c36/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1218.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_41": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/d496959f-3383-4f5f-97ef-857dba8c7972/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0389.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_42": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/42726473-5bb5-4d65-912a-8bc3808c2bdb/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1245.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_43": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/b2b5907e-87af-4419-9f8e-cc8d9fdfa94f/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0944.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_44": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/10d3ebb9-bf0d-4818-b030-5e70cfb24b2b/-/format/auto/-/preview/3000x3000/-/quality/lighter/5.png",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_45": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/b61673aa-2c75-4990-ab3b-58d873996c15/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1041.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_46": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/7810c42d-07f7-4175-b0ff-4df7e2853b04/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1203.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_47": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/920e5fc1-2437-4f45-bcb6-4b075d2fc304/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1750.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_48": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/873537e4-a6a3-47cf-bc52-f3b1f7e160d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1290.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_49": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/2942497e-b42e-43fe-9867-e8946ff03ca5/-/format/auto/-/preview/3000x3000/-/quality/lighter/6.png",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_50": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/766d06cf-79fd-49bf-8f21-67659fb6073d/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0214.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_51": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/07f0da46-0155-48d2-bf04-ce0ba4473dff/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1145.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_52": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/bf61b6fe-6cb9-4c71-a808-085a67e550e9/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1360.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_53": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/72cebb49-38b8-4649-aabb-789b7b364bfe/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0371.JPG",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_54": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/6de01b7b-4612-4f50-bbf4-86415e53393b/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_55": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/d7917f70-f5ef-42e9-8c0d-cdc6c194612a/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03624.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_56": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/8164250c-c97b-4d32-906c-e6f0aa8d2deb/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03460.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_57": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/23e911f4-acbe-4ea8-a0e9-e02d96d307dc/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-04120%20_1_.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_58": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/ad5b4913-20ec-4b41-85d3-58aa59ec6237/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03527%20_1_.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_59": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/a513ed5f-30da-4ec9-9ebf-67cb450dd4d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/9.png",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_60": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/19d8a287-15df-47a9-a305-f00b76613450/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03680.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_61": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/0b75ce87-0b8c-4ed7-bd7b-74ad9c29a680/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03694.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_62": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/43acd55e-065f-4829-be4f-2ebd0e2b5107/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03629.jpg",
-            "margin_bottom": 24
-          }
-        },
-        "image_full_63": {
-          "type": "image_full",
-          "settings": {
-            "image_url": "https://ucarecdn.com/aaa6c701-d65e-4b0a-a0e3-54d2a0bddf82/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03460.jpg",
-            "margin_bottom": 24
+            "accent_color": "#04358D",
+            "margin_bottom": 40,
+            "image_url_1": "https://ucarecdn.com/a513ed5f-30da-4ec9-9ebf-67cb450dd4d9/-/format/auto/-/preview/3000x3000/-/quality/lighter/9.png",
+            "image_url_2": "https://ucarecdn.com/19d8a287-15df-47a9-a305-f00b76613450/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03680.jpg",
+            "image_url_3": "https://ucarecdn.com/0b75ce87-0b8c-4ed7-bd7b-74ad9c29a680/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03694.jpg",
+            "image_url_4": "https://ucarecdn.com/43acd55e-065f-4829-be4f-2ebd0e2b5107/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03629.jpg",
+            "image_url_5": "https://ucarecdn.com/aaa6c701-d65e-4b0a-a0e3-54d2a0bddf82/-/format/auto/-/preview/3000x3000/-/quality/lighter/250925-03460.jpg"
           }
         },
         "image_full_64": {
@@ -554,12 +390,11 @@
           }
         },
         "image_text_80": {
-          "type": "image_text",
+          "type": "rich_text",
           "settings": {
-            "layout": "right",
-            "image_url": "",
-            "heading": "",
-            "text": "<p>#KKHOME</p>",
+            "heading": "#KKHOME",
+            "text": "",
+            "text_alignment": "center",
             "margin_bottom": 24
           }
         },
@@ -626,31 +461,83 @@
             "image_on": true,
             "margin_bottom": 24,
             "icon_size": "medium",
-            "columns_desktop": 4,
-            "columns_mobile": 2,
+            "columns_desktop": 3,
+            "columns_mobile": 1,
             "swipe_on_mobile": true,
             "image_url_1": "https://ucarecdn.com/a527e82e-179a-42da-9864-03fe720857fe/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%92%E3%82%B1%E3%82%99%E3%81%AE%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
             "title_1": "今までなかった新しいジャンル！",
             "text_1": "<p>50代男性 / 商社勤務<br>「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！</p>",
             "image_url_2": "https://ucarecdn.com/92e86b82-75a5-4d8d-a858-21a4d4848d0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E7%B7%9A%E7%94%BB%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88.png",
             "title_2": "雇用も守れる！",
-            "text_2": "<p>30代女性 / アパレルメーカー勤務<br>30代女性<br>沈み込む感覚がなんとも言えない気持ちよさがある！KAPOK KNOTならではのサステナブルな取り組みや生産者さんの安定した雇用形態などストーリーが流石です！</p>",
+            "text_2": "<p>30代女性 / アパレルメーカー勤務<br>沈み込む感覚がなんとも言えない気持ちよさがある！KAPOK KNOTならではのサステナブルな取り組みや生産者さんの安定した雇用形態などストーリーが流石です！</p>",
             "image_url_3": "https://ucarecdn.com/bf5302f6-c5cd-47fa-aaae-531b5955d4b6/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%A1%E3%82%AB%E3%82%99%E3%83%8D%E3%82%92%E3%81%8B%E3%81%91%E3%81%9F%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
             "title_3": "一度も起きることなく...快眠！",
-            "text_3": "<p>40代男性 / IT企業勤務<br>40代男性<br>まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激したのでこれから重宝します！</p>",
-            "image_url_4": "https://ucarecdn.com/ec014e2f-0859-478b-b993-7e599be6cf90/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E4%BA%BA%E7%89%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
-            "title_4": "FAQ",
-            "text_4": "<p>50代女性 / 主婦<br>50代女性</p>"
+            "text_3": "<p>40代男性 / IT企業勤務<br>まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激したのでこれから重宝します！</p>"
           }
         },
-        "image_text_93": {
-          "type": "image_text",
+        "faq_heading": {
+          "type": "rich_text",
           "settings": {
-            "layout": "right",
-            "image_url": "https://ucarecdn.com/7c3139ae-dbf1-4298-8165-bb3159a5c9f0/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1750.JPG",
-            "heading": "",
-            "text": "<p>次の販売はいつごろですか？</p><p>リビングで利用できますか？</p><p>加重ブランケットを使っているんですが、起きたら落ちちゃいます。これは合っていないですか？</p><p>2人では使えないですか？</p><p>Lサイズ)は掛け布団のシングルとほぼ同じ大きさですが、横向きにして胸に乗せてご利用するだけでも安心感があり安定いたします。</p><p>洗濯は可能でしょうか？</p><p>使っていて丸まってきたのですが、どうすればいいの？</p><p>このブランケットは夏でも使えますか？</p>",
+            "heading": "よくあるご質問",
+            "text": "",
+            "text_alignment": "center",
             "margin_bottom": 24
+          }
+        },
+        "faq_1": {
+          "type": "accordion",
+          "settings": {
+            "title": "次の販売はいつごろですか？",
+            "content": "<p>次回販売の情報は公式LINEにて最速でお届けいたします。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_2": {
+          "type": "accordion",
+          "settings": {
+            "title": "リビングで利用できますか？",
+            "content": "<p>はい。Nap Size(M)はソファでの使用を想定して設計されています。日本のソファの平均奥行き70cmに基づくサイズです。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_3": {
+          "type": "accordion",
+          "settings": {
+            "title": "加重ブランケットを使っていますが、起きたら落ちてしまいます。合っていないのでしょうか？",
+            "content": "<p>寝返りの際に落ちることはございますが、寝入りの際に心地よい重さを感じていれば、十分にお使いいただけています。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_4": {
+          "type": "accordion",
+          "settings": {
+            "title": "2人で使えますか？",
+            "content": "<p>Sleep Size(L)は150×100cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。Lサイズは掛け布団のシングルとほぼ同じ大きさのため、横向きにして胸に乗せてご利用するだけでも安心感があり安定いたします。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_5": {
+          "type": "accordion",
+          "settings": {
+            "title": "洗濯は可能でしょうか？",
+            "content": "<p>ご家庭での手洗いが可能です。詳しくは付属の取扱説明書をご確認ください。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_6": {
+          "type": "accordion",
+          "settings": {
+            "title": "使っていて丸まってきたのですが、どうすればいいですか？",
+            "content": "<p>ニット素材のため使用に伴い多少丸まることがございますが、両端を持って軽く引き伸ばしていただくことで整います。</p>",
+            "margin_bottom": 12
+          }
+        },
+        "faq_7": {
+          "type": "accordion",
+          "settings": {
+            "title": "このブランケットは夏でも使えますか？",
+            "content": "<p>はい。あみあみ構造による通気性で、夏でも蒸れを気にせず365日お使いいただけます。</p>",
+            "margin_bottom": 12
           }
         },
         "rich_text_94": {
@@ -695,8 +582,9 @@
           "settings": {
             "image_on": true,
             "margin_bottom": 80,
-            "columns_desktop": 3,
-            "icon_size": "large",
+            "columns_desktop": 1,
+            "columns_mobile": 1,
+            "icon_size": "medium",
             "image_url_1": "https://ucarecdn.com/d52b3ea5-7fd3-4db6-8c57-566e62c9c422/-/format/auto/-/preview/3000x3000/-/quality/lighter/Frame%20_11_.png",
             "title_1": "",
             "text_1": ""
@@ -742,41 +630,13 @@
         "image_full_26",
         "image_full_27",
         "image_full_28",
-        "image_full_29",
-        "image_full_30",
-        "image_full_31",
-        "image_full_32",
-        "image_full_33",
-        "image_full_34",
-        "image_full_35",
-        "image_full_36",
-        "image_full_37",
-        "image_full_38",
-        "image_full_39",
-        "image_full_40",
-        "image_full_41",
-        "image_full_42",
-        "image_full_43",
-        "image_full_44",
-        "image_full_45",
-        "image_full_46",
-        "image_full_47",
-        "image_full_48",
-        "image_full_49",
-        "image_full_50",
-        "image_full_51",
-        "image_full_52",
-        "image_full_53",
-        "image_full_54",
-        "image_full_55",
-        "image_full_56",
-        "image_full_57",
-        "image_full_58",
-        "image_full_59",
-        "image_full_60",
-        "image_full_61",
-        "image_full_62",
-        "image_full_63",
+        "carousel_color_1",
+        "carousel_color_2",
+        "carousel_color_3",
+        "carousel_color_4",
+        "carousel_color_5",
+        "carousel_color_6",
+        "carousel_color_7",
         "image_full_64",
         "features_grid_65",
         "rich_text_66",
@@ -794,7 +654,14 @@
         "features_grid_83",
         "rich_text_84",
         "features_grid_auto_review_105",
-        "image_text_93",
+        "faq_heading",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
         "rich_text_94",
         "features_grid_95",
         "features_grid_auto_review_106",

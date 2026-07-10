@@ -1,0 +1,280 @@
+{% comment %} SS Collection — Material Story + Product Chapter {% endcomment %}
+
+<style>
+  #{{ section.id }}.ss-ch {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(56px, 9vw, 96px) 0;
+    overflow: hidden;
+  }
+
+  #{{ section.id }} .ss-ch__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 24px);
+  }
+
+  #{{ section.id }} .ss-ch__head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto clamp(32px, 5vw, 44px);
+  }
+
+  #{{ section.id }} .ss-ch__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    margin: 0 0 clamp(10px, 2vw, 14px);
+  }
+
+  #{{ section.id }} .ss-ch__material-name {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.45;
+    color: #1a1a1a;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .ss-ch__material-story {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(13px, 1.7vw, 15px);
+    line-height: 1.9;
+    color: #5a5550;
+    margin: 0;
+  }
+
+  #{{ section.id }} .ss-ch__material-story p { margin: 0 0 0.8em; }
+  #{{ section.id }} .ss-ch__material-story p:last-child { margin-bottom: 0; }
+
+  #{{ section.id }} .ss-ch__material-image-wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto clamp(32px, 5vw, 48px);
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: {{ section.settings.image_aspect | default: '16 / 9' }};
+    background: #f0ece4;
+  }
+
+  #{{ section.id }} .ss-ch__material-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #{{ section.id }} .ss-ch__products {
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | at_most: 3 | default: 3 }}, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  #{{ section.id }} .ss-ch__product {
+    background: #ffffff;
+    border: 1px solid #ede9df;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  #{{ section.id }} .ss-ch__product:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 38, 64, 0.08);
+  }
+
+  #{{ section.id }} .ss-ch__product-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #faf9f6;
+  }
+
+  #{{ section.id }} .ss-ch__product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #{{ section.id }} .ss-ch__product-body {
+    padding: 18px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #{{ section.id }} .ss-ch__product-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px;
+    line-height: 1.45;
+  }
+
+  #{{ section.id }} .ss-ch__product-colors {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: #8a7f6e;
+    letter-spacing: 0.02em;
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+
+  #{{ section.id }} .ss-ch__product-price {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 14px;
+    letter-spacing: 0.02em;
+  }
+
+  #{{ section.id }} .ss-ch__product-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: #1a1a1a;
+    border-radius: 100px;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: opacity 0.2s ease;
+  }
+
+  #{{ section.id }} .ss-ch__product-cta:hover { opacity: 0.88; }
+
+  @media (max-width: 768px) {
+    #{{ section.id }} .ss-ch__inner { padding: 0 16px; }
+    #{{ section.id }} .ss-ch__material-name { font-size: clamp(1.3rem, 5vw, 1.6rem); }
+    #{{ section.id }} .ss-ch__products {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>
+
+<section class="ss-ch" id="{{ section.id }}">
+  <div class="ss-ch__inner">
+    <div class="ss-ch__head">
+      {% if section.settings.kicker != blank %}
+        <p class="ss-ch__kicker">{{ section.settings.kicker }}</p>
+      {% endif %}
+      {% if section.settings.material_name != blank %}
+        <h2 class="ss-ch__material-name">{{ section.settings.material_name }}</h2>
+      {% endif %}
+      {% if section.settings.material_story != blank %}
+        <div class="ss-ch__material-story">{{ section.settings.material_story }}</div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.material_image != blank or section.settings.material_image_url != blank %}
+      <div class="ss-ch__material-image-wrap">
+        {% if section.settings.material_image != blank %}
+          <img class="ss-ch__material-image"
+               src="{{ section.settings.material_image | image_url: width: 1600 }}"
+               alt="{{ section.settings.material_name | escape }}"
+               loading="lazy">
+        {% elsif section.settings.material_image_url != blank %}
+          <img class="ss-ch__material-image"
+               src="{{ section.settings.material_image_url }}"
+               alt="{{ section.settings.material_name | escape }}"
+               loading="lazy">
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="ss-ch__products">
+        {% for block in section.blocks %}
+          {% if block.type == 'product' %}
+            <div class="ss-ch__product" {{ block.shopify_attributes }}>
+              <div class="ss-ch__product-img-wrap">
+                {% if block.settings.image != blank %}
+                  <img class="ss-ch__product-img"
+                       src="{{ block.settings.image | image_url: width: 800 }}"
+                       alt="{{ block.settings.product_name | escape }}"
+                       loading="lazy">
+                {% elsif block.settings.image_url != blank %}
+                  <img class="ss-ch__product-img"
+                       src="{{ block.settings.image_url }}"
+                       alt="{{ block.settings.product_name | escape }}"
+                       loading="lazy">
+                {% endif %}
+              </div>
+              <div class="ss-ch__product-body">
+                {% if block.settings.product_name != blank %}
+                  <h3 class="ss-ch__product-name">{{ block.settings.product_name }}</h3>
+                {% endif %}
+                {% if block.settings.colors != blank %}
+                  <p class="ss-ch__product-colors">{{ block.settings.colors }}</p>
+                {% endif %}
+                {% if block.settings.price != blank %}
+                  <p class="ss-ch__product-price">{{ block.settings.price }}</p>
+                {% endif %}
+                {% if block.settings.cta_text != blank %}
+                  <a class="ss-ch__product-cta" href="{{ block.settings.cta_url | default: '#' }}">
+                    {{ block.settings.cta_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SS Collection Chapter",
+  "tag": "section",
+  "class": "shopify-section--ss-ch",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "アクセント色", "default": "#c29d66" },
+    { "type": "text", "id": "kicker", "label": "キッカー (例: Material 01)", "default": "Material" },
+    { "type": "text", "id": "material_name", "label": "素材名 / 見出し", "default": "素材名" },
+    { "type": "richtext", "id": "material_story", "label": "素材ストーリー (本文)", "default": "<p>素材の説明文を入力</p>" },
+    { "type": "image_picker", "id": "material_image", "label": "素材画像" },
+    { "type": "text", "id": "material_image_url", "label": "素材画像 URL (外部フォールバック)" },
+    { "type": "text", "id": "image_aspect", "label": "素材画像のアスペクト比 (CSS: 16 / 9 等)", "default": "16 / 9" }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "商品画像" },
+        { "type": "text", "id": "image_url", "label": "商品画像 URL (外部フォールバック)" },
+        { "type": "text", "id": "product_name", "label": "商品名", "default": "商品名" },
+        { "type": "text", "id": "colors", "label": "カラー表記", "default": "カラー：Navy / Beige" },
+        { "type": "text", "id": "price", "label": "価格表示", "default": "¥0-" },
+        { "type": "text", "id": "cta_text", "label": "ボタンテキスト", "default": "詳細を見る →" },
+        { "type": "url", "id": "cta_url", "label": "ボタンリンク" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SS Collection Chapter",
+      "blocks": [
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+# Archive — not uploaded to Shopify
+archive/
+
+# Local analysis / conversion scripts
+*.js
+!sections/**/*.js
+
+# Local snapshots of live LPs
+*.html
+!templates/**/*.html
+!sections/**/*.html
+!snippets/**/*.html
+
+# Local analysis outputs
+*.txt
+!locales/**/*.txt
+parsed_layout.json
+all_styles_dump.css
+gempages_ext.css
+
+# Node
+node_modules/
+package.json
+package-lock.json
+
+# Docs / plans (kept in git but not uploaded)
+implementation_plan_*.md
+CLAUDE.md

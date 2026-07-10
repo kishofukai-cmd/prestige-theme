@@ -17,32 +17,32 @@
     <div class="ag-campaign__countdown" id="ag-countdown-{{ section.id }}">
       <div class="ag-campaign__countdown-box">
         <span class="ag-campaign__countdown-num" data-days>00</span>
-        <span class="ag-campaign__countdown-label">Days</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_days_label | default: 'Days' }}</span>
       </div>
       <span class="ag-campaign__countdown-sep">:</span>
       <div class="ag-campaign__countdown-box">
         <span class="ag-campaign__countdown-num" data-hours>00</span>
-        <span class="ag-campaign__countdown-label">Hrs</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_hours_label | default: 'Hrs' }}</span>
       </div>
       <span class="ag-campaign__countdown-sep">:</span>
       <div class="ag-campaign__countdown-box">
         <span class="ag-campaign__countdown-num" data-minutes>00</span>
-        <span class="ag-campaign__countdown-label">Min</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_min_label | default: 'Min' }}</span>
       </div>
       <span class="ag-campaign__countdown-sep">:</span>
       <div class="ag-campaign__countdown-box">
         <span class="ag-campaign__countdown-num" data-seconds>00</span>
-        <span class="ag-campaign__countdown-label">Sec</span>
+        <span class="ag-campaign__countdown-label">{{ section.settings.countdown_sec_label | default: 'Sec' }}</span>
       </div>
     </div>
 
     <div class="ag-campaign__ended" style="display:none;">
-      <p>Campaign Ended — Join the Waitlist</p>
+      <p>{{ section.settings.ended_text | default: 'Campaign Ended — Join the Waitlist' }}</p>
     </div>
 
     <!-- Spots remaining -->
     <p class="ag-campaign__spots">
-      {{ section.settings.spots_remaining }} of {{ section.settings.spots_total }} spots remaining
+      {{ section.settings.spots_remaining }} {{ section.settings.spots_of_label | default: 'of' }} {{ section.settings.spots_total }} {{ section.settings.spots_remaining_label | default: 'spots remaining' }}
     </p>
 
     <!-- CTA -->
@@ -89,11 +89,11 @@
   <div class="ag-variant-modal__backdrop" id="ag-variant-modal-backdrop-{{ section.id }}"></div>
   <div class="ag-variant-modal__box">
     <button class="ag-variant-modal__close" id="ag-variant-modal-close-{{ section.id }}" aria-label="Close">&#x2715;</button>
-    <p class="ag-variant-modal__label" id="ag-variant-modal-label-{{ section.id }}">Select Your Option</p>
+    <p class="ag-variant-modal__label" id="ag-variant-modal-label-{{ section.id }}">{{ section.settings.modal_label | default: 'Select Your Option' }}</p>
     <h3 class="ag-variant-modal__name" id="ag-variant-modal-name-{{ section.id }}"></h3>
     <p class="ag-variant-modal__price" id="ag-variant-modal-price-{{ section.id }}"></p>
     <div id="ag-variant-modal-groups-{{ section.id }}"></div>
-    <button class="ag-variant-modal__add" id="ag-variant-modal-add-{{ section.id }}" disabled>Add to Cart</button>
+    <button class="ag-variant-modal__add" id="ag-variant-modal-add-{{ section.id }}" disabled>{{ section.settings.modal_add_text | default: 'Add to Cart' }}</button>
     <p class="ag-variant-modal__error" id="ag-variant-modal-error-{{ section.id }}"></p>
   </div>
 </div>
@@ -681,8 +681,7 @@
     {
       "type": "textarea",
       "id": "subheading",
-      "label": "Subheading",
-      "default": "First 100 customers worldwide get the AirLight Jacket at our Japan launch price — before we open to the public."
+      "label": "Subheading"
     },
     {
       "type": "text",
@@ -724,6 +723,60 @@
       "id": "note",
       "label": "Note",
       "default": "This is not a flash sale. This is the first time AirLight Jacket has ever been available outside Japan."
+    },
+    {
+      "type": "text",
+      "id": "countdown_days_label",
+      "label": "Countdown — Days Label",
+      "default": "Days"
+    },
+    {
+      "type": "text",
+      "id": "countdown_hours_label",
+      "label": "Countdown — Hours Label",
+      "default": "Hrs"
+    },
+    {
+      "type": "text",
+      "id": "countdown_min_label",
+      "label": "Countdown — Minutes Label",
+      "default": "Min"
+    },
+    {
+      "type": "text",
+      "id": "countdown_sec_label",
+      "label": "Countdown — Seconds Label",
+      "default": "Sec"
+    },
+    {
+      "type": "text",
+      "id": "ended_text",
+      "label": "Campaign Ended Text",
+      "default": "Campaign Ended — Join the Waitlist"
+    },
+    {
+      "type": "text",
+      "id": "spots_of_label",
+      "label": "Spots — \"of\" Word",
+      "default": "of"
+    },
+    {
+      "type": "text",
+      "id": "spots_remaining_label",
+      "label": "Spots — \"spots remaining\" Label",
+      "default": "spots remaining"
+    },
+    {
+      "type": "text",
+      "id": "modal_label",
+      "label": "Variant Modal — Label",
+      "default": "Select Your Option"
+    },
+    {
+      "type": "text",
+      "id": "modal_add_text",
+      "label": "Variant Modal — Add Button Text",
+      "default": "Add to Cart"
     }
   ],
   "presets": [

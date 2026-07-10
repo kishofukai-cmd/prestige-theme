@@ -135,19 +135,54 @@
 {
   "name": "AG Shipping Info",
   "settings": [
-    { "type": "text", "id": "label", "label": "Section Label", "default": "Shipping & Returns" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Shipping, Duties & Returns" },
-    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Everything you need to know before you order." }
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shipping, Duties & Returns"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Everything you need to know before you order."
+    }
   ],
   "blocks": [
     {
       "type": "info_item",
       "name": "Info Item",
       "settings": [
-        { "type": "text", "id": "icon", "label": "Icon (emoji)", "default": "📦" },
-        { "type": "text", "id": "title", "label": "Title", "default": "Ships from Japan via DHL" },
-        { "type": "textarea", "id": "text", "label": "Body Text", "default": "Estimated delivery: 5–10 business days to North America and Europe. Tracking number provided by email." },
-        { "type": "checkbox", "id": "is_warning", "label": "Warning Style (orange border)", "default": false }
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "📦"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ships from Japan via DHL"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Body Text",
+          "default": "Estimated delivery: 5–10 business days to North America and Europe. Tracking number provided by email."
+        },
+        {
+          "type": "checkbox",
+          "id": "is_warning",
+          "label": "Warning Style (orange border)",
+          "default": false
+        }
       ]
     }
   ],
@@ -168,8 +203,8 @@
           "type": "info_item",
           "settings": {
             "icon": "🌍",
-            "title": "Free Worldwide Shipping",
-            "text": "All orders over $300 qualify — which means every AirLight Jacket ships free. No code needed. Applied automatically at checkout.",
+            "title": "",
+            "text": "",
             "is_warning": false
           }
         },

@@ -1,0 +1,513 @@
+{
+  "layout": "theme.airlight-global",
+  "sections": {
+    "hero": {
+      "type": "airlight2025-hero",
+      "settings": {
+        "section_id": "ss-hero",
+        "bg_color": "#ffffff",
+        "kv_image_url": "https://ucarecdn.com/f005411d-ffec-4ca0-bb53-8e160e319b00/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot50633.png",
+        "kv_image_alt": "KAPOK KNOT Spring / Summer Collection",
+        "eyebrow": "KAPOK KNOT — Spring / Summer Collection",
+        "eyebrow_color": "#c29d66",
+        "heading": "<p>ファッションも、<br><em>地球へのやさしさも諦めない。</em></p>",
+        "heading_color": "#1a1a1a",
+        "sub_text": "サステナブルな素材で、着る人にも地球にも心地よい春夏コレクション。リヨセル、漁網由来ナイロン、ギザコットン、オーガニックコットン、リサイクルポリエステル — 8 つの素材ストーリーを通じて、新しいファッションのかたちをお届けします。",
+        "sub_color": "#5a5550",
+        "cta_text": "コレクションを見る →",
+        "cta_url": "#ss-summary",
+        "cta_bg_color": "#1a1a1a",
+        "cta_text_color": "#ffffff"
+      }
+    },
+    "ch-lyocell": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#ffffff",
+        "accent_color": "#c29d66",
+        "kicker": "Material 01",
+        "material_name": "リヨセル — 世界で最も環境にやさしい繊維",
+        "material_story": "<p>ユーカリのパルプを原料に、溶剤の約99%を回収・再利用するクローズドループ方式で作られる再生セルロース繊維。なめらかな肌触りと自然な光沢、そして生分解性を兼ね備えた、春夏にふさわしい素材です。</p>",
+        "material_image_url": "https://ucarecdn.com/e336d762-0558-4779-b165-9f6a968f024c/-/format/auto/-/preview/3000x3000/-/quality/lighter/david-clode-seM6i8gJ7d0-unsplash_480x480.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/368657d5-3377-4c05-9d9c-cb840e007ac2/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot50306.png",
+            "product_name": "ガウンワンピース：ドレス -Women-",
+            "colors": "カラー：Pink / Greige / Gray",
+            "price": "¥38,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/9ef7b939-2dc0-41f6-b9ed-0fe45553c1a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/230530_kapokknot35972.png",
+            "product_name": "ガウンワンピース：ロングスリーブ -Women-",
+            "colors": "カラー：Gray / Olive / Pink",
+            "price": "¥36,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2"
+      ]
+    },
+    "ch-vintage": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "accent_color": "#c29d66",
+        "kicker": "Material 02",
+        "material_name": "ヴィンテージストック — 廃棄を待つ生地に、もう一度命を",
+        "material_story": "<p>生産過剰で倉庫に眠る「ヴィンテージストック」の生地を再活用。既にある資源を使い切ることは、新たに作るより遥かに低い環境負荷で済む、最も身近なサステナビリティのかたちです。</p>",
+        "material_image_url": "https://ucarecdn.com/0a8a07c3-c5a7-4086-b1c4-8f5b0ff3576f/-/format/auto/-/preview/3000x3000/-/quality/lighter/istockphoto-119430019-612x612.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/e77a06c5-cdb8-42f6-9f0a-d20336ca7455/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot1117_re1.png",
+            "product_name": "フードトレンチ：ストライプ -Unisex-",
+            "colors": "カラー：Beige",
+            "price": "¥36,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1"
+      ]
+    },
+    "ch-recycled-nylon": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#ffffff",
+        "accent_color": "#c29d66",
+        "kicker": "Material 03",
+        "material_name": "繊維リサイクルナイロン — 産業廃棄物から生まれた、新しい糸",
+        "material_story": "<p>従来は産業廃棄物として処分されていたナイロンの裁断くずを回収・再生。石油を新たに使わずに、高機能な繊維をもう一度生み出すクローズドリサイクルの素材です。</p>",
+        "material_image_url": "https://ucarecdn.com/01712c6b-d2a0-4054-92fc-f81ff9b08407/-/format/auto/-/preview/3000x3000/-/quality/lighter/istockphoto-847785862-612x612.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/fb891107-009f-4d01-a3db-9c1078c28820/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot3652.png",
+            "product_name": "エアーライトポンチョ -Unisex-",
+            "colors": "カラー：Terracotta / Black / Greige",
+            "price": "¥38,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a45ac38d-746e-4029-b9f1-2545f8628ccd/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot3457_1_1_399c5f1a-ce3c-49f8-91cc-0b93a6c6c5a4.png",
+            "product_name": "ガウンワンピース：ハーフスリーブ -Unisex-",
+            "colors": "カラー：Beige / Terracotta / Black",
+            "price": "¥32,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2"
+      ]
+    },
+    "ch-fishing-net": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "accent_color": "#c29d66",
+        "kicker": "Material 04",
+        "material_name": "漁網ナイロン — 海から引き上げ、服へ",
+        "material_story": "<p>日本の海岸に漂着するプラスチックごみのうち、約30%が漁業由来といわれています。使い終わった漁網を回収し、高品質なナイロン糸として再生。海を守る選択を、着ることから。</p>",
+        "material_image_url": "https://ucarecdn.com/ef8ad1ad-bbd1-4081-bdaa-f88c5e35d2c9/-/format/auto/-/preview/3000x3000/-/quality/lighter/fishing-net-6670247_1280.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a533e37d-5ef3-44c8-8244-d9f3e4c4d569/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot52031.png",
+            "product_name": "スタンドカラーガウンワンピース -Unisex-",
+            "colors": "カラー：Navy / White",
+            "price": "¥28,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1"
+      ]
+    },
+    "ch-fluorine-free": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#ffffff",
+        "accent_color": "#c29d66",
+        "kicker": "Material 05",
+        "material_name": "フッ素フリー撥水 — 水は弾く、環境は守る",
+        "material_story": "<p>従来の撥水加工で使われるフッ素系化合物 (PFAS) は自然界で分解されにくく、環境への流出が懸念されています。植物由来の撥水コーティングを採用し、機能性と環境配慮を両立させました。</p>",
+        "material_image_url": "https://ucarecdn.com/7b32852f-6070-4908-a203-a00a01b5f355/-/format/auto/-/preview/3000x3000/-/quality/lighter/istockphoto-157522234-612x612.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/f84563b1-8adb-43bc-a9f5-ec35de6e93b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot38011.png",
+            "product_name": "フードトレンチ：プレーン -Unisex-",
+            "colors": "カラー：White / Black",
+            "price": "¥36,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1"
+      ]
+    },
+    "ch-giza": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "accent_color": "#c29d66",
+        "kicker": "Material 06",
+        "material_name": "ギザコットン — 世界三大コットンの一つ",
+        "material_story": "<p>エジプト・ナイル川流域で育つ「ギザ」綿は、長く繊細な繊維が特徴。一般的な綿よりも耐久性が高く、使い込むほどに柔らかく馴染んでいきます。春夏の定番Tシャツに。</p>",
+        "material_image_url": "https://ucarecdn.com/31c83d5b-85ed-4255-b9e3-410f1c0b93ed/-/format/auto/-/preview/3000x3000/-/quality/lighter/istockphoto-917582344-612x612.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/f9bff078-9fc5-4c75-af1d-ef95519e1b1a/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC_35562_2.png",
+            "product_name": "ギザコットンクラシックTシャツ -Unisex-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥14,500-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/add8cc3f-38d1-4084-9f0e-a395c2bee3a3/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot92614.png",
+            "product_name": "ギザコットンブラウスTシャツ -Women-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥18,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/415fa2be-dfcd-426c-8b71-516808581ace/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot90642_835333fa-200f-4560-8555-b7eff65045c7.png",
+            "product_name": "ギザコットンポケットブラウスTシャツ -Women-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥18,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ]
+    },
+    "ch-organic": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#ffffff",
+        "accent_color": "#c29d66",
+        "kicker": "Material 07",
+        "material_name": "オーガニックコットン — 土にも、人にも、やさしい",
+        "material_story": "<p>化学肥料や農薬に頼らず、3 年以上オーガニック農法で育てられたコットン。着る人の肌にやさしいだけでなく、栽培する農家の健康と、土壌の豊かさも守ります。</p>",
+        "material_image_url": "https://ucarecdn.com/3da5a35b-ade8-45a5-a71b-b9913150b558/-/format/auto/-/preview/3000x3000/-/quality/lighter/cotton-2807360_1280.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/8cfbb37c-d068-427d-aded-8884d7206eda/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot35461.png",
+            "product_name": "スタンドカラーガウンワンピース：ストライプ -Unisex-",
+            "colors": "カラー：Cream",
+            "price": "¥28,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1"
+      ]
+    },
+    "ch-recycled-polyester": {
+      "type": "ss-collection-chapter",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "accent_color": "#c29d66",
+        "kicker": "Material 08",
+        "material_name": "リサイクルポリエステル — ペットボトルに、もう一度",
+        "material_story": "<p>廃棄されたペットボトルを粉砕・溶融して作る再生ポリエステル。石油を新たに採掘せず、廃棄プラスチックの行き先を、洋服という長く使える形に変えていきます。</p>",
+        "material_image_url": "https://ucarecdn.com/8922f333-dd4c-4a53-9f11-6d997bee99c3/-/format/auto/-/preview/3000x3000/-/quality/lighter/plastic-5128682_1280.jpg",
+        "image_aspect": "16 / 9"
+      },
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/5321c98c-787e-4166-b203-442120c10efc/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot5073.png",
+            "product_name": "ノーカラージャケット -Women-",
+            "colors": "カラー：Light Gray / Navy",
+            "price": "¥24,000-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/e46d5306-bc2c-49ae-b04e-42a739edd03c/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot93584_02087739-ff3b-40d0-b801-f0eadb880f2d.png",
+            "product_name": "エコダンボールニット：パーカー -Unisex-",
+            "colors": "カラー：Greige / Pink / Black",
+            "price": "¥19,800-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "image_url": "https://ucarecdn.com/4d665b88-2236-415f-b45c-827b0d2b11c3/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot0077_1_1.png",
+            "product_name": "エコダンボールニット：プルオーバー -Unisex-",
+            "colors": "カラー：Greige / Pink / Navy",
+            "price": "¥19,800-",
+            "cta_text": "詳細を見る →",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "product_1",
+        "product_2",
+        "product_3"
+      ]
+    },
+    "summary": {
+      "type": "airlight2025-crosssell",
+      "settings": {
+        "section_id": "ss-summary",
+        "bg_color": "#ffffff",
+        "jackets_heading": "Spring / Summer Collection 一覧",
+        "coats_heading": ""
+      },
+      "blocks": {
+        "tile_1": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ガウンワンピース：ドレス -Women-",
+            "colors": "カラー：Pink / Greige / Gray",
+            "price": "¥38,000-",
+            "image_url": "https://ucarecdn.com/368657d5-3377-4c05-9d9c-cb840e007ac2/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot50306.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_2": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ガウンワンピース：ロングスリーブ -Women-",
+            "colors": "カラー：Gray / Olive / Pink",
+            "price": "¥36,000-",
+            "image_url": "https://ucarecdn.com/9ef7b939-2dc0-41f6-b9ed-0fe45553c1a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/230530_kapokknot35972.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_3": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "フードトレンチ：ストライプ -Unisex-",
+            "colors": "カラー：Beige",
+            "price": "¥36,000-",
+            "image_url": "https://ucarecdn.com/e77a06c5-cdb8-42f6-9f0a-d20336ca7455/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot1117_re1.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_4": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "エアーライトポンチョ -Unisex-",
+            "colors": "カラー：Terracotta / Black / Greige",
+            "price": "¥38,000-",
+            "image_url": "https://ucarecdn.com/fb891107-009f-4d01-a3db-9c1078c28820/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot3652.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_5": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ガウンワンピース：ハーフスリーブ -Unisex-",
+            "colors": "カラー：Beige / Terracotta / Black",
+            "price": "¥32,000-",
+            "image_url": "https://ucarecdn.com/a45ac38d-746e-4029-b9f1-2545f8628ccd/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot3457_1_1_399c5f1a-ce3c-49f8-91cc-0b93a6c6c5a4.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_6": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "スタンドカラーガウンワンピース -Unisex-",
+            "colors": "カラー：Navy / White",
+            "price": "¥28,000-",
+            "image_url": "https://ucarecdn.com/a533e37d-5ef3-44c8-8244-d9f3e4c4d569/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot52031.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_7": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "フードトレンチ：プレーン -Unisex-",
+            "colors": "カラー：White / Black",
+            "price": "¥36,000-",
+            "image_url": "https://ucarecdn.com/f84563b1-8adb-43bc-a9f5-ec35de6e93b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot38011.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_8": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ギザコットンクラシックTシャツ -Unisex-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥14,500-",
+            "image_url": "https://ucarecdn.com/f9bff078-9fc5-4c75-af1d-ef95519e1b1a/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC_35562_2.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_9": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ギザコットンブラウスTシャツ -Women-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥18,000-",
+            "image_url": "https://ucarecdn.com/add8cc3f-38d1-4084-9f0e-a395c2bee3a3/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot92614.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_10": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ギザコットンポケットブラウスTシャツ -Women-",
+            "colors": "カラー：White / Magenta / Black",
+            "price": "¥18,000-",
+            "image_url": "https://ucarecdn.com/415fa2be-dfcd-426c-8b71-516808581ace/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot90642_835333fa-200f-4560-8555-b7eff65045c7.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_11": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "スタンドカラーガウンワンピース：ストライプ -Unisex-",
+            "colors": "カラー：Cream",
+            "price": "¥28,000-",
+            "image_url": "https://ucarecdn.com/8cfbb37c-d068-427d-aded-8884d7206eda/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot35461.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_12": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ノーカラージャケット -Women-",
+            "colors": "カラー：Light Gray / Navy",
+            "price": "¥24,000-",
+            "image_url": "https://ucarecdn.com/5321c98c-787e-4166-b203-442120c10efc/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot5073.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_13": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "エコダンボールニット：パーカー -Unisex-",
+            "colors": "カラー：Greige / Pink / Black",
+            "price": "¥19,800-",
+            "image_url": "https://ucarecdn.com/e46d5306-bc2c-49ae-b04e-42a739edd03c/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot93584_02087739-ff3b-40d0-b801-f0eadb880f2d.png",
+            "cta_url": "/collections/all"
+          }
+        },
+        "tile_14": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "エコダンボールニット：プルオーバー -Unisex-",
+            "colors": "カラー：Greige / Pink / Navy",
+            "price": "¥19,800-",
+            "image_url": "https://ucarecdn.com/4d665b88-2236-415f-b45c-827b0d2b11c3/-/format/auto/-/preview/3000x3000/-/quality/lighter/230308_kapokknot0077_1_1.png",
+            "cta_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "tile_1",
+        "tile_2",
+        "tile_3",
+        "tile_4",
+        "tile_5",
+        "tile_6",
+        "tile_7",
+        "tile_8",
+        "tile_9",
+        "tile_10",
+        "tile_11",
+        "tile_12",
+        "tile_13",
+        "tile_14"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "ch-lyocell",
+    "ch-vintage",
+    "ch-recycled-nylon",
+    "ch-fishing-net",
+    "ch-fluorine-free",
+    "ch-giza",
+    "ch-organic",
+    "ch-recycled-polyester",
+    "summary"
+  ]
+}

@@ -1,0 +1,271 @@
+{%- comment -%}
+  KAPOK KNOT — Premium Feature Cards
+  Design: Vertical stack layout, large centered icons, rich typography
+  Mobile: Full-width stacked cards with generous spacing
+  PC: 3-column grid with hover micro-interactions
+{%- endcomment -%}
+
+<style>
+/* ============================================
+   KAPOK Feature Cards — Premium Design System
+   ============================================ */
+
+.kpk-features {
+  width: 100%;
+  padding: 48px 0;
+  background: {{ section.settings.background_color }};
+}
+
+.kpk-features__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section Title */
+.kpk-features__title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: {{ section.settings.text_color }};
+  letter-spacing: 0.06em;
+  font-feature-settings: "palt";
+  line-height: 1.4;
+}
+
+/* Card Container — Vertical Stack on Mobile */
+.kpk-features__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Individual Feature Card */
+.kpk-fcard {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.kpk-fcard:last-child {
+  border-bottom: none;
+}
+
+/* Icon — Large and prominent */
+.kpk-fcard__icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.kpk-fcard__icon img,
+.kpk-fcard__icon svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.kpk-fcard__icon .placeholder-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Text Content */
+.kpk-fcard__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.kpk-fcard__heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+  color: {{ section.settings.text_color }};
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt";
+}
+
+.kpk-fcard__text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #666;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.kpk-fcard__text p {
+  margin: 0;
+}
+
+/* ===== PC / Desktop (769px+) ===== */
+@media screen and (min-width: 769px) {
+  .kpk-features {
+    padding: 72px 0;
+  }
+
+  .kpk-features__title {
+    font-size: 2rem;
+    margin-bottom: 56px;
+  }
+
+  /* Switch to 3-column grid on PC */
+  .kpk-features__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .kpk-fcard {
+    flex: 1 1 calc(33.333% - 40px);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px;
+    border-bottom: none;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .kpk-fcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+  }
+
+  .kpk-fcard__icon {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 20px;
+  }
+
+  .kpk-fcard__heading {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+  }
+
+  .kpk-fcard__text {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<section class="kpk-features" id="section-{{ section.id }}">
+  <div class="kpk-features__inner">
+    
+    {%- if section.settings.title != blank -%}
+      <h2 class="kpk-features__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="kpk-features__list">
+      {%- for block in section.blocks -%}
+        <div class="kpk-fcard" id="block-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="kpk-fcard__icon">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | img_url: '400x' }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+                width="400"
+                height="400"
+              >
+            {%- elsif block.settings.image_url != blank -%}
+              <img
+                src="{{ block.settings.image_url }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+                width="400"
+                height="400"
+              >
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          
+          <div class="kpk-fcard__body">
+            {%- if block.settings.title != blank -%}
+              <h3 class="kpk-fcard__heading">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.text != blank -%}
+              <div class="kpk-fcard__text">{{ block.settings.text }}</div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Cards (Premium)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "セクション見出し",
+      "default": "Features"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "テキスト色",
+      "default": "#1a1a1a"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "アイコン画像"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "アイコン画像 URL (外部フォールバック)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "見出し",
+          "default": "Feature"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "説明文",
+          "default": "<p>説明を入力</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Cards (Premium)",
+      "blocks": [
+        { "type": "feature_card" },
+        { "type": "feature_card" },
+        { "type": "feature_card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

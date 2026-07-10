@@ -1,0 +1,784 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.airlight-global",
+  "sections": {
+    "hero": {
+      "type": "airlight-global-hero",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "¥50M+",
+            "label": "Makuake累計応援"
+          }
+        },
+        "proof_2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "10+",
+            "label": "デザイン賞受賞"
+          }
+        },
+        "proof_3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★ 4.8",
+            "label": "購入者レビュー"
+          }
+        },
+        "highlight_1": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "約500g · 空気のように軽いのに、ダウンと同等の暖かさ。"
+          }
+        },
+        "highlight_2": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "カポック繊維: 内部80%が空気の中空構造。吸湿発熱で自然に暖かい。"
+          }
+        },
+        "highlight_3": {
+          "type": "highlight_item",
+          "settings": {
+            "text": "動物の羽毛ゼロ。カポックの木は伐らない。日本発の新素材ブランド。"
+          }
+        }
+      },
+      "block_order": [
+        "proof_1",
+        "proof_2",
+        "proof_3",
+        "highlight_1",
+        "highlight_2",
+        "highlight_3"
+      ],
+      "settings": {
+        "eyebrow": "KAPOK KNOT — カポック素材で作る、木になるダウン",
+        "pre_headline": "その冬アウター、本当に着心地いいですか？",
+        "hero_title": "<p>空気のように軽く、<br><em>暖かい。</em></p>",
+        "hero_sub": "<p>約500g、カポックシートで実現した植物由来の冬アウター。<br>動物も地球も傷つけない、ダウンの次の選択肢。</p>",
+        "cta_text": "今すぐ手に入れる →",
+        "cta_price": "¥39,800〜 · 全国送料無料",
+        "offer_note": "· 30日間返品保証 · 日本製",
+        "scroll_hint": "↓ 詳しく見る",
+        "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
+        "hero_image_alt": "エアーライトジャケット · KAPOK KNOT",
+        "launch_spot_icon": "⬡",
+        "launch_spot": "累計5000万円 Makuake応援 / 2,000人以上にご愛用",
+        "highlight_check_icon": "✓",
+        "cta_label": "今すぐ手に入れる →"
+      }
+    },
+    "trust-bar": {
+      "type": "airlight-global-trust",
+      "blocks": {
+        "trust_1": {
+          "type": "item",
+          "settings": {
+            "text": "Makuake累計 5,000万円"
+          }
+        },
+        "trust_2": {
+          "type": "item",
+          "settings": {
+            "text": "2,000人以上が愛用"
+          }
+        },
+        "trust_3": {
+          "type": "item",
+          "settings": {
+            "text": "5年の研究開発"
+          }
+        },
+        "trust_4": {
+          "type": "item",
+          "settings": {
+            "text": "すべて日本製"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
+      "settings": {
+        "trust_image_alt": "日本製 — 青森の縫製職人の手仕事"
+      }
+    },
+    "brand": {
+      "type": "airlight-global-brand",
+      "blocks": {
+        "tag_1": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🏆 10+ デザイン賞受賞"
+          }
+        },
+        "tag_2": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🇯🇵 すべて日本製"
+          }
+        },
+        "tag_3": {
+          "type": "tag_item",
+          "settings": {
+            "text": "🌿 Milano Unica 出展"
+          }
+        },
+        "tag_4": {
+          "type": "tag_item",
+          "settings": {
+            "text": "💴 Makuake 5,000万円"
+          }
+        },
+        "tag_5": {
+          "type": "tag_item",
+          "settings": {
+            "text": "⭐ 2,000人以上にご愛用"
+          }
+        }
+      },
+      "block_order": [
+        "tag_1",
+        "tag_2",
+        "tag_3",
+        "tag_4",
+        "tag_5"
+      ],
+      "settings": {
+        "kicker": "日本発、素材から変える物語",
+        "heading": "<p>5年かけて、<br><em>一枚のジャケットに辿り着いた。</em></p>",
+        "body": "<p>創業者・深井喜翔は、4代続く老舗アパレル企業の後継者として、アパレル業界の大量生産・大量廃棄という負のシステムに向き合ってきました。</p><p>そんな中、カポックと出会い「これこそが自分が人生を懸けて取り組むべき素材である」と直感したのが始まりでした。</p><p>カポック繊維は短すぎて糸にできない——各社が断念してきた難題を、日本有数の繊維技術者たちと5年かけて解決。ようやく生まれたのが特許申請中の中綿シート、エシカルダウンカポック™です。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添うものづくり。それが KAPOK KNOT です。</p>",
+        "founder_image_url": "airlight-brand-founder.jpg",
+        "founder_caption": "創業者・深井喜翔 — KAPOK KNOT"
+      }
+    },
+    "awards": {
+      "type": "airlight-global-awards",
+      "blocks": {
+        "award_1": {
+          "type": "award_item",
+          "settings": {
+            "meta": "METI · JETRO — Shido Next Innovator 2019",
+            "title": "🏆 Silicon Valley Selection — Grand Prize"
+          }
+        },
+        "award_2": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2021",
+            "title": "🏆 Grand Prix (Crafted Catapult)"
+          }
+        },
+        "award_3": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Nikkei Shimbun — Star Startup Japan 2021",
+            "title": "🏆 Next-Generation Venture Award"
+          }
+        },
+        "award_4": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Ministry of Environment — Startup Award 2021",
+            "title": "🏆 Outstanding Startup"
+          }
+        },
+        "award_5": {
+          "type": "award_item",
+          "settings": {
+            "meta": "J-Startup Impact 2023",
+            "title": "🏆 Selected (Top 30 of 500 applicants)"
+          }
+        },
+        "award_6": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Dell Startup Challenge 2025",
+            "title": "🏆 Runner-up"
+          }
+        },
+        "award_7": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Industry Co-Creation Summit 2022",
+            "title": "🏆 Catapult Grand Prix — Runner-up"
+          }
+        },
+        "award_8": {
+          "type": "award_item",
+          "settings": {
+            "meta": "SME SDGs ACTION! AWARDS 2022",
+            "title": "🏆 Runner-up Grand Prix"
+          }
+        },
+        "award_9": {
+          "type": "award_item",
+          "settings": {
+            "meta": "Kansai Business Plan Contest 2022",
+            "title": "🏆 Grand Prize"
+          }
+        }
+      },
+      "block_order": [
+        "award_1",
+        "award_2",
+        "award_3",
+        "award_4",
+        "award_5",
+        "award_6",
+        "award_7",
+        "award_8",
+        "award_9"
+      ],
+      "settings": {
+        "label": "受賞歴",
+        "heading": "国内外で10を超える受賞。",
+        "subtext": "政府機関、メディア、ベンチャーキャピタルから、日本と世界で評価されています。",
+        "show_cta": true,
+        "cta_text": "今すぐ手に入れる — ¥39,800 →"
+      }
+    },
+    "pain": {
+      "type": "airlight-global-pain",
+      "blocks": {
+        "pain_1": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🦆",
+            "text": "羽毛がどこから来たのか気になって、心から満足できない。"
+          }
+        },
+        "pain_2": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🤧",
+            "text": "ダウンのアレルギーで、冬の朝のくしゃみが止まらない。"
+          }
+        },
+        "pain_3": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "⚖️",
+            "text": "見た目より重くてかさばる。もう我慢してきたのに、もっといいものは無いの?"
+          }
+        }
+      },
+      "block_order": [
+        "pain_1",
+        "pain_2",
+        "pain_3"
+      ],
+      "settings": {
+        "heading": "そのダウン、まだ使い続けますか?",
+        "bridge_text": "もっといい選択肢があります。植物から生まれた新しい答え。",
+        "bridge_strong": ""
+      }
+    },
+    "problem": {
+      "type": "airlight-global-problem",
+      "blocks": {
+        "pill_1": {
+          "type": "problem_pill",
+          "settings": {
+            "text": "重い。濡れると固まる。暖かさを失う。"
+          }
+        },
+        "pill_2": {
+          "type": "problem_pill",
+          "settings": {
+            "text": "かさばる。カバンに入れると苦労する。"
+          }
+        },
+        "pill_3": {
+          "type": "problem_pill",
+          "settings": {
+            "text": "動物由来。倫理的に引っかかる。"
+          }
+        }
+      },
+      "block_order": [
+        "pill_1",
+        "pill_2",
+        "pill_3"
+      ],
+      "settings": {
+        "heading": "今のダウンに、本当に満足していますか?",
+        "image_label": "一般的なダウンジャケット",
+        "bridge": "もっといい答えがあります。↓",
+        "image_alt": "一般的なダウンジャケット"
+      }
+    },
+    "features": {
+      "type": "airlight-global-features",
+      "blocks": {
+        "feat_1": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🪶",
+            "tag": "ULTRALIGHT",
+            "title": "約500gの軽さ",
+            "description": "従来のダウンジャケットは800g〜1kg。エアーライトジャケットはわずか約500g。ペットボトル1本の重さで、着ていることを忘れる軽さ。",
+            "stat_num": "500g",
+            "stat_label": "従来ダウン800〜1000g比"
+          }
+        },
+        "feat_2": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "☔",
+            "tag": "WATERPROOF",
+            "title": "傘の20倍の耐水圧",
+            "description": "植物由来の撥水コーティングで、急な雨でも安心。キャンプから通勤まで全天候で使える日常のアウター。",
+            "stat_num": "20x",
+            "stat_label": "傘の耐水圧比"
+          }
+        },
+        "feat_3": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🌬️",
+            "tag": "BREATHABLE",
+            "title": "室内でも蒸れない吸放湿性",
+            "description": "カポック繊維は80%が空気の中空構造。湿気を吸い、自然に放出。寒い屋外から暖房の効いた室内まで、快適さが続きます。",
+            "stat_num": "80%",
+            "stat_label": "中空構造"
+          }
+        },
+        "feat_4": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🧼",
+            "tag": "WASHABLE",
+            "title": "アウターなのに手洗い可能",
+            "description": "特許申請中のエシカルダウンカポック™シート技術により、自宅で手洗い可能。クリーニング代いらずで、いつも清潔に。",
+            "stat_num": "✓",
+            "stat_label": "自宅で手洗いOK"
+          }
+        },
+        "feat_5": {
+          "type": "feature_card",
+          "settings": {
+            "placeholder_emoji": "🌱",
+            "tag": "ANIMAL-FREE",
+            "title": "1着で30羽のガチョウを救う",
+            "description": "従来のダウンは1着あたり約30羽分の羽毛が必要。カポックは木の実から採れる植物性素材。動物も木も、傷つけません。",
+            "stat_num": "30",
+            "stat_label": "救うガチョウの数"
+          }
+        }
+      },
+      "block_order": [
+        "feat_1",
+        "feat_2",
+        "feat_3",
+        "feat_4",
+        "feat_5"
+      ],
+      "settings": {
+        "heading": "<p>ダウンが約束してきたこと、<br>ようやく実現しました。</p>"
+      }
+    },
+    "material": {
+      "type": "airlight-global-material",
+      "blocks": {
+        "origin_story": {
+          "type": "origin_story",
+          "settings": {}
+        },
+        "fiber": {
+          "type": "fiber",
+          "settings": {}
+        },
+        "japanese_engineering": {
+          "type": "japanese_engineering",
+          "settings": {}
+        },
+        "heat_test": {
+          "type": "heat_test",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "origin_story",
+        "fiber",
+        "japanese_engineering",
+        "heat_test"
+      ],
+      "settings": {
+        "label": "カポック素材について",
+        "fallback_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png"
+      }
+    },
+    "cta-mid": {
+      "type": "airlight-global-cta",
+      "settings": {
+        "section_id": "ag-cta-mid",
+        "eyebrow": "今シーズンの新定番を",
+        "heading": "<p>軽くて、暖かくて、<em>後悔しない。</em></p>",
+        "subheading": "Makuake で累計5,000万円の応援をいただいたカポックアウターの2025年コレクション。",
+        "offer_main": "✓ 全国送料無料 · 30日間返品保証",
+        "offer_note": "自信をもってお届けする、日本の新定番アウター。",
+        "show_progress": true,
+        "progress_taken": "73",
+        "progress_remaining": "27 remaining",
+        "progress_pct": 73,
+        "cta_text": "商品を選ぶ — ¥39,800〜",
+        "micro_1": "✓ 30日間返品保証",
+        "micro_2": "✓ 日本製",
+        "micro_3": "✓ すべての商品送料無料",
+        "launch_price": "¥39,800",
+        "launch_ends": "全国送料無料",
+        "show_launch_price": true
+      }
+    },
+    "ethics": {
+      "type": "airlight-global-ethics",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "97%",
+            "label": "CO₂削減 vs ダウン*"
+          }
+        },
+        "stat_2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "0",
+            "label": "動物を傷つけない"
+          }
+        },
+        "stat_3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "80%",
+            "label": "中空構造"
+          }
+        },
+        "stat_4": {
+          "type": "stat_item",
+          "settings": {
+            "number": "1/8",
+            "label": "コットンより軽い"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "footnote": "※ 従来の水鳥ダウン保温材とのライフサイクル比較に基づく。"
+      }
+    },
+    "comparison": {
+      "type": "airlight-global-comparison",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Weight",
+            "airlight": "✅ ~500g",
+            "down": "❌ 800–1000g",
+            "synthetic": "⚠️ ~700g"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Warmth at 3°C",
+            "airlight": "✅ Down-equivalent",
+            "down": "✅ Excellent",
+            "synthetic": "⚠️ Good"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Wet performance",
+            "airlight": "✅ Maintains warmth",
+            "down": "❌ Collapses when wet",
+            "synthetic": "⚠️ Varies"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Machine washable",
+            "airlight": "✅ Yes",
+            "down": "❌ Dry-clean only",
+            "synthetic": "⚠️ Often yes"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Vegan",
+            "airlight": "✅ 100%",
+            "down": "❌ Bird feathers",
+            "synthetic": "⚠️ Petroleum-based"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Sustainable origin",
+            "airlight": "✅ Plant-based",
+            "down": "❌ Animal byproduct",
+            "synthetic": "❌ Fossil fuels"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "feature": "Crafted in",
+            "airlight": "✅ Japan innovation",
+            "down": "— Various",
+            "synthetic": "— Various"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7"
+      ],
+      "settings": {
+        "heading": "<p>中身で選ぶと、<em>答えはひとつ。</em></p>",
+        "header_airlight_desktop": "エアーライト",
+        "header_airlight_mobile": "Air",
+        "header_down": "従来ダウン",
+        "header_synthetic": "化繊わた"
+      }
+    },
+    "reviews": {
+      "type": "airlight-global-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "軽くて暖かい、冬の新定番。",
+            "text": "LL サイズ(178cm, 78kg)を購入。手に取った瞬間の軽さに驚きました。それでいてしっかり暖かく、冬の早朝サーフィンの下見にも欠かせない一枚です。風も通さず、混み合う電車でもコンパクトに畳めて荷物棚に置きやすい。キルティングが無いので、シルエットも美しいです。",
+            "meta": "K.M. 様 — 日本 · 購入者"
+          }
+        },
+        "r2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "ビジネス移動の悩みが解決しました。",
+            "text": "地方と東京を頻繁に移動する仕事柄、ダウンは室内で暑く、脱ぐと荷物になる。ウルトラライトダウンは薄いけど寒さに勝てない——そんな悩みがこの一枚で解決しました。薄さからは想像できない保温性で、強い風の中でも快適。新作が出たら必ず買い足します。",
+            "meta": "T.N. 様 — 日本 · 購入者"
+          }
+        },
+        "r3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "headline": "動物由来ゼロ。探していた一着でした。",
+            "text": "動物由来の素材を使わないアウターを長年探していて、ようやく出会えました。151cm、厚めのスウェット着用で S サイズがジャストサイズ。細身のシルエットなので、このサイズを愛用しています。軽く、暖かく、小雨も弾く。家族全員におすすめしました。",
+            "meta": "A.S. 様 — 日本 · 購入者"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "heading": "ブランドに共感いただいているクリエイターの皆様。",
+        "avg_stars": "★★★★★",
+        "avg_label": "4.8 / 5 — 購入者レビュー",
+        "verified_badge": "✓ 認証済み購入者"
+      }
+    },
+    "products": {
+      "type": "airlight-global-products",
+      "blocks": {
+        "product_men": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Men's",
+            "product_name": "AirLight Jacket — Men",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/0fd37cb2-ccc2-4e42-b90b-cb33f4bcf6f1/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2157_re-2.jpg",
+            "fallback_url_2": "https://ucarecdn.com/12dc1b92-7e4a-42ce-9e86-48d4caec8714/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-OLV-02_re%20_1_.jpg",
+            "fallback_url_3": "https://ucarecdn.com/75f0d6f6-5cd4-4dd8-aa61-e3a2ff444a7e/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-BE-01_re.jpg",
+            "fallback_url_4": "https://ucarecdn.com/6a6e8284-d9e0-41f8-a8a7-9f93f5a3d20b/-/format/auto/-/preview/3000x3000/-/quality/lighter/M20U2HJ01-BK-02_re.jpg"
+          }
+        },
+        "product_women": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's",
+            "product_name": "AirLight Jacket — Women",
+            "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/02da554e-7c2c-4f0c-a32d-14aaa9b3202e/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2128-2.jpg",
+            "fallback_url_2": "https://ucarecdn.com/a68f3d6a-bfaf-4ffa-bb85-1b47f2d65e04/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-OLV-02_re%20_1_.jpg",
+            "fallback_url_3": "https://ucarecdn.com/36bbf32f-6bb4-4ba1-8a73-1aabfc8e2fde/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-BE-01_re%20_1_.jpg",
+            "fallback_url_4": "https://ucarecdn.com/e3b37b4b-51cd-4aab-ae3c-5e29f121f5a2/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-BK-02_re%20_1_.jpg"
+          }
+        },
+        "product_peplum": {
+          "type": "product_line",
+          "settings": {
+            "gender_label": "Women's — Peplum",
+            "product_name": "AirLight Peplum Jacket",
+            "colors": "4 Colors: White / Ice Blue / Black / Khaki",
+            "cta_text": "Shop Now →",
+            "fallback_url_1": "https://ucarecdn.com/fc4adef2-fd18-43b5-b720-7b78e9e9b3e7/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_21_FFB2-2%20_2_.jpg",
+            "fallback_url_2": "https://ucarecdn.com/93f8f07e-0403-4dba-ab31-e1b2e38e8d4b/-/format/auto/-/preview/3000x3000/-/quality/lighter/_FFA3-3.jpg",
+            "fallback_url_3": "https://ucarecdn.com/2a1bb7a3-1b72-49a8-a00d-36b5b2f05d5a/-/format/auto/-/preview/3000x3000/-/quality/lighter/514.png",
+            "fallback_url_4": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png"
+          }
+        }
+      },
+      "block_order": [
+        "product_men",
+        "product_women",
+        "product_peplum"
+      ],
+      "settings": {
+        "label": "ラインナップ",
+        "heading": "<p>あなたにぴったりの、<em>一着を。</em></p>",
+        "color_label": "カラー:",
+        "size_label": "サイズ:",
+        "sizes_label": "サイズ:",
+        "size_guide_text": "サイズガイド →",
+        "details_link_text": "詳細を見る →",
+        "atc_select_size_text": "サイズを選択してください",
+        "sold_out_text": "売り切れ",
+        "added_text": "カートに追加しました",
+        "checkout_link_text": "カートに進む →"
+      }
+    },
+    "faq": {
+      "type": "airlight-global-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "カポックは洋服以外に何に使われていますか?",
+            "answer": "<p>現地では、枕の詰め物や、オイルキャッチャー(海に流れた重油などの吸収剤)として使われています。以前はベッドのマットレスにも使われていましたが、スプリング式のマットレスに変わりあまり使われなくなってしまいました。需要が減ってしまったため、木材として切り出されるといった事態も起きています。</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "配送のタイムラインを教えてください。",
+            "answer": "<p>基本的にご注文から一週間以内でお届けいたします。全国送料無料です。</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "縫製はどこで行っていますか?",
+            "answer": "<p>ほとんどの製品は、青森の工場で縫製しています。多くの工場で行われている分業型とは違い、この縫製工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得して初めて1人前とされます。そのため、分業型の工場に比べて縫製技術が高いのが特徴です。</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "ロゴにはどんな意味がありますか?",
+            "answer": "<p>KAPOK KNOT は「結び目/絆」を意味する knot(ノット)を冠しています。マークにある結び方は「あやむすび」という結び方で、結び目が非常に強く緩まないことが特徴です。日本で使用されるこの水引の形には「末永く」「永遠に続く」という意味があり、関わる全ての人が無理をせずに、地球資源の持続可能な未来を考えるブランドのあり方を体現しています。</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "手洗いはどうやってすれば良いですか?",
+            "answer": "<p>30℃以下のぬるま湯に中性洗剤を溶かし、やさしく押し洗いしてください。乾燥機の使用は避け、風通しの良い日陰で平置き乾燥をおすすめします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "heading": "よくあるご質問"
+      }
+    },
+    "closing": {
+      "type": "airlight-global-closing",
+      "blocks": {
+        "proof_1": {
+          "type": "proof_line",
+          "settings": {
+            "text": "創業者が冬のノルウェーで実着テスト"
+          }
+        },
+        "proof_2": {
+          "type": "proof_line",
+          "settings": {
+            "text": "Makuake 累計5,000万円 · 2,000人以上にご愛用"
+          }
+        },
+        "proof_3": {
+          "type": "proof_line",
+          "settings": {
+            "text": "10+ デザイン賞受賞 · すべて日本製"
+          }
+        }
+      },
+      "block_order": [
+        "proof_1",
+        "proof_2",
+        "proof_3"
+      ],
+      "settings": {
+        "eyebrow": "KAPOK KNOT — エアーライトジャケット",
+        "title": "<p>軽く、暖かく、洗える。<br><em>木になるダウン。</em></p>",
+        "cta_text": "商品を選ぶ — ¥39,800〜 →",
+        "micro_1": "✓ 全国送料無料",
+        "micro_2": "✓ 30日間返品保証",
+        "micro_3": "✓ 日本製",
+        "fallback_url": "airlight-kv.jpg",
+        "spots_text": "全国送料無料 · 30日間返品保証"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "brand",
+    "awards",
+    "pain",
+    "problem",
+    "features",
+    "material",
+    "cta-mid",
+    "ethics",
+    "comparison",
+    "reviews",
+    "products",
+    "faq",
+    "closing"
+  ]
+}

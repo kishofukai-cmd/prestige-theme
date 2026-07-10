@@ -300,6 +300,14 @@
     text-underline-offset: 2px;
     margin-top: 8px;
   }
+  .ag-buy__payment-note {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: #8a8580;
+    margin: 10px 0 0;
+  }
 
   @media (max-width: 768px) {
     .ag-products {
@@ -406,7 +414,7 @@
                 <div class="ag-buy" data-product-id="{{ product.id }}" data-block-index="{{ forloop.index }}">
 
                   {%- if color_option_index != nil -%}
-                    <div class="ag-buy__colors-label">Color: <span class="ag-buy__color-selected"></span></div>
+                    <div class="ag-buy__colors-label">{{ section.settings.color_label | default: 'Color:' }} <span class="ag-buy__color-selected"></span></div>
                     <div class="ag-buy__colors" data-option-index="{{ color_option_index }}">
                       {%- for value in product.options_with_values[color_option_index].values -%}
                         {%- capture en_color -%}{%- render 'airlight-global-color-map', color_name: value -%}{%- endcapture -%}
@@ -421,7 +429,7 @@
                   {%- endif -%}
 
                   {%- if size_option_index != nil -%}
-                    <div class="ag-buy__sizes-label">Size: <span class="ag-buy__size-selected"></span></div>
+                    <div class="ag-buy__sizes-label">{{ section.settings.size_label | default: 'Size:' }} <span class="ag-buy__size-selected"></span></div>
                     <div class="ag-buy__sizes" data-option-index="{{ size_option_index }}">
                       {%- for value in product.options_with_values[size_option_index].values -%}
                         <button type="button"
@@ -433,20 +441,24 @@
                     </div>
                   {%- endif -%}
 
-                  <a href="#ag-size-guide" class="ag-product-line__size-guide">Size Guide &rarr;</a>
+                  <a href="#ag-size-guide" class="ag-product-line__size-guide">{{ section.settings.size_guide_text | default: 'Size Guide →' }}</a>
 
                   <a class="ag-product-line__details-link"
-                     href="/en/products/{{ product.handle }}">
-                    View Full Details &rarr;
+                     href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/products/{{ product.handle }}{% else %}/en/products/{{ product.handle }}{% endif %}">
+                    {{ section.settings.details_link_text | default: 'View Full Details →' }}
                   </a>
 
                   <button type="button" class="ag-buy__atc" disabled data-atc>
-                    Select size to continue
+                    {{ section.settings.atc_select_size_text | default: 'Select size to continue' }}
                   </button>
                   <div class="ag-buy__success" data-success>
-                    ✓ Added to cart!
-                    <a href="/en/checkout" class="ag-buy__checkout-link">Proceed to Checkout →</a>
+                    ✓ {{ section.settings.added_text | default: 'Added to cart!' }}
+                    <a href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/checkout{% else %}/en/checkout{% endif %}" class="ag-buy__checkout-link">{{ section.settings.checkout_link_text | default: 'Proceed to Checkout →' }}</a>
                   </div>
+                  <!-- EDITABLE: 決済手段マイクロコピー（空にすると非表示） -->
+                  {% if section.settings.payment_note != blank %}
+                    <p class="ag-buy__payment-note">{{ section.settings.payment_note }}</p>
+                  {% endif %}
                 </div>
 
                 <script type="application/json" data-variants-{{ forloop.index }}>
@@ -463,24 +475,27 @@
 
               {% elsif product != blank %}
                 {%- comment -%} Product exists but sold out {%- endcomment -%}
-                <button type="button" class="ag-buy__atc" disabled>Sold Out</button>
+                <button type="button" class="ag-buy__atc" disabled>{{ section.settings.sold_out_text | default: 'Sold Out' }}</button>
 
               {% else %}
                 {%- comment -%} No product linked — fallback CTA link {%- endcomment -%}
                 {% if block.settings.size_range != blank %}
-                  <div style="font-family:'Outfit',sans-serif;font-size:12px;color:#8a8580;margin-bottom:10px;">Sizes: {{ block.settings.size_range }}</div>
+                  <div style="font-family:'Outfit',sans-serif;font-size:12px;color:#8a8580;margin-bottom:10px;">{{ section.settings.sizes_label | default: 'Sizes:' }} {{ block.settings.size_range }}</div>
                 {% endif %}
                 {% if block.settings.colors != blank %}
                   <div style="font-family:'Outfit',sans-serif;font-size:13px;color:#5a5550;margin-bottom:16px;">{{ block.settings.colors }}</div>
                 {% endif %}
-                <a href="#ag-size-guide" class="ag-product-line__size-guide">Size Guide &rarr;</a>
+                <a href="#ag-size-guide" class="ag-product-line__size-guide">{{ section.settings.size_guide_text | default: 'Size Guide →' }}</a>
                 <a class="ag-product-line__details-link"
-                   href="/en/products/{{ product.handle }}">
-                  View Full Details &rarr;
+                   href="{% if section.settings.discount_code != blank %}/discount/{{ section.settings.discount_code }}?redirect=/en/products/{{ product.handle }}{% else %}/en/products/{{ product.handle }}{% endif %}">
+                  {{ section.settings.details_link_text | default: 'View Full Details →' }}
                 </a>
                 <a href="{{ block.settings.cta_url | default: '#' }}" class="ag-buy__atc" style="text-decoration:none;">
                   {{ block.settings.cta_text | default: 'Shop Now — $398 →' }}
                 </a>
+                {% if section.settings.payment_note != blank %}
+                  <p class="ag-buy__payment-note">{{ section.settings.payment_note }}</p>
+                {% endif %}
               {% endif %}
             </div>
           </div>
@@ -637,7 +652,18 @@
   "name": "AG Products",
   "settings": [
     { "type": "text", "id": "label", "label": "Section Label", "default": "The Collection" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Your AirLight Jacket." }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your AirLight Jacket." },
+    { "type": "text", "id": "color_label", "label": "Color Label", "default": "Color:" },
+    { "type": "text", "id": "size_label", "label": "Size Label", "default": "Size:" },
+    { "type": "text", "id": "sizes_label", "label": "Sizes (fallback) Label", "default": "Sizes:" },
+    { "type": "text", "id": "size_guide_text", "label": "Size Guide Link Text", "default": "Size Guide →" },
+    { "type": "text", "id": "details_link_text", "label": "View Details Link Text", "default": "View Full Details →" },
+    { "type": "text", "id": "atc_select_size_text", "label": "ATC — Select Size Placeholder", "default": "Select size to continue" },
+    { "type": "text", "id": "sold_out_text", "label": "Sold Out Text", "default": "Sold Out" },
+    { "type": "text", "id": "added_text", "label": "Added to Cart Text", "default": "Added to cart!" },
+    { "type": "text", "id": "checkout_link_text", "label": "Proceed to Checkout Link Text", "default": "Proceed to Checkout →" },
+    { "type": "text", "id": "discount_code", "label": "Auto-apply Discount Code", "default": "FOUNDERS20", "info": "設定するとView Full Details/Checkoutリンクが /discount/CODE 経由になりコードが自動適用される。空にすると通常リンク" },
+    { "type": "text", "id": "payment_note", "label": "Payment Methods Note", "default": "Apple Pay · Google Pay · Shop Pay · PayPal accepted" }
   ],
   "blocks": [
     {

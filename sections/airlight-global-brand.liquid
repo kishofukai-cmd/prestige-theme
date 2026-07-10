@@ -155,19 +155,53 @@
 {
   "name": "AG Brand Story",
   "settings": [
-    { "type": "text", "id": "kicker", "label": "Kicker", "default": "The KAPOK KNOT Story" },
-    { "type": "richtext", "id": "heading", "label": "Heading", "default": "<p>Why I Spent 5 Years <em>Making a Jacket.</em></p>" },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>The first time I held a kapok fiber, I knew this would change everything.</p><p>We spent five years working alongside Japan's leading textile engineers — through countless failed prototypes, dead ends, and small breakthroughs. The challenge: kapok fibers are too short to spin into thread. Every manufacturer we approached said it was impossible.</p><p>We didn't listen.</p><p>The result was KapokFill™ — a patent-pending insulation sheet made entirely from plant fiber, with no spinning required. We launched in Japan. Sold out. Three times in a row. Over $400,000 raised from people who believed in what we were building.</p><p>Now, for the first time, we're ready to share it with the world — starting with 100 jackets.</p>" },
-    { "type": "image_picker", "id": "founder_image", "label": "Founder Image" },
-    { "type": "text", "id": "founder_image_url", "label": "Founder Image URL (fallback)", "default": "airlight-brand-factory.png" },
-    { "type": "text", "id": "founder_caption", "label": "Founder Caption", "default": "Kishow Fukai — Founder, KAPOK KNOT" }
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "The KAPOK KNOT Story"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Why I Spent 5 Years <em>Making a Jacket.</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>The first time I held a kapok fiber, I knew this would change everything.</p><p>We spent five years working alongside Japan's leading textile engineers — through countless failed prototypes, dead ends, and small breakthroughs. The challenge: kapok fibers are too short to spin into thread. Every manufacturer we approached said it was impossible.</p><p>We didn't listen.</p><p>The result was KapokFill™ — a patent-pending insulation sheet made entirely from plant fiber, with no spinning required. We launched in Japan. Sold out. Three times in a row. Over $400,000 raised from people who believed in what we were building.</p><p>Now, for the first time, we're ready to share it with the world — starting with 100 jackets.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Founder Image"
+    },
+    {
+      "type": "text",
+      "id": "founder_image_url",
+      "label": "Founder Image URL (fallback)",
+      "default": "airlight-brand-factory.png"
+    },
+    {
+      "type": "text",
+      "id": "founder_caption",
+      "label": "Founder Caption",
+      "default": "Kishow Fukai — Founder, KAPOK KNOT"
+    }
   ],
   "blocks": [
     {
       "type": "tag_item",
       "name": "Credibility Tag",
       "settings": [
-        { "type": "text", "id": "text", "label": "Tag Text", "default": "🏆 10+ Design Awards" }
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Tag Text",
+          "default": "🏆 10+ Design Awards"
+        }
       ]
     }
   ],
@@ -175,10 +209,24 @@
     {
       "name": "AG Brand Story",
       "blocks": [
-        { "type": "tag_item", "settings": { "text": "🏆 10+ Design Awards" } },
-        { "type": "tag_item", "settings": { "text": "🇯🇵 All Made in Japan" } },
-        { "type": "tag_item", "settings": { "text": "Sold Out 3× in Japan" } },
-        { "type": "tag_item", "settings": { "text": "$400K+ Raised" } }
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "🏆 10+ Design Awards"
+          }
+        },
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "Sold Out 3× in Japan"
+          }
+        },
+        {
+          "type": "tag_item",
+          "settings": {
+            "text": "$400K+ Raised"
+          }
+        }
       ]
     }
   ]

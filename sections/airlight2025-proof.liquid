@@ -1,0 +1,320 @@
+{% comment %} AirLight 2025 (JP Domestic) — Proof (Makuake / Media / Creators) {% endcomment %}
+
+<style>
+  .a25-proof {
+    background: {{ section.settings.bg_color | default: '#faf9f6' }};
+    padding: clamp(48px, 8vw, 96px) 0;
+  }
+
+  .a25-proof__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+
+  .a25-proof__section {
+    margin: 0 0 clamp(48px, 7vw, 80px);
+  }
+
+  .a25-proof__section:last-child {
+    margin-bottom: 0;
+  }
+
+  /* --- Makuake --- */
+  .a25-proof-makuake {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #ece7df;
+    border-radius: 10px;
+    padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 48px);
+  }
+
+  .a25-proof-makuake__headline {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    margin: 0 0 clamp(16px, 2.5vw, 24px);
+    letter-spacing: 0.02em;
+  }
+
+  .a25-proof-makuake__headline em {
+    font-style: normal;
+    font-weight: 700;
+    color: #c29d66;
+  }
+
+  .a25-proof-makuake__body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(13px, 1.6vw, 15px);
+    line-height: 1.9;
+    color: #5a5550;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* --- Shared section heading --- */
+  .a25-proof__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0 0 clamp(24px, 3.5vw, 40px);
+  }
+
+  /* --- Media logos --- */
+  .a25-proof-media__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2.4vw, 28px);
+    align-items: center;
+    justify-items: center;
+  }
+
+  .a25-proof-media__logo {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 3 / 2;
+    background: #ffffff;
+    border: 1px solid #ece7df;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .a25-proof-media__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .a25-proof-media__logo--placeholder {
+    color: #c8c0b3;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  /* --- Creators --- */
+  .a25-proof-creators__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 36px);
+  }
+
+  .a25-proof-creator {
+    text-align: center;
+  }
+
+  .a25-proof-creator__img-wrap {
+    width: clamp(120px, 18vw, 180px);
+    height: clamp(120px, 18vw, 180px);
+    margin: 0 auto clamp(12px, 2vw, 18px);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ece7df;
+  }
+
+  .a25-proof-creator__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .a25-proof-creator__name {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(14px, 1.6vw, 16px);
+    font-weight: 600;
+    line-height: 1.55;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .a25-proof-creator__role {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #8a7f6e;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .a25-proof {
+      padding: 48px 0;
+    }
+    .a25-proof-media__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .a25-proof-creators__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .a25-proof-makuake__headline {
+      font-size: 1.15rem;
+    }
+  }
+</style>
+
+<section class="a25-proof" id="{{ section.settings.section_id | default: 'a25-proof' }}">
+  <div class="a25-proof__inner">
+    {%- comment -%} (a) Makuake proof {%- endcomment -%}
+    <div class="a25-proof__section a25-proof__section--makuake">
+      <div class="a25-proof-makuake">
+        {% if section.settings.makuake_heading != blank %}
+          <div class="a25-proof-makuake__headline">{{ section.settings.makuake_heading }}</div>
+        {% endif %}
+        {% if section.settings.makuake_body != blank %}
+          <p class="a25-proof-makuake__body">{{ section.settings.makuake_body | newline_to_br }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    {%- comment -%} (b) Media mentions {%- endcomment -%}
+    <div class="a25-proof__section a25-proof__section--media">
+      {% if section.settings.media_heading != blank %}
+        <h2 class="a25-proof__heading">{{ section.settings.media_heading }}</h2>
+      {% endif %}
+      <div class="a25-proof-media__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'media_logo' %}
+            <div class="a25-proof-media__logo{% if block.settings.logo == blank and block.settings.logo_url == blank %} a25-proof-media__logo--placeholder{% endif %}" {{ block.shopify_attributes }}>
+              {% if block.settings.logo != blank %}
+                <img src="{{ block.settings.logo | image_url: width: 400 }}"
+                     alt="{{ block.settings.alt }}"
+                     loading="lazy">
+              {% elsif block.settings.logo_url != blank %}
+                <img src="{{ block.settings.logo_url }}"
+                     alt="{{ block.settings.alt }}"
+                     loading="lazy">
+              {% else %}
+                LOGO
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {%- comment -%} (c) Creator endorsements {%- endcomment -%}
+    <div class="a25-proof__section a25-proof__section--creators">
+      {% if section.settings.creators_heading != blank %}
+        <h2 class="a25-proof__heading">{{ section.settings.creators_heading }}</h2>
+      {% endif %}
+      <div class="a25-proof-creators__grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'creator' %}
+            <div class="a25-proof-creator" {{ block.shopify_attributes }}>
+              <div class="a25-proof-creator__img-wrap">
+                {% if block.settings.image != blank %}
+                  <img class="a25-proof-creator__img"
+                       src="{{ block.settings.image | image_url: width: 400 }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% elsif block.settings.image_url != blank %}
+                  <img class="a25-proof-creator__img"
+                       src="{{ block.settings.image_url }}"
+                       alt="{{ block.settings.name }}"
+                       loading="lazy">
+                {% endif %}
+              </div>
+              {% if block.settings.name != blank %}
+                <p class="a25-proof-creator__name">{{ block.settings.name }}</p>
+              {% endif %}
+              {% if block.settings.role != blank %}
+                <p class="a25-proof-creator__role">{{ block.settings.role }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2025 Proof",
+  "tag": "section",
+  "class": "shopify-section--a25-proof",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 背景" },
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-proof" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#faf9f6" },
+
+    { "type": "header", "content": "Makuake 実績" },
+    { "type": "richtext", "id": "makuake_heading", "label": "Makuake 見出し", "default": "<p>Makuakeで累計<em>5,000万円以上</em>の応援をいただきました</p>" },
+    { "type": "textarea", "id": "makuake_body", "label": "Makuake 本文", "default": "信頼のMakuake実績！KAPOK KNOTはデビュー以来、4年間でなんと、2,000人以上の方から、累計5,000万円以上の応援をいただいております！" },
+
+    { "type": "header", "content": "メディア掲載" },
+    { "type": "text", "id": "media_heading", "label": "メディア見出し", "default": "多くのメディアでも取り上げていただきました" },
+
+    { "type": "header", "content": "クリエイター" },
+    { "type": "text", "id": "creators_heading", "label": "クリエイター見出し", "default": "ブランドに共感いただいているクリエイターのみなさま" }
+  ],
+  "blocks": [
+    {
+      "type": "media_logo",
+      "name": "Media Logo",
+      "settings": [
+        { "type": "image_picker", "id": "logo", "label": "ロゴ画像" },
+        { "type": "text", "id": "logo_url", "label": "ロゴ URL (外部フォールバック)" },
+        { "type": "text", "id": "alt", "label": "代替テキスト (メディア名)" }
+      ]
+    },
+    {
+      "type": "creator",
+      "name": "Creator",
+      "settings": [
+        { "type": "text", "id": "name", "label": "名前" },
+        { "type": "text", "id": "role", "label": "肩書き" },
+        { "type": "image_picker", "id": "image", "label": "画像" },
+        { "type": "text", "id": "image_url", "label": "画像 URL (外部フォールバック)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2025 Proof",
+      "blocks": [
+        { "type": "media_logo", "settings": { "alt": "Media Logo 1" } },
+        { "type": "media_logo", "settings": { "alt": "Media Logo 2" } },
+        { "type": "media_logo", "settings": { "alt": "Media Logo 3" } },
+        {
+          "type": "creator",
+          "settings": {
+            "name": "谷尻誠さん・谷尻直子さん",
+            "role": "建築家 / 料理家"
+          }
+        },
+        {
+          "type": "creator",
+          "settings": {
+            "name": "平原依文さん",
+            "role": "『201カ国、202人の夢xSDGs』編集者"
+          }
+        },
+        {
+          "type": "creator",
+          "settings": {
+            "name": "eriさん",
+            "role": "DEPT Company代表 デザイナー/アクティビスト"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

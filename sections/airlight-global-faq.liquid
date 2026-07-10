@@ -2,118 +2,117 @@
 
 <style>
   .ag-faq {
-    background: #faf9f6;
+    background: var(--ag-bg-warm, #faf9f6);
     padding: clamp(60px, 8vw, 100px) 0;
+    overflow: hidden;
   }
   .ag-faq__heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 400;
-    color: #1a2640;
+    color: var(--ag-text, #1a2640);
     text-align: center;
-    margin: 0 0 clamp(40px, 6vw, 64px);
-    line-height: 1.2;
+    margin: 0 auto clamp(36px, 6vw, 56px);
+    line-height: 1.25;
+    padding: 0 var(--ag-pad, 24px);
   }
   .ag-faq__list {
     max-width: 720px;
     margin: 0 auto;
+    padding: 0 var(--ag-pad, 24px);
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--ag-border, #dfe4eb);
+    box-shadow: 0 2px 20px rgba(26,38,64,0.05);
+    overflow: hidden;
   }
   .ag-faq__item {
-    border-top: 1px solid #ddd9d2;
+    border-bottom: 1px solid var(--ag-border, #dfe4eb);
   }
-  .ag-faq__item:last-child {
-    border-bottom: 1px solid #ddd9d2;
-  }
+  .ag-faq__item:last-child { border-bottom: none; }
   .ag-faq__question {
     width: 100%;
     background: none;
     border: none;
-    padding: 22px 0;
+    padding: 22px 24px;
     text-align: left;
     font-family: 'Outfit', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
-    color: #1a2640;
+    color: var(--ag-text, #1a2640);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    line-height: 1.4;
+    line-height: 1.5;
+    transition: background 0.2s;
   }
-  .ag-faq__question:hover {
-    color: #c29d66;
-  }
+  .ag-faq__question:hover { background: rgba(194,157,102,0.04); }
   .ag-faq__question-icon {
     flex-shrink: 0;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     position: relative;
-    transition: transform 0.3s ease;
   }
   .ag-faq__question-icon::before,
   .ag-faq__question-icon::after {
     content: '';
     position: absolute;
-    background: #c29d66;
+    background: var(--ag-gold, #c29d66);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
   .ag-faq__question-icon::before {
-    width: 100%;
-    height: 1.5px;
-    top: 50%;
-    left: 0;
+    width: 100%; height: 1.5px;
+    top: 50%; left: 0;
     transform: translateY(-50%);
   }
   .ag-faq__question-icon::after {
-    width: 1.5px;
-    height: 100%;
-    top: 0;
-    left: 50%;
+    width: 1.5px; height: 100%;
+    top: 0; left: 50%;
     transform: translateX(-50%);
   }
-  .ag-faq__item.is-active .ag-faq__question-icon::after {
+  /* JS adds ag-faq__item--open */
+  .ag-faq__item--open .ag-faq__question-icon::after {
     transform: translateX(-50%) rotate(90deg);
     opacity: 0;
   }
+  .ag-faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 24px;
+  }
+  .ag-faq__item--open .ag-faq__answer {
+    max-height: 600px;
+    padding: 0 24px 22px;
+  }
   .ag-faq__answer p {
-    margin: 0 0 12px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    color: var(--ag-text-sub, #5a6678);
+    line-height: 1.85;
+    margin: 0 0 10px;
   }
-  .ag-faq__answer p:last-child {
-    margin-bottom: 0;
-  }
+  .ag-faq__answer p:last-child { margin-bottom: 0; }
+  .ag-faq__answer strong { color: var(--ag-text, #1a2640); font-weight: 600; }
+  .ag-faq__answer a { color: var(--ag-gold, #c29d66); text-decoration: underline; text-underline-offset: 2px; }
+
   @media (max-width: 768px) {
-    .ag-faq {
-      padding-left: 16px;
-      padding-right: 16px;
-      overflow-x: hidden;
-    }
-    .ag-faq__heading {
-      font-size: 1.7rem;
-      margin-bottom: 24px;
-    }
-    .ag-faq__question {
-      font-size: 0.95rem;
-      padding: 14px 16px;
-      text-align: left;
-      min-height: 48px;
-    }
-    .ag-faq__answer {
-      font-size: 14px;
-      padding: 0 16px 14px;
-      line-height: 1.65;
-    }
-    .ag-faq img {
-      max-width: 100%;
-      height: auto;
-    }
+    .ag-faq { padding-left: 0; padding-right: 0; }
+    .ag-faq__heading { font-size: 1.7rem; margin-bottom: 28px; }
+    .ag-faq__list { border-radius: 0; border-left: none; border-right: none; padding: 0; }
+    .ag-faq__question { font-size: 0.95rem; padding: 18px 16px; }
+    .ag-faq__answer { padding: 0 16px; }
+    .ag-faq__item--open .ag-faq__answer { padding: 0 16px 18px; }
+    .ag-faq__answer p { font-size: 14px; line-height: 1.7; }
   }
 </style>
 
 <section class="ag-faq" id="ag-faq">
   <div class="ag-container--narrow" data-ag-reveal>
-    <h2 class="ag-faq__heading">{{ section.settings.heading | default: 'Everything You Need to Know Before You Order' }}</h2>
+    <h2 class="ag-faq__heading">{{ section.settings.heading | default: 'Your questions, answered.' }}</h2>
 
     <div class="ag-faq__list">
       {% for block in section.blocks %}
@@ -121,6 +120,7 @@
           <div class="ag-faq__item" {{ block.shopify_attributes }}>
             <button class="ag-faq__question" type="button" aria-expanded="false">
               {{ block.settings.question }}
+              <span class="ag-faq__question-icon" aria-hidden="true"></span>
             </button>
             <div class="ag-faq__answer">
               {{ block.settings.answer }}
@@ -140,13 +140,11 @@
       if (!btn) return;
       btn.addEventListener('click', function() {
         var isOpen = item.classList.contains('ag-faq__item--open');
-        // Close all
         items.forEach(function(el) {
           el.classList.remove('ag-faq__item--open');
           var b = el.querySelector('.ag-faq__question');
           if (b) b.setAttribute('aria-expanded', 'false');
         });
-        // Toggle clicked
         if (!isOpen) {
           item.classList.add('ag-faq__item--open');
           btn.setAttribute('aria-expanded', 'true');
@@ -160,7 +158,7 @@
 {
   "name": "AG FAQ",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Everything You Need to Know Before You Order" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your questions, answered." }
   ],
   "blocks": [
     {
@@ -176,48 +174,11 @@
     {
       "name": "AG FAQ",
       "blocks": [
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "Is it as warm as a down jacket?",
-            "answer": "<p>In our founder's 3-week field test in Norway in December, the AirLight never needed a backup jacket. Customers in Montreal and Vancouver report the same through -20°C winters. We don't publish a specific temperature rating — but real-world performance speaks for itself.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "Will I have to pay import duties?",
-            "answer": "<p>Import duties may apply depending on your country. These are collected by customs upon delivery — not by us. USA: typically 0% for apparel under $800. Canada: typically 0–18%. We recommend checking your local customs authority for the most accurate estimate before ordering.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "What's your return policy?",
-            "answer": "<p>We offer a 30-day return window. If you're not satisfied, contact us within 30 days of delivery. Items must be unworn and in original packaging. Return shipping costs are the customer's responsibility. Contact: support@kapokknot.com</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "How do I wash it?",
-            "answer": "<p>Machine washable — cold cycle, air dry. No dry-cleaning, no special instructions. This is one of the key reasons our customers switch from down.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "What size should I order?",
-            "answer": "<p>AirLight fits true to North American sizing. See the size guide on this page. If you're between sizes, we recommend sizing up for layering flexibility.</p>"
-          }
-        },
-        {
-          "type": "faq_item",
-          "settings": {
-            "question": "What exactly is KapokFill™?",
-            "answer": "<p>KapokFill™ is our patent-pending insulation technology made entirely from kapok fiber — a plant-based fiber harvested from the seed pods of tropical trees. Unlike down, it contains zero allergens, maintains its loft when wet, and is 100% animal-free. The fiber processing and jacket manufacturing are done entirely in Japan.</p>"
-          }
-        }
+        { "type": "faq_item", "settings": { "question": "How warm is the AirLight Jacket exactly?", "answer": "<p>Thermographic testing at 3°C shows the AirLight Jacket reaches the same surface temperature as a traditional down jacket within 1 minute of wear. Comfortable from around 0°C to 15°C depending on activity level.</p>" } },
+        { "type": "faq_item", "settings": { "question": "What exactly is kapok fiber?", "answer": "<p>Kapok is a natural fiber harvested from the seed pods of the kapok tree. The fiber is hollow, making it naturally lightweight and thermally efficient. KAPOK KNOT has developed a process to transform this fiber into a high-performance insulation sheet.</p>" } },
+        { "type": "faq_item", "settings": { "question": "Is it machine washable?", "answer": "<p>Yes. Cold cycle, air dry, done. No dry-cleaning, no special instructions. Unlike down jackets that require dry cleaning, the AirLight Jacket can be machine washed.</p>" } },
+        { "type": "faq_item", "settings": { "question": "What is your shipping and return policy?", "answer": "<p>We offer <strong>free worldwide shipping</strong> for this launch offer. Orders are dispatched within 3–5 business days from Japan.</p>" } },
+        { "type": "faq_item", "settings": { "question": "How does sizing work?", "answer": "<p>The AirLight Jacket is designed with a relaxed fit. If you prefer a fitted look, we recommend sizing down. Detailed size charts are available on the product page.</p>" } }
       ]
     }
   ]
