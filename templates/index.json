@@ -12,19 +12,18 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "image_UWbzD3": {
+        "image_XFEyei": {
           "type": "image",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/a_3x_2.png",
-            "mobile_image": "shopify://shop_images/a_4_3x_1.png",
+            "image": "shopify://shop_images/a_2x_f8d8a1b0-34e2-43b5-b27f-fc91bd4b04ca.png",
+            "mobile_image": "shopify://shop_images/a_3_2x_b2585269-2f78-4a97-b4a4-151e320f5178.png",
             "subheading": "",
             "title": "",
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "content_max_width": 780,
             "button_1_text": "",
-            "button_1_link": "https://kapok-knot.com/pages/whiteday2026",
+            "button_1_link": "shopify://pages/musubi-en-2026",
             "button_1_style": "solid",
             "button_1_background": "#ffffff",
             "button_1_text_color": "#000000",
@@ -40,11 +39,39 @@
             "gradient_overlay": "linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"
           }
         },
-        "image_hpJVBD": {
+        "image_dQHwjx": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/c_2_2x_1_37a0a140-d4f8-49d6-8331-9a8341154d58.png",
-            "mobile_image": "shopify://shop_images/c_2x_3.png",
+            "image": "shopify://shop_images/EC_PC_9.png",
+            "mobile_image": "shopify://shop_images/KVSP_7_ad326330-e03a-42b6-bf1e-11120b1880fe.png",
+            "subheading": "",
+            "title": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "https://kapok-knot.com/pages/sleep-ket",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": ""
+          }
+        },
+        "image_hpJVBD": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/c_2_3x_1.png",
+            "mobile_image": "shopify://shop_images/c_3_3x_3aa7929c-7872-4504-9088-955f0d90f3d1.png",
             "subheading": "",
             "title": "",
             "mobile_text_position": "place-self-center text-center",
@@ -96,6 +123,7 @@
         },
         "image_mgckaq": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
             "mobile_image": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
@@ -120,70 +148,14 @@
             "border_color": "",
             "gradient_overlay": ""
           }
-        },
-        "image_ykyQAH": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/EC_PC.png",
-            "mobile_image": "shopify://shop_images/EC_SP.png",
-            "subheading": "",
-            "title": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 780,
-            "button_1_text": "",
-            "button_1_link": "shopify://products/musubi-on",
-            "button_1_style": "solid",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"
-          }
-        },
-        "image_XFEyei": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/EC.jpg",
-            "mobile_image": "shopify://shop_images/b5242d714420f31c778738371f03dd7f.png",
-            "subheading": "",
-            "title": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 780,
-            "button_1_text": "",
-            "button_1_link": "shopify://pages/recovery-weighted-blanket-musubi-en",
-            "button_1_style": "solid",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"
-          }
         }
       },
       "block_order": [
-        "image_UWbzD3",
+        "image_XFEyei",
+        "image_dQHwjx",
         "image_hpJVBD",
         "image_URHmpp",
-        "image_mgckaq",
-        "image_ykyQAH",
-        "image_XFEyei"
+        "image_mgckaq"
       ],
       "settings": {
         "allow_transparent_header": false,
@@ -194,143 +166,6 @@
         "cycle_speed": 5,
         "background": "#000000",
         "controls_color": "#ffffff"
-      }
-    },
-    "1771982131a896470f": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_e15ac4d_qbzXBM": {
-          "type": "ai_gen_block_e15ac4d",
-          "settings": {
-            "image_desktop_1": "shopify://shop_images/1_2x_5cb2f6c8-3af5-4cce-bc14-8d86bc61563d.png",
-            "image_mobile_1": "shopify://shop_images/7_2x_bf03dd3d-39e9-4ddd-9f97-9000bbd95f0b.png",
-            "title_1": "",
-            "link_1": "shopify://collections/womens",
-            "image_desktop_2": "shopify://shop_images/2_2x_63a4d084-a71a-4af7-8826-179b05eab6ac.png",
-            "image_mobile_2": "shopify://shop_images/7_2x_f75d2c2d-cbfd-405e-a2c9-4f5d8cc8e857.png",
-            "title_2": "",
-            "link_2": "shopify://collections/mens",
-            "image_desktop_3": "shopify://shop_images/5_2x_a8ace73e-90e7-4829-9708-bc3990a1120b.png",
-            "image_mobile_3": "shopify://shop_images/7_4_2x_958b347a-1d32-4404-b0e8-6b3f5a43d918.png",
-            "title_3": "",
-            "link_3": "shopify://collections/23home",
-            "image_desktop_4": "shopify://shop_images/4_2x_528a525b-c113-4a89-822e-de21e269e73e.png",
-            "image_mobile_4": "shopify://shop_images/7_3_2x_a2b1ae05-1e00-41bb-906c-7e9cd86e6d2f.png",
-            "title_4": "",
-            "link_4": "shopify://collections/accessories",
-            "desktop_width_percent": 100,
-            "gap": 40,
-            "margin_top": 32,
-            "margin_bottom": 32,
-            "show_titles": true,
-            "content_padding": 16,
-            "border_radius": 0,
-            "card_background": "#ffffff",
-            "title_size": 18,
-            "title_color": "#1c1c1c",
-            "title_transform": "none"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_e15ac4d_qbzXBM"
-      ],
-      "settings": {}
-    },
-    "1773105372c5188bbf": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "177310552042ea7e7d": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_f585367_LLDymi": {
-          "type": "ai_gen_block_f585367",
-          "settings": {
-            "image_desktop": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
-            "image_mobile": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
-            "link_url": "https://kapok-knot.com/pages/top-kk-choose",
-            "desktop_width_percent": 65,
-            "mobile_width_percent": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_f585367_LLDymi"
-      ],
-      "settings": {}
-    },
-    "177311566060d11062": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_95c7451_PyL793": {
-          "type": "ai_gen_block_95c7451",
-          "settings": {
-            "layout": "image_first",
-            "container_width": 1200,
-            "image_width": 50,
-            "content_gap": 60,
-            "mobile_gap": 30,
-            "section_padding": 60,
-            "vertical_alignment": "center",
-            "image": "shopify://shop_images/KK_LINE_-_2026-02-25T100946.368.png",
-            "image_link": "https://kapok-knot.com/products/musubi-en",
-            "image_border_radius": 0,
-            "heading": "<p><strong>リカバリー加重ブランケット“MUSUBI”</strong></p>",
-            "text": "<p>完売していたMUSUBIシリーズが再販売開始！<br/></p><p>24年10月特別先行予約/<strong>完売</strong><br/>24年11月先行予約/<strong>完売</strong><br/>25年1月一般販売/<strong>完売<br/></strong>25年5月先行販売/<strong>完売<br/></strong>25年6月先行販売/<strong>完売<br/></strong>25年7月先行販売<strong>/完売<br/></strong>25年9月先行販売<strong>/完売<br/></strong>25年10月先行販売<strong>/完売</strong></p><p><strong>現在販売中！※残りわずか</strong></p>",
-            "text_alignment": "center",
-            "text_spacing": 20,
-            "heading_size": 24,
-            "text_size": 15,
-            "button_label": "商品ページへ",
-            "button_link": "shopify://products/musubi-en",
-            "button_text_size": 14,
-            "button_padding": 12,
-            "button_border_radius": 0,
-            "background_color": "#ffffff",
-            "heading_color": "#1c1c1c",
-            "text_color": "#1c1c1c",
-            "button_background": "#04358d",
-            "button_hover_background": "#1c1c1c",
-            "button_text_color": "#ffffff"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_95c7451_PyL793"
-      ],
-      "settings": {}
-    },
-    "featured_collections_cW6bCK": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_UqffkD": {
-          "type": "collection",
-          "settings": {
-            "collection": "winter-spring-season2026",
-            "products_count": 10,
-            "title": "Spring Season Recommend",
-            "link_url": "shopify://collections/winter-spring-season2026",
-            "link_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_UqffkD"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 6,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "subheading": ""
       }
     },
     "176197798489aaedc1": {
@@ -381,10 +216,10 @@
           "settings": {
             "title": "Ranking TOP5",
             "product_1": "musubi-en",
-            "product_2": "unisex-quilted-coat",
-            "product_3": "unisex-ponchoーtrench-coat",
-            "product_4": "tenderproof-jacket",
-            "product_5": "unisex-chester-coat",
+            "product_2": "new-kapok-sleep-ket",
+            "product_3": "women-gizacotton-blousetshirt-23",
+            "product_4": "musubi-on",
+            "product_5": "kapok-sleep-ket-border",
             "grid_gap": 10,
             "image_border_radius": 16,
             "badge_size": 50,
@@ -409,6 +244,144 @@
         "ai_gen_block_422275c_V6fHCB",
         "ai_gen_block_6ad359c_BRGBhg"
       ],
+      "settings": {}
+    },
+    "177311566060d11062": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_95c7451_PyL793": {
+          "type": "ai_gen_block_95c7451",
+          "settings": {
+            "layout": "image_first",
+            "container_width": 1200,
+            "image_width": 50,
+            "content_gap": 60,
+            "mobile_gap": 30,
+            "section_padding": 60,
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/KK_LINE_-_2026-02-25T100946.368.png",
+            "image_link": "https://kapok-knot.com/products/musubi-en",
+            "image_border_radius": 0,
+            "heading": "<p><strong>リカバリー加重ブランケット“MUSUBI”</strong></p>",
+            "text": "<p>完売していたMUSUBIシリーズが再販売開始！<br/></p><p>24年10月特別先行予約/<strong>完売</strong><br/>24年11月先行予約/<strong>完売</strong><br/>25年1月一般販売/<strong>完売<br/></strong>25年5月先行販売/<strong>完売<br/></strong>25年6月先行販売/<strong>完売<br/></strong>25年7月先行販売<strong>/完売<br/></strong>25年9月先行販売<strong>/完売<br/></strong>25年10月先行販売<strong>/完売<br/></strong>26年5月先行販売<strong>/受付中</strong></p><p><strong>現在販売中！</strong></p>",
+            "text_alignment": "center",
+            "text_spacing": 20,
+            "heading_size": 24,
+            "text_size": 15,
+            "button_label": "商品ページへ",
+            "button_link": "shopify://products/musubi-en",
+            "button_text_size": 14,
+            "button_padding": 12,
+            "button_border_radius": 0,
+            "background_color": "#ffffff",
+            "heading_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_95c7451_PyL793"
+      ],
+      "settings": {}
+    },
+    "1771982131a896470f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e15ac4d_qbzXBM": {
+          "type": "ai_gen_block_e15ac4d",
+          "settings": {
+            "image_desktop_1": "shopify://shop_images/1_2x_5cb2f6c8-3af5-4cce-bc14-8d86bc61563d.png",
+            "image_mobile_1": "shopify://shop_images/7_2x_bf03dd3d-39e9-4ddd-9f97-9000bbd95f0b.png",
+            "title_1": "",
+            "link_1": "shopify://collections/womens",
+            "image_desktop_2": "shopify://shop_images/2_2x_63a4d084-a71a-4af7-8826-179b05eab6ac.png",
+            "image_mobile_2": "shopify://shop_images/7_2x_f75d2c2d-cbfd-405e-a2c9-4f5d8cc8e857.png",
+            "title_2": "",
+            "link_2": "shopify://collections/mens",
+            "image_desktop_3": "shopify://shop_images/5_2x_a8ace73e-90e7-4829-9708-bc3990a1120b.png",
+            "image_mobile_3": "shopify://shop_images/7_4_2x_958b347a-1d32-4404-b0e8-6b3f5a43d918.png",
+            "title_3": "",
+            "link_3": "shopify://collections/23home",
+            "image_desktop_4": "shopify://shop_images/4_2x_528a525b-c113-4a89-822e-de21e269e73e.png",
+            "image_mobile_4": "shopify://shop_images/7_3_2x_a2b1ae05-1e00-41bb-906c-7e9cd86e6d2f.png",
+            "title_4": "",
+            "link_4": "shopify://collections/accessories",
+            "desktop_width_percent": 100,
+            "gap": 40,
+            "margin_top": 32,
+            "margin_bottom": 32,
+            "show_titles": true,
+            "content_padding": 16,
+            "border_radius": 0,
+            "card_background": "#ffffff",
+            "title_size": 18,
+            "title_color": "#1c1c1c",
+            "title_transform": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e15ac4d_qbzXBM"
+      ],
+      "settings": {}
+    },
+    "1773105372c5188bbf": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "featured_collections_cW6bCK": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_UqffkD": {
+          "type": "collection",
+          "settings": {
+            "collection": "winter-spring-season2026",
+            "products_count": 10,
+            "title": "Spring & Summer Season Recommend",
+            "link_url": "shopify://collections/winter-spring-season2026",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_UqffkD"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 6,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": ""
+      }
+    },
+    "177310552042ea7e7d": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f585367_LLDymi": {
+          "type": "ai_gen_block_f585367",
+          "settings": {
+            "image_desktop": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
+            "image_mobile": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
+            "link_url": "https://kapok-knot.com/pages/top-kk-choose",
+            "desktop_width_percent": 65,
+            "mobile_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f585367_LLDymi"
+      ],
+      "disabled": true,
       "settings": {}
     },
     "rich_text_WchhXf": {
@@ -894,12 +867,12 @@
   },
   "order": [
     "slideshow",
+    "176197798489aaedc1",
+    "177311566060d11062",
     "1771982131a896470f",
     "1773105372c5188bbf",
-    "177310552042ea7e7d",
-    "177311566060d11062",
     "featured_collections_cW6bCK",
-    "176197798489aaedc1",
+    "177310552042ea7e7d",
     "rich_text_WchhXf",
     "scrolling_content_TaycRN",
     "1761989724901eeb13",

@@ -28,10 +28,14 @@
             "show_taxes_notice": false
           }
         },
-        "text_QNtz78": {
-          "type": "text",
+        "image_XqUpDh": {
+          "type": "image",
           "settings": {
-            "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
+            "image": "shopify://shop_images/2_12_2x_274b3ae0-4653-4cb8-8af5-29077cd4623e.png",
+            "alignment": "center",
+            "width_mode": "full_width",
+            "max_width": 300,
+            "mobile_max_width": 200
           }
         },
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7": {
@@ -81,11 +85,28 @@
         "button_8DHeMD": {
           "type": "button",
           "settings": {
-            "link": "https://lin.ee/J0oBtlT",
-            "text": "LINE登録でお得なクーポン配布中！",
+            "link": "https://page.line.me/258kaxeg",
+            "text": "公式LINE登録で再入荷通知を受け取る",
             "stretch": true,
             "background": "#00b900",
             "text_color": "#ffffff"
+          }
+        },
+        "image_h8JqEN": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Makuake_408_1_300_5.png",
+            "alignment": "center",
+            "width_mode": "full_width",
+            "max_width": 300,
+            "mobile_max_width": 380
+          }
+        },
+        "text_QNtz78": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>リカバリー加重ブランケットMUSUBI[特許出願中]</strong></p>"
           }
         },
         "separator": {
@@ -181,13 +202,15 @@
         "vendor",
         "title",
         "price",
-        "text_QNtz78",
+        "image_XqUpDh",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "button_PpPrHq",
         "button_8DHeMD",
+        "image_h8JqEN",
+        "text_QNtz78",
         "separator",
         "description",
         "6ce7ed4b-a9b3-4494-a56a-fa582423f872",
@@ -250,216 +273,81 @@
       "disabled": true,
       "settings": {}
     },
-    "ugc": {
-      "type": "musubi-lp-ugc",
+    "musubi_size_guide_xenQjE": {
+      "type": "musubi-size-guide",
       "blocks": {
-        "reel_4B6Vgf": {
-          "type": "reel",
+        "size_panel_CPbwDt": {
+          "type": "size_panel",
           "settings": {
-            "reel_id": "DP6KXQLk0oC",
-            "caption": "MUSUBI使用レビュー"
+            "tab_label": "Nap Size (M)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT0618.jpg",
+            "badge": "ソファにおすすめ",
+            "featured": false,
+            "name": "Nap Size (M)",
+            "price": "¥29,800",
+            "price_note": "(税込)",
+            "dimensions": "約135 × 70 cm",
+            "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
+            "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
           }
         },
-        "reel_1": {
-          "type": "reel",
+        "size_panel_ewAAxD": {
+          "type": "size_panel",
           "settings": {
-            "reel_id": "DP5PSqAEg0b",
-            "caption": "MUSUBI使用レビュー"
+            "tab_label": "Sleep Size (L)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1198.jpg",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "約175 × 105 cm",
+            "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
         },
-        "reel_ehrVg9": {
-          "type": "reel",
+        "size_panel_AHwH6R": {
+          "type": "size_panel",
           "settings": {
-            "reel_id": "DVIng-EDw6_",
-            "caption": ""
-          }
-        },
-        "reel_5": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "DSHPDRyEzfF",
-            "caption": "MUSUBI使用レビュー"
-          }
-        },
-        "reel_6": {
-          "type": "reel",
-          "settings": {
-            "reel_id": "C93rW7dvKWP",
-            "caption": "MUSUBI使用レビュー"
+            "tab_label": "新登場！Full Size (XL)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1153_c978336c-d2a5-43cd-a312-df4dbb00b143.jpg",
+            "badge": "包まれたい方におすすめ",
+            "featured": false,
+            "name": "Full Size(XL)",
+            "price": "¥44,800",
+            "price_note": "(税込)",
+            "dimensions": "約180 × 140 cm",
+            "features": "ベッドで全身を包まれたい方に,大柄な方にも,全身を預ける心地よさ",
+            "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
           }
         }
       },
       "block_order": [
-        "reel_4B6Vgf",
-        "reel_1",
-        "reel_ehrVg9",
-        "reel_5",
-        "reel_6"
+        "size_panel_CPbwDt",
+        "size_panel_ewAAxD",
+        "size_panel_AHwH6R"
       ],
+      "name": "MUSUBI サイズのみ",
       "settings": {
-        "heading": "たくさんの方に選ばれています",
-        "subheading": "実際にMUSUBIを体験した皆さまの声をご紹介します",
-        "instagram_url": "",
-        "follow_text": "@kapokknot をフォロー →"
-      }
-    },
-    "empathy": {
-      "type": "musubi-lp-empathy",
-      "blocks": {
-        "worry_1": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>頭のなかが<br/>ぐるぐる休まらない</p>"
-          }
-        },
-        "worry_2": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>波立つように<br>心が落ち着かない</p>"
-          }
-        },
-        "worry_3": {
-          "type": "worry_item",
-          "settings": {
-            "icon_svg": "",
-            "text": "<p>リラックスする<br>習慣が続かない</p>"
-          }
-        }
-      },
-      "block_order": [
-        "worry_1",
-        "worry_2",
-        "worry_3"
-      ],
-      "settings": {
-        "heading": "こんな夜、ありませんか？",
-        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
-        "solution_image_alt": "MUSUBIに包まれて休息",
-        "solution_text": ""
-      }
-    },
-    "story": {
-      "type": "musubi-lp-story",
-      "settings": {
-        "heading": "<p>眠りには「導入スイッチ」が必要だった</p>",
-        "body": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
-      }
-    },
-    "why": {
-      "type": "musubi-lp-why",
-      "blocks": {
-        "reason_1": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
-            "number": "01",
-            "title": "やさしい重み設計",
-            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
-          }
-        },
-        "reason_2": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
-            "number": "02",
-            "title": "あみあみ構造",
-            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
-          }
-        },
-        "reason_3": {
-          "type": "reason_card",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
-            "number": "03",
-            "title": "日本の暮らし基準サイズ",
-            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
-          }
-        }
-      },
-      "block_order": [
-        "reason_1",
-        "reason_2",
-        "reason_3"
-      ],
-      "settings": {
-        "heading": "<p>なぜMUSUBIは<br>選ばれているのか？</p>"
-      }
-    },
-    "science": {
-      "type": "musubi-lp-science",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
-            "label": "<p>均一な重み</p>"
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
-            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
-            "label": "<p>深いリラックス<br>状態の促進</p>"
-          }
-        },
-        "paper_1": {
-          "type": "paper",
-          "settings": {
-            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
-            "url": ""
-          }
-        },
-        "paper_2": {
-          "type": "paper",
-          "settings": {
-            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
-            "url": ""
-          }
-        },
-        "paper_3": {
-          "type": "paper",
-          "settings": {
-            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3",
-        "paper_1",
-        "paper_2",
-        "paper_3"
-      ],
-      "settings": {
-        "heading": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>",
-        "image_alt": "MUSUBIの使用シーン",
-        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
-        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です"
-      }
-    },
-    "comparison": {
-      "type": "musubi-lp-comparison",
-      "settings": {
-        "label": "LABORATORY TEST",
-        "heading": "検証データが証明するMUSUBIの快適性",
-        "musubi_value": "約47〜48%",
-        "musubi_desc": "60分間ほぼ一定で推移",
-        "other_value": "約55% → 70%",
-        "other_desc": "時間経過とともに上昇",
-        "chart_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/RSzEoAt2.jpg?v=1773136645",
-        "chart_alt": "寝床内湿度比較グラフ - MUSUBIは60分間快適な湿度を維持",
-        "conclusion": "<p>MUSUBIの「あみあみ構造」は重みによるムレを解消。<br/>快適な湿度を保つから、<strong>365日・オールシーズン活躍します。</strong></p>"
+        "label": "SIZE GUIDE",
+        "heading": "<p>あなたに合うサイズは？</p>",
+        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIはサイズをお選びいただけます。</p>",
+        "compare_image": "shopify://shop_images/2_12_2x_274b3ae0-4653-4cb8-8af5-29077cd4623e.png",
+        "compare_alt": "MUSUBIサイズ比較",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "makuake": {
@@ -520,6 +408,20 @@
             "date": "2025年10月 先行予約",
             "status": "完売"
           }
+        },
+        "soldout_record_Rr47tV": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年12月 一般販売",
+            "status": "完売"
+          }
+        },
+        "soldout_record_xzzJhT": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年5月下旬 先行予約開始",
+            "status": "開催中"
+          }
         }
       },
       "block_order": [
@@ -530,19 +432,529 @@
         "sold_5",
         "sold_6",
         "sold_7",
-        "sold_8"
+        "sold_8",
+        "soldout_record_Rr47tV",
+        "soldout_record_xzzJhT"
       ],
       "settings": {
         "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "hero_image": "shopify://shop_images/Makuake_MUSUBI.png",
+        "hero_image_alt": "Makuake実績画像",
         "amount": "1,349万円",
         "amount_label": "応援購入総額",
         "supporters": "408名",
         "supporters_label": "サポーター",
         "percent": "2,698%",
         "percent_label": "達成率",
-        "soldout_heading": "販売するたびに即完売",
+        "soldout_heading": "ご好評につき完売が続いております。",
         "makuake_url": "",
         "link_text": "Makuakeプロジェクトページを見る →"
+      }
+    },
+    "musubi_review_summary_wBph6j": {
+      "type": "musubi-review-summary",
+      "name": "MUSUBI レビュー要約",
+      "settings": {}
+    },
+    "ugc": {
+      "type": "musubi-lp-ugc",
+      "blocks": {
+        "reel_W4T9Gn": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DXBsX0Okc4C",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_biNyhR": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DWQpfLZEsyg",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_KaaPP4": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DR6vqKrksq6",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_7e7APF": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DVdQbDZkh7Z",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_tEkWx6": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DWoRc3tklfy",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_4B6Vgf": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP6KXQLk0oC",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_1": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DP5PSqAEg0b",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_ehrVg9": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DVIng-EDw6_",
+            "caption": ""
+          }
+        },
+        "reel_5": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "DSHPDRyEzfF",
+            "caption": "MUSUBI使用レビュー"
+          }
+        },
+        "reel_6": {
+          "type": "reel",
+          "settings": {
+            "reel_id": "C93rW7dvKWP",
+            "caption": "MUSUBI使用レビュー"
+          }
+        }
+      },
+      "block_order": [
+        "reel_W4T9Gn",
+        "reel_biNyhR",
+        "reel_KaaPP4",
+        "reel_7e7APF",
+        "reel_tEkWx6",
+        "reel_4B6Vgf",
+        "reel_1",
+        "reel_ehrVg9",
+        "reel_5",
+        "reel_6"
+      ],
+      "settings": {
+        "badge": "USER REEL",
+        "heading": "",
+        "subheading": "",
+        "instagram_url": "https://www.instagram.com/kapokknot_home/",
+        "follow_text": "@kapokknot_home をフォロー →",
+        "badge_size_pc": 12,
+        "badge_size_sp": 11,
+        "badge_color": "#8b7355",
+        "badge_bg_color": "#f4eee6",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "subheading_size_pc": 15,
+        "subheading_size_sp": 14,
+        "subheading_color": "#555555",
+        "caption_size_pc": 12,
+        "caption_size_sp": 12,
+        "caption_color": "#333333",
+        "button_size_pc": 15,
+        "button_size_sp": 14,
+        "button_color": "#ffffff",
+        "button_bg_color": "#1a1a1a",
+        "bg_color": "#faf7f2",
+        "max_width": 980,
+        "card_radius": 20,
+        "card_radius_sp": 16,
+        "card_width_pc": 320,
+        "card_width_sp": 280,
+        "iframe_height_pc": 650,
+        "iframe_height_sp": 620,
+        "padding_pc": 80,
+        "padding_sp": 56
+      }
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>頭のなかが<br>ぐるぐる休まらない</p>"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>波立つように<br>心が落ち着かない</p>"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>リラックスする<br>習慣が続かない</p>"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ],
+      "settings": {
+        "label": "RESTLESS NIGHT",
+        "heading": "こんな夜、ありませんか？",
+        "heading_size_pc": 26,
+        "heading_size_sp": 22,
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 14,
+        "heading_color": "#1a1a1a",
+        "item_text_color": "#333333",
+        "bg_color": "#faf9f7",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "padding_pc": 64,
+        "padding_sp": 48,
+        "solution_image": "shopify://shop_images/KK_LINE_-_2026-02-27T155922.771.png",
+        "solution_image_alt": "MUSUBIに包まれて休息",
+        "show_arrow": true,
+        "solution_width": 480,
+        "solution_radius": 18,
+        "solution_radius_sp": 14,
+        "icon_size_pc": 44,
+        "icon_size_sp": 34,
+        "arrow_size_pc": 28,
+        "arrow_size_sp": 24
+      }
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {
+        "label": "その悩みに、MUSUBIが考えたこと",
+        "label_size": 13,
+        "label_size_sp": 12,
+        "label_color": "#b8a78a",
+        "heading": "<p>眠りには「導入スイッチ」が必要だった</p>",
+        "heading_size": 32,
+        "heading_size_sp": 24,
+        "heading_color": "#1a1a1a",
+        "body": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>",
+        "body_size": 16,
+        "body_size_sp": 14,
+        "body_color": "#555555",
+        "accent_color": "#b8a78a",
+        "divider_color": "#d4c8b8",
+        "bg_color": "#faf7f2"
+      }
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
+            "number": "01",
+            "title": "やさしい重み設計",
+            "description": "体重の約7〜12%が心地よいとされる加重設計。包み込まれる感覚が安心感を生み出します。"
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
+            "number": "02",
+            "title": "あみあみ構造",
+            "description": "空気が抜ける立体編み構造で蒸れにくい。365日オールシーズン快適にお使いいただけます。"
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
+            "number": "03",
+            "title": "日本の暮らし基準サイズ",
+            "description": "ソファにもベッドにもフィットする設計。日本の生活シーンを徹底分析したサイズ展開。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
+      "settings": {
+        "label": "WHY MUSUBI",
+        "heading": "<p>なぜMUSUBIは<br>選ばれているのか？</p>",
+        "lead": "<p>重さだけではない。日々の暮らしに自然になじむよう、素材・構造・サイズ感まで設計しています。</p>",
+        "show_comparison": true,
+        "comparison_label": "LABORATORY TEST",
+        "comparison_heading": "<p>検証データが示す<br>MUSUBIの快適性</p>",
+        "chart_title": "寝床内湿度（空間）比較データ",
+        "chart_note": "※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測",
+        "conclusion_label": "理想的な寝床内湿度：50% ± 5%",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は、重みによるムレを軽減。<br><strong>365日・オールシーズン快適に使える加重ブランケット</strong>を目指しました。</p>",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "musubi_verdict": "✓ 理想的な範囲内",
+        "other_value": "55% → 70%",
+        "other_desc": "時間経過とともに上昇",
+        "other_verdict": "✗ ムレやすい",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "label_color": "#8b7355",
+        "label_bg_color": "#f4eee6",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "lead_size_pc": 15,
+        "lead_size_sp": 14,
+        "lead_color": "#555555",
+        "number_size_pc": 13,
+        "number_size_sp": 12,
+        "number_color": "#ffffff",
+        "number_bg_color": "#8b7355",
+        "title_size_pc": 24,
+        "title_size_sp": 21,
+        "title_color": "#1a1a1a",
+        "description_size_pc": 15,
+        "description_size_sp": 14,
+        "description_color": "#555555",
+        "comparison_label_size_pc": 12,
+        "comparison_label_size_sp": 11,
+        "comparison_label_color": "#8b7355",
+        "comparison_label_bg_color": "#f4eee6",
+        "comparison_heading_size_pc": 28,
+        "comparison_heading_size_sp": 23,
+        "comparison_heading_color": "#1a1a1a",
+        "comparison_value_size_pc": 36,
+        "comparison_value_size_sp": 30,
+        "comparison_value_color": "#8b7355",
+        "comparison_badge_size_pc": 13,
+        "comparison_badge_size_sp": 12,
+        "comparison_badge_color": "#333333",
+        "comparison_desc_size_pc": 13,
+        "comparison_desc_size_sp": 12,
+        "comparison_desc_color": "#555555",
+        "comparison_verdict_size_pc": 13,
+        "comparison_verdict_size_sp": 12,
+        "vs_size_pc": 22,
+        "vs_size_sp": 18,
+        "vs_color": "#8b7355",
+        "chart_title_size_pc": 16,
+        "chart_title_size_sp": 14,
+        "chart_title_color": "#1a1a1a",
+        "chart_note_size_pc": 11,
+        "chart_note_size_sp": 11,
+        "chart_note_color": "#777777",
+        "conclusion_label_size_pc": 16,
+        "conclusion_label_size_sp": 14,
+        "conclusion_label_color": "#1a1a1a",
+        "conclusion_text_size_pc": 15,
+        "conclusion_text_size_sp": 14,
+        "conclusion_text_color": "#555555",
+        "strong_color": "#8b7355",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf7f2",
+        "card_border_color": "#eee7dd",
+        "image_bg_color": "#f4eee6",
+        "image_fit": "cover",
+        "image_height_pc": 460,
+        "image_height_sp": 320,
+        "card_radius": 26,
+        "card_radius_sp": 20,
+        "max_width": 1080,
+        "comparison_bg_color": "#faf7f2",
+        "comparison_border_color": "#eee7dd",
+        "comparison_radius": 26,
+        "comparison_radius_sp": 20,
+        "comparison_card_bg_color": "#ffffff",
+        "comparison_card_border_color": "#eee7dd",
+        "musubi_accent_color": "#8b7355",
+        "good_text_color": "#2f6b4f",
+        "good_bg_color": "#e7f3ec",
+        "bad_text_color": "#8a4a3a",
+        "bad_bg_color": "#f7ebe7",
+        "conclusion_bg_color": "#ffffff",
+        "conclusion_border_color": "#eee7dd",
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "science": {
+      "type": "musubi-lp-science",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M30 14 L30 38M22 30 L30 38 L38 30\"></path><path d=\"M16 46 Q 30 52 44 46\"></path></svg>",
+            "label": "<p>均一な重み</p>"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
+            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M18 32 Q 30 42 42 32\"></path><path d=\"M22 36 L 20 39\"></path><path d=\"M38 36 L 40 39\"></path></svg>",
+            "label": "<p>深いリラックス<br>状態の促進</p>"
+          }
+        },
+        "paper_1": {
+          "type": "paper",
+          "settings": {
+            "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia",
+            "url": ""
+          }
+        },
+        "paper_2": {
+          "type": "paper",
+          "settings": {
+            "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia",
+            "url": ""
+          }
+        },
+        "paper_3": {
+          "type": "paper",
+          "settings": {
+            "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "paper_1",
+        "paper_2",
+        "paper_3"
+      ],
+      "settings": {
+        "label": "WHY MUSUBI?",
+        "heading": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>",
+        "lead": "<p>睡眠課題を抱える人の多くが軽めの寝具を使用している一方で、寝具選びにおいて「重さ」に着目している人はまだ多くありません。MUSUBIは、睡眠環境に“重み”という新しい選択肢を提案します。</p>",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "label_color": "#b8a78a",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "lead_size_pc": 15,
+        "lead_size_sp": 14,
+        "lead_color": "#555555",
+        "step_text_size_pc": 14,
+        "step_text_size_sp": 14,
+        "step_text_color": "#333333",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "card_radius": 20,
+        "card_radius_sp": 16,
+        "icon_size_pc": 62,
+        "icon_size_sp": 48,
+        "icon_bg_color": "#f4eee6",
+        "icon_color": "#8b7355",
+        "image_alt": "MUSUBIの使用シーン",
+        "image_radius": 20,
+        "image_radius_sp": 16,
+        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
+        "description_size_pc": 15,
+        "description_size_sp": 14,
+        "description_color": "#555555",
+        "description_bg_color": "#ffffff",
+        "description_border_color": "#eee7dd",
+        "description_radius": 20,
+        "description_radius_sp": 16,
+        "strong_color": "#8b7355",
+        "result_badge": "検証結果",
+        "result_title": "<p>自宅での睡眠検証でも、<br>MUSUBIの“重み”による変化が見られました。</p>",
+        "result_label_1": "中途覚醒時間",
+        "result_value_1": "36% 改善",
+        "result_label_2": "入眠スピード",
+        "result_value_2": "15% 減少 ↓",
+        "result_label_3": "深いノンレム睡眠",
+        "result_value_3": "13% UP ↑",
+        "result_label_4": "睡眠効率",
+        "result_value_4": "2% UP ↑",
+        "result_copy": "<p>ただ重いだけではなく、<br>重さ・通気性・フィット感のバランスが、MUSUBIの心地よさです。</p>",
+        "result_note": "<p>※研究結果には個人差があり、効果を保証するものではありません。<br>※深い睡眠（N3）は、睡眠の質を評価する代表的な指標の一つとされています。</p>",
+        "result_bg_color": "#ded6cc",
+        "result_radius": 22,
+        "result_radius_sp": 16,
+        "result_badge_bg_color": "#ffffff",
+        "result_badge_color": "#1a1a1a",
+        "result_badge_size_pc": 22,
+        "result_badge_size_sp": 20,
+        "result_title_size_pc": 18,
+        "result_title_size_sp": 16,
+        "result_title_color": "#1a1a1a",
+        "result_border_color": "#e8e1d8",
+        "result_label_color": "#1a1a1a",
+        "result_value_color": "#1a1a1a",
+        "result_text_size_pc": 18,
+        "result_text_size_sp": 15,
+        "result_copy_size_pc": 16,
+        "result_copy_size_sp": 14,
+        "result_copy_color": "#1a1a1a",
+        "result_note_size_pc": 12,
+        "result_note_size_sp": 11,
+        "result_note_color": "#333333",
+        "test_title": "<p>睡眠検証試験の概要</p>",
+        "test_method": "単盲検クロスオーバー試験",
+        "test_measurement": "脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など",
+        "test_subjects": "5名（30〜50代の日本人社会人）",
+        "test_period": "加重ブランケット有り3晩／無し3晩で比較",
+        "test_title_size_pc": 18,
+        "test_title_size_sp": 17,
+        "test_title_color": "#1a1a1a",
+        "test_item_size_pc": 13,
+        "test_item_size_sp": 12,
+        "test_item_color": "#555555",
+        "test_bg_color": "#ffffff",
+        "test_border_color": "#eee7dd",
+        "test_item_bg_color": "#faf7f2",
+        "test_radius": 20,
+        "test_radius_sp": 16,
+        "closing_text": "<p>MUSUBIは、睡眠環境に「重み」という新しい選択肢を取り入れるために開発された加重ブランケットです。</p>",
+        "closing_size_pc": 17,
+        "closing_size_sp": 15,
+        "closing_color": "#1a1a1a",
+        "closing_bg_color": "#ffffff",
+        "closing_border_color": "#eee7dd",
+        "closing_radius": 20,
+        "closing_radius_sp": 16,
+        "papers_title": "参考文献",
+        "papers_title_size_pc": 13,
+        "papers_title_size_sp": 13,
+        "papers_title_color": "#333333",
+        "papers_text_size_pc": 12,
+        "papers_text_size_sp": 11,
+        "papers_text_color": "#666666",
+        "papers_link_color": "#8b7355",
+        "papers_bg_color": "#f7f2eb",
+        "papers_radius": 18,
+        "papers_radius_sp": 14,
+        "papers_note": "※すべて「効果が示唆された」「可能性がある」との結論です",
+        "note_size_pc": 11,
+        "note_size_sp": 11,
+        "note_color": "#777777",
+        "bg_color": "#faf7f2",
+        "text_color": "#333333",
+        "padding_pc": 80,
+        "padding_sp": 60
       }
     },
     "reviews": {
@@ -585,7 +997,9 @@
         "review_3"
       ],
       "settings": {
-        "heading": "実際の声",
+        "label": "USER REVIEW",
+        "heading": "<p>実際の声</p>",
+        "show_graph": true,
         "avg_score": "4.1",
         "avg_stars": "★★★★☆",
         "review_count": "27件のレビュー",
@@ -593,128 +1007,237 @@
         "star4_pct": 30,
         "star3_pct": 4,
         "star2_pct": 7,
-        "star1_pct": 7
+        "star1_pct": 7,
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "accent_color": "#8b7355",
+        "star_color": "#c6a15b",
+        "text_color": "#555555",
+        "title_color": "#1a1a1a",
+        "meta_color": "#777777",
+        "graph_bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "bar_bg_color": "#f1ebe4",
+        "tag_bg_color": "#f4eee6",
+        "tag_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "score_size_pc": 46,
+        "score_size_sp": 38,
+        "star_size_pc": 18,
+        "star_size_sp": 16,
+        "count_size_pc": 13,
+        "count_size_sp": 12,
+        "title_size_pc": 18,
+        "title_size_sp": 17,
+        "body_size_pc": 14,
+        "body_size_sp": 14,
+        "columns_pc": 3,
+        "graph_radius": 26,
+        "graph_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "cta-after-reviews": {
       "type": "musubi-lp-cta",
+      "disabled": true,
       "settings": {
-        "section_id": "cta-after-reviews",
-        "heading": "体験した人だけが知る、この安心感。",
+        "bg_color": "#1f2a44",
+        "subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット<br/>MUSUBI-en-</p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "【先行予約受付中】\nお届け：6月22日より順次配送予定",
+        "soldout_font_size": 18,
+        "soldout_text_color": "#ffffff",
         "cta_url": "",
         "cta_text": "MUSUBIを詳しく見る",
-        "micro_1": "",
-        "micro_2": "✓ オールシーズン対応",
-        "micro_3": ""
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#1f2a44",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥29,800〜",
+        "price_tax": "(税込)",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "オールシーズン",
+        "feature_2": "アニマルフリー",
+        "feature_3": "通気性",
+        "feature_4": "お手入れ簡単",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
       }
     },
-    "sizes": {
-      "type": "musubi-lp-sizes",
+    "musubi_size_guide_JJVm9k": {
+      "type": "musubi-size-guide",
       "blocks": {
-        "size_nap": {
+        "size_panel_CM4kJE": {
           "type": "size_panel",
           "settings": {
             "tab_label": "Nap Size (M)",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0779.jpg?v=1771395913&width=800",
+            "image": "shopify://shop_images/260312_KAPOKKNOT0618.jpg",
             "badge": "ソファにおすすめ",
             "featured": false,
             "name": "Nap Size (M)",
             "price": "¥29,800",
             "price_note": "(税込)",
-            "dimensions": "約135 × 70 cm",
+            "dimensions": "100 × 70 cm",
             "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
             "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
           }
         },
-        "size_sleep": {
+        "size_panel_xR7Pe7": {
           "type": "size_panel",
           "settings": {
             "tab_label": "Sleep Size (L)",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0985.jpg?v=1771395913&width=800",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1198.jpg",
             "badge": "ベッドにおすすめ",
             "featured": true,
             "name": "Sleep Size (L)",
             "price": "¥39,800",
             "price_note": "(税込)",
-            "dimensions": "約175 × 105 cm",
-            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
             "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+          }
+        },
+        "size_panel_DnqqUq": {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "新登場！Full Size (XL)",
+            "image": "shopify://shop_images/260312_KAPOKKNOT1153_c978336c-d2a5-43cd-a312-df4dbb00b143.jpg",
+            "badge": "包まれたい方におすすめ",
+            "featured": false,
+            "name": "Full Size(XL)",
+            "price": "¥44,800",
+            "price_note": "(税込)",
+            "dimensions": "約140 × 180 cm",
+            "features": "ベッドで全身を包まれたい方に,大柄な方にも,全身を預ける心地よさ",
+            "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
           }
         }
       },
       "block_order": [
-        "size_nap",
-        "size_sleep"
+        "size_panel_CM4kJE",
+        "size_panel_xR7Pe7",
+        "size_panel_DnqqUq"
       ],
+      "name": "MUSUBI サイズのみ",
       "settings": {
-        "heading": "あなたに合うサイズは？"
+        "label": "SIZE GUIDE",
+        "heading": "<p>あなたに合うサイズは？</p>",
+        "lead": "<p>使う場所や過ごし方に合わせて、MUSUBIはサイズをお選びいただけます。</p>",
+        "compare_alt": "MUSUBIサイズ比較",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
-    "colors": {
-      "type": "musubi-lp-colors",
+    "musubi_color_variation_gx8aVL": {
+      "type": "musubi-color-variation",
       "blocks": {
-        "color_1": {
-          "type": "color_variant",
+        "color_item_VxYqgN": {
+          "type": "color_item",
           "settings": {
             "name": "Powder Beige",
             "color_code": "#d9cfc4",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200"
+            "image": "shopify://shop_images/260312_KAPOKKNOT0945.jpg"
           }
         },
-        "color_2": {
-          "type": "color_variant",
+        "color_item_ntG3LD": {
+          "type": "color_item",
           "settings": {
             "name": "Dusty Navy",
             "color_code": "#3d4259",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0271.jpg?v=1771395913&width=1200"
+            "image": "shopify://shop_images/260312_KAPOKKNOT1292.jpg"
           }
         },
-        "color_3": {
-          "type": "color_variant",
+        "color_item_M4RyTm": {
+          "type": "color_item",
           "settings": {
             "name": "Calm Brown",
             "color_code": "#8b6b50",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1297.jpg?v=1771395913&width=1200"
+            "image": "shopify://shop_images/260312_KAPOKKNOT1140.jpg"
           }
         },
-        "color_4": {
-          "type": "color_variant",
+        "color_item_Xf4Anx": {
+          "type": "color_item",
           "settings": {
             "name": "Cloud White",
             "color_code": "#e8e4de",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/196_a197d0e1-4f5d-4991-a947-8778a84bb42d.png?v=1771395913&width=1200"
+            "image": "shopify://shop_images/260312_KAPOKKNOT0598.jpg"
           }
         },
-        "color_5": {
-          "type": "color_variant",
+        "color_item_BgenYW": {
+          "type": "color_item",
           "settings": {
             "name": "Blossom Peach",
             "color_code": "#d4a5a0",
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/192_bf2a982d-4623-44d9-9cac-ef00709c8eda.png?v=1771395913&width=1200"
+            "image": "shopify://shop_images/260312_KAPOKKNOT0584.jpg"
           }
         }
       },
       "block_order": [
-        "color_1",
-        "color_2",
-        "color_3",
-        "color_4",
-        "color_5"
+        "color_item_VxYqgN",
+        "color_item_ntG3LD",
+        "color_item_M4RyTm",
+        "color_item_Xf4Anx",
+        "color_item_BgenYW"
       ],
+      "name": "MUSUBI カラーのみ",
       "settings": {
-        "heading": "カラーバリエーション"
-      }
-    },
-    "cta-after-colors": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "section_id": "cta-after-colors",
-        "heading": "あなたにぴったりの一枚を。",
-        "cta_url": "",
-        "cta_text": "サイズ・カラーを選ぶ",
-        "micro_1": "",
-        "micro_2": "✓ オールシーズン対応",
-        "micro_3": ""
+        "label": "COLOR VARIATION",
+        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
+        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "care": {
@@ -742,20 +1265,38 @@
         "care_2"
       ],
       "settings": {
-        "heading": "<p>「重い＝手入れが大変」<br>その常識を変えます</p>",
-        "image_alt": "日常のケア"
-      }
-    },
-    "cta-after-care": {
-      "type": "musubi-lp-cta",
-      "settings": {
-        "section_id": "cta-after-care",
-        "heading": "毎日の休息が、変わる。",
-        "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見える",
-        "micro_1": "✓ 家庭で手洗いOK",
-        "micro_2": "✓ オールシーズン対応",
-        "micro_3": ""
+        "label": "EASY CARE",
+        "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "image": "shopify://shop_images/10_20.png",
+        "image_url": "",
+        "image_alt": "日常のケア",
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "icon_bg_color": "#f4eee6",
+        "title_color": "#1a1a1a",
+        "text_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "title_size_pc": 19,
+        "title_size_sp": 18,
+        "text_size_pc": 14,
+        "text_size_sp": 14,
+        "image_fit": "cover",
+        "image_height_pc": 520,
+        "image_height_sp": 320,
+        "image_radius": 26,
+        "image_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
     "hotels": {
@@ -798,18 +1339,42 @@
         "hotel_3"
       ],
       "settings": {
-        "heading": "MUSUBIを体験できる宿",
-        "description": "全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。"
-      }
-    },
-    "gift": {
-      "type": "musubi-lp-gift",
-      "settings": {
-        "image": "shopify://shop_images/188.webp",
-        "image_alt": "ギフトイメージ",
-        "title": "<p>大切なあの人へ、<br/>極上の「休息」を贈る。</p>",
-        "description": "<p>いつも頑張っているご家族やパートナーへ。<br/>専用のギフトボックス（ラッピング）を追加で手配可能です。</p>",
-        "note": ""
+        "label": "STAY EXPERIENCE",
+        "heading": "<p>MUSUBIを体験できる宿</p>",
+        "description": "<p>全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。</p>",
+        "bg_color": "#faf7f2",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "desc_color": "#666666",
+        "type_bg_color": "#f4eee6",
+        "type_color": "#8b7355",
+        "name_color": "#1a1a1a",
+        "detail_color": "#666666",
+        "columns_pc": 3,
+        "max_width": 1180,
+        "padding_pc": 88,
+        "padding_sp": 60,
+        "heading_size_pc": 34,
+        "heading_size_sp": 26,
+        "desc_size_pc": 15,
+        "desc_size_sp": 14,
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "type_size_pc": 12,
+        "type_size_sp": 11,
+        "name_size_pc": 22,
+        "name_size_sp": 20,
+        "detail_size_pc": 14,
+        "detail_size_sp": 13,
+        "card_radius_pc": 24,
+        "card_radius_sp": 20,
+        "image_ratio_pc": 72,
+        "image_ratio_sp": 100,
+        "image_fit": "cover",
+        "image_fit_sp": "cover"
       }
     },
     "faq": {
@@ -867,44 +1432,60 @@
         "faq_6"
       ],
       "settings": {
-        "heading": "よくあるご質問"
+        "label": "FAQ",
+        "heading": "<p>よくあるご質問</p>",
+        "bg_color": "#ffffff",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#faf7f2",
+        "border_color": "#eee7dd",
+        "question_color": "#1a1a1a",
+        "answer_color": "#555555",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#8b7355",
+        "link_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "question_size_pc": 16,
+        "question_size_sp": 15,
+        "answer_size_pc": 14,
+        "answer_size_sp": 14,
+        "card_radius_pc": 18,
+        "card_radius_sp": 16,
+        "max_width": 860,
+        "padding_pc": 88,
+        "padding_sp": 60
       }
     },
-    "closing": {
-      "type": "musubi-lp-closing",
+    "177933997188d83f4b": {
+      "type": "apps",
       "blocks": {
-        "proof_line_1": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>累計販売 <strong>2,000枚</strong>突破</p>"
-          }
+        "judge_me_reviews_preview_badge_BCBi44": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         },
-        "proof_line_2": {
-          "type": "proof_line",
+        "judge_me_reviews_review_widget_7EtThC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "text": "<p>Makuake <strong>408名</strong>支援</p>"
-          }
-        },
-        "proof_line_3": {
-          "type": "proof_line",
-          "settings": {
-            "text": "<p>レビュー <strong>★4.1</strong></p>"
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
       "block_order": [
-        "proof_line_1",
-        "proof_line_2",
-        "proof_line_3"
+        "judge_me_reviews_preview_badge_BCBi44",
+        "judge_me_reviews_review_widget_7EtThC"
       ],
       "settings": {
-        "bg_image_alt": "MUSUBI -en- カラーバリエーション",
-        "label": "Recovery Weighted Blanket",
-        "product_suffix": "-en-",
-        "price_text": "Nap Size (M) ¥29,800 / Sleep Size (L) ¥39,800",
-        "price_note": "(税込)",
-        "cta_url": "",
-        "cta_text": "MUSUBIを詳しく見る→"
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
       }
     },
     "related-products": {
@@ -941,48 +1522,6 @@
         "content": ""
       }
     },
-    "hero": {
-      "type": "musubi-lp-hero",
-      "blocks": {
-        "proof_item_EKFgXW": {
-          "type": "proof_item",
-          "settings": {
-            "number": "2,000",
-            "label": "枚突破"
-          }
-        },
-        "proof_2": {
-          "type": "proof_item",
-          "settings": {
-            "number": "408",
-            "label": "名支援"
-          }
-        },
-        "proof_3": {
-          "type": "proof_item",
-          "settings": {
-            "number": "★4.1",
-            "label": "レビュー"
-          }
-        }
-      },
-      "block_order": [
-        "proof_item_EKFgXW",
-        "proof_2",
-        "proof_3"
-      ],
-      "settings": {
-        "hero_image": "shopify://shop_images/KK_LINE_-_2026-02-25T102338.738.png",
-        "hero_image_alt": "MUSUBIブランケットに包まれる女性",
-        "brand_name": "KAPOK KNOT HOME",
-        "hero_title": "<p>やさしい重みで、<br/>休息のスイッチを<br/>入れる。</p>",
-        "hero_subtitle": "<p>あみあみによる通気構造<br/>リカバリー加重ブランケット</p>",
-        "cta_url": "",
-        "cta_text": "MUSUBI詳しく見る",
-        "price_text": "¥29,800〜",
-        "price_tax": "(税込)"
-      }
-    },
     "video-loop": {
       "type": "musubi-lp-video-loop",
       "disabled": true,
@@ -996,27 +1535,24 @@
   "order": [
     "main",
     "guarantee",
+    "musubi_size_guide_xenQjE",
+    "makuake",
+    "musubi_review_summary_wBph6j",
     "ugc",
     "empathy",
     "story",
     "why",
     "science",
-    "comparison",
-    "makuake",
     "reviews",
     "cta-after-reviews",
-    "sizes",
-    "colors",
-    "cta-after-colors",
+    "musubi_size_guide_JJVm9k",
+    "musubi_color_variation_gx8aVL",
     "care",
-    "cta-after-care",
     "hotels",
-    "gift",
     "faq",
-    "closing",
+    "177933997188d83f4b",
     "related-products",
     "recently-viewed",
-    "hero",
     "video-loop"
   ]
 }

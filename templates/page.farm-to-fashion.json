@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -31,8 +40,8 @@
         "image_text_4": {
           "type": "image_text",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/1b1c7e21-a423-4253-93dc-8d26def3d03b/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC08389%201.png",
+            "layout": "left",
             "heading": "KAPOK",
             "text": "<p>カポックは東南アジアに自生する植物で、コットンの1/8の軽さ、吸湿発熱という機能を備えていますが、その繊維の軽さと短さ故に糸への加工が難しく、多くの企業が商品化を断念。国内大手繊維メーカーとの研究開発の末、カポックのシート化に成功。</p><p>またカポックは木の実なので木を伐採する必要もなく、アニマルフリーでスペシャルな素材。</p>",
             "margin_bottom": 60
@@ -41,8 +50,8 @@
         "image_text_5": {
           "type": "image_text",
           "settings": {
-            "layout": "right",
             "image_url": "https://ucarecdn.com/479b424e-7cfb-444b-b0c6-a241edbc55f8/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC07633%201.png",
+            "layout": "right",
             "heading": "KAPOK FARM",
             "text": "<p>丁寧に愛情深く紡がれるカポックの繊維。インドネシアのカポック農園の方々が、丁寧に生産・収穫しています。</p>",
             "margin_bottom": 60
@@ -51,8 +60,8 @@
         "image_text_6": {
           "type": "image_text",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/15ff5989-dc22-4308-98be-a57f41091b89/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20124.png",
+            "layout": "left",
             "heading": "PRODUCT DESIGN",
             "text": "<p>デザイン・機能・価格のバランスの取れたものづくりを心がけ、お客様に長く使っていただける服に仕上げています。</p>",
             "margin_bottom": 60
@@ -61,8 +70,8 @@
         "image_text_7": {
           "type": "image_text",
           "settings": {
-            "layout": "right",
             "image_url": "https://ucarecdn.com/ab413adb-903f-46ef-b7db-9565c49d21bb/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20125.png",
+            "layout": "right",
             "heading": "GARMENT FACTORY",
             "text": "<p>縫製工場では従業員の方達が、1着1着、丁寧に作り上げていきます。多くの工場で行われている分業型とは違い、私たちのメイン工場では「丸縫い」という、すべての工程をひとりで仕上げることを習得し、初めて1人前とされます。</p><p>だからこそ細部に思いやりの行き届いたモノづくりができます。</p>",
             "margin_bottom": 60
@@ -80,10 +89,8 @@
         "features_grid_9": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/da9dfac5-191b-4f71-b3a2-fc68dc73a690/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_3.png",
             "title_1": "",
             "text_1": "",
@@ -92,7 +99,8 @@
             "text_2": "",
             "image_url_3": "https://ucarecdn.com/66384172-54e0-46df-8a81-81b62f22db73/-/format/auto/-/preview/3000x3000/-/quality/lighter/detail_11953_15987565591645_2.png",
             "title_3": "",
-            "text_3": ""
+            "text_3": "",
+            "margin_bottom": 80
           }
         },
         "product_grid_10": {
@@ -100,9 +108,9 @@
           "settings": {
             "heading": "Coats",
             "columns_desktop": 4,
-            "margin_bottom": 80,
             "collection": "coat",
-            "collection_limit": 4
+            "collection_limit": 4,
+            "margin_bottom": 80
           }
         },
         "product_grid_11": {
@@ -110,9 +118,9 @@
           "settings": {
             "heading": "Jackets",
             "columns_desktop": 4,
-            "margin_bottom": 80,
             "collection": "jacket",
-            "collection_limit": 4
+            "collection_limit": 4,
+            "margin_bottom": 80
           }
         },
         "image_full_12": {
@@ -134,8 +142,8 @@
         "image_text_14": {
           "type": "image_text",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
+            "layout": "left",
             "heading": "動物にも優しいアニマルフリー",
             "text": "<p>従来のダウンは水鳥の羽が使用されていました。一説には、１つのダウンジャケットには約30羽分の羽毛が使われているといわれています。</p><p>羽毛の採取方法にもいくつかありますが、ライブハンドピッキング法は質の良い羽毛を採取できる方法としても知られています。実際、採取方法を表明していない企業も存在しています。</p>",
             "margin_bottom": 60
@@ -153,14 +161,13 @@
         "features_grid_16": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 2,
             "icon_size": "large",
+            "columns_desktop": 2,
             "image_url_1": "https://ucarecdn.com/660f0a29-15e9-4e4d-96d7-b3987a360c5d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140130.png",
             "image_url_2": "https://ucarecdn.com/c1660664-c4a5-4791-a6a8-be24491f67b1/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140323.png",
             "image_url_3": "https://ucarecdn.com/e49f4318-c189-478f-a012-59ddab40db53/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140205.png",
-            "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png"
+            "image_url_4": "https://ucarecdn.com/2ed38a29-8529-49e6-b536-76e08098a0b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-01-30%20140237.png",
+            "margin_bottom": 80
           }
         },
         "rich_text_17": {
@@ -175,14 +182,13 @@
         "features_grid_18": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 2,
             "icon_size": "large",
+            "columns_desktop": 2,
             "image_url_1": "https://ucarecdn.com/ca380642-6575-438a-990e-1c2293dd7d1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.39.png",
             "image_url_2": "https://ucarecdn.com/bc36ca8b-6051-4821-b8a6-569d620ff601/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.43.02.png",
             "image_url_3": "https://ucarecdn.com/f61f79e8-3ee2-457b-a314-bc8379aa8da9/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.42.53.png",
-            "image_url_4": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png"
+            "image_url_4": "https://ucarecdn.com/dd0ec87c-88bc-4ffa-b6a9-feb6f678be74/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-02-01%2010.44.05.png",
+            "margin_bottom": 80
           }
         },
         "rich_text_19": {
@@ -197,10 +203,8 @@
         "features_grid_20": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png",
             "title_1": "",
             "text_1": "建築家の谷尻誠さんと料理家の谷尻直子さん",
@@ -209,7 +213,8 @@
             "text_2": "『201カ国、202人の夢xSDGs』編集者 平原依文さん",
             "image_url_3": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png",
             "title_3": "",
-            "text_3": "DEPT Company代表 デザイナー/アクティビスト eriさん"
+            "text_3": "DEPT Company代表 デザイナー/アクティビスト eriさん",
+            "margin_bottom": 80
           }
         },
         "rich_text_21": {
@@ -224,10 +229,8 @@
         "features_grid_22": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/fd5ed597-5751-4414-9666-6cb61ec50943/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_01.png",
             "title_1": "木村祥一郎",
             "text_1": "軽くて薄いのに暖かい。言葉では伝わりにくいけど、体験すると感動するレベル。カラダは正直で、ついつい他よりKAPOK KNOTのアウターを選んでしまう。しかもサスティナブル志向。そりゃ応援したくなる。",
@@ -236,7 +239,8 @@
             "text_2": "機能とデザイン、そして環境配慮。それらのバランスをとりながら、全てを満たす魅力的なプロダクトを実現した「カポックノット」は、僕が心からリスペクトするD2Cブランドの一つです。",
             "image_url_3": "https://ucarecdn.com/24cac52c-dcf3-482b-b055-a449abbaa882/-/format/auto/-/preview/3000x3000/-/quality/lighter/comment_03.jpeg",
             "title_3": "宮崎真理子",
-            "text_3": "カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。"
+            "text_3": "カポックノットを着ることで、サステナブルな地球環境を一緒に創らせてもらっているような気持ちです。ストーリーがあるだけなく、実際にあったかくてスタイリッシュなカポックノットが広がっている社会を想像し、ワクワクしています。",
+            "margin_bottom": 80
           }
         },
         "rich_text_23": {
@@ -251,8 +255,8 @@
         "image_text_24": {
           "type": "image_text",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
+            "layout": "left",
             "heading": "カポックノット代表 深井喜翔",
             "text": "<p>初めましてカポックノット創業者の深井喜翔です。</p><p>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。</p><p>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p>",
             "margin_bottom": 60
@@ -270,8 +274,8 @@
         "image_text_26": {
           "type": "image_text",
           "settings": {
-            "layout": "left",
             "image_url": "https://ucarecdn.com/1573de7b-7ae4-497e-b340-1970bc5ca977/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2068.png",
+            "layout": "left",
             "heading": "次世代に託す地球環境への還元",
             "text": "<p>サステナブルな素材を活用し、持続可能なビジネスを展開し、その利益の一部で地球環境再生に貢献します</p><h3>生産者に優しいものづくり</h3><p>受け継いできた技術と革新的な技術を活かし、原料生産元からお客様の手に届くまで独自のサプライチェーンを構築し、生産者にも優しいものづくりをしていきます</p><h3>より軽く、より暖かく</h3><p>軽さと吸湿発熱の機能を持つカポックによって、着膨れしない「軽い、薄い、暖かい」スタイリッシュなアウターを実現します</p>",
             "margin_bottom": 60
@@ -346,8 +350,8 @@
           "settings": {
             "heading": "よくあるご質問",
             "text": "",
-            "margin_bottom": 24,
-            "text_alignment": "center"
+            "text_alignment": "center",
+            "margin_bottom": 24
           }
         },
         "accordion_38": {
@@ -391,10 +395,10 @@
           "settings": {
             "heading": "他のおすすめ商品",
             "columns_desktop": 4,
-            "margin_top": 40,
-            "margin_bottom": 80,
             "collection": "ranking",
-            "collection_limit": 4
+            "collection_limit": 4,
+            "margin_top": 40,
+            "margin_bottom": 80
           }
         }
       },

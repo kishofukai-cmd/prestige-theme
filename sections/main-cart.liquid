@@ -82,16 +82,7 @@
                   {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, placeholder: placeholder, show_label_as_block: true -%}
                 </cart-note>
               {%- endif -%}
-
-              {%- comment -%}
-              ギフトオプション（注文属性）
-              {%- endcomment -%}
-              <div class="cart-gift-option">
-                <label class="h-stack gap-2">
-                  <input type="checkbox" name="attributes[ギフト]" value="希望する">
-                  <span>ギフトとして注文する</span>
-                </label>
-              </div>
+             </div>
 
               <div class="cart-recap">
                 {%- comment -%}Give apps a special hook to add features on the recap (such as capturing delivery dates){%- endcomment -%}

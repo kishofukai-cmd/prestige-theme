@@ -1,0 +1,15 @@
+{% for group in robots.default_groups %}
+{{ group.user_agent }}
+{% for rule in group.rules %}
+{{ rule.directive }}: {{ rule.value }}
+{% endfor %}
+
+{% endfor %}
+
+User-agent: *
+Disallow: /*?*pr_prod_strat=
+Disallow: /*?*pr_rec_id=
+Disallow: /*?*country=
+Disallow: /*?*currency=
+
+Sitemap: https://kapok-knot.com/sitemap.xml

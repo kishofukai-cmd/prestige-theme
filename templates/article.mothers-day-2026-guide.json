@@ -1,55 +1,289 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "mothers-day-2026-guide",
       "blocks": {
-        "toc-1": { "type": "toc_item", "settings": { "label": "2026年、お母さまが\"本当に\"欲しいものは？", "anchor": "#sec1" } },
-        "toc-2": { "type": "toc_item", "settings": { "label": "50代・60代に贈りたい「眠りのギフト」", "anchor": "#sec2" } },
-        "toc-3": { "type": "toc_item", "settings": { "label": "選び方に迷わない！3つのポイント", "anchor": "#sec3" } },
-        "toc-4": { "type": "toc_item", "settings": { "label": "「重み」を贈る選択：MUSUBIという答え", "anchor": "#sec4" } },
-        "toc-5": { "type": "toc_item", "settings": { "label": "【比較表】リラックスギフトを比較", "anchor": "#sec5" } },
-        "toc-6": { "type": "toc_item", "settings": { "label": "MUSUBIを贈った方の声", "anchor": "#sec6" } },
-        "toc-7": { "type": "toc_item", "settings": { "label": "母の日当日に届けるには", "anchor": "#sec7" } },
-        "toc-8": { "type": "toc_item", "settings": { "label": "まとめ", "anchor": "#sec8" } },
-
-        "rank-1": { "type": "rank_row", "settings": { "rank": "1位", "category": "食品・グルメ", "percentage": "26.1%", "highlight": false } },
-        "rank-2": { "type": "rank_row", "settings": { "rank": "2位", "category": "お花・観葉植物", "percentage": "20.5%", "highlight": false } },
-        "rank-3": { "type": "rank_row", "settings": { "rank": "3位", "category": "スイーツ", "percentage": "17.2%", "highlight": false } },
-        "rank-4": { "type": "rank_row", "settings": { "rank": "4位", "category": "健康・生活雑貨", "percentage": "7.8%", "highlight": true } },
-        "rank-5": { "type": "rank_row", "settings": { "rank": "5位", "category": "ファッション", "percentage": "6.2%", "highlight": false } },
-
-        "model-1": { "type": "model_row", "settings": { "model": "<p><strong>MUSUBI -en-</strong><br>Nap Size (3.0kg)</p>", "target": "50代・ソファで昼寝を楽しむお母さま", "price": "¥29,800" } },
-        "model-2": { "type": "model_row", "settings": { "model": "<p><strong>MUSUBI -en-</strong><br>Sleep Size (4.5kg)</p>", "target": "60代・睡眠の質を大切にしたいお母さま", "price": "¥39,800" } },
-        "model-3": { "type": "model_row", "settings": { "model": "<p><strong>MUSUBI -PON-</strong><br>(1.5kg)</p>", "target": "70代以上・膝掛けとしての贈り物に", "price": "¥8,900" } },
-        "model-4": { "type": "model_row", "settings": { "model": "<p><strong>MUSUBI -ON-</strong><br>(5.0kg)</p>", "target": "冷え性・寒がりのお母さまに", "price": "¥44,800" } },
-
-        "cmp-1": { "type": "compare_row", "settings": { "item": "MUSUBI（加重ブランケット）", "price_range": "¥8,900〜44,800", "all_season": "◎", "size_risk": "◎ ほぼなし", "highlight": true } },
-        "cmp-2": { "type": "compare_row", "settings": { "item": "リカバリーウェア（BAKUNE等）", "price_range": "¥15,000〜30,000", "all_season": "○", "size_risk": "△ サイズ選び必要", "highlight": false } },
-        "cmp-3": { "type": "compare_row", "settings": { "item": "マッサージクッション", "price_range": "¥10,000〜25,000", "all_season": "○", "size_risk": "○", "highlight": false } },
-        "cmp-4": { "type": "compare_row", "settings": { "item": "アロマディフューザー", "price_range": "¥5,000〜15,000", "all_season": "◎", "size_risk": "◎", "highlight": false } },
-        "cmp-5": { "type": "compare_row", "settings": { "item": "パジャマ・ナイトウェア", "price_range": "¥5,000〜20,000", "all_season": "季節限定", "size_risk": "△ サイズ選び必要", "highlight": false } },
-
-        "voice-1": { "type": "voice", "settings": { "quote": "「母が『重みが気持ちいいね』と、昼寝のたびに使ってくれています。去年のリカバリーウェアとも併用しているそうです。」", "who": "60代のお母さまへ贈った Kさま（40代）" } },
-        "voice-2": { "type": "voice", "settings": { "quote": "「遠方の母に贈りました。『包まれる感じが安心する』と電話で何度も言ってくれて、贈ってよかったです。」", "who": "60代のお母さまへ贈った Mさま（40代）" } },
-
-        "ref-1": { "type": "reference", "settings": { "text": "※1 Weighted blankets & sleep/related disorders review（関連文献）" } },
-        "ref-2": { "type": "reference", "settings": { "text": "※2 Deep Pressure Therapy and its effects on the autonomic nervous system（関連研究）" } },
-        "ref-3": { "type": "reference", "settings": { "text": "※3 The effects of weighted blankets on sleep quality and melatonin levels（関連研究）" } },
-        "ref-4": { "type": "reference", "settings": { "text": "※ 本記事は医学的効能を保証するものではなく、体感には個人差があります。" } },
-
-        "rel-1": { "type": "related_link", "settings": { "label": "夏に使える重い布団・加重ブランケットとは？蒸れない通気性で選ぶMUSUBIの実力", "url": "https://kapok-knot.com/blogs/magazine/summer_air_musubi" } },
-        "rel-2": { "type": "related_link", "settings": { "label": "MUSUBIシリーズ商品一覧", "url": "https://kapok-knot.com/collections/musubi-series" } }
+        "toc-1": {
+          "type": "toc_item",
+          "settings": {
+            "label": "2026年、お母さまが\"本当に\"欲しいものは？",
+            "anchor": "#sec1"
+          }
+        },
+        "toc-2": {
+          "type": "toc_item",
+          "settings": {
+            "label": "50代・60代に贈りたい「眠りのギフト」",
+            "anchor": "#sec2"
+          }
+        },
+        "toc-3": {
+          "type": "toc_item",
+          "settings": {
+            "label": "選び方に迷わない！3つのポイント",
+            "anchor": "#sec3"
+          }
+        },
+        "toc-4": {
+          "type": "toc_item",
+          "settings": {
+            "label": "「重み」を贈る選択：MUSUBIという答え",
+            "anchor": "#sec4"
+          }
+        },
+        "toc-5": {
+          "type": "toc_item",
+          "settings": {
+            "label": "【比較表】リラックスギフトを比較",
+            "anchor": "#sec5"
+          }
+        },
+        "toc-6": {
+          "type": "toc_item",
+          "settings": {
+            "label": "MUSUBIを贈った方の声",
+            "anchor": "#sec6"
+          }
+        },
+        "toc-7": {
+          "type": "toc_item",
+          "settings": {
+            "label": "母の日当日に届けるには",
+            "anchor": "#sec7"
+          }
+        },
+        "toc-8": {
+          "type": "toc_item",
+          "settings": {
+            "label": "まとめ",
+            "anchor": "#sec8"
+          }
+        },
+        "rank-1": {
+          "type": "rank_row",
+          "settings": {
+            "rank": "1位",
+            "category": "食品・グルメ",
+            "percentage": "26.1%",
+            "highlight": false
+          }
+        },
+        "rank-2": {
+          "type": "rank_row",
+          "settings": {
+            "rank": "2位",
+            "category": "お花・観葉植物",
+            "percentage": "20.5%",
+            "highlight": false
+          }
+        },
+        "rank-3": {
+          "type": "rank_row",
+          "settings": {
+            "rank": "3位",
+            "category": "スイーツ",
+            "percentage": "17.2%",
+            "highlight": false
+          }
+        },
+        "rank-4": {
+          "type": "rank_row",
+          "settings": {
+            "rank": "4位",
+            "category": "健康・生活雑貨",
+            "percentage": "7.8%",
+            "highlight": true
+          }
+        },
+        "rank-5": {
+          "type": "rank_row",
+          "settings": {
+            "rank": "5位",
+            "category": "ファッション",
+            "percentage": "6.2%",
+            "highlight": false
+          }
+        },
+        "model-1": {
+          "type": "model_row",
+          "settings": {
+            "model": "<p><strong>MUSUBI -en-</strong><br>Nap Size (3.0kg)</p>",
+            "target": "50代・ソファで昼寝を楽しむお母さま",
+            "price": "¥29,800"
+          }
+        },
+        "model-2": {
+          "type": "model_row",
+          "settings": {
+            "model": "<p><strong>MUSUBI -en-</strong><br>Sleep Size (4.5kg)</p>",
+            "target": "60代・睡眠の質を大切にしたいお母さま",
+            "price": "¥39,800"
+          }
+        },
+        "model-3": {
+          "type": "model_row",
+          "settings": {
+            "model": "<p><strong>MUSUBI -PON-</strong><br>(1.5kg)</p>",
+            "target": "70代以上・膝掛けとしての贈り物に",
+            "price": "¥8,900"
+          }
+        },
+        "model-4": {
+          "type": "model_row",
+          "settings": {
+            "model": "<p><strong>MUSUBI -ON-</strong><br>(5.0kg)</p>",
+            "target": "冷え性・寒がりのお母さまに",
+            "price": "¥44,800"
+          }
+        },
+        "cmp-1": {
+          "type": "compare_row",
+          "settings": {
+            "item": "MUSUBI（加重ブランケット）",
+            "price_range": "¥8,900〜44,800",
+            "all_season": "◎",
+            "size_risk": "◎ ほぼなし",
+            "highlight": true
+          }
+        },
+        "cmp-2": {
+          "type": "compare_row",
+          "settings": {
+            "item": "リカバリーウェア（BAKUNE等）",
+            "price_range": "¥15,000〜30,000",
+            "all_season": "○",
+            "size_risk": "△ サイズ選び必要",
+            "highlight": false
+          }
+        },
+        "cmp-3": {
+          "type": "compare_row",
+          "settings": {
+            "item": "マッサージクッション",
+            "price_range": "¥10,000〜25,000",
+            "all_season": "○",
+            "size_risk": "○",
+            "highlight": false
+          }
+        },
+        "cmp-4": {
+          "type": "compare_row",
+          "settings": {
+            "item": "アロマディフューザー",
+            "price_range": "¥5,000〜15,000",
+            "all_season": "◎",
+            "size_risk": "◎",
+            "highlight": false
+          }
+        },
+        "cmp-5": {
+          "type": "compare_row",
+          "settings": {
+            "item": "パジャマ・ナイトウェア",
+            "price_range": "¥5,000〜20,000",
+            "all_season": "季節限定",
+            "size_risk": "△ サイズ選び必要",
+            "highlight": false
+          }
+        },
+        "voice-1": {
+          "type": "voice",
+          "settings": {
+            "quote": "「母が『重みが気持ちいいね』と、昼寝のたびに使ってくれています。去年のリカバリーウェアとも併用しているそうです。」",
+            "who": "60代のお母さまへ贈った Kさま（40代）"
+          }
+        },
+        "voice-2": {
+          "type": "voice",
+          "settings": {
+            "quote": "「遠方の母に贈りました。『包まれる感じが安心する』と電話で何度も言ってくれて、贈ってよかったです。」",
+            "who": "60代のお母さまへ贈った Mさま（40代）"
+          }
+        },
+        "ref-1": {
+          "type": "reference",
+          "settings": {
+            "text": "※1 Weighted blankets & sleep/related disorders review（関連文献）"
+          }
+        },
+        "ref-2": {
+          "type": "reference",
+          "settings": {
+            "text": "※2 Deep Pressure Therapy and its effects on the autonomic nervous system（関連研究）"
+          }
+        },
+        "ref-3": {
+          "type": "reference",
+          "settings": {
+            "text": "※3 The effects of weighted blankets on sleep quality and melatonin levels（関連研究）"
+          }
+        },
+        "ref-4": {
+          "type": "reference",
+          "settings": {
+            "text": "※ 本記事は医学的効能を保証するものではなく、体感には個人差があります。"
+          }
+        },
+        "rel-1": {
+          "type": "related_link",
+          "settings": {
+            "label": "夏に使える重い布団・加重ブランケットとは？蒸れない通気性で選ぶMUSUBIの実力",
+            "url": "https://kapok-knot.com/blogs/magazine/summer_air_musubi"
+          }
+        },
+        "rel-2": {
+          "type": "related_link",
+          "settings": {
+            "label": "MUSUBIシリーズ商品一覧",
+            "url": "https://kapok-knot.com/collections/musubi-series"
+          }
+        }
       },
       "block_order": [
-        "toc-1", "toc-2", "toc-3", "toc-4", "toc-5", "toc-6", "toc-7", "toc-8",
-        "rank-1", "rank-2", "rank-3", "rank-4", "rank-5",
-        "model-1", "model-2", "model-3", "model-4",
-        "cmp-1", "cmp-2", "cmp-3", "cmp-4", "cmp-5",
-        "voice-1", "voice-2",
-        "ref-1", "ref-2", "ref-3", "ref-4",
-        "rel-1", "rel-2"
-      ]
+        "toc-1",
+        "toc-2",
+        "toc-3",
+        "toc-4",
+        "toc-5",
+        "toc-6",
+        "toc-7",
+        "toc-8",
+        "rank-1",
+        "rank-2",
+        "rank-3",
+        "rank-4",
+        "rank-5",
+        "model-1",
+        "model-2",
+        "model-3",
+        "model-4",
+        "cmp-1",
+        "cmp-2",
+        "cmp-3",
+        "cmp-4",
+        "cmp-5",
+        "voice-1",
+        "voice-2",
+        "ref-1",
+        "ref-2",
+        "ref-3",
+        "ref-4",
+        "rel-1",
+        "rel-2"
+      ],
+      "settings": {}
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

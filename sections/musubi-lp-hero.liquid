@@ -1,46 +1,238 @@
-{% comment %} MUSUBI LP - Hero Section {% endcomment %}
-{% render 'musubi-lp-styles' %}
-
-<section class="hero" id="hero">
+<section
+  class="hero"
+  id="hero"
+  style="
+    --hero-bg-color: {{ section.settings.hero_bg_color }};
+    --hero-title-size-pc: {{ section.settings.hero_title_font_size_pc }}px;
+    --hero-title-size-sp: {{ section.settings.hero_title_font_size_sp }}px;
+    --hero-title-weight-pc: {{ section.settings.hero_title_font_weight_pc }};
+    --hero-title-weight-sp: {{ section.settings.hero_title_font_weight_sp }};
+  "
+>
   <div class="hero__img-wrapper">
-    <img src="{{ section.settings.hero_image | img_url: '1600x' | default: 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1600' }}"
-      alt="{{ section.settings.hero_image_alt | default: 'MUSUBIブランケットに包まれる女性' }}" class="hero__img">
-  </div>
-  <div class="hero__content">
-    <p class="hero__brand">{{ section.settings.brand_name | default: 'KAPOK KNOT HOME' }}</p>
-    <h1 class="hero__title">{{ section.settings.hero_title | default: 'やさしい重みで、<br>休息のスイッチを入れる。' }}</h1>
-    <p class="hero__subtitle">{{ section.settings.hero_subtitle | default: '植物由来素材 × 通気構造の<br>リカバリー加重ブランケット' }}</p>
+    <picture>
+      {% if section.settings.hero_image_sp != blank %}
+        <source media="(max-width: 767px)" srcset="{{ section.settings.hero_image_sp | img_url: '900x' }}">
+      {% endif %}
 
-    <!-- ソーシャルプルーフ -->
-    <div class="hero__proof">
-      {% for block in section.blocks %}
-        {% if block.type == 'proof_item' %}
-          {% unless forloop.first %}<div class="hero__proof-divider"></div>{% endunless %}
-          <div class="hero__proof-item" {{ block.shopify_attributes }}>
-            <span class="hero__proof-number">{{ block.settings.number }}</span>
-            <span class="hero__proof-label">{{ block.settings.label }}</span>
-          </div>
-        {% endif %}
-      {% endfor %}
+      <img
+        src="{{ section.settings.hero_image | img_url: '1600x' }}"
+        alt="{{ section.settings.hero_image_alt }}"
+        class="hero__img"
+      >
+    </picture>
+
+    <div class="hero__title-overlay">
+      <p class="hero__brand">{{ section.settings.brand_name }}</p>
+      <div class="hero__title">
+        {{ section.settings.hero_title }}
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__content">
+    <div
+      class="hero__subtitle"
+      style="
+        font-size: {{ section.settings.hero_subtitle_font_size }}px;
+        font-weight: {{ section.settings.hero_subtitle_font_weight }};
+        color: {{ section.settings.hero_subtitle_color }};
+      "
+    >
+      {{ section.settings.hero_subtitle }}
     </div>
 
-    <!-- ヒーローCTA -->
     <div class="hero__cta-area">
-      <a href="{{ section.settings.cta_url | default: 'https://kapok-knot.com/products/musubi-en' }}" class="hero__cta-btn" target="_blank" rel="noopener">
-        {{ section.settings.cta_text | default: '今すぐMUSUBIを手に入れる' }}
-      </a>
-      <p class="hero__price">{{ section.settings.price_text | default: '¥29,800〜' }} <span class="hero__price-tax">{{ section.settings.price_tax | default: '(税込)' }}</span></p>
-        <div style= "display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:8px;letter-spacing:0.03em;">
-          <span>✓ オールシーズン</span>
-          <span>✓ ギフトラッピング</span>
-          <span>✓ アニマルフリー</span>
-          <span>✓ ビーズレス</span>
-          <span>✓ お手入れ簡単</span>
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a
+          href="{{ section.settings.cta_url }}"
+          class="hero__cta-btn"
+          style="
+            background: {{ section.settings.cta1_bg_color }};
+            color: {{ section.settings.cta1_text_color }};
+            margin-top: {{ section.settings.cta1_margin_top }}px;
+            margin-bottom: {{ section.settings.cta1_margin_bottom }}px;
+          "
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
 
-        </div>
+      {% if section.settings.cta_url_2 != blank and section.settings.cta_text_2 != blank %}
+        <a
+          href="{{ section.settings.cta_url_2 }}"
+          class="hero__cta-btn"
+          style="
+            background: {{ section.settings.cta2_bg_color }};
+            color: {{ section.settings.cta2_text_color }};
+            margin-top: {{ section.settings.cta2_margin_top }}px;
+            margin-bottom: {{ section.settings.cta2_margin_bottom }}px;
+          "
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.cta_text_2 }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.show_soldout and section.settings.soldout_text != blank %}
+        <p
+          class="hero__soldout"
+          style="
+            margin-top: {{ section.settings.soldout_margin_top }}px;
+            margin-bottom: {{ section.settings.soldout_margin_bottom }}px;
+            font-size: {{ section.settings.soldout_font_size }}px;
+            color: {{ section.settings.soldout_text_color }};
+          "
+        >
+          {{ section.settings.soldout_text | newline_to_br }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.price_text != blank %}
+        <p
+          class="hero__price"
+          style="
+            margin-top: {{ section.settings.price_margin_top }}px;
+            margin-bottom: {{ section.settings.price_margin_bottom }}px;
+          "
+        >
+          {{ section.settings.price_text }}
+          <span class="hero__price-tax">{{ section.settings.price_tax }}</span>
+        </p>
+      {% endif %}
+
+      <div class="hero__features">
+        {% if section.settings.feature_1 != blank %}
+          <span>{{ section.settings.feature_1 }}</span>
+        {% endif %}
+        {% if section.settings.feature_2 != blank %}
+          <span>{{ section.settings.feature_2 }}</span>
+        {% endif %}
+        {% if section.settings.feature_3 != blank %}
+          <span>{{ section.settings.feature_3 }}</span>
+        {% endif %}
+        {% if section.settings.feature_4 != blank %}
+          <span>{{ section.settings.feature_4 }}</span>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__img-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__title-overlay {
+  position: absolute;
+  bottom: 32px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero__brand {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.hero__title p {
+  margin: 0;
+  font-size: var(--hero-title-size-pc);
+  font-weight: var(--hero-title-weight-pc);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+.hero__content {
+  background: var(--hero-bg-color) !important;
+  padding: 28px 16px 36px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero__subtitle p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.hero__soldout {
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.hero__cta-btn {
+  display: block;
+  width: min(100%, 360px);
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__price {
+  font-size: 1rem;
+}
+
+.hero__price-tax {
+  font-size: 0.8em;
+}
+
+.hero__features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 12px;
+  font-size: {{ section.settings.features_font_size }}px;
+  color: {{ section.settings.features_text_color }};
+  margin-top: 8px;
+  letter-spacing: 0.03em;
+}
+
+@media screen and (max-width: 767px) {
+  .hero__title-overlay {
+    left: 16px;
+    right: 16px;
+    bottom: 24px;
+  }
+
+  .hero__title p {
+    font-size: var(--hero-title-size-sp);
+    font-weight: var(--hero-title-weight-sp);
+  }
+
+  .hero__content {
+    padding: 24px 16px 32px;
+  }
+}
+</style>
 
 {% schema %}
 {
@@ -49,13 +241,24 @@
     {
       "type": "image_picker",
       "id": "hero_image",
-      "label": "ヒーロー画像"
+      "label": "ヒーロー画像PC"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_sp",
+      "label": "ヒーロー画像SP"
     },
     {
       "type": "text",
       "id": "hero_image_alt",
       "label": "画像のalt属性",
       "default": "MUSUBIブランケットに包まれる女性"
+    },
+    {
+      "type": "color",
+      "id": "hero_bg_color",
+      "label": "背景色",
+      "default": "#1F2A44"
     },
     {
       "type": "text",
@@ -66,70 +269,309 @@
     {
       "type": "richtext",
       "id": "hero_title",
-      "label": "見出し",
+      "label": "タイトル",
       "default": "<p>やさしい重みで、<br>休息のスイッチを入れる。</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_pc",
+      "label": "タイトルサイズPC",
+      "min": 24,
+      "max": 96,
+      "step": 1,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "hero_title_font_size_sp",
+      "label": "タイトルサイズSP",
+      "min": 20,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_pc",
+      "label": "タイトル太さPC",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "hero_title_font_weight_sp",
+      "label": "タイトル太さSP",
+      "default": "700",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
     },
     {
       "type": "richtext",
       "id": "hero_subtitle",
       "label": "サブタイトル",
-      "default": "<p>植物由来素材 × 通気構造の<br>リカバリー加重ブランケット</p>"
+      "default": "<p>あみあみによる通気構造<br>リカバリー加重ブランケット</p>"
+    },
+    {
+      "type": "range",
+      "id": "hero_subtitle_font_size",
+      "label": "サブタイトルサイズ",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "hero_subtitle_font_weight",
+      "label": "サブタイトル太さ",
+      "default": "400",
+      "options": [
+        { "value": "300", "label": "細め" },
+        { "value": "400", "label": "通常" },
+        { "value": "500", "label": "中太" },
+        { "value": "600", "label": "太め" },
+        { "value": "700", "label": "かなり太め" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "hero_subtitle_color",
+      "label": "サブタイトル色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_soldout",
+      "label": "完売表示を出す",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "soldout_text",
+      "label": "完売文言",
+      "default": "現在MUSUBI-en-は完売中です。"
+    },
+    {
+      "type": "range",
+      "id": "soldout_font_size",
+      "label": "完売文言 フォントサイズ",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "soldout_text_color",
+      "label": "完売文言 文字色",
+      "default": "#ffffff"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "CTAリンク先"
+      "label": "CTA1リンク"
     },
     {
       "type": "text",
       "id": "cta_text",
-      "label": "CTAボタンテキスト",
-      "default": "今すぐMUSUBIを手に入れる"
+      "label": "CTA1テキスト",
+      "default": "商品ページを見る"
+    },
+    {
+      "type": "color",
+      "id": "cta1_bg_color",
+      "label": "CTA1背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta1_text_color",
+      "label": "CTA1文字色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "url",
+      "id": "cta_url_2",
+      "label": "CTA2リンク"
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA2テキスト",
+      "default": "公式LINEから再入荷通知を受け取る"
+    },
+    {
+      "type": "color",
+      "id": "cta2_bg_color",
+      "label": "CTA2背景色",
+      "default": "#1F2A44"
+    },
+    {
+      "type": "color",
+      "id": "cta2_text_color",
+      "label": "CTA2文字色",
+      "default": "#ffffff"
     },
     {
       "type": "text",
       "id": "price_text",
-      "label": "価格テキスト",
+      "label": "価格",
       "default": "¥29,800〜"
     },
     {
       "type": "text",
       "id": "price_tax",
-      "label": "税表記",
+      "label": "税込表記",
       "default": "(税込)"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "proof_item",
-      "name": "実績数値",
-      "settings": [
-        {
-          "type": "text",
-          "id": "number",
-          "label": "数値",
-          "default": "2,000"
-        },
-        {
-          "type": "text",
-          "id": "label",
-          "label": "ラベル",
-          "default": "枚突破"
-        }
-      ]
+      "type": "header",
+      "content": "特徴テキスト"
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "特徴1",
+      "default": "✓ オールシーズン"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "特徴2",
+      "default": "✓ 単一素材"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "特徴3",
+      "default": "✓ 通気性"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "特徴4",
+      "default": "✓ お手入れ簡単"
+    },
+    {
+      "type": "color",
+      "id": "features_text_color",
+      "label": "特徴テキスト色",
+      "default": "rgba(255,255,255,0.75)"
+    },
+    {
+      "type": "range",
+      "id": "features_font_size",
+      "label": "特徴フォントサイズ",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "余白設定"
+    },
+    {
+      "type": "range",
+      "id": "cta1_margin_top",
+      "label": "CTA1 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cta1_margin_bottom",
+      "label": "CTA1 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "cta2_margin_top",
+      "label": "CTA2 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "cta2_margin_bottom",
+      "label": "CTA2 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_top",
+      "label": "完売文言 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "soldout_margin_bottom",
+      "label": "完売文言 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "price_margin_top",
+      "label": "価格 上余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "price_margin_bottom",
+      "label": "価格 下余白",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI Hero",
-      "blocks": [
-        { "type": "proof_item", "settings": { "number": "2,000", "label": "枚突破" } },
-        { "type": "proof_item", "settings": { "number": "408", "label": "名支援" } },
-        { "type": "proof_item", "settings": { "number": "★4.1", "label": "レビュー" } }
-      ]
+      "name": "MUSUBI Hero"
     }
   ]
 }
 {% endschema %}
-
-

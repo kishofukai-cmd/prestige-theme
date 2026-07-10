@@ -1,0 +1,601 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_image": false,
+        "enable_parallax": false,
+        "image_size": "medium",
+        "content_width": "xs",
+        "show_date": true,
+        "show_category": false,
+        "show_author": false,
+        "show_share_buttons": false,
+        "show_sticky_bar": true,
+        "toolbar_color_scheme": ""
+      }
+    },
+    "blocks_Rd7DAJ": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_59dce29_ecXe3P": {
+          "type": "ai_gen_block_59dce29",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/c_2_3x_2.png",
+            "height_desktop": 70,
+            "height_mobile": 30,
+            "show_overlay": true,
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "heading_size_desktop": 56,
+            "heading_size_mobile": 32,
+            "text_size_desktop": 18,
+            "text_size_mobile": 14,
+            "heading_color": "#ffffff",
+            "text_color": "#ffffff",
+            "content_position_vertical": "center",
+            "content_position_horizontal": "center",
+            "text_alignment": "center",
+            "content_max_width": 800,
+            "button_text": "",
+            "button_link": "",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "button_hover_background": "#04358d",
+            "button_hover_text_color": "#ffffff",
+            "button_border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_70db8fb_bKeM9q": {
+          "type": "ai_gen_block_70db8fb",
+          "settings": {
+            "image": "shopify://shop_images/2_092171b0-b707-4faf-92e8-60900beac8d3.png",
+            "desktop_width_percent": 100,
+            "aspect_ratio": "50",
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_be25dbb_jXjKhX": {
+          "type": "ai_gen_block_be25dbb",
+          "settings": {
+            "image": "shopify://shop_images/OFFICIAL_LINE_39.png",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_70db8fb_cBRyh8": {
+          "type": "ai_gen_block_70db8fb",
+          "settings": {
+            "image": "shopify://shop_images/1_36486d7c-7b09-4cdc-be0c-56c49a81688f.png",
+            "desktop_width_percent": 100,
+            "aspect_ratio": "33.33",
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_be25dbb_TYqQJ4": {
+          "type": "ai_gen_block_be25dbb",
+          "settings": {
+            "image": "shopify://shop_images/OFFICIAL_LINE_38.png",
+            "desktop_width_percent": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_59dce29_ecXe3P",
+        "ai_gen_block_70db8fb_bKeM9q",
+        "ai_gen_block_be25dbb_jXjKhX",
+        "ai_gen_block_70db8fb_cBRyh8",
+        "ai_gen_block_be25dbb_TYqQJ4"
+      ],
+      "name": "KV Hero",
+      "settings": {}
+    },
+    "1776328488e4a02d2f": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17768245577ec41fd5": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17763141009027f949": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1776326949565d254f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_eb214c8_QP7c3D": {
+          "type": "ai_gen_block_eb214c8",
+          "settings": {
+            "main_title": "人気＆おすすめアイテム",
+            "main_title_size": 28,
+            "header_alignment": "center",
+            "header_margin_bottom": 20,
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "mobile_grid_gap": 8,
+            "min_height": 400,
+            "mobile_min_height": 250,
+            "heading_font": "proza_libre_n4",
+            "title_transform": "none",
+            "title_letter_spacing": 0,
+            "title_size": 22,
+            "subtitle_size": 15,
+            "text_color": "#ffffff",
+            "overlay_opacity": 0.5,
+            "content_padding": 30,
+            "item_1_enabled": true,
+            "item_1_size": "large",
+            "item_1_image": "shopify://shop_images/OFFICIAL_LINE_23.png",
+            "item_1_title": "MUSUBI-en-",
+            "item_1_subtitle": "",
+            "item_1_link": "https://kapok-knot.com/products/musubi-en",
+            "item_2_enabled": true,
+            "item_2_size": "medium",
+            "item_2_image": "shopify://shop_images/OFFICIAL_LINE_26.png",
+            "item_2_title": "エアーライトペプラムジャケット",
+            "item_2_subtitle": "",
+            "item_2_link": "https://kapok-knot.com/products/airlight-peplum-jacket",
+            "item_3_enabled": true,
+            "item_3_size": "small",
+            "item_3_image": "shopify://shop_images/OFFICIAL_LINE_15.png",
+            "item_3_title": "KAPOK Sleep Ket",
+            "item_3_subtitle": "",
+            "item_3_link": "https://kapok-knot.com/products/new-kapok-sleep-ket"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_24634fb_ewmEnx": {
+          "type": "ai_gen_block_24634fb",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_eb214c8_QP7c3D",
+        "ai_gen_block_24634fb_ewmEnx"
+      ],
+      "settings": {}
+    },
+    "1776326373ce2ae80f": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f4abd73_yUrb3q": {
+          "type": "ai_gen_block_f4abd73",
+          "settings": {
+            "heading": "KAPOK KNOTがギフトに選ばれる理由",
+            "desktop_width_percent": 100,
+            "reason_1_image": "shopify://shop_images/OFFICIAL_LINE_27.png",
+            "reason_1_title": "毎日お疲れ様のホッと時間に",
+            "reason_1_text": "体全体に心地よい重みを感じることで、静かなリラックス感をもたらす機能性ブランケット。",
+            "reason_2_image": "shopify://shop_images/OFFICIAL_LINE_24.png",
+            "reason_2_title": "軽量だからBAGに忍ばせる安心感",
+            "reason_2_text": "500mlペットボトル1本分の軽さ。肩こりや倦怠感から自由になれる1着。",
+            "reason_3_image": "shopify://shop_images/OFFICIAL_LINE_22.png",
+            "reason_3_title": "「選ぶ楽しさ」も一緒に贈れる",
+            "reason_3_text": "贈られた方が自分のタイミングで好きなアイテムを選べるのが魅力。\nギフトカードコードはメールでお届け。そのままメッセージに添えて送るだけで、すぐにギフトとしてお渡し可能。",
+            "background_color": "#f4c4c1",
+            "heading_color": "#f62828",
+            "heading_size": 32,
+            "number_color": "#e91e63",
+            "number_size": 30,
+            "title_color": "#000000",
+            "title_size": 22,
+            "text_color": "#333333",
+            "text_size": 14,
+            "image_size": 290,
+            "image_border_radius": 10,
+            "card_background_color": "#ffffff",
+            "border_color": "#e0e0e0",
+            "border_width": 4,
+            "card_border_radius": 22,
+            "card_padding": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f4abd73_yUrb3q"
+      ],
+      "settings": {}
+    },
+    "1775203698b97e1c60": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3455952_iAd7eL": {
+          "type": "ai_gen_block_3455952",
+          "disabled": true,
+          "settings": {
+            "show_main_title": false,
+            "main_title": "カテゴリーで探す",
+            "main_title_size": 26,
+            "main_title_color": "#000000",
+            "main_title_alignment": "center",
+            "main_title_spacing": 24,
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "border_radius": 0,
+            "collection_1": "sex_women",
+            "image_1": "shopify://shop_images/OFFICIAL_LINE_18.png",
+            "button_text_1": "OUTER",
+            "collection_2": "26home",
+            "image_2": "shopify://shop_images/OFFICIAL_LINE_13.png",
+            "button_text_2": "MUSUBI",
+            "collection_3": "accessories",
+            "image_3": "shopify://shop_images/OFFICIAL_LINE_19.png",
+            "button_text_3": "GOODS",
+            "show_button": true,
+            "default_button_text": "詳しく見る",
+            "overlay_opacity": 0.3,
+            "overlay_padding": 8,
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 4,
+            "button_background": "#ffffff",
+            "button_hover_background": "#f0f0f0",
+            "button_text_color": "#000000"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_f779742_Gg3Np3": {
+          "type": "ai_gen_block_f779742",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_ea182d8_9dzAfQ": {
+          "type": "ai_gen_block_ea182d8",
+          "settings": {
+            "title": "Collection",
+            "title_size": 32,
+            "title_color": "#1c1c1c",
+            "collection_1": "musubi-series",
+            "image_1": "shopify://shop_images/OFFICIAL_LINE_13.png",
+            "text_1": "",
+            "button_text_1": "MUSUBI Series",
+            "collection_2": "sex_women",
+            "image_2": "shopify://shop_images/OFFICIAL_LINE_14.png",
+            "text_2": "",
+            "button_text_2": "Jacket",
+            "collection_3": "26home",
+            "image_3": "shopify://shop_images/OFFICIAL_LINE_15.png",
+            "text_3": "",
+            "button_text_3": "Home Goods",
+            "desktop_width_percent": 100,
+            "grid_gap": 20,
+            "image_border_radius": 0,
+            "text_size": 16,
+            "text_color": "#ffffff",
+            "text_spacing": 20,
+            "text_button_gap": 10,
+            "button_font_size": 14,
+            "button_padding_vertical": 10,
+            "button_padding_horizontal": 20,
+            "button_border_radius": 4,
+            "button_background": "#f9c8c8",
+            "button_hover_background": "#f9c8c8",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5b54a15_Uq8M3e": {
+          "type": "ai_gen_block_5b54a15",
+          "settings": {
+            "desktop_height": 30,
+            "mobile_height": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_95c7451_YfBHLH": {
+          "type": "ai_gen_block_95c7451",
+          "name": "Image with text",
+          "settings": {
+            "layout": "text_first",
+            "container_width": 1200,
+            "image_width": 40,
+            "content_gap": 60,
+            "mobile_gap": 35,
+            "section_padding": 50,
+            "vertical_alignment": "center",
+            "image": "shopify://shop_images/OFFICIAL_LINE_11.png",
+            "image_link": "",
+            "image_border_radius": 0,
+            "heading": "",
+            "text": "<p>今年の国際女性デーに、<br/>「心を軽やかにするための習慣」をテーマに<br/>みなさまからエピソードを募集しました。<br/><br/>日々の中で大切にしている小さな工夫や、<br/>ふと心がほどけた瞬間。<br/>そのひとつひとつに<br/>自分らしく心地よく過ごすヒントが詰まっていました。<br/><br/>そんな素敵なエピソードの一部をご紹介します。<br/></p>",
+            "text_alignment": "center",
+            "text_spacing": 20,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_label": "",
+            "button_link": "",
+            "button_text_size": 14,
+            "button_padding": 12,
+            "button_border_radius": 0,
+            "background_color": "#f5e6c8",
+            "heading_color": "#ffffff",
+            "text_color": "#1c1c1c",
+            "button_background": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_82b4ef8_88RUMp": {
+          "type": "ai_gen_block_82b4ef8",
+          "settings": {
+            "desktop_width_percent": 100,
+            "item_1_title": "騒がしくて、愛おしい朝のルーティン",
+            "item_1_content": "我が家はもうすぐ2歳の双子（息子2人）がいる四人家族です。そんな私の心を軽くする瞬間の1つは、家族4人で過ごす朝の保育園までの時間です。\n\n我が家は共働きで、出勤前に夫と2人でバタバタと準備をして、息子達と一緒に4人で家を出ます。\n\n保育園までの道では、散歩中のわんちゃんを見つけ「あ、わんわん！」と息子一人が叫べば、もう一人も指をさして笑う。その様子を見たくて夫と一緒に「あ、わんわんいるよー！」と声を出して教えてあげます。\n交通整理のおじさんが手を振ってくれれば、手を振りかえして「バイバーイ」と挨拶する2人。\n\nそんな日々を今では誇らしく感じられるようになりましたが、2人が生まれて間もなくは、まともに寝ることすらできず、日々戦場でした。\n私も夫も心身が摩耗して本当に重く感じていましたが、今では、無事に睡眠も取れるようになり、夫の積極的な協力もあり家族全員で健やかな日々を送れるようになりました。\nそんな思い出も振り返りながら、毎日、家族みんなで眠りにつき、朝はまた騒がしく愛おしいルーティンを日々繰り返しています。",
+            "item_2_title": "役割を手放し、わたしを生きる",
+            "item_2_content": "49歳、来月、15年働いた会社をやめます。\nそして、3年間という時間を家族にもらい、1人のひととして、自分の足で世の中を見て、あたらしい場所で、自分チャレンジをします。\n\n\nお母さん、妻、娘、会社での役割。たくさんの顔をもち、マルチタスクをがむしゃらにやってきた。そのことは、私を大きく成長させてくれた。関わってくれた同僚、友、家族、本当に感謝してもしきれないくらい感謝している。\n\n子どもたちが結婚＆出産、就職と人生の節目を迎え、親としての役割を一つ終えたきもち。\nそんなとき、私はこの先に何かしたいことはあるのか？ふと浮かんだのがひとり暮らしと自己選択という言葉。誰かのために一生懸命だったけど、自分のために時間を使ったり、自分のことだけを考えて判断するなどをしてこなかったかも、と。ひとりの人として、この先の人生に必要で、でも今のわたしに足りないものはこれかもしれないと。\n思い切って自分の思いを夫に話してみると、\"いいんじゃない？逆単身赴任だね\"。あれ、できないと思っていたのは私だけだったんだ！とそこにも気づきがあった。\n\n少しの間、一旦すべての役割をお休みして、ひとりで、全く知らない土地で、初めての仕事をしてみようと決断。一時的に、家族とは離れて暮らすことにはなるけど、ここはあえて自立と自律へのチャレンジを、します。これはとても前向きで大きな一歩になると確信しています。\n\n私が心を軽やかにする方法、それは自分の気持ちを自分が素直に受け止め、思っているだけではなく言葉にしたり、行動に移したりしてみること。\n\nフットワークが軽いとよく言われる。着物の着付、和裁、ヨガ、マラソンもやってみた。着物とヨガは今も私の生活の軸にあるものになっている。動けば視点が変わり、出会う人にも変化がある、新しい学びがある。それを知っているから、そして失敗しても帰る場所があるから、できるのだと思う。\n\n周りへの感謝を忘れず、女性として頑張ってきた自分をねぎらい、人としてさらに成長をすることは、これからも自分のテーマとして持ち続けていきたい。自分らしくいることが、めぐりめぐって周りの人も幸せにすることができると信じている。",
+            "item_3_title": "深く息をするだけで、少しやさしくなれる",
+            "item_3_content": "腹式呼吸を習慣にするように今コツコツ取り組んでます。\n子供2人を育てていると心の余裕がなく、毎日一杯一杯になってましたが、一呼吸ずつ意識すると思っていたより思い詰めなくてもいいのかとふわっと心も体も軽くなるんだな〜と呼吸ひとつで実感できます。",
+            "item_4_title": "この存在が、わたしを整える",
+            "item_4_content": "なんと言っても、4つの足の家族たち(愛犬)と過ごすこと。\n我が家の愛犬たちは、皆保護犬です。しかも、保護犬の中でも最も受け入れのハードルが高いと言われる元野犬たちです。野犬は、人に頼らず人を避け、ただ懸命に生きる強く尊く美しい命。彼らには、何の駆け引きも媚びもなく、純粋に生きる姿は誠実そのもので、私たちの邪念やストレスを浄化してくれます。\n心から慈しみ、何よりも感謝を込めて、日々を穏やかなに時ににぎやかに過ごしています。",
+            "item_5_title": "深く呼吸して、わたしをほどく",
+            "item_5_content": "もともと体育会系な私が、育児や仕事に追われ、すっかり自分の健康に気を向く事は出来ませんでした。ようやく男子3人も手を離れてきたので、去年の夏からホットヨガ教室に通い始めました。\n自分に向き合って、夢中になってポーズを取り、汗をかいて過ごす時間は、運動不足解消だけでなく、心穏やかに過ごすために必要な習い事となりました。\nもともとヨガは「心と体をつなぐもの」。歳を重ねて、改めて自分のカラダの今出来ること出来ないことがわかります。\nそのひとつひとつのことは、今の自分を認めることにつながりました。\nレッスンを終えるころにはとても清々しく、心軽やかに穏やかに過ごせます。\n頻回に通えませんが、細々と続けていきたいと思う習い事になりました。",
+            "item_6_title": "手放すたびに、心に余白が生まれる",
+            "item_6_content": "日々子育てと仕事に追われ自分の時間はほぼありません。それでも年に一度は、自分の服、子供の服の断捨離をして、子供たちの成長を振り返りつつ、自分のライフスタイルに合う持ち物にアップデートしています。持ち物が減ることで心も軽くなります。",
+            "title_font_size": 16,
+            "text_font_size": 14,
+            "border_radius": 8,
+            "item_background_color": "#ffffff",
+            "item_border_color": "#e0e0e0",
+            "title_color": "#1c1c1c",
+            "text_color": "#1c1c1c",
+            "button_color": "#04358d",
+            "button_hover_color": "#1c1c1c",
+            "read_more_text": "詳しく見る",
+            "read_less_text": "閉じる"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_6b34618_Jm6TCr": {
+          "type": "ai_gen_block_6b34618",
+          "settings": {
+            "line_thickness": 3,
+            "line_color": "#ffbcbc",
+            "spacing_top": 15,
+            "spacing_bottom": 20,
+            "spacing_top_mobile": 20,
+            "spacing_bottom_mobile": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_733ced0_ipA6eG": {
+          "type": "ai_gen_block_733ced0",
+          "settings": {
+            "main_title": "ギフトカード",
+            "title_size": 28,
+            "image": "shopify://shop_images/OFFICIAL_LINE_22.png",
+            "image_border_radius": 8,
+            "heading": "大切な人へ、特別な贈り物を",
+            "heading_size": 28,
+            "description": "<p>KAPOK KNOTのギフトカードは、大切な方への贈り物に最適です。お好きな金額を選んで、心のこもったギフトをお届けください。</p>",
+            "description_size": 16,
+            "button_text": "ギフトカードを購入",
+            "button_url": "https://kapok-knot.com/products/online-gift-card?",
+            "button_text_size": 14,
+            "button_color": "#04358d",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#1c1c1c",
+            "button_border_radius": 4,
+            "faq_title": "よくある質問",
+            "faq_title_size": 24,
+            "faq_background_color": "#ffffff",
+            "faq_border_color": "#e0e0e0",
+            "faq_border_width": 1,
+            "faq_border_radius": 8,
+            "faq_question_size": 16,
+            "faq_answer_size": 14,
+            "faq_question_1": "ギフトカードの有効期限はありますか？",
+            "faq_answer_1": "<p>ギフトカードに有効期限は購入から1年間です。<br/>他のクーポンコードと併用も可能です。<br/>さらに、残高が足りない場合は差額を別のお支払い方法で決済可能です。</p>",
+            "faq_question_2": "ギフトカードはどのように届きますか？",
+            "faq_answer_2": "<p>ご購入後、ギフトカードコードはメールで届きます。<br/>そのままメッセージに添えて送るだけで、すぐにギフトとしてお渡し可能です。</p>",
+            "faq_question_3": "ギフトカードは返金できますか？",
+            "faq_answer_3": "<p>申し訳ございませんが、ギフトカードのご購入後の返金は承っておりません。</p>",
+            "text_color": "#1c1c1c",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_6b34618_hBVUD8": {
+          "type": "ai_gen_block_6b34618",
+          "settings": {
+            "line_thickness": 3,
+            "line_color": "#ffbcbc",
+            "spacing_top": 15,
+            "spacing_bottom": 20,
+            "spacing_top_mobile": 20,
+            "spacing_bottom_mobile": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3455952_iAd7eL",
+        "ai_gen_block_f779742_Gg3Np3",
+        "ai_gen_block_ea182d8_9dzAfQ",
+        "ai_gen_block_5b54a15_Uq8M3e",
+        "ai_gen_block_95c7451_YfBHLH",
+        "ai_gen_block_82b4ef8_88RUMp",
+        "ai_gen_block_6b34618_Jm6TCr",
+        "ai_gen_block_733ced0_ipA6eG",
+        "ai_gen_block_6b34618_hBVUD8"
+      ],
+      "settings": {}
+    },
+    "blocks_4bYQ9n": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_eb214c8_GbKG3n": {
+          "type": "ai_gen_block_eb214c8",
+          "settings": {
+            "main_title": "MUSUBIの使い方",
+            "main_title_size": 28,
+            "header_alignment": "center",
+            "header_margin_bottom": 20,
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "mobile_grid_gap": 8,
+            "min_height": 400,
+            "mobile_min_height": 250,
+            "heading_font": "proza_libre_n4",
+            "title_transform": "none",
+            "title_letter_spacing": 0,
+            "title_size": 22,
+            "subtitle_size": 15,
+            "text_color": "#ffffff",
+            "overlay_opacity": 0.5,
+            "content_padding": 30,
+            "item_1_enabled": true,
+            "item_1_size": "large",
+            "item_1_image": "shopify://shop_images/OFFICIAL_LINE_40.png",
+            "item_1_title": "ソファでくつろぐ時も",
+            "item_1_subtitle": "",
+            "item_1_link": "https://kapok-knot.com/products/musubi-en",
+            "item_2_enabled": true,
+            "item_2_size": "medium",
+            "item_2_image": "shopify://shop_images/OFFICIAL_LINE_34.png",
+            "item_2_title": "ベッドで快適な睡眠も",
+            "item_2_subtitle": "",
+            "item_2_link": "https://kapok-knot.com/products/musubi-en",
+            "item_3_enabled": true,
+            "item_3_size": "small",
+            "item_3_image": "shopify://shop_images/OFFICIAL_LINE_30.png",
+            "item_3_title": "お部屋をグレードアップ",
+            "item_3_subtitle": "",
+            "item_3_link": "https://kapok-knot.com/products/musubi-en"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_f3a6c07_MiaaFp": {
+          "type": "ai_gen_block_f3a6c07",
+          "disabled": true,
+          "settings": {
+            "question_1": "夏でも使えますか？",
+            "answer_1": "<p>はい。あみあみ構造による通気性で、夏でも蒸れを気にせず365日お使いいただけます。</p>",
+            "question_2": "返品は可能ですか？",
+            "answer_2": "<p>商品到着後14日以内であれば返品可能です。</p>",
+            "question_3": "ギフトラッピングはできますか？",
+            "answer_3": "<p>はい、カート画面でギフトラッピングオプションをお選びいただけます。</p>",
+            "desktop_width_percent": 100,
+            "background_color": "#ffffff",
+            "border_color": "#e0e0e0",
+            "border_width": 2,
+            "border_radius": 8,
+            "container_padding": 25,
+            "divider_color": "#e0e0e0",
+            "item_padding": 20,
+            "question_color": "#1c1c1c",
+            "question_font_size": 16,
+            "question_font_weight": "600",
+            "icon_color": "#1c1c1c",
+            "answer_color": "#666666",
+            "answer_font_size": 14,
+            "answer_top_spacing": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_eb214c8_GbKG3n",
+        "ai_gen_block_f3a6c07_MiaaFp"
+      ],
+      "settings": {}
+    },
+    "prev-next-blog-posts": {
+      "type": "prev-next-blog-posts",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "Read more",
+        "show_category": true,
+        "show_excerpt": true,
+        "show_read_more": true
+      }
+    },
+    "1776315703253a57a9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ed76029_wEErQ4": {
+          "type": "ai_gen_block_ed76029",
+          "settings": {
+            "button_text": "Gift Collectionへ戻る",
+            "anchor_id": "",
+            "collection_link": "",
+            "scroll_offset": 80,
+            "show_icon": true,
+            "icon_position": "right",
+            "icon_size": 18,
+            "alignment": "center",
+            "desktop_width_percent": 100,
+            "section_padding": 20,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "border_radius": 0,
+            "border_width": 1,
+            "font_size": 14,
+            "font_weight": "400",
+            "text_transform": "none",
+            "letter_spacing": 0,
+            "button_background": "#04358d",
+            "button_text_color": "#ffffff",
+            "border_color": "#04358d",
+            "button_hover_background": "#1c1c1c",
+            "button_hover_text_color": "#ffffff",
+            "border_hover_color": "#1c1c1c",
+            "hover_transform": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ed76029_wEErQ4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "blocks_Rd7DAJ",
+    "1776328488e4a02d2f",
+    "17768245577ec41fd5",
+    "17763141009027f949",
+    "1776326949565d254f",
+    "1776326373ce2ae80f",
+    "1775203698b97e1c60",
+    "blocks_4bYQ9n",
+    "prev-next-blog-posts",
+    "1776315703253a57a9"
+  ]
+}

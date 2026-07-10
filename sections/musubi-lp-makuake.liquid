@@ -1,49 +1,338 @@
+<style>
+  .makuake {
+    padding: 96px 20px;
+    background: #f8f5ef;
+  }
+
+  .makuake__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .makuake__box {
+    background: #fff;
+    border-radius: 28px;
+    padding: 56px 44px;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .makuake__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #f2ece3;
+    color: #8b7355;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+
+  .makuake__title {
+    margin: 0 0 26px;
+    font-size: {{ section.settings.heading_size_pc }}px;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .makuake__title p {
+    margin: 0;
+  }
+
+  .makuake__hero-image {
+    margin: 0 auto 30px;
+    max-width: 760px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 16px 42px rgba(0,0,0,0.10);
+  }
+
+  .makuake__hero-image img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .makuake__stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+
+  .makuake__stat {
+    background: #faf7f2;
+    border-radius: 18px;
+    padding: 26px 16px;
+  }
+
+  .makuake__stat-number {
+    display: block;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  .makuake__stat-label {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.04em;
+  }
+
+  .makuake__soldout {
+    background: #faf7f2;
+    border-radius: 22px;
+    padding: 30px;
+    margin-bottom: 28px;
+  }
+
+  .makuake__soldout-title {
+    margin: 0 0 18px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+
+  .makuake__soldout-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+
+  .makuake__soldout-item {
+    background: #fff;
+    border: 1px solid #ece7de;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .makuake__soldout-date {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .makuake__soldout-tag {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2a44;
+    color: #fff;
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .makuake__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1f2a44;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 15px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all .25s ease;
+  }
+
+  .makuake__link:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+
+    .makuake {
+      padding: 64px 16px;
+    }
+
+    .makuake__box {
+      padding: 28px 14px;
+      border-radius: 20px;
+    }
+
+    .makuake__badge {
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+    .makuake__title {
+      font-size: {{ section.settings.heading_size_sp }}px;
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .makuake__hero-image {
+      margin-bottom: 18px;
+      border-radius: 16px;
+    }
+
+    .makuake__stats {
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .makuake__stat {
+      padding: 12px 6px;
+      border-radius: 12px;
+    }
+
+    .makuake__stat-number {
+      font-size: 18px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .makuake__stat-label {
+      font-size: 10px;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+    }
+
+    .makuake__soldout {
+      padding: 18px 12px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .makuake__soldout-title {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .makuake__soldout-list {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .makuake__soldout-item {
+      padding: 10px 12px;
+    }
+
+    .makuake__soldout-date {
+      font-size: 12px;
+    }
+
+    .makuake__soldout-tag {
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+
+    .makuake__link {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 14px;
+    }
+  }
+</style>
+
 <section class="makuake" id="makuake">
-  <div class="container--narrow">
-    <div class="makuake__box" data-reveal>
-      <!-- ヘッダー -->
-      <div class="makuake__header">
-        <span class="makuake__badge">Makuake Success</span>
-        <h2 class="makuake__title">{{ section.settings.heading | default: 'クラウドファンディングで<br>圧倒的支持を獲得' }}</h2>
+  <div class="makuake__inner">
+
+    <div class="makuake__box">
+
+      <span class="makuake__badge">
+        Makuake Success
+      </span>
+
+      <h2 class="makuake__title">
+        {{ section.settings.heading }}
+      </h2>
+
+      {% if section.settings.hero_image != blank %}
+        <div class="makuake__hero-image">
+          <img
+            src="{{ section.settings.hero_image | img_url: '1400x' }}"
+            alt="{{ section.settings.hero_image_alt }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      <div class="makuake__stats">
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.amount }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.amount_label }}
+          </span>
+        </div>
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.supporters }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.supporters_label }}
+          </span>
+        </div>
+
+        <div class="makuake__stat">
+          <span class="makuake__stat-number">
+            {{ section.settings.percent }}
+          </span>
+          <span class="makuake__stat-label">
+            {{ section.settings.percent_label }}
+          </span>
+        </div>
+
       </div>
 
-      <!-- 実績数字 -->
-      <div class="makuake__stats" data-reveal>
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.amount | default: '1,300万円' }}</span>
-          <span class="makuake__stat-label">{{ section.settings.amount_label | default: '応援購入総額' }}</span>
-        </div>
-        <div class="makuake__stat-divider"></div>
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.supporters | default: '408名' }}</span>
-          <span class="makuake__stat-label">{{ section.settings.supporters_label | default: 'サポーター' }}</span>
-        </div>
-        <div class="makuake__stat-divider"></div>
-        <div class="makuake__stat">
-          <span class="makuake__stat-number">{{ section.settings.percent | default: '2,698%' }}</span>
-          <span class="makuake__stat-label">{{ section.settings.percent_label | default: '達成率' }}</span>
-        </div>
-      </div>
+      <div class="makuake__soldout">
 
-      <!-- 完売履歴 -->
-      <div class="makuake__soldout" data-reveal>
-        <p class="makuake__soldout-title">{{ section.settings.soldout_heading | default: '販売するたびに即完売' }}</p>
+        <p class="makuake__soldout-title">
+          {{ section.settings.soldout_heading }}
+        </p>
+
         <div class="makuake__soldout-list">
+
           {% for block in section.blocks %}
             <div class="makuake__soldout-item" {{ block.shopify_attributes }}>
-              <span class="makuake__soldout-date">{{ block.settings.date }}</span>
-              <span class="makuake__soldout-tag">{{ block.settings.status | default: '完売' }}</span>
+              <span class="makuake__soldout-date">
+                {{ block.settings.date }}
+              </span>
+
+              <span class="makuake__soldout-tag">
+                {{ block.settings.status }}
+              </span>
             </div>
           {% endfor %}
+
         </div>
       </div>
 
-      <!-- Makuakeリンク -->
       {% if section.settings.makuake_url != blank %}
-        <a href="{{ section.settings.makuake_url }}" class="makuake__link" target="_blank" rel="noopener">
-          {{ section.settings.link_text | default: 'Makuakeプロジェクトページを見る →' }}
+        <a
+          href="{{ section.settings.makuake_url }}"
+          class="makuake__link"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ section.settings.link_text }}
         </a>
       {% endif %}
+
     </div>
   </div>
 </section>
@@ -56,30 +345,61 @@
       "type": "richtext",
       "id": "heading",
       "label": "見出し",
-      "default": "<p>クラウドファンディングで<br>圧倒的支持を獲得</p>"
+      "default": "<p>2024年5月クラウドファンディングで<br>圧倒的支持を獲得</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "メイン画像"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "画像alt",
+      "default": "MUSUBI Makuake"
     },
     {
       "type": "text",
       "id": "amount",
-      "label": "支援総額",
+      "label": "応援購入総額",
       "default": "1,300万円"
     },
     {
       "type": "text",
       "id": "amount_label",
-      "label": "支援総額ラベル",
+      "label": "ラベル",
       "default": "応援購入総額"
     },
     {
       "type": "text",
       "id": "supporters",
-      "label": "サポーター数",
+      "label": "サポーター",
       "default": "408名"
     },
     {
       "type": "text",
       "id": "supporters_label",
-      "label": "サポーターラベル",
+      "label": "ラベル",
       "default": "サポーター"
     },
     {
@@ -91,37 +411,37 @@
     {
       "type": "text",
       "id": "percent_label",
-      "label": "達成率ラベル",
+      "label": "ラベル",
       "default": "達成率"
     },
     {
       "type": "text",
       "id": "soldout_heading",
-      "label": "完売履歴見出し",
+      "label": "完売見出し",
       "default": "販売するたびに即完売"
     },
     {
       "type": "url",
       "id": "makuake_url",
-      "label": "MakuakeプロジェクトURL"
+      "label": "Makuakeリンク"
     },
     {
       "type": "text",
       "id": "link_text",
       "label": "リンクテキスト",
-      "default": "Makuakeプロジェクトページを見る →"
+      "default": "Makuakeプロジェクトを見る →"
     }
   ],
   "blocks": [
     {
       "type": "soldout_record",
-      "name": "販売/完売記録",
+      "name": "販売記録",
       "settings": [
         {
           "type": "text",
           "id": "date",
-          "label": "日付・内容",
-          "default": "2024年10月 先行予約"
+          "label": "日付",
+          "default": "2025年5月 先行予約"
         },
         {
           "type": "text",
@@ -134,19 +454,8 @@
   ],
   "presets": [
     {
-      "name": "MUSUBI Makuake実績",
-      "blocks": [
-        { "type": "soldout_record", "settings": { "date": "2024年10月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2024年11月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年1月 一般販売", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年5月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年6月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年7月 先行予約", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年9月 一般販売", "status": "完売" } },
-        { "type": "soldout_record", "settings": { "date": "2025年10月 先行予約", "status": "完売" } }
-      ]
+      "name": "MUSUBI Makuake実績"
     }
   ]
 }
 {% endschema %}
-

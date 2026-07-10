@@ -1,1 +1,12 @@
 knowledge/
+node_modules/
+.claude/
+.playwright-mcp/
+/*.html
+/*.js
+/*.txt
+/*.css
+/*.md
+!/CLAUDE.md
+package.json
+package-lock.json

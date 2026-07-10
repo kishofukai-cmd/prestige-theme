@@ -1,0 +1,463 @@
+{% doc %}
+  @prompt
+    タイトルとテキストを書いて行きたい。
+    横に二つ並びで、SPは縦並び。
+    
+    テキストの長さが違うから、続きを読むとしたら全文開くようにして統一したい。
+    
+    タイトルとテキストで一つにして、どんどん追加できるようにして。
+    
+    あと文字サイズや文字色をつけれるようにして。
+    
+    
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-text-columns-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .ai-text-columns__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-text-columns__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+  }
+
+  .ai-text-columns__item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.item_background_color }};
+    padding: {{ block.settings.item_padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-text-columns__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_font_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+    font-weight: 600;
+  }
+
+  .ai-text-columns__text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_font_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-text-columns__text-{{ ai_gen_id }}.is-truncated {
+    display: -webkit-box;
+    -webkit-line-clamp: {{ block.settings.preview_lines }};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ai-text-columns__toggle-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    color: {{ block.settings.button_color }};
+    cursor: pointer;
+    padding: 0;
+    margin-top: {{ block.settings.button_spacing }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    text-decoration: underline;
+  }
+
+  .ai-text-columns__toggle-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.button_hover_color }};
+  }
+{% endstyle %}
+
+<text-columns-{{ ai_gen_id }} class="ai-text-columns-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-text-columns__container-{{ ai_gen_id }}">
+    {% for i in (1..6) %}
+      {% liquid
+        assign title_key = 'title_' | append: i
+        assign text_key = 'text_' | append: i
+        assign enabled_key = 'item_' | append: i | append: '_enabled'
+        
+        assign title = block.settings[title_key]
+        assign text = block.settings[text_key]
+        assign enabled = block.settings[enabled_key]
+      %}
+
+      {% if enabled %}
+        <div class="ai-text-columns__item-{{ ai_gen_id }}" data-item-id="{{ i }}">
+          {% if title != blank %}
+            <h3 class="ai-text-columns__title-{{ ai_gen_id }}">{{ title }}</h3>
+          {% endif %}
+
+          {% if text != blank %}
+            <div class="ai-text-columns__text-{{ ai_gen_id }} is-truncated" data-text-content>
+              {{ text }}
+            </div>
+            <button class="ai-text-columns__toggle-{{ ai_gen_id }}" data-toggle-button aria-expanded="false">
+              {{ block.settings.read_more_text }}
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</text-columns-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class TextColumns{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.items = this.querySelectorAll('[data-item-id]');
+        this.setupToggleButtons();
+      }
+
+      setupToggleButtons() {
+        this.items.forEach((item) => {
+          const textContent = item.querySelector('[data-text-content]');
+          const toggleButton = item.querySelector('[data-toggle-button]');
+
+          if (!textContent || !toggleButton) return;
+
+          const readMoreText = toggleButton.textContent;
+          const readLessText = '閉じる';
+
+          toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+              textContent.classList.add('is-truncated');
+              toggleButton.setAttribute('aria-expanded', 'false');
+              toggleButton.textContent = readMoreText;
+            } else {
+              textContent.classList.remove('is-truncated');
+              toggleButton.setAttribute('aria-expanded', 'true');
+              toggleButton.textContent = readLessText;
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('text-columns-{{ ai_gen_id }}', TextColumns{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Text columns",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap (desktop)",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Column gap (mobile)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Font size",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Spacing below title",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "preview_lines",
+      "label": "Preview lines",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Read more button"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Button text",
+      "default": "続きを読む"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Color",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "range",
+      "id": "button_spacing",
+      "label": "Spacing above button",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_1_enabled",
+      "label": "Enable item 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title",
+      "default": "タイトル 1"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。長いテキストの場合、最初の数行のみが表示され、「続きを読む」ボタンで全文を表示できます。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_2_enabled",
+      "label": "Enable item 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title",
+      "default": "タイトル 2"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。長いテキストの場合、最初の数行のみが表示され、「続きを読む」ボタンで全文を表示できます。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_3_enabled",
+      "label": "Enable item 3",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Title",
+      "default": "タイトル 3"
+    },
+    {
+      "type": "richtext",
+      "id": "text_3",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_4_enabled",
+      "label": "Enable item 4",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Title",
+      "default": "タイトル 4"
+    },
+    {
+      "type": "richtext",
+      "id": "text_4",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_5_enabled",
+      "label": "Enable item 5",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_5",
+      "label": "Title",
+      "default": "タイトル 5"
+    },
+    {
+      "type": "richtext",
+      "id": "text_5",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Item 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "item_6_enabled",
+      "label": "Enable item 6",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_6",
+      "label": "Title",
+      "default": "タイトル 6"
+    },
+    {
+      "type": "richtext",
+      "id": "text_6",
+      "label": "Text",
+      "default": "<p>ここにテキストを入力してください。</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text columns"
+    }
+  ]
+}
+{% endschema %}

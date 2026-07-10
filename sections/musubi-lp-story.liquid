@@ -1,85 +1,246 @@
 <style>
   .story {
-    padding: 80px 20px;
-    background: #fff;
+    padding: 120px 20px;
+    background: {{ section.settings.bg_color }};
     text-align: center;
   }
+
   .story__inner {
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
   }
-  .story__heading {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.6;
-    margin-bottom: 12px;
+
+  .story__label {
+    display: inline-block;
+    font-size: {{ section.settings.label_size }}px;
+    color: {{ section.settings.label_color }};
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+    font-weight: 600;
   }
+
+  .story__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
   .story__heading em {
     font-style: normal;
-    color: #b8a78a;
-    border-bottom: 2px solid #b8a78a;
-    padding-bottom: 2px;
+    color: {{ section.settings.accent_color }};
+    border-bottom: 2px solid {{ section.settings.accent_color }};
+    padding-bottom: 3px;
   }
+
   .story__divider {
     width: 40px;
     height: 2px;
-    background: #d4c8b8;
-    margin: 24px auto;
+    background: {{ section.settings.divider_color }};
+    margin: 28px auto;
     border: none;
   }
+
   .story__body {
-    font-size: 1rem;
-    line-height: 2;
-    color: #666;
-    letter-spacing: 0.03em;
+    font-size: {{ section.settings.body_size }}px;
+    line-height: 2.2;
+    color: {{ section.settings.body_color }};
+    letter-spacing: 0.05em;
   }
+
   .story__body p {
     margin: 0;
   }
 
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @media (max-width: 768px) {
     .story {
-      padding: 60px 16px;
+      padding: 80px 16px;
     }
+
+    .story__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
     .story__heading {
-      font-size: 1.4rem;
+      font-size: {{ section.settings.heading_size_sp }}px;
+      line-height: 1.6;
     }
+
     .story__body {
-      font-size: 0.9rem;
-      line-height: 1.9;
+      font-size: {{ section.settings.body_size_sp }}px;
+      line-height: 2;
     }
   }
 </style>
 
 <section class="story" id="story">
   <div class="story__inner">
-    <h2 class="story__heading" data-reveal>
-      {{ section.settings.heading | default: '眠りには<em>「導入スイッチ」</em>が<br>必要だった' }}
-    </h2>
-    <hr class="story__divider" data-reveal>
-    <div class="story__body" data-reveal>
-      {{ section.settings.body | default: '<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>' }}
+
+    <div class="story__label" data-reveal>
+      {{ section.settings.label }}
     </div>
+
+    <h2 class="story__heading" data-reveal>
+      {{ section.settings.heading }}
+    </h2>
+
+    <hr class="story__divider" data-reveal>
+
+    <div class="story__body" data-reveal>
+      {{ section.settings.body }}
+    </div>
+
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll("[data-reveal]");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
 
 {% schema %}
 {
   "name": "MUSUBI ストーリー",
   "settings": [
+
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "その悩みに、MUSUBIが考えたこと"
+    },
+
+    {
+      "type": "range",
+      "id": "label_size",
+      "label": "ラベル文字サイズ（PC）",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベル文字サイズ（SP）",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベルカラー",
+      "default": "#b8a78a"
+    },
+
     {
       "type": "richtext",
       "id": "heading",
       "label": "見出し",
       "default": "<p>眠りには<em>「導入スイッチ」</em>が<br>必要だった</p>"
     },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "見出しサイズ（PC）",
+      "min": 20,
+      "max": 48,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ（SP）",
+      "min": 18,
+      "max": 32,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+
     {
       "type": "richtext",
       "id": "body",
       "label": "本文",
       "default": "<p>瞑想でもない。<br>フレグランスでもない。<br>包まれる「重さ」という、<br>物理的なスイッチ。</p>"
+    },
+
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "本文サイズ（PC）",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_size_sp",
+      "label": "本文サイズ（SP）",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー（em）",
+      "default": "#b8a78a"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "区切り線カラー",
+      "default": "#d4c8b8"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
     }
+
   ],
   "presets": [
     {
@@ -88,4 +249,3 @@
   ]
 }
 {% endschema %}
-

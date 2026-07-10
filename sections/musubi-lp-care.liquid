@@ -1,25 +1,201 @@
-<section class="care" id="care">
-  <div class="container--narrow">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '「重い＝手入れが大変」<br>その常識を変えます' }}</h2>
+<style>
+  .care {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
 
-    <div class="care__layout" data-reveal>
+  .care__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .care__header {
+    text-align: center;
+    margin-bottom: 38px;
+  }
+
+  .care__label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .care__heading {
+    margin: 0;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
+  .care__heading p {
+    margin: 0;
+  }
+
+  .care__layout {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .care__img {
+    min-height: {{ section.settings.image_height_pc }}px;
+    border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
+    background: #f4eee6;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.08);
+  }
+
+  .care__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    display: block;
+  }
+
+  .care__content {
+    display: grid;
+    gap: 16px;
+  }
+
+  .care__point {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px 16px;
+    align-items: flex-start;
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.card_border_color }};
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: 24px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.05);
+  }
+
+  .care__icon {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: {{ section.settings.icon_bg_color }};
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .care__point h3 {
+    margin: 0 0 8px;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+
+  .care__point p {
+    grid-column: 2;
+    margin: 0;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size_pc }}px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .care {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .care__header {
+      margin-bottom: 28px;
+    }
+
+    .care__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .care__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .care__layout {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .care__img {
+      min-height: {{ section.settings.image_height_sp }}px;
+      border-radius: {{ section.settings.image_radius_sp }}px;
+    }
+
+    .care__point {
+      grid-template-columns: 1fr;
+      padding: 22px 18px;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+    }
+
+    .care__point p {
+      grid-column: auto;
+      font-size: {{ section.settings.text_size_sp }}px;
+    }
+
+    .care__point h3 {
+      font-size: {{ section.settings.title_size_sp }}px;
+    }
+
+    .care__icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+<section class="care" id="care">
+  <div class="care__inner">
+
+    <div class="care__header">
+      {% if section.settings.label != blank %}
+        <div class="care__label">{{ section.settings.label }}</div>
+      {% endif %}
+
+      <h2 class="care__heading">
+        {{ section.settings.heading }}
+      </h2>
+    </div>
+
+    <div class="care__layout">
       <div class="care__img">
         {% if section.settings.image != blank %}
-          <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+          <img src="{{ section.settings.image | img_url: '1200x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% elsif section.settings.image_url != blank %}
+          <img src="{{ section.settings.image_url }}" alt="{{ section.settings.image_alt }}" loading="lazy">
         {% else %}
-          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=800" alt="日常のケア" loading="lazy">
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0022_6ef7fc29-e9d4-4668-9aa7-326c2a86ab98.jpg?v=1771395913&width=1200" alt="日常のケア" loading="lazy">
         {% endif %}
       </div>
+
       <div class="care__content">
         {% for block in section.blocks %}
           <div class="care__point" {{ block.shopify_attributes }}>
             <span class="care__icon">{{ block.settings.icon }}</span>
-            <h3>{{ block.settings.title }}</h3>
+
+            <div>
+              <h3>{{ block.settings.title }}</h3>
+            </div>
+
             <p>{{ block.settings.description }}</p>
           </div>
         {% endfor %}
       </div>
     </div>
+
   </div>
 </section>
 
@@ -27,6 +203,12 @@
 {
   "name": "MUSUBI ケア",
   "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "EASY CARE"
+    },
     {
       "type": "richtext",
       "id": "heading",
@@ -40,9 +222,231 @@
     },
     {
       "type": "text",
+      "id": "image_url",
+      "label": "画像URL"
+    },
+    {
+      "type": "text",
       "id": "image_alt",
       "label": "画像alt",
       "default": "日常のケア"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "カード背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "カード枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "アイコン背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "タイトルカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "title_size_pc",
+      "label": "カードタイトルサイズ PC",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "title_size_sp",
+      "label": "カードタイトルサイズ SP",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size_pc",
+      "label": "本文サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_size_sp",
+      "label": "本文サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "画像の表示方法",
+      "options": [
+        { "value": "cover", "label": "余白なく表示" },
+        { "value": "contain", "label": "画像全体を表示" }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "range",
+      "id": "image_height_pc",
+      "label": "画像高さ PC",
+      "min": 280,
+      "max": 680,
+      "step": 20,
+      "default": 520
+    },
+    {
+      "type": "range",
+      "id": "image_height_sp",
+      "label": "画像高さ SP",
+      "min": 220,
+      "max": 520,
+      "step": 20,
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "画像角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "image_radius_sp",
+      "label": "画像角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "カード角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "カード角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 760,
+      "max": 1280,
+      "step": 20,
+      "default": 1080
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
     }
   ],
   "blocks": [
@@ -53,7 +457,7 @@
         {
           "type": "text",
           "id": "icon",
-          "label": "アイコン（絵文字）",
+          "label": "アイコン",
           "default": "✨"
         },
         {
@@ -65,7 +469,8 @@
         {
           "type": "textarea",
           "id": "description",
-          "label": "説明文"
+          "label": "説明文",
+          "default": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
         }
       ]
     }
@@ -74,11 +479,24 @@
     {
       "name": "MUSUBI ケア",
       "blocks": [
-        { "type": "care_point", "settings": { "icon": "✨", "title": "日常はシュッとひとふきで完結", "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。" } },
-        { "type": "care_point", "settings": { "icon": "🫧", "title": "本気のケアは「ご家庭で手洗い」", "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。" } }
+        {
+          "type": "care_point",
+          "settings": {
+            "icon": "✨",
+            "title": "日常はシュッとひとふきで完結",
+            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。"
+          }
+        },
+        {
+          "type": "care_point",
+          "settings": {
+            "icon": "🫧",
+            "title": "本気のケアは「ご家庭で手洗い」",
+            "description": "汗や汚れが気になって、しっかり洗いたい時も、ご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-

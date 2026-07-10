@@ -113,9 +113,7 @@
   {{ section.settings.lead_paragraphs }}
 
   <!-- KV -->
-  {%- assign has_kv_img = false -%}
-  {%- if cw_url != blank or bp_url != blank -%}{%- assign has_kv_img = true -%}{%- endif -%}
-  {%- if section.settings.show_kv and has_kv_img -%}
+  {%- if cw_url != blank or bp_url != blank -%}
   <div class="seo-kv">
     <p class="seo-kv-eyebrow">{{ section.settings.kv_eyebrow }}</p>
     <div class="seo-kv-colors">
@@ -350,10 +348,6 @@
 {
   "name": "母の日2026 ガイド記事",
   "settings": [
-    { "type": "header", "content": "🎛 セクション表示ON/OFF", "info": "各セクションを丸ごと非表示にできます。個別のテキスト編集は下の各セクション設定を開いてください。" },
-    { "type": "checkbox", "id": "show_kv", "label": "KV（2色推し）", "default": true },
-    { "type": "checkbox", "id": "show_toc", "label": "目次", "default": true },
-
     { "type": "header", "content": "記事ヘッダー" },
     { "type": "text", "id": "article_title", "label": "タイトル", "default": "2026年の母の日ギフト｜50代・60代のお母さまが本当に喜ぶ「眠り」の贈り物とは" },
     { "type": "text", "id": "article_meta", "label": "メタ（公開日｜著者）", "default": "公開日：2026年4月28日｜KAPOK KNOT編集部" },
@@ -376,7 +370,8 @@
     { "type": "richtext", "id": "kv_caption", "label": "キャプション", "default": "<p>母の日のお気持ちに寄り添う、KAPOK KNOTが厳選した2色。<br>リカバリー加重ブランケット「MUSUBI -en-」より。</p>" },
 
     { "type": "header", "content": "目次" },
-    { "type": "text", "id": "toc_title", "label": "目次タイトル", "default": "この記事の目次", "info": "目次項目は下のブロックで追加/削除/並べ替え可" },
+    { "type": "checkbox", "id": "show_toc", "label": "目次を表示", "default": true },
+    { "type": "text", "id": "toc_title", "label": "目次タイトル", "default": "この記事の目次" },
 
     { "type": "header", "content": "Section 1: ランキング" },
     { "type": "text", "id": "sec1_h2", "label": "H2", "default": "1. 2026年、お母さまが\"本当に\"欲しいものは？" },

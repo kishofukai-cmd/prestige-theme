@@ -1,62 +1,340 @@
-<section class="reviews" id="reviews">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: '実際の声' }}</h2>
+<style>
+  .reviews {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
 
-    <!-- 星分布グラフ -->
-    <div class="reviews__graph" data-reveal>
-      <div class="reviews__graph-summary">
-        <span class="reviews__graph-score">{{ section.settings.avg_score | default: '4.1' }}</span>
-        <div class="reviews__graph-stars">{{ section.settings.avg_stars | default: '★★★★☆' }}</div>
-        <span class="reviews__graph-count">{{ section.settings.review_count | default: '27件のレビュー' }}</span>
-      </div>
-      <div class="reviews__graph-bars">
-        <div class="reviews__graph-row">
-          <span class="reviews__graph-label">★5</span>
-          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star5_pct | default: 52 }}"></div></div>
-          <span class="reviews__graph-pct">{{ section.settings.star5_pct | default: 52 }}%</span>
-        </div>
-        <div class="reviews__graph-row">
-          <span class="reviews__graph-label">★4</span>
-          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star4_pct | default: 30 }}"></div></div>
-          <span class="reviews__graph-pct">{{ section.settings.star4_pct | default: 30 }}%</span>
-        </div>
-        <div class="reviews__graph-row">
-          <span class="reviews__graph-label">★3</span>
-          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star3_pct | default: 4 }}"></div></div>
-          <span class="reviews__graph-pct">{{ section.settings.star3_pct | default: 4 }}%</span>
-        </div>
-        <div class="reviews__graph-row">
-          <span class="reviews__graph-label">★2</span>
-          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star2_pct | default: 7 }}"></div></div>
-          <span class="reviews__graph-pct">{{ section.settings.star2_pct | default: 7 }}%</span>
-        </div>
-        <div class="reviews__graph-row">
-          <span class="reviews__graph-label">★1</span>
-          <div class="reviews__graph-bar"><div class="reviews__graph-fill" data-width="{{ section.settings.star1_pct | default: 7 }}"></div></div>
-          <span class="reviews__graph-pct">{{ section.settings.star1_pct | default: 7 }}%</span>
-        </div>
-      </div>
+  .reviews__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .reviews__header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .reviews__label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .reviews__heading {
+    margin: 0;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+
+  .reviews__heading p {
+    margin: 0;
+  }
+
+  .reviews__graph {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 36px;
+    padding: 34px;
+    border-radius: {{ section.settings.graph_radius }}px;
+    background: {{ section.settings.graph_bg_color }};
+    border: 1px solid {{ section.settings.border_color }};
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .reviews__graph-summary {
+    text-align: center;
+  }
+
+  .reviews__graph-score {
+    display: block;
+    color: {{ section.settings.accent_color }};
+    font-size: {{ section.settings.score_size_pc }}px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .reviews__graph-stars {
+    color: {{ section.settings.star_color }};
+    font-size: {{ section.settings.star_size_pc }}px;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .reviews__graph-count {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.count_size_pc }}px;
+    font-weight: 600;
+  }
+
+  .reviews__graph-bars {
+    display: grid;
+    gap: 10px;
+  }
+
+  .reviews__graph-row {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .reviews__graph-label,
+  .reviews__graph-pct {
+    color: {{ section.settings.text_color }};
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .reviews__graph-pct {
+    text-align: right;
+  }
+
+  .reviews__graph-bar {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: {{ section.settings.bar_bg_color }};
+  }
+
+  .reviews__graph-fill {
+    height: 100%;
+    width: var(--bar-width);
+    border-radius: 999px;
+    background: {{ section.settings.accent_color }};
+  }
+
+  .reviews__cards {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_pc }}, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .reviews__card {
+    padding: 24px;
+    border-radius: {{ section.settings.card_radius }}px;
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.border_color }};
+    box-shadow: 0 12px 34px rgba(0,0,0,0.05);
+    text-align: left;
+  }
+
+  .reviews__card-stars {
+    color: {{ section.settings.star_color }};
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .reviews__card-title {
+    margin: 0 0 12px;
+    color: {{ section.settings.title_color }};
+    font-size: {{ section.settings.title_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .reviews__card-text {
+    margin: 0 0 16px;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.body_size_pc }}px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+  }
+
+  .reviews__card-meta {
+    margin-bottom: 12px;
+    color: {{ section.settings.meta_color }};
+    font-size: 12px;
+  }
+
+  .reviews__card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .reviews__tag {
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: {{ section.settings.tag_bg_color }};
+    color: {{ section.settings.tag_color }};
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .reviews {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .reviews__header {
+      margin-bottom: 28px;
+    }
+
+    .reviews__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .reviews__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .reviews__graph {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 26px 18px;
+      border-radius: {{ section.settings.graph_radius_sp }}px;
+    }
+
+    .reviews__graph-score {
+      font-size: {{ section.settings.score_size_sp }}px;
+    }
+
+    .reviews__graph-stars {
+      font-size: {{ section.settings.star_size_sp }}px;
+    }
+
+    .reviews__graph-count {
+      font-size: {{ section.settings.count_size_sp }}px;
+    }
+
+    .reviews__cards {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .reviews__card {
+      padding: 22px 18px;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+    }
+
+    .reviews__card-title {
+      font-size: {{ section.settings.title_size_sp }}px;
+    }
+
+    .reviews__card-text {
+      font-size: {{ section.settings.body_size_sp }}px;
+    }
+  }
+</style>
+
+<section class="reviews" id="reviews-{{ section.id }}">
+  <div class="reviews__inner">
+
+    <div class="reviews__header">
+      {% if section.settings.label != blank %}
+        <div class="reviews__label">{{ section.settings.label }}</div>
+      {% endif %}
+
+      <h2 class="reviews__heading">
+        {{ section.settings.heading }}
+      </h2>
     </div>
 
-    <!-- レビューカード -->
+    {% if section.settings.show_graph %}
+      <div class="reviews__graph">
+        <div class="reviews__graph-summary">
+          <span class="reviews__graph-score">{{ section.settings.avg_score }}</span>
+          <div class="reviews__graph-stars">{{ section.settings.avg_stars }}</div>
+          <span class="reviews__graph-count">{{ section.settings.review_count }}</span>
+        </div>
+
+        <div class="reviews__graph-bars">
+          <div class="reviews__graph-row">
+            <span class="reviews__graph-label">★5</span>
+            <div class="reviews__graph-bar">
+              <div class="reviews__graph-fill" style="--bar-width: {{ section.settings.star5_pct }}%;"></div>
+            </div>
+            <span class="reviews__graph-pct">{{ section.settings.star5_pct }}%</span>
+          </div>
+
+          <div class="reviews__graph-row">
+            <span class="reviews__graph-label">★4</span>
+            <div class="reviews__graph-bar">
+              <div class="reviews__graph-fill" style="--bar-width: {{ section.settings.star4_pct }}%;"></div>
+            </div>
+            <span class="reviews__graph-pct">{{ section.settings.star4_pct }}%</span>
+          </div>
+
+          <div class="reviews__graph-row">
+            <span class="reviews__graph-label">★3</span>
+            <div class="reviews__graph-bar">
+              <div class="reviews__graph-fill" style="--bar-width: {{ section.settings.star3_pct }}%;"></div>
+            </div>
+            <span class="reviews__graph-pct">{{ section.settings.star3_pct }}%</span>
+          </div>
+
+          <div class="reviews__graph-row">
+            <span class="reviews__graph-label">★2</span>
+            <div class="reviews__graph-bar">
+              <div class="reviews__graph-fill" style="--bar-width: {{ section.settings.star2_pct }}%;"></div>
+            </div>
+            <span class="reviews__graph-pct">{{ section.settings.star2_pct }}%</span>
+          </div>
+
+          <div class="reviews__graph-row">
+            <span class="reviews__graph-label">★1</span>
+            <div class="reviews__graph-bar">
+              <div class="reviews__graph-fill" style="--bar-width: {{ section.settings.star1_pct }}%;"></div>
+            </div>
+            <span class="reviews__graph-pct">{{ section.settings.star1_pct }}%</span>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="reviews__cards">
       {% for block in section.blocks %}
-        <div class="reviews__card" data-reveal {{ block.shopify_attributes }}>
-          <div class="reviews__card-stars">{{ block.settings.stars | default: '★★★★★' }}</div>
-          <h4 class="reviews__card-title">{{ block.settings.title }}</h4>
-          <p class="reviews__card-text">{{ block.settings.text }}</p>
-          <div class="reviews__card-meta">
-            <span>{{ block.settings.meta }}</span>
+        <div class="reviews__card" {{ block.shopify_attributes }}>
+          <div class="reviews__card-stars">
+            {{ block.settings.stars }}
           </div>
-          <div class="reviews__card-tags">
-            {% assign tags = block.settings.tags | split: ',' %}
-            {% for tag in tags %}
-              <span class="reviews__tag">{{ tag | strip }}</span>
-            {% endfor %}
-          </div>
+
+          {% if block.settings.title != blank %}
+            <h4 class="reviews__card-title">
+              {{ block.settings.title }}
+            </h4>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p class="reviews__card-text">
+              {{ block.settings.text }}
+            </p>
+          {% endif %}
+
+          {% if block.settings.meta != blank %}
+            <div class="reviews__card-meta">
+              {{ block.settings.meta }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.tags != blank %}
+            <div class="reviews__card-tags">
+              {% assign tags = block.settings.tags | split: ',' %}
+              {% for tag in tags %}
+                {% if tag != blank %}
+                  <span class="reviews__tag">{{ tag | strip }}</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
+
   </div>
 </section>
 
@@ -66,9 +344,21 @@
   "settings": [
     {
       "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "USER REVIEW"
+    },
+    {
+      "type": "richtext",
       "id": "heading",
       "label": "見出し",
-      "default": "実際の声"
+      "default": "<p>実際に使った方の声</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_graph",
+      "label": "星分布グラフを表示する",
+      "default": true
     },
     {
       "type": "text",
@@ -92,31 +382,334 @@
       "type": "range",
       "id": "star5_pct",
       "label": "★5 パーセント",
-      "min": 0, "max": 100, "step": 1, "default": 52
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 52
     },
     {
       "type": "range",
       "id": "star4_pct",
       "label": "★4 パーセント",
-      "min": 0, "max": 100, "step": 1, "default": 30
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
     },
     {
       "type": "range",
       "id": "star3_pct",
       "label": "★3 パーセント",
-      "min": 0, "max": 100, "step": 1, "default": 4
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 4
     },
     {
       "type": "range",
       "id": "star2_pct",
       "label": "★2 パーセント",
-      "min": 0, "max": 100, "step": 1, "default": 7
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 7
     },
     {
       "type": "range",
       "id": "star1_pct",
       "label": "★1 パーセント",
-      "min": 0, "max": 100, "step": 1, "default": 7
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "星カラー",
+      "default": "#c6a15b"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "レビュータイトルカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "meta_color",
+      "label": "レビュアー情報カラー",
+      "default": "#777777"
+    },
+    {
+      "type": "color",
+      "id": "graph_bg_color",
+      "label": "グラフ背景カラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "レビューカード背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "bar_bg_color",
+      "label": "グラフバー背景",
+      "default": "#f1ebe4"
+    },
+    {
+      "type": "color",
+      "id": "tag_bg_color",
+      "label": "タグ背景",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "tag_color",
+      "label": "タグ文字",
+      "default": "#8B7355"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "score_size_pc",
+      "label": "平均評価サイズ PC",
+      "min": 24,
+      "max": 64,
+      "step": 1,
+      "default": 46
+    },
+    {
+      "type": "range",
+      "id": "score_size_sp",
+      "label": "平均評価サイズ SP",
+      "min": 24,
+      "max": 52,
+      "step": 1,
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "star_size_pc",
+      "label": "星サイズ PC",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "star_size_sp",
+      "label": "星サイズ SP",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "count_size_pc",
+      "label": "レビュー数サイズ PC",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "count_size_sp",
+      "label": "レビュー数サイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_size_pc",
+      "label": "レビュータイトルサイズ PC",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_size_sp",
+      "label": "レビュータイトルサイズ SP",
+      "min": 14,
+      "max": 26,
+      "step": 1,
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "body_size_pc",
+      "label": "レビュー本文サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "body_size_sp",
+      "label": "レビュー本文サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "columns_pc",
+      "label": "レビュー列数 PC",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "graph_radius",
+      "label": "グラフ角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "graph_radius_sp",
+      "label": "グラフ角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "カード角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "カード角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 760,
+      "max": 1280,
+      "step": 20,
+      "default": 1080
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
     }
   ],
   "blocks": [
@@ -133,18 +726,20 @@
         {
           "type": "text",
           "id": "title",
-          "label": "タイトル"
+          "label": "タイトル",
+          "default": "重さに驚き！"
         },
         {
           "type": "textarea",
           "id": "text",
-          "label": "レビュー本文"
+          "label": "レビュー本文",
+          "default": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！"
         },
         {
           "type": "text",
           "id": "meta",
           "label": "レビュアー情報",
-          "default": "30代女性"
+          "default": "50代男性 / 商社勤務"
         },
         {
           "type": "text",
@@ -159,12 +754,38 @@
     {
       "name": "MUSUBI レビュー",
       "blocks": [
-        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "重さに驚き！", "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！", "meta": "50代男性 / 商社勤務", "tags": "#安心感, #よく眠れた気がする" } },
-        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "新しいジャンルでときめいた！", "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！", "meta": "30代女性 / アパレルメーカー勤務", "tags": "#ソファ時間, #蒸れにくい" } },
-        { "type": "review_card", "settings": { "stars": "★★★★★", "title": "一度も起きることなく…快眠！", "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！", "meta": "50代女性 / 主婦", "tags": "#よく眠れた気がする, #安心感" } }
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "重さに驚き！",
+            "text": "いつも軽いアウターでお世話になっているので重さに驚きました！元々、布団は重いほうが好きなので、Sleepサイズで寝るのが楽しみです！",
+            "meta": "50代男性 / 商社勤務",
+            "tags": "#安心感, #よく眠れた気がする"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "新しいジャンルでときめいた！",
+            "text": "「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！",
+            "meta": "30代女性 / アパレルメーカー勤務",
+            "tags": "#ソファ時間, #蒸れにくい"
+          }
+        },
+        {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "一度も起きることなく…快眠！",
+            "text": "まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激しました！",
+            "meta": "50代女性 / 主婦",
+            "tags": "#よく眠れた気がする, #安心感"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-

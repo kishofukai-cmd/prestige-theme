@@ -1,0 +1,618 @@
+<style>
+  .musubi-size {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
+
+  .musubi-size__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .musubi-size__header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .musubi-size__label {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+
+  .musubi-size__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+
+  .musubi-size__heading p,
+  .musubi-size__lead p {
+    margin: 0;
+  }
+
+  .musubi-size__lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.body_size_pc }}px;
+    color: {{ section.settings.body_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .musubi-size__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+    background: #f4eee6;
+    border-radius: 999px;
+    padding: 6px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .musubi-size__tab {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: transparent;
+    color: #6d6258;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .musubi-size__tab--active {
+    background: {{ section.settings.accent_color }};
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+
+  .musubi-size__panel {
+    display: none;
+    grid-template-columns: 1.08fr 0.92fr;
+    background: #fff;
+    border: 1px solid #eee7dd;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.07);
+  }
+
+  .musubi-size__panel--active {
+    display: grid;
+  }
+
+  .musubi-size__panel-img {
+    min-height: 460px;
+    background: #f4eee6;
+    overflow: hidden;
+  }
+
+  .musubi-size__panel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .musubi-size__panel-content {
+    padding: 42px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .musubi-size__panel-badge {
+    width: fit-content;
+    background: #f4eee6;
+    color: {{ section.settings.accent_color }};
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 7px 13px;
+    margin-bottom: 16px;
+  }
+
+  .musubi-size__panel-badge--featured {
+    background: {{ section.settings.accent_color }};
+    color: #fff;
+  }
+
+  .musubi-size__panel-name {
+    font-size: 28px;
+    color: #1a1a1a;
+    font-weight: 800;
+    line-height: 1.35;
+    margin: 0 0 12px;
+  }
+
+  .musubi-size__panel-price {
+    font-size: 30px;
+    color: {{ section.settings.accent_color }};
+    font-weight: 800;
+    margin: 0 0 10px;
+  }
+
+  .musubi-size__panel-price span {
+    font-size: 0.5em;
+    color: #777;
+  }
+
+  .musubi-size__panel-dim {
+    width: fit-content;
+    background: #faf7f2;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 9px 13px;
+    margin: 0 0 18px;
+  }
+
+  .musubi-size__panel-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .musubi-size__panel-features li {
+    position: relative;
+    padding-left: 1.4em;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  .musubi-size__panel-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: {{ section.settings.accent_color }};
+    font-weight: 800;
+  }
+
+  .musubi-size__panel-note {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .musubi-size__compare {
+    margin: 34px auto 0;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .musubi-size__compare img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .musubi-size {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .musubi-size__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .musubi-size__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .musubi-size__lead {
+      font-size: {{ section.settings.body_size_sp }}px;
+    }
+
+    .musubi-size__tabs {
+      width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      border-radius: 18px;
+    }
+
+    .musubi-size__tab {
+      flex: 1 0 auto;
+      font-size: 13px;
+      padding: 11px 16px;
+    }
+
+    .musubi-size__panel,
+    .musubi-size__panel--active {
+      grid-template-columns: 1fr;
+      border-radius: 20px;
+    }
+
+    .musubi-size__panel-img {
+      min-height: 320px;
+    }
+
+    .musubi-size__panel-content {
+      padding: 28px 20px;
+    }
+
+    .musubi-size__panel-name {
+      font-size: 24px;
+    }
+
+    .musubi-size__panel-price {
+      font-size: 26px;
+    }
+  }
+</style>
+
+<section class="musubi-size" id="musubi-size-{{ section.id }}">
+  <div class="musubi-size__inner">
+
+    <div class="musubi-size__header">
+      {% if section.settings.label != blank %}
+        <div class="musubi-size__label">{{ section.settings.label }}</div>
+      {% endif %}
+
+      <h2 class="musubi-size__heading">{{ section.settings.heading }}</h2>
+
+      {% if section.settings.lead != blank %}
+        <div class="musubi-size__lead">{{ section.settings.lead }}</div>
+      {% endif %}
+    </div>
+
+    <div class="musubi-size__tabs">
+      {% assign tab_index = 0 %}
+      {% for block in section.blocks %}
+        {% assign tab_index = tab_index | plus: 1 %}
+        <button
+          type="button"
+          class="musubi-size__tab{% if tab_index == 1 %} musubi-size__tab--active{% endif %}"
+          data-tab="size-{{ section.id }}-{{ tab_index }}"
+        >
+          {{ block.settings.tab_label }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="musubi-size__panels">
+      {% assign panel_index = 0 %}
+      {% for block in section.blocks %}
+        {% assign panel_index = panel_index | plus: 1 %}
+
+        <div
+          class="musubi-size__panel{% if panel_index == 1 %} musubi-size__panel--active{% endif %}"
+          data-panel="size-{{ section.id }}-{{ panel_index }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="musubi-size__panel-img">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% else %}
+              <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1200" alt="{{ block.settings.name }}" loading="lazy">
+            {% endif %}
+          </div>
+
+          <div class="musubi-size__panel-content">
+            {% if block.settings.badge != blank %}
+              <div class="musubi-size__panel-badge{% if block.settings.featured %} musubi-size__panel-badge--featured{% endif %}">
+                {{ block.settings.badge }}
+              </div>
+            {% endif %}
+
+            <h3 class="musubi-size__panel-name">{{ block.settings.name }}</h3>
+
+            <p class="musubi-size__panel-price">
+              {{ block.settings.price }}
+              <span>{{ block.settings.price_note }}</span>
+            </p>
+
+            <p class="musubi-size__panel-dim">{{ block.settings.dimensions }}</p>
+
+            <ul class="musubi-size__panel-features">
+              {% assign features = block.settings.features | split: ',' %}
+              {% for feature in features %}
+                {% if feature != blank %}
+                  <li>{{ feature | strip }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+            {% if block.settings.note != blank %}
+              <p class="musubi-size__panel-note">{{ block.settings.note }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.compare_image != blank %}
+      <div class="musubi-size__compare">
+        <img src="{{ section.settings.compare_image | img_url: '1400x' }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('#musubi-size-{{ section.id }}');
+    if (!section) return;
+
+    const tabs = section.querySelectorAll('.musubi-size__tab');
+    const panels = section.querySelectorAll('.musubi-size__panel');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        const target = tab.getAttribute('data-tab');
+
+        tabs.forEach(function(item) {
+          item.classList.remove('musubi-size__tab--active');
+        });
+
+        panels.forEach(function(panel) {
+          panel.classList.remove('musubi-size__panel--active');
+        });
+
+        tab.classList.add('musubi-size__tab--active');
+
+        const activePanel = section.querySelector('[data-panel="' + target + '"]');
+        if (activePanel) {
+          activePanel.classList.add('musubi-size__panel--active');
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MUSUBI サイズのみ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "SIZE GUIDE"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>あなたに合うサイズは？</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "リード文",
+      "default": "<p>使う場所や過ごし方に合わせて、MUSUBIはサイズをお選びいただけます。</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "compare_image",
+      "label": "サイズ比較画像"
+    },
+    {
+      "type": "text",
+      "id": "compare_alt",
+      "label": "サイズ比較画像 alt",
+      "default": "MUSUBIサイズ比較"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_bg",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "body_size_pc",
+      "label": "本文サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "body_size_sp",
+      "label": "本文サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "size_panel",
+      "name": "サイズ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "タブラベル",
+          "default": "Nap Size (M)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "バッジ",
+          "default": "ソファにおすすめ"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "バッジを強調する",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "サイズ名",
+          "default": "Nap Size (M)"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "価格",
+          "default": "¥29,800"
+        },
+        {
+          "type": "text",
+          "id": "price_note",
+          "label": "価格補足",
+          "default": "(税込)"
+        },
+        {
+          "type": "text",
+          "id": "dimensions",
+          "label": "サイズ・重量",
+          "default": "100 × 70 cm"
+        },
+        {
+          "type": "text",
+          "id": "features",
+          "label": "特徴（カンマ区切り）",
+          "default": "ソファ利用中心, 昼寝向き, 軽めが好みの方"
+        },
+        {
+          "type": "textarea",
+          "id": "note",
+          "label": "補足文",
+          "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI サイズのみ",
+      "blocks": [
+        {
+          "type": "size_panel"
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
+            "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

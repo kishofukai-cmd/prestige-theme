@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -71,12 +80,10 @@
         "features_grid_auto_review_84": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
             "icon_size": "medium",
+            "swipe_on_mobile": true,
             "columns_desktop": 3,
             "columns_mobile": 2,
-            "swipe_on_mobile": true,
             "image_url_1": "https://ucarecdn.com/339295d8-c08e-4cec-97d8-1485e66060f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%82%BF%E3%82%99%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%88%E3%82%99.jpeg",
             "title_1": "古民家宿るうふ",
             "text_1": "<p>るうふ / 一棟貸し古民家宿<br>時が刻まれた壮麗な空間をはじめ、地域に伝わる食を楽しんだり、火を囲んで談笑したり、<br>地域に伝わる食を楽しんだり、<br>火を囲んで談笑したり、<br>土地が育む自然の恵みや日本ならではの<br>土地が育む自然の恵みや<br>日本ならではの<br>生活文化を味わう体験できる。</p>",
@@ -85,7 +92,8 @@
             "text_2": "<p>野菜ソムリエプロ夫婦が営む全3室の宿<br>We're Smart® Green Guide ★4radish<br>全食材の9割以上オーガニック<br>動物性食品不使用<br>合成添加物・溶剤抽出油・白砂糖不使用<br>滞在型リトリート(心身デトックス)<br>自然栽培の自家菜園(100種以上)</p>",
             "image_url_3": "https://ucarecdn.com/4a9d3bd5-a8f4-4a56-951d-802e6ed68613/-/format/auto/-/preview/3000x3000/-/quality/lighter/KK_LINE%E3%83%AA%E3%83%83%E3%83%81%20_34_.jpeg",
             "title_3": "TACTILE HOUSE",
-            "text_3": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>"
+            "text_3": "<p>時が透ける、和紙の窓。<br>ひとのぬくもりを宿すタイル。<br>穏やかに迎え入れてくれるファブリック。<br>工芸建材とのくらしを体感できる場所。</p>",
+            "margin_bottom": 24
           }
         },
         "image_full_16": {
@@ -359,10 +367,8 @@
         "features_grid_54": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/3e81da79-efbb-4449-a9db-24f6d365eb04/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1617.jpeg",
             "title_1": "",
             "text_1": "",
@@ -374,7 +380,8 @@
             "text_3": "",
             "image_url_4": "https://ucarecdn.com/83c8880f-f808-4e3c-94b1-52709d2b0ef7/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0796.jpeg",
             "title_4": "",
-            "text_4": ""
+            "text_4": "",
+            "margin_bottom": 80
           }
         },
         "rich_text_55": {
@@ -389,18 +396,17 @@
         "features_grid_auto_review_85": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
             "icon_size": "large",
+            "swipe_on_mobile": false,
             "columns_desktop": 2,
             "columns_mobile": 1,
-            "swipe_on_mobile": false,
             "image_url_1": "https://ucarecdn.com/24d96eb6-f50a-4a5f-add9-7579227609d0/-/format/auto/-/preview/2560x2560/-/quality/lighter/%E6%AE%B5%E8%90%BD%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%20_7_.png",
             "title_1": "2) あみあみ構造による通気性",
             "text_1": "<p>加重ブランケットは、特に暖かい季節に中が蒸れやすくなったり<br>中が蒸れやすくなったり<br>身体への密着で熱く感じると言われていますが、<br>身体への密着で熱く感じると<br>言われていますが、<br>MUSUBIは365日オールシーズン使用可能です！<br>ブランケットそのものが、あみあみの形状のため<br>重さがあっても蒸れを気にせず365日快適に使用いただけます！</p>",
             "image_url_2": "https://ucarecdn.com/46503261-fa95-4c99-878e-9dc685220cb7/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1617.JPG",
             "title_2": "3）日本人の生活に合わせたサイズ、デザイン、カラー",
-            "text_2": "<p>「この“ブランケット”は夜に使用する寝具なのか、<br>ソファで使用することを想定しているのか、どっち？」<br>としばしば聞かれますが、<br>答えとしてはどちらでもご使用いただけます！<br>どちらでもご使用いただけます<br>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>"
+            "text_2": "<p>「この“ブランケット”は夜に使用する寝具なのか、<br>ソファで使用することを想定しているのか、どっち？」<br>としばしば聞かれますが、<br>答えとしてはどちらでもご使用いただけます！<br>どちらでもご使用いただけます<br>下記2サイズ展開ですので使用シーンに合わせてご購入ください</p>",
+            "margin_bottom": 24
           }
         },
         "image_full_60": {
@@ -429,8 +435,8 @@
         "image_text_63": {
           "type": "image_text",
           "settings": {
-            "layout": "right",
             "image_url": "",
+            "layout": "right",
             "heading": "",
             "text": "<p>#KKHOME</p>",
             "margin_bottom": 24
@@ -439,10 +445,8 @@
         "features_grid_64": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/75658742-4733-4f11-b1fc-504fd9e10d9a/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1018.JPG",
             "title_1": "",
             "text_1": "",
@@ -454,7 +458,8 @@
             "text_3": "",
             "image_url_4": "https://ucarecdn.com/07fef8cf-f9cd-4e03-a9c0-8cb3b160d591/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_0006.jpeg",
             "title_4": "",
-            "text_4": ""
+            "text_4": "",
+            "margin_bottom": 80
           }
         },
         "rich_text_65": {
@@ -469,10 +474,8 @@
         "features_grid_66": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/09165d81-eed6-4849-8cdf-43acb38d316f/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E2%9C%ADKV.jpeg",
             "title_1": "ご自宅での睡眠に",
             "text_1": "",
@@ -481,7 +484,8 @@
             "text_2": "",
             "image_url_3": "https://ucarecdn.com/2e428b81-0611-4793-b94a-3710703acf41/-/format/auto/-/preview/3000x3000/-/quality/lighter/IMG_0600_KAPOKKNOT.jpeg",
             "title_3": "少し休みたい仮眠に",
-            "text_3": ""
+            "text_3": "",
+            "margin_bottom": 80
           }
         },
         "rich_text_67": {
@@ -496,12 +500,10 @@
         "features_grid_auto_review_86": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
             "icon_size": "medium",
+            "swipe_on_mobile": true,
             "columns_desktop": 3,
             "columns_mobile": 2,
-            "swipe_on_mobile": true,
             "image_url_1": "https://ucarecdn.com/a527e82e-179a-42da-9864-03fe720857fe/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E3%83%92%E3%82%B1%E3%82%99%E3%81%AE%E7%94%B7%E6%80%A7%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%B4%A0%E6%9D%90.png",
             "title_1": "今までなかった新しいジャンル！",
             "text_1": "<p>50代男性 / 商社勤務<br>「リカバリー加重ブランケット」という機能性がありつつ、見た目のあみあみの可愛さもあって、新しいジャンルでときめきました！リビングでずっとくるまれていたいです！</p>",
@@ -510,14 +512,15 @@
             "text_2": "<p>30代女性 / アパレルメーカー勤務<br>30代女性<br>まさに毎日疲れているのですが、夜中に一度も起きることなく快眠できました！いつもは数回起きるのに…重さが与えてくれる影響に感激したのでこれから重宝します！</p>",
             "image_url_3": "https://ucarecdn.com/ec014e2f-0859-478b-b993-7e599be6cf90/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A5%B3%E6%80%A7%E3%81%AE%E4%BA%BA%E7%89%A9%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png",
             "title_3": "FAQ",
-            "text_3": "<p>50代女性 / 主婦<br>50代女性</p>"
+            "text_3": "<p>50代女性 / 主婦<br>50代女性</p>",
+            "margin_bottom": 24
           }
         },
         "image_text_74": {
           "type": "image_text",
           "settings": {
-            "layout": "right",
             "image_url": "https://ucarecdn.com/7c3139ae-dbf1-4298-8165-bb3159a5c9f0/-/format/auto/-/preview/3000x3000/-/quality/lighter/250423_MUSUBI_1750.JPG",
+            "layout": "right",
             "heading": "",
             "text": "<p>次の販売はいつごろですか？</p><p>リビングで利用できますか？</p><p>加重ブランケットを使っているんですが、起きたら落ちちゃいます。これは合っていないですか？</p><p>2人では使えないですか？</p><p>Lサイズ)は掛け布団のシングルとほぼ同じ大きさですが、横向きにして胸に乗せてご利用するだけでも安心感があり安定いたします。</p><p>洗濯は可能でしょうか？</p><p>使っていて丸まってきたのですが、どうすればいいの？</p><p>このブランケットは夏でも使えますか？</p>",
             "margin_bottom": 24
@@ -535,10 +538,8 @@
         "features_grid_76": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/3b78c5a1-09b9-4161-ab78-e0a66dd5bc3d/-/format/auto/-/preview/3000x3000/-/quality/lighter/%E5%A4%8F%E3%81%AB%E3%83%AA%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC%E5%8A%A0%E9%87%8D%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%81%8C%E3%81%8A%E5%8B%A7%E3%82%81%E3%81%AA%E7%90%86%E7%94%B1%20_1_.png",
             "title_1": "",
             "text_1": "暑い夏だからこそ、エアスルー構造のMusubiがおススメな理由とは？",
@@ -547,43 +548,42 @@
             "text_2": "まだ使ったことがない加重ブランケット、\n取り入れることで得られる3つのメリットとは？",
             "image_url_3": "https://ucarecdn.com/e7a7f20a-1047-43f3-9ec1-4b9fb39bcf48/-/format/auto/-/preview/3000x3000/-/quality/lighter/8ceba8583696c790adcd2ff231f853af_b993e48c-8dc3-4561-b8f4-85f2f40f4133.webp",
             "title_3": "",
-            "text_3": "今SNSで話題のウェイトブランケットとは？\nその効果やおすすめ商品も"
+            "text_3": "今SNSで話題のウェイトブランケットとは？\nその効果やおすすめ商品も",
+            "margin_bottom": 80
           }
         },
         "features_grid_auto_review_87": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 24,
             "icon_size": "large",
+            "swipe_on_mobile": false,
             "columns_desktop": 2,
             "columns_mobile": 1,
-            "swipe_on_mobile": false,
             "image_url_1": "https://ucarecdn.com/96738f15-cc32-4b56-8cf2-9c44dbf9c40e/-/format/auto/-/preview/3000x3000/-/quality/lighter/DSC02265%202.png",
             "title_1": "",
             "text_1": "<p>大量生産・大量消費の負のシステムに新たな提案を。<br>素材の力を信じサステナブルを志向するブランド</p>",
             "image_url_2": "https://ucarecdn.com/9d2c3af4-68fc-4810-8251-b7f048a36fe4/-/format/auto/-/preview/3000x3000/-/quality/lighter/INDO0824NIKON-19%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC%201.png",
             "title_2": "",
-            "text_2": "<p>初めましてカポックノット創業者の深井喜翔です。<br>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。<br>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。<br>カポックジャパン株式会社</p>"
+            "text_2": "<p>初めましてカポックノット創業者の深井喜翔です。<br>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。<br>そんな中、カポックと出会い、「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。<br>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。<br>カポックジャパン株式会社</p>",
+            "margin_bottom": 24
           }
         },
         "features_grid_81": {
           "type": "features_grid",
           "settings": {
-            "image_on": true,
-            "margin_bottom": 80,
-            "columns_desktop": 3,
             "icon_size": "large",
+            "columns_desktop": 3,
             "image_url_1": "https://ucarecdn.com/d52b3ea5-7fd3-4db6-8c57-566e62c9c422/-/format/auto/-/preview/3000x3000/-/quality/lighter/Frame%20_11_.png",
             "title_1": "",
-            "text_1": ""
+            "text_1": "",
+            "margin_bottom": 80
           }
         },
         "image_text_82": {
           "type": "image_text",
           "settings": {
-            "layout": "right",
             "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
+            "layout": "right",
             "heading": "動物にも優しいアニマルフリー",
             "text": "<p>従来のダウンや布団は水鳥の羽が使用されていました。一説には、１つのダウンジャケットには約30羽分の羽毛が使われているといわれています。布団ではもっと多くの羽毛が使われています。</p><p>羽毛の採取方法にもいくつかありますが、ライブハンドピッキング法は質の良い羽毛を採取できる方法としても知られています。実際、採取方法を表明していない企業も存在しています。カポックノットの商品で使用するカポックは木の実由来ですから、その事実に心を痛める必要はありません。</p><p>実際、採取方法を表明していない企業も存在しています。</p><p>カポックノットの商品で使用するカポックは木の実由来ですから、その事実に心を痛める必要はありません。</p>",
             "margin_bottom": 24

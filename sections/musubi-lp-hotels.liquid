@@ -1,23 +1,271 @@
-<section class="hotels" id="hotels">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'MUSUBIを体験できる宿' }}</h2>
-    <p class="hotels__desc" data-reveal>{{ section.settings.description | default: '全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。' }}</p>
+<style>
+  .hotels {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+    overflow: hidden;
+  }
+
+  .hotels__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .hotels__header {
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .hotels__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg_color }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .hotels__heading {
+    margin: 0 0 18px;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+
+  .hotels__heading p {
+    margin: 0;
+  }
+
+  .hotels__desc {
+    max-width: 720px;
+    margin: 0 auto;
+    color: {{ section.settings.desc_color }};
+    font-size: {{ section.settings.desc_size_pc }}px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+
+  .hotels__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_pc }}, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .hotels__card {
+    overflow: hidden;
+    border-radius: {{ section.settings.card_radius_pc }}px;
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.border_color }};
+    box-shadow: 0 14px 38px rgba(0,0,0,0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .hotels__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+  }
+
+  .hotels__card-img {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f3f3f3;
+  }
+
+  .hotels__card-img::before {
+    content: "";
+    display: block;
+    padding-top: {{ section.settings.image_ratio_pc }}%;
+  }
+
+  .hotels__card-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ section.settings.image_fit }};
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .hotels__card:hover .hotels__card-img img {
+    transform: scale(1.04);
+  }
+
+  .hotels__card-content {
+    padding: 24px 22px 26px;
+  }
+
+  .hotels__card-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: {{ section.settings.type_bg_color }};
+    color: {{ section.settings.type_color }};
+    font-size: {{ section.settings.type_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+
+  .hotels__card-name {
+    margin: 0 0 10px;
+    color: {{ section.settings.name_color }};
+    font-size: {{ section.settings.name_size_pc }}px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  .hotels__card-detail {
+    margin: 0;
+    color: {{ section.settings.detail_color }};
+    font-size: {{ section.settings.detail_size_pc }}px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 768px) {
+
+    .hotels {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .hotels__header {
+      margin-bottom: 30px;
+    }
+
+    .hotels__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .hotels__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+      margin-bottom: 14px;
+    }
+
+    .hotels__desc {
+      font-size: {{ section.settings.desc_size_sp }}px;
+      line-height: 1.9;
+    }
+
+    .hotels__grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .hotels__card {
+      border-radius: {{ section.settings.card_radius_sp }}px;
+    }
+
+    .hotels__card-img {
+      width: 100%;
+    }
+
+    .hotels__card-img::before {
+      padding-top: {{ section.settings.image_ratio_sp }}%;
+    }
+
+    .hotels__card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: {{ section.settings.image_fit_sp }};
+    }
+
+    .hotels__card-content {
+      padding: 20px 18px 22px;
+    }
+
+    .hotels__card-type {
+      font-size: {{ section.settings.type_size_sp }}px;
+    }
+
+    .hotels__card-name {
+      font-size: {{ section.settings.name_size_sp }}px;
+    }
+
+    .hotels__card-detail {
+      font-size: {{ section.settings.detail_size_sp }}px;
+    }
+  }
+</style>
+
+<section class="hotels" id="hotels-{{ section.id }}">
+  <div class="hotels__inner">
+
+    <div class="hotels__header">
+
+      {% if section.settings.label != blank %}
+        <div class="hotels__label">
+          {{ section.settings.label }}
+        </div>
+      {% endif %}
+
+      <h2 class="hotels__heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      {% if section.settings.description != blank %}
+        <div class="hotels__desc">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+    </div>
+
     <div class="hotels__grid">
       {% for block in section.blocks %}
-        <div class="hotels__card" data-reveal {{ block.shopify_attributes }}>
+        <div class="hotels__card" {{ block.shopify_attributes }}>
+
           <div class="hotels__card-img">
             {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.name }}" loading="lazy">
+              <img
+                src="{{ block.settings.image | img_url: '1200x' }}"
+                alt="{{ block.settings.name }}"
+                loading="lazy"
+              >
             {% elsif block.settings.image_url != blank %}
-              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+              <img
+                src="{{ block.settings.image_url }}"
+                alt="{{ block.settings.name }}"
+                loading="lazy"
+              >
             {% endif %}
           </div>
-          <h4 class="hotels__card-name">{{ block.settings.name }}</h4>
-          <p class="hotels__card-type">{{ block.settings.type }}</p>
-          <p class="hotels__card-detail">{{ block.settings.detail }}</p>
+
+          <div class="hotels__card-content">
+
+            {% if block.settings.type != blank %}
+              <div class="hotels__card-type">
+                {{ block.settings.type }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.name != blank %}
+              <h3 class="hotels__card-name">
+                {{ block.settings.name }}
+              </h3>
+            {% endif %}
+
+            {% if block.settings.detail != blank %}
+              <p class="hotels__card-detail">
+                {{ block.settings.detail }}
+              </p>
+            {% endif %}
+
+          </div>
+
         </div>
       {% endfor %}
     </div>
+
   </div>
 </section>
 
@@ -27,17 +275,316 @@
   "settings": [
     {
       "type": "text",
-      "id": "heading",
-      "label": "見出し",
-      "default": "MUSUBIを体験できる宿"
+      "id": "label",
+      "label": "ラベル",
+      "default": "STAY EXPERIENCE"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>MUSUBIを体験できる宿</p>"
+    },
+    {
+      "type": "richtext",
       "id": "description",
       "label": "説明文",
-      "default": "全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。"
+      "default": "<p>全国のこだわりの宿で、購入前にMUSUBIの寝心地をお試しいただけます。</p>"
+    },
+
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "カード背景",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "枠線カラー",
+      "default": "#eee7dd"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "ラベル背景",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "説明文カラー",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "type_bg_color",
+      "label": "タイプ背景",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "type_color",
+      "label": "タイプ文字",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "宿名カラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "detail_color",
+      "label": "詳細カラー",
+      "default": "#666666"
+    },
+
+    {
+      "type": "range",
+      "id": "columns_pc",
+      "label": "PC列数",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "最大幅",
+      "min": 760,
+      "max": 1400,
+      "step": 20,
+      "default": 1180
+    },
+
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 22,
+      "max": 56,
+      "step": 1,
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "default": 26
+    },
+
+    {
+      "type": "range",
+      "id": "desc_size_pc",
+      "label": "説明文サイズ PC",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "desc_size_sp",
+      "label": "説明文サイズ SP",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 11
+    },
+
+    {
+      "type": "range",
+      "id": "type_size_pc",
+      "label": "タイプサイズ PC",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "type_size_sp",
+      "label": "タイプサイズ SP",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "default": 11
+    },
+
+    {
+      "type": "range",
+      "id": "name_size_pc",
+      "label": "宿名サイズ PC",
+      "min": 16,
+      "max": 36,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "name_size_sp",
+      "label": "宿名サイズ SP",
+      "min": 16,
+      "max": 30,
+      "step": 1,
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "detail_size_pc",
+      "label": "詳細サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "detail_size_sp",
+      "label": "詳細サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 13
+    },
+
+    {
+      "type": "range",
+      "id": "card_radius_pc",
+      "label": "カード角丸 PC",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_radius_sp",
+      "label": "カード角丸 SP",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "image_ratio_pc",
+      "label": "画像比率 PC",
+      "min": 50,
+      "max": 140,
+      "step": 1,
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "image_ratio_sp",
+      "label": "画像比率 SP",
+      "min": 60,
+      "max": 160,
+      "step": 1,
+      "default": 100
+    },
+
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "画像表示 PC",
+      "options": [
+        {
+          "value": "cover",
+          "label": "トリミング表示"
+        },
+        {
+          "value": "contain",
+          "label": "全体表示"
+        }
+      ],
+      "default": "cover"
+    },
+
+    {
+      "type": "select",
+      "id": "image_fit_sp",
+      "label": "画像表示 SP",
+      "options": [
+        {
+          "value": "cover",
+          "label": "トリミング表示"
+        },
+        {
+          "value": "contain",
+          "label": "全体表示"
+        }
+      ],
+      "default": "cover"
     }
   ],
+
   "blocks": [
     {
       "type": "hotel_card",
@@ -51,7 +598,7 @@
         {
           "type": "text",
           "id": "image_url",
-          "label": "画像URL（image_pickerが空の場合に使用）"
+          "label": "画像URL"
         },
         {
           "type": "text",
@@ -74,16 +621,37 @@
       ]
     }
   ],
+
   "presets": [
     {
       "name": "MUSUBI 体験宿",
       "blocks": [
-        { "type": "hotel_card", "settings": { "name": "古民家宿 るうふ", "type": "一棟貸し古民家宿", "detail": "時が刻まれた壮麗な空間で、地域に伝わる食と自然の恵みを味わう" } },
-        { "type": "hotel_card", "settings": { "name": "オーベルジュ エルバステラ", "type": "全3室の小さな宿", "detail": "野菜ソムリエプロ夫婦が営む滞在型リトリート" } },
-        { "type": "hotel_card", "settings": { "name": "TACTILE HOUSE", "type": "工芸建材の体験宿", "detail": "産地の工芸・建材を空間で体験できる宿泊施設" } }
+        {
+          "type": "hotel_card",
+          "settings": {
+            "name": "古民家宿 るうふ",
+            "type": "一棟貸し古民家宿",
+            "detail": "時が刻まれた壮麗な空間で、地域に伝わる食と自然の恵みを味わう"
+          }
+        },
+        {
+          "type": "hotel_card",
+          "settings": {
+            "name": "オーベルジュ エルバステラ",
+            "type": "全3室の小さな宿",
+            "detail": "野菜ソムリエプロ夫婦が営む滞在型リトリート"
+          }
+        },
+        {
+          "type": "hotel_card",
+          "settings": {
+            "name": "TACTILE HOUSE",
+            "type": "工芸建材の体験宿",
+            "detail": "産地の工芸・建材を空間で体験できる宿泊施設"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-

@@ -1,0 +1,601 @@
+<style>
+  .musubi-colors {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
+
+  .musubi-colors__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .musubi-colors__header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .musubi-colors__label {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+
+  .musubi-colors__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+
+  .musubi-colors__heading p,
+  .musubi-colors__lead p {
+    margin: 0;
+  }
+
+  .musubi-colors__lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.body_size_pc }}px;
+    color: {{ section.settings.body_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .musubi-colors__box {
+    background: #fff;
+    border: 1px solid #eee7dd;
+    border-radius: 26px;
+    padding: 44px 38px;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .musubi-colors__showcase {
+    max-width: 720px;
+    margin: 0 auto 18px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .musubi-colors__showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .musubi-colors__name {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 22px;
+  }
+
+  .musubi-colors__swatches {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .musubi-colors__swatch {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .musubi-colors__swatch--active {
+    outline: 2px solid {{ section.settings.accent_color }};
+    outline-offset: 3px;
+  }
+
+  .musubi-colors__carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .musubi-colors__arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid #eee7dd;
+    background: #fff;
+    color: {{ section.settings.accent_color }};
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .musubi-colors__track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 4px 2px;
+  }
+
+  .musubi-colors__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .musubi-colors__item {
+    flex: 0 0 auto;
+    width: 100px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: #fff;
+  }
+
+  .musubi-colors__item--active {
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  }
+
+  .musubi-colors__item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .musubi-colors__item span {
+    display: block;
+    font-size: 11px;
+    color: #555;
+    padding: 8px 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .musubi-colors {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .musubi-colors__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .musubi-colors__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .musubi-colors__lead {
+      font-size: {{ section.settings.body_size_sp }}px;
+    }
+
+    .musubi-colors__box {
+      padding: 32px 16px;
+      border-radius: 20px;
+    }
+
+    .musubi-colors__showcase {
+      border-radius: 18px;
+    }
+
+    .musubi-colors__swatch {
+      width: 36px;
+      height: 36px;
+    }
+
+    .musubi-colors__arrow {
+      width: 34px;
+      height: 34px;
+      font-size: 22px;
+    }
+
+    .musubi-colors__item {
+      width: 80px;
+    }
+  }
+</style>
+
+<section class="musubi-colors" id="musubi-colors-{{ section.id }}">
+  <div class="musubi-colors__inner">
+    <div class="musubi-colors__box">
+
+      <div class="musubi-colors__header">
+        {% if section.settings.label != blank %}
+          <div class="musubi-colors__label">{{ section.settings.label }}</div>
+        {% endif %}
+
+        <h2 class="musubi-colors__heading">{{ section.settings.heading }}</h2>
+
+        {% if section.settings.lead != blank %}
+          <div class="musubi-colors__lead">{{ section.settings.lead }}</div>
+        {% endif %}
+      </div>
+
+      {% assign first_image = '' %}
+      {% assign first_name = '' %}
+      {% assign color_count = 0 %}
+
+      {% for block in section.blocks %}
+        {% assign color_count = color_count | plus: 1 %}
+        {% if color_count == 1 %}
+          {% assign first_name = block.settings.name %}
+          {% if block.settings.image != blank %}
+            {% assign first_image = block.settings.image | img_url: '1200x' %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if color_count > 0 %}
+        <div class="musubi-colors__showcase">
+          {% if first_image != blank %}
+            <img
+              id="musubi-colors-main-img-{{ section.id }}"
+              src="{{ first_image }}"
+              alt="{{ first_name }}"
+              loading="lazy"
+            >
+          {% else %}
+            <div style="padding: 80px 20px; text-align: center; color: #777;">
+              画像を選択してください
+            </div>
+          {% endif %}
+        </div>
+
+        <p class="musubi-colors__name" id="musubi-colors-name-{{ section.id }}">
+          {{ first_name }}
+        </p>
+
+        <div class="musubi-colors__swatches">
+          {% assign color_index = 0 %}
+          {% for block in section.blocks %}
+            {% assign color_index = color_index | plus: 1 %}
+
+            {% if block.settings.image != blank %}
+              {% assign color_img = block.settings.image | img_url: '1200x' %}
+            {% else %}
+              {% assign color_img = '' %}
+            {% endif %}
+
+            <button
+              type="button"
+              class="musubi-colors__swatch{% if color_index == 1 %} musubi-colors__swatch--active{% endif %}"
+              style="background: {{ block.settings.color_code }};"
+              data-color="{{ block.settings.name | escape }}"
+              data-img="{{ color_img }}"
+              aria-label="{{ block.settings.name }}"
+              {{ block.shopify_attributes }}
+            ></button>
+          {% endfor %}
+        </div>
+
+        <div class="musubi-colors__carousel">
+          <button type="button" class="musubi-colors__arrow musubi-colors__arrow--left" aria-label="前へ">‹</button>
+
+          <div class="musubi-colors__track">
+            {% assign item_index = 0 %}
+            {% for block in section.blocks %}
+              {% assign item_index = item_index | plus: 1 %}
+
+              {% if block.settings.image != blank %}
+                {% assign color_img = block.settings.image | img_url: '1200x' %}
+              {% else %}
+                {% assign color_img = '' %}
+              {% endif %}
+
+              {% if block.settings.thumbnail != blank %}
+                {% assign thumb_img = block.settings.thumbnail | img_url: '400x' %}
+              {% elsif block.settings.image != blank %}
+                {% assign thumb_img = block.settings.image | img_url: '400x' %}
+              {% else %}
+                {% assign thumb_img = '' %}
+              {% endif %}
+
+              <div
+                class="musubi-colors__item{% if item_index == 1 %} musubi-colors__item--active{% endif %}"
+                data-color="{{ block.settings.name | escape }}"
+                data-img="{{ color_img }}"
+                {{ block.shopify_attributes }}
+              >
+                {% if thumb_img != blank %}
+                  <img src="{{ thumb_img }}" alt="{{ block.settings.name }}" loading="lazy">
+                {% else %}
+                  <div style="aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; background: #f4eee6; color: #777; font-size: 11px; text-align: center; padding: 8px;">
+                    画像未設定
+                  </div>
+                {% endif %}
+                <span>{{ block.settings.name }}</span>
+              </div>
+            {% endfor %}
+          </div>
+
+          <button type="button" class="musubi-colors__arrow musubi-colors__arrow--right" aria-label="次へ">›</button>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('#musubi-colors-{{ section.id }}');
+    if (!section) return;
+
+    const mainImg = section.querySelector('#musubi-colors-main-img-{{ section.id }}');
+    const nameEl = section.querySelector('#musubi-colors-name-{{ section.id }}');
+    const swatches = section.querySelectorAll('.musubi-colors__swatch');
+    const items = section.querySelectorAll('.musubi-colors__item');
+    const track = section.querySelector('.musubi-colors__track');
+    const left = section.querySelector('.musubi-colors__arrow--left');
+    const right = section.querySelector('.musubi-colors__arrow--right');
+
+    function setActiveColor(colorName, imageUrl) {
+      swatches.forEach(function(swatch) {
+        swatch.classList.toggle('musubi-colors__swatch--active', swatch.dataset.color === colorName);
+      });
+
+      items.forEach(function(item) {
+        item.classList.toggle('musubi-colors__item--active', item.dataset.color === colorName);
+      });
+
+      if (mainImg && imageUrl) {
+        mainImg.src = imageUrl;
+        mainImg.alt = colorName;
+      }
+
+      if (nameEl) {
+        nameEl.textContent = colorName;
+      }
+    }
+
+    swatches.forEach(function(swatch) {
+      swatch.addEventListener('click', function() {
+        setActiveColor(swatch.dataset.color, swatch.dataset.img);
+      });
+    });
+
+    items.forEach(function(item) {
+      item.addEventListener('click', function() {
+        setActiveColor(item.dataset.color, item.dataset.img);
+      });
+    });
+
+    if (left && track) {
+      left.addEventListener('click', function() {
+        track.scrollBy({ left: -120, behavior: 'smooth' });
+      });
+    }
+
+    if (right && track) {
+      right.addEventListener('click', function() {
+        track.scrollBy({ left: 120, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "MUSUBI カラーのみ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "ラベル",
+      "default": "COLOR VARIATION"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "見出し",
+      "default": "<p>暮らしに馴染む<br>カラーバリエーション</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "リード文",
+      "default": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "ラベル文字カラー",
+      "default": "#8B7355"
+    },
+    {
+      "type": "color",
+      "id": "label_bg",
+      "label": "ラベル背景カラー",
+      "default": "#f4eee6"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "見出しカラー",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "本文カラー",
+      "default": "#555555"
+    },
+    {
+      "type": "range",
+      "id": "label_size_pc",
+      "label": "ラベルサイズ PC",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "label_size_sp",
+      "label": "ラベルサイズ SP",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "heading_size_pc",
+      "label": "見出しサイズ PC",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "heading_size_sp",
+      "label": "見出しサイズ SP",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "body_size_pc",
+      "label": "本文サイズ PC",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "body_size_sp",
+      "label": "本文サイズ SP",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_pc",
+      "label": "上下余白 PC",
+      "min": 40,
+      "max": 160,
+      "step": 4,
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_sp",
+      "label": "上下余白 SP",
+      "min": 32,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "color_item",
+      "name": "カラー",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "カラー名",
+          "default": "Powder Beige"
+        },
+        {
+          "type": "color",
+          "id": "color_code",
+          "label": "カラーコード",
+          "default": "#d9cfc4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "メイン画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail",
+          "label": "サムネイル画像"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MUSUBI カラーのみ",
+      "blocks": [
+        {
+          "type": "color_item",
+          "settings": {
+            "name": "Powder Beige",
+            "color_code": "#d9cfc4"
+          }
+        },
+        {
+          "type": "color_item",
+          "settings": {
+            "name": "Dusty Navy",
+            "color_code": "#3d4259"
+          }
+        },
+        {
+          "type": "color_item",
+          "settings": {
+            "name": "Calm Brown",
+            "color_code": "#8b6b50"
+          }
+        },
+        {
+          "type": "color_item",
+          "settings": {
+            "name": "Cloud White",
+            "color_code": "#e8e4de"
+          }
+        },
+        {
+          "type": "color_item",
+          "settings": {
+            "name": "Blossom Peach",
+            "color_code": "#d4a5a0"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,981 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.musubi-lp",
+  "sections": {
+    "hero": {
+      "type": "musubi-lp-hero",
+      "settings": {
+        "hero_image": "shopify://shop_images/EC_PC_9.png",
+        "hero_image_sp": "shopify://shop_images/KVSP_7.png",
+        "hero_image_alt": "MUSUBIブランケットに包まれる女性",
+        "hero_bg_color": "#56aa9c",
+        "brand_name": "KAPOK KNOT HOME",
+        "hero_title": "",
+        "hero_title_font_size_pc": 56,
+        "hero_title_font_size_sp": 25,
+        "hero_title_font_weight_pc": "700",
+        "hero_title_font_weight_sp": "700",
+        "hero_subtitle": "<h4>植物の力で肌から眠る</h4>",
+        "hero_subtitle_font_size": 16,
+        "hero_subtitle_font_weight": "500",
+        "hero_subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "KAPOK Sleep Ketは植物由来の素材に\nこだわって作った「肌掛け布団」",
+        "soldout_font_size": 14,
+        "soldout_text_color": "#efefef",
+        "cta_url": "https://kapok-knot.com/products/new-kapok-sleep-ket",
+        "cta_text": "Sleep  Ket 商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "¥39,800",
+        "price_tax": "(税込)",
+        "feature_1": "✓ オールシーズン",
+        "feature_2": "✓ とろける肌触り",
+        "feature_3": "✓ 通気性",
+        "feature_4": "✓ 洗濯機で丸洗い",
+        "features_text_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 20,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0
+      }
+    },
+    "guarantee": {
+      "type": "musubi-lp-guarantee",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection_list_FLNm7J": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_DeT4jm": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/70_c859432a-0a22-4508-a8cc-99e64eefef51.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_niFear": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/75_c8ed4705-c6a7-4685-aa15-058c55079978.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_QgfGnD": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/71_e13e877b-27e7-4556-b03b-30732d5c1b20.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_DeT4jm",
+        "collection_niFear",
+        "collection_QgfGnD"
+      ],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>頭のなかがぐるぐるで<br>なかなか休まらない。。</p>"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>休んでいても波立つように<br>心が落ち着かない。。</p>"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "",
+            "text": "<p>リラックスできる<br>タイミング、習慣がない。。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ],
+      "disabled": true,
+      "settings": {
+        "label": "",
+        "heading": "こんな時がありませんか？",
+        "heading_size_pc": 26,
+        "heading_size_sp": 22,
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 17,
+        "heading_color": "#1a1a1a",
+        "item_text_color": "#333333",
+        "bg_color": "#faf9f7",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "padding_pc": 64,
+        "padding_sp": 48,
+        "solution_image": "shopify://shop_images/IMG_1027_KAPOKKNOT.jpg",
+        "solution_image_alt": "MUSUBIに包まれて休息",
+        "show_arrow": true,
+        "solution_width": 480,
+        "solution_radius": 18,
+        "solution_radius_sp": 14,
+        "icon_size_pc": 44,
+        "icon_size_sp": 34,
+        "arrow_size_pc": 28,
+        "arrow_size_sp": 24
+      }
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "image": "shopify://shop_images/1_2_2x_10a50492-5b1a-4741-bdd6-5531c25eb6d1.png",
+            "image_url": "https://kapok-knot.com/cdn/shop/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1000?v=1771395913&width=800",
+            "number": "01",
+            "title": "とろけるような、極上の肌馴染み",
+            "description": "独自配合したユーカリ由来の生地とカポック中綿の組み合わせ。ここちよく、質の高い睡眠へと導いてくれます。"
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "image": "shopify://shop_images/1_3_2x_3ecd95da-0ac9-4d45-9c03-48a0044c714d.png",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0465.jpg?v=1771395913&width=800",
+            "number": "02",
+            "title": "カポック繊維の中空構造",
+            "description": "ユーカリ由来の生地とカポックは、ともに呼吸すると言われる繊維で、吸放湿性・通気性に優れているため熱帯夜も爽やかにサポートしてくれます。"
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "image": "shopify://shop_images/1_2x_72050b75-64d8-45a1-9285-87ffdbba3e23.png",
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0571.jpg?v=1771395913&width=800",
+            "number": "03",
+            "title": "カポックシートの秘密",
+            "description": "カポックコットンを特殊技術で加工したシートをテンセルで包み込んでいます。"
+          }
+        },
+        "reason_card_88QYrx": {
+          "type": "reason_card",
+          "settings": {
+            "image": "shopify://shop_images/1_2x_8.png",
+            "image_url": "",
+            "number": "04",
+            "title": "ちょうどいい一枚を",
+            "description": "ソファやベッドの上にサラッと掛けてあるだけで、洗練された印象に。ファッション感覚でお部屋をコーディネートできるカラーリングでインテリア性も抜群です。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3",
+        "reason_card_88QYrx"
+      ],
+      "settings": {
+        "label": "Recommend",
+        "heading": "<p>KAPOK Sleep Ketの<br/>こだわった特徴</p>",
+        "lead": "<p>日々の暮らしに自然になじむよう、素材・構造・サイズ感にこだわった布団。<br/>とろける肌触りで起きていても夢見心地に。</p>",
+        "show_comparison": false,
+        "comparison_label": "LABORATORY TEST",
+        "comparison_heading": "<p>検証データが示す<br/>MUSUBIの快適性</p>",
+        "chart_title": "寝床内湿度（空間）比較データ",
+        "chart_note": "※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測",
+        "conclusion_label": "理想的な寝床内湿度：50% ± 5%",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は、重みによるムレを軽減。<br/><strong>365日・オールシーズン快適に使える加重ブランケット</strong>を目指しました。</p>",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "musubi_verdict": "✓ 理想的な範囲内",
+        "other_value": "55% → 70%",
+        "other_desc": "時間経過とともに上昇",
+        "other_verdict": "✗ ムレやすい",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "label_color": "#8b7355",
+        "label_bg_color": "#f4eee6",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "lead_size_pc": 15,
+        "lead_size_sp": 14,
+        "lead_color": "#555555",
+        "number_size_pc": 13,
+        "number_size_sp": 12,
+        "number_color": "#ffffff",
+        "number_bg_color": "#8b7355",
+        "title_size_pc": 24,
+        "title_size_sp": 21,
+        "title_color": "#1a1a1a",
+        "description_size_pc": 15,
+        "description_size_sp": 14,
+        "description_color": "#555555",
+        "comparison_label_size_pc": 12,
+        "comparison_label_size_sp": 11,
+        "comparison_label_color": "#8b7355",
+        "comparison_label_bg_color": "#f4eee6",
+        "comparison_heading_size_pc": 28,
+        "comparison_heading_size_sp": 23,
+        "comparison_heading_color": "#1a1a1a",
+        "comparison_value_size_pc": 36,
+        "comparison_value_size_sp": 30,
+        "comparison_value_color": "#8b7355",
+        "comparison_badge_size_pc": 13,
+        "comparison_badge_size_sp": 12,
+        "comparison_badge_color": "#333333",
+        "comparison_desc_size_pc": 13,
+        "comparison_desc_size_sp": 12,
+        "comparison_desc_color": "#555555",
+        "comparison_verdict_size_pc": 13,
+        "comparison_verdict_size_sp": 12,
+        "vs_size_pc": 22,
+        "vs_size_sp": 18,
+        "vs_color": "#8b7355",
+        "chart_title_size_pc": 16,
+        "chart_title_size_sp": 14,
+        "chart_title_color": "#1a1a1a",
+        "chart_note_size_pc": 11,
+        "chart_note_size_sp": 11,
+        "chart_note_color": "#777777",
+        "conclusion_label_size_pc": 16,
+        "conclusion_label_size_sp": 14,
+        "conclusion_label_color": "#1a1a1a",
+        "conclusion_text_size_pc": 15,
+        "conclusion_text_size_sp": 14,
+        "conclusion_text_color": "#555555",
+        "strong_color": "#8b7355",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf7f2",
+        "card_border_color": "#eee7dd",
+        "image_bg_color": "#f4eee6",
+        "image_fit": "cover",
+        "image_height_pc": 460,
+        "image_height_sp": 320,
+        "card_radius": 26,
+        "card_radius_sp": 20,
+        "max_width": 1080,
+        "comparison_bg_color": "#faf7f2",
+        "comparison_border_color": "#eee7dd",
+        "comparison_radius": 26,
+        "comparison_radius_sp": 20,
+        "comparison_card_bg_color": "#ffffff",
+        "comparison_card_border_color": "#eee7dd",
+        "musubi_accent_color": "#8b7355",
+        "good_text_color": "#2f6b4f",
+        "good_bg_color": "#e7f3ec",
+        "bad_text_color": "#8a4a3a",
+        "bad_bg_color": "#f7ebe7",
+        "conclusion_bg_color": "#ffffff",
+        "conclusion_border_color": "#eee7dd",
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "musubi_lp_cta_YbExDr": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "bg_color": "#56aa9c",
+        "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "shopify://products/new-kapok-sleep-ket",
+        "cta_text": "KAPOK Sleep Ket  商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "",
+        "price_tax": "",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "feature_4": "",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
+      }
+    },
+    "17784810450136d6c9": {
+      "type": "_blocks",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection_list_7re4nj": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_cHmERy": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/69_47f44bda-7119-4bce-8b4b-743a4c4515a5.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_RKcB68": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/73_cd802cca-ad7f-420d-8cda-7596ae44d4db.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_EacHaY": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "",
+            "image": "shopify://shop_images/76_580c3daa-3880-4196-8119-9fc964601484.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "",
+            "button_text": "",
+            "button_link": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_cHmERy",
+        "collection_RKcB68",
+        "collection_EacHaY"
+      ],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "musubi_lp_cta_fYYFMU": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "bg_color": "#56aa9c",
+        "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "shopify://products/new-kapok-sleep-ket",
+        "cta_text": "KAPOK Sleep Ket  商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "",
+        "price_tax": "",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "feature_4": "",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
+      }
+    },
+    "musubi_color_variation_EeKdRH": {
+      "type": "musubi-color-variation",
+      "blocks": {
+        "color_item_q88bqg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ピスタチオ",
+            "color_code": "#afcd5a",
+            "image": "shopify://shop_images/DSC_50765_2_1_2.webp"
+          }
+        },
+        "color_item_zD4hJf": {
+          "type": "color_item",
+          "settings": {
+            "name": "グレー",
+            "color_code": "#737377",
+            "image": "shopify://shop_images/IMG_7236.webp"
+          }
+        },
+        "color_item_aphDzK": {
+          "type": "color_item",
+          "settings": {
+            "name": "カイブルー",
+            "color_code": "#ace4e2",
+            "image": "shopify://shop_images/621_1_c4351096-8474-415f-9ab4-3ebf2b89f82e_4.webp"
+          }
+        },
+        "color_item_WabkMb": {
+          "type": "color_item",
+          "settings": {
+            "name": "ディープネイビー",
+            "color_code": "#212554",
+            "image": "shopify://shop_images/DSC_2988_3x_1_1_1_2fe3201d-85b8-4abb-b98c-f16d50382315_1.webp"
+          }
+        },
+        "color_item_cd4aLg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ムードパープル",
+            "color_code": "#d8c3f2",
+            "image": "shopify://shop_images/DSC_2991_3x_2_1_a44d73d9-81da-42eb-9b4c-357929128e07_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "color_item_q88bqg",
+        "color_item_zD4hJf",
+        "color_item_aphDzK",
+        "color_item_WabkMb",
+        "color_item_cd4aLg"
+      ],
+      "name": "MUSUBI カラーのみ",
+      "settings": {
+        "label": "VARIATION",
+        "heading": "<p>暮らしに馴染む<br/>カラーバリエーション</p>",
+        "lead": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "musubi_lp_cta_8Fft8y": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "bg_color": "#56aa9c",
+        "subtitle": "",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "shopify://products/new-kapok-sleep-ket",
+        "cta_text": "Kapok Sleep Ket 商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "",
+        "price_tax": "",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "feature_4": "",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 10,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 12,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
+      }
+    },
+    "musubi_color_variation_ha696Q": {
+      "type": "musubi-color-variation",
+      "blocks": {
+        "color_item_P4qCCK": {
+          "type": "color_item",
+          "settings": {
+            "name": "ネイビー",
+            "color_code": "#2a4071",
+            "image": "shopify://shop_images/IMG_4349_475588c8-1743-4e79-abd3-0aaed44d9872_1.jpg"
+          }
+        },
+        "color_item_BMfwtH": {
+          "type": "color_item",
+          "settings": {
+            "name": "グレー",
+            "color_code": "#888994",
+            "image": "shopify://shop_images/IMG_4355_4a7f630b-37be-4a54-b026-3dd669ffb714_1.jpg"
+          }
+        },
+        "color_item_BMBJwg": {
+          "type": "color_item",
+          "settings": {
+            "name": "ブルー",
+            "color_code": "#214aa1",
+            "image": "shopify://shop_images/IMG_4351_bb33fbcf-7103-40d0-963c-38bc6da7dd3e_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "color_item_P4qCCK",
+        "color_item_BMfwtH",
+        "color_item_BMBJwg"
+      ],
+      "name": "MUSUBI カラーのみ",
+      "settings": {
+        "label": "VARIATION",
+        "heading": "<p>ボーダー柄も</p>",
+        "lead": "<p>アクセントが欲しい方にはおすすめ</p>",
+        "bg_color": "#faf7f2",
+        "accent_color": "#8b7355",
+        "label_color": "#8b7355",
+        "label_bg": "#f4eee6",
+        "heading_color": "#1a1a1a",
+        "body_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "body_size_pc": 15,
+        "body_size_sp": 14,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "musubi_lp_cta_CYFm6K": {
+      "type": "musubi-lp-cta",
+      "settings": {
+        "bg_color": "#56aa9c",
+        "subtitle": "<p><strong>とろけるような、極上の肌馴染み</strong></p>",
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": "400",
+        "subtitle_color": "#ffffff",
+        "show_soldout": true,
+        "soldout_text": "",
+        "soldout_font_size": 13,
+        "soldout_text_color": "#ffffff",
+        "cta_url": "https://kapok-knot.com/products/kapok-sleep-ket-border",
+        "cta_text": "KAPOK Sleep Ket Border 商品ページへ",
+        "cta1_bg_color": "#ffffff",
+        "cta1_text_color": "#1f2a44",
+        "cta_url_2": "",
+        "cta_text_2": "公式LINEから再入荷通知を受け取る",
+        "cta2_bg_color": "#06c755",
+        "cta2_text_color": "#ffffff",
+        "price_text": "",
+        "price_tax": "",
+        "price_color": "#ffffff",
+        "price_font_size": 16,
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
+        "feature_4": "",
+        "features_color": "#ffffffbf",
+        "features_font_size": 12,
+        "cta1_margin_top": 0,
+        "cta1_margin_bottom": 10,
+        "cta2_margin_top": 0,
+        "cta2_margin_bottom": 12,
+        "soldout_margin_top": 10,
+        "soldout_margin_bottom": 10,
+        "price_margin_top": 8,
+        "price_margin_bottom": 0,
+        "padding_top_pc": 28,
+        "padding_bottom_pc": 36,
+        "padding_top_sp": 24,
+        "padding_bottom_sp": 32
+      }
+    },
+    "care": {
+      "type": "musubi-lp-care",
+      "blocks": {
+        "care_1": {
+          "type": "care_point",
+          "settings": {
+            "icon": "✨",
+            "title": "日常はシュッとひとふきで完結",
+            "description": "毎日気負って洗う必要はありません。普段はフレグランスや消臭スプレーで気軽なケアを。あみあみ構造で風通しが良く、ニオイがこもりにくい設計です。\n\n<a href=\"https://kapok-knot.com/pages/musubi-en-operating-instructions\">詳しいお手入れ方法はこちら</a>"
+          }
+        },
+        "care_2": {
+          "type": "care_point",
+          "settings": {
+            "icon": "🫧",
+            "title": "本気のケアは「ご家庭で手洗い」",
+            "description": "「汗や汚れが気になって、しっかり洗いたい時は？」もちろんご家庭での手洗いが可能です。衛生面が気になる方でも、安心して長くお使いいただけます。\n\n<a href=\"https://kapok-knot.com/pages/musubi-en-operating-instructions\">詳しいお手入れ方法はこちら</a>"
+          }
+        }
+      },
+      "block_order": [
+        "care_1",
+        "care_2"
+      ],
+      "disabled": true,
+      "settings": {
+        "label": "EASY CARE",
+        "heading": "<p>「重い＝手入れが大変」<br/>その常識を変えます</p>",
+        "image": "shopify://shop_images/10_20.png",
+        "image_url": "",
+        "image_alt": "日常のケア",
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "icon_bg_color": "#f4eee6",
+        "title_color": "#1a1a1a",
+        "text_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "title_size_pc": 19,
+        "title_size_sp": 18,
+        "text_size_pc": 14,
+        "text_size_sp": 14,
+        "image_fit": "cover",
+        "image_height_pc": 520,
+        "image_height_sp": 320,
+        "image_radius": 26,
+        "image_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "reviews": {
+      "type": "musubi-lp-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "夏に快適",
+            "text": "とても肌触りよく、夏には一枚でエアコン負けせずに使えますし、冬は羽毛布団の下に入れると気持ちよく暖かく感じるので、重宝。洗濯も簡単にできて良いですよ。",
+            "meta": "",
+            "tags": "#肌触り, #選択簡単"
+          }
+        },
+        "review_2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "大満足！",
+            "text": "ふんわり軽く、薄いのに暖かく、肌触りもすごくいい感じ、綿が中で偏ることもなく、確かなお品に大満足です。\nこれを使用してしまうと、今まで使っていたものにはもう戻れそうにありません。",
+            "meta": "",
+            "tags": "#軽い, #暖かい"
+          }
+        },
+        "review_3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★",
+            "title": "快眠できる",
+            "text": "肌触りがよく、ほど良く暖かく、寒暖差のある今の時期にピッタリです。快眠できていると思います。\nリバーシブルなので、気分に合わせてカラーを変えられるのも良いです。",
+            "meta": "",
+            "tags": "#快眠, #カラー展開"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "label": "USER REVIEW",
+        "heading": "<p>実際の声</p>",
+        "show_graph": true,
+        "avg_score": "4.1",
+        "avg_stars": "★★★★☆",
+        "review_count": "12件のレビュー",
+        "star5_pct": 80,
+        "star4_pct": 14,
+        "star3_pct": 1,
+        "star2_pct": 2,
+        "star1_pct": 2,
+        "bg_color": "#faf7f2",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "accent_color": "#8b7355",
+        "star_color": "#c6a15b",
+        "text_color": "#555555",
+        "title_color": "#1a1a1a",
+        "meta_color": "#777777",
+        "graph_bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "bar_bg_color": "#f1ebe4",
+        "tag_bg_color": "#f4eee6",
+        "tag_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "score_size_pc": 46,
+        "score_size_sp": 38,
+        "star_size_pc": 18,
+        "star_size_sp": 16,
+        "count_size_pc": 13,
+        "count_size_sp": 12,
+        "title_size_pc": 18,
+        "title_size_sp": 17,
+        "body_size_pc": 14,
+        "body_size_sp": 14,
+        "columns_pc": 3,
+        "graph_radius": 26,
+        "graph_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    },
+    "cross-sell": {
+      "type": "musubi-lp-cross-sell",
+      "disabled": true,
+      "settings": {
+        "heading": "一緒に使うとさらに快適。おすすめのセットアイテム"
+      }
+    },
+    "faq": {
+      "type": "musubi-lp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "リビングで利用できますか？",
+            "answer": "<p>はい。カラーバリエーションが豊富なのでお部屋の雰囲気に合わせてお選びください。</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "question": "起きたらブランケットが落ちています。合っていないのでしょうか？",
+            "answer": "<p>寝返りの際に落ちることはございますが、寝入りの際に心地よい重さを感じていれば、十分にお使いいただけています。</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "2人で使えますか？",
+            "answer": "<p>幅140cm 縦200cmのシングルサイズ同等なので1枚ずつお使いいただくのがおすすめです。</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "洗濯は可能でしょうか？",
+            "answer": "<p>ご家庭での手洗いが可能です。</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "夏でも使えますか？",
+            "answer": "<p>はい。夏でも快適にお使いいただけます。</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "question": "次の販売はいつごろですか？",
+            "answer": "<p>次回販売の情報は公式LINEにて最速でお届けいたします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "label": "FAQ",
+        "heading": "<p>よくあるご質問</p>",
+        "bg_color": "#ffffff",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#faf7f2",
+        "border_color": "#eee7dd",
+        "question_color": "#1a1a1a",
+        "answer_color": "#555555",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#8b7355",
+        "link_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "question_size_pc": 16,
+        "question_size_sp": 15,
+        "answer_size_pc": 14,
+        "answer_size_sp": 14,
+        "card_radius_pc": 18,
+        "card_radius_sp": 16,
+        "max_width": 860,
+        "padding_pc": 88,
+        "padding_sp": 60
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "guarantee",
+    "collection_list_FLNm7J",
+    "empathy",
+    "why",
+    "musubi_lp_cta_YbExDr",
+    "17784810450136d6c9",
+    "collection_list_7re4nj",
+    "musubi_lp_cta_fYYFMU",
+    "musubi_color_variation_EeKdRH",
+    "musubi_lp_cta_8Fft8y",
+    "musubi_color_variation_ha696Q",
+    "musubi_lp_cta_CYFm6K",
+    "care",
+    "reviews",
+    "cross-sell",
+    "faq"
+  ]
+}

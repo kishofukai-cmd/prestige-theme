@@ -1,0 +1,415 @@
+{% doc %}
+  @prompt
+    PC横2列、縦3つ
+    SP縦5つで表示
+    タイトルがあって、文章がくる、文章は長いので冒頭少し見せるだけで、詳しく見るでアコーディオン形式にして
+    フォントサイズは大きすぎず、見やすく, タイトル6も欲しい
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-accordion-grid-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .ai-accordion-grid__container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .ai-accordion-grid__item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.item_background_color }};
+    border: 1px solid {{ block.settings.item_border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .ai-accordion-grid__item-{{ ai_gen_id }}:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-accordion-grid__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_font_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  .ai-accordion-grid__preview-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_font_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ai-accordion-grid__full-content-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_font_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .ai-accordion-grid__full-content-{{ ai_gen_id }}.active {
+    max-height: 1000px;
+    margin-bottom: 12px;
+  }
+
+  .ai-accordion-grid__toggle-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    color: {{ block.settings.button_color }};
+    font-size: {{ block.settings.text_font_size }}px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ai-accordion-grid__toggle-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-accordion-grid__toggle-icon-{{ ai_gen_id }} {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-accordion-grid__toggle-{{ ai_gen_id }}.active .ai-accordion-grid__toggle-icon-{{ ai_gen_id }} {
+    transform: rotate(180deg);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-accordion-grid__container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .ai-accordion-grid__item-{{ ai_gen_id }} {
+      padding: 16px;
+    }
+
+    .ai-accordion-grid__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_font_size | times: 0.9 }}px;
+    }
+
+    .ai-accordion-grid__preview-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_font_size | times: 0.9 }}px;
+    }
+
+    .ai-accordion-grid__full-content-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_font_size | times: 0.9 }}px;
+    }
+
+    .ai-accordion-grid__toggle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<accordion-grid-{{ ai_gen_id }} class="ai-accordion-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-accordion-grid__container-{{ ai_gen_id }}">
+    {% for i in (1..6) %}
+      {% liquid
+        assign title_key = 'item_' | append: i | append: '_title'
+        assign content_key = 'item_' | append: i | append: '_content'
+        assign title = block.settings[title_key]
+        assign content = block.settings[content_key]
+      %}
+
+      {% if title != blank or content != blank %}
+        <div class="ai-accordion-grid__item-{{ ai_gen_id }}">
+          {% if title != blank %}
+            <h3 class="ai-accordion-grid__title-{{ ai_gen_id }}">{{ title }}</h3>
+          {% endif %}
+
+          {% if content != blank %}
+            <div class="ai-accordion-grid__preview-{{ ai_gen_id }}">
+              {{ content }}
+            </div>
+
+            <div class="ai-accordion-grid__full-content-{{ ai_gen_id }}" data-full-content>
+              {{ content }}
+            </div>
+
+            <button
+              class="ai-accordion-grid__toggle-{{ ai_gen_id }}"
+              aria-expanded="false"
+              data-toggle
+            >
+              <span data-toggle-text>{{ block.settings.read_more_text }}</span>
+              <svg class="ai-accordion-grid__toggle-icon-{{ ai_gen_id }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,4 6,8 10,4"></polyline>
+              </svg>
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</accordion-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AccordionGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.toggleButtons = this.querySelectorAll('[data-toggle]');
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.toggleButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const item = button.closest('.ai-accordion-grid__item-{{ ai_gen_id }}');
+            const fullContent = item.querySelector('[data-full-content]');
+            const preview = item.querySelector('.ai-accordion-grid__preview-{{ ai_gen_id }}');
+            const toggleText = button.querySelector('[data-toggle-text]');
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+              fullContent.classList.remove('active');
+              preview.style.display = 'block';
+              button.classList.remove('active');
+              button.setAttribute('aria-expanded', 'false');
+              toggleText.textContent = '{{ block.settings.read_more_text }}';
+            } else {
+              fullContent.classList.add('active');
+              preview.style.display = 'none';
+              button.classList.add('active');
+              button.setAttribute('aria-expanded', 'true');
+              toggleText.textContent = '{{ block.settings.read_less_text }}';
+            }
+          });
+        });
+      }
+    }
+
+    customElements.define('accordion-grid-{{ ai_gen_id }}', AccordionGrid{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Accordion grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Item 1"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Title",
+      "default": "タイトル 1"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Item 2"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Title",
+      "default": "タイトル 2"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Item 3"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Title",
+      "default": "タイトル 3"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Item 4"
+    },
+    {
+      "type": "text",
+      "id": "item_4_title",
+      "label": "Title",
+      "default": "タイトル 4"
+    },
+    {
+      "type": "textarea",
+      "id": "item_4_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Item 5"
+    },
+    {
+      "type": "text",
+      "id": "item_5_title",
+      "label": "Title",
+      "default": "タイトル 5"
+    },
+    {
+      "type": "textarea",
+      "id": "item_5_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Item 6"
+    },
+    {
+      "type": "text",
+      "id": "item_6_title",
+      "label": "Title",
+      "default": "タイトル 6"
+    },
+    {
+      "type": "textarea",
+      "id": "item_6_content",
+      "label": "Content",
+      "default": "ここに詳細な説明文が入ります。長い文章でも問題なく表示できます。最初は冒頭部分のみが表示され、「詳しく見る」ボタンをクリックすると全文が表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_font_size",
+      "label": "Text font size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_border_color",
+      "label": "Item border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "header",
+      "content": "Button text"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "text",
+      "id": "read_less_text",
+      "label": "Read less text",
+      "default": "閉じる"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion grid"
+    }
+  ]
+}
+{% endschema %}

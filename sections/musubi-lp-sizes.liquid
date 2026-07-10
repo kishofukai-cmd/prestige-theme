@@ -1,71 +1,837 @@
-<section class="sizes" id="sizes">
-  <div class="container">
-    <h2 class="section-title" data-reveal>{{ section.settings.heading | default: 'あなたに合うサイズは？' }}</h2>
+<style>
+  .sizes {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+  }
 
-    <!-- タブUI -->
-    <div class="sizes__tabs" data-reveal>
+  .sizes__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .sizes__header,
+  .colors__header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .sizes__label,
+  .colors__label {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 999px;
+    background: {{ section.settings.label_bg }};
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_size_pc }}px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+
+  .sizes__heading,
+  .colors__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+
+  .sizes__heading p,
+  .sizes__lead p,
+  .colors__heading p,
+  .colors__lead p {
+    margin: 0;
+  }
+
+  .sizes__lead,
+  .colors__lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.body_size_pc }}px;
+    color: {{ section.settings.body_color }};
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .sizes__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 26px;
+    background: #f4eee6;
+    border-radius: 999px;
+    padding: 6px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .sizes__tab {
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: transparent;
+    color: #6d6258;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .sizes__tab--active {
+    background: {{ section.settings.accent_color }};
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+
+  .sizes__panel {
+    display: none;
+    grid-template-columns: 1.08fr 0.92fr;
+    background: #fff;
+    border: 1px solid #eee7dd;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.07);
+  }
+
+  .sizes__panel--active {
+    display: grid;
+  }
+
+  .sizes__panel-img {
+    min-height: 460px;
+    background: #f4eee6;
+    overflow: hidden;
+  }
+
+  .sizes__panel-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sizes__panel-content {
+    padding: 42px 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .sizes__panel-badge {
+    width: fit-content;
+    background: #f4eee6;
+    color: {{ section.settings.accent_color }};
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 7px 13px;
+    margin-bottom: 16px;
+  }
+
+  .sizes__panel-badge--featured {
+    background: {{ section.settings.accent_color }};
+    color: #fff;
+  }
+
+  .sizes__panel-name {
+    font-size: 28px;
+    color: #1a1a1a;
+    font-weight: 800;
+    line-height: 1.35;
+    margin: 0 0 12px;
+  }
+
+  .sizes__panel-price {
+    font-size: 30px;
+    color: {{ section.settings.accent_color }};
+    font-weight: 800;
+    margin: 0 0 10px;
+  }
+
+  .sizes__panel-price span {
+    font-size: 0.5em;
+    color: #777;
+  }
+
+  .sizes__panel-dim {
+    width: fit-content;
+    background: #faf7f2;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 9px 13px;
+    margin: 0 0 18px;
+  }
+
+  .sizes__panel-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .sizes__panel-features li {
+    position: relative;
+    padding-left: 1.4em;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  .sizes__panel-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: {{ section.settings.accent_color }};
+    font-weight: 800;
+  }
+
+  .sizes__panel-note {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .sizes__compare {
+    margin: 34px auto 0;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .sizes__compare img {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  .colors {
+    margin-top: 72px;
+  }
+
+  .colors__box {
+    background: #fff;
+    border: 1px solid #eee7dd;
+    border-radius: 26px;
+    padding: 44px 38px;
+    box-shadow: 0 16px 44px rgba(0,0,0,0.06);
+  }
+
+  .colors__showcase {
+    max-width: 720px;
+    margin: 0 auto 18px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .colors__showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .colors__name {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 22px;
+  }
+
+  .colors__swatches {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+
+  .colors__swatch {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .colors__swatch--active {
+    outline: 2px solid {{ section.settings.accent_color }};
+    outline-offset: 3px;
+  }
+
+  .colors__carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .colors__carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid #eee7dd;
+    background: #fff;
+    color: {{ section.settings.accent_color }};
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .colors__carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex: 1;
+    padding: 4px 2px;
+  }
+
+  .colors__carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .colors__carousel-item {
+    flex: 0 0 auto;
+    width: 100px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: #fff;
+  }
+
+  .colors__carousel-item--active {
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  }
+
+  .colors__carousel-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .colors__carousel-item span {
+    display: block;
+    font-size: 11px;
+    color: #555;
+    padding: 8px 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .sizes {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .sizes__label,
+    .colors__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .sizes__heading,
+    .colors__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .sizes__lead,
+    .colors__lead {
+      font-size: {{ section.settings.body_size_sp }}px;
+    }
+
+    .sizes__tabs {
+      width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      border-radius: 18px;
+    }
+
+    .sizes__tab {
+      flex: 1 0 auto;
+      font-size: 13px;
+      padding: 11px 16px;
+    }
+
+    .sizes__panel,
+    .sizes__panel--active {
+      grid-template-columns: 1fr;
+      border-radius: 20px;
+    }
+
+    .sizes__panel-img {
+      min-height: 320px;
+    }
+
+    .sizes__panel-content {
+      padding: 28px 20px;
+    }
+
+    .sizes__panel-name {
+      font-size: 24px;
+    }
+
+    .sizes__panel-price {
+      font-size: 26px;
+    }
+
+    .colors {
+      margin-top: 52px;
+    }
+
+    .colors__box {
+      padding: 32px 16px;
+      border-radius: 20px;
+    }
+
+    .colors__showcase {
+      border-radius: 18px;
+    }
+
+    .colors__swatch {
+      width: 36px;
+      height: 36px;
+    }
+
+    .colors__carousel-arrow {
+      width: 34px;
+      height: 34px;
+      font-size: 22px;
+    }
+
+    .colors__carousel-item {
+      width: 80px;
+    }
+  }
+</style>
+
+<section class="sizes" id="sizes">
+  <div class="sizes__inner">
+
+    <div class="sizes__header">
+      {% if section.settings.label != blank %}
+        <div class="sizes__label">{{ section.settings.label }}</div>
+      {% endif %}
+
+      <h2 class="sizes__heading">{{ section.settings.heading }}</h2>
+
+      {% if section.settings.lead != blank %}
+        <div class="sizes__lead">{{ section.settings.lead }}</div>
+      {% endif %}
+    </div>
+
+    <div class="sizes__tabs">
+      {% assign tab_index = 0 %}
       {% for block in section.blocks %}
         {% if block.type == 'size_panel' %}
-          <button class="sizes__tab{% if forloop.first %} sizes__tab--active{% endif %}" data-tab="size-{{ forloop.index }}" id="tab-size-{{ forloop.index }}">{{ block.settings.tab_label }}</button>
+          {% assign tab_index = tab_index | plus: 1 %}
+          <button
+            type="button"
+            class="sizes__tab{% if tab_index == 1 %} sizes__tab--active{% endif %}"
+            data-tab="size-{{ tab_index }}"
+          >
+            {{ block.settings.tab_label }}
+          </button>
         {% endif %}
       {% endfor %}
     </div>
 
-    <!-- パネル -->
-    {% for block in section.blocks %}
-      {% if block.type == 'size_panel' %}
-        <div class="sizes__panel{% if forloop.first %} sizes__panel--active{% endif %}" id="panel-size-{{ forloop.index }}" data-reveal {{ block.shopify_attributes }}>
-          <div class="sizes__panel-img">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.name }}" loading="lazy">
-            {% elsif block.settings.image_url != blank %}
-              <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
-            {% endif %}
-          </div>
-          <div class="sizes__panel-content">
-            <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">{{ block.settings.badge }}</div>
-            <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
-            <p class="sizes__panel-price">{{ block.settings.price }} <span>{{ block.settings.price_note }}</span></p>
-            <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
-            <ul class="sizes__panel-features">
-              {% assign features = block.settings.features | split: ',' %}
-              {% for feature in features %}
-                <li>{{ feature | strip }}</li>
-              {% endfor %}
-            </ul>
-            <p class="sizes__panel-note">{{ block.settings.note }}</p>
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+    <div class="sizes__panels">
+      {% assign panel_index = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'size_panel' %}
+          {% assign panel_index = panel_index | plus: 1 %}
 
-    <!-- 比較画像 -->
+          <div
+            class="sizes__panel{% if panel_index == 1 %} sizes__panel--active{% endif %}"
+            data-panel="size-{{ panel_index }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="sizes__panel-img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | img_url: '1200x' }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% elsif block.settings.image_url != blank %}
+                <img src="{{ block.settings.image_url }}" alt="{{ block.settings.name }}" loading="lazy">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1200" alt="{{ block.settings.name }}" loading="lazy">
+              {% endif %}
+            </div>
+
+            <div class="sizes__panel-content">
+              {% if block.settings.badge != blank %}
+                <div class="sizes__panel-badge{% if block.settings.featured %} sizes__panel-badge--featured{% endif %}">
+                  {{ block.settings.badge }}
+                </div>
+              {% endif %}
+
+              <h3 class="sizes__panel-name">{{ block.settings.name }}</h3>
+
+              <p class="sizes__panel-price">
+                {{ block.settings.price }}
+                <span>{{ block.settings.price_note }}</span>
+              </p>
+
+              <p class="sizes__panel-dim">{{ block.settings.dimensions }}</p>
+
+              <ul class="sizes__panel-features">
+                {% assign features = block.settings.features | split: ',' %}
+                {% for feature in features %}
+                  {% if feature != blank %}
+                    <li>{{ feature | strip }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+
+              {% if block.settings.note != blank %}
+                <p class="sizes__panel-note">{{ block.settings.note }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
     {% if section.settings.compare_image != blank %}
-      <div class="sizes__compare" data-reveal>
-        <img src="{{ section.settings.compare_image | img_url: '1000x' }}" alt="サイズ比較" loading="lazy">
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image | img_url: '1400x' }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
-    {% else %}
-      <div class="sizes__compare" data-reveal>
-        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_0250.jpg?v=1771395913&width=1000" alt="M/Lサイズ比較" loading="lazy">
+    {% elsif section.settings.compare_image_url != blank %}
+      <div class="sizes__compare">
+        <img src="{{ section.settings.compare_image_url }}" alt="{{ section.settings.compare_alt }}" loading="lazy">
       </div>
     {% endif %}
+
+    <div class="colors" id="colors">
+      <div class="colors__box">
+        <div class="colors__header">
+          {% if section.settings.colors_label != blank %}
+            <div class="colors__label">{{ section.settings.colors_label }}</div>
+          {% endif %}
+
+          <h2 class="colors__heading">{{ section.settings.colors_heading }}</h2>
+
+          {% if section.settings.colors_lead != blank %}
+            <div class="colors__lead">{{ section.settings.colors_lead }}</div>
+          {% endif %}
+        </div>
+
+        {% assign color_count = 0 %}
+        {% assign first_color_image = '' %}
+        {% assign first_color_name = '' %}
+
+        {% for block in section.blocks %}
+          {% if block.type == 'color_variant' %}
+            {% assign color_count = color_count | plus: 1 %}
+            {% if color_count == 1 %}
+              {% assign first_color_name = block.settings.name %}
+              {% if block.settings.image != blank %}
+                {% assign first_color_image = block.settings.image | img_url: '1200x' %}
+              {% elsif block.settings.image_url != blank %}
+                {% assign first_color_image = block.settings.image_url %}
+              {% else %}
+                {% assign first_color_image = 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200' %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+        {% if color_count > 0 %}
+          <div class="colors__showcase">
+            <img id="colors-main-img-{{ section.id }}" src="{{ first_color_image }}" alt="{{ first_color_name }}" loading="lazy">
+          </div>
+
+          <p class="colors__name" id="colors-name-{{ section.id }}">{{ first_color_name }}</p>
+
+          <div class="colors__swatches">
+            {% assign color_index = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'color_variant' %}
+                {% assign color_index = color_index | plus: 1 %}
+
+                {% if block.settings.image != blank %}
+                  {% assign color_img = block.settings.image | img_url: '1200x' %}
+                {% elsif block.settings.image_url != blank %}
+                  {% assign color_img = block.settings.image_url %}
+                {% else %}
+                  {% assign color_img = first_color_image %}
+                {% endif %}
+
+                <button
+                  type="button"
+                  class="colors__swatch{% if color_index == 1 %} colors__swatch--active{% endif %}"
+                  style="background: {{ block.settings.color_code }};"
+                  data-color="{{ block.settings.name | escape }}"
+                  data-img="{{ color_img }}"
+                  aria-label="{{ block.settings.name }}"
+                  {{ block.shopify_attributes }}
+                ></button>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="colors__carousel">
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
+
+            <div class="colors__carousel-track">
+              {% assign color_item_index = 0 %}
+              {% for block in section.blocks %}
+                {% if block.type == 'color_variant' %}
+                  {% assign color_item_index = color_item_index | plus: 1 %}
+
+                  {% if block.settings.image != blank %}
+                    {% assign color_img = block.settings.image | img_url: '1200x' %}
+                  {% elsif block.settings.image_url != blank %}
+                    {% assign color_img = block.settings.image_url %}
+                  {% else %}
+                    {% assign color_img = first_color_image %}
+                  {% endif %}
+
+                  {% if block.settings.thumbnail != blank %}
+                    {% assign thumb_img = block.settings.thumbnail | img_url: '400x' %}
+                  {% elsif block.settings.image != blank %}
+                    {% assign thumb_img = block.settings.image | img_url: '400x' %}
+                  {% elsif block.settings.image_url != blank %}
+                    {% assign thumb_img = block.settings.image_url %}
+                  {% else %}
+                    {% assign thumb_img = first_color_image %}
+                  {% endif %}
+
+                  <div
+                    class="colors__carousel-item{% if color_item_index == 1 %} colors__carousel-item--active{% endif %}"
+                    data-color="{{ block.settings.name | escape }}"
+                    data-img="{{ color_img }}"
+                  >
+                    <img src="{{ thumb_img }}" alt="{{ block.settings.name }}" loading="lazy">
+                    <span>{{ block.settings.name }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
+          </div>
+
+        {% else %}
+
+          {% assign default_img = 'https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1005.jpg?v=1771395913&width=1200' %}
+
+          <div class="colors__showcase">
+            <img id="colors-main-img-{{ section.id }}" src="{{ default_img }}" alt="Powder Beige" loading="lazy">
+          </div>
+
+          <p class="colors__name" id="colors-name-{{ section.id }}">Powder Beige</p>
+
+          <div class="colors__swatches">
+            <button type="button" class="colors__swatch colors__swatch--active" style="background:#d9cfc4;" data-color="Powder Beige" data-img="{{ default_img }}" aria-label="Powder Beige"></button>
+            <button type="button" class="colors__swatch" style="background:#3d4259;" data-color="Dusty Navy" data-img="{{ default_img }}" aria-label="Dusty Navy"></button>
+            <button type="button" class="colors__swatch" style="background:#8b6b50;" data-color="Calm Brown" data-img="{{ default_img }}" aria-label="Calm Brown"></button>
+            <button type="button" class="colors__swatch" style="background:#e8e4de;" data-color="Cloud White" data-img="{{ default_img }}" aria-label="Cloud White"></button>
+            <button type="button" class="colors__swatch" style="background:#d4a5a0;" data-color="Blossom Peach" data-img="{{ default_img }}" aria-label="Blossom Peach"></button>
+          </div>
+
+          <div class="colors__carousel">
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--left" aria-label="前へ">‹</button>
+
+            <div class="colors__carousel-track">
+              <div class="colors__carousel-item colors__carousel-item--active" data-color="Powder Beige" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Powder Beige" loading="lazy">
+                <span>Powder Beige</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Dusty Navy" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Dusty Navy" loading="lazy">
+                <span>Dusty Navy</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Calm Brown" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Calm Brown" loading="lazy">
+                <span>Calm Brown</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Cloud White" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Cloud White" loading="lazy">
+                <span>Cloud White</span>
+              </div>
+              <div class="colors__carousel-item" data-color="Blossom Peach" data-img="{{ default_img }}">
+                <img src="{{ default_img }}" alt="Blossom Peach" loading="lazy">
+                <span>Blossom Peach</span>
+              </div>
+            </div>
+
+            <button type="button" class="colors__carousel-arrow colors__carousel-arrow--right" aria-label="次へ">›</button>
+          </div>
+
+        {% endif %}
+      </div>
+    </div>
+
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.sizes').forEach(function(section) {
+      const tabs = section.querySelectorAll('.sizes__tab');
+      const panels = section.querySelectorAll('.sizes__panel');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const target = tab.getAttribute('data-tab');
+
+          tabs.forEach(function(item) {
+            item.classList.remove('sizes__tab--active');
+          });
+
+          panels.forEach(function(panel) {
+            panel.classList.remove('sizes__panel--active');
+          });
+
+          tab.classList.add('sizes__tab--active');
+
+          const activePanel = section.querySelector('[data-panel="' + target + '"]');
+          if (activePanel) activePanel.classList.add('sizes__panel--active');
+        });
+      });
+
+      const mainImg = section.querySelector('#colors-main-img-{{ section.id }}');
+      const nameEl = section.querySelector('#colors-name-{{ section.id }}');
+      const swatches = section.querySelectorAll('.colors__swatch');
+      const items = section.querySelectorAll('.colors__carousel-item');
+      const track = section.querySelector('.colors__carousel-track');
+      const left = section.querySelector('.colors__carousel-arrow--left');
+      const right = section.querySelector('.colors__carousel-arrow--right');
+
+      function setActiveColor(colorName, imageUrl) {
+        swatches.forEach(function(swatch) {
+          const isActive = swatch.dataset.color === colorName;
+          swatch.classList.toggle('colors__swatch--active', isActive);
+        });
+
+        items.forEach(function(item) {
+          item.classList.toggle('colors__carousel-item--active', item.dataset.color === colorName);
+        });
+
+        if (mainImg && imageUrl) {
+          mainImg.src = imageUrl;
+          mainImg.alt = colorName;
+        }
+
+        if (nameEl) {
+          nameEl.textContent = colorName;
+        }
+      }
+
+      swatches.forEach(function(swatch) {
+        swatch.addEventListener('click', function() {
+          setActiveColor(swatch.dataset.color, swatch.dataset.img);
+        });
+      });
+
+      items.forEach(function(item) {
+        item.addEventListener('click', function() {
+          setActiveColor(item.dataset.color, item.dataset.img);
+        });
+      });
+
+      if (left && track) {
+        left.addEventListener('click', function() {
+          track.scrollBy({ left: -120, behavior: 'smooth' });
+        });
+      }
+
+      if (right && track) {
+        right.addEventListener('click', function() {
+          track.scrollBy({ left: 120, behavior: 'smooth' });
+        });
+      }
+    });
+  });
+</script>
+
 {% schema %}
 {
-  "name": "MUSUBI サイズ選び",
+  "name": "MUSUBI サイズ・カラー",
   "settings": [
     {
       "type": "text",
+      "id": "label",
+      "label": "サイズラベル",
+      "default": "SIZE GUIDE"
+    },
+    {
+      "type": "richtext",
       "id": "heading",
-      "label": "見出し",
-      "default": "あなたに合うサイズは？"
+      "label": "サイズ見出し",
+      "default": "<p>あなたに合うサイズは？</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "lead",
+      "label": "サイズリード文",
+      "default": "<p>使う場所や過ごし方に合わせて、MUSUBIは2つのサイズからお選びいただけます。</p>"
     },
     {
       "type": "image_picker",
       "id": "compare_image",
-      "label": "比較画像"
+      "label": "サイズ比較画像"
+    },
+    {
+      "type": "text",
+      "id": "compare_image_url",
+      "label": "サイズ比較画像URL"
+    },
+    {
+      "type": "text",
+      "id": "compare_alt",
+      "label": "サイズ比較画像alt",
+      "default": "MUSUBIサイズ比較"
+    },
+    {
+      "type": "text",
+      "id": "colors_label",
+      "label": "カラーラベル",
+      "default": "COLOR VARIATION"
+    },
+    {
+      "type": "richtext",
+      "id": "colors_heading",
+      "label": "カラー見出し",
+      "default": "<p>暮らしに馴染む<br>カラーバリエーション</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "colors_lead",
+      "label": "カラーリード文",
+      "default": "<p>寝室にもリビングにも馴染む、落ち着いたカラーをご用意しました。</p>"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "背景カラー",
+      "default": "#faf7f2"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "アクセントカラー",
+      "default": "#8B7355"
     }
   ],
   "blocks": [
@@ -86,13 +852,8 @@
         },
         {
           "type": "text",
-          "id": "image_url",
-          "label": "画像URL（image_pickerが空の場合に使用）"
-        },
-        {
-          "type": "text",
           "id": "badge",
-          "label": "バッジテキスト",
+          "label": "バッジ",
           "default": "ソファにおすすめ"
         },
         {
@@ -134,21 +895,98 @@
         {
           "type": "textarea",
           "id": "note",
-          "label": "補足テキスト",
+          "label": "補足",
           "default": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
+        }
+      ]
+    },
+    {
+      "type": "color_variant",
+      "name": "カラー",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "カラー名",
+          "default": "Powder Beige"
+        },
+        {
+          "type": "color",
+          "id": "color_code",
+          "label": "カラーコード",
+          "default": "#d9cfc4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "メイン画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail",
+          "label": "サムネイル画像"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "MUSUBI サイズ選び",
+      "name": "MUSUBI サイズ・カラー",
       "blocks": [
-        { "type": "size_panel", "settings": { "tab_label": "Nap Size (M)", "badge": "ソファにおすすめ", "featured": false, "name": "Nap Size (M)", "price": "¥29,800", "price_note": "(税込)", "dimensions": "100 × 70 cm", "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方", "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。" } },
-        { "type": "size_panel", "settings": { "tab_label": "Sleep Size (L)", "badge": "ベッドにおすすめ", "featured": true, "name": "Sleep Size (L)", "price": "¥39,800", "price_note": "(税込)", "dimensions": "150 × 100 cm", "features": "ベッド利用, 重い布団が好き, 包まれたい方", "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。" } }
+        {
+          "type": "size_panel"
+        },
+        {
+          "type": "size_panel",
+          "settings": {
+            "tab_label": "Sleep Size (L)",
+            "badge": "ベッドにおすすめ",
+            "featured": true,
+            "name": "Sleep Size (L)",
+            "price": "¥39,800",
+            "price_note": "(税込)",
+            "dimensions": "150 × 100 cm",
+            "features": "ベッド利用, 重い布団が好き, 包まれたい方",
+            "note": "1日の終わりに全身を包む安心感。"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Powder Beige",
+            "color_code": "#d9cfc4"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Dusty Navy",
+            "color_code": "#3d4259"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Calm Brown",
+            "color_code": "#8b6b50"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Cloud White",
+            "color_code": "#e8e4de"
+          }
+        },
+        {
+          "type": "color_variant",
+          "settings": {
+            "name": "Blossom Peach",
+            "color_code": "#d4a5a0"
+          }
+        }
       ]
     }
   ]
 }
 {% endschema %}
-

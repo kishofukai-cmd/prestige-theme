@@ -1,51 +1,591 @@
-﻿{% comment %} MUSUBI LP - Science Section (updated) {% endcomment %}
-<section class="science" id="science">
-  <div class="container">
-    <h2 class="section-title section-title--light" data-reveal>{{ section.settings.heading | default: 'なぜ"重み"が<br>安心感につながるのか？' }}</h2>
+{% comment %} MUSUBI LP - Science Section / Selling Layout {% endcomment %}
 
-    <!-- 図解 -->
-    <div class="science__diagram" data-reveal>
+<style>
+  .science {
+    padding: {{ section.settings.padding_pc }}px 20px;
+    background: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+
+  .science__inner {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .science__label {
+    display: inline-block;
+    font-size: {{ section.settings.label_size_pc }}px;
+    color: {{ section.settings.label_color }};
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .science__heading {
+    font-size: {{ section.settings.heading_size_pc }}px;
+    color: {{ section.settings.heading_color }};
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 0 0 16px;
+  }
+
+  .science__heading p,
+  .science__lead p,
+  .science__step-label p,
+  .science__text p,
+  .science__result-title p,
+  .science__result-copy p,
+  .science__result-note p,
+  .science__test-title p,
+  .science__closing p {
+    margin: 0;
+  }
+
+  .science__lead {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    font-size: {{ section.settings.lead_size_pc }}px;
+    color: {{ section.settings.lead_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+
+  .science__diagram {
+    max-width: 860px;
+    margin: 0 auto 34px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .science__step {
+    background: {{ section.settings.card_bg_color }};
+    border: 1px solid {{ section.settings.card_border_color }};
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: 24px 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+    min-height: 146px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .science__step-circle {
+    width: {{ section.settings.icon_size_pc }}px;
+    height: {{ section.settings.icon_size_pc }}px;
+    border-radius: 50%;
+    background: {{ section.settings.icon_bg_color }};
+    color: {{ section.settings.icon_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .science__step-circle svg {
+    width: 56%;
+    height: 56%;
+    stroke: currentColor;
+  }
+
+  .science__step-label {
+    font-size: {{ section.settings.step_text_size_pc }}px;
+    color: {{ section.settings.step_text_color }};
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+  }
+
+  .science__visual {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 28px;
+    align-items: center;
+    max-width: 920px;
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+
+  .science__img {
+    border-radius: {{ section.settings.image_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .science__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .science__text {
+    background: {{ section.settings.description_bg_color }};
+    border: 1px solid {{ section.settings.description_border_color }};
+    border-radius: {{ section.settings.description_radius }}px;
+    padding: 30px;
+  }
+
+  .science__text p {
+    font-size: {{ section.settings.description_size_pc }}px;
+    color: {{ section.settings.description_color }};
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+
+  .science__text strong {
+    color: {{ section.settings.strong_color }};
+    font-weight: 700;
+  }
+
+  .science__result {
+    max-width: 820px;
+    margin: 0 auto 28px;
+    background: {{ section.settings.result_bg_color }};
+    border-radius: {{ section.settings.result_radius }}px;
+    padding: 34px 28px 28px;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .science__result-kicker {
+    display: inline-block;
+    background: {{ section.settings.result_badge_bg_color }};
+    color: {{ section.settings.result_badge_color }};
+    font-size: {{ section.settings.result_badge_size_pc }}px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+  }
+
+  .science__result-title {
+    margin: 0 auto 20px;
+    font-size: {{ section.settings.result_title_size_pc }}px;
+    color: {{ section.settings.result_title_color }};
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
+  .science__result-table {
+    width: 100%;
+    background: #fff;
+    border: 1px solid {{ section.settings.result_border_color }};
+    margin-bottom: 18px;
+  }
+
+  .science__result-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid {{ section.settings.result_border_color }};
+  }
+
+  .science__result-row:last-child {
+    border-bottom: none;
+  }
+
+  .science__result-label,
+  .science__result-value {
+    padding: 16px 12px;
+    font-size: {{ section.settings.result_text_size_pc }}px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  .science__result-label {
+    color: {{ section.settings.result_label_color }};
+    font-weight: 700;
+    border-right: 1px solid {{ section.settings.result_border_color }};
+  }
+
+  .science__result-value {
+    color: {{ section.settings.result_value_color }};
+    font-weight: 800;
+  }
+
+  .science__result-copy {
+    max-width: 700px;
+    margin: 0 auto 12px;
+    font-size: {{ section.settings.result_copy_size_pc }}px;
+    color: {{ section.settings.result_copy_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+
+  .science__result-note {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: {{ section.settings.result_note_size_pc }}px;
+    color: {{ section.settings.result_note_color }};
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .science__test {
+    max-width: 820px;
+    margin: 0 auto 28px;
+    background: {{ section.settings.test_bg_color }};
+    border: 1px solid {{ section.settings.test_border_color }};
+    border-radius: {{ section.settings.test_radius }}px;
+    padding: 26px;
+    text-align: left;
+  }
+
+  .science__test-title {
+    margin: 0 0 14px;
+    font-size: {{ section.settings.test_title_size_pc }}px;
+    color: {{ section.settings.test_title_color }};
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .science__test-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .science__test-list li {
+    background: {{ section.settings.test_item_bg_color }};
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: {{ section.settings.test_item_size_pc }}px;
+    color: {{ section.settings.test_item_color }};
+    line-height: 1.6;
+  }
+
+  .science__test-list strong {
+    color: {{ section.settings.strong_color }};
+    font-weight: 700;
+  }
+
+  .science__closing {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    padding: 28px;
+    background: {{ section.settings.closing_bg_color }};
+    border-radius: {{ section.settings.closing_radius }}px;
+    border: 1px solid {{ section.settings.closing_border_color }};
+  }
+
+  .science__closing p {
+    font-size: {{ section.settings.closing_size_pc }}px;
+    color: {{ section.settings.closing_color }};
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+
+  .science__papers {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 20px 22px;
+    background: {{ section.settings.papers_bg_color }};
+    border-radius: {{ section.settings.papers_radius }}px;
+    text-align: left;
+  }
+
+  .science__papers-title {
+    margin: 0 0 10px;
+    font-size: {{ section.settings.papers_title_size_pc }}px;
+    color: {{ section.settings.papers_title_color }};
+    font-weight: 700;
+  }
+
+  .science__papers-list {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+
+  .science__papers-list li {
+    margin: 6px 0;
+    font-size: {{ section.settings.papers_text_size_pc }}px;
+    line-height: 1.6;
+    color: {{ section.settings.papers_text_color }};
+  }
+
+  .science__papers-list a {
+    color: {{ section.settings.papers_link_color }};
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .science__papers-note {
+    margin: 12px 0 0;
+    font-size: {{ section.settings.note_size_pc }}px;
+    color: {{ section.settings.note_color }};
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .science {
+      padding: {{ section.settings.padding_sp }}px 16px;
+    }
+
+    .science__label {
+      font-size: {{ section.settings.label_size_sp }}px;
+    }
+
+    .science__heading {
+      font-size: {{ section.settings.heading_size_sp }}px;
+    }
+
+    .science__lead {
+      font-size: {{ section.settings.lead_size_sp }}px;
+      margin-bottom: 24px;
+    }
+
+    .science__diagram {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .science__step {
+      min-height: auto;
+      padding: 18px 16px;
+      border-radius: {{ section.settings.card_radius_sp }}px;
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+      gap: 14px;
+    }
+
+    .science__step-circle {
+      width: {{ section.settings.icon_size_sp }}px;
+      height: {{ section.settings.icon_size_sp }}px;
+      flex-shrink: 0;
+    }
+
+    .science__step-label {
+      font-size: {{ section.settings.step_text_size_sp }}px;
+    }
+
+    .science__visual {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .science__img {
+      border-radius: {{ section.settings.image_radius_sp }}px;
+    }
+
+    .science__text {
+      padding: 20px;
+      border-radius: {{ section.settings.description_radius_sp }}px;
+    }
+
+    .science__text p {
+      font-size: {{ section.settings.description_size_sp }}px;
+    }
+
+    .science__result {
+      padding: 28px 16px 22px;
+      border-radius: {{ section.settings.result_radius_sp }}px;
+    }
+
+    .science__result-kicker {
+      font-size: {{ section.settings.result_badge_size_sp }}px;
+    }
+
+    .science__result-title {
+      font-size: {{ section.settings.result_title_size_sp }}px;
+    }
+
+    .science__result-label,
+    .science__result-value {
+      padding: 13px 8px;
+      font-size: {{ section.settings.result_text_size_sp }}px;
+    }
+
+    .science__result-copy {
+      font-size: {{ section.settings.result_copy_size_sp }}px;
+    }
+
+    .science__result-note {
+      font-size: {{ section.settings.result_note_size_sp }}px;
+    }
+
+    .science__test {
+      padding: 20px;
+      border-radius: {{ section.settings.test_radius_sp }}px;
+    }
+
+    .science__test-title {
+      font-size: {{ section.settings.test_title_size_sp }}px;
+    }
+
+    .science__test-list {
+      grid-template-columns: 1fr;
+    }
+
+    .science__test-list li {
+      font-size: {{ section.settings.test_item_size_sp }}px;
+    }
+
+    .science__closing {
+      padding: 22px 18px;
+      border-radius: {{ section.settings.closing_radius_sp }}px;
+    }
+
+    .science__closing p {
+      font-size: {{ section.settings.closing_size_sp }}px;
+    }
+
+    .science__papers {
+      padding: 18px;
+      border-radius: {{ section.settings.papers_radius_sp }}px;
+    }
+
+    .science__papers-title {
+      font-size: {{ section.settings.papers_title_size_sp }}px;
+    }
+
+    .science__papers-list li {
+      font-size: {{ section.settings.papers_text_size_sp }}px;
+    }
+
+    .science__papers-note {
+      font-size: {{ section.settings.note_size_sp }}px;
+    }
+  }
+</style>
+
+<section class="science" id="science">
+  <div class="science__inner">
+
+    {% if section.settings.label != blank %}
+      <div class="science__label">
+        {{ section.settings.label }}
+      </div>
+    {% endif %}
+
+    <h2 class="science__heading">
+      {{ section.settings.heading | default: '<p>“軽い寝具”だけが<br>正解とは限らない。</p>' }}
+    </h2>
+
+    <div class="science__lead">
+      {{ section.settings.lead | default: '<p>MUSUBIは、睡眠環境に“重み”という新しい選択肢を提案します。</p>' }}
+    </div>
+
+    <div class="science__diagram">
       {% for block in section.blocks %}
         {% if block.type == 'step' %}
-          {% unless forloop.first %}
-            <div class="science__connector" data-reveal></div>
-          {% endunless %}
-          <div class="science__step" data-reveal {{ block.shopify_attributes }}>
+          <div class="science__step" {{ block.shopify_attributes }}>
             <div class="science__step-circle">
-              {{ block.settings.icon_svg }}
+              {% if block.settings.icon_svg != blank %}
+                {{ block.settings.icon_svg }}
+              {% else %}
+                <svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="32" cy="32" r="18"></circle>
+                  <path d="M24 34c4 4 12 4 16 0"></path>
+                  <path d="M24 26h.01"></path>
+                  <path d="M40 26h.01"></path>
+                </svg>
+              {% endif %}
             </div>
-            <div class="science__step-label">{{ block.settings.label }}</div>
+            <div class="science__step-label">
+              {{ block.settings.label | default: '<p>均一な重み</p>' }}
+            </div>
           </div>
         {% endif %}
       {% endfor %}
     </div>
 
-    <div class="science__img" data-reveal>
-      {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | img_url: '1000x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
-      {% else %}
-        <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1000" alt="MUSUBIの使用シーン" loading="lazy">
-      {% endif %}
+    <div class="science__visual">
+      <div class="science__img">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | img_url: '1000x' }}" alt="{{ section.settings.image_alt }}" loading="lazy">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0407/6027/9202/files/250423_MUSUBI_1208.jpg?v=1771395913&width=1000" alt="MUSUBIの使用シーン" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="science__text">
+        {{ section.settings.description | default: '<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス状態をサポートする可能性が示唆されています。</p>' }}
+      </div>
     </div>
 
-    <div class="science__text" data-reveal>
-      <p>{{ section.settings.description | default: '体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。' }}</p>
+    <div class="science__result">
+      <div class="science__result-kicker">
+        {{ section.settings.result_badge | default: '検証結果' }}
+      </div>
+
+      <div class="science__result-title">
+        {{ section.settings.result_title | default: '<p>自宅での睡眠検証でも、<br>MUSUBIの“重み”による変化が見られました。</p>' }}
+      </div>
+
+      <div class="science__result-table">
+        <div class="science__result-row">
+          <div class="science__result-label">{{ section.settings.result_label_1 | default: '中途覚醒時間' }}</div>
+          <div class="science__result-value">{{ section.settings.result_value_1 | default: '36% 改善' }}</div>
+        </div>
+        <div class="science__result-row">
+          <div class="science__result-label">{{ section.settings.result_label_2 | default: '入眠スピード' }}</div>
+          <div class="science__result-value">{{ section.settings.result_value_2 | default: '15% 減少 ↓' }}</div>
+        </div>
+        <div class="science__result-row">
+          <div class="science__result-label">{{ section.settings.result_label_3 | default: '深いノンレム睡眠' }}</div>
+          <div class="science__result-value">{{ section.settings.result_value_3 | default: '13% UP ↑' }}</div>
+        </div>
+        <div class="science__result-row">
+          <div class="science__result-label">{{ section.settings.result_label_4 | default: '睡眠効率' }}</div>
+          <div class="science__result-value">{{ section.settings.result_value_4 | default: '2% UP ↑' }}</div>
+        </div>
+      </div>
+
+      <div class="science__result-copy">
+        {{ section.settings.result_copy | default: '<p>ただ重いだけではなく、<br>重さ・通気性・フィット感のバランスが、MUSUBIの心地よさです。</p>' }}
+      </div>
+
+      <div class="science__result-note">
+        {{ section.settings.result_note | default: '<p>※研究結果には個人差があり、効果を保証するものではありません。</p>' }}
+      </div>
     </div>
 
-    <!-- 参考論文 -->
-    <div class="science__papers" data-reveal>
-      <p class="science__papers-title">📚 参考文献</p>
+    <div class="science__test">
+      <div class="science__test-title">
+        {{ section.settings.test_title | default: '<p>睡眠検証試験の概要</p>' }}
+      </div>
+
+      <ul class="science__test-list">
+        <li><strong>試験方法：</strong>{{ section.settings.test_method | default: '単盲検クロスオーバー試験' }}</li>
+        <li><strong>測定内容：</strong>{{ section.settings.test_measurement | default: '脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など' }}</li>
+        <li><strong>被験者：</strong>{{ section.settings.test_subjects | default: '5名（30〜50代の日本人社会人）' }}</li>
+        <li><strong>試験期間：</strong>{{ section.settings.test_period | default: '加重ブランケット有り3晩／無し3晩で比較' }}</li>
+      </ul>
+    </div>
+
+    <div class="science__closing">
+      {{ section.settings.closing_text | default: '<p>MUSUBIは、睡眠環境に「重み」という新しい選択肢を取り入れるために開発された加重ブランケットです。</p>' }}
+    </div>
+
+    <div class="science__papers">
+      <p class="science__papers-title">{{ section.settings.papers_title | default: '参考文献' }}</p>
       <ul class="science__papers-list">
         {% for block in section.blocks %}
-          {% if block.type == 'paper' %}
+          {% if block.type == 'paper' and block.settings.title != blank %}
             <li {{ block.shopify_attributes }}>
-              <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.title }}</a>
+              <a href="{{ block.settings.url }}" target="_blank" rel="noopener">
+                {{ block.settings.title }}
+              </a>
             </li>
           {% endif %}
         {% endfor %}
       </ul>
-      <p class="science__papers-note">{{ section.settings.papers_note | default: '※すべて「効果が示唆された」「可能性がある」との結論です' }}</p>
+      <p class="science__papers-note">
+        {{ section.settings.papers_note | default: '※研究結果には個人差があり、効果を保証するものではありません。' }}
+      </p>
     </div>
+
   </div>
 </section>
 
@@ -53,68 +593,146 @@
 {
   "name": "MUSUBI 科学根拠",
   "settings": [
-    {
-      "type": "richtext",
-      "id": "heading",
-      "label": "見出し",
-      "default": "<p>なぜ\"重み\"が<br>安心感につながるのか？</p>"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "メイン画像"
-    },
-    {
-      "type": "text",
-      "id": "image_alt",
-      "label": "画像alt",
-      "default": "MUSUBIの使用シーン"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "説明文",
-      "default": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>"
-    },
-    {
-      "type": "text",
-      "id": "papers_note",
-      "label": "論文注記",
-      "default": "※すべて「効果が示唆された」「可能性がある」との結論です"
-    }
+    { "type": "text", "id": "label", "label": "ラベル", "default": "WHY MUSUBI?" },
+    { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>“軽い寝具”だけが<br>正解とは限らない。</p>" },
+    { "type": "richtext", "id": "lead", "label": "リード文", "default": "<p>睡眠課題を抱える人の多くが軽めの寝具を使用している一方で、寝具選びにおいて「重さ」に着目している人はまだ多くありません。MUSUBIは、睡眠環境に“重み”という新しい選択肢を提案します。</p>" },
+
+    { "type": "range", "id": "label_size_pc", "label": "ラベル文字サイズ（PC）", "min": 10, "max": 24, "step": 1, "default": 12 },
+    { "type": "range", "id": "label_size_sp", "label": "ラベル文字サイズ（SP）", "min": 10, "max": 20, "step": 1, "default": 11 },
+    { "type": "color", "id": "label_color", "label": "ラベルカラー", "default": "#b8a78a" },
+
+    { "type": "range", "id": "heading_size_pc", "label": "見出しサイズ（PC）", "min": 20, "max": 52, "step": 1, "default": 32 },
+    { "type": "range", "id": "heading_size_sp", "label": "見出しサイズ（SP）", "min": 18, "max": 36, "step": 1, "default": 25 },
+    { "type": "color", "id": "heading_color", "label": "見出しカラー", "default": "#1a1a1a" },
+
+    { "type": "range", "id": "lead_size_pc", "label": "リード文サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "lead_size_sp", "label": "リード文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "lead_color", "label": "リード文カラー", "default": "#555555" },
+
+    { "type": "range", "id": "step_text_size_pc", "label": "ステップ文字サイズ（PC）", "min": 12, "max": 22, "step": 1, "default": 14 },
+    { "type": "range", "id": "step_text_size_sp", "label": "ステップ文字サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "step_text_color", "label": "ステップ文字カラー", "default": "#333333" },
+    { "type": "color", "id": "card_bg_color", "label": "カード背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "card_border_color", "label": "カード枠線カラー", "default": "#eee7dd" },
+    { "type": "range", "id": "card_radius", "label": "カード角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "card_radius_sp", "label": "カード角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+    { "type": "range", "id": "icon_size_pc", "label": "アイコン背景サイズ（PC）", "min": 44, "max": 96, "step": 2, "default": 62 },
+    { "type": "range", "id": "icon_size_sp", "label": "アイコン背景サイズ（SP）", "min": 36, "max": 76, "step": 2, "default": 48 },
+    { "type": "color", "id": "icon_bg_color", "label": "アイコン背景カラー", "default": "#f4eee6" },
+    { "type": "color", "id": "icon_color", "label": "アイコンカラー", "default": "#8B7355" },
+
+    { "type": "image_picker", "id": "image", "label": "メイン画像" },
+    { "type": "text", "id": "image_alt", "label": "画像alt", "default": "MUSUBIの使用シーン" },
+    { "type": "range", "id": "image_radius", "label": "画像角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "image_radius_sp", "label": "画像角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+
+    { "type": "richtext", "id": "description", "label": "説明文", "default": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス状態をサポートする可能性が示唆されています。</p>" },
+    { "type": "range", "id": "description_size_pc", "label": "説明文サイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 15 },
+    { "type": "range", "id": "description_size_sp", "label": "説明文サイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "description_color", "label": "説明文カラー", "default": "#555555" },
+    { "type": "color", "id": "description_bg_color", "label": "説明文背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "description_border_color", "label": "説明文枠線カラー", "default": "#eee7dd" },
+    { "type": "range", "id": "description_radius", "label": "説明文角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "description_radius_sp", "label": "説明文角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+    { "type": "color", "id": "strong_color", "label": "強調文字カラー", "default": "#8B7355" },
+
+    { "type": "text", "id": "result_badge", "label": "検証結果ラベル", "default": "検証結果" },
+    { "type": "richtext", "id": "result_title", "label": "検証結果タイトル", "default": "<p>自宅での睡眠検証でも、<br>MUSUBIの“重み”による変化が見られました。</p>" },
+    { "type": "text", "id": "result_label_1", "label": "結果1 ラベル", "default": "中途覚醒時間" },
+    { "type": "text", "id": "result_value_1", "label": "結果1 数値", "default": "36% 改善" },
+    { "type": "text", "id": "result_label_2", "label": "結果2 ラベル", "default": "入眠スピード" },
+    { "type": "text", "id": "result_value_2", "label": "結果2 数値", "default": "15% 減少 ↓" },
+    { "type": "text", "id": "result_label_3", "label": "結果3 ラベル", "default": "深いノンレム睡眠" },
+    { "type": "text", "id": "result_value_3", "label": "結果3 数値", "default": "13% UP ↑" },
+    { "type": "text", "id": "result_label_4", "label": "結果4 ラベル", "default": "睡眠効率" },
+    { "type": "text", "id": "result_value_4", "label": "結果4 数値", "default": "2% UP ↑" },
+    { "type": "richtext", "id": "result_copy", "label": "結果下コピー", "default": "<p>ただ重いだけではなく、<br>重さ・通気性・フィット感のバランスが、MUSUBIの心地よさです。</p>" },
+    { "type": "richtext", "id": "result_note", "label": "検証結果注記", "default": "<p>※研究結果には個人差があり、効果を保証するものではありません。<br>※深い睡眠（N3）は、睡眠の質を評価する代表的な指標の一つとされています。</p>" },
+
+    { "type": "color", "id": "result_bg_color", "label": "検証結果背景", "default": "#ded6cc" },
+    { "type": "range", "id": "result_radius", "label": "検証結果角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 22 },
+    { "type": "range", "id": "result_radius_sp", "label": "検証結果角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+    { "type": "color", "id": "result_badge_bg_color", "label": "検証結果ラベル背景", "default": "#ffffff" },
+    { "type": "color", "id": "result_badge_color", "label": "検証結果ラベルカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "result_badge_size_pc", "label": "検証結果ラベルサイズ（PC）", "min": 14, "max": 32, "step": 1, "default": 22 },
+    { "type": "range", "id": "result_badge_size_sp", "label": "検証結果ラベルサイズ（SP）", "min": 14, "max": 28, "step": 1, "default": 20 },
+    { "type": "range", "id": "result_title_size_pc", "label": "検証結果タイトルサイズ（PC）", "min": 14, "max": 30, "step": 1, "default": 18 },
+    { "type": "range", "id": "result_title_size_sp", "label": "検証結果タイトルサイズ（SP）", "min": 14, "max": 24, "step": 1, "default": 16 },
+    { "type": "color", "id": "result_title_color", "label": "検証結果タイトルカラー", "default": "#1a1a1a" },
+    { "type": "color", "id": "result_border_color", "label": "表の罫線カラー", "default": "#e8e1d8" },
+    { "type": "color", "id": "result_label_color", "label": "表ラベルカラー", "default": "#1a1a1a" },
+    { "type": "color", "id": "result_value_color", "label": "表数値カラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "result_text_size_pc", "label": "表文字サイズ（PC）", "min": 12, "max": 26, "step": 1, "default": 18 },
+    { "type": "range", "id": "result_text_size_sp", "label": "表文字サイズ（SP）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "range", "id": "result_copy_size_pc", "label": "結果下コピーサイズ（PC）", "min": 12, "max": 24, "step": 1, "default": 16 },
+    { "type": "range", "id": "result_copy_size_sp", "label": "結果下コピーサイズ（SP）", "min": 12, "max": 20, "step": 1, "default": 14 },
+    { "type": "color", "id": "result_copy_color", "label": "結果下コピーカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "result_note_size_pc", "label": "検証結果注記サイズ（PC）", "min": 10, "max": 18, "step": 1, "default": 12 },
+    { "type": "range", "id": "result_note_size_sp", "label": "検証結果注記サイズ（SP）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "color", "id": "result_note_color", "label": "検証結果注記カラー", "default": "#333333" },
+
+    { "type": "richtext", "id": "test_title", "label": "試験概要タイトル", "default": "<p>睡眠検証試験の概要</p>" },
+    { "type": "text", "id": "test_method", "label": "試験方法", "default": "単盲検クロスオーバー試験" },
+    { "type": "text", "id": "test_measurement", "label": "測定内容", "default": "脳波データによる睡眠ステージ、寝つき、中途覚醒、総睡眠時間など" },
+    { "type": "text", "id": "test_subjects", "label": "被験者", "default": "5名（30〜50代の日本人社会人）" },
+    { "type": "text", "id": "test_period", "label": "試験期間", "default": "加重ブランケット有り3晩／無し3晩で比較" },
+    { "type": "range", "id": "test_title_size_pc", "label": "試験タイトルサイズ（PC）", "min": 14, "max": 28, "step": 1, "default": 18 },
+    { "type": "range", "id": "test_title_size_sp", "label": "試験タイトルサイズ（SP）", "min": 14, "max": 24, "step": 1, "default": 17 },
+    { "type": "color", "id": "test_title_color", "label": "試験タイトルカラー", "default": "#1a1a1a" },
+    { "type": "range", "id": "test_item_size_pc", "label": "試験項目サイズ（PC）", "min": 11, "max": 18, "step": 1, "default": 13 },
+    { "type": "range", "id": "test_item_size_sp", "label": "試験項目サイズ（SP）", "min": 11, "max": 17, "step": 1, "default": 12 },
+    { "type": "color", "id": "test_item_color", "label": "試験項目カラー", "default": "#555555" },
+    { "type": "color", "id": "test_bg_color", "label": "試験背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "test_border_color", "label": "試験枠線カラー", "default": "#eee7dd" },
+    { "type": "color", "id": "test_item_bg_color", "label": "試験項目背景カラー", "default": "#faf7f2" },
+    { "type": "range", "id": "test_radius", "label": "試験角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "test_radius_sp", "label": "試験角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+
+    { "type": "richtext", "id": "closing_text", "label": "締めコピー", "default": "<p>MUSUBIは、睡眠環境に「重み」という新しい選択肢を取り入れるために開発された加重ブランケットです。</p>" },
+    { "type": "range", "id": "closing_size_pc", "label": "締めコピーサイズ（PC）", "min": 12, "max": 26, "step": 1, "default": 17 },
+    { "type": "range", "id": "closing_size_sp", "label": "締めコピーサイズ（SP）", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "color", "id": "closing_color", "label": "締めコピーカラー", "default": "#1a1a1a" },
+    { "type": "color", "id": "closing_bg_color", "label": "締めコピー背景カラー", "default": "#ffffff" },
+    { "type": "color", "id": "closing_border_color", "label": "締めコピー枠線カラー", "default": "#eee7dd" },
+    { "type": "range", "id": "closing_radius", "label": "締めコピー角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 20 },
+    { "type": "range", "id": "closing_radius_sp", "label": "締めコピー角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 16 },
+
+    { "type": "text", "id": "papers_title", "label": "参考文献タイトル", "default": "参考文献" },
+    { "type": "range", "id": "papers_title_size_pc", "label": "参考文献タイトルサイズ（PC）", "min": 11, "max": 20, "step": 1, "default": 13 },
+    { "type": "range", "id": "papers_title_size_sp", "label": "参考文献タイトルサイズ（SP）", "min": 11, "max": 18, "step": 1, "default": 13 },
+    { "type": "color", "id": "papers_title_color", "label": "参考文献タイトルカラー", "default": "#333333" },
+    { "type": "range", "id": "papers_text_size_pc", "label": "参考文献本文サイズ（PC）", "min": 10, "max": 18, "step": 1, "default": 12 },
+    { "type": "range", "id": "papers_text_size_sp", "label": "参考文献本文サイズ（SP）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "color", "id": "papers_text_color", "label": "参考文献本文カラー", "default": "#666666" },
+    { "type": "color", "id": "papers_link_color", "label": "参考文献リンクカラー", "default": "#8B7355" },
+    { "type": "color", "id": "papers_bg_color", "label": "参考文献背景カラー", "default": "#f7f2eb" },
+    { "type": "range", "id": "papers_radius", "label": "参考文献角丸（PC）", "min": 0, "max": 32, "step": 1, "default": 18 },
+    { "type": "range", "id": "papers_radius_sp", "label": "参考文献角丸（SP）", "min": 0, "max": 28, "step": 1, "default": 14 },
+    { "type": "text", "id": "papers_note", "label": "論文注記", "default": "※研究結果には個人差があり、効果を保証するものではありません。" },
+    { "type": "range", "id": "note_size_pc", "label": "注記サイズ（PC）", "min": 10, "max": 16, "step": 1, "default": 11 },
+    { "type": "range", "id": "note_size_sp", "label": "注記サイズ（SP）", "min": 10, "max": 15, "step": 1, "default": 11 },
+    { "type": "color", "id": "note_color", "label": "注記カラー", "default": "#777777" },
+
+    { "type": "color", "id": "bg_color", "label": "背景カラー", "default": "#faf7f2" },
+    { "type": "color", "id": "text_color", "label": "基本文字カラー", "default": "#333333" },
+    { "type": "range", "id": "padding_pc", "label": "上下余白（PC）", "min": 40, "max": 160, "step": 4, "default": 80 },
+    { "type": "range", "id": "padding_sp", "label": "上下余白（SP）", "min": 32, "max": 120, "step": 4, "default": 60 }
   ],
   "blocks": [
     {
       "type": "step",
       "name": "ステップ",
       "settings": [
-        {
-          "type": "html",
-          "id": "icon_svg",
-          "label": "アイコンSVG"
-        },
-        {
-          "type": "richtext",
-          "id": "label",
-          "label": "ラベル",
-          "default": "<p>均一な重み</p>"
-        }
+        { "type": "html", "id": "icon_svg", "label": "アイコンSVG" },
+        { "type": "richtext", "id": "label", "label": "ラベル", "default": "<p>均一な重み</p>" }
       ]
     },
     {
       "type": "paper",
       "name": "参考文献",
       "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "論文タイトル"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "論文URL"
-        }
+        { "type": "text", "id": "title", "label": "論文タイトル" },
+        { "type": "url", "id": "url", "label": "論文URL" }
       ]
     }
   ],
@@ -124,13 +742,12 @@
       "blocks": [
         { "type": "step", "settings": { "label": "<p>均一な重み</p>" } },
         { "type": "step", "settings": { "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>" } },
-        { "type": "step", "settings": { "label": "<p>深いリラックス<br>状態の促進</p>" } },
-        { "type": "paper", "settings": { "title": "Chen et al., 2013 — \"Weighted blankets and sleep in insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/24027326/" } },
-        { "type": "paper", "settings": { "title": "Ackerley et al., 2015 — \"Positive effects of a weighted blanket on insomnia\"", "url": "https://pubmed.ncbi.nlm.nih.gov/25692862/" } },
-        { "type": "paper", "settings": { "title": "Ekholm et al., 2020 — \"Weighted blankets in psychiatric care\"", "url": "https://pubmed.ncbi.nlm.nih.gov/32357390/" } }
+        { "type": "step", "settings": { "label": "<p>リラックス状態を<br>サポート</p>" } },
+        { "type": "paper", "settings": { "title": "Chen et al., 2013 — Weighted blankets and sleep in insomnia", "url": "https://pubmed.ncbi.nlm.nih.gov/24027326/" } },
+        { "type": "paper", "settings": { "title": "Ackerley et al., 2015 — Positive effects of a weighted blanket on insomnia", "url": "https://pubmed.ncbi.nlm.nih.gov/25692862/" } },
+        { "type": "paper", "settings": { "title": "Ekholm et al., 2020 — Weighted blankets in psychiatric care", "url": "https://pubmed.ncbi.nlm.nih.gov/32357390/" } }
       ]
     }
   ]
 }
 {% endschema %}
-
