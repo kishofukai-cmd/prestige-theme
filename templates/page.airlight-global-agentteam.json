@@ -49,8 +49,6 @@
         "hero_title": "<p>Warmer. Lighter. <em>Completely Animal-Free.</em></p>",
         "hero_sub": "<p>500g. Machine washable. No animals, no allergens. Designed in Japan.</p>",
         "cta_url": "",
-        "cta_text": "Get My AirLight Jacket — $398",
-        "offer_main": "",
         "offer_note": ""
       }
     },
@@ -509,7 +507,6 @@
         "heading": "<p>Own the jacket Japan sold out three times.</p>",
         "subheading": "Launch price for early adopters. Free worldwide shipping included.",
         "launch_price": "$398",
-        "launch_ends": "",
         "show_launch_price": true,
         "offer_main": "",
         "offer_note": "",

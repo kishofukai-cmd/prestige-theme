@@ -62,24 +62,23 @@
         "highlight_3"
       ],
       "settings": {
-        "eyebrow": "KAPOK KNOT — From Japan to the World",
-        "pre_headline": "¥50M+ crowdfunded. 10+ design awards. Loved in Japan —",
-        "hero_title": "<p>Born from a tree nut.<br><em>Now going global.</em></p>",
-        "hero_sub": "<p>Kapok — a wild-growing tree-nut fiber — engineered in Tokyo into down-level warmth at just 500g.<br>Japan's material innovation brand now ships worldwide, for the first time.</p>",
-        "cta_text": "Get My AirLight Jacket →",
-        "cta_price": "$318 — 20% Launch Offer (reg. $398)",
-        "offer_note": "Code FOUNDERS20 applied automatically · First 100 orders only",
-        "scroll_hint": "↓ See how it works",
-        "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
         "hero_image_alt": "AirLight Jacket · KAPOK KNOT",
+        "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
+        "eyebrow": "KAPOK KNOT — From Japan to the World",
         "launch_spot_icon": "⬡",
         "launch_spot": "",
         "highlight_check_icon": "✓",
+        "pre_headline": "¥50M+ crowdfunded. 10+ design awards. Loved in Japan —",
+        "hero_title": "<p>Born from a tree nut.<br><em>Now going global.</em></p>",
+        "hero_sub": "<p>Kapok — a wild-growing tree-nut fiber — engineered in Tokyo into down-level warmth at just 500g.<br>Japan's material innovation brand now ships worldwide, for the first time.</p>",
         "cta_label": "Get My AirLight Jacket →",
+        "cta_price": "$318 — 20% Launch Offer (reg. $398)",
+        "offer_note": "Code FOUNDERS20 applied automatically · First 100 orders only",
         "quick_link_1_label": "Shop Men's →",
-        "quick_link_2_label": "Shop Women's →",
         "quick_link_1_url": "/discount/FOUNDERS20?redirect=/en/products/men-hooded-jacket",
-        "quick_link_2_url": "/discount/FOUNDERS20?redirect=/en/products/women-hooded-jacket"
+        "quick_link_2_label": "Shop Women's →",
+        "quick_link_2_url": "/discount/FOUNDERS20?redirect=/en/products/women-hooded-jacket",
+        "scroll_hint": "↓ See how it works"
       }
     },
     "trust-bar": {
@@ -332,10 +331,7 @@
         "japanese_engineering",
         "heat_test"
       ],
-      "settings": {
-        "label": "Farm to Fashion — Where It Begins",
-        "fallback_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png"
-      }
+      "settings": {}
     },
     "cta-mid": {
       "type": "airlight-global-cta",
@@ -344,19 +340,18 @@
         "eyebrow": "Global Launch Offer — 20% Off",
         "heading": "<p>Join the first 100 people<br>to own an AirLight Jacket.</p>",
         "subheading": "First 100 orders get 20% off with code FOUNDERS20 (applied automatically) + free worldwide shipping. After that: $398 and standard shipping.",
-        "offer_main": "",
-        "offer_note": "Regular price $398 · Code FOUNDERS20 · One per customer",
+        "launch_price": "$318",
+        "show_launch_price": true,
         "show_progress": false,
         "progress_taken": "73",
         "progress_remaining": "27 remaining",
         "progress_pct": 73,
+        "offer_main": "",
+        "offer_note": "Regular price $398 · Code FOUNDERS20 · One per customer",
         "cta_text": "Shop Now — 20% Off",
         "micro_1": "✓ Ships worldwide from Japan",
         "micro_2": "✓ Apple Pay · Google Pay · Shop Pay · PayPal",
-        "micro_3": "✓ Secure checkout",
-        "launch_price": "$318",
-        "launch_ends": "",
-        "show_launch_price": true
+        "micro_3": "✓ Secure checkout"
       }
     },
     "ethics": {
@@ -567,13 +562,13 @@
             "product": "men-hooded-jacket",
             "gender_label": "Men's",
             "product_name": "AirLight Jacket — Men",
+            "price": "$318 launch (reg. $398)",
             "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
             "cta_text": "Shop Now — 20% Off →",
             "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/24_ba67f3cc-bda9-4080-b25f-8f8b653d054f.png?v=1759313538&width=1200",
             "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/21_2881c2cc-d5c8-4f06-a236-939da709210f.png?v=1759313538&width=1200",
             "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/19_e178f109-4bfb-48ef-bbc9-a640d037a0bd.png?v=1759313538&width=1200",
-            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/16_8338e182-7739-4e31-a088-928a6b99b677.png?v=1759313538&width=1200",
-            "price": "$318 launch (reg. $398)"
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/16_8338e182-7739-4e31-a088-928a6b99b677.png?v=1759313538&width=1200"
           }
         },
         "product_women": {
@@ -582,13 +577,13 @@
             "product": "women-hooded-jacket",
             "gender_label": "Women's",
             "product_name": "AirLight Jacket — Women",
+            "price": "$318 launch (reg. $398)",
             "colors": "5 Colors: Navy / Beige / Olive / Black / Greige",
             "cta_text": "Shop Now — 20% Off →",
             "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/2_aaa1bf76-72a5-49ca-b62d-5d1ef6ef6022.png?v=1759904978&width=1200",
             "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/1_eceda4b5-ae86-4bff-aa91-0bd0b7da74a6.png?v=1759904978&width=1200",
             "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/6_8a1e4b87-37e4-4e6f-bd92-6348250ec632.png?v=1759904978&width=1200",
-            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/7_987d5510-5e6e-4c06-a29e-394020ed55b6.png?v=1759904978&width=1200",
-            "price": "$318 launch (reg. $398)"
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/7_987d5510-5e6e-4c06-a29e-394020ed55b6.png?v=1759904978&width=1200"
           }
         },
         "product_peplum": {
@@ -597,13 +592,13 @@
             "product": "airlight-peplum-jacket",
             "gender_label": "Women's — Peplum",
             "product_name": "AirLight Peplum Jacket",
+            "price": "$318 launch (reg. $398)",
             "colors": "4 Colors: White / Ice Blue / Black / Khaki",
             "cta_text": "Shop Now — 20% Off →",
             "fallback_url_1": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8436.jpg?v=1772162658&width=1200",
             "fallback_url_2": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8445.jpg?v=1772162658&width=1200",
             "fallback_url_3": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8446.jpg?v=1772162658&width=1200",
-            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8438.jpg?v=1767941123&width=1200",
-            "price": "$318 launch (reg. $398)"
+            "fallback_url_4": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/251223_kapok8438.jpg?v=1767941123&width=1200"
           }
         }
       },
@@ -732,11 +727,11 @@
         "eyebrow": "KAPOK KNOT",
         "title": "<p>The jacket that changes<br><em>what warmth means.</em></p>",
         "cta_text": "Shop Now →",
+        "fallback_url": "https://ucarecdn.com/dd2fb320-7d90-475d-a328-25ba8af70422/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3729.jpg",
+        "spots_text": "Only 100 Global Launch Spots Available.",
         "micro_1": "",
         "micro_2": "",
-        "micro_3": "✓ Secure checkout",
-        "fallback_url": "https://ucarecdn.com/dd2fb320-7d90-475d-a328-25ba8af70422/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3729.jpg",
-        "spots_text": "Only 100 Global Launch Spots Available."
+        "micro_3": "✓ Secure checkout"
       }
     },
     "airlight_sticky": {

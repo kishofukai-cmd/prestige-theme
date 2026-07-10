@@ -1,11 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "theme.airlight-global",
   "sections": {
     "hero": {
       "type": "airlight-global-hero",
+      "blocks": {
+        "h_proof1": {
+          "type": "proof_item",
+          "settings": {
+            "number": "¥50M+",
+            "label": "Crowdfunded in Japan"
+          }
+        },
+        "h_proof2": {
+          "type": "proof_item",
+          "settings": {
+            "number": "10+",
+            "label": "Design Awards"
+          }
+        },
+        "h_proof3": {
+          "type": "proof_item",
+          "settings": {
+            "number": "★ 4.8",
+            "label": "Review Score"
+          }
+        }
+      },
+      "block_order": [
+        "h_proof1",
+        "h_proof2",
+        "h_proof3"
+      ],
       "settings": {
-        "fallback_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
         "hero_image_alt": "AirLight Jacket by KAPOK KNOT",
+        "fallback_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
         "eyebrow": "Japan Material Innovation",
         "pre_headline": "",
         "hero_title": "<p>Down Warmth.<br>Half the Weight.<br><em>Zero Animals.</em></p>",
@@ -15,39 +52,94 @@
         "cta_price": "",
         "offer_note": "Free worldwide shipping",
         "scroll_hint": "↓ The fiber that changes everything"
-      },
-      "blocks": {
-        "h_proof1": { "type": "proof_item", "settings": { "number": "¥50M+", "label": "Crowdfunded in Japan" } },
-        "h_proof2": { "type": "proof_item", "settings": { "number": "10+", "label": "Design Awards" } },
-        "h_proof3": { "type": "proof_item", "settings": { "number": "★ 4.8", "label": "Review Score" } }
-      },
-      "block_order": ["h_proof1", "h_proof2", "h_proof3"]
+      }
     },
     "trust": {
       "type": "airlight-global-trust",
       "blocks": {
-        "t1": { "type": "item", "settings": { "text": "¥50M+ Crowdfunded" } },
-        "t2": { "type": "item", "settings": { "text": "10+ Design Awards" } },
-        "t3": { "type": "item", "settings": { "text": "Milano Unica Exhibitor" } },
-        "t4": { "type": "item", "settings": { "text": "100% Plant-Based Fill" } },
-        "t5": { "type": "item", "settings": { "text": "Machine Washable" } }
+        "t1": {
+          "type": "item",
+          "settings": {
+            "text": "¥50M+ Crowdfunded"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "text": "10+ Design Awards"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "text": "Milano Unica Exhibitor"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "text": "100% Plant-Based Fill"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "text": "Machine Washable"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5"]
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "settings": {}
     },
     "pain": {
       "type": "airlight-global-pain",
+      "blocks": {
+        "p1": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🏋️",
+            "text": "Heavy. Bulky. A workout just to carry."
+          }
+        },
+        "p2": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🌧️",
+            "text": "One shower ruins it for days."
+          }
+        },
+        "p3": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🦆",
+            "text": "30 geese per jacket. Every time."
+          }
+        },
+        "p4": {
+          "type": "pain_item",
+          "settings": {
+            "emoji": "🧺",
+            "text": "Dry-clean only. Every single time."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ],
       "settings": {
         "heading": "Sound familiar?",
         "bridge_text": "There's a better answer. It grows on trees.",
         "bridge_strong": "KAPOK KNOT AirLight Jacket"
-      },
-      "blocks": {
-        "p1": { "type": "pain_item", "settings": { "emoji": "🏋️", "text": "Heavy. Bulky. A workout just to carry." } },
-        "p2": { "type": "pain_item", "settings": { "emoji": "🌧️", "text": "One shower ruins it for days." } },
-        "p3": { "type": "pain_item", "settings": { "emoji": "🦆", "text": "30 geese per jacket. Every time." } },
-        "p4": { "type": "pain_item", "settings": { "emoji": "🧺", "text": "Dry-clean only. Every single time." } }
-      },
-      "block_order": ["p1", "p2", "p3", "p4"]
+      }
     },
     "mid_cta": {
       "type": "airlight-global-cta",
@@ -68,13 +160,6 @@
     },
     "material": {
       "type": "airlight2025-material",
-      "settings": {
-        "section_id": "en-material",
-        "bg_color": "#faf9f6",
-        "label": "The Material",
-        "heading": "<p>A fiber from a tree.<em> Engineered in Japan.</em></p>",
-        "intro": "Kapok grows on trees. Hollow at the core — by nature. It took 5 years of collaboration with Japan's top textile engineers to turn it into Ethical Down Kapok™: the world's first kapok insulation sheet. The result is 500g of warmth that replaces down."
-      },
       "blocks": {
         "m1": {
           "type": "material_block",
@@ -104,29 +189,63 @@
           }
         }
       },
-      "block_order": ["m1", "m2", "m3"]
+      "block_order": [
+        "m1",
+        "m2",
+        "m3"
+      ],
+      "settings": {
+        "section_id": "en-material",
+        "bg_color": "#faf9f6",
+        "label": "The Material",
+        "heading": "<p>A fiber from a tree.<em> Engineered in Japan.</em></p>",
+        "intro": "Kapok grows on trees. Hollow at the core — by nature. It took 5 years of collaboration with Japan's top textile engineers to turn it into Ethical Down Kapok™: the world's first kapok insulation sheet. The result is 500g of warmth that replaces down."
+      }
     },
     "ethics": {
       "type": "airlight-global-ethics",
+      "blocks": {
+        "e1": {
+          "type": "stat_item",
+          "settings": {
+            "number": "97%",
+            "label": "Less CO₂ vs Down*"
+          }
+        },
+        "e2": {
+          "type": "stat_item",
+          "settings": {
+            "number": "0",
+            "label": "Animals Used"
+          }
+        },
+        "e3": {
+          "type": "stat_item",
+          "settings": {
+            "number": "500g",
+            "label": "Half the Weight of Down"
+          }
+        },
+        "e4": {
+          "type": "stat_item",
+          "settings": {
+            "number": "1/8",
+            "label": "Weight of Cotton"
+          }
+        }
+      },
+      "block_order": [
+        "e1",
+        "e2",
+        "e3",
+        "e4"
+      ],
       "settings": {
         "footnote": "*Based on life cycle analysis vs. conventional goose down insulation."
-      },
-      "blocks": {
-        "e1": { "type": "stat_item", "settings": { "number": "97%", "label": "Less CO₂ vs Down*" } },
-        "e2": { "type": "stat_item", "settings": { "number": "0", "label": "Animals Used" } },
-        "e3": { "type": "stat_item", "settings": { "number": "500g", "label": "Half the Weight of Down" } },
-        "e4": { "type": "stat_item", "settings": { "number": "1/8", "label": "Weight of Cotton" } }
-      },
-      "block_order": ["e1", "e2", "e3", "e4"]
+      }
     },
     "demos": {
       "type": "airlight2025-demos",
-      "settings": {
-        "bg_color": "#ffffff",
-        "kicker": "Proven Performance",
-        "heading": "<p>See it.<em> Believe it.</em></p>",
-        "intro": "Real tests. Real results."
-      },
       "blocks": {
         "d1": {
           "type": "demo",
@@ -149,35 +268,93 @@
           }
         }
       },
-      "block_order": ["d1", "d2"]
+      "block_order": [
+        "d1",
+        "d2"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "kicker": "Proven Performance",
+        "heading": "<p>See it.<em> Believe it.</em></p>",
+        "intro": "Real tests. Real results."
+      }
     },
     "comparison": {
       "type": "airlight-global-comparison",
+      "blocks": {
+        "c1": {
+          "type": "row",
+          "settings": {
+            "feature": "Warmth",
+            "airlight": "✅ Proven at 0°C–15°C",
+            "down": "✅ Effective",
+            "synthetic": "⚠️ Adequate"
+          }
+        },
+        "c2": {
+          "type": "row",
+          "settings": {
+            "feature": "Weight",
+            "airlight": "✅ ~500g",
+            "down": "❌ 800g–1.2kg",
+            "synthetic": "⚠️ 600–900g"
+          }
+        },
+        "c3": {
+          "type": "row",
+          "settings": {
+            "feature": "Wet Weather",
+            "airlight": "✅ Stays warm when wet",
+            "down": "❌ Collapses when wet",
+            "synthetic": "✅ Maintained"
+          }
+        },
+        "c4": {
+          "type": "row",
+          "settings": {
+            "feature": "Washing",
+            "airlight": "✅ Machine washable",
+            "down": "❌ Dry-clean only",
+            "synthetic": "⚠️ Often yes"
+          }
+        },
+        "c5": {
+          "type": "row",
+          "settings": {
+            "feature": "Animal-Free",
+            "airlight": "✅ 100% plant-based",
+            "down": "❌ Goose feathers",
+            "synthetic": "✅ Yes"
+          }
+        },
+        "c6": {
+          "type": "row",
+          "settings": {
+            "feature": "CO₂ Impact",
+            "airlight": "✅ 97% less than down",
+            "down": "❌ High",
+            "synthetic": "⚠️ Moderate"
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+      ],
       "settings": {
         "heading": "How AirLight Compares.",
         "header_airlight_desktop": "★ AirLight (KAPOK KNOT)",
         "header_airlight_mobile": "AirLight",
         "header_down": "Down",
         "header_synthetic": "Synthetic"
-      },
-      "blocks": {
-        "c1": { "type": "row", "settings": { "feature": "Warmth", "airlight": "✅ Proven at 0°C–15°C", "down": "✅ Effective", "synthetic": "⚠️ Adequate" } },
-        "c2": { "type": "row", "settings": { "feature": "Weight", "airlight": "✅ ~500g", "down": "❌ 800g–1.2kg", "synthetic": "⚠️ 600–900g" } },
-        "c3": { "type": "row", "settings": { "feature": "Wet Weather", "airlight": "✅ Stays warm when wet", "down": "❌ Collapses when wet", "synthetic": "✅ Maintained" } },
-        "c4": { "type": "row", "settings": { "feature": "Washing", "airlight": "✅ Machine washable", "down": "❌ Dry-clean only", "synthetic": "⚠️ Often yes" } },
-        "c5": { "type": "row", "settings": { "feature": "Animal-Free", "airlight": "✅ 100% plant-based", "down": "❌ Goose feathers", "synthetic": "✅ Yes" } },
-        "c6": { "type": "row", "settings": { "feature": "CO₂ Impact", "airlight": "✅ 97% less than down", "down": "❌ High", "synthetic": "⚠️ Moderate" } }
-      },
-      "block_order": ["c1", "c2", "c3", "c4", "c5", "c6"]
+      }
     },
     "reviews": {
       "type": "airlight-global-reviews",
-      "settings": {
-        "heading": "Real People. Real Winters.",
-        "avg_stars": "★★★★★",
-        "avg_label": "4.8 / 5 — 2,000+ Verified Buyers",
-        "verified_badge": "✓ Verified Buyer"
-      },
       "blocks": {
         "r1": {
           "type": "review_card",
@@ -216,10 +393,84 @@
           }
         }
       },
-      "block_order": ["r1", "r2", "r3", "r4"]
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "heading": "Real People. Real Winters.",
+        "avg_stars": "★★★★★",
+        "avg_label": "4.8 / 5 — 2,000+ Verified Buyers",
+        "verified_badge": "✓ Verified Buyer"
+      }
     },
     "proof": {
       "type": "airlight2025-proof",
+      "blocks": {
+        "ml1": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/91648580-94ad-4c05-aec0-25bc05ec5e0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "alt": "Makuake"
+          }
+        },
+        "ml2": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/074aec7d-3118-4fbb-b23c-875673e2e4e4/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "alt": "ALTERNA"
+          }
+        },
+        "ml3": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/3f383661-9360-4604-ae99-ffdc877c6c4f/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "alt": "Nikkei"
+          }
+        },
+        "ml4": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/a8886c3a-cb13-4011-96de-f5bba196a8e0/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "alt": "WBS / TV Tokyo"
+          }
+        },
+        "cr1": {
+          "type": "creator",
+          "settings": {
+            "name": "Makoto & Naoko Tanijiri",
+            "role": "Architect / Chef",
+            "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png"
+          }
+        },
+        "cr2": {
+          "type": "creator",
+          "settings": {
+            "name": "Ibuki Hirahara",
+            "role": "Author, SDGs Advocate",
+            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png"
+          }
+        },
+        "cr3": {
+          "type": "creator",
+          "settings": {
+            "name": "Eri",
+            "role": "Designer / Activist, DEPT Company",
+            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png"
+          }
+        }
+      },
+      "block_order": [
+        "ml1",
+        "ml2",
+        "ml3",
+        "ml4",
+        "cr1",
+        "cr2",
+        "cr3"
+      ],
       "settings": {
         "section_id": "en-proof",
         "bg_color": "#faf9f6",
@@ -227,48 +478,68 @@
         "makuake_body": "2,000+ backers. ¥50,000,000 pledged. Japan's most-supported sustainable fashion project. Now available internationally for the first time.",
         "media_heading": "As seen in",
         "creators_heading": "Trusted by creators & leaders"
-      },
-      "blocks": {
-        "ml1": { "type": "media_logo", "settings": { "logo_url": "https://ucarecdn.com/91648580-94ad-4c05-aec0-25bc05ec5e0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/", "alt": "Makuake" } },
-        "ml2": { "type": "media_logo", "settings": { "logo_url": "https://ucarecdn.com/074aec7d-3118-4fbb-b23c-875673e2e4e4/-/format/auto/-/preview/3000x3000/-/quality/lighter/", "alt": "ALTERNA" } },
-        "ml3": { "type": "media_logo", "settings": { "logo_url": "https://ucarecdn.com/3f383661-9360-4604-ae99-ffdc877c6c4f/-/format/auto/-/preview/3000x3000/-/quality/lighter/", "alt": "Nikkei" } },
-        "ml4": { "type": "media_logo", "settings": { "logo_url": "https://ucarecdn.com/a8886c3a-cb13-4011-96de-f5bba196a8e0/-/format/auto/-/preview/3000x3000/-/quality/lighter/", "alt": "WBS / TV Tokyo" } },
-        "cr1": { "type": "creator", "settings": { "name": "Makoto & Naoko Tanijiri", "role": "Architect / Chef", "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png" } },
-        "cr2": { "type": "creator", "settings": { "name": "Ibuki Hirahara", "role": "Author, SDGs Advocate", "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png" } },
-        "cr3": { "type": "creator", "settings": { "name": "Eri", "role": "Designer / Activist, DEPT Company", "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png" } }
-      },
-      "block_order": ["ml1", "ml2", "ml3", "ml4", "cr1", "cr2", "cr3"]
+      }
     },
     "faq": {
       "type": "airlight-global-faq",
+      "blocks": {
+        "f1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How warm is the AirLight Jacket?",
+            "answer": "<p>Thermographic testing at 3°C confirms identical surface temperature to goose down within 1 minute. Comfortable from 0°C to 15°C depending on activity level.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is kapok fiber?",
+            "answer": "<p>A natural fiber from tropical tree seed pods — hollow at the core, naturally light and thermally efficient. KAPOK KNOT's Ethical Down Kapok™ (patent pending) transforms it into a high-performance insulation sheet.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it machine washable?",
+            "answer": "<p>Yes. Cold cycle, air dry. No dry-cleaning required.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does international shipping work?",
+            "answer": "<p>Ships worldwide from Japan within 3–5 business days. Free shipping during the launch period. Estimated delivery: 7–14 business days.</p>"
+          }
+        },
+        "f5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does sizing work?",
+            "answer": "<p>Relaxed, slightly oversized fit. Size down for a fitted silhouette. Full size charts in cm and inches on the product page.</p>"
+          }
+        },
+        "f6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>30-day returns for unworn items in original condition. Contact support@kapok-japan.jp to arrange.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
       "settings": {
         "heading": "Your questions, answered."
-      },
-      "blocks": {
-        "f1": { "type": "faq_item", "settings": { "question": "How warm is the AirLight Jacket?", "answer": "<p>Thermographic testing at 3°C confirms identical surface temperature to goose down within 1 minute. Comfortable from 0°C to 15°C depending on activity level.</p>" } },
-        "f2": { "type": "faq_item", "settings": { "question": "What is kapok fiber?", "answer": "<p>A natural fiber from tropical tree seed pods — hollow at the core, naturally light and thermally efficient. KAPOK KNOT's Ethical Down Kapok™ (patent pending) transforms it into a high-performance insulation sheet.</p>" } },
-        "f3": { "type": "faq_item", "settings": { "question": "Is it machine washable?", "answer": "<p>Yes. Cold cycle, air dry. No dry-cleaning required.</p>" } },
-        "f4": { "type": "faq_item", "settings": { "question": "How does international shipping work?", "answer": "<p>Ships worldwide from Japan within 3–5 business days. Free shipping during the launch period. Estimated delivery: 7–14 business days.</p>" } },
-        "f5": { "type": "faq_item", "settings": { "question": "How does sizing work?", "answer": "<p>Relaxed, slightly oversized fit. Size down for a fitted silhouette. Full size charts in cm and inches on the product page.</p>" } },
-        "f6": { "type": "faq_item", "settings": { "question": "What is your return policy?", "answer": "<p>30-day returns for unworn items in original condition. Contact support@kapok-japan.jp to arrange.</p>" } }
-      },
-      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"]
+      }
     },
     "products": {
       "type": "airlight-global-products",
-      "settings": {
-        "label": "The Collection",
-        "heading": "Your AirLight Jacket.",
-        "color_label": "Color:",
-        "size_label": "Size:",
-        "sizes_label": "Sizes:",
-        "size_guide_text": "Size Guide →",
-        "details_link_text": "View Full Details →",
-        "atc_select_size_text": "Select size to continue",
-        "sold_out_text": "Sold Out",
-        "added_text": "Added to cart!",
-        "checkout_link_text": "Proceed to Checkout →"
-      },
       "blocks": {
         "pr1": {
           "type": "product_line",
@@ -301,28 +572,69 @@
           }
         }
       },
-      "block_order": ["pr1", "pr2"]
+      "block_order": [
+        "pr1",
+        "pr2"
+      ],
+      "settings": {
+        "label": "The Collection",
+        "heading": "Your AirLight Jacket.",
+        "color_label": "Color:",
+        "size_label": "Size:",
+        "sizes_label": "Sizes:",
+        "size_guide_text": "Size Guide →",
+        "details_link_text": "View Full Details →",
+        "atc_select_size_text": "Select size to continue",
+        "sold_out_text": "Sold Out",
+        "added_text": "Added to cart!",
+        "checkout_link_text": "Proceed to Checkout →"
+      }
     },
     "closing": {
       "type": "airlight-global-closing",
+      "blocks": {
+        "cl1": {
+          "type": "proof_line",
+          "settings": {
+            "text": "¥50M+ Crowdfunded in Japan"
+          }
+        },
+        "cl2": {
+          "type": "proof_line",
+          "settings": {
+            "text": "10+ Design Awards"
+          }
+        },
+        "cl3": {
+          "type": "proof_line",
+          "settings": {
+            "text": "Milano Unica Exhibitor"
+          }
+        },
+        "cl4": {
+          "type": "proof_line",
+          "settings": {
+            "text": "★ 4.8 Review Score"
+          }
+        }
+      },
+      "block_order": [
+        "cl1",
+        "cl2",
+        "cl3",
+        "cl4"
+      ],
       "settings": {
         "eyebrow": "KAPOK KNOT",
         "title": "<p>The jacket that changes<br><em>what warmth means.</em></p>",
-        "cta_text": "Shop Now →",
         "cta_url": "#en-products",
+        "cta_text": "Shop Now →",
         "fallback_url": "https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
         "spots_text": "Free Worldwide Shipping · Limited Stock",
         "micro_1": "✓ Machine washable",
         "micro_2": "✓ 30-day returns",
         "micro_3": "✓ Secure checkout"
-      },
-      "blocks": {
-        "cl1": { "type": "proof_line", "settings": { "text": "¥50M+ Crowdfunded in Japan" } },
-        "cl2": { "type": "proof_line", "settings": { "text": "10+ Design Awards" } },
-        "cl3": { "type": "proof_line", "settings": { "text": "Milano Unica Exhibitor" } },
-        "cl4": { "type": "proof_line", "settings": { "text": "★ 4.8 Review Score" } }
-      },
-      "block_order": ["cl1", "cl2", "cl3", "cl4"]
+      }
     }
   },
   "order": [
