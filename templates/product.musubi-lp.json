@@ -102,7 +102,7 @@
           "type": "button",
           "settings": {
             "link": "https://page.line.me/258kaxeg",
-            "text": "公式LINE登録で再入荷通知を受け取る",
+            "text": "公式LINE登録",
             "stretch": true,
             "background": "#00b900",
             "text_color": "#ffffff"
