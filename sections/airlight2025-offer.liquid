@@ -1,0 +1,126 @@
+{% comment %} AirLight 2025 EN — Launch Offer banner (price, code, limit, payment trust line) {% endcomment %}
+
+<style>
+  .a25-offer {
+    background: {{ section.settings.bg_color | default: '#1a2640' }};
+    padding: clamp(20px, 3vw, 28px) var(--ag-pad, 20px);
+  }
+  .a25-offer__inner {
+    max-width: var(--ag-max, 960px);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 3vw, 32px);
+    text-align: center;
+  }
+  .a25-offer__tag {
+    font-family: var(--ag-font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    border: 1px solid {{ section.settings.accent_color | default: '#c29d66' }};
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+  .a25-offer__price {
+    font-family: var(--ag-font-display);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .a25-offer__price-was {
+    font-size: 0.95rem;
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    opacity: 0.55;
+    text-decoration: line-through;
+  }
+  .a25-offer__price-now {
+    font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+    font-weight: 600;
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+  }
+  .a25-offer__code {
+    font-family: var(--ag-font-body);
+    font-size: 0.85rem;
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    opacity: 0.9;
+  }
+  .a25-offer__code strong {
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    letter-spacing: 0.04em;
+  }
+  .a25-offer__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 26px;
+    font-family: var(--ag-font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: {{ section.settings.bg_color | default: '#1a2640' }};
+    background: {{ section.settings.accent_color | default: '#c29d66' }};
+    border-radius: var(--ag-radius-button, 999px);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .a25-offer__trust {
+    width: 100%;
+    font-family: var(--ag-font-body);
+    font-size: 0.72rem;
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 600px) {
+    .a25-offer__inner { gap: 10px; }
+    .a25-offer__cta { width: 100%; }
+  }
+</style>
+
+<section class="a25-offer" id="{{ section.settings.section_id | default: 'a25-offer' }}">
+  <div class="a25-offer__inner">
+    {% if section.settings.tag != blank %}
+      <span class="a25-offer__tag">{{ section.settings.tag }}</span>
+    {% endif %}
+    <div class="a25-offer__price">
+      {% if section.settings.price_was != blank %}
+        <span class="a25-offer__price-was">{{ section.settings.price_was }}</span>
+      {% endif %}
+      <span class="a25-offer__price-now">{{ section.settings.price_now | default: 'A$478' }}</span>
+    </div>
+    {% if section.settings.code_text != blank %}
+      <span class="a25-offer__code">{{ section.settings.code_text }}</span>
+    {% endif %}
+    <a href="{{ section.settings.cta_url | default: '#a25-products' }}" class="a25-offer__cta">{{ section.settings.cta_text | default: 'Shop Now →' }}</a>
+    {% if section.settings.trust_line != blank %}
+      <div class="a25-offer__trust">{{ section.settings.trust_line }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A25 Launch Offer",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-offer" },
+    { "type": "text", "id": "tag", "label": "Tag", "default": "LAUNCH OFFER" },
+    { "type": "text", "id": "price_was", "label": "Price — Was (strikethrough)", "default": "A$598" },
+    { "type": "text", "id": "price_now", "label": "Price — Now", "default": "A$478" },
+    { "type": "richtext", "id": "code_text", "label": "Code Line", "default": "<p>Code <strong>FOUNDERS20</strong> applied automatically — first 100 orders only</p>" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
+    { "type": "url", "id": "cta_url", "label": "CTA URL (empty = #a25-products)" },
+    { "type": "text", "id": "trust_line", "label": "Trust Line", "default": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout" },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#1a2640" },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Accent Color", "default": "#c29d66" }
+  ],
+  "presets": [
+    { "name": "A25 Launch Offer" }
+  ]
+}
+{% endschema %}

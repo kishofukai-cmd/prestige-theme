@@ -1,0 +1,184 @@
+{% comment %} AirLight Global LP — Sticky CTA (mobile bottom bar) {% endcomment %}
+
+{% if section.settings.enabled %}
+
+<style>
+  .ag-sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9000;
+    background: {{ section.settings.bg_color | default: '#1a2640' }};
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    padding: 10px 16px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -4px 20px rgba(26, 38, 64, 0.25);
+    font-family: var(--ag-font-body, 'Outfit', 'Helvetica Neue', sans-serif);
+    /* Hidden by default — fades in after scroll threshold */
+    opacity: 0;
+    transform: translateY(100%);
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ag-sticky-cta.ag-sticky-cta--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .ag-sticky-cta__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.35;
+  }
+  .ag-sticky-cta__row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+  }
+  .ag-sticky-cta__name {
+    font-family: var(--ag-font-display, 'Cormorant Garamond', Georgia, serif);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ag-sticky-cta__price {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    white-space: nowrap;
+  }
+  .ag-sticky-cta__sub {
+    font-size: 0.68rem;
+    font-weight: 400;
+    opacity: 0.75;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ag-sticky-cta__btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    min-height: 44px;
+    font-family: var(--ag-font-body, 'Outfit', 'Helvetica Neue', sans-serif);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: {{ section.settings.bg_color | default: '#1a2640' }};
+    background: {{ section.settings.accent_color | default: '#c29d66' }};
+    border-radius: var(--ag-radius-button, 100px);
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 14px rgba(201, 168, 106, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .ag-sticky-cta__btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(201, 168, 106, 0.55);
+  }
+
+  /* Desktop: hidden by default, unless enabled via schema */
+  @media (min-width: 769px) {
+    {% unless section.settings.show_on_desktop %}
+    .ag-sticky-cta { display: none; }
+    {% else %}
+    .ag-sticky-cta {
+      max-width: 560px;
+      left: auto;
+      right: 24px;
+      bottom: 24px;
+      border-radius: var(--ag-radius-card, 16px);
+      padding: 12px 20px;
+    }
+    {% endunless %}
+  }
+</style>
+
+<div class="ag-sticky-cta" id="ag-sticky-cta-{{ section.id }}" aria-hidden="true">
+  <div class="ag-sticky-cta__info">
+    <div class="ag-sticky-cta__row">
+      <!-- EDITABLE: 商品名（schema: product_name） -->
+      <span class="ag-sticky-cta__name">{{ section.settings.product_name | default: 'AirLight Jacket' }}</span>
+      <!-- EDITABLE: 価格表示（schema: price_text） -->
+      <span class="ag-sticky-cta__price">{{ section.settings.price_text | default: 'A$598' }}</span>
+    </div>
+    {% if section.settings.sub_text != blank %}
+      <!-- EDITABLE: サブテキスト（schema: sub_text / 空にすると非表示） -->
+      <span class="ag-sticky-cta__sub">{{ section.settings.sub_text }}</span>
+    {% endif %}
+  </div>
+  <!-- EDITABLE: CTAボタン（schema: cta_text / cta_url。URL未設定時は #ag-products にスクロール） -->
+  <a href="{{ section.settings.cta_url | default: '#ag-products' }}" class="ag-sticky-cta__btn">
+    {{ section.settings.cta_text | default: 'Shop Now →' }}
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.getElementById('ag-sticky-cta-{{ section.id }}');
+    if (!bar) return;
+
+    var threshold = {{ section.settings.show_after_px | default: 700 }};
+    var visible = false;
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var shouldShow = window.scrollY > threshold;
+      if (shouldShow === visible) return;
+      visible = shouldShow;
+      bar.classList.toggle('ag-sticky-cta--visible', visible);
+      bar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+
+    // Theme editor: re-evaluate when section is re-rendered
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') update();
+    });
+  })();
+</script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "A25 EN Sticky CTA",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Enable Sticky CTA", "default": true },
+    { "type": "text", "id": "product_name", "label": "Product Name", "default": "AirLight Jacket" },
+    { "type": "text", "id": "price_text", "label": "Price Text", "default": "A$598" },
+    { "type": "text", "id": "sub_text", "label": "Sub Text (empty = hidden)", "default": "Free worldwide shipping" },
+    { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
+    { "type": "url", "id": "cta_url", "label": "CTA URL (empty = #ag-products)" },
+    { "type": "checkbox", "id": "show_on_desktop", "label": "Show on Desktop", "default": false },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#1a2640" },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Accent Color (CTA button)", "default": "#c29d66" },
+    { "type": "range", "id": "show_after_px", "label": "Show After Scroll (px)", "min": 200, "max": 2000, "step": 100, "default": 700 }
+  ]
+}
+{% endschema %}
