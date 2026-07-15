@@ -40,8 +40,8 @@
             "link": "https://page.line.me/258kaxeg",
             "text": "LINE登録はこちら",
             "stretch": true,
-            "background": "#06C755",
-            "text_color": "#FFFFFF"
+            "background": "#06c755",
+            "text_color": "#ffffff"
           }
         },
         "image_XqUpDh": {
@@ -437,7 +437,7 @@
         "soldout_record_xzzJhT": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月下旬 先行予約開始",
+            "date": "2026年5月下旬 先行予約",
             "status": "開催中"
           }
         }
