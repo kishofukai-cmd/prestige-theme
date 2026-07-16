@@ -77,6 +77,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "text_98UtpQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>※現在、全国的なシステム障害の影響により、クレジットカード決済がご利用いただけない場合がございます。決済エラーが発生した際は、恐れ入りますが他の決済方法をお試しください。</p>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -224,6 +230,7 @@
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
         "quantity_selector",
+        "text_98UtpQ",
         "buy_buttons",
         "button_PpPrHq",
         "button_8DHeMD",
