@@ -26,11 +26,18 @@
           "settings": {
             "text": "<a href=\"https://kapok-knot.com/products/musubi-en\" title=\"https://kapok-knot.com/products/musubi-en\">【販売中】リカバリー加重ブランケットMUSUBI - en -</a>"
           }
+        },
+        "message_4WMCXn": {
+          "type": "message",
+          "settings": {
+            "text": "<strong>※現在、全国的なシステム障害の影響により、クレジットカード決済がご利用いただけない場合がございます。決済エラーが発生した際は、恐れ入りますが他の決済方法をお試しください。</strong>"
+          }
         }
       },
       "block_order": [
         "message_Pd4U84",
-        "message_rcWxdd"
+        "message_rcWxdd",
+        "message_4WMCXn"
       ],
       "custom_css": [
         ".announcement-bar {background-color: #04358d; color: #fff;}"
