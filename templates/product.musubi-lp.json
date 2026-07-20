@@ -28,12 +28,6 @@
             "show_taxes_notice": false
           }
         },
-        "text_AERwhU": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>MUSUBI 2周年記念感謝祭開催！<br/>感謝を込めて4日間限定で20%OFFを実施</strong></p><p>期間：7/17(金)12:00〜7/20(月)23:59まで<br/><strong>MUSUBIシリーズが20%OFF！<br/></strong>※現在庫が無くなり次第終了となります</p>"
-          }
-        },
         "image_XqUpDh": {
           "type": "image",
           "settings": {
@@ -92,7 +86,7 @@
           "type": "button",
           "settings": {
             "link": "https://page.line.me/258kaxeg",
-            "text": "公式LINE登録",
+            "text": "公式LINE登録して再入荷通知を受け取る",
             "stretch": true,
             "background": "#00b900",
             "text_color": "#ffffff"
@@ -208,7 +202,6 @@
         "vendor",
         "title",
         "price",
-        "text_AERwhU",
         "image_XqUpDh",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
