@@ -14,12 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "message_Pd4U84": {
-          "type": "message",
-          "settings": {
-            "text": "<a href=\"/collections/musubi-series\" title=\"MUSUBI series\"><strong>MUSUBI 2周年記念感謝祭開催！7/17(金)12:00より4日間限定でMUSUBIシリーズが20%OFF！</strong></a>"
-          }
-        },
         "message_rcWxdd": {
           "type": "message",
           "disabled": true,
@@ -29,7 +23,6 @@
         }
       },
       "block_order": [
-        "message_Pd4U84",
         "message_rcWxdd"
       ],
       "custom_css": [

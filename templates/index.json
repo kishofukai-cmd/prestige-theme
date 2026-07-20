@@ -12,33 +12,6 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "image_HTkC8f": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/a_2x_3071f677-c5c3-46f5-a427-edcd67b88fb9.png",
-            "mobile_image": "shopify://shop_images/a_2_2x_43b30411-6c25-4a1e-a015-0376bad62127.png",
-            "subheading": "",
-            "title": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 780,
-            "button_1_text": "",
-            "button_1_link": "shopify://collections/musubi-series",
-            "button_1_style": "solid",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": "linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"
-          }
-        },
         "image_XFEyei": {
           "type": "image",
           "settings": {
@@ -178,7 +151,6 @@
         }
       },
       "block_order": [
-        "image_HTkC8f",
         "image_XFEyei",
         "image_dQHwjx",
         "image_hpJVBD",
