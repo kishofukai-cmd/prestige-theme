@@ -28,6 +28,12 @@
             "show_taxes_notice": false
           }
         },
+        "text_6YiFKA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>次回先行予約は8月を予定しております。<br/>再入荷通知登録か公式LINEに登録してお待ちくださいませ。</p>"
+          }
+        },
         "image_XqUpDh": {
           "type": "image",
           "settings": {
@@ -202,6 +208,7 @@
         "vendor",
         "title",
         "price",
+        "text_6YiFKA",
         "image_XqUpDh",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
