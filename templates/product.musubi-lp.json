@@ -427,7 +427,14 @@
           "type": "soldout_record",
           "settings": {
             "date": "2026年5月下旬 先行予約",
-            "status": "開催中"
+            "status": "完売"
+          }
+        },
+        "soldout_record_pLeVCr": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年8月上旬 先行予約",
+            "status": "開催予定"
           }
         }
       },
@@ -441,7 +448,8 @@
         "sold_7",
         "sold_8",
         "soldout_record_Rr47tV",
-        "soldout_record_xzzJhT"
+        "soldout_record_xzzJhT",
+        "soldout_record_pLeVCr"
       ],
       "settings": {
         "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
