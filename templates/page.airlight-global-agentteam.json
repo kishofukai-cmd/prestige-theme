@@ -45,11 +45,21 @@
         "hero_image_alt": "AirLight Jacket — KAPOK KNOT",
         "fallback_url": "https://ucarecdn.com/64b0716b-231b-4805-b0ca-4a3c0f422c63/-/format/auto/-/preview/3000x3000/-/quality/lighter/ig_24aw%20_15_.png",
         "eyebrow": "The World's First Kapok-Insulated Jacket",
+        "launch_spot_icon": "⬡",
         "launch_spot": "",
+        "highlight_check_icon": "✓",
+        "pre_headline": "Still freezing in a jacket that weighs you down?",
         "hero_title": "<p>Warmer. Lighter. <em>Completely Animal-Free.</em></p>",
         "hero_sub": "<p>500g. Machine washable. No animals, no allergens. Designed in Japan.</p>",
         "cta_url": "",
-        "offer_note": ""
+        "cta_label": "Get My AirLight Jacket →",
+        "cta_price": "$398",
+        "offer_note": "",
+        "quick_link_1_label": "Shop Men's →",
+        "quick_link_1_url": "",
+        "quick_link_2_label": "Shop Women's →",
+        "quick_link_2_url": "",
+        "scroll_hint": "↓ See how it works"
       }
     },
     "video_8WWPL3": {
@@ -89,12 +99,21 @@
         "heading": "The World's First Kapok Jacket. Now Available Worldwide.",
         "subheading": "",
         "deadline": "2026-04-19T23:59:59Z",
-        "spots_remaining": 47,
+        "spots_remaining": 42,
         "spots_total": 100,
         "product_handle": "",
         "cta_url": "",
         "cta_text": "Claim Your Spot — $398",
-        "note": "This is not a flash sale. This is the first time AirLight Jacket has ever been available outside Japan."
+        "note": "This is not a flash sale. This is the first time AirLight Jacket has ever been available outside Japan.",
+        "countdown_days_label": "Days",
+        "countdown_hours_label": "Hrs",
+        "countdown_min_label": "Min",
+        "countdown_sec_label": "Sec",
+        "ended_text": "Campaign Ended — Join the Waitlist",
+        "spots_of_label": "of",
+        "spots_remaining_label": "spots remaining",
+        "modal_label": "Select Your Option",
+        "modal_add_text": "Add to Cart"
       }
     },
     "trust-bar": {
@@ -108,6 +127,7 @@
         },
         "trust_2": {
           "type": "item",
+          "disabled": true,
           "settings": {
             "text": "30-Day Returns Guaranteed"
           }
@@ -356,7 +376,12 @@
         "row_7"
       ],
       "settings": {
-        "heading": "How AirLight compares."
+        "heading": "How AirLight compares.",
+        "header_airlight_desktop": "★ OUR PICK",
+        "header_airlight_mobile": "AirLight",
+        "header_down": "Down",
+        "header_synthetic": "Synthetic",
+        "custom_css": ""
       }
     },
     "reviews": {
@@ -408,7 +433,8 @@
       "settings": {
         "heading": "Real Customers. Real Winters.",
         "avg_stars": "★★★★★",
-        "avg_label": "4.6 / 5 — 42 Verified Buyers"
+        "avg_label": "4.6 / 5 — 42 Verified Buyers",
+        "verified_badge": "✓ Verified Buyer"
       }
     },
     "awards": {
@@ -508,6 +534,10 @@
         "subheading": "Launch price for early adopters. Free worldwide shipping included.",
         "launch_price": "$398",
         "show_launch_price": true,
+        "show_progress": true,
+        "progress_taken": "73",
+        "progress_remaining": "27 remaining",
+        "progress_pct": 73,
         "offer_main": "",
         "offer_note": "",
         "cta_url": "",
@@ -621,6 +651,23 @@
         "heading": "Find Your Size",
         "intro": "If you're between sizes, we recommend sizing up for layering flexibility.",
         "fit_tip": "When in doubt, size up — AirLight is designed with room to layer.",
+        "tab_men": "Men's",
+        "tab_women": "Women's",
+        "unit_note": "Unit: cm",
+        "row_body_length": "Body Length",
+        "row_shoulder": "Shoulder",
+        "row_chest": "Chest",
+        "row_sleeve": "Sleeve",
+        "men_model_label": "Men's Model",
+        "women_model_label": "Women's Model",
+        "men_size_m": "M",
+        "men_size_l": "L",
+        "men_size_ll": "LL",
+        "men_size_3l": "3L",
+        "women_size_s": "S",
+        "women_size_m": "M",
+        "women_size_l": "L",
+        "women_size_ll": "LL",
         "men_length_m": "65",
         "men_length_l": "66.5",
         "men_length_ll": "68",
@@ -810,7 +857,18 @@
       ],
       "settings": {
         "label": "The Collection",
-        "heading": "Find your AirLight Jacket."
+        "heading": "Find your AirLight Jacket.",
+        "color_label": "Color:",
+        "size_label": "Size:",
+        "sizes_label": "Sizes:",
+        "size_guide_text": "Size Guide →",
+        "details_link_text": "View Full Details →",
+        "atc_select_size_text": "Select size to continue",
+        "sold_out_text": "Sold Out",
+        "added_text": "Added to cart!",
+        "checkout_link_text": "Proceed to Checkout →",
+        "discount_code": "FOUNDERS20",
+        "payment_note": "Apple Pay · Google Pay · Shop Pay · PayPal accepted"
       }
     },
     "closing": {
@@ -890,7 +948,9 @@
         "stat_3",
         "stat_4"
       ],
-      "settings": {}
+      "settings": {
+        "footnote": "*Based on life cycle analysis vs conventional goose down insulation."
+      }
     }
   },
   "order": [
