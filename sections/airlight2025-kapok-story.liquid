@@ -1,0 +1,158 @@
+{% comment %} AirLight 2025 EN — Kapok Story ("Down That Grows on Trees") hero-level material section {% endcomment %}
+
+<style>
+  .a25-kapok {
+    background: {{ section.settings.bg_color | default: '#faf9f6' }};
+    padding: clamp(48px, 7vw, 88px) clamp(16px, 3vw, 24px);
+  }
+  .a25-kapok__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+  .a25-kapok__media {
+    position: relative;
+  }
+  .a25-kapok__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .a25-kapok__img--secondary {
+    position: absolute;
+    right: -8%;
+    bottom: -14%;
+    width: 46%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(26,38,64,0.18);
+  }
+  .a25-kapok__kicker {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+    margin: 0 0 14px;
+  }
+  .a25-kapok__heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    font-weight: 600;
+    line-height: 1.12;
+    color: #1a1a1a;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+  }
+  .a25-kapok__body {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(14px, 1.7vw, 16px);
+    line-height: 1.75;
+    color: #5a5550;
+    margin: 0 0 clamp(20px, 3vw, 28px);
+  }
+  .a25-kapok__chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .a25-kapok__chip {
+    background: #fff;
+    border: 1px solid rgba(26,38,64,0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .a25-kapok__chip strong {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a2640;
+    line-height: 1.1;
+    margin-bottom: 3px;
+  }
+  .a25-kapok__chip span {
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: #8a7f6e;
+    text-transform: uppercase;
+  }
+  @media (max-width: 820px) {
+    .a25-kapok__inner { grid-template-columns: 1fr; }
+    .a25-kapok__media { margin-bottom: 24px; }
+    .a25-kapok__img--secondary { bottom: -10%; }
+    .a25-kapok__chips { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<section class="a25-kapok" id="{{ section.settings.section_id | default: 'a25-kapok' }}">
+  <div class="a25-kapok__inner">
+    <div class="a25-kapok__media">
+      {% if section.settings.image_url != blank %}
+        <img class="a25-kapok__img" src="{{ section.settings.image_url }}" alt="{{ section.settings.heading | strip_html }}" loading="lazy">
+      {% endif %}
+      {% if section.settings.image2_url != blank %}
+        <img class="a25-kapok__img a25-kapok__img--secondary" src="{{ section.settings.image2_url }}" alt="" loading="lazy">
+      {% endif %}
+    </div>
+    <div class="a25-kapok__text">
+      {% if section.settings.kicker != blank %}
+        <p class="a25-kapok__kicker">{{ section.settings.kicker }}</p>
+      {% endif %}
+      <h2 class="a25-kapok__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.body != blank %}
+        <p class="a25-kapok__body">{{ section.settings.body }}</p>
+      {% endif %}
+      <div class="a25-kapok__chips">
+        {% for block in section.blocks %}
+          <div class="a25-kapok__chip" {{ block.shopify_attributes }}>
+            <strong>{{ block.settings.value }}</strong>
+            <span>{{ block.settings.label }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A25 Kapok Story",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "Section ID", "default": "a25-kapok" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#faf9f6" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#c29d66" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "THE MATERIAL — KAPOK" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Down That Grows on Trees." },
+    { "type": "textarea", "id": "body", "label": "Body", "default": "Kapok is a wild-grown fiber from Southeast Asian seed pods — hollow, breathable, and warm like down, with zero birds involved. After years of development in Japan, we turned it into EthicalDown Kapok™: a patent-pending insulation sheet, and the heart of every jacket we make." },
+    { "type": "text", "id": "image_url", "label": "Main Image URL", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_1fde3b94-7836-4535-a69d-cd797688605f.jpg" },
+    { "type": "text", "id": "image2_url", "label": "Secondary Image URL (overlap)", "default": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_c6576652-8458-4d1b-b29f-9dd1d0473ed6.jpg" }
+  ],
+  "blocks": [
+    {
+      "type": "stat_chip",
+      "name": "Stat Chip",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "1/8" },
+        { "type": "text", "id": "label", "label": "Label", "default": "the weight of cotton" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A25 Kapok Story",
+      "blocks": [
+        { "type": "stat_chip", "settings": { "value": "1/8", "label": "The weight of cotton" } },
+        { "type": "stat_chip", "settings": { "value": "0", "label": "Animal products" } },
+        { "type": "stat_chip", "settings": { "value": "500g", "label": "Total jacket weight" } },
+        { "type": "stat_chip", "settings": { "value": "Washable", "label": "At home, by hand" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

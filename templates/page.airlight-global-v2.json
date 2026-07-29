@@ -16,11 +16,11 @@
         "bg_color": "#ffffff",
         "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-hero-kv-en-v5.jpg",
         "kv_image_alt": "AirLight Jacket · KAPOK KNOT",
-        "eyebrow": "KAPOK KNOT — AirLight Jacket 2026",
+        "eyebrow": "KAPOK KNOT — TOKYO, JAPAN",
         "eyebrow_color": "#c29d66",
-        "heading": "<p>Outerwear, rethought.</p><p>“Light as air, warm as down”<br/><em>The AirLight Jacket</em></p>",
+        "heading": "<p>Japan's sustainable answer to down.<br/><em>The AirLight Jacket</em></p>",
         "heading_color": "#1a1a1a",
-        "sub_text": "A ~500g winter jacket made from kapok, a plant-based fiber. Light, warm, and kind to animals and the planet.",
+        "sub_text": "~500g of plant-powered warmth. Light, warm, and kind to animals and the planet.",
         "sub_color": "#5a5550",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
@@ -45,39 +45,91 @@
         "accent_color": "#c29d66"
       }
     },
-    "features": {
-      "type": "kapok-feature-cards",
+    "kapok-story": {
+      "type": "airlight2025-kapok-story",
       "blocks": {
-        "feature_1": {
-          "type": "feature_card",
+        "chip_1": { "type": "stat_chip", "settings": { "value": "1/8", "label": "The weight of cotton" } },
+        "chip_2": { "type": "stat_chip", "settings": { "value": "0", "label": "Animal products" } },
+        "chip_3": { "type": "stat_chip", "settings": { "value": "500g", "label": "Total jacket weight" } },
+        "chip_4": { "type": "stat_chip", "settings": { "value": "Washable", "label": "At home, by hand" } }
+      },
+      "block_order": ["chip_1", "chip_2", "chip_3", "chip_4"],
+      "settings": {
+        "section_id": "a25-kapok",
+        "bg_color": "#faf9f6",
+        "accent_color": "#c29d66",
+        "kicker": "THE MATERIAL — KAPOK",
+        "heading": "Down That Grows on Trees.",
+        "body": "Kapok is a wild-grown fiber from Southeast Asian seed pods — hollow, breathable, and warm like down, with zero birds involved. After years of development in Japan, we turned it into EthicalDown Kapok™: a patent-pending insulation sheet, and the heart of every jacket we make.",
+        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_1fde3b94-7836-4535-a69d-cd797688605f.jpg",
+        "image2_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_c6576652-8458-4d1b-b29f-9dd1d0473ed6.jpg"
+      }
+    },
+    "demos": {
+      "type": "airlight2025-demos",
+      "blocks": {
+        "demo_1": {
+          "type": "demo",
           "settings": {
-            "image_url": "https://ucarecdn.com/76a865d0-ddaa-4028-b4a7-daeac90ec724/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-            "title": "Down-level warmth, from a featherlight fiber.",
-            "text": "<p>Kapok's hollow core absorbs moisture and releases heat, just like down — earning it the nickname “down that grows on trees.”</p>"
+            "tag": "THERMAL TEST",
+            "title": "Down-Level Warmth. Proven.",
+            "gif_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-thermal-en.jpg",
+            "caption": "Thermal image, 1 minute after wear, in a 3°C room.",
+            "body": "At the same weight, our kapok insulation holds its own against a polyester down coat in this three-way thermal comparison."
           }
         },
-        "feature_2": {
-          "type": "feature_card",
+        "demo_layers": {
+          "type": "demo",
           "settings": {
-            "image_url": "https://ucarecdn.com/f2dea617-10ee-4af0-9176-c2c33d49261e/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-            "title": "Breathable — never clammy, indoors or out.",
-            "text": "<p>That same hollow fiber traps a layer of air: warm when it's cold, cool when it's not. Thin, light, and warm all at once.</p>"
+            "tag": "4-LAYER CONSTRUCTION",
+            "title": "Built for All Weather.",
+            "gif_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-4layer-en.png",
+            "caption": "Recycled nylon shell · plant-based coating · kapok sheet · anti-static lining.",
+            "body": "Four layers working together — warmth without bulk, rain without worry."
           }
         },
-        "feature_3": {
-          "type": "feature_card",
+        "demo_2": {
+          "type": "demo",
           "settings": {
-            "image_url": "https://ucarecdn.com/a75b5489-b6fa-41a3-a988-68ef8a8488aa/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-            "title": "Hand-washable outerwear.",
-            "text": "<p>The kapok insulation comes as a sheet, not loose down — so you can hand-wash it at home and keep it fresh for years.</p>"
+            "tag": "WATER RESISTANT",
+            "title": "20x the Water Resistance of an Umbrella.",
+            "gif_url": "https://ucarecdn.com/f61ed291-912e-40eb-a433-1d0867b808a2/Kapok_0907_03.gif",
+            "caption": "Water-repellency demonstration",
+            "body": "A plant-based water-repellent coating keeps you dry from the daily commute to the outdoors."
           }
         }
       },
-      "block_order": ["feature_1", "feature_2", "feature_3"],
+      "block_order": ["demo_1", "demo_layers", "demo_2"],
       "settings": {
-        "title": "",
-        "background_color": "#ffffff",
-        "text_color": "#1a1a1a"
+        "bg_color": "#ffffff",
+        "kicker": "Functional Proof",
+        "heading": "<p>The numbers behind <em>the AirLight difference.</em></p>",
+        "intro": ""
+      }
+    },
+    "farm-to-fashion": {
+      "type": "airlight2025-farm-to-fashion",
+      "blocks": {
+        "step_1": { "type": "step", "settings": { "step_label": "Step 01", "title": "The Farm — Indonesia", "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut." } },
+        "step_2": { "type": "step", "settings": { "step_label": "Step 02", "title": "The Sheet — Japan", "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet." } },
+        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Sewing — Aomori, Japan", "text": "Each jacket is sewn by a single \"marunui\" craftsperson who completes every step alone — a mark of true mastery." } }
+      },
+      "block_order": ["step_1", "step_2", "step_3"],
+      "settings": {
+        "bg_color": "#faf9f6",
+        "kicker": "Farm to Fashion",
+        "heading": "<p>From the farm to your hands.<em>Every step, ours.</em></p>",
+        "intro": "Meet the people behind every step — on film, and in person.",
+        "photo_1_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_ce3fd4f0-cb6b-4cd4-81f7-d582ba6a18c3.jpg",
+        "photo_1_alt": "Our founder planting kapok at the farm",
+        "photo_2_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_f4097b59-872e-4f7d-8faf-8fdf27d1171f.jpg",
+        "photo_2_alt": "Kapok fiber at the processing facility",
+        "photo_3_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_e9204e1e-ddae-4df1-9379-694d9fc0e137.jpg",
+        "photo_3_alt": "From plantation to sewing floor",
+        "video_url": "https://youtu.be/-ZIZcHy7w8A",
+        "video_title": "Farm to Fashion — KAPOK KNOT",
+        "autoplay": false,
+        "footnote": "Official KAPOK KNOT video."
       }
     },
     "products": {
@@ -203,94 +255,6 @@
         "background_style": "cream"
       }
     },
-    "material": {
-      "type": "airlight2025-material",
-      "blocks": {
-        "material_block_1": {
-          "type": "material_block",
-          "settings": {
-            "title": "About 1/8 the weight of cotton.",
-            "body": "<p>EthicalDown Kapok™ is hollow at its core, so it's exceptionally light — and warm.</p>",
-            "image_url": "https://ucarecdn.com/dea0315a-8b99-48e9-b01e-e5cc3d6e4cef/",
-            "image_caption": "",
-            "image_position": "full"
-          }
-        },
-        "material_block_2": {
-          "type": "material_block",
-          "settings": {
-            "title": "Down that grows on trees.",
-            "body": "<p>Being plant-based, kapok “breathes” in a way synthetic fiber can't — absorbing moisture and generating warmth as it does. Sometimes called “white silk cotton,” it's blended with recycled polyester and formed into a sheet: EthicalDown Kapok™.</p>",
-            "image_url": "https://ucarecdn.com/a21ea9da-ddb5-4657-ab56-b163a7666035/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-            "image_caption": "",
-            "image_position": "full"
-          }
-        },
-        "material_block_3": {
-          "type": "material_block",
-          "settings": {
-            "title": "Animal-friendly, by nature.",
-            "body": "<p>Traditional down comes from waterfowl feathers — roughly 30 birds' worth per jacket, by some estimates. Kapok comes from a seed pod, not a bird, so there's nothing here to feel conflicted about.</p>",
-            "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
-            "image_caption": "▲ The kapok seed pod",
-            "image_position": "full"
-          }
-        }
-      },
-      "block_order": ["material_block_1", "material_block_2", "material_block_3"],
-      "settings": {
-        "section_id": "a25-material",
-        "bg_color": "#faf9f6",
-        "label": "The Material",
-        "heading": "<p>One material, <em>years in the making: kapok.</em></p>",
-        "intro": "KAPOK KNOT is built around a single material — kapok, a plant-based fiber grown across Southeast Asia. Its short fibers made it notoriously hard to spin, limiting it to life-jacket stuffing and cushions for decades.\n\nAfter years of joint development, we created EthicalDown Kapok™ — a patent-pending insulation sheet that finally solves that problem."
-      }
-    },
-    "demos": {
-      "type": "airlight2025-demos",
-      "blocks": {
-        "demo_1": {
-          "type": "demo",
-          "settings": {
-            "tag": "THERMAL TEST",
-            "title": "Down-Level Warmth. Proven.",
-            "gif_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight-thermal-en.jpg",
-            "caption": "Thermal image, 1 minute after wear, in a 3°C room.",
-            "body": "At the same weight, our kapok insulation holds its own against a polyester down coat in this three-way thermal comparison."
-          }
-        },
-        "demo_2": {
-          "type": "demo",
-          "settings": {
-            "tag": "WATER RESISTANT",
-            "title": "20x the Water Resistance of an Umbrella.",
-            "gif_url": "https://ucarecdn.com/f61ed291-912e-40eb-a433-1d0867b808a2/Kapok_0907_03.gif",
-            "caption": "Water-repellency demonstration",
-            "body": "A plant-based water-repellent coating keeps you dry from the daily commute to the outdoors, whatever the weather."
-          }
-        }
-      },
-      "block_order": ["demo_1", "demo_2"],
-      "settings": {
-        "bg_color": "#ffffff",
-        "kicker": "Functional Proof",
-        "heading": "<p>The numbers behind <em>the AirLight difference.</em></p>",
-        "intro": ""
-      }
-    },
-    "farm-to-fashion": {
-      "type": "airlight2025-farm-to-fashion",
-      "settings": {
-        "bg_color": "#faf9f6",
-        "kicker": "Farm to Fashion",
-        "heading": "<p>From the farm to your hands.<em>Every step, ours.</em></p>",
-        "intro": "From the kapok farm to the garment factory — meet the people behind every step.",
-        "video_url": "https://youtu.be/-ZIZcHy7w8A",
-        "video_title": "Farm to Fashion — KAPOK KNOT",
-        "autoplay": false,
-        "footnote": "Official KAPOK KNOT video."
-      }
-    },
     "mid-cta": {
       "type": "airlight2025-mid-cta",
       "settings": {
@@ -304,106 +268,6 @@
         "cta_women_text": "Shop Women's",
         "cta_women_url": "/en/products/women-hooded-jacket?discount=FOUNDERS20",
         "price_note": "A$478"
-      }
-    },
-    "crosssell": {
-      "type": "airlight2025-crosssell",
-      "blocks": {
-        "product_tile_1": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "AirLight Peplum Jacket — Women's",
-            "colors": "Ice Blue / White / Black",
-            "price": "A$748",
-            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_2": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "Velour Quilted Jacket — Unisex",
-            "colors": "Khaki / Navy",
-            "price": "A$598",
-            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_3": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "WARM Denim Jacket — Men's",
-            "colors": "Black / Blue",
-            "price": "A$598",
-            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_4": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "Quilted Jacket (Check) — Unisex",
-            "colors": "Olive / Black",
-            "price": "A$720",
-            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png",
-            "cta_url": ""
-          }
-        },
-        "product_tile_5": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "Stand Collar Coat — Unisex",
-            "colors": "Black(New) / Greige / Green / Navy",
-            "price": "A$1,040",
-            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_6": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "Poncho Coat — Unisex",
-            "colors": "Olive / Navy / Black / Greige",
-            "price": "A$980",
-            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_7": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "Waist-Mark Parka Coat — Women's",
-            "colors": "Camel / Greige / Navy",
-            "price": "A$748",
-            "image_url": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_8": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "Balmacaan Coat — Women's/Men's",
-            "colors": "Dark Navy / Beige / Camel",
-            "price": "A$720",
-            "image_url": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg",
-            "cta_url": ""
-          }
-        }
-      },
-      "block_order": ["product_tile_1", "product_tile_2", "product_tile_3", "product_tile_4", "product_tile_5", "product_tile_6", "product_tile_7", "product_tile_8"],
-      "settings": {
-        "section_id": "a25-cross",
-        "bg_color": "#ffffff",
-        "jackets_heading": "More jackets from KAPOK KNOT",
-        "coats_heading": "More coats from KAPOK KNOT"
       }
     },
     "proof": {
@@ -480,8 +344,8 @@
       "settings": {
         "section_id": "a25-proof",
         "bg_color": "#faf9f6",
-        "makuake_heading": "<p>¥50M+ raised<em>on Makuake, Japan</em></p>",
-        "makuake_body": "2,000+ backers, ¥50M+ raised over 4 years on Makuake — Japan's leading crowdfunding platform.",
+        "makuake_heading": "<p>2,000+ backers<em>on Makuake, Japan</em></p>",
+        "makuake_body": "¥50M+ raised over 4 years on Japan's leading crowdfunding platform — before we ever went global.",
         "media_heading": "Featured in the press",
         "creators_heading": "Creators who believe in the brand"
       }
@@ -516,7 +380,7 @@
         "kicker": "A Message From Our Founder",
         "founder_name": "Kisho Fukai, Founder & CEO of KAPOK KNOT",
         "founder_image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
-        "founder_body": "<p>I'm Kisho Fukai, founder of KAPOK KNOT. As the fourth generation of an apparel family, I watched the industry's mass-production, mass-waste system up close — then I found kapok, and knew it was the material I wanted to build a career around.</p><p>We make things with the consumer, the producer, and the environment all in view.</p>",
+        "founder_body": "<p>I'm Kisho Fukai, founder of KAPOK KNOT — and the fourth generation of a Japanese textile family.</p><p>Growing up inside the apparel industry, I saw its mass-production, mass-waste system up close. Then I found kapok, and knew instantly: this is the material I want to spend my life on.</p><p>We seriously believe this fiber can help save the world. Every piece we make carries that conviction — with the consumer, the producer, and the planet all in view.</p>",
         "values_heading": "What KAPOK KNOT Stands For"
       }
     },
@@ -566,6 +430,62 @@
         "bg_color": "#ffffff"
       }
     },
+    "crosssell": {
+      "type": "airlight2025-crosssell",
+      "blocks": {
+        "product_tile_1": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "AirLight Peplum Jacket — Women's",
+            "colors": "Ice Blue / White / Black",
+            "price": "A$748",
+            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
+            "cta_url": "/en/products/airlight-peplum-jacket"
+          }
+        },
+        "product_tile_2": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "Velour Quilted Jacket — Unisex",
+            "colors": "Khaki / Navy",
+            "price": "A$598",
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "cta_url": "/en/products/velours-quilting-jacket"
+          }
+        },
+        "product_tile_5": {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "Stand Collar Coat — Unisex",
+            "colors": "Black(New) / Greige / Green / Navy",
+            "price": "A$1,040",
+            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
+            "cta_url": "/en/products/standcollar"
+          }
+        },
+        "product_tile_6": {
+          "type": "product_tile",
+          "settings": {
+            "group": "coat",
+            "name": "Poncho Coat — Unisex",
+            "colors": "Olive / Navy / Black / Greige",
+            "price": "A$980",
+            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
+            "cta_url": "/en/products/unisex-poncho%E3%83%BCtrench-coat"
+          }
+        }
+      },
+      "block_order": ["product_tile_1", "product_tile_2", "product_tile_5", "product_tile_6"],
+      "settings": {
+        "section_id": "a25-cross",
+        "bg_color": "#ffffff",
+        "jackets_heading": "More jackets from KAPOK KNOT",
+        "coats_heading": "More coats from KAPOK KNOT"
+      }
+    },
     "sticky": {
       "type": "airlight2025-sticky",
       "settings": {
@@ -586,17 +506,16 @@
   "order": [
     "hero",
     "offer",
-    "features",
-    "products",
-    "reviews",
-    "material",
+    "kapok-story",
     "demos",
     "farm-to-fashion",
+    "products",
+    "reviews",
     "mid-cta",
-    "crosssell",
     "proof",
     "founder",
     "faq",
+    "crosssell",
     "sticky"
   ]
 }
