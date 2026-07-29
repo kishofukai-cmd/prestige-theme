@@ -17,6 +17,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+    aspect-ratio: auto;
   }
 
   .a25-hero__inner {
@@ -134,13 +135,12 @@
       <img class="a25-hero__kv"
            src="{{ section.settings.kv_image | image_url: width: 2000 }}"
            alt="{{ section.settings.kv_image_alt }}"
-           width="1585" height="1057"
+           width="{{ section.settings.kv_image.width }}" height="{{ section.settings.kv_image.height }}"
            loading="eager" fetchpriority="high">
     {% elsif section.settings.kv_image_url != blank %}
       <img class="a25-hero__kv"
            src="{{ section.settings.kv_image_url }}"
            alt="{{ section.settings.kv_image_alt }}"
-           width="1585" height="1057"
            loading="eager" fetchpriority="high">
     {% endif %}
   </div>
