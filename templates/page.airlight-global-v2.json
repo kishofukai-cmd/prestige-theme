@@ -112,7 +112,7 @@
       "blocks": {
         "step_1": { "type": "step", "settings": { "step_label": "Step 01", "title": "The Farm — Indonesia", "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut." } },
         "step_2": { "type": "step", "settings": { "step_label": "Step 02", "title": "The Sheet — Japan", "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet." } },
-        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Sewing — Aomori, Japan", "text": "Each jacket is sewn by a single \"marunui\" craftsperson who completes every step alone — a mark of true mastery." } }
+        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Design — Tokyo, Japan", "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric." } }
       },
       "block_order": ["step_1", "step_2", "step_3"],
       "settings": {
@@ -404,8 +404,8 @@
         "faq_item_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Where are your garments sewn?",
-            "answer": "<p>Most pieces are sewn at a single factory in Aomori, Japan, using “marunui” — one seamstress completing every step of a garment alone, a mark of high craftsmanship.</p>"
+            "question": "Where are your products made?",
+            "answer": "<p>The heart of every jacket — our EthicalDown Kapok™ insulation fabric — is developed and made in Japan, from kapok grown in Southeast Asia. Each AirLight Jacket is designed and engineered in Tokyo.</p>"
           }
         },
         "faq_item_4": {
