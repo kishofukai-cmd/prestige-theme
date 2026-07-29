@@ -52,19 +52,65 @@
     box-shadow: 0 12px 30px rgba(26, 26, 26, 0.08);
   }
 
+  /* Main gallery image */
+  .a25-product-card__main {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #faf9f6;
+    margin: 0 0 12px;
+  }
+
+  .a25-product-card__main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.25s ease;
+  }
+
+  .a25-product-card__main img.is-fading { opacity: 0; }
+
+  .a25-product-card__color-badge {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 100px;
+    padding: 4px 12px;
+    pointer-events: none;
+  }
+
+  /* Color thumbnails (switcher) */
   .a25-product-card__thumbs {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6px;
+    display: flex;
+    gap: 8px;
     margin: 0 0 clamp(12px, 1.8vw, 18px);
   }
 
   .a25-product-card__thumb {
     display: block;
+    width: 48px;
+    min-width: 44px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
     background: #faf9f6;
+    border: 2px solid transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+
+  .a25-product-card__thumb.is-active {
+    border-color: #c29d66;
   }
 
   .a25-product-card__thumb img {
@@ -72,17 +118,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  .a25-product-card__thumb-label {
-    display: block;
-    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.04em;
-    color: #8a7f6e;
-    text-align: center;
-    margin-top: 4px;
-    line-height: 1.2;
   }
 
   .a25-product-card__name {
@@ -191,8 +226,38 @@
     <div class="a25-products__grid">
       {% for block in section.blocks %}
         {% if block.type == 'product_card' %}
-          <article class="a25-product-card" {{ block.shopify_attributes }}>
-            <div class="a25-product-card__thumbs">
+          <article class="a25-product-card" data-a25-gallery {{ block.shopify_attributes }}>
+            {% assign main_src = '' %}
+            {% assign main_color = '' %}
+            {% for i in (1..5) %}
+              {% assign img_key = 'image_' | append: i %}
+              {% assign url_key = 'image_' | append: i | append: '_url' %}
+              {% assign color_key = 'color_' | append: i %}
+              {% assign img = block.settings[img_key] %}
+              {% assign img_url = block.settings[url_key] %}
+              {% if main_src == '' %}
+                {% if img != blank %}
+                  {% assign main_src = img | image_url: width: 900 %}
+                  {% assign main_color = block.settings[color_key] %}
+                {% elsif img_url != blank %}
+                  {% assign main_src = img_url %}
+                  {% assign main_color = block.settings[color_key] %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% if main_src != '' %}
+              <div class="a25-product-card__main">
+                <img src="{{ main_src }}"
+                     alt="{{ block.settings.product_name }} {{ main_color }}"
+                     loading="lazy" data-a25-main>
+                {% if main_color != blank %}
+                  <span class="a25-product-card__color-badge" data-a25-badge>{{ main_color }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="a25-product-card__thumbs" role="group" aria-label="{{ block.settings.product_name }} colors">
               {% for i in (1..5) %}
                 {% assign img_key = 'image_' | append: i %}
                 {% assign url_key = 'image_' | append: i | append: '_url' %}
@@ -201,22 +266,18 @@
                 {% assign img_url = block.settings[url_key] %}
                 {% assign color_label = block.settings[color_key] %}
                 {% if img != blank or img_url != blank %}
-                  <div>
-                    <div class="a25-product-card__thumb">
-                      {% if img != blank %}
-                        <img src="{{ img | image_url: width: 300 }}"
-                             alt="{{ block.settings.product_name }} {{ color_label }}"
-                             width="150" height="150" loading="lazy">
-                      {% elsif img_url != blank %}
-                        <img src="{{ img_url }}"
-                             alt="{{ block.settings.product_name }} {{ color_label }}"
-                             width="150" height="150" loading="lazy">
-                      {% endif %}
-                    </div>
-                    {% if color_label != blank %}
-                      <span class="a25-product-card__thumb-label">{{ color_label }}</span>
-                    {% endif %}
-                  </div>
+                  {% assign thumb_src = img_url %}
+                  {% if img != blank %}{% assign thumb_src = img | image_url: width: 900 %}{% endif %}
+                  <button type="button"
+                          class="a25-product-card__thumb{% if forloop.first %} is-active{% endif %}"
+                          data-a25-thumb
+                          data-src="{{ thumb_src }}"
+                          data-color="{{ color_label | escape }}"
+                          aria-label="Show {{ color_label | default: 'color' | escape }}">
+                    <img src="{{ thumb_src }}"
+                         alt=""
+                         width="96" height="96" loading="lazy">
+                  </button>
                 {% endif %}
               {% endfor %}
             </div>
@@ -244,6 +305,40 @@
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    function initGalleries(root) {
+      (root || document).querySelectorAll('[data-a25-gallery]').forEach(function (card) {
+        if (card.dataset.a25Init) return;
+        card.dataset.a25Init = '1';
+        var main = card.querySelector('[data-a25-main]');
+        var badge = card.querySelector('[data-a25-badge]');
+        if (!main) return;
+        card.querySelectorAll('[data-a25-thumb]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var src = btn.dataset.src;
+            if (!src || src === main.getAttribute('src')) return;
+            main.classList.add('is-fading');
+            var swap = function () {
+              main.setAttribute('src', src);
+              if (badge && btn.dataset.color) badge.textContent = btn.dataset.color;
+              main.classList.remove('is-fading');
+            };
+            setTimeout(swap, 120);
+            card.querySelectorAll('[data-a25-thumb]').forEach(function (b) {
+              b.classList.toggle('is-active', b === btn);
+            });
+          });
+        });
+      });
+    }
+    initGalleries();
+    document.addEventListener('shopify:section:load', function (e) {
+      initGalleries(e.target);
+    });
+  })();
+</script>
 
 {% schema %}
 {
