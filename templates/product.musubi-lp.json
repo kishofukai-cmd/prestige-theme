@@ -34,6 +34,16 @@
             "text": "<p>次回先行予約は8月8日12:00より開催に決定いたしました！<br/>公式LINEor再入荷通知登録に登録して販売開始告知をお待ちくださいませ。</p>"
           }
         },
+        "button_ny4ifY": {
+          "type": "button",
+          "settings": {
+            "link": "https://page.line.me/258kaxeg",
+            "text": "公式LINE登録はこちら",
+            "stretch": true,
+            "background": "#06C755",
+            "text_color": ""
+          }
+        },
         "image_XqUpDh": {
           "type": "image",
           "settings": {
@@ -209,6 +219,7 @@
         "title",
         "price",
         "text_6YiFKA",
+        "button_ny4ifY",
         "image_XqUpDh",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
         "variant_picker",
@@ -433,7 +444,7 @@
         "soldout_record_pLeVCr": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年8月上旬 先行予約",
+            "date": "2026年8月8日(土) 12:00〜 先行予約",
             "status": "開催予定"
           }
         }
