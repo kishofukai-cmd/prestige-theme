@@ -993,6 +993,20 @@
             "date": "2025年10月 先行予約",
             "status": "完売"
           }
+        },
+        "soldout_record_KM39Ta": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年5月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_9cnEFY": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年8月8日 先行予約",
+            "status": "開催予定"
+          }
         }
       },
       "block_order": [
@@ -1003,7 +1017,9 @@
         "sold_5",
         "sold_6",
         "sold_7",
-        "sold_8"
+        "sold_8",
+        "soldout_record_KM39Ta",
+        "soldout_record_9cnEFY"
       ],
       "settings": {
         "heading": "<p>2024年5月初公開の<br/>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
@@ -1581,8 +1597,15 @@
         "soldout_record_N3rKwr": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月22日 先行予約開始を予定",
-            "status": "開催中"
+            "date": "2026年5月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_8tJiFd": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年8月8日(土) 先行予約",
+            "status": "開催予定"
           }
         }
       },
@@ -1596,7 +1619,8 @@
         "soldout_record_4qrWbR",
         "soldout_record_aL6CM8",
         "soldout_record_gNDyBy",
-        "soldout_record_N3rKwr"
+        "soldout_record_N3rKwr",
+        "soldout_record_8tJiFd"
       ],
       "name": "MUSUBI 完売履歴",
       "settings": {
@@ -1630,12 +1654,12 @@
       "type": "musubi-lp-cta",
       "settings": {
         "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【先行予約受付中】</strong></p>",
+        "subtitle": "<p><strong>【先行予約準備中】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
         "show_soldout": true,
-        "soldout_text": "お届け予定：6月22日より順次配送予定",
+        "soldout_text": "2026年8月8日(土) 12:00より先行予約開催予定",
         "soldout_font_size": 13,
         "soldout_text_color": "#ffffff",
         "cta_url": "https://kapok-knot.com/products/musubi-en",
