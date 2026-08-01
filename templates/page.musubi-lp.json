@@ -301,8 +301,15 @@
         "soldout_record_fch9E4": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年5月22日 先行予約開始",
-            "status": "開催中"
+            "date": "2026年5月22日 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_REBAFA": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年8月8日(土) 先行予約",
+            "status": "開催予定"
           }
         }
       },
@@ -316,7 +323,8 @@
         "soldout_record_Dqc7at",
         "soldout_record_6X3RAc",
         "soldout_record_TwRJD4",
-        "soldout_record_fch9E4"
+        "soldout_record_fch9E4",
+        "soldout_record_REBAFA"
       ],
       "name": "MUSUBI 完売履歴",
       "settings": {
