@@ -308,8 +308,8 @@
         "soldout_record_REBAFA": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年8月8日(土) 先行予約",
-            "status": "開催予定"
+            "date": "2026年8月8日 先行予約",
+            "status": "開催中！"
           }
         }
       },
@@ -1005,7 +1005,7 @@
           "type": "soldout_record",
           "settings": {
             "date": "2026年8月8日 先行予約",
-            "status": "開催予定"
+            "status": "開催中！"
           }
         }
       },
@@ -1605,7 +1605,7 @@
           "type": "soldout_record",
           "settings": {
             "date": "2026年8月8日(土) 先行予約",
-            "status": "開催予定"
+            "status": "開催中！"
           }
         }
       },
@@ -1654,7 +1654,7 @@
       "type": "musubi-lp-cta",
       "settings": {
         "bg_color": "#72a4dc",
-        "subtitle": "<p><strong>【先行予約準備中】</strong></p>",
+        "subtitle": "<p><strong>【先行予約開催中】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
         "subtitle_color": "#ffffff",
