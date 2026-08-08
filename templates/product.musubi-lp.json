@@ -31,16 +31,17 @@
         "text_6YiFKA": {
           "type": "text",
           "settings": {
-            "text": "<p>次回先行予約は8月8日12:00より開催に決定いたしました！<br/>公式LINEor再入荷通知登録に登録して販売開始告知をお待ちくださいませ。</p>"
+            "text": "<p>先行予約8月8日(土)12:00より開催！<br/>お届け予定：9月15日より順次配送予定</p>"
           }
         },
         "button_ny4ifY": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "link": "https://page.line.me/258kaxeg",
             "text": "公式LINE登録はこちら",
             "stretch": true,
-            "background": "#06C755",
+            "background": "#06c755",
             "text_color": ""
           }
         },
