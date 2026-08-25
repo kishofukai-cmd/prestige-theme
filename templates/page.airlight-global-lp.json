@@ -127,7 +127,16 @@
         "ai_gen_block_7a02e03_DPQVTw": {
           "type": "ai_gen_block_7a02e03",
           "settings": {
-            "image_1": "shopify://shop_images/3_1ac5acd8-2bc9-40ef-8f3e-9b6d21121d81.png",
+            "image_1": "shopify://shop_images/1_ef6c1070-246c-40fa-80e2-79117b48465f.png",
+            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
+            "image_3": "shopify://shop_images/5_be44fde8-d052-41cd-a104-9665ffe5df93.png",
+            "image_4": "shopify://shop_images/12_1e7adcd1-1758-4ced-9e49-6a54606658fc.png",
+            "image_5": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
+            "image_6": "shopify://shop_images/17_59b7f6bb-9acb-4f5c-b528-5a91e71006ee.png",
+            "image_7": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
+            "image_8": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
+            "image_9": "shopify://shop_images/3_8895140d-295c-4857-9aa2-d4a8c00c66b5.png",
+            "image_10": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
             "desktop_width_percent": 100,
             "image_aspect_ratio": "1/1",
             "image_gap": 20,
