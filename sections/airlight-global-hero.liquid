@@ -5,9 +5,38 @@
 <section class="ag-hero" id="ag-hero">
   <div class="ag-hero__img-wrapper">
     {% if section.settings.hero_image != blank %}
-      <img src="{{ section.settings.hero_image | img_url: '1600x' }}"
-           alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' }}"
-           class="ag-hero__img" fetchpriority="high">
+      <picture>
+        {% if section.settings.hero_image_mobile != blank %}
+          <source
+            media="(max-width: 768px)"
+            srcset="
+              {{ section.settings.hero_image_mobile | image_url: width: 750 }} 750w,
+              {{ section.settings.hero_image_mobile | image_url: width: 1200 }} 1200w
+            "
+            sizes="100vw">
+        {% endif %}
+        <img
+          src="{{ section.settings.hero_image | image_url: width: 1600 }}"
+          srcset="
+            {{ section.settings.hero_image | image_url: width: 1200 }} 1200w,
+            {{ section.settings.hero_image | image_url: width: 1600 }} 1600w,
+            {{ section.settings.hero_image | image_url: width: 2400 }} 2400w
+          "
+          sizes="100vw"
+          alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' | escape }}"
+          class="ag-hero__img"
+          width="{{ section.settings.hero_image.width }}"
+          height="{{ section.settings.hero_image.height }}"
+          fetchpriority="high">
+      </picture>
+    {% elsif section.settings.hero_image_mobile != blank %}
+      <img
+        src="{{ section.settings.hero_image_mobile | image_url: width: 1200 }}"
+        alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' | escape }}"
+        class="ag-hero__img"
+        width="{{ section.settings.hero_image_mobile.width }}"
+        height="{{ section.settings.hero_image_mobile.height }}"
+        fetchpriority="high">
     {% elsif section.settings.fallback_url != blank %}
       <img src="{{ section.settings.fallback_url }}"
            alt="{{ section.settings.hero_image_alt | default: 'AirLight Jacket · KAPOK KNOT' }}"
@@ -102,6 +131,11 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+}
+.ag-hero__img-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .ag-hero__img {
   width: 100%;
@@ -343,6 +377,10 @@
 /* Mobile */
 @media (max-width: 768px) {
   .ag-hero { overflow-x: hidden; }
+  .ag-hero__img {
+    object-fit: {{ section.settings.mobile_image_fit | default: 'cover' }};
+    object-position: {{ section.settings.mobile_image_position_x | default: 50 }}% {{ section.settings.mobile_image_position_y | default: 20 }}%;
+  }
   .ag-hero__content { padding: 80px 16px 120px; }
   .ag-hero__title { font-size: 2rem; margin-bottom: 16px; }
   .ag-hero__sub { font-size: 14px; margin-bottom: 24px; }
@@ -364,6 +402,19 @@
   "name": "AG Hero",
   "settings": [
     { "type": "image_picker", "id": "hero_image", "label": "Hero Image" },
+    { "type": "image_picker", "id": "hero_image_mobile", "label": "Hero Image（SP専用）", "info": "未設定の場合はPC用画像を表示します。縦長画像推奨。" },
+    {
+      "type": "select",
+      "id": "mobile_image_fit",
+      "label": "SP画像の表示方法",
+      "default": "cover",
+      "options": [
+        { "value": "cover", "label": "画面いっぱいに表示" },
+        { "value": "contain", "label": "画像全体を表示" }
+      ]
+    },
+    { "type": "range", "id": "mobile_image_position_x", "label": "SP画像の横位置", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 50 },
+    { "type": "range", "id": "mobile_image_position_y", "label": "SP画像の縦位置", "min": 0, "max": 100, "step": 5, "unit": "%", "default": 20 },
     { "type": "text", "id": "hero_image_alt", "label": "Image Alt", "default": "AirLight Jacket · KAPOK KNOT" },
     { "type": "text", "id": "fallback_url", "label": "Fallback Image URL (external)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow Text", "default": "KAPOK KNOT — Japan Material Innovation" },
