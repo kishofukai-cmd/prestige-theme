@@ -1,6 +1,669 @@
+{% doc %}
+  @prompt
+    画像を5つ入れられるようにしたい。
+    PCとSPで見え方が変わるようにしてマージンも整えれるようにして, カルーセルにしてPCは5つ見せてSPは3つ見れるようにして, 5枚以上画像追加できるようにもしておいて。あとから追加しやすいように
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-carousel-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding_top }}px {{ block.settings.section_padding_horizontal }}px {{ block.settings.section_padding_bottom }}px;
+    position: relative;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-carousel-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top_mobile }}px {{ block.settings.section_padding_horizontal_mobile }}px {{ block.settings.section_padding_bottom_mobile }}px;
+    }
+  }
+
+  .ai-image-carousel__wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-image-carousel__track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.image_gap }}px;
+    transition: transform 0.5s ease;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-carousel__track-{{ ai_gen_id }} {
+      gap: {{ block.settings.image_gap_mobile }}px;
+    }
+  }
+
+  .ai-image-carousel__item-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-image-carousel__item-{{ ai_gen_id }} {
+      width: calc((100% - ({{ block.settings.image_gap }}px * 4)) / 5);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-carousel__item-{{ ai_gen_id }} {
+      width: calc((100% - ({{ block.settings.image_gap_mobile }}px * 2)) / 3);
+    }
+  }
+
+  .ai-image-carousel__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ai-image-carousel__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-image-carousel__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-image-carousel__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-image-carousel__nav-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: {{ block.settings.nav_button_background }};
+    color: {{ block.settings.nav_button_color }};
+    border: none;
+    width: {{ block.settings.nav_button_size }}px;
+    height: {{ block.settings.nav_button_size }}px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+  }
+
+  .ai-image-carousel__nav-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-image-carousel__nav-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-image-carousel__nav--prev-{{ ai_gen_id }} {
+    left: {{ block.settings.nav_button_offset }}px;
+  }
+
+  .ai-image-carousel__nav--next-{{ ai_gen_id }} {
+    right: {{ block.settings.nav_button_offset }}px;
+  }
+
+  .ai-image-carousel__nav-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-carousel__nav-{{ ai_gen_id }} {
+      width: {{ block.settings.nav_button_size_mobile }}px;
+      height: {{ block.settings.nav_button_size_mobile }}px;
+    }
+
+    .ai-image-carousel__nav--prev-{{ ai_gen_id }} {
+      left: {{ block.settings.nav_button_offset_mobile }}px;
+    }
+
+    .ai-image-carousel__nav--next-{{ ai_gen_id }} {
+      right: {{ block.settings.nav_button_offset_mobile }}px;
+    }
+
+    .ai-image-carousel__nav-{{ ai_gen_id }} svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .ai-image-carousel__dots-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ai-image-carousel__dot-{{ ai_gen_id }} {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: {{ block.settings.dot_color }};
+    opacity: 0.3;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-image-carousel__dot-{{ ai_gen_id }}.active {
+    opacity: 1;
+  }
+{% endstyle %}
+
+<image-carousel-{{ ai_gen_id }}
+  class="ai-image-carousel-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-image-carousel__wrapper-{{ ai_gen_id }}">
+    <button
+      class="ai-image-carousel__nav-{{ ai_gen_id }} ai-image-carousel__nav--prev-{{ ai_gen_id }}"
+      aria-label="前へ"
+      data-carousel-prev
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="ai-image-carousel__track-{{ ai_gen_id }}" data-carousel-track>
+      {% for i in (1..20) %}
+        {% liquid
+          assign image_key = 'image_' | append: i
+          assign image = block.settings[image_key]
+        %}
+
+        {% if image %}
+          <div class="ai-image-carousel__item-{{ ai_gen_id }}">
+            <img
+              src="{{ image | image_url: width: 800 }}"
+              alt="{{ image.alt | escape }}"
+              loading="lazy"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              class="ai-image-carousel__image-{{ ai_gen_id }}"
+              style="aspect-ratio: {{ block.settings.image_aspect_ratio }};"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if block.settings.image_1 == blank and block.settings.image_2 == blank and block.settings.image_3 == blank %}
+        {% for i in (1..5) %}
+          <div class="ai-image-carousel__item-{{ ai_gen_id }}">
+            <div class="ai-image-carousel__placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+              {% if i == 1 %}
+                <div class="ai-image-carousel__empty-state-{{ ai_gen_id }}">
+                  画像を追加
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <button
+      class="ai-image-carousel__nav-{{ ai_gen_id }} ai-image-carousel__nav--next-{{ ai_gen_id }}"
+      aria-label="次へ"
+      data-carousel-next
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  {% if block.settings.show_dots %}
+    <div class="ai-image-carousel__dots-{{ ai_gen_id }}" data-carousel-dots></div>
+  {% endif %}
+</image-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageCarousel{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentIndex = 0;
+        this.itemsPerView = 5;
+        this.gap = {{ block.settings.image_gap }};
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('[data-carousel-track]');
+        this.prevButton = this.querySelector('[data-carousel-prev]');
+        this.nextButton = this.querySelector('[data-carousel-next]');
+        this.dotsContainer = this.querySelector('[data-carousel-dots]');
+        this.items = Array.from(this.track.children);
+
+        this.updateItemsPerView();
+        this.setupEventListeners();
+        this.createDots();
+        this.updateCarousel();
+
+        window.addEventListener('resize', () => {
+          this.updateItemsPerView();
+          this.createDots();
+          this.updateCarousel();
+        });
+      }
+
+      updateItemsPerView() {
+        if (window.innerWidth < 750) {
+          this.itemsPerView = 3;
+          this.gap = {{ block.settings.image_gap_mobile }};
+        } else {
+          this.itemsPerView = 5;
+          this.gap = {{ block.settings.image_gap }};
+        }
+      }
+
+      setupEventListeners() {
+        this.prevButton.addEventListener('click', () => this.prev());
+        this.nextButton.addEventListener('click', () => this.next());
+      }
+
+      createDots() {
+        if (!this.dotsContainer) return;
+
+        this.dotsContainer.innerHTML = '';
+        const totalDots = Math.max(0, this.items.length - this.itemsPerView + 1);
+
+        for (let i = 0; i < totalDots; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'ai-image-carousel__dot-{{ ai_gen_id }}';
+          dot.setAttribute('aria-label', `スライド ${i + 1} へ移動`);
+          dot.addEventListener('click', () => this.goToSlide(i));
+          this.dotsContainer.appendChild(dot);
+        }
+
+        this.updateDots();
+      }
+
+      updateDots() {
+        if (!this.dotsContainer) return;
+
+        const dots = this.dotsContainer.querySelectorAll('.ai-image-carousel__dot-{{ ai_gen_id }}');
+        dots.forEach((dot, index) => {
+          if (index === this.currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      prev() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.updateCarousel();
+        }
+      }
+
+      next() {
+        const maxIndex = Math.max(0, this.items.length - this.itemsPerView);
+        if (this.currentIndex < maxIndex) {
+          this.currentIndex++;
+          this.updateCarousel();
+        }
+      }
+
+      goToSlide(index) {
+        this.currentIndex = index;
+        this.updateCarousel();
+      }
+
+      updateCarousel() {
+        if (this.items.length === 0) return;
+
+        const itemWidth = this.items[0].offsetWidth;
+        const offset = -(this.currentIndex * (itemWidth + this.gap));
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        const maxIndex = Math.max(0, this.items.length - this.itemsPerView);
+        this.prevButton.disabled = this.currentIndex === 0;
+        this.nextButton.disabled = this.currentIndex >= maxIndex;
+
+        this.updateDots();
+      }
+    }
+
+    customElements.define('image-carousel-{{ ai_gen_id }}', ImageCarousel{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "画像カルーセル",
+  "settings": [
+    {
+      "type": "header",
+      "content": "画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "画像 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "画像 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "画像 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "画像 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "画像 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "画像 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "画像 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "画像 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_9",
+      "label": "画像 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_10",
+      "label": "画像 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_11",
+      "label": "画像 11"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_12",
+      "label": "画像 12"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_13",
+      "label": "画像 13"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_14",
+      "label": "画像 14"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_15",
+      "label": "画像 15"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_16",
+      "label": "画像 16"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_17",
+      "label": "画像 17"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_18",
+      "label": "画像 18"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_19",
+      "label": "画像 19"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_20",
+      "label": "画像 20"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "デスクトップ幅",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "画像アスペクト比",
+      "options": [
+        { "value": "1/1", "label": "正方形 (1:1)" },
+        { "value": "4/3", "label": "横長 (4:3)" },
+        { "value": "3/4", "label": "縦長 (3:4)" },
+        { "value": "16/9", "label": "ワイド (16:9)" },
+        { "value": "auto", "label": "オリジナル" }
+      ],
+      "default": "1/1"
+    },
+    {
+      "type": "range",
+      "id": "image_gap",
+      "label": "画像間隔（デスクトップ）",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "image_gap_mobile",
+      "label": "画像間隔（モバイル）",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "画像角丸",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "ナビゲーション"
+    },
+    {
+      "type": "range",
+      "id": "nav_button_size",
+      "label": "ボタンサイズ（デスクトップ）",
+      "min": 30,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "nav_button_size_mobile",
+      "label": "ボタンサイズ（モバイル）",
+      "min": 25,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "nav_button_offset",
+      "label": "ボタン位置（デスクトップ）",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "nav_button_offset_mobile",
+      "label": "ボタン位置（モバイル）",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "nav_button_background",
+      "label": "ボタン背景色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_color",
+      "label": "ボタンアイコン色",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "ドットナビゲーションを表示",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "dot_color",
+      "label": "ドット色",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "余白（デスクトップ）"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "上部余白",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "下部余白",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal",
+      "label": "左右余白",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "余白（モバイル）"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "上部余白",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "下部余白",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding_horizontal_mobile",
+      "label": "左右余白",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "画像カルーセル"
+    }
+  ]
+}
 {% endschema %}
