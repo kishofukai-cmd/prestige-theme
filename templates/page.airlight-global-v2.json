@@ -42,7 +42,9 @@
         "cta_url": "#a25-products",
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
-        "cta_note": "A$598"
+        "cta_note": "A$598",
+        "cta_note_gbp": "£310",
+        "cta_note_eur": "€360"
       }
     },
     "offer": {
@@ -52,6 +54,10 @@
         "tag": "LAUNCH OFFER",
         "price_was": "A$598",
         "price_now": "A$478",
+        "price_was_gbp": "£310",
+        "price_now_gbp": "£248",
+        "price_was_eur": "€360",
+        "price_now_eur": "€288",
         "code_text": "<p>Code <strong>FOUNDERS20</strong> applied automatically — first 100 orders only</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
@@ -64,41 +70,12 @@
     "kapok-story": {
       "type": "airlight2025-kapok-story",
       "blocks": {
-        "chip_1": {
-          "type": "stat_chip",
-          "settings": {
-            "value": "1/8",
-            "label": "The weight of cotton"
-          }
-        },
-        "chip_2": {
-          "type": "stat_chip",
-          "settings": {
-            "value": "0",
-            "label": "Animal products"
-          }
-        },
-        "chip_3": {
-          "type": "stat_chip",
-          "settings": {
-            "value": "500g",
-            "label": "Total jacket weight"
-          }
-        },
-        "chip_4": {
-          "type": "stat_chip",
-          "settings": {
-            "value": "Washable",
-            "label": "At home, by hand"
-          }
-        }
+        "chip_1": { "type": "stat_chip", "settings": { "value": "1/8", "label": "The weight of cotton" } },
+        "chip_2": { "type": "stat_chip", "settings": { "value": "0", "label": "Animal products" } },
+        "chip_3": { "type": "stat_chip", "settings": { "value": "500g", "label": "Total jacket weight" } },
+        "chip_4": { "type": "stat_chip", "settings": { "value": "Washable", "label": "At home, by hand" } }
       },
-      "block_order": [
-        "chip_1",
-        "chip_2",
-        "chip_3",
-        "chip_4"
-      ],
+      "block_order": ["chip_1", "chip_2", "chip_3", "chip_4"],
       "settings": {
         "section_id": "a25-kapok",
         "bg_color": "#faf9f6",
@@ -109,35 +86,6 @@
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_1fde3b94-7836-4535-a69d-cd797688605f.jpg",
         "image2_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_c6576652-8458-4d1b-b29f-9dd1d0473ed6.jpg"
       }
-    },
-    "1788859092d0977ed7": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_118ccc0_hhq7LR": {
-          "type": "ai_gen_block_118ccc0",
-          "settings": {
-            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
-            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
-            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
-            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
-            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
-            "autoplay": true,
-            "autoplay_speed": 3000,
-            "desktop_width_percent": 100,
-            "gap": 16,
-            "image_border_radius": 0,
-            "show_dots": true,
-            "dot_size": 10,
-            "dot_color": "#1c1c1c",
-            "controls_spacing": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_118ccc0_hhq7LR"
-      ],
-      "settings": {}
     },
     "demos": {
       "type": "airlight2025-demos",
@@ -173,11 +121,7 @@
           }
         }
       },
-      "block_order": [
-        "demo_1",
-        "demo_layers",
-        "demo_2"
-      ],
+      "block_order": ["demo_1", "demo_layers", "demo_2"],
       "settings": {
         "bg_color": "#ffffff",
         "kicker": "Functional Proof",
@@ -188,40 +132,15 @@
     "farm-to-fashion": {
       "type": "airlight2025-farm-to-fashion",
       "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "step_label": "Step 01",
-            "title": "The Farm — Indonesia",
-            "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "step_label": "Step 02",
-            "title": "The Sheet — Japan",
-            "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "step_label": "Step 03",
-            "title": "The Design — Tokyo, Japan",
-            "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric."
-          }
-        }
+        "step_1": { "type": "step", "settings": { "step_label": "Step 01", "title": "The Farm — Indonesia", "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut." } },
+        "step_2": { "type": "step", "settings": { "step_label": "Step 02", "title": "The Sheet — Japan", "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet." } },
+        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Design — Tokyo, Japan", "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric." } }
       },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
+      "block_order": ["step_1", "step_2", "step_3"],
       "settings": {
         "bg_color": "#faf9f6",
         "kicker": "Farm to Fashion",
-        "heading": "<p>From the farm to your hands.<br/><em>Every step, ours.</em></p>",
+        "heading": "<p>From the farm to your hands.<em>Every step, ours.</em></p>",
         "intro": "Meet the people behind every step — on film, and in person.",
         "photo_1_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_ce3fd4f0-cb6b-4cd4-81f7-d582ba6a18c3.jpg",
         "photo_1_alt": "Our founder planting kapok at the farm",
@@ -244,6 +163,8 @@
             "product_name": "AirLight Jacket — Men's",
             "subtitle": "5 Colors: Navy / Beige / Olive / Black / Greige",
             "price": "A$478",
+            "price_gbp": "£248",
+            "price_eur": "€288",
             "description": "Light as air, warm as down, with brushed lining at the pockets and hood for extra comfort. Casual, relaxed, and built to be your new winter staple.",
             "cta_text": "Shop Now →",
             "cta_url": "/en/products/men-hooded-jacket?discount=FOUNDERS20",
@@ -265,6 +186,8 @@
             "product_name": "AirLight Jacket — Women's",
             "subtitle": "5 Colors: Navy / Beige / Olive / Black / Greige",
             "price": "A$478",
+            "price_gbp": "£248",
+            "price_eur": "€288",
             "description": "Light as air, warm as down, with a waist drawcord to shape the silhouette and brushed lining for extra comfort.",
             "cta_text": "Shop Now →",
             "cta_url": "/en/products/women-hooded-jacket?discount=FOUNDERS20",
@@ -286,6 +209,8 @@
             "product_name": "AirLight Peplum Jacket — Women's",
             "subtitle": "4 Colors: White / Ice Blue / Black / Khaki",
             "price": "A$578",
+            "price_gbp": "£300",
+            "price_eur": "€348",
             "description": "A waist drawcord unique to the Peplum line — cinch it for shape, or wear it loose. Your call.",
             "cta_text": "Shop Now →",
             "cta_url": "/en/products/airlight-peplum-jacket?discount=FOUNDERS20",
@@ -302,45 +227,12 @@
           }
         }
       },
-      "block_order": [
-        "product_card_1",
-        "product_card_2",
-        "product_card_3"
-      ],
+      "block_order": ["product_card_1", "product_card_2", "product_card_3"],
       "settings": {
         "section_id": "a25-products",
         "bg_color": "#ffffff",
         "heading": "<p>The Lineup<br><em>AirLight Collection</em></p>"
       }
-    },
-    "blocks_8ENVMC": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_118ccc0_e7yyX7": {
-          "type": "ai_gen_block_118ccc0",
-          "settings": {
-            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
-            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
-            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
-            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
-            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
-            "autoplay": true,
-            "autoplay_speed": 3000,
-            "desktop_width_percent": 100,
-            "gap": 16,
-            "image_border_radius": 0,
-            "show_dots": true,
-            "dot_size": 10,
-            "dot_color": "#1c1c1c",
-            "controls_spacing": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_118ccc0_e7yyX7"
-      ],
-      "settings": {}
     },
     "reviews": {
       "type": "airlight2025-reviews",
@@ -382,12 +274,7 @@
           }
         }
       },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4"
-      ],
+      "block_order": ["review_1", "review_2", "review_3", "review_4"],
       "settings": {
         "heading": "Real Customers. Real Winters.",
         "avg_stars": "★★★★★",
@@ -408,7 +295,9 @@
         "cta_men_url": "/en/products/men-hooded-jacket?discount=FOUNDERS20",
         "cta_women_text": "Shop Women's",
         "cta_women_url": "/en/products/women-hooded-jacket?discount=FOUNDERS20",
-        "price_note": "A$478"
+        "price_note": "A$478",
+        "price_note_gbp": "£248",
+        "price_note_eur": "€288"
       }
     },
     "proof": {
@@ -481,17 +370,7 @@
           }
         }
       },
-      "block_order": [
-        "media_logo_1",
-        "media_logo_2",
-        "media_logo_3",
-        "media_logo_4",
-        "media_logo_5",
-        "media_logo_6",
-        "creator_4",
-        "creator_5",
-        "creator_6"
-      ],
+      "block_order": ["media_logo_1", "media_logo_2", "media_logo_3", "media_logo_4", "media_logo_5", "media_logo_6", "creator_4", "creator_5", "creator_6"],
       "settings": {
         "section_id": "a25-proof",
         "bg_color": "#faf9f6",
@@ -526,11 +405,7 @@
           }
         }
       },
-      "block_order": [
-        "value_block_1",
-        "value_block_2",
-        "value_block_3"
-      ],
+      "block_order": ["value_block_1", "value_block_2", "value_block_3"],
       "settings": {
         "kicker": "A Message From Our Founder",
         "founder_name": "Kisho Fukai, Founder & CEO of KAPOK KNOT",
@@ -553,7 +428,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What's your shipping and return policy?",
-            "answer": "<p>Orders ship from Japan within 3–5 business days; delivery to Australia typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your rights under Australian Consumer Law always apply.</p>"
+            "answer": "<p>Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
           }
         },
         "faq_item_3": {
@@ -578,13 +453,7 @@
           }
         }
       },
-      "block_order": [
-        "faq_item_1",
-        "faq_item_2",
-        "faq_item_3",
-        "faq_item_4",
-        "faq_item_5"
-      ],
+      "block_order": ["faq_item_1", "faq_item_2", "faq_item_3", "faq_item_4", "faq_item_5"],
       "settings": {
         "kicker": "FAQ",
         "heading": "Frequently Asked Questions",
@@ -601,6 +470,8 @@
             "name": "AirLight Peplum Jacket — Women's",
             "colors": "Ice Blue / White / Black",
             "price": "A$722.50",
+            "price_gbp": "£375",
+            "price_eur": "€435",
             "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
             "cta_url": "/en/products/airlight-peplum-jacket"
           }
@@ -612,6 +483,8 @@
             "name": "Velour Quilted Jacket — Unisex",
             "colors": "Khaki / Navy",
             "price": "A$598",
+            "price_gbp": "£310",
+            "price_eur": "€360",
             "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
             "cta_url": "/en/products/velours-quilting-jacket"
           }
@@ -623,6 +496,8 @@
             "name": "Stand Collar Coat — Unisex",
             "colors": "Black(New) / Greige / Green / Navy",
             "price": "A$1,040",
+            "price_gbp": "£540",
+            "price_eur": "€625",
             "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
             "cta_url": "/en/products/standcollar"
           }
@@ -634,17 +509,14 @@
             "name": "Poncho Coat — Unisex",
             "colors": "Olive / Navy / Black / Greige",
             "price": "A$980",
+            "price_gbp": "£510",
+            "price_eur": "€590",
             "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
             "cta_url": "/en/products/unisex-poncho%E3%83%BCtrench-coat"
           }
         }
       },
-      "block_order": [
-        "product_tile_1",
-        "product_tile_2",
-        "product_tile_5",
-        "product_tile_6"
-      ],
+      "block_order": ["product_tile_1", "product_tile_2", "product_tile_5", "product_tile_6"],
       "settings": {
         "section_id": "a25-cross",
         "bg_color": "#ffffff",
@@ -658,6 +530,8 @@
         "enabled": true,
         "product_name": "AirLight Jacket",
         "price_text": "A$478",
+        "price_text_gbp": "£248",
+        "price_text_eur": "€288",
         "sub_text": "Code FOUNDERS20 for 20% off",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
@@ -673,11 +547,9 @@
     "hero",
     "offer",
     "kapok-story",
-    "1788859092d0977ed7",
     "demos",
     "farm-to-fashion",
     "products",
-    "blocks_8ENVMC",
     "reviews",
     "mid-cta",
     "proof",

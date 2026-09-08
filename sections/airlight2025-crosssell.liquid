@@ -172,8 +172,17 @@
               {% if block.settings.colors != blank %}
                 <p class="a25-cross-tile__colors">{{ block.settings.colors }}</p>
               {% endif %}
-              {% if block.settings.price != blank %}
-                <p class="a25-cross-tile__price">{{ block.settings.price }}</p>
+              {% liquid
+                assign a25_cur = localization.country.currency.iso_code
+                assign xp_txt = block.settings.price
+                if a25_cur == 'GBP' and block.settings.price_gbp != blank
+                  assign xp_txt = block.settings.price_gbp
+                elsif a25_cur == 'EUR' and block.settings.price_eur != blank
+                  assign xp_txt = block.settings.price_eur
+                endif
+              %}
+              {% if xp_txt != blank %}
+                <p class="a25-cross-tile__price">{{ xp_txt }}</p>
               {% endif %}
             </a>
           {% endif %}
@@ -209,8 +218,17 @@
               {% if block.settings.colors != blank %}
                 <p class="a25-cross-tile__colors">{{ block.settings.colors }}</p>
               {% endif %}
-              {% if block.settings.price != blank %}
-                <p class="a25-cross-tile__price">{{ block.settings.price }}</p>
+              {% liquid
+                assign a25_cur = localization.country.currency.iso_code
+                assign xp_txt = block.settings.price
+                if a25_cur == 'GBP' and block.settings.price_gbp != blank
+                  assign xp_txt = block.settings.price_gbp
+                elsif a25_cur == 'EUR' and block.settings.price_eur != blank
+                  assign xp_txt = block.settings.price_eur
+                endif
+              %}
+              {% if xp_txt != blank %}
+                <p class="a25-cross-tile__price">{{ xp_txt }}</p>
               {% endif %}
             </a>
           {% endif %}
@@ -252,6 +270,8 @@
         { "type": "text", "id": "name", "label": "商品名" },
         { "type": "text", "id": "colors", "label": "カラー表記" },
         { "type": "text", "id": "price", "label": "価格" },
+        { "type": "text", "id": "price_gbp", "label": "価格 (UK £)" },
+        { "type": "text", "id": "price_eur", "label": "価格 (EU €)" },
         { "type": "image_picker", "id": "image", "label": "商品画像" },
         { "type": "text", "id": "image_url", "label": "画像 URL (外部フォールバック)" },
         { "type": "url", "id": "cta_url", "label": "商品ページ URL" }

@@ -88,10 +88,30 @@
       <span class="a25-offer__tag">{{ section.settings.tag }}</span>
     {% endif %}
     <div class="a25-offer__price">
-      {% if section.settings.price_was != blank %}
-        <span class="a25-offer__price-was">{{ section.settings.price_was }}</span>
+      {% liquid
+        assign a25_cur = localization.country.currency.iso_code
+        assign was_txt = section.settings.price_was
+        assign now_txt = section.settings.price_now | default: 'A$478'
+        if a25_cur == 'GBP'
+          if section.settings.price_was_gbp != blank
+            assign was_txt = section.settings.price_was_gbp
+          endif
+          if section.settings.price_now_gbp != blank
+            assign now_txt = section.settings.price_now_gbp
+          endif
+        elsif a25_cur == 'EUR'
+          if section.settings.price_was_eur != blank
+            assign was_txt = section.settings.price_was_eur
+          endif
+          if section.settings.price_now_eur != blank
+            assign now_txt = section.settings.price_now_eur
+          endif
+        endif
+      %}
+      {% if was_txt != blank %}
+        <span class="a25-offer__price-was">{{ was_txt }}</span>
       {% endif %}
-      <span class="a25-offer__price-now">{{ section.settings.price_now | default: 'A$478' }}</span>
+      <span class="a25-offer__price-now">{{ now_txt }}</span>
     </div>
     {% if section.settings.code_text != blank %}
       <span class="a25-offer__code">{{ section.settings.code_text }}</span>
@@ -111,6 +131,10 @@
     { "type": "text", "id": "tag", "label": "Tag", "default": "LAUNCH OFFER" },
     { "type": "text", "id": "price_was", "label": "Price — Was (strikethrough)", "default": "A$598" },
     { "type": "text", "id": "price_now", "label": "Price — Now", "default": "A$478" },
+    { "type": "text", "id": "price_was_gbp", "label": "Price — Was (UK £)" },
+    { "type": "text", "id": "price_now_gbp", "label": "Price — Now (UK £)" },
+    { "type": "text", "id": "price_was_eur", "label": "Price — Was (EU €)" },
+    { "type": "text", "id": "price_now_eur", "label": "Price — Now (EU €)" },
     { "type": "richtext", "id": "code_text", "label": "Code Line", "default": "<p>Code <strong>FOUNDERS20</strong> applied automatically — first 100 orders only</p>" },
     { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
     { "type": "url", "id": "cta_url", "label": "CTA URL (empty = #a25-products)" },

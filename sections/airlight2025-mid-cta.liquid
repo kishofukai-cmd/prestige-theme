@@ -188,7 +188,16 @@
     </div>
 
     {% if section.settings.price_note != blank %}
-      <p class="a25-midcta__price-note">{{ section.settings.price_note }}</p>
+      {% liquid
+        assign a25_cur = localization.country.currency.iso_code
+        assign pn_txt = section.settings.price_note
+        if a25_cur == 'GBP' and section.settings.price_note_gbp != blank
+          assign pn_txt = section.settings.price_note_gbp
+        elsif a25_cur == 'EUR' and section.settings.price_note_eur != blank
+          assign pn_txt = section.settings.price_note_eur
+        endif
+      %}
+      <p class="a25-midcta__price-note">{{ pn_txt }}</p>
     {% endif %}
   </div>
 </section>
@@ -218,7 +227,9 @@
     { "type": "url", "id": "cta_women_url", "label": "ウィメンズ ボタンリンク" },
 
     { "type": "header", "content": "価格注記" },
-    { "type": "text", "id": "price_note", "label": "価格注記", "default": "¥39,800" }
+    { "type": "text", "id": "price_note", "label": "価格注記", "default": "¥39,800" },
+    { "type": "text", "id": "price_note_gbp", "label": "価格注記 (UK £)" },
+    { "type": "text", "id": "price_note_eur", "label": "価格注記 (EU €)" }
   ],
   "presets": [
     { "name": "A2025 Mid CTA" }

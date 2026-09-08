@@ -114,7 +114,16 @@
       <!-- EDITABLE: 商品名（schema: product_name） -->
       <span class="ag-sticky-cta__name">{{ section.settings.product_name | default: 'AirLight Jacket' }}</span>
       <!-- EDITABLE: 価格表示（schema: price_text） -->
-      <span class="ag-sticky-cta__price">{{ section.settings.price_text | default: 'A$598' }}</span>
+      {% liquid
+        assign a25_cur = localization.country.currency.iso_code
+        assign sp_txt = section.settings.price_text | default: 'A$598'
+        if a25_cur == 'GBP' and section.settings.price_text_gbp != blank
+          assign sp_txt = section.settings.price_text_gbp
+        elsif a25_cur == 'EUR' and section.settings.price_text_eur != blank
+          assign sp_txt = section.settings.price_text_eur
+        endif
+      %}
+      <span class="ag-sticky-cta__price">{{ sp_txt }}</span>
     </div>
     {% if section.settings.sub_text != blank %}
       <!-- EDITABLE: サブテキスト（schema: sub_text / 空にすると非表示） -->
@@ -171,6 +180,8 @@
     { "type": "checkbox", "id": "enabled", "label": "Enable Sticky CTA", "default": true },
     { "type": "text", "id": "product_name", "label": "Product Name", "default": "AirLight Jacket" },
     { "type": "text", "id": "price_text", "label": "Price Text", "default": "A$598" },
+    { "type": "text", "id": "price_text_gbp", "label": "Price Text (UK £)" },
+    { "type": "text", "id": "price_text_eur", "label": "Price Text (EU €)" },
     { "type": "text", "id": "sub_text", "label": "Sub Text (empty = hidden)", "default": "Free worldwide shipping" },
     { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
     { "type": "url", "id": "cta_url", "label": "CTA URL (empty = #ag-products)" },

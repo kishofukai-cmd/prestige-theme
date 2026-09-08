@@ -288,8 +288,17 @@
             {% if block.settings.subtitle != blank %}
               <p class="a25-product-card__subtitle">{{ block.settings.subtitle }}</p>
             {% endif %}
-            {% if block.settings.price != blank %}
-              <p class="a25-product-card__price">{{ block.settings.price }}</p>
+            {% liquid
+              assign a25_cur = localization.country.currency.iso_code
+              assign bp_txt = block.settings.price
+              if a25_cur == 'GBP' and block.settings.price_gbp != blank
+                assign bp_txt = block.settings.price_gbp
+              elsif a25_cur == 'EUR' and block.settings.price_eur != blank
+                assign bp_txt = block.settings.price_eur
+              endif
+            %}
+            {% if bp_txt != blank %}
+              <p class="a25-product-card__price">{{ bp_txt }}</p>
             {% endif %}
             {% if block.settings.description != blank %}
               <p class="a25-product-card__description">{{ block.settings.description | newline_to_br }}</p>
@@ -361,6 +370,8 @@
         { "type": "text", "id": "product_name", "label": "商品名" },
         { "type": "text", "id": "subtitle", "label": "サブタイトル (カラー表記等)" },
         { "type": "text", "id": "price", "label": "価格" },
+        { "type": "text", "id": "price_gbp", "label": "価格 (UK £)" },
+        { "type": "text", "id": "price_eur", "label": "価格 (EU €)" },
         { "type": "textarea", "id": "description", "label": "商品説明" },
         { "type": "text", "id": "cta_text", "label": "CTA ボタンテキスト", "default": "購入ページへ" },
         { "type": "url", "id": "cta_url", "label": "CTA ボタンリンク" },
