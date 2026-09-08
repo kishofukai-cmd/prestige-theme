@@ -64,12 +64,41 @@
     "kapok-story": {
       "type": "airlight2025-kapok-story",
       "blocks": {
-        "chip_1": { "type": "stat_chip", "settings": { "value": "1/8", "label": "The weight of cotton" } },
-        "chip_2": { "type": "stat_chip", "settings": { "value": "0", "label": "Animal products" } },
-        "chip_3": { "type": "stat_chip", "settings": { "value": "500g", "label": "Total jacket weight" } },
-        "chip_4": { "type": "stat_chip", "settings": { "value": "Washable", "label": "At home, by hand" } }
+        "chip_1": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "1/8",
+            "label": "The weight of cotton"
+          }
+        },
+        "chip_2": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "0",
+            "label": "Animal products"
+          }
+        },
+        "chip_3": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "500g",
+            "label": "Total jacket weight"
+          }
+        },
+        "chip_4": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "Washable",
+            "label": "At home, by hand"
+          }
+        }
       },
-      "block_order": ["chip_1", "chip_2", "chip_3", "chip_4"],
+      "block_order": [
+        "chip_1",
+        "chip_2",
+        "chip_3",
+        "chip_4"
+      ],
       "settings": {
         "section_id": "a25-kapok",
         "bg_color": "#faf9f6",
@@ -80,6 +109,64 @@
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_1fde3b94-7836-4535-a69d-cd797688605f.jpg",
         "image2_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_c6576652-8458-4d1b-b29f-9dd1d0473ed6.jpg"
       }
+    },
+    "1788859092d0977ed7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_118ccc0_hhq7LR": {
+          "type": "ai_gen_block_118ccc0",
+          "settings": {
+            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
+            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
+            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
+            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
+            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
+            "autoplay": true,
+            "autoplay_speed": 3000,
+            "desktop_width_percent": 100,
+            "gap": 16,
+            "image_border_radius": 0,
+            "show_dots": true,
+            "dot_size": 10,
+            "dot_color": "#1c1c1c",
+            "controls_spacing": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_118ccc0_hhq7LR"
+      ],
+      "settings": {}
+    },
+    "blocks_8ENVMC": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_118ccc0_e7yyX7": {
+          "type": "ai_gen_block_118ccc0",
+          "settings": {
+            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
+            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
+            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
+            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
+            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
+            "autoplay": true,
+            "autoplay_speed": 3000,
+            "desktop_width_percent": 100,
+            "gap": 16,
+            "image_border_radius": 0,
+            "show_dots": true,
+            "dot_size": 10,
+            "dot_color": "#1c1c1c",
+            "controls_spacing": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_118ccc0_e7yyX7"
+      ],
+      "settings": {}
     },
     "demos": {
       "type": "airlight2025-demos",
@@ -115,7 +202,11 @@
           }
         }
       },
-      "block_order": ["demo_1", "demo_layers", "demo_2"],
+      "block_order": [
+        "demo_1",
+        "demo_layers",
+        "demo_2"
+      ],
       "settings": {
         "bg_color": "#ffffff",
         "kicker": "Functional Proof",
@@ -126,11 +217,36 @@
     "farm-to-fashion": {
       "type": "airlight2025-farm-to-fashion",
       "blocks": {
-        "step_1": { "type": "step", "settings": { "step_label": "Step 01", "title": "The Farm — Indonesia", "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut." } },
-        "step_2": { "type": "step", "settings": { "step_label": "Step 02", "title": "The Sheet — Japan", "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet." } },
-        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Design — Tokyo, Japan", "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric." } }
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 01",
+            "title": "The Farm — Indonesia",
+            "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 02",
+            "title": "The Sheet — Japan",
+            "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 03",
+            "title": "The Design — Tokyo, Japan",
+            "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric."
+          }
+        }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "bg_color": "#faf9f6",
         "kicker": "Farm to Fashion",
@@ -215,7 +331,11 @@
           }
         }
       },
-      "block_order": ["product_card_1", "product_card_2", "product_card_3"],
+      "block_order": [
+        "product_card_1",
+        "product_card_2",
+        "product_card_3"
+      ],
       "settings": {
         "section_id": "a25-products",
         "bg_color": "#ffffff",
@@ -262,7 +382,12 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3", "review_4"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
       "settings": {
         "heading": "Real Customers. Real Winters.",
         "avg_stars": "★★★★★",
@@ -356,7 +481,17 @@
           }
         }
       },
-      "block_order": ["media_logo_1", "media_logo_2", "media_logo_3", "media_logo_4", "media_logo_5", "media_logo_6", "creator_4", "creator_5", "creator_6"],
+      "block_order": [
+        "media_logo_1",
+        "media_logo_2",
+        "media_logo_3",
+        "media_logo_4",
+        "media_logo_5",
+        "media_logo_6",
+        "creator_4",
+        "creator_5",
+        "creator_6"
+      ],
       "settings": {
         "section_id": "a25-proof",
         "bg_color": "#faf9f6",
@@ -391,7 +526,11 @@
           }
         }
       },
-      "block_order": ["value_block_1", "value_block_2", "value_block_3"],
+      "block_order": [
+        "value_block_1",
+        "value_block_2",
+        "value_block_3"
+      ],
       "settings": {
         "kicker": "A Message From Our Founder",
         "founder_name": "Kisho Fukai, Founder & CEO of KAPOK KNOT",
@@ -439,7 +578,13 @@
           }
         }
       },
-      "block_order": ["faq_item_1", "faq_item_2", "faq_item_3", "faq_item_4", "faq_item_5"],
+      "block_order": [
+        "faq_item_1",
+        "faq_item_2",
+        "faq_item_3",
+        "faq_item_4",
+        "faq_item_5"
+      ],
       "settings": {
         "kicker": "FAQ",
         "heading": "Frequently Asked Questions",
@@ -494,7 +639,12 @@
           }
         }
       },
-      "block_order": ["product_tile_1", "product_tile_2", "product_tile_5", "product_tile_6"],
+      "block_order": [
+        "product_tile_1",
+        "product_tile_2",
+        "product_tile_5",
+        "product_tile_6"
+      ],
       "settings": {
         "section_id": "a25-cross",
         "bg_color": "#ffffff",
@@ -523,9 +673,11 @@
     "hero",
     "offer",
     "kapok-story",
+    "1788859092d0977ed7",
     "demos",
     "farm-to-fashion",
     "products",
+    "blocks_8ENVMC",
     "reviews",
     "mid-cta",
     "proof",
