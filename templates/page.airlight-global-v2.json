@@ -139,35 +139,6 @@
       ],
       "settings": {}
     },
-    "blocks_8ENVMC": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_118ccc0_e7yyX7": {
-          "type": "ai_gen_block_118ccc0",
-          "settings": {
-            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
-            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
-            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
-            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
-            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
-            "autoplay": true,
-            "autoplay_speed": 3000,
-            "desktop_width_percent": 100,
-            "gap": 16,
-            "image_border_radius": 0,
-            "show_dots": true,
-            "dot_size": 10,
-            "dot_color": "#1c1c1c",
-            "controls_spacing": 20
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_118ccc0_e7yyX7"
-      ],
-      "settings": {}
-    },
     "demos": {
       "type": "airlight2025-demos",
       "blocks": {
@@ -250,7 +221,7 @@
       "settings": {
         "bg_color": "#faf9f6",
         "kicker": "Farm to Fashion",
-        "heading": "<p>From the farm to your hands.<em>Every step, ours.</em></p>",
+        "heading": "<p>From the farm to your hands.<br/><em>Every step, ours.</em></p>",
         "intro": "Meet the people behind every step — on film, and in person.",
         "photo_1_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/unnamed_ce3fd4f0-cb6b-4cd4-81f7-d582ba6a18c3.jpg",
         "photo_1_alt": "Our founder planting kapok at the farm",
@@ -341,6 +312,35 @@
         "bg_color": "#ffffff",
         "heading": "<p>The Lineup<br><em>AirLight Collection</em></p>"
       }
+    },
+    "blocks_8ENVMC": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_118ccc0_e7yyX7": {
+          "type": "ai_gen_block_118ccc0",
+          "settings": {
+            "image_1": "shopify://shop_images/11_69cf7ea3-ddbd-4551-be31-8918b95cf590.png",
+            "image_2": "shopify://shop_images/18_79166d1d-b833-47ad-a5cc-07f0ef87ff78.png",
+            "image_3": "shopify://shop_images/16_65c916b7-beb2-446a-854c-7851327a068e.png",
+            "image_4": "shopify://shop_images/8_bf42ba74-4190-4f7b-9628-ff8dfe46cc8a.png",
+            "image_5": "shopify://shop_images/13_07ed67ed-d650-48fb-ab3c-1572d66b6f3e.png",
+            "autoplay": true,
+            "autoplay_speed": 3000,
+            "desktop_width_percent": 100,
+            "gap": 16,
+            "image_border_radius": 0,
+            "show_dots": true,
+            "dot_size": 10,
+            "dot_color": "#1c1c1c",
+            "controls_spacing": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_118ccc0_e7yyX7"
+      ],
+      "settings": {}
     },
     "reviews": {
       "type": "airlight2025-reviews",
