@@ -86,22 +86,6 @@
           "type": "structure",
           "settings": {}
         },
-        "button_pdUnLA": {
-          "type": "button",
-          "settings": {
-            "link": "https://kauriru.com/kapok-knot/items/13011",
-            "text": "レンタルはこちら",
-            "stretch": true,
-            "background": "",
-            "text_color": ""
-          }
-        },
-        "text_igFX8f": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>※外部サイトへ移動しますサブスクレンタルは「カウリル」によるサービスになります。<br/>レンタルに関するご不明点は、「カウリル」へお問い合わせください</strong></p>"
-          }
-        },
         "926ba012-18fb-4165-b230-02ff7116a302": {
           "type": "button",
           "disabled": true,
@@ -176,8 +160,6 @@
         "separator",
         "description",
         "6ce7ed4b-a9b3-4494-a56a-fa582423f872",
-        "button_pdUnLA",
-        "text_igFX8f",
         "926ba012-18fb-4165-b230-02ff7116a302",
         "c4dc4d29-3cf6-4fc3-99f8-ed00028b0fc6",
         "c5a5fa44-a0a3-4e8c-a05c-d0507553fa8c",
@@ -475,6 +457,78 @@
         "title": "最近見られた商品",
         "content": ""
       }
+    },
+    "1788924326cd2569a2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_aefaef7_DhFTEF": {
+          "type": "ai_gen_block_aefaef7",
+          "settings": {
+            "desktop_width_percent": 50,
+            "image_max_width": 600,
+            "spacing": 30,
+            "border_radius": 0,
+            "image_1": "shopify://shop_images/1_2x_2_5ece6168-af45-4767-ba26-c3a81baf1b36.png",
+            "url_1": "",
+            "show_button_1": true,
+            "button_text_1": "エアーライトジャケットを購入する",
+            "button_url_1": "",
+            "image_2": "shopify://shop_images/7_2x_9baa1124-e878-4521-9c5e-e2393cb7c267.png",
+            "url_2": "",
+            "show_button_2": false,
+            "button_text_2": "詳しく見る",
+            "button_url_2": "",
+            "image_3": "shopify://shop_images/2_2x_2_55dbb9eb-5a50-4f0f-a3eb-56d812fa8b60.png",
+            "url_3": "",
+            "show_button_3": false,
+            "button_text_3": "詳しく見る",
+            "button_url_3": "",
+            "image_4": "shopify://shop_images/5_2x_3_612c4cae-c589-4695-8d41-f4a4b3652099.png",
+            "url_4": "",
+            "show_button_4": false,
+            "button_text_4": "詳しく見る",
+            "button_url_4": "",
+            "image_5": "shopify://shop_images/6_2x_5.png",
+            "url_5": "",
+            "show_button_5": false,
+            "button_text_5": "詳しく見る",
+            "button_url_5": "",
+            "image_6": "shopify://shop_images/3_2x_3_fbc33845-f0dd-4745-96a8-0d8a4cd03fb8.png",
+            "url_6": "",
+            "show_button_6": false,
+            "button_text_6": "詳しく見る",
+            "button_url_6": "",
+            "url_7": "",
+            "show_button_7": false,
+            "button_text_7": "詳しく見る",
+            "button_url_7": "",
+            "url_8": "",
+            "show_button_8": false,
+            "button_text_8": "詳しく見る",
+            "button_url_8": "",
+            "url_9": "",
+            "show_button_9": false,
+            "button_text_9": "詳しく見る",
+            "button_url_9": "",
+            "url_10": "",
+            "show_button_10": false,
+            "button_text_10": "詳しく見る",
+            "button_url_10": "",
+            "button_bg_color": "#04358d",
+            "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#1c1c1c",
+            "button_hover_text_color": "#ffffff",
+            "button_font_size": 14,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_aefaef7_DhFTEF"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -489,6 +543,7 @@
     "rich_text_EtMhpc",
     "3d089d05-be94-4cde-aa66-eb9a90011dc0",
     "related-products",
-    "016ac7c8-99a5-4c98-a101-5109358b6243"
+    "016ac7c8-99a5-4c98-a101-5109358b6243",
+    "1788924326cd2569a2"
   ]
 }
