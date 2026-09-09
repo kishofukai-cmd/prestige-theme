@@ -1,6 +1,630 @@
+{% doc %}
+  @prompt
+    縦画像を一枚真ん中に置きたい。それを縦に画像追加できるようにしてURLも踏めるようにしてほしい。
+    また画像の間にボタンも設置できるようにして
+    表示する大きさを変更できるようにしてほしい, もっと画像を追加できるようにして, ボタンの形はストレッチで楕円形にして
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-vertical-image-stack-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-vertical-image-stack__container-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ block.settings.spacing }}px;
+  }
+
+  .ai-vertical-image-stack__item-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ai-vertical-image-stack__link-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    max-width: {{ block.settings.image_max_width }}px;
+    text-decoration: none;
+  }
+
+  .ai-vertical-image-stack__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+  }
+
+  .ai-vertical-image-stack__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-vertical-image-stack__placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.border_radius }}px;
+    aspect-ratio: 2 / 3;
+    position: relative;
+  }
+
+  .ai-vertical-image-stack__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .ai-vertical-image-stack__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-vertical-image-stack__button-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ai-vertical-image-stack__button-{{ ai_gen_id }} {
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: 50px;
+    font-size: {{ block.settings.button_font_size }}px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .ai-vertical-image-stack__button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_bg_color }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-vertical-image-stack-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-vertical-image-stack__container-{{ ai_gen_id }} {
+      gap: {{ block.settings.spacing | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<vertical-image-stack-{{ ai_gen_id }}
+  class="ai-vertical-image-stack-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-vertical-image-stack__container-{{ ai_gen_id }}">
+    {% for i in (1..10) %}
+      {% liquid
+        assign image_key = 'image_' | append: i
+        assign url_key = 'url_' | append: i
+        assign show_button_key = 'show_button_' | append: i
+        assign button_text_key = 'button_text_' | append: i
+        assign button_url_key = 'button_url_' | append: i
+
+        assign image = block.settings[image_key]
+        assign url = block.settings[url_key]
+        assign show_button = block.settings[show_button_key]
+        assign button_text = block.settings[button_text_key]
+        assign button_url = block.settings[button_url_key]
+      %}
+
+      {% if image != blank %}
+        <div class="ai-vertical-image-stack__item-{{ ai_gen_id }}">
+          {% if url != blank %}
+            <a href="{{ url }}" class="ai-vertical-image-stack__link-{{ ai_gen_id }}">
+              <div class="ai-vertical-image-stack__image-wrapper-{{ ai_gen_id }}">
+                <img
+                  src="{{ image | image_url: width: 1200 }}"
+                  alt="{{ image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  class="ai-vertical-image-stack__image-{{ ai_gen_id }}"
+                >
+              </div>
+            </a>
+          {% else %}
+            <div class="ai-vertical-image-stack__link-{{ ai_gen_id }}">
+              <div class="ai-vertical-image-stack__image-wrapper-{{ ai_gen_id }}">
+                <img
+                  src="{{ image | image_url: width: 1200 }}"
+                  alt="{{ image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  class="ai-vertical-image-stack__image-{{ ai_gen_id }}"
+                >
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if show_button and button_text != blank %}
+          <div class="ai-vertical-image-stack__button-wrapper-{{ ai_gen_id }}">
+            {% if button_url != blank %}
+              <a href="{{ button_url }}" class="ai-vertical-image-stack__button-{{ ai_gen_id }}">
+                {{ button_text }}
+              </a>
+            {% else %}
+              <span class="ai-vertical-image-stack__button-{{ ai_gen_id }}">
+                {{ button_text }}
+              </span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% elsif i == 1 %}
+        <div class="ai-vertical-image-stack__item-{{ ai_gen_id }}">
+          <div class="ai-vertical-image-stack__link-{{ ai_gen_id }}">
+            <div class="ai-vertical-image-stack__placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+              <div class="ai-vertical-image-stack__empty-state-{{ ai_gen_id }}">
+                画像を追加してください
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</vertical-image-stack-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VerticalImageStack{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+
+    customElements.define('vertical-image-stack-{{ ai_gen_id }}', VerticalImageStack{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "縦並び画像",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "デスクトップ幅",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "label": "画像の最大幅",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "画像とボタンの間隔",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "画像の角丸",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "画像 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_1",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_1",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_1",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_2",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_2",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_2",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_3",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_3",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_3",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_3",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_4",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_4",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_4",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_4",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_5",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_5",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_5",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_5",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_6",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_6",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_6",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_6",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_7",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_7",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_7",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_7",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_7",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_8",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_8",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_8",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_8",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_8",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 9"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_9",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_9",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_9",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_9",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_9",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "画像 10"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_10",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "url_10",
+      "label": "リンク先URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_10",
+      "label": "ボタンを表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text_10",
+      "label": "ボタンテキスト",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_url_10",
+      "label": "ボタンリンク先"
+    },
+    {
+      "type": "header",
+      "content": "ボタンスタイル"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "背景色",
+      "default": "#04358d"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "テキスト色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "ホバー時背景色",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "ホバー時テキスト色",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "フォントサイズ",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "label": "上下の余白",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "label": "左右の余白",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "縦並び画像"
+    }
+  ]
+}
 {% endschema %}
