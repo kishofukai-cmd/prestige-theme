@@ -389,7 +389,14 @@ Supported variables
             {%- endunless -%}
 
           {%- when 'text' -%}
-            {%- if block.settings.text != blank -%}
+            {%- liquid
+              # カウリル（レンタル）注記は日本語ページのみ表示
+              assign hide_text_block = false
+              if request.locale.iso_code != 'ja' and block.settings.text contains 'カウリル'
+                assign hide_text_block = true
+              endif
+            -%}
+            {%- if block.settings.text != blank and hide_text_block == false -%}
               <div class="prose">
                 {{- block.settings.text -}}
               </div>
@@ -399,6 +406,19 @@ Supported variables
             {%- liquid
               assign accordion_title = block.settings.title | default: block.settings.page.title
               assign accordion_content = block.settings.page.content | default: block.settings.content
+
+              # 英語ページでは定型見出しを英語に置換
+              if request.locale.iso_code != 'ja'
+                if accordion_title contains '素材'
+                  assign accordion_title = '<strong>Materials</strong>'
+                elsif accordion_title contains 'カーボンフットプリント'
+                  assign accordion_title = '<strong>Carbon Footprint</strong>'
+                elsif accordion_title contains '配送と返品'
+                  assign accordion_title = '<strong>Shipping &amp; Returns</strong>'
+                elsif accordion_title contains 'お手入れ'
+                  assign accordion_title = '<strong>Care Instructions</strong>'
+                endif
+              endif
 
               if accordion_title != blank and accordion_content != blank
                 render 'accordion', title: accordion_title, content: accordion_content, prose_content: true, icon: block.settings.icon, custom_icon: block.settings.custom_icon, block: block
@@ -477,7 +497,14 @@ Supported variables
             {%- endif -%}
 
           {%- when 'button' -%}
-            {%- if block.settings.text != blank -%}
+            {%- liquid
+              # レンタル（カウリル）ボタンは日本語ページのみ表示
+              assign hide_button_block = false
+              if request.locale.iso_code != 'ja' and block.settings.link contains 'kauriru.com'
+                assign hide_button_block = true
+              endif
+            -%}
+            {%- if block.settings.text != blank and hide_button_block == false -%}
               {%- render 'button', href: block.settings.link, content: block.settings.text, stretch: block.settings.stretch, background: block.settings.background, text_color: block.settings.text_color -%}
             {%- endif -%}
 
@@ -507,6 +534,11 @@ Supported variables
               assign accordion_title = block.settings.title | default: block.settings.page.title
               assign accordion_content = block.settings.page.content | default: block.settings.content
 
+              # 英語ページでは見出しを英語に置換
+              if request.locale.iso_code != 'ja' and accordion_title contains 'サイズ詳細'
+                assign accordion_title = '<strong>Size Details</strong>'
+              endif
+
               if accordion_title != blank and accordion_content != blank
                 render 'fr_accordion-size', title: accordion_title, content: accordion_content, prose_content: true, icon: block.settings.icon, custom_icon: block.settings.custom_icon, block: block
               endif
@@ -517,7 +549,12 @@ Supported variables
               {%- liquid
                   assign accordion_title = block.settings.title | default: block.settings.page.title
                   assign accordion_content = block.settings.page.content | default: block.settings.content
-    
+
+                  # 英語ページでは見出しを英語に置換
+                  if request.locale.iso_code != 'ja' and accordion_title contains 'お手入れ'
+                    assign accordion_title = '<strong>Care Instructions</strong>'
+                  endif
+
                   if accordion_title != blank and accordion_content != blank
                     render 'fr_accordion-care', title: accordion_title, content: accordion_content, prose_content: true, icon: block.settings.icon, custom_icon: block.settings.custom_icon, block: block
                   endif
@@ -539,9 +576,37 @@ Supported variables
           <ul>
           {% assign structure = product.metafields.custom.detail_structure.value %}
           {% for structure in structure %}
+            {%- liquid
+              # 英語ページ用ラベル（アイコン画像は日本語文字入りのためテキスト表示に切替）
+              assign fr_label_en = ''
+              case structure.name
+                when '撥水'
+                  assign fr_label_en = 'Water-repellent'
+                when '吸湿発熱'
+                  assign fr_label_en = 'Heat-generating'
+                when '植物性由来'
+                  assign fr_label_en = 'Plant-based'
+                when 'アニマルフリー'
+                  assign fr_label_en = 'Animal-free'
+                when '植物樹脂加工'
+                  assign fr_label_en = 'Plant-resin coating'
+                when 'リサイクル素材'
+                  assign fr_label_en = 'Recycled materials'
+                when 'ダウンの暖かさ'
+                  assign fr_label_en = 'Down-level warmth'
+                when '手洗い可能'
+                  assign fr_label_en = 'Hand-washable'
+                else
+                  assign fr_label_en = structure.name
+              endcase
+            -%}
+            {%- if request.locale.iso_code != 'ja' -%}
+            <li class="fr_icon-list" style="border: 1px solid #ddd; border-radius: 999px; padding: 6px 14px; margin: 3px; font-size: 13px;">{{ fr_label_en }}</li>
+            {%- else -%}
             <li class="fr_icon-list">
             <img src="{{ structure.img | img_url: 'master' }}" alt="{{ structure.name }}" class="fr_icon">
             </li>
+            {%- endif -%}
             {% endfor %}
           </ul>
           </div>

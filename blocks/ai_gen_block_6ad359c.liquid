@@ -4,6 +4,8 @@
     商品画像は見やすく長方形で表示したい, さらにカルーセルにして6位までだしたい
     スマホで見やすくして, top5位に変更したい, 画像サイズ3 : 4（縦長）にしたい
 {% enddoc %}
+{% comment %} ランキングは日本語ページ限定（MUSUBIが海外配送不可のため英語ページでは非表示） {% endcomment %}
+{% if request.locale.iso_code == 'ja' %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -462,6 +464,7 @@
     customElements.define('product-ranking-carousel-{{ ai_gen_id }}', ProductRankingCarousel{{ ai_gen_id }});
   })();
 </script>
+{% endif %}
 
 {% schema %}
 {
