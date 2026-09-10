@@ -1,6 +1,168 @@
+{% doc %}
+  @prompt
+    ヘッダー画像を作成したい。
+    文字なしでSPとPCビューで画像を差し替えられるようにしたい, 画像左下の表示は消して。タイトルとか
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-header-image-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-header-image-{{ ai_gen_id }}__link,
+  .ai-header-image-{{ ai_gen_id }}__media {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-header-image-{{ ai_gen_id }}__media {
+    overflow: hidden;
+    background: {{ block.settings.placeholder_color }};
+  }
+
+  .ai-header-image-{{ ai_gen_id }}__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .ai-header-image-{{ ai_gen_id }}__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+  }
+
+  .ai-header-image-{{ ai_gen_id }}__placeholder svg {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-header-image-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-header-image-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.link != blank %}
+    <a class="ai-header-image-{{ ai_gen_id }}__link" href="{{ block.settings.link }}"{% if block.settings.open_new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>
+  {% endif %}
+
+  <div class="ai-header-image-{{ ai_gen_id }}__media">
+    {% if block.settings.desktop_image != blank or block.settings.mobile_image != blank %}
+      <picture>
+        {% if block.settings.mobile_image != blank %}
+          <source media="(max-width: 749px)" srcset="{{ block.settings.mobile_image | image_url: width: 1500 }}">
+        {% endif %}
+        {% if block.settings.desktop_image != blank %}
+          <img src="{{ block.settings.desktop_image | image_url: width: 3000 }}" alt="{{ block.settings.alt_text | escape }}" loading="{{ block.settings.loading }}" width="{{ block.settings.desktop_image.width }}" height="{{ block.settings.desktop_image.height }}">
+        {% else %}
+          <img src="{{ block.settings.mobile_image | image_url: width: 1500 }}" alt="{{ block.settings.alt_text | escape }}" loading="{{ block.settings.loading }}" width="{{ block.settings.mobile_image.width }}" height="{{ block.settings.mobile_image.height }}">
+        {% endif %}
+      </picture>
+    {% else %}
+      <div class="ai-header-image-{{ ai_gen_id }}__placeholder">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if block.settings.link != blank %}
+    </a>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "レスポンシブヘッダー画像",
+  "settings": [
+    {
+      "type": "header",
+      "content": "画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "PC用画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "SP用画像"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "代替テキスト",
+      "default": "ヘッダー画像"
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "読み込み方法",
+      "options": [
+        {
+          "value": "lazy",
+          "label": "遅延読み込み"
+        },
+        {
+          "value": "eager",
+          "label": "優先読み込み"
+        }
+      ],
+      "default": "eager"
+    },
+    {
+      "type": "header",
+      "content": "リンク"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "リンク先"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "新しいタブで開く",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "PCでの幅",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "プレースホルダー背景",
+      "default": "#efefef"
+    }
+  ],
+  "presets": [
+    {
+      "name": "レスポンシブヘッダー画像"
+    }
+  ],
+  "tag": null,
+  "class": "responsive-header-image-block"
+}
 {% endschema %}
