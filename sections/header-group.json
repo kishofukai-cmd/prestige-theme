@@ -17,7 +17,8 @@
         "message_rcWxdd": {
           "type": "message",
           "settings": {
-            "text": "<a href=\"https://kapok-knot.com/products/musubi-en\" title=\"https://kapok-knot.com/products/musubi-en\">【先行予約受付中】完売中のリカバリー加重ブランケットMUSUBI - en -先行予約開催！</a>"
+            "text": "<a href=\"https://kapok-knot.com/products/musubi-en\" title=\"https://kapok-knot.com/products/musubi-en\">【先行予約受付中】完売中のリカバリー加重ブランケットMUSUBI - en -先行予約開催！</a>",
+            "text_en": "<a href=\"https://kapok-knot.com/en/products/musubi-en\" title=\"https://kapok-knot.com/en/products/musubi-en\">Pre-orders open — the sold-out MUSUBI Recovery Weighted Blanket is back!</a>"
           }
         }
       },

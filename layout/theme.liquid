@@ -117,6 +117,37 @@
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+
+    {%- comment -%}
+      Geo auto-switch (アプリ不要): 英語ページ訪問時、Shopifyの国検出APIで
+      訪問者の国を判定し、対応マーケット国なら ?country=XX で一度だけリダイレクト。
+      日本語ページ（locale=ja）では動かない。ループ防止: sessionStorage。
+    {%- endcomment -%}
+    {%- if request.locale.iso_code == 'en' -%}
+      <script>
+        (function () {
+          try {
+            if (window.Shopify && Shopify.designMode) return;
+            if (sessionStorage.getItem('kk_geo_done')) return;
+            var params = new URLSearchParams(location.search);
+            if (params.has('country')) { sessionStorage.setItem('kk_geo_done', '1'); return; }
+            var current = '{{ localization.country.iso_code }}';
+            var supported = ['AU', 'GB', 'FR', 'NL', 'DE', 'BE', 'IE', 'ES', 'IT', 'AT', 'PT', 'FI', 'LU', 'US'];
+            fetch('/browsing_context_suggestions')
+              .then(function (r) { return r.json(); })
+              .then(function (data) {
+                sessionStorage.setItem('kk_geo_done', '1');
+                var detected = data && data.detected_values && data.detected_values.country && data.detected_values.country.handle;
+                if (!detected || detected === current) return;
+                if (supported.indexOf(detected) === -1) return;
+                params.set('country', detected);
+                location.replace(location.pathname + '?' + params.toString() + location.hash);
+              })
+              .catch(function () { sessionStorage.setItem('kk_geo_done', '1'); });
+          } catch (e) { /* no-op */ }
+        })();
+      </script>
+    {%- endif -%}
   <!--Gem_Page_Footer_Script-->
   {%- liquid
     assign gpTemplateSuffix = template.suffix

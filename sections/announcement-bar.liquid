@@ -40,7 +40,13 @@
 
       <announcement-bar-carousel allow-swipe {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}"{% endif %} id="{{ carousel_id }}" class="announcement-bar__carousel">
         {%- for block in section.blocks -%}
-          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- block.settings.text -}}</p>
+          {%- liquid
+            assign msg = block.settings.text
+            if request.locale.iso_code != 'ja' and block.settings.text_en != blank
+              assign msg = block.settings.text_en
+            endif
+          -%}
+          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- msg -}}</p>
         {%- endfor -%}
       </announcement-bar-carousel>
 
@@ -74,6 +80,11 @@
           "id": "text",
           "label": "t:sections.announcement_bar.blocks.message.text",
           "default": "Announce something here"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_en",
+          "label": "英語テキスト（英語ページ用・空なら上と同じ）"
         }
       ]
     }
