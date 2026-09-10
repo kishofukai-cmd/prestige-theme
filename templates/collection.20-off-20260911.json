@@ -9,15 +9,38 @@
  */
 {
   "sections": {
+    "1789019966f95c33af": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5680f7e_PqfHdK": {
+          "type": "ai_gen_block_5680f7e",
+          "settings": {
+            "desktop_image": "shopify://shop_images/e_2_2x_b7ab33ba-f6d4-43cd-a210-5f022cc491e7.png",
+            "alt_text": "ヘッダー画像",
+            "loading": "eager",
+            "link": "",
+            "open_new_tab": false,
+            "desktop_width_percent": 100,
+            "placeholder_color": "#efefef"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5680f7e_PqfHdK"
+      ],
+      "settings": {}
+    },
     "collection-banner": {
       "type": "collection-banner",
       "settings": {
         "color_scheme": "",
+        "image": "shopify://shop_images/e_2_2x_1.png",
         "image_size": "auto",
         "allow_transparent_header": true,
         "reveal": true,
-        "enable_parallax": true,
-        "show_image": true,
+        "enable_parallax": false,
+        "show_image": false,
         "show_collection_title": true,
         "show_collection_description": true,
         "show_breadcrumb": true,
@@ -51,6 +74,7 @@
     }
   },
   "order": [
+    "1789019966f95c33af",
     "collection-banner",
     "main"
   ]
