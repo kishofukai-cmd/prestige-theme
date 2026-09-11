@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_etrBia": {
+          "type": "message",
+          "settings": {
+            "text": "<a href=\"/collections/2026aw\" title=\"2026AUTUMN / WINTER collection\">2026 Autumn/Winter collection</a>",
+            "text_en": ""
+          }
+        },
         "message_rcWxdd": {
           "type": "message",
           "settings": {
@@ -23,6 +30,7 @@
         }
       },
       "block_order": [
+        "message_etrBia",
         "message_rcWxdd"
       ],
       "custom_css": [
