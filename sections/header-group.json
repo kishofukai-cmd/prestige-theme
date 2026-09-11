@@ -27,19 +27,11 @@
             "text": "<a href=\"https://kapok-knot.com/products/musubi-en\" title=\"https://kapok-knot.com/products/musubi-en\">【先行予約受付中】完売中のリカバリー加重ブランケットMUSUBI - en -先行予約開催！</a>",
             "text_en": "<a href=\"https://kapok-knot.com/en/products/musubi-en\" title=\"https://kapok-knot.com/en/products/musubi-en\">Pre-orders open — the sold-out MUSUBI Recovery Weighted Blanket is back!</a>"
           }
-        },
-        "message_xHgqyf": {
-          "type": "message",
-          "settings": {
-            "text": "<a href=\"/collections/airlightjacket_final20\" title=\"不動の人気アイテムAir Light Jacket、在庫限り20%OFF\">不動の人気アイテムAir Light Jacket、在庫限りの20%OFF</a>",
-            "text_en": ""
-          }
         }
       },
       "block_order": [
         "message_etrBia",
-        "message_rcWxdd",
-        "message_xHgqyf"
+        "message_rcWxdd"
       ],
       "custom_css": [
         ".announcement-bar {background-color: #04358d; color: #fff;}"
