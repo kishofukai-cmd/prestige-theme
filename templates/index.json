@@ -12,6 +12,33 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "image_dQHwjx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/36_d35cec62-428b-460d-8361-52a338d08521.png",
+            "mobile_image": "shopify://shop_images/e_2x_840096c2-f513-4e52-acb3-1a528a6d738d.png",
+            "subheading": "",
+            "title": "",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 780,
+            "button_1_text": "",
+            "button_1_link": "shopify://collections/airlightjacket_final20",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": ""
+          }
+        },
         "image_URHmpp": {
           "type": "image",
           "settings": {
@@ -64,34 +91,6 @@
             "text_color": "#ffffff",
             "border_color": "",
             "gradient_overlay": "linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"
-          }
-        },
-        "image_dQHwjx": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/EC_PC_9.png",
-            "mobile_image": "shopify://shop_images/KVSP_7_ad326330-e03a-42b6-bf1e-11120b1880fe.png",
-            "subheading": "",
-            "title": "",
-            "mobile_text_position": "place-self-center text-center",
-            "desktop_text_position": "sm:place-self-center sm:text-center",
-            "content_max_width": 780,
-            "button_1_text": "",
-            "button_1_link": "https://kapok-knot.com/pages/sleep-ket",
-            "button_1_style": "solid",
-            "button_1_background": "#ffffff",
-            "button_1_text_color": "#000000",
-            "button_2_text": "",
-            "button_2_link": "",
-            "button_2_style": "outline",
-            "button_2_background": "#ffffff",
-            "button_2_text_color": "#000000",
-            "background": "",
-            "background_opacity": 50,
-            "text_color": "#ffffff",
-            "border_color": "",
-            "gradient_overlay": ""
           }
         },
         "image_hpJVBD": {
@@ -152,9 +151,9 @@
         }
       },
       "block_order": [
+        "image_dQHwjx",
         "image_URHmpp",
         "image_XFEyei",
-        "image_dQHwjx",
         "image_hpJVBD",
         "image_mgckaq"
       ],
