@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_RBWcwM": {
+          "type": "message",
+          "settings": {
+            "text": "<a href=\"/collections/airlightjacket_final20\" title=\"不動の人気アイテムAir Light Jacket、在庫限り20%OFF\">不動の人気アイテムAir Light Jacket、在庫限りの20%OFF！</a>",
+            "text_en": ""
+          }
+        },
         "message_etrBia": {
           "type": "message",
           "settings": {
@@ -30,6 +37,7 @@
         }
       },
       "block_order": [
+        "message_RBWcwM",
         "message_etrBia",
         "message_rcWxdd"
       ],
