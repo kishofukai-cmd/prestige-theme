@@ -15,7 +15,8 @@
         "ai_gen_block_5680f7e_PqfHdK": {
           "type": "ai_gen_block_5680f7e",
           "settings": {
-            "desktop_image": "shopify://shop_images/e_2_2x_b7ab33ba-f6d4-43cd-a210-5f022cc491e7.png",
+            "desktop_image": "shopify://shop_images/e_2_2x_1_f79572ba-74ef-411d-8219-b4ac9af4d396.png",
+            "mobile_image": "shopify://shop_images/e_2x_2a56d268-b6dd-4d93-b7bb-db6255f13e05.png",
             "alt_text": "ヘッダー画像",
             "loading": "eager",
             "link": "",
