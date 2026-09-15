@@ -248,12 +248,15 @@
 
             {% if main_src != '' %}
               <div class="a25-product-card__main">
-                <img src="{{ main_src }}"
-                     alt="{{ block.settings.product_name }} {{ main_color }}"
-                     loading="lazy" data-a25-main>
-                {% if main_color != blank %}
-                  <span class="a25-product-card__color-badge" data-a25-badge>{{ main_color }}</span>
-                {% endif %}
+                {%- comment -%} メイン画像タップで商品ページへ（デッドクリック対策） {%- endcomment -%}
+                <a href="{{ block.settings.cta_url | default: '#' }}" aria-label="{{ block.settings.product_name | escape }}" style="display:block">
+                  <img src="{{ main_src }}"
+                       alt="{{ block.settings.product_name }} {{ main_color }}"
+                       loading="lazy" data-a25-main>
+                  {% if main_color != blank %}
+                    <span class="a25-product-card__color-badge" data-a25-badge>{{ main_color }}</span>
+                  {% endif %}
+                </a>
               </div>
             {% endif %}
 
@@ -283,7 +286,7 @@
             </div>
 
             {% if block.settings.product_name != blank %}
-              <h3 class="a25-product-card__name">{{ block.settings.product_name }}</h3>
+              <h3 class="a25-product-card__name"><a href="{{ block.settings.cta_url | default: '#' }}" style="color:inherit;text-decoration:none">{{ block.settings.product_name }}</a></h3>
             {% endif %}
             {% if block.settings.subtitle != blank %}
               <p class="a25-product-card__subtitle">{{ block.settings.subtitle }}</p>
