@@ -22,14 +22,28 @@
               {%- endif -%}
 
             {%- when 'heading' -%}
-              {%- if block.settings.text != blank -%}
-                <p class="{{ block.settings.heading_tag }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+              {%- liquid
+                assign rt_heading = block.settings.text
+                # 商品ページ共通のFARM TO FASHION見出しは英語ページで英訳表示
+                if request.locale.iso_code != 'ja' and rt_heading contains 'FARM TO FASHION'
+                  assign rt_heading = '<strong>"FARM TO FASHION" — Come along on the journey</strong>'
+                endif
+              -%}
+              {%- if rt_heading != blank -%}
+                <p class="{{ block.settings.heading_tag }}" {{ block.shopify_attributes }}>{{ rt_heading }}</p>
               {%- endif -%}
 
             {%- when 'richtext' -%}
-              {%- if block.settings.content != blank -%}
+              {%- liquid
+                assign rt_content = block.settings.content
+                # FARM TO FASHION本文（商品ページ共通）は英語ページで英訳表示
+                if request.locale.iso_code != 'ja' and rt_content contains 'カポック農園'
+                  assign rt_content = '<p>Meet the people who actually make our clothes — at the kapok farms, the processing plants, and the sewing factories.<br/>See how a KAPOK KNOT garment comes to life.</p>'
+                endif
+              -%}
+              {%- if rt_content != blank -%}
                 <div {{ block.shopify_attributes }}>
-                  {{- block.settings.content -}}
+                  {{- rt_content -}}
                 </div>
               {%- endif -%}
 

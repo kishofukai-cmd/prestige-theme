@@ -18,21 +18,21 @@
           "type": "message",
           "settings": {
             "text": "<a href=\"/collections/airlightjacket_final20\" title=\"不動の人気アイテムAir Light Jacket、在庫限り20%OFF\">不動の人気アイテムAir Light Jacket、在庫限りの20%OFF！</a>",
-            "text_en": ""
+            "text_en": "<a href=\"/en/pages/airlight-global-v2\" title=\"AirLight Jacket — 20% off while stocks last\">Our best-selling AirLight Jacket — 20% off while stocks last!</a>"
           }
         },
         "message_etrBia": {
           "type": "message",
           "settings": {
             "text": "<a href=\"/collections/2026aw\" title=\"2026AUTUMN / WINTER collection\">2026 Autumn/Winter collection</a>",
-            "text_en": ""
+            "text_en": "<a href=\"/en/collections/2026aw\" title=\"2026 Autumn/Winter collection\">2026 Autumn/Winter Collection</a>"
           }
         },
         "message_rcWxdd": {
           "type": "message",
           "settings": {
             "text": "<a href=\"https://kapok-knot.com/products/musubi-en\" title=\"https://kapok-knot.com/products/musubi-en\">リカバリー加重ブランケットMUSUBI - en -販売中</a>",
-            "text_en": "<a href=\"https://kapok-knot.com/en/products/musubi-en\" title=\"https://kapok-knot.com/en/products/musubi-en\">Pre-orders open — the sold-out MUSUBI Recovery Weighted Blanket is back!</a>"
+            "text_en": "<a href=\"/en/pages/airlight-global-v2\" title=\"AirLight Jacket\">Designed in Tokyo. Warmth that grows on trees — discover the AirLight Jacket.</a>"
           }
         }
       },
