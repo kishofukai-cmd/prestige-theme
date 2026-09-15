@@ -81,9 +81,16 @@
                       <p class="h6">{{ block.settings.title }}</p>
                     {%- endif -%}
 
-                    {%- if block.settings.content != blank -%}
+                    {%- liquid
+                      assign nl_content = block.settings.content
+                      # 英語ページではメルマガ説明文を英語に置換
+                      if request.locale.iso_code != 'ja' and nl_content contains 'メールマガジン'
+                        assign nl_content = '<p>Subscribe for the latest from KAPOK KNOT — new arrivals, events, and stories on sustainability.</p>'
+                      endif
+                    -%}
+                    {%- if nl_content != blank -%}
                       <div class="prose text-subdued">
-                        {{- block.settings.content -}}
+                        {{- nl_content -}}
                       </div>
                     {%- endif -%}
 

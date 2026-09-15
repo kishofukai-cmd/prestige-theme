@@ -423,6 +423,16 @@ Supported variables
                 if accordion_content contains '予約および受注生産品'
                   assign accordion_content = '<p>Pre-order and made-to-order items cannot be cancelled, and the size or colour cannot be changed after ordering.</p><p>If purchased together with in-stock items, the entire order ships when this item is ready. If you would like in-stock items sooner, please place a separate order for them.</p>'
                 endif
+
+                # カーボンフットプリント本文も英語に置換（数値はmetafieldから）
+                if accordion_content contains 'カーボンフットプリント'
+                  assign a25_cfp = product.metafields.custom.detail_cfp.value
+                  if a25_cfp != blank
+                    assign accordion_content = '<p>The carbon footprint of this product is ' | append: a25_cfp | append: ' kg-CO2e.</p><p>KAPOK KNOT calculates the carbon footprint of its materials, manufacturing, and consumer use.</p>'
+                  else
+                    assign accordion_content = '<p>KAPOK KNOT calculates the carbon footprint of its materials, manufacturing, and consumer use.</p>'
+                  endif
+                endif
               endif
 
               if accordion_title != blank and accordion_content != blank
