@@ -160,8 +160,15 @@
                        alt="{{ block.settings.name }}"
                        loading="lazy">
                 {% elsif block.settings.image_url != blank %}
+                  {%- liquid
+                    # タイル表示は小さいのでucarecdnのpreviewサイズを600に落とす
+                    assign xs_src = block.settings.image_url
+                    if xs_src contains '/preview/1200x1200/'
+                      assign xs_src = xs_src | replace: '/preview/1200x1200/', '/preview/600x600/'
+                    endif
+                  -%}
                   <img class="a25-cross-tile__img"
-                       src="{{ block.settings.image_url }}"
+                       src="{{ xs_src }}"
                        alt="{{ block.settings.name }}"
                        loading="lazy">
                 {% endif %}
@@ -206,8 +213,15 @@
                        alt="{{ block.settings.name }}"
                        loading="lazy">
                 {% elsif block.settings.image_url != blank %}
+                  {%- liquid
+                    # タイル表示は小さいのでucarecdnのpreviewサイズを600に落とす
+                    assign xs_src = block.settings.image_url
+                    if xs_src contains '/preview/1200x1200/'
+                      assign xs_src = xs_src | replace: '/preview/1200x1200/', '/preview/600x600/'
+                    endif
+                  -%}
                   <img class="a25-cross-tile__img"
-                       src="{{ block.settings.image_url }}"
+                       src="{{ xs_src }}"
                        alt="{{ block.settings.name }}"
                        loading="lazy">
                 {% endif %}

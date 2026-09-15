@@ -250,7 +250,17 @@
               <div class="a25-product-card__main">
                 {%- comment -%} メイン画像タップで商品ページへ（デッドクリック対策） {%- endcomment -%}
                 <a href="{{ block.settings.cta_url | default: '#' }}" aria-label="{{ block.settings.product_name | escape }}" style="display:block">
+                  {%- liquid
+                    # ucarecdnのpreviewサイズ指定URLならモバイル用srcsetを生成
+                    assign main_srcset = ''
+                    if main_src contains '/preview/1200x1200/'
+                      assign m600 = main_src | replace: '/preview/1200x1200/', '/preview/600x600/'
+                      assign m900 = main_src | replace: '/preview/1200x1200/', '/preview/900x900/'
+                      assign main_srcset = m600 | append: ' 600w, ' | append: m900 | append: ' 900w, ' | append: main_src | append: ' 1200w'
+                    endif
+                  -%}
                   <img src="{{ main_src }}"
+                       {% if main_srcset != '' %}srcset="{{ main_srcset }}" sizes="(max-width: 699px) 100vw, 400px"{% endif %}
                        alt="{{ block.settings.product_name }} {{ main_color }}"
                        loading="lazy" data-a25-main>
                   {% if main_color != blank %}
@@ -271,13 +281,22 @@
                 {% if img != blank or img_url != blank %}
                   {% assign thumb_src = img_url %}
                   {% if img != blank %}{% assign thumb_src = img | image_url: width: 900 %}{% endif %}
+                  {%- liquid
+                    # サムネ表示は96pxなので小さい画像を使う（クリック時のメイン差し替えは高解像度のまま）
+                    assign thumb_small = thumb_src
+                    if thumb_src contains '/preview/1200x1200/'
+                      assign thumb_small = thumb_src | replace: '/preview/1200x1200/', '/preview/200x200/'
+                    elsif img != blank
+                      assign thumb_small = img | image_url: width: 200
+                    endif
+                  -%}
                   <button type="button"
                           class="a25-product-card__thumb{% if forloop.first %} is-active{% endif %}"
                           data-a25-thumb
                           data-src="{{ thumb_src }}"
                           data-color="{{ color_label | escape }}"
                           aria-label="Show {{ color_label | default: 'color' | escape }}">
-                    <img src="{{ thumb_src }}"
+                    <img src="{{ thumb_small }}"
                          alt=""
                          width="96" height="96" loading="lazy">
                   </button>
