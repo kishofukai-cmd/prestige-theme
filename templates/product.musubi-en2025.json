@@ -31,7 +31,7 @@
         "text_6YiFKA": {
           "type": "text",
           "settings": {
-            "text": "<p>先行予約8月8日より開催！<br/>お届け予定：9月15日より順次配送予定</p>"
+            "text": ""
           }
         },
         "button_ny4ifY": {
@@ -445,7 +445,14 @@
         "soldout_record_pLeVCr": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年8月8日(土) 12:00〜 先行予約",
+            "date": "2026年8月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_9gfxei": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2026年9月16日(水)  一般発売",
             "status": "開催中"
           }
         }
@@ -461,7 +468,8 @@
         "sold_8",
         "soldout_record_Rr47tV",
         "soldout_record_xzzJhT",
-        "soldout_record_pLeVCr"
+        "soldout_record_pLeVCr",
+        "soldout_record_9gfxei"
       ],
       "settings": {
         "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
@@ -1446,7 +1454,7 @@
           "type": "faq_item",
           "settings": {
             "question": "次の販売はいつごろですか？",
-            "answer": "<p>次回販売の情報は公式LINEにて最速でお届けいたします。</p>"
+            "answer": "<p>現在販売中です。情報は公式LINEにて最速でお届けいたします。</p>"
           }
         }
       },
