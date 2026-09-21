@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "freeship": {
+      "type": "airlight2025-freeship",
+      "settings": {
+        "enabled": true,
+        "tag": "LIMITED TIME ONLY",
+        "heading": "FREE Worldwide Shipping",
+        "sub": "No minimum spend · No code needed.",
+        "link_text": "Shop now →",
+        "link": "#a25-products",
+        "bg_color": "#c29d66",
+        "text_color": "#1a2640"
+      }
+    },
     "hero": {
       "type": "airlight2025-hero",
       "settings": {
@@ -544,6 +557,7 @@
     }
   },
   "order": [
+    "freeship",
     "hero",
     "offer",
     "kapok-story",

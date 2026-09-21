@@ -1,0 +1,100 @@
+{% comment %}
+  AirLight 2025 EN — 送料無料キャンペーンの帯（LPの最上部に置く）
+  2026-09-21 深井さん指示「Free Shipping 今だけ！がしっかりわかる見出しを追加」
+  海外配送料は同日 ¥20,000 → ¥0（期間限定）に変更済み。キャンペーンを終えたら enabled を外すだけで消える
+{% endcomment %}
+{%- if section.settings.enabled -%}
+<style>
+  .a25-freeship {
+    background: {{ section.settings.bg_color | default: '#c29d66' }};
+    color: {{ section.settings.text_color | default: '#1a2640' }};
+    padding: clamp(12px, 2.4vw, 20px) 16px;
+    text-align: center;
+  }
+  .a25-freeship__link {
+    display: block;
+    max-width: 960px;
+    margin: 0 auto;
+    color: inherit;
+    text-decoration: none;
+  }
+  .a25-freeship__tag {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 2px 12px;
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+    font-family: var(--text-font-family), sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .a25-freeship__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    color: inherit;
+    font-family: var(--heading-font-family), sans-serif;
+    font-size: clamp(1.35rem, 5.2vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+  }
+  .a25-freeship__icon {
+    flex: none;
+    width: 1.1em;
+    height: 1.1em;
+  }
+  .a25-freeship__sub {
+    margin: 6px 0 0;
+    font-family: var(--text-font-family), sans-serif;
+    font-size: clamp(0.8rem, 2.6vw, 0.95rem);
+    line-height: 1.5;
+  }
+  .a25-freeship__cta {
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
+
+<section class="a25-freeship" aria-label="{{ section.settings.heading | escape }}">
+  <a class="a25-freeship__link" href="{{ section.settings.link | default: '#a25-products' }}">
+    {%- if section.settings.tag != blank -%}
+      <span class="a25-freeship__tag">{{ section.settings.tag | escape }}</span>
+    {%- endif -%}
+    <p class="a25-freeship__heading">
+      <svg class="a25-freeship__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+      <span>{{ section.settings.heading | escape }}</span>
+    </p>
+    {%- if section.settings.sub != blank or section.settings.link_text != blank -%}
+      <p class="a25-freeship__sub">
+        {{- section.settings.sub | escape -}}
+        {%- if section.settings.link_text != blank %} <span class="a25-freeship__cta">{{ section.settings.link_text | escape }}</span>{% endif -%}
+      </p>
+    {%- endif -%}
+  </a>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "A25 Free Shipping Bar",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show bar", "default": true },
+    { "type": "text", "id": "tag", "label": "Tag", "default": "LIMITED TIME ONLY" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "FREE Worldwide Shipping" },
+    { "type": "text", "id": "sub", "label": "Sub text", "default": "No minimum spend · No code needed." },
+    { "type": "text", "id": "link_text", "label": "Link text", "default": "Shop now →" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#c29d66" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1a2640" }
+  ],
+  "presets": [{ "name": "A25 Free Shipping Bar" }]
+}
+{% endschema %}
