@@ -66,6 +66,10 @@
     {%- else -%}
       {%- comment -%} 海外(非ja)ページでは国内専用アプリ dokopoi のScriptTag読み込みを無効化（ドメインを無効値に差し替え。JSON構造は維持） {%- endcomment -%}
       {%- capture a25_cfh -%}{{ content_for_header }}{%- endcapture -%}
+      {%- comment -%} 海外LP（page.airlight-global-v2）では未使用の Klaviyo の読み込みも同じ方法で止める（2026-09-21 深井さん指示。klaviyo.js が2重登録＋連鎖で15本読み込まれていた） {%- endcomment -%}
+      {%- if template.suffix == 'airlight-global-v2' -%}
+        {%- assign a25_cfh = a25_cfh | replace: 'static.klaviyo.com', 'klaviyo-disabled-overseas.invalid' -%}
+      {%- endif -%}
       {{ a25_cfh | replace: 'dokopoi-js.s3.ap-northeast-1.amazonaws.com', 'dokopoi-disabled-overseas.invalid' }}
     {%- endif -%}
 

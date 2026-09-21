@@ -25,7 +25,7 @@
         "kv_eyebrow_2": "TOKYO, JAPAN",
         "kv_headline": "<p>The Finest<br/>Down Alternative.<br/>From Japan.</p>",
         "kv_headline_scale": 100,
-        "kv_sub": "A sustainable breakthrough in warmth — now shipping worldwide.",
+        "kv_sub": "A sustainable breakthrough in warmth — now with FREE worldwide shipping.",
         "kv_show_divider": true,
         "kv_stat": "500g",
         "kv_stat_caption": "Same weight as one 500ml bottle of water.",
@@ -58,10 +58,10 @@
         "price_now_gbp": "£248",
         "price_was_eur": "€360",
         "price_now_eur": "€288",
-        "code_text": "<p><strong>Launch offer</strong> — 20% off, no code needed. Limited time only.</p>",
+        "code_text": "<p><strong>Launch offer</strong> — 20% off + FREE worldwide shipping. No code needed. Limited time only.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
-        "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
+        "trust_line": "Free worldwide shipping · Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
         "bg_color": "#1a2640",
         "text_color": "#ffffff",
         "accent_color": "#c29d66"
@@ -290,7 +290,7 @@
         "overlay_opacity": 65,
         "eyebrow": "Your new winter staple",
         "heading": "<p>Light, warm, <em>no regrets.</em></p>",
-        "sub": "Launch offer — 20% off, no code needed.",
+        "sub": "Launch offer — 20% off + FREE worldwide shipping. No code needed.",
         "cta_men_text": "Shop Men's",
         "cta_men_url": "/en/products/men-hooded-jacket",
         "cta_women_text": "Shop Women's",
@@ -421,14 +421,14 @@
           "type": "faq_item",
           "settings": {
             "question": "How does international sizing work?",
-            "answer": "<p>Our sizing follows Japanese standards, which run smaller than US/AU/EU sizing — Japanese S is roughly an international XS. We recommend ordering one size up from what you'd normally wear.</p>"
+            "answer": "<p>Our sizing follows Japanese standards, which run smaller than UK, EU and US sizing — Japanese S is roughly an international XS. We recommend ordering one size up from what you'd normally wear.</p>"
           }
         },
         "faq_item_2": {
           "type": "faq_item",
           "settings": {
             "question": "What's your shipping and return policy?",
-            "answer": "<p>Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
+            "answer": "<p><strong>Free worldwide shipping</strong> during our launch campaign. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. Import VAT and customs duties are not included and may be collected by the carrier on delivery. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights always apply.</p>"
           }
         },
         "faq_item_3": {
@@ -532,7 +532,7 @@
         "price_text": "A$478",
         "price_text_gbp": "£248",
         "price_text_eur": "€288",
-        "sub_text": "Launch offer — 20% off",
+        "sub_text": "20% off + FREE shipping",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "show_on_desktop": false,
