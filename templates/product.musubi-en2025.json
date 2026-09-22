@@ -838,7 +838,7 @@
           "type": "step",
           "settings": {
             "icon_svg": "<svg width=\"60\" height=\"60\" viewbox=\"0 0 60 60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"30\" cy=\"30\" r=\"28\"></circle><path d=\"M26 36v-12c0-1.5 2-1.5 2 0v8M28 22c0-1.5 2-1.5 2 0v10M30 20c0-1.5 2-1.5 2 0v12M32 24c0-1.5 2-1.5 2 0v10\"></path></svg>",
-            "label": "<p>深部圧刺激<br>Deep Pressure Touch</p>"
+            "label": "<p>深部圧刺激<br>Deep Touch Pressure</p>"
           }
         },
         "step_3": {
@@ -905,7 +905,7 @@
         "image_alt": "MUSUBIの使用シーン",
         "image_radius": 20,
         "image_radius_sp": 16,
-        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Pressure Touch）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
+        "description": "<p>体重の約7〜12%の重さが全身に均一にかかることで、<strong>深部圧刺激（Deep Touch Pressure）</strong>が生じ、リラックス反応が促されることが複数の研究で示唆されています。</p>",
         "description_size_pc": 15,
         "description_size_sp": 14,
         "description_color": "#555555",
@@ -1140,7 +1140,7 @@
             "name": "Nap Size (M)",
             "price": "¥29,800",
             "price_note": "(税込)",
-            "dimensions": "100 × 70 cm",
+            "dimensions": "約135 × 70 cm",
             "features": "ソファ利用中心, 昼寝向き, 軽めが好みの方",
             "note": "日本のソファの平均奥行き70cmに基づき設計。日中の束の間の休憩や仮眠に。"
           }
@@ -1155,7 +1155,7 @@
             "name": "Sleep Size (L)",
             "price": "¥39,800",
             "price_note": "(税込)",
-            "dimensions": "150 × 100 cm",
+            "dimensions": "約175 × 105 cm",
             "features": "ベッド利用, 全身を包みたい方, しっかり重みを感じたい方",
             "note": "1日の終わりに全身を包む安心感。ベッドに沈んでいくような快適さをお届けします。"
           }
@@ -1170,7 +1170,7 @@
             "name": "Full Size(XL)",
             "price": "¥44,800",
             "price_note": "(税込)",
-            "dimensions": "約140 × 180 cm",
+            "dimensions": "約180 × 140 cm",
             "features": "ベッドで全身を包まれたい方に,大柄な方にも,全身を預ける心地よさ",
             "note": "より広く、より深く包まれたいという声に応え、XLサイズを新たにご用意しました。"
           }
@@ -1433,7 +1433,7 @@
           "type": "faq_item",
           "settings": {
             "question": "2人で使えますか？",
-            "answer": "<p>Sleep Size(L)は150×100cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。</p>"
+            "answer": "<p>Sleep Size(L)は約175×105cmですので2人でも使用可能です。ただし、加重ブランケットの効果を最大限に感じるためには、1人での使用をおすすめしています。</p>"
           }
         },
         "faq_4": {
