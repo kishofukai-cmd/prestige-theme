@@ -9,19 +9,6 @@
  */
 {
   "sections": {
-    "freeship": {
-      "type": "airlight2025-freeship",
-      "settings": {
-        "enabled": true,
-        "tag": "LIMITED TIME ONLY",
-        "heading": "FREE Worldwide Shipping",
-        "sub": "No minimum spend · No code needed.",
-        "link_text": "Shop now →",
-        "link": "#a25-products",
-        "bg_color": "#c29d66",
-        "text_color": "#1a2640"
-      }
-    },
     "hero": {
       "type": "airlight2025-hero",
       "settings": {
@@ -38,7 +25,7 @@
         "kv_eyebrow_2": "TOKYO, JAPAN",
         "kv_headline": "<p>The Finest<br/>Down Alternative.<br/>From Japan.</p>",
         "kv_headline_scale": 100,
-        "kv_sub": "A sustainable breakthrough in warmth — now with FREE worldwide shipping.",
+        "kv_sub": "A sustainable breakthrough in warmth — now shipping worldwide.",
         "kv_show_divider": true,
         "kv_stat": "500g",
         "kv_stat_caption": "Same weight as one 500ml bottle of water.",
@@ -71,10 +58,10 @@
         "price_now_gbp": "£248",
         "price_was_eur": "€360",
         "price_now_eur": "€288",
-        "code_text": "<p><strong>Launch offer</strong> — 20% off + FREE worldwide shipping. No code needed. Limited time only.</p>",
+        "code_text": "<p><strong>Launch offer</strong> — 20% off, no code needed. Limited time only.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
-        "trust_line": "Free worldwide shipping · Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
+        "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
         "bg_color": "#1a2640",
         "text_color": "#ffffff",
         "accent_color": "#c29d66"
@@ -83,12 +70,41 @@
     "kapok-story": {
       "type": "airlight2025-kapok-story",
       "blocks": {
-        "chip_1": { "type": "stat_chip", "settings": { "value": "1/8", "label": "The weight of cotton" } },
-        "chip_2": { "type": "stat_chip", "settings": { "value": "0", "label": "Animal products" } },
-        "chip_3": { "type": "stat_chip", "settings": { "value": "500g", "label": "Total jacket weight" } },
-        "chip_4": { "type": "stat_chip", "settings": { "value": "Washable", "label": "At home, by hand" } }
+        "chip_1": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "1/8",
+            "label": "The weight of cotton"
+          }
+        },
+        "chip_2": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "0",
+            "label": "Animal products"
+          }
+        },
+        "chip_3": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "500g",
+            "label": "Total jacket weight"
+          }
+        },
+        "chip_4": {
+          "type": "stat_chip",
+          "settings": {
+            "value": "Washable",
+            "label": "At home, by hand"
+          }
+        }
       },
-      "block_order": ["chip_1", "chip_2", "chip_3", "chip_4"],
+      "block_order": [
+        "chip_1",
+        "chip_2",
+        "chip_3",
+        "chip_4"
+      ],
       "settings": {
         "section_id": "a25-kapok",
         "bg_color": "#faf9f6",
@@ -134,7 +150,11 @@
           }
         }
       },
-      "block_order": ["demo_1", "demo_layers", "demo_2"],
+      "block_order": [
+        "demo_1",
+        "demo_layers",
+        "demo_2"
+      ],
       "settings": {
         "bg_color": "#ffffff",
         "kicker": "Functional Proof",
@@ -145,11 +165,36 @@
     "farm-to-fashion": {
       "type": "airlight2025-farm-to-fashion",
       "blocks": {
-        "step_1": { "type": "step", "settings": { "step_label": "Step 01", "title": "The Farm — Indonesia", "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut." } },
-        "step_2": { "type": "step", "settings": { "step_label": "Step 02", "title": "The Sheet — Japan", "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet." } },
-        "step_3": { "type": "step", "settings": { "step_label": "Step 03", "title": "The Design — Tokyo, Japan", "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric." } }
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 01",
+            "title": "The Farm — Indonesia",
+            "text": "Our founder visits every farm and signs every contract in person. Kapok is harvested from seed pods — no trees are ever cut."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 02",
+            "title": "The Sheet — Japan",
+            "text": "Five years of development with Japan's top textile engineers created the patent-pending EthicalDown Kapok™ sheet."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Step 03",
+            "title": "The Design — Tokyo, Japan",
+            "text": "Every AirLight Jacket is designed and engineered in Tokyo, built around our made-in-Japan kapok fabric."
+          }
+        }
       },
-      "block_order": ["step_1", "step_2", "step_3"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
       "settings": {
         "bg_color": "#faf9f6",
         "kicker": "Farm to Fashion",
@@ -215,32 +260,12 @@
             "image_5_url": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
             "color_5": "Greige"
           }
-        },
-        "product_card_3": {
-          "type": "product_card",
-          "settings": {
-            "product_name": "AirLight Peplum Jacket — Women's",
-            "subtitle": "4 Colors: White / Ice Blue / Black / Khaki",
-            "price": "A$578",
-            "price_gbp": "£300",
-            "price_eur": "€348",
-            "description": "A waist drawcord unique to the Peplum line — cinch it for shape, or wear it loose. Your call.",
-            "cta_text": "Shop Now →",
-            "cta_url": "/en/products/airlight-peplum-jacket",
-            "image_1_url": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/1200x1200/-/quality/lighter/142.png",
-            "color_1": "White",
-            "image_2_url": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/1200x1200/-/quality/lighter/307.png",
-            "color_2": "Ice Blue",
-            "image_3_url": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/1200x1200/-/quality/lighter/527.png",
-            "color_3": "Black",
-            "image_4_url": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/1200x1200/-/quality/lighter/517.png",
-            "color_4": "Khaki",
-            "image_5_url": "",
-            "color_5": ""
-          }
         }
       },
-      "block_order": ["product_card_1", "product_card_2", "product_card_3"],
+      "block_order": [
+        "product_card_1",
+        "product_card_2"
+      ],
       "settings": {
         "section_id": "a25-products",
         "bg_color": "#ffffff",
@@ -287,7 +312,12 @@
           }
         }
       },
-      "block_order": ["review_1", "review_2", "review_3", "review_4"],
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
       "settings": {
         "heading": "Real Customers. Real Winters.",
         "avg_stars": "★★★★★",
@@ -303,7 +333,7 @@
         "overlay_opacity": 65,
         "eyebrow": "Your new winter staple",
         "heading": "<p>Light, warm, <em>no regrets.</em></p>",
-        "sub": "Launch offer — 20% off + FREE worldwide shipping. No code needed.",
+        "sub": "Launch offer — 20% off, no code needed.",
         "cta_men_text": "Shop Men's",
         "cta_men_url": "/en/products/men-hooded-jacket",
         "cta_women_text": "Shop Women's",
@@ -383,7 +413,17 @@
           }
         }
       },
-      "block_order": ["media_logo_1", "media_logo_2", "media_logo_3", "media_logo_4", "media_logo_5", "media_logo_6", "creator_4", "creator_5", "creator_6"],
+      "block_order": [
+        "media_logo_1",
+        "media_logo_2",
+        "media_logo_3",
+        "media_logo_4",
+        "media_logo_5",
+        "media_logo_6",
+        "creator_4",
+        "creator_5",
+        "creator_6"
+      ],
       "settings": {
         "section_id": "a25-proof",
         "bg_color": "#faf9f6",
@@ -418,7 +458,11 @@
           }
         }
       },
-      "block_order": ["value_block_1", "value_block_2", "value_block_3"],
+      "block_order": [
+        "value_block_1",
+        "value_block_2",
+        "value_block_3"
+      ],
       "settings": {
         "kicker": "A Message From Our Founder",
         "founder_name": "Kisho Fukai, Founder & CEO of KAPOK KNOT",
@@ -434,14 +478,14 @@
           "type": "faq_item",
           "settings": {
             "question": "How does international sizing work?",
-            "answer": "<p>Our sizing follows Japanese standards, which run smaller than UK, EU and US sizing — Japanese S is roughly an international XS. We recommend ordering one size up from what you'd normally wear.</p>"
+            "answer": "<p>Our sizing follows Japanese standards, which run smaller than US/AU/EU sizing — Japanese S is roughly an international XS. We recommend ordering one size up from what you'd normally wear.</p>"
           }
         },
         "faq_item_2": {
           "type": "faq_item",
           "settings": {
             "question": "What's your shipping and return policy?",
-            "answer": "<p><strong>Free worldwide shipping</strong> during our launch campaign. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. Import VAT and customs duties are not included and may be collected by the carrier on delivery. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights always apply.</p>"
+            "answer": "<p>Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
           }
         },
         "faq_item_3": {
@@ -466,7 +510,13 @@
           }
         }
       },
-      "block_order": ["faq_item_1", "faq_item_2", "faq_item_3", "faq_item_4", "faq_item_5"],
+      "block_order": [
+        "faq_item_1",
+        "faq_item_2",
+        "faq_item_3",
+        "faq_item_4",
+        "faq_item_5"
+      ],
       "settings": {
         "kicker": "FAQ",
         "heading": "Frequently Asked Questions",
@@ -476,19 +526,6 @@
     "crosssell": {
       "type": "airlight2025-crosssell",
       "blocks": {
-        "product_tile_1": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "AirLight Peplum Jacket — Women's",
-            "colors": "Ice Blue / White / Black",
-            "price": "A$722.50",
-            "price_gbp": "£375",
-            "price_eur": "€435",
-            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/1200x1200/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
-            "cta_url": "/en/products/airlight-peplum-jacket"
-          }
-        },
         "product_tile_2": {
           "type": "product_tile",
           "settings": {
@@ -529,7 +566,11 @@
           }
         }
       },
-      "block_order": ["product_tile_1", "product_tile_2", "product_tile_5", "product_tile_6"],
+      "block_order": [
+        "product_tile_2",
+        "product_tile_5",
+        "product_tile_6"
+      ],
       "settings": {
         "section_id": "a25-cross",
         "bg_color": "#ffffff",
@@ -545,7 +586,7 @@
         "price_text": "A$478",
         "price_text_gbp": "£248",
         "price_text_eur": "€288",
-        "sub_text": "20% off + FREE shipping",
+        "sub_text": "Launch offer — 20% off",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "show_on_desktop": false,
@@ -557,7 +598,6 @@
     }
   },
   "order": [
-    "freeship",
     "hero",
     "offer",
     "kapok-story",
