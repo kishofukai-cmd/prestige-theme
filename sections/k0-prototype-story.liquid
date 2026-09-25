@@ -1,0 +1,217 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------
+  K-0 PROTOTYPE 商品ページ ②ストーリー（素材とプロトタイプの説明）
+  ------------------------------------------------------------------------------
+  テンプレート: templates/product.k0-prototype.json（全体の説明は sections/k0-prototype.liquid 冒頭）
+  見た目: assets/k0-prototype.css
+
+  - ブロック「ストーリー」1つ＝見出し・リード・本文・注記・写真の1段。並べ替え・追加・削除できる。
+  - 写真・見出し・リードは常に表示。本文と注記は「もっと読む」トグル（<details>）の中。
+    既定の開閉はブロックごとの「本文を最初から開く」（既定: 閉じる）。
+    セクション設定「本文を畳むトグルの見出し」を空欄にすると、畳まずにそのまま表示する。
+  - 本文の「斜体（I）」は元原稿の「大きい文字」として表示する（例: 約〇〇 LESS）。
+  - 「写真を左にする」を ON にすると PC 表示で写真が左、文章が右になる（スマホは常に文章→写真）。
+  - 未確定の既定値（テンプレートの4段目「暖かさを、その先まで考える。」）:
+      本文の「約〇〇 LESS」、注記の「カポック原綿○○〜○○、羽毛原料○○〜○○」は数値が未確定。
+  - 外部リンクを別タブで開くには、本文のリンク設定で「新しいウィンドウで開く」を選ぶ。
+  ------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+{{ 'k0-prototype.css' | asset_url | stylesheet_tag }}
+
+<section class="k0 k0-story" id="k0-material">
+  <div class="k0-wrap k0-col">
+    {%- if section.settings.kicker != blank -%}
+      <p class="k0-kicker">{{ section.settings.kicker | escape }}</p>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      <div class="k0-story__block{% if block.settings.reverse %} k0-story__block--rev{% endif %}" {{ block.shopify_attributes }}>
+        <div class="k0-story__text">
+          {%- if block.settings.title != blank -%}
+            <h3 class="k0-story__heading">{{ block.settings.title | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.lead != blank -%}
+            <p class="k0-story__lead">{{ block.settings.lead | escape | newline_to_br }}</p>
+          {%- endif -%}
+          {%- capture k0_story_more -%}
+            {%- if block.settings.body != blank -%}
+              <div class="k0-story__body k0-rte">{{ block.settings.body }}</div>
+            {%- endif -%}
+            {%- if block.settings.note != blank -%}
+              <div class="k0-story__note k0-rte">{{ block.settings.note }}</div>
+            {%- endif -%}
+          {%- endcapture -%}
+          {%- if k0_story_more != blank -%}
+            {%- if section.settings.more_label != blank -%}
+              <details class="k0-acc k0-acc--toggle k0-story__more"{% if block.settings.body_open %} open{% endif %}>
+                {%- render 'k0-acc-summary', title: section.settings.more_label -%}
+                <div class="k0-acc__body">{{ k0_story_more }}</div>
+              </details>
+            {%- else -%}
+              <div class="k0-story__more-plain">{{ k0_story_more }}</div>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+        <div class="k0-story__photo">
+          {%- if block.settings.image != blank -%}
+            {%- assign k0_alt = block.settings.image.alt | default: block.settings.title -%}
+            {{- block.settings.image | image_url: width: 1400 | image_tag: sizes: '(max-width: 760px) calc(100vw - 40px), 300px', widths: '300,450,600,800,1000,1400', alt: k0_alt, class: 'k0-img', loading: 'lazy' -}}
+          {%- else -%}
+            <div class="k0-ph"><span>写真を追加</span></div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+
+    {%- if section.settings.closing != blank -%}
+      <div class="k0-story__close k0-rte">{{ section.settings.closing }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "K-0 ストーリー",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "小見出し（英字）",
+      "default": "ABOUT THE MATERIAL AND THE PROTOTYPE"
+    },
+    {
+      "type": "paragraph",
+      "content": "各段は「ストーリー」ブロックで編集します。写真・見出し・リードは常に表示し、本文と注記はトグルの中に入ります。本文で斜体（I）にした文字は、大きな太字で表示されます。"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "本文を畳むトグルの見出し",
+      "default": "もっと読む",
+      "info": "空欄にすると本文を畳まずに表示します"
+    },
+    {
+      "type": "richtext",
+      "id": "closing",
+      "label": "締めの文"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "ストーリー",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "見出し"
+        },
+        {
+          "type": "textarea",
+          "id": "lead",
+          "label": "リード（太字・常に表示）",
+          "info": "短い一文に。改行はそのまま反映されます"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "本文",
+          "info": "斜体（I）にした文字は大きな太字で表示されます"
+        },
+        {
+          "type": "richtext",
+          "id": "note",
+          "label": "注記（小さい文字）"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "写真"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "写真を左にする（PC表示）",
+          "default": false,
+          "info": "スマホでは常に文章→写真の順です"
+        },
+        {
+          "type": "checkbox",
+          "id": "body_open",
+          "label": "本文を最初から開く",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "K-0 ストーリー",
+      "blocks": [
+        {
+          "type": "story",
+          "settings": {
+            "reverse": false,
+            "body_open": false,
+            "title": "冬の暖かさに、もうひとつの選択肢を。",
+            "lead": "羽毛でも、ポリエステルでもない。\n植物でつくる、第3の中綿。",
+            "body": "<p>これまで防寒着の中綿には、主に羽毛（ダウン）と合成繊維が使われてきました。<br>羽毛は高い保温性を持つ一方で、価格や供給が安定しにくい。<br>ポリエステル中綿は、石油を主な原料としています。</p><p>そこで私たちは、植物から暖かさをつくることに挑みました。<br>ダウンのように空気をたっぷりと抱え込む暖かさを目指し、カポック繊維をふくらみのあるロフト中綿へ。</p><p>植物から、冬の選択肢を広げていく。<br>その最初のかたちとして、<strong>K-0 PROTOTYPEを、世界に5着だけ。</strong></p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "reverse": true,
+            "body_open": false,
+            "title": "NEO DOWN KAPOK® BEYOND",
+            "lead": "木の実から生まれた、植物由来のロフト中綿",
+            "body": "<p>NEO DOWN KAPOK® BEYONDは、東南アジアに自生する木の実「カポック」から採れる繊維を100%使用した、新しいロフト中綿です。</p><p>独自の技術でカポック繊維をふくらみのある構造へ。<br>羽毛に迫る暖かさと、羽毛を凌ぐ吸放湿性を実現しました。</p><p>軽やかで暖かく、湿気がこもりにくい。<br>冬を快適に過ごすための、新しい中綿です。</p><p>NEO DOWN KAPOK® BEYONDについて詳しくは<a href=\"https://kapok-japan.com/neodownkapok/beyond\" target=\"_blank\">こちら</a></p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "reverse": false,
+            "body_open": false,
+            "title": "K-0 PROTOTYPEで体験できること",
+            "lead": "この一着が、日々の暮らしをどう変えるか。",
+            "body": "<p><strong>01｜植物から生まれた、第3の中綿。</strong><br>羽毛でもポリエステルでもない。カポックから生まれた新しい中綿を、実際のウェアとして体験できます。</p><p><strong>02｜暖かい。でも、こもりにくい。</strong><br>ダウンに迫る暖かさと、ダウンを凌ぐ吸放湿性。屋外と室内を行き来する都市の冬でも、快適な着心地を目指しました。</p><p><strong>03｜まだ誰も知らない、未来の着心地。</strong><br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアにした最初期モデル。これから進化していく素材の“今”を体験する一着です。</p><p><em>冬の移動を、もっと軽やかに。</em><br>寒い屋外では暖かく、暖房の効いた室内ではこもりにくい。<br><strong>屋外と室内を行き来する都市の冬を、一着でもっと快適に。</strong></p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "reverse": true,
+            "body_open": false,
+            "title": "暖かさを、その先まで考える。",
+            "lead": "CO2という視点から。",
+            "body": "<p>カポック原綿のカーボンフットプリントは、<br>羽毛原料と比べて、<br><em>約〇〇 LESS</em></p><p>中綿というこれまであまり語られてこなかった部分にこそ、脱炭素に向けた伸びしろがあると考えています。</p>",
+            "note": "<p>※自社試算。カポック原綿○○〜○○、羽毛原料○○〜○○を対象に、原料1kgあたりのGHG排出量（CO₂換算）を比較。</p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "reverse": false,
+            "body_open": false,
+            "title": "K-0、すべてはここから。",
+            "lead": "この一着から、未来のスタンダードへ。",
+            "body": "<p>Kは、\"KAPOK\"。0は、完成ではなく\"始まり\"を意味します。<br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアとして形にした、最初のモデルです。</p><p>まだ完成形ではありません。<br>だからこそ、ここから先があります。</p><p>実際の生活の中で着ていただき、暖かさや着心地、素材の変化を確かめながら、さらに進化させていく。<br>この5着で得られる体験や声を、次のBEYONDへつなげていきます。</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

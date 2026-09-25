@@ -1,0 +1,883 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------
+  K-0 PROTOTYPE 商品ページ ①購入ボックス
+  ------------------------------------------------------------------------------
+  テンプレート: templates/product.k0-prototype.json
+    ① sections/k0-prototype.liquid        購入ボックス（このファイル）
+    ② sections/k0-prototype-story.liquid  ストーリー（素材とプロトタイプの説明）
+    ③ sections/k0-prototype-apply.liquid  応募エリア（注意・合言葉・チェックリスト・応募ボタン）
+  見た目: assets/k0-prototype.css（クラスはすべて .k0- 接頭辞）
+  元原稿: K-0 PROTOTYPE_全項目6.html
+
+  - 文言・写真はすべてテーマエディタの設定／ブロックで編集する（既定値＝元原稿の全文）。
+  - 商品名・価格は設定が空欄なら product の値を出す（product.title / selected_or_first_available_variant.price）。
+  - カートボタンは「購入ボタンを表示する」を ON にしたときだけ出す。
+    抽選期間中は OFF（当選者には下書き注文の請求書で販売する運用）。
+  - 長い文章は <details> で畳む（JS 不要）。見出し行は snippets/k0-acc-summary.liquid。
+    既定の開閉はそれぞれの「最初から開く」設定（既定はすべて閉じる）。
+      ステートメント: 見出し＋本文1は常に表示、本文2・3／注記／橋渡しの一文は「続きを読む」の中
+      アコーディオン4つ（サイズ詳細／素材／お手入れ方法／配送と返品）
+      ページ下の注記（※世界初）は「注記」の中
+    トグルの見出し（「続きを読む」「注記」）を空欄にすると、畳まずにそのまま表示する。
+  - 未確定の既定値: 「ボタンの文言」は元原稿が空欄だったため仮の文言を入れている。
+    アコーディオンの「閉じた状態の補足」は元原稿の内容から要約した仮の文言。
+  - JS はこのファイル下部の javascript タグの中（assets/*.js は .shopifyignore の *.js で
+    GitHub 経由の push から除外されるため使わない）。
+  ------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+{{ 'k0-prototype.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign k0_variant = product.selected_or_first_available_variant
+
+  assign k0_title = section.settings.title_override
+  if k0_title == blank
+    assign k0_title = product.title
+  endif
+
+  if section.settings.price_override != blank
+    assign k0_price = section.settings.price_override | escape
+  elsif k0_variant != blank
+    assign k0_price = k0_variant.price | money
+  else
+    assign k0_price = ''
+  endif
+
+  assign k0_main_image = section.settings.main_image
+  assign k0_image_sizes = '(max-width: 760px) calc(100vw - 40px), 560px'
+
+  assign k0_thumb_count = 0
+  for i in (1..4)
+    assign k0_key = 'thumb_image_' | append: i
+    if section.settings[k0_key] != blank
+      assign k0_thumb_count = k0_thumb_count | plus: 1
+    endif
+  endfor
+
+  assign k0_size_rows = section.blocks | where: 'type', 'size_row'
+  assign k0_spec_rows = section.blocks | where: 'type', 'spec_row'
+  assign k0_s1 = section.settings.size_label_1
+  assign k0_s2 = section.settings.size_label_2
+  assign k0_s3 = section.settings.size_label_3
+-%}
+
+<div class="k0 k0-buy">
+  <div class="k0-wrap">
+    <div class="k0-buy__grid">
+
+      {%- comment -%} ---------- 写真 ---------- {%- endcomment -%}
+      <k0-gallery class="k0-gallery">
+        <div class="k0-gallery__main" data-k0-main>
+          {%- if k0_main_image != blank -%}
+            {%- assign k0_alt = k0_main_image.alt | default: k0_title -%}
+            {{- k0_main_image | image_url: width: 1600 | image_tag: sizes: k0_image_sizes, widths: '400,600,800,1000,1200,1600', alt: k0_alt, class: 'k0-img', loading: 'eager', fetchpriority: 'high' -}}
+          {%- else -%}
+            <div class="k0-ph"><span>写真を追加</span></div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} サブ写真が1枚以上あるときだけサムネイル列を出す（テーマエディタでは空枠も表示） {%- endcomment -%}
+        {%- if k0_thumb_count > 0 or request.design_mode -%}
+          <div class="k0-gallery__thumbs">
+            {%- if k0_main_image != blank -%}
+              <button type="button" class="k0-gallery__thumb" data-k0-thumb aria-current="true" aria-label="写真 1 を表示">
+                {{- k0_main_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' -}}
+                <template>
+                  {%- assign k0_alt = k0_main_image.alt | default: k0_title -%}
+                  {{- k0_main_image | image_url: width: 1600 | image_tag: sizes: k0_image_sizes, widths: '400,600,800,1000,1200,1600', alt: k0_alt, class: 'k0-img' -}}
+                </template>
+              </button>
+            {%- else -%}
+              <div class="k0-gallery__thumb k0-gallery__thumb--empty" aria-hidden="true"></div>
+            {%- endif -%}
+
+            {%- for i in (1..4) -%}
+              {%- assign k0_key = 'thumb_image_' | append: i -%}
+              {%- assign k0_thumb = section.settings[k0_key] -%}
+              {%- if k0_thumb != blank -%}
+                <button type="button" class="k0-gallery__thumb" data-k0-thumb aria-current="false" aria-label="写真 {{ forloop.index | plus: 1 }} を表示">
+                  {{- k0_thumb | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' -}}
+                  <template>
+                    {%- assign k0_alt = k0_thumb.alt | default: k0_title -%}
+                    {{- k0_thumb | image_url: width: 1600 | image_tag: sizes: k0_image_sizes, widths: '400,600,800,1000,1200,1600', alt: k0_alt, class: 'k0-img' -}}
+                  </template>
+                </button>
+              {%- elsif request.design_mode -%}
+                <div class="k0-gallery__thumb k0-gallery__thumb--empty" aria-hidden="true"></div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </k0-gallery>
+
+      {%- comment -%} ---------- 商品情報 ---------- {%- endcomment -%}
+      <div class="k0-buy__info">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="k0-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        <h1 class="k0-buy__title">{{ k0_title | escape }}</h1>
+
+        {%- if k0_price != blank -%}
+          <p class="k0-buy__price">
+            <span>{{ k0_price }}</span>
+            {%- if section.settings.price_note != blank -%}
+              <span class="k0-buy__price-note">{{ section.settings.price_note | escape }}</span>
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.status_badge != blank -%}
+          <div class="k0-badge">{{ section.settings.status_badge | escape }}</div>
+        {%- endif -%}
+
+        {%- assign k0_show_buy = false -%}
+        {%- if section.settings.show_buy_button and product != blank -%}
+          {%- assign k0_show_buy = true -%}
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank or k0_show_buy -%}
+          <div class="k0-buy__actions">
+            {%- if section.settings.button_label != blank -%}
+              {%- assign k0_button_link = section.settings.button_link | default: '#k0-apply' -%}
+              <a class="k0-btn" href="{{ k0_button_link | escape }}">{{ section.settings.button_label | escape }}</a>
+            {%- endif -%}
+
+            {%- if k0_show_buy -%}
+              {%- comment -%}
+                カートに追加（Prestige の product-form を使い、カートドロワー等の挙動はテーマ既定に合わせる）。
+                K-0 は 1 バリエーション想定。複数ある場合は選択欄を出す（価格表示の切り替えはしない）。
+              {%- endcomment -%}
+              {%- liquid
+                assign k0_form_id = 'k0-product-form-' | append: section.id
+                if k0_variant.available
+                  assign k0_buy_label = section.settings.buy_button_label
+                  if k0_buy_label == blank
+                    assign k0_buy_label = 'product.general.add_to_cart_button' | t
+                  endif
+                else
+                  assign k0_buy_label = 'product.general.sold_out_button' | t
+                endif
+              -%}
+              {%- form 'product', product, is: 'product-form', id: k0_form_id, class: 'k0-buy__form' -%}
+                {%- if product.variants.size > 1 -%}
+                  <label class="k0-buy__variant-label" for="k0-variant-{{ section.id }}">{{ section.settings.variant_label | escape }}</label>
+                  <select class="k0-select" id="k0-variant-{{ section.id }}" name="id">
+                    {%- for variant in product.variants -%}
+                      <option value="{{ variant.id }}"{% if variant.id == k0_variant.id %} selected{% endif %}{% unless variant.available %} disabled{% endunless %}>
+                        {{- variant.title | escape -}}{%- unless variant.available %}（{{ 'product.general.sold_out_button' | t }}）{% endunless -%}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                {%- else -%}
+                  <input type="hidden" name="id" value="{{ k0_variant.id }}">
+                {%- endif -%}
+                <buy-buttons class="k0-buy__buttons" template="{{ product.template_suffix | escape }}" form="{{ k0_form_id }}">
+                  <button type="submit" class="k0-btn k0-btn--solid"{% unless k0_variant.available %} disabled{% endunless %}>{{ k0_buy_label | escape }}</button>
+                </buy-buttons>
+              {%- endform -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ---------- ステートメント ---------- {%- endcomment -%}
+        <div class="k0-statement">
+          {%- if section.settings.statement_heading != blank -%}
+            <h2 class="k0-statement__heading">{{ section.settings.statement_heading | escape }}</h2>
+          {%- endif -%}
+          {%- if section.settings.statement_p1 != blank -%}
+            <div class="k0-statement__text k0-rte">{{ section.settings.statement_p1 }}</div>
+          {%- endif -%}
+
+          {%- comment -%} 本文2・3／注記／橋渡しの一文は「続きを読む」の中（見出しが空欄なら畳まずに表示） {%- endcomment -%}
+          {%- capture k0_statement_more -%}
+            {%- if section.settings.statement_p2 != blank -%}
+              <div class="k0-statement__text k0-rte">{{ section.settings.statement_p2 }}</div>
+            {%- endif -%}
+            {%- if section.settings.statement_p3 != blank -%}
+              <div class="k0-statement__text k0-rte">{{ section.settings.statement_p3 }}</div>
+            {%- endif -%}
+            {%- if section.settings.statement_footnote != blank -%}
+              <div class="k0-statement__footnote k0-rte">{{ section.settings.statement_footnote }}</div>
+            {%- endif -%}
+            {%- if section.settings.statement_lead_in != blank -%}
+              <p class="k0-statement__lead-in">{{ section.settings.statement_lead_in | escape }}</p>
+            {%- endif -%}
+          {%- endcapture -%}
+          {%- if k0_statement_more != blank -%}
+            {%- if section.settings.statement_more_label != blank -%}
+              <details class="k0-acc k0-acc--toggle k0-statement__more"{% if section.settings.statement_more_open %} open{% endif %}>
+                {%- render 'k0-acc-summary', title: section.settings.statement_more_label -%}
+                <div class="k0-acc__body">{{ k0_statement_more }}</div>
+              </details>
+            {%- else -%}
+              {{ k0_statement_more }}
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} ---------- アコーディオン ---------- {%- endcomment -%}
+        <div class="k0-acc-group">
+          {%- comment -%} サイズ詳細 {%- endcomment -%}
+          {%- if section.settings.acc_size_title != blank -%}
+            <details class="k0-acc k0-acc--spec"{% if section.settings.acc_size_open %} open{% endif %}>
+              {%- render 'k0-acc-summary', title: section.settings.acc_size_title, note: section.settings.acc_size_summary_note -%}
+              <div class="k0-acc__body">
+                {%- if k0_size_rows.size > 0 -%}
+                  <div class="k0-size-chart-wrap">
+                    <table class="k0-size-chart">
+                      <thead>
+                        <tr>
+                          <th scope="col"><span class="k0-vh">項目</span></th>
+                          {%- if k0_s1 != blank -%}<th scope="col">{{ k0_s1 | escape }}</th>{%- endif -%}
+                          {%- if k0_s2 != blank -%}<th scope="col">{{ k0_s2 | escape }}</th>{%- endif -%}
+                          {%- if k0_s3 != blank -%}<th scope="col">{{ k0_s3 | escape }}</th>{%- endif -%}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {%- for block in k0_size_rows -%}
+                          <tr {{ block.shopify_attributes }}>
+                            <th scope="row">
+                              {{- block.settings.title | escape -}}
+                              {%- if block.settings.title_en != blank -%}
+                                <span class="k0-size-chart__en">{{ block.settings.title_en | escape }}</span>
+                              {%- endif -%}
+                            </th>
+                            {%- if k0_s1 != blank -%}<td>{{ block.settings.value_1 | escape }}</td>{%- endif -%}
+                            {%- if k0_s2 != blank -%}<td>{{ block.settings.value_2 | escape }}</td>{%- endif -%}
+                            {%- if k0_s3 != blank -%}<td>{{ block.settings.value_3 | escape }}</td>{%- endif -%}
+                          </tr>
+                        {%- endfor -%}
+                      </tbody>
+                    </table>
+                  </div>
+                {%- endif -%}
+
+                {%- capture k0_size_spec -%}
+                  {%- for block in k0_spec_rows -%}
+                    {%- if block.settings.kind == 'size' -%}
+                      {%- if block.settings.title != blank or block.settings.value != blank -%}
+                        <tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.title | escape }}</th><td>{{ block.settings.value | escape }}</td></tr>
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endcapture -%}
+                {%- if k0_size_spec != blank -%}
+                  <table class="k0-spec-table"><tbody>{{ k0_size_spec }}</tbody></table>
+                {%- endif -%}
+
+                {%- if section.settings.size_note != blank -%}
+                  <div class="k0-acc__note k0-rte">{{ section.settings.size_note }}</div>
+                {%- endif -%}
+              </div>
+            </details>
+          {%- endif -%}
+
+          {%- comment -%} 素材 {%- endcomment -%}
+          {%- if section.settings.acc_material_title != blank -%}
+            <details class="k0-acc k0-acc--spec"{% if section.settings.acc_material_open %} open{% endif %}>
+              {%- render 'k0-acc-summary', title: section.settings.acc_material_title, note: section.settings.acc_material_summary_note -%}
+              <div class="k0-acc__body">
+                {%- capture k0_material_spec -%}
+                  {%- for block in k0_spec_rows -%}
+                    {%- if block.settings.kind == 'material' -%}
+                      {%- if block.settings.title != blank or block.settings.value != blank -%}
+                        <tr {{ block.shopify_attributes }}><th scope="row">{{ block.settings.title | escape }}</th><td>{{ block.settings.value | escape }}</td></tr>
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endcapture -%}
+                {%- if k0_material_spec != blank -%}
+                  <table class="k0-spec-table"><tbody>{{ k0_material_spec }}</tbody></table>
+                {%- endif -%}
+
+                {%- if section.settings.material_note != blank -%}
+                  <div class="k0-acc__note k0-rte">{{ section.settings.material_note }}</div>
+                {%- endif -%}
+              </div>
+            </details>
+          {%- endif -%}
+
+          {%- comment -%} お手入れ方法 {%- endcomment -%}
+          {%- if section.settings.acc_care_title != blank -%}
+            <details class="k0-acc k0-acc--spec"{% if section.settings.acc_care_open %} open{% endif %}>
+              {%- render 'k0-acc-summary', title: section.settings.acc_care_title, note: section.settings.acc_care_summary_note -%}
+              <div class="k0-acc__body">
+                {%- if section.settings.care_body != blank -%}
+                  <div class="k0-rte">{{ section.settings.care_body }}</div>
+                {%- endif -%}
+                {%- if section.settings.care_note != blank -%}
+                  <div class="k0-acc__note k0-rte">{{ section.settings.care_note }}</div>
+                {%- endif -%}
+              </div>
+            </details>
+          {%- endif -%}
+
+          {%- comment -%} 配送と返品 {%- endcomment -%}
+          {%- if section.settings.acc_shipping_title != blank -%}
+            <details class="k0-acc k0-acc--spec"{% if section.settings.acc_shipping_open %} open{% endif %}>
+              {%- render 'k0-acc-summary', title: section.settings.acc_shipping_title, note: section.settings.acc_shipping_summary_note -%}
+              <div class="k0-acc__body">
+                {%- if section.settings.shipping_body != blank -%}
+                  <div class="k0-rte">{{ section.settings.shipping_body }}</div>
+                {%- endif -%}
+                {%- if section.settings.refund_body != blank -%}
+                  <div class="k0-rte">{{ section.settings.refund_body }}</div>
+                {%- endif -%}
+                {%- if section.settings.shipping_legal_note != blank -%}
+                  <div class="k0-acc__note k0-rte">{{ section.settings.shipping_legal_note }}</div>
+                {%- endif -%}
+              </div>
+            </details>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} ---------- 注記（※世界初 など） ---------- {%- endcomment -%}
+        {%- if section.settings.fine_print_1 != blank or section.settings.fine_print_2 != blank -%}
+          {%- capture k0_fineprint -%}
+            <div class="k0-fineprint">
+              {%- if section.settings.fine_print_1 != blank -%}
+                <div class="k0-rte">{{ section.settings.fine_print_1 }}</div>
+              {%- endif -%}
+              {%- if section.settings.fine_print_2 != blank -%}
+                <div class="k0-rte">{{ section.settings.fine_print_2 }}</div>
+              {%- endif -%}
+            </div>
+          {%- endcapture -%}
+          {%- comment -%} 「注記」トグルの中（見出しが空欄なら畳まずに表示） {%- endcomment -%}
+          {%- if section.settings.fine_print_label != blank -%}
+            <details class="k0-acc k0-acc--toggle k0-acc--fine"{% if section.settings.fine_print_open %} open{% endif %}>
+              {%- render 'k0-acc-summary', title: section.settings.fine_print_label, note: section.settings.fine_print_summary_note -%}
+              <div class="k0-acc__body">{{ k0_fineprint }}</div>
+            </details>
+          {%- else -%}
+            {{ k0_fineprint }}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  /* K-0 PROTOTYPE：サムネイルを押すと主写真を差し替える */
+  (function () {
+    if (window.customElements.get('k0-gallery')) return;
+    class K0Gallery extends HTMLElement {
+      constructor() {
+        super();
+        this.addEventListener('click', function (event) {
+          var thumb = event.target.closest('[data-k0-thumb]');
+          if (!thumb || !this.contains(thumb)) return;
+          var main = this.querySelector('[data-k0-main]');
+          var tpl = thumb.querySelector('template');
+          if (!main || !tpl) return;
+          main.replaceChildren(tpl.content.cloneNode(true));
+          this.querySelectorAll('[data-k0-thumb]').forEach(function (el) {
+            el.setAttribute('aria-current', el === thumb ? 'true' : 'false');
+          });
+        });
+      }
+    }
+    window.customElements.define('k0-gallery', K0Gallery);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "K-0 購入ボックス",
+  "enabled_on": {
+    "templates": [
+      "product"
+    ]
+  },
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "header",
+      "content": "写真"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "主写真"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumb_image_1",
+      "label": "サブ写真 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumb_image_2",
+      "label": "サブ写真 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumb_image_3",
+      "label": "サブ写真 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumb_image_4",
+      "label": "サブ写真 4"
+    },
+    {
+      "type": "paragraph",
+      "content": "サブ写真は主写真の下にサムネイルで並び、押すと主写真と入れ替わります。写真が未設定の枠は「写真を追加」と表示されます。"
+    },
+    {
+      "type": "header",
+      "content": "商品情報"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "商品名の上の小さい文字",
+      "default": "NEO DOWN KAPOK® BEYOND"
+    },
+    {
+      "type": "text",
+      "id": "title_override",
+      "label": "商品名",
+      "info": "空欄のときは Shopify の商品名を表示します"
+    },
+    {
+      "type": "text",
+      "id": "price_override",
+      "label": "価格",
+      "info": "空欄のときは商品の価格（税込）を表示します。例: ¥198,000"
+    },
+    {
+      "type": "text",
+      "id": "price_note",
+      "label": "価格の後ろの注記",
+      "default": "（税込）"
+    },
+    {
+      "type": "text",
+      "id": "status_badge",
+      "label": "ステータスバッジ",
+      "default": "5着限定・抽選販売"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "ボタンの文言",
+      "default": "抽選販売に応募する",
+      "info": "空欄にするとボタンを出しません（元原稿は空欄だったため仮の文言です）"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "ボタンのリンク先",
+      "default": "#k0-apply",
+      "info": "#k0-apply＝このページの応募エリア／#k0-material＝素材とプロトタイプの説明。https:// から始まる URL も入れられます"
+    },
+    {
+      "type": "header",
+      "content": "購入ボタン（カートに追加）"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buy_button",
+      "label": "購入ボタンを表示する",
+      "default": false,
+      "info": "抽選期間中は OFF のまま。当選者には下書き注文の請求書で販売します"
+    },
+    {
+      "type": "text",
+      "id": "buy_button_label",
+      "label": "購入ボタンの文言",
+      "info": "空欄のときはテーマの「カートに追加」"
+    },
+    {
+      "type": "text",
+      "id": "variant_label",
+      "label": "バリエーション選択欄の見出し",
+      "default": "サイズ・カラー",
+      "info": "商品のバリエーションが2つ以上あるときだけ表示されます"
+    },
+    {
+      "type": "header",
+      "content": "ステートメント"
+    },
+    {
+      "type": "text",
+      "id": "statement_heading",
+      "label": "見出し",
+      "default": "植物からはじまる、次世代のダウン。"
+    },
+    {
+      "type": "richtext",
+      "id": "statement_p1",
+      "label": "本文 1",
+      "default": "<p>世界初※。カポック繊維100%から生まれた植物由来のロフト中綿<br>「NEO DOWN KAPOK® BEYOND」</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "statement_p2",
+      "label": "本文 2",
+      "default": "<p>その新素材を、初めて一着のウェアに。<br>Kは、”KAPOK”。0は、完成ではなく“始まり”。</p><p>「K-0 PROTOTYPE」<br>未来の冬を、世界に5着だけ。</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "statement_p3",
+      "label": "本文 3"
+    },
+    {
+      "type": "richtext",
+      "id": "statement_footnote",
+      "label": "注記（小さい文字）"
+    },
+    {
+      "type": "text",
+      "id": "statement_lead_in",
+      "label": "ストーリーへの橋渡しの一文",
+      "default": "続く本文で、素材やこのプロトタイプについて、もう少し丁寧にお話しします。"
+    },
+    {
+      "type": "text",
+      "id": "statement_more_label",
+      "label": "「続きを読む」の見出し",
+      "default": "続きを読む",
+      "info": "本文2・3、注記、橋渡しの一文はこのトグルの中に入ります。空欄にすると畳まずに表示します"
+    },
+    {
+      "type": "checkbox",
+      "id": "statement_more_open",
+      "label": "「続きを読む」を最初から開く",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "アコーディオン",
+      "info": "見出しを空欄にするとその項目ごと非表示。「閉じた状態の補足」は見出しの下に薄い文字で出ます（空欄なら出しません）"
+    },
+    {
+      "type": "text",
+      "id": "acc_size_title",
+      "label": "サイズ詳細：見出し",
+      "default": "サイズ詳細"
+    },
+    {
+      "type": "text",
+      "id": "acc_size_summary_note",
+      "label": "サイズ詳細：閉じた状態の補足",
+      "default": "F（着丈68・肩幅42.5・バスト122.5 ほか）"
+    },
+    {
+      "type": "checkbox",
+      "id": "acc_size_open",
+      "label": "サイズ詳細：最初から開く",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "size_label_1",
+      "label": "サイズ表：サイズ名 1",
+      "default": "F"
+    },
+    {
+      "type": "text",
+      "id": "size_label_2",
+      "label": "サイズ表：サイズ名 2",
+      "info": "空欄の列は表示されません"
+    },
+    {
+      "type": "text",
+      "id": "size_label_3",
+      "label": "サイズ表：サイズ名 3"
+    },
+    {
+      "type": "paragraph",
+      "content": "サイズ表の行は「サイズ表の行」ブロック、カラー・原産国は「スペック表の行」ブロック（表示する場所＝サイズ詳細）で編集します。"
+    },
+    {
+      "type": "richtext",
+      "id": "size_note",
+      "label": "サイズ詳細：注記"
+    },
+    {
+      "type": "text",
+      "id": "acc_material_title",
+      "label": "素材：見出し",
+      "default": "素材"
+    },
+    {
+      "type": "text",
+      "id": "acc_material_summary_note",
+      "label": "素材：閉じた状態の補足",
+      "default": "表地 リサイクルナイロン／中綿 カポック繊維100%"
+    },
+    {
+      "type": "checkbox",
+      "id": "acc_material_open",
+      "label": "素材：最初から開く",
+      "default": false
+    },
+    {
+      "type": "paragraph",
+      "content": "素材の表は「スペック表の行」ブロック（表示する場所＝素材）で編集します。"
+    },
+    {
+      "type": "richtext",
+      "id": "material_note",
+      "label": "素材：注記",
+      "default": "<p>素材そのものについての詳しい説明は、<a href=\"https://kapok-japan.com/neodownkapok/beyond\" target=\"_blank\">NEO DOWN KAPOK® BEYONDのページ</a>でもご紹介しています。</p>"
+    },
+    {
+      "type": "text",
+      "id": "acc_care_title",
+      "label": "お手入れ方法：見出し",
+      "default": "お手入れ方法"
+    },
+    {
+      "type": "text",
+      "id": "acc_care_summary_note",
+      "label": "お手入れ方法：閉じた状態の補足",
+      "default": "ご家庭での洗濯は推奨していません"
+    },
+    {
+      "type": "checkbox",
+      "id": "acc_care_open",
+      "label": "お手入れ方法：最初から開く",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "care_body",
+      "label": "お手入れ方法：本文",
+      "default": "<p>現時点では、ご家庭での洗濯は推奨していません。クリーニングを含む最適なお手入れ方法についても、現在検証を進めています。<br>お手入れが必要な場合は、まずKAPOK KNOTへご相談ください。<br>連絡先：contact@kapok-knot.jp</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "care_note",
+      "label": "お手入れ方法：注記"
+    },
+    {
+      "type": "text",
+      "id": "acc_shipping_title",
+      "label": "配送と返品：見出し",
+      "default": "配送と返品"
+    },
+    {
+      "type": "text",
+      "id": "acc_shipping_summary_note",
+      "label": "配送と返品：閉じた状態の補足",
+      "default": "11月末頃の発送予定／キャンセル・変更不可"
+    },
+    {
+      "type": "checkbox",
+      "id": "acc_shipping_open",
+      "label": "配送と返品：最初から開く",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_body",
+      "label": "配送と返品：本文",
+      "default": "<p>発送：11月末頃を予定しています。生産状況等により変更となる場合は、事前にご連絡いたします。<br>※予約および受注生産品につきましては、キャンセル・サイズ・カラーの変更はできません。</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "refund_body",
+      "label": "配送と返品：返品について"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_legal_note",
+      "label": "配送と返品：注記"
+    },
+    {
+      "type": "header",
+      "content": "ページ下の注記"
+    },
+    {
+      "type": "text",
+      "id": "fine_print_label",
+      "label": "トグルの見出し",
+      "default": "注記",
+      "info": "注記はこのトグルの中に入ります。空欄にすると畳まずに表示します"
+    },
+    {
+      "type": "text",
+      "id": "fine_print_summary_note",
+      "label": "閉じた状態の補足",
+      "default": "「世界初」の表記について"
+    },
+    {
+      "type": "checkbox",
+      "id": "fine_print_open",
+      "label": "最初から開く",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "fine_print_1",
+      "label": "注記 1"
+    },
+    {
+      "type": "richtext",
+      "id": "fine_print_2",
+      "label": "注記 2",
+      "default": "<p>※「世界初」について　カポック繊維100%で構成され、特殊加工により羽毛と同等のかさ高性を実現したアパレル用ロフト中綿として。2026年3月時点、専門家による調査に基づく。嵩高データは当社調べ。</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "size_row",
+      "name": "サイズ表の行",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "項目名"
+        },
+        {
+          "type": "text",
+          "id": "title_en",
+          "label": "英語名"
+        },
+        {
+          "type": "text",
+          "id": "value_1",
+          "label": "値（サイズ名 1 の列）"
+        },
+        {
+          "type": "text",
+          "id": "value_2",
+          "label": "値（サイズ名 2 の列）"
+        },
+        {
+          "type": "text",
+          "id": "value_3",
+          "label": "値（サイズ名 3 の列）"
+        }
+      ]
+    },
+    {
+      "type": "spec_row",
+      "name": "スペック表の行",
+      "settings": [
+        {
+          "type": "select",
+          "id": "kind",
+          "label": "表示する場所",
+          "options": [
+            {
+              "value": "size",
+              "label": "サイズ詳細"
+            },
+            {
+              "value": "material",
+              "label": "素材"
+            }
+          ],
+          "default": "size"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "項目名"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "内容"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "K-0 購入ボックス",
+      "blocks": [
+        {
+          "type": "size_row",
+          "settings": {
+            "title": "着丈",
+            "title_en": "Length",
+            "value_1": "68"
+          }
+        },
+        {
+          "type": "size_row",
+          "settings": {
+            "title": "肩幅",
+            "title_en": "Shoulder width",
+            "value_1": "42.5"
+          }
+        },
+        {
+          "type": "size_row",
+          "settings": {
+            "title": "バスト",
+            "title_en": "Bust",
+            "value_1": "122.5"
+          }
+        },
+        {
+          "type": "size_row",
+          "settings": {
+            "title": "袖丈",
+            "title_en": "Sleeve Length",
+            "value_1": "66.5"
+          }
+        },
+        {
+          "type": "size_row",
+          "settings": {
+            "title": "裄丈",
+            "value_1": "87.75"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "kind": "size",
+            "title": "カラー",
+            "value": "ブラック"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "kind": "size",
+            "title": "原産国",
+            "value": "日本"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "kind": "material",
+            "title": "表地",
+            "value": "リサイクルナイロン100%"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "kind": "material",
+            "title": "中綿",
+            "value": "NEO DOWN KAPOK® BEYOND（カポック繊維100%）"
+          }
+        },
+        {
+          "type": "spec_row",
+          "settings": {
+            "kind": "material",
+            "title": "裏地",
+            "value": "ポリエステル100%"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
