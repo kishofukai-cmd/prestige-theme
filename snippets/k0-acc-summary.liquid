@@ -5,7 +5,7 @@
     title  見出し（必須）
     note   閉じた状態でも見える短い補足（任意・空なら出さない）
     index  左端の番号（任意。例: 01）
-  右端の「＋」は開くと 45 度回って「×」になる（assets/k0-prototype.css）。
+  右端の「＋」は CSS の線で描き、開くと「−」になる（assets/k0-prototype.css）。
 {%- endcomment -%}
 <summary class="k0-acc__summary">
   {%- if index != blank -%}
@@ -17,5 +17,5 @@
       <span class="k0-acc__hint">{{ note | escape }}</span>
     {%- endif -%}
   </span>
-  <span class="k0-acc__sign" aria-hidden="true">＋</span>
+  <span class="k0-acc__sign" aria-hidden="true"></span>
 </summary>

@@ -1,6 +1,6 @@
 {%- comment -%}
   ------------------------------------------------------------------------------
-  K-0 PROTOTYPE 商品ページ ③応募エリア（薄緑の地）
+  K-0 PROTOTYPE 商品ページ ③応募エリア（グレージュの地）
   ------------------------------------------------------------------------------
   テンプレート: templates/product.k0-prototype.json（全体の説明は sections/k0-prototype.liquid 冒頭）
   見た目: assets/k0-prototype.css
@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 {{ 'k0-prototype.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -153,7 +153,7 @@
 
     {%- comment -%} 応募ボタン（JS が条件を満たしたときだけ href を付ける） {%- endcomment -%}
     <div class="k0-cta-wrap">
-      <a class="k0-cta" data-k0-cta role="link" aria-disabled="true">{{ section.settings.cta_label | escape }}</a>
+      <a class="k0-cta" data-k0-cta role="link" aria-disabled="true">{{ section.settings.cta_label | escape }}<i aria-hidden="true">→</i></a>
       <p class="k0-cta-hint" data-k0-hint aria-live="polite"
         data-locked="{{ section.settings.cta_locked_text | escape }}"
         data-mismatch="{{ section.settings.cta_mismatch_text | escape }}"

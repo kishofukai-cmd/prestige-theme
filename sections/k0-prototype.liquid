@@ -28,7 +28,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 {{ 'k0-prototype.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
@@ -144,7 +144,7 @@
           <div class="k0-buy__actions">
             {%- if section.settings.button_label != blank -%}
               {%- assign k0_button_link = section.settings.button_link | default: '#k0-apply' -%}
-              <a class="k0-btn" href="{{ k0_button_link | escape }}">{{ section.settings.button_label | escape }}</a>
+              <a class="k0-btn" href="{{ k0_button_link | escape }}">{{ section.settings.button_label | escape }}<i aria-hidden="true">→</i></a>
             {%- endif -%}
 
             {%- if k0_show_buy -%}
@@ -177,7 +177,7 @@
                   <input type="hidden" name="id" value="{{ k0_variant.id }}">
                 {%- endif -%}
                 <buy-buttons class="k0-buy__buttons" template="{{ product.template_suffix | escape }}" form="{{ k0_form_id }}">
-                  <button type="submit" class="k0-btn k0-btn--solid"{% unless k0_variant.available %} disabled{% endunless %}>{{ k0_buy_label | escape }}</button>
+                  <button type="submit" class="k0-btn k0-btn--solid"{% unless k0_variant.available %} disabled{% endunless %}>{{ k0_buy_label | escape }}<i aria-hidden="true">→</i></button>
                 </buy-buttons>
               {%- endform -%}
             {%- endif -%}
