@@ -335,7 +335,9 @@ k0-apply-gate, k0-gallery { display: block; }
 
 /* ---------- ストーリー ---------- */
 .k0-story { padding-block: clamp(64px, 9vw, 112px); }
-.k0-kicker { justify-content: center; text-align: center; }
+/* 中央揃えの小見出しは、2行に折れても点が1行目の頭に付くよう inline で置く */
+.k0-kicker { display: block; text-align: center; }
+.k0-kicker::before { display: inline-block; vertical-align: middle; margin-right: .9em; }
 .k0-story__block {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -355,7 +357,7 @@ k0-apply-gate, k0-gallery { display: block; }
   background: linear-gradient(160deg, var(--k0-surface), var(--k0-ph-bg) 80%);
 }
 .k0-story__photo .k0-ph { font-size: 12px; }
-.k0 .k0-story__heading { font-size: clamp(18px, 1.8vw, 22px); margin-bottom: 14px; line-height: 1.5; }
+.k0 .k0-story__heading { font-size: clamp(18px, 1.8vw, 22px); margin-bottom: 14px; line-height: 1.5; color: var(--k0-ink); }
 .k0-story__text { font-size: 14.5px; color: var(--k0-ink-soft); }
 .k0-story__lead { font-weight: 700; font-size: 1.05em; color: var(--k0-ink); }
 .k0-story__body + .k0-story__note { margin-top: 1.8em; }
