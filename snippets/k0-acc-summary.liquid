@@ -1,0 +1,21 @@
+{%- comment -%}
+  K-0 PROTOTYPE 商品ページのアコーディオン／トグルの見出し行（<summary>）
+  使用元: sections/k0-prototype.liquid / k0-prototype-story.liquid / k0-prototype-apply.liquid
+  変数:
+    title  見出し（必須）
+    note   閉じた状態でも見える短い補足（任意・空なら出さない）
+    index  左端の番号（任意。例: 01）
+  右端の「＋」は CSS の線で描き、開くと「−」になる（assets/k0-prototype.css）。
+{%- endcomment -%}
+<summary class="k0-acc__summary">
+  {%- if index != blank -%}
+    <span class="k0-acc__idx">{{ index | escape }}</span>
+  {%- endif -%}
+  <span class="k0-acc__label">
+    <span class="k0-acc__title">{{ title | escape }}</span>
+    {%- if note != blank -%}
+      <span class="k0-acc__hint">{{ note | escape }}</span>
+    {%- endif -%}
+  </span>
+  <span class="k0-acc__sign" aria-hidden="true"></span>
+</summary>

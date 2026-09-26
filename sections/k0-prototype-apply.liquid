@@ -1,0 +1,613 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------
+  K-0 PROTOTYPE 商品ページ ③応募エリア（グレージュの地）
+  ------------------------------------------------------------------------------
+  テンプレート: templates/product.k0-prototype.json（全体の説明は sections/k0-prototype.liquid 冒頭）
+  見た目: assets/k0-prototype.css
+
+  - 購入ボックスのボタンの既定リンク「#k0-apply」はこのセクションを指す。
+  - 畳むのは「購入後のサポート」の各項目だけ（<details>。見出し行だけ見え、開くと本文）。
+    既定の開閉はブロックごとの「最初から開く」（既定: 閉じる）。
+    注意カード・合言葉・スケジュール・チェックリスト・応募ボタンは応募の必須情報なので畳まない。
+  - 応募ボタン（Googleフォーム）は「チェックリストの全項目にチェック」＋「合言葉が一致」のときだけ押せる。
+    応募フォームの URL が空欄のあいだは常に押せない（「準備中」の案内を出す）。
+  - 合言葉の照合はブラウザの JS で行う（全角/半角・大文字/小文字・空白の違いは無視）。
+    合言葉はページのソースから読めるため、厳密な認証ではない（「最後まで読んだか」の確認用）。
+    合言葉の設定を空欄にすると、合言葉の案内と入力欄を出さず、チェックだけで押せるようになる。
+  - 未確定の既定値: 合言葉「［例：K0-START］」（仮）、応募フォームの URL（空欄）。
+  - JS はこのファイル下部の javascript タグの中（assets/*.js は .shopifyignore の *.js で
+    GitHub 経由の push から除外されるため使わない）。
+  ------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+{{ 'k0-prototype.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign k0_cautions = section.blocks | where: 'type', 'caution'
+  assign k0_supports = section.blocks | where: 'type', 'support'
+  assign k0_timeline = section.blocks | where: 'type', 'timeline_row'
+  assign k0_checks = section.blocks | where: 'type', 'check_item'
+  assign k0_password = section.settings.password | strip
+  assign k0_form_url = section.settings.cta_url | strip
+
+  if k0_form_url == blank
+    assign k0_initial_hint = section.settings.cta_unavailable_text
+  else
+    assign k0_initial_hint = section.settings.cta_locked_text
+  endif
+-%}
+
+<section class="k0 k0-apply" id="k0-apply">
+  <k0-apply-gate class="k0-wrap" data-password="{{ k0_password | escape }}" data-form-url="{{ k0_form_url | escape }}">
+
+    <div class="k0-apply__head">
+      {%- if section.settings.kicker != blank -%}
+        <p class="k0-kicker">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="k0-apply__heading">{{ section.settings.heading | escape }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro != blank -%}
+        <div class="k0-apply__intro k0-rte">{{ section.settings.intro }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} 注意カード {%- endcomment -%}
+    {%- if k0_cautions.size > 0 -%}
+      <div class="k0-caution-cards">
+        {%- for block in k0_cautions -%}
+          <div class="k0-caution-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.number != blank -%}
+              <div class="k0-caution-card__n">{{ block.settings.number | escape }}</div>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3 class="k0-caution-card__title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.body != blank -%}
+              <div class="k0-caution-card__body k0-rte">{{ block.settings.body }}</div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.summary != blank -%}
+      <p class="k0-caution-summary">{{ section.settings.summary | escape }}</p>
+    {%- endif -%}
+
+    {%- comment -%} 合言葉 {%- endcomment -%}
+    {%- if k0_password != blank -%}
+      <div class="k0-password-box">
+        {{- section.settings.password_label | escape -}}<b>{{ k0_password | escape }}</b>
+        {%- if section.settings.password_note != blank -%}
+          <br><span>{{ section.settings.password_note | escape }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} 購入後のサポート {%- endcomment -%}
+    {%- if k0_supports.size > 0 -%}
+      <div class="k0-support">
+        {%- if section.settings.support_heading != blank -%}
+          <h3 class="k0-support__heading">{{ section.settings.support_heading | escape }}</h3>
+        {%- endif -%}
+        {%- for block in k0_supports -%}
+          {%- capture k0_idx -%}{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}{%- endcapture -%}
+          <details class="k0-acc k0-acc--support"{% if block.settings.open %} open{% endif %} {{ block.shopify_attributes }}>
+            {%- render 'k0-acc-summary', title: block.settings.title, note: block.settings.summary_note, index: k0_idx -%}
+            {%- if block.settings.body != blank -%}
+              <div class="k0-acc__body k0-support__body k0-rte">{{ block.settings.body }}</div>
+            {%- endif -%}
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} 抽選スケジュール {%- endcomment -%}
+    {%- if k0_timeline.size > 0 or section.settings.timeline_note != blank -%}
+      <div class="k0-timeline">
+        {%- if section.settings.timeline_heading != blank -%}
+          <h3 class="k0-timeline__heading">{{ section.settings.timeline_heading | escape }}</h3>
+        {%- endif -%}
+        {%- if k0_timeline.size > 0 -%}
+          <table class="k0-timeline-table">
+            <tbody>
+              {%- for block in k0_timeline -%}
+                <tr {{ block.shopify_attributes }}>
+                  <th scope="row">{{ block.settings.title | escape }}</th>
+                  <td>{{ block.settings.value | escape }}</td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+        {%- endif -%}
+        {%- if section.settings.timeline_note != blank -%}
+          <div class="k0-timeline__note k0-rte">{{ section.settings.timeline_note }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} チェックリスト＋合言葉の入力欄 {%- endcomment -%}
+    {%- if k0_checks.size > 0 or k0_password != blank -%}
+      <div class="k0-checklist">
+        {%- if section.settings.checklist_heading != blank -%}
+          <h3 class="k0-checklist__heading">{{ section.settings.checklist_heading | escape }}</h3>
+        {%- endif -%}
+        {%- for block in k0_checks -%}
+          <label class="k0-check-item" {{ block.shopify_attributes }}>
+            <input type="checkbox" data-k0-check>
+            <span>{{ block.settings.text | escape }}</span>
+          </label>
+        {%- endfor -%}
+        {%- if k0_password != blank -%}
+          <div class="k0-pw-field">
+            <label for="k0-pw-{{ section.id }}">{{ section.settings.password_field_label | escape }}</label>
+            <input type="text" id="k0-pw-{{ section.id }}" data-k0-password placeholder="{{ section.settings.password_placeholder | escape }}" autocomplete="off" autocapitalize="off" spellcheck="false">
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} 応募ボタン（JS が条件を満たしたときだけ href を付ける） {%- endcomment -%}
+    <div class="k0-cta-wrap">
+      <a class="k0-cta" data-k0-cta role="link" aria-disabled="true">{{ section.settings.cta_label | escape }}<i aria-hidden="true">→</i></a>
+      <p class="k0-cta-hint" data-k0-hint aria-live="polite"
+        data-locked="{{ section.settings.cta_locked_text | escape }}"
+        data-mismatch="{{ section.settings.cta_mismatch_text | escape }}"
+        data-unavailable="{{ section.settings.cta_unavailable_text | escape }}">{{ k0_initial_hint | escape }}</p>
+      {%- if section.settings.cta_sub != blank -%}
+        <p class="k0-cta-sub">{{ section.settings.cta_sub | escape }}</p>
+      {%- endif -%}
+    </div>
+  </k0-apply-gate>
+</section>
+
+{% javascript %}
+  /* K-0 PROTOTYPE：チェックリスト全チェック＋合言葉一致のときだけ応募ボタンを有効にする */
+  (function () {
+    // 全角・半角、大文字・小文字、空白の違いは同じとみなす
+    function normalize(value) {
+      var s = String(value || '');
+      if (s.normalize) s = s.normalize('NFKC');
+      return s.replace(/\s+/g, '').toUpperCase();
+    }
+
+    if (!window.customElements.get('k0-apply-gate')) {
+      class K0ApplyGate extends HTMLElement {
+        constructor() {
+          super();
+          var self = this;
+          var handler = function () { self.update(); };
+          this.addEventListener('change', handler);
+          this.addEventListener('input', handler);
+          this.addEventListener('click', function (event) {
+            var cta = event.target.closest('[data-k0-cta]');
+            if (cta && cta.getAttribute('aria-disabled') === 'true') event.preventDefault();
+          });
+        }
+
+        connectedCallback() {
+          this.update();
+        }
+
+        update() {
+          var cta = this.querySelector('[data-k0-cta]');
+          if (!cta) return;
+          var hint = this.querySelector('[data-k0-hint]');
+          var url = (this.getAttribute('data-form-url') || '').trim();
+          var expected = normalize(this.getAttribute('data-password'));
+          var boxes = Array.prototype.slice.call(this.querySelectorAll('input[type="checkbox"][data-k0-check]'));
+          var pwInput = this.querySelector('[data-k0-password]');
+          var entered = pwInput ? normalize(pwInput.value) : '';
+          var allChecked = boxes.every(function (box) { return box.checked; });
+          var passwordOk = expected === '' || entered === expected;
+          var ready = url !== '' && allChecked && passwordOk;
+
+          if (ready) {
+            cta.setAttribute('href', url);
+            cta.setAttribute('target', '_blank');
+            cta.setAttribute('rel', 'noopener');
+            cta.removeAttribute('aria-disabled');
+          } else {
+            cta.removeAttribute('href');
+            cta.removeAttribute('target');
+            cta.removeAttribute('rel');
+            cta.setAttribute('aria-disabled', 'true');
+          }
+
+          if (hint) {
+            var message = '';
+            if (url === '') {
+              message = hint.getAttribute('data-unavailable') || '';
+            } else if (!ready) {
+              message = (allChecked && entered !== '' && !passwordOk)
+                ? (hint.getAttribute('data-mismatch') || '')
+                : (hint.getAttribute('data-locked') || '');
+            }
+            hint.textContent = message;
+          }
+        }
+      }
+      window.customElements.define('k0-apply-gate', K0ApplyGate);
+    }
+
+    // 「戻る」で戻ったときや、ブラウザが入力内容を復元したときにも判定し直す
+    function refreshGates() {
+      document.querySelectorAll('k0-apply-gate').forEach(function (gate) {
+        if (typeof gate.update === 'function') gate.update();
+      });
+    }
+    window.addEventListener('pageshow', refreshGates);
+    window.addEventListener('load', refreshGates);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "K-0 応募エリア",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "header",
+      "content": "見出し"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "小見出し（英字）",
+      "default": "BEFORE YOU APPLY"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "応募の前に、必ずご確認ください"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "導入文",
+      "default": "<p>K-0 PROTOTYPEには、一般的なダウン製品とは異なる特性があります。<br>ご応募前に、必ず以下の点をご確認ください。</p>"
+    },
+    {
+      "type": "paragraph",
+      "content": "注意カードは「注意カード」ブロックで編集します。"
+    },
+    {
+      "type": "text",
+      "id": "summary",
+      "label": "注意カードの後のまとめ",
+      "default": "これらの特性をご理解いただいたうえで、抽選販売へのご応募をお願いいたします。"
+    },
+    {
+      "type": "header",
+      "content": "合言葉"
+    },
+    {
+      "type": "text",
+      "id": "password",
+      "label": "合言葉",
+      "default": "［例：K0-START］",
+      "info": "入力欄の照合にも使います（全角/半角・大文字/小文字は区別しません）。空欄にすると合言葉の案内と入力欄を出さず、チェックだけで応募できます。※ページのソースから読めるため厳密な認証ではありません"
+    },
+    {
+      "type": "text",
+      "id": "password_label",
+      "label": "合言葉の前の文",
+      "default": "応募フォームで入力する合言葉："
+    },
+    {
+      "type": "text",
+      "id": "password_note",
+      "label": "合言葉の説明",
+      "default": "この項目を最後までお読みいただいた方への合言葉です。"
+    },
+    {
+      "type": "header",
+      "content": "購入後のサポート"
+    },
+    {
+      "type": "text",
+      "id": "support_heading",
+      "label": "見出し",
+      "default": "購入後のサポート — K-0 PROTOTYPEは、販売して終わりの製品ではありません"
+    },
+    {
+      "type": "paragraph",
+      "content": "各項目は「サポート」ブロックで編集します（番号 01・02… は自動）。見出し行だけ見え、開くと本文が出ます。"
+    },
+    {
+      "type": "header",
+      "content": "抽選販売のスケジュール"
+    },
+    {
+      "type": "text",
+      "id": "timeline_heading",
+      "label": "見出し",
+      "default": "抽選販売について"
+    },
+    {
+      "type": "paragraph",
+      "content": "各行は「スケジュールの行」ブロックで編集します。"
+    },
+    {
+      "type": "richtext",
+      "id": "timeline_note",
+      "label": "表の下の文",
+      "default": "<p>今回の5着は、単なる限定販売ではありません。<br>新素材「NEO DOWN KAPOK® BEYOND」の現在地や、まだ残る課題まで含めて<br>興味を持っていただける方にお届けしたいと考えています。<br>そのため、応募フォームでは「なぜK-0 PROTOTYPEを着てみたいと思ったか」を簡単にお聞かせください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "チェックリスト"
+    },
+    {
+      "type": "text",
+      "id": "checklist_heading",
+      "label": "見出し",
+      "default": "応募の前に、以下すべてにチェックをお願いします"
+    },
+    {
+      "type": "paragraph",
+      "content": "チェック項目は「チェック項目」ブロックで編集します。"
+    },
+    {
+      "type": "text",
+      "id": "password_field_label",
+      "label": "合言葉の入力欄の見出し",
+      "default": "合言葉"
+    },
+    {
+      "type": "text",
+      "id": "password_placeholder",
+      "label": "合言葉の入力欄の薄い文字",
+      "default": "上記でご案内した合言葉を入力"
+    },
+    {
+      "type": "header",
+      "content": "応募ボタン"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "ボタンの文言",
+      "default": "応募フォームへ（Googleフォーム）"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "応募フォームの URL（Googleフォーム）",
+      "info": "空欄のあいだはボタンが押せず「準備中」の案内が出ます。押すと別タブで開きます"
+    },
+    {
+      "type": "text",
+      "id": "cta_sub",
+      "label": "ボタンの下の文",
+      "default": "応募期間は10月30日（金）18:00までです"
+    },
+    {
+      "type": "text",
+      "id": "cta_locked_text",
+      "label": "押せないときの案内",
+      "default": "すべての項目にチェックし、合言葉を入力すると応募フォームへ進めます。",
+      "info": "元原稿にない案内文です。不要なら空欄に"
+    },
+    {
+      "type": "text",
+      "id": "cta_mismatch_text",
+      "label": "合言葉が違うときの案内",
+      "default": "合言葉が一致しません。上の合言葉をご確認ください。"
+    },
+    {
+      "type": "text",
+      "id": "cta_unavailable_text",
+      "label": "URL 未設定のときの案内",
+      "default": "応募フォームは準備中です。"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "caution",
+      "name": "注意カード",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "番号",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "見出し"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "本文"
+        }
+      ]
+    },
+    {
+      "type": "support",
+      "name": "サポート",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "見出し"
+        },
+        {
+          "type": "text",
+          "id": "summary_note",
+          "label": "閉じた状態の補足",
+          "info": "見出しの下に薄い文字で出ます（空欄なら出しません）"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "本文（開くと表示）"
+        },
+        {
+          "type": "checkbox",
+          "id": "open",
+          "label": "最初から開く",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "timeline_row",
+      "name": "スケジュールの行",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "項目"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "内容"
+        }
+      ]
+    },
+    {
+      "type": "check_item",
+      "name": "チェック項目",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "チェックの文"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "K-0 応募エリア",
+      "blocks": [
+        {
+          "type": "caution",
+          "settings": {
+            "number": "01",
+            "title": "中綿の偏り・着用感について",
+            "body": "<p>着用や保管によって、中綿に部分的な偏りや塊が生じる場合があります。その結果、ごわつきや暖かさのムラを感じる可能性があります。</p>"
+          }
+        },
+        {
+          "type": "caution",
+          "settings": {
+            "number": "02",
+            "title": "長期使用について",
+            "body": "<p>長期間使用した際の中綿の変化については、まだ十分な検証が完了していません。実際の着用を通じて感じたことを共有いただき、今後の素材開発につなげていきたいと考えています。</p>"
+          }
+        },
+        {
+          "type": "caution",
+          "settings": {
+            "number": "03",
+            "title": "洗濯・お手入れについて",
+            "body": "<p>現時点では、家庭での洗濯を推奨していません。また、クリーニングを含めた最適なお手入れ方法についても現在検証中です。お手入れが必要な場合は、まずKAPOK KNOTへご相談ください。</p>"
+          }
+        },
+        {
+          "type": "support",
+          "settings": {
+            "open": false,
+            "title": "継続サポート",
+            "summary_note": "気になる変化は、いつでもご相談ください",
+            "body": "<p>着用中に気になる変化があった場合は、いつでもご相談ください。製品の状態を確認し、その時点で可能な対応を一緒に検討します。</p>"
+          }
+        },
+        {
+          "type": "support",
+          "settings": {
+            "open": false,
+            "title": "定期チェック",
+            "summary_note": "一定期間のご使用後に、製品の状態を確認します",
+            "body": "<p>一定期間ご使用いただいた後、製品の状態を確認します。中綿の状態や着用による変化を確認し、今後のケアや開発につなげます。</p>"
+          }
+        },
+        {
+          "type": "support",
+          "settings": {
+            "open": false,
+            "title": "Future Update Program",
+            "summary_note": "アップデートモデルを優先的にご案内します",
+            "body": "<p>今後、アップデートモデルが完成・発売された場合は、ご購入者の方へ優先的にご案内します。買い替えやアップデートなど、購入者向けのプログラムも検討していきます。</p>"
+          }
+        },
+        {
+          "type": "timeline_row",
+          "settings": {
+            "title": "応募期間",
+            "value": "10月6日（火）13:30 〜 10月30日（金）18:00まで"
+          }
+        },
+        {
+          "type": "timeline_row",
+          "settings": {
+            "title": "当選連絡",
+            "value": "11月4日（水）"
+          }
+        },
+        {
+          "type": "timeline_row",
+          "settings": {
+            "title": "購入期限",
+            "value": "当選連絡後3日以内"
+          }
+        },
+        {
+          "type": "timeline_row",
+          "settings": {
+            "title": "発送予定",
+            "value": "11月末頃予定（生産状況等により変更の場合は事前にご連絡）"
+          }
+        },
+        {
+          "type": "timeline_row",
+          "settings": {
+            "title": "販売数・価格",
+            "value": "5着　¥198,000（税込）"
+          }
+        },
+        {
+          "type": "check_item",
+          "settings": {
+            "text": "中綿に偏りや塊が生じ、ごわつきや暖かさのムラを感じる可能性があることを理解しました。"
+          }
+        },
+        {
+          "type": "check_item",
+          "settings": {
+            "text": "家庭での洗濯はできないこと、お手入れが必要な場合はKAPOK KNOTへ相談することを理解しました。"
+          }
+        },
+        {
+          "type": "check_item",
+          "settings": {
+            "text": "長期使用した際の変化が、まだ十分に検証されていないことを理解しました。"
+          }
+        },
+        {
+          "type": "check_item",
+          "settings": {
+            "text": "当選のご連絡後、3日以内に購入の手続きをすることを理解しました。"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
