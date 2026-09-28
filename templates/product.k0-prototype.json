@@ -96,6 +96,11 @@
         "spec_lining"
       ],
       "settings": {
+        "main_image": "shopify://shop_images/k0-main-top.jpg",
+        "thumb_image_1": "shopify://shop_images/k0-sub-1-women.jpg",
+        "thumb_image_2": "shopify://shop_images/k0-sub-2-logo.jpg",
+        "thumb_image_3": "shopify://shop_images/k0-sub-3-lining.jpg",
+        "thumb_image_4": "shopify://shop_images/k0-sub-4-flat.jpg",
         "eyebrow": "NEO DOWN KAPOK® BEYOND",
         "price_note": "（税込）",
         "status_badge": "5着限定・抽選販売",
@@ -137,6 +142,7 @@
         "story_choice": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/k0-story-choice.jpg",
             "reverse": false,
             "body_open": false,
             "title": "冬の暖かさに、もうひとつの選択肢を。",
@@ -147,6 +153,7 @@
         "story_beyond": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/k0-story-beyond.jpg",
             "reverse": true,
             "body_open": false,
             "title": "NEO DOWN KAPOK® BEYOND",
@@ -157,6 +164,7 @@
         "story_experience": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/k0-story-experience.jpg",
             "reverse": false,
             "body_open": false,
             "title": "K-0 PROTOTYPEで体験できること",
@@ -167,6 +175,7 @@
         "story_co2": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/k0-story-co2.jpg",
             "reverse": true,
             "body_open": false,
             "title": "暖かさを、その先まで考える。",
@@ -178,6 +187,7 @@
         "story_start": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/k0-story-start-b.jpg",
             "reverse": false,
             "body_open": false,
             "title": "K-0、すべてはここから。",
