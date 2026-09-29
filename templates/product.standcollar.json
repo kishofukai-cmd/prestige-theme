@@ -202,9 +202,9 @@
         "ai_gen_block_37fb68f_6LRKiw": {
           "type": "ai_gen_block_37fb68f",
           "settings": {
-            "desktop_width_percent": 100,
-            "image_width_percent": 70,
-            "item_spacing": 20,
+            "desktop_width_percent": 55,
+            "image_width_percent": 100,
+            "item_spacing": 15,
             "image_1": "shopify://shop_images/1_4x_a9cc593b-36db-4bd8-8229-afacf4bfc329.png",
             "image_1_link": "",
             "image_2_link": "",
