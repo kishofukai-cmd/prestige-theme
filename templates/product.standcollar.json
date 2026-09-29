@@ -202,7 +202,7 @@
         "ai_gen_block_37fb68f_6LRKiw": {
           "type": "ai_gen_block_37fb68f",
           "settings": {
-            "desktop_width_percent": 55,
+            "desktop_width_percent": 50,
             "image_width_percent": 100,
             "item_spacing": 15,
             "image_1": "shopify://shop_images/1_4x_a9cc593b-36db-4bd8-8229-afacf4bfc329.png",
@@ -219,8 +219,8 @@
             "button_3_url": "",
             "button_4_label": "詳しく見る",
             "button_4_url": "",
-            "button_color": "#1C1C1C",
-            "button_text_color": "#FFFFFF"
+            "button_color": "#1c1c1c",
+            "button_text_color": "#ffffff"
           },
           "blocks": {}
         },
@@ -248,8 +248,8 @@
             "button_3_url": "",
             "button_4_label": "詳しく見る",
             "button_4_url": "",
-            "button_color": "#1C1C1C",
-            "button_text_color": "#FFFFFF"
+            "button_color": "#1c1c1c",
+            "button_text_color": "#ffffff"
           },
           "blocks": {}
         }
