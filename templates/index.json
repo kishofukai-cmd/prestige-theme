@@ -96,8 +96,8 @@
         "image_XFEyei": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/a_2x_f8d8a1b0-34e2-43b5-b27f-fc91bd4b04ca.png",
-            "mobile_image": "shopify://shop_images/a_3_2x_b2585269-2f78-4a97-b4a4-151e320f5178.png",
+            "image": "shopify://shop_images/EC_PC_13.png",
+            "mobile_image": "shopify://shop_images/KVSP_8.png",
             "subheading": "",
             "title": "",
             "mobile_text_position": "place-self-center text-center",
