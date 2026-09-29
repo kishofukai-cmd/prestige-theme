@@ -1,6 +1,314 @@
+{% doc %}
+  @prompt
+    縦画像を一枚真ん中に置きたい。それを縦に画像追加できるようにしてURLも踏めるようにしてほしい。
+    また画像の間にボタンも設置できるようにして
+    表示する大きさを変更できるようにしてほしい, もっと画像を追加できるようにして, ボタンの形はストレッチで楕円形にして
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-vertical-gallery-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__item {
+    width: {{ block.settings.image_width_percent }}%;
+    max-width: 100%;
+    display: block;
+    line-height: 0;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__item img,
+  .ai-vertical-gallery-{{ ai_gen_id }}__placeholder svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__item img {
+    object-fit: contain;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__placeholder {
+    width: 100%;
+    line-height: 0;
+    background: #f3f1ed;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__empty-text {
+    margin: 0;
+    padding: 10px 12px;
+    color: #4b4844;
+    background: #f3f1ed;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__button-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    max-width: 100%;
+    padding: 13px 34px;
+    border: 1px solid {{ block.settings.button_color }};
+    border-radius: 999px;
+    background: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .ai-vertical-gallery-{{ ai_gen_id }}__button:focus-visible,
+  .ai-vertical-gallery-{{ ai_gen_id }}__item:focus-visible {
+    outline: 2px solid {{ block.settings.button_color }};
+    outline-offset: 4px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-vertical-gallery-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-vertical-gallery-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-vertical-gallery-{{ ai_gen_id }}__inner">
+    {% for i in (1..5) %}
+      {% liquid
+        assign image_key = 'image_' | append: i
+        assign image_link_key = 'image_' | append: i | append: '_link'
+        assign gallery_image = block.settings[image_key]
+        assign gallery_link = block.settings[image_link_key]
+      %}
+      {% if gallery_image != blank %}
+        {% if gallery_link != blank %}<a class="ai-vertical-gallery-{{ ai_gen_id }}__item" href="{{ gallery_link }}" aria-label="{{ gallery_image.alt | default: '画像を開く' | escape }}">{% endif %}
+          {% unless gallery_link != blank %}<div class="ai-vertical-gallery-{{ ai_gen_id }}__item">{% endunless %}
+            {{ gallery_image | image_url: width: 2000 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1200, 1600, 2000', alt: gallery_image.alt }}
+          {% unless gallery_link != blank %}</div>{% endunless %}
+        {% if gallery_link != blank %}</a>{% endif %}
+      {% elsif i == 1 %}
+        <div class="ai-vertical-gallery-{{ ai_gen_id }}__item">
+          <div class="ai-vertical-gallery-{{ ai_gen_id }}__placeholder">
+            {{ 'image' | placeholder_svg_tag }}
+            <p class="ai-vertical-gallery-{{ ai_gen_id }}__empty-text">画像を追加してください</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if i < 5 %}
+        {% liquid
+          assign button_label_key = 'button_' | append: i | append: '_label'
+          assign button_url_key = 'button_' | append: i | append: '_url'
+          assign button_label = block.settings[button_label_key]
+          assign button_url = block.settings[button_url_key]
+        %}
+        {% if button_label != blank and button_url != blank %}
+          <div class="ai-vertical-gallery-{{ ai_gen_id }}__button-wrap">
+            <a class="ai-vertical-gallery-{{ ai_gen_id }}__button" href="{{ button_url }}">{{ button_label | escape }}</a>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "縦画像ギャラリー",
+  "settings": [
+    {
+      "type": "header",
+      "content": "表示サイズ"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "デスクトップ幅",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "image_width_percent",
+      "label": "画像幅",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "画像・ボタン間隔",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "画像 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "image_1_link",
+      "label": "画像リンク"
+    },
+    {
+      "type": "header",
+      "content": "画像 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "image_2_link",
+      "label": "画像リンク"
+    },
+    {
+      "type": "header",
+      "content": "画像 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "image_3_link",
+      "label": "画像リンク"
+    },
+    {
+      "type": "header",
+      "content": "画像 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "image_4_link",
+      "label": "画像リンク"
+    },
+    {
+      "type": "header",
+      "content": "画像 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "画像"
+    },
+    {
+      "type": "url",
+      "id": "image_5_link",
+      "label": "画像リンク"
+    },
+    {
+      "type": "header",
+      "content": "画像の間のボタン"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "ボタン1の文字",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_1_url",
+      "label": "ボタン1のリンク"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "ボタン2の文字",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_2_url",
+      "label": "ボタン2のリンク"
+    },
+    {
+      "type": "text",
+      "id": "button_3_label",
+      "label": "ボタン3の文字",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_3_url",
+      "label": "ボタン3のリンク"
+    },
+    {
+      "type": "text",
+      "id": "button_4_label",
+      "label": "ボタン4の文字",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "url",
+      "id": "button_4_url",
+      "label": "ボタン4のリンク"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "ボタン背景",
+      "default": "#1C1C1C"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "ボタン文字色",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "縦画像ギャラリー"
+    }
+  ],
+  "tag": null,
+  "class": "vertical-image-gallery"
+}
 {% endschema %}
