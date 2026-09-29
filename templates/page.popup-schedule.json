@@ -22,7 +22,7 @@
         "richtext_FJcQPh": {
           "type": "richtext",
           "settings": {
-            "content": "<p>現在、アウターの取り扱い店舗はございません。またMUSUBIシリーズ(コラボ商品以外)の取り扱い店舗も現在ございません。</p>"
+            "content": ""
           }
         },
         "image_Jr9VHJ": {
@@ -55,6 +55,7 @@
       "blocks": {
         "ai_gen_block_dd9c1f6_Ri37rt": {
           "type": "ai_gen_block_dd9c1f6",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/2_19_4x_b729d165-612d-44c2-a66e-1213780481fc.png",
             "image_border_radius": 0,
@@ -255,7 +256,7 @@
           "settings": {
             "title": "<strong>阪急うめだ本店</strong>",
             "heading_tag": "h3",
-            "content": "<p>日程：1/7(金)〜1/14(火)</p><p>場所：大阪府大阪市北区角田町８−７<br/>8階グリーンエイジ</p><p>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p><p></p>",
+            "content": "<p>日程：11/18(水)〜12/1(火)</p><p>場所：大阪府大阪市北区角田町8−7<br/>阪急うめだ本店 8階<strong><br/><br/></strong>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p><p></p>",
             "link_url": "",
             "link_text": ""
           }
@@ -263,9 +264,9 @@
         "image_with_text_9NUKWB": {
           "type": "image_with_text",
           "settings": {
-            "title": "<strong>銀座三越</strong>",
+            "title": "<strong>博多阪急</strong>",
             "heading_tag": "h3",
-            "content": "<p>日程：1/28(水)〜2/3(火)</p><p>場所：東京都中央区銀座4-6-16<br/>本館3階　昇りエスカレーター前</p><p>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p>",
+            "content": "<p>日程：11/25(水)〜11/30(月)</p><p>場所：福岡県福岡市博多区博多駅中央街1-1<br/>博多阪急 8階</p><p>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -289,45 +290,45 @@
         "content": ""
       }
     },
-    "multi_column_CwYtjt": {
+    "multi_column_66FqUG": {
       "type": "multi-column",
       "blocks": {
-        "image_with_text_xT8eUX": {
+        "image_with_text_nn6CNU": {
           "type": "image_with_text",
           "settings": {
-            "title": "<strong>横浜高島屋</strong>",
+            "title": "<strong>仙台三越</strong>",
             "heading_tag": "h3",
-            "content": "<p>日程：12/3(水)〜12/9(火)</p><p>場所：神奈川県横浜市西区南幸1-6-31<br/>1F入り口付近、エスカレーター横<br/></p><p>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p><p></p>",
+            "content": "<p>日程：12/2(水)〜12/8(火)</p><p>場所：宮城県仙台市青葉区一番町4-8-15<br/>仙台三越 1階<strong><br/><br/></strong>営業時間：午前10時〜午後7時<br/>※MUSUBIの展開はございません。</p><p></p>",
             "link_url": "",
             "link_text": ""
           }
         },
-        "image_with_text_UdbLYY": {
+        "image_with_text_QrUYXe": {
           "type": "image_with_text",
           "settings": {
-            "title": "<strong>阪急うめだ本店</strong>",
+            "title": "<strong>limited Store</strong>",
             "heading_tag": "h3",
-            "content": "<p>日程：12/26(金)〜1/6(火)</p><p>場所：大阪府大阪市北区角田町８−７<br/>8階グリーンエイジ</p><p>営業時間：午前10時〜午後8時<br/>※MUSUBIの展開はございません。</p><p></p>",
+            "content": "<p>日程：12/11(金)〜12/13(日)</p><p>場所：東京都渋谷区神宮前6-13-11<br/>Gramicci Harajuku 3F</p><p>営業時間：午前13時〜午後7時<br/></p>",
             "link_url": "",
             "link_text": ""
           }
         }
       },
       "block_order": [
-        "image_with_text_xT8eUX",
-        "image_with_text_UdbLYY"
+        "image_with_text_nn6CNU",
+        "image_with_text_QrUYXe"
       ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
         "columns_per_row": 3,
-        "stack_on_mobile": true,
+        "stack_on_mobile": false,
         "overlap_image": false,
         "content_alignment": "center",
         "text_alignment": "center",
         "spacing": "md",
         "subheading": "",
-        "title": "",
+        "title": "<strong>【POP-UP 2026年12月】</strong>",
         "content": ""
       }
     },
@@ -430,7 +431,7 @@
     "5edd23ba-bab9-4281-b5b8-e14827177a7e",
     "multi_column_LL77dF",
     "multi_column_xGfdbr",
-    "multi_column_CwYtjt",
+    "multi_column_66FqUG",
     "a45eaecc-8d38-4493-8667-4c2bfdf098da"
   ]
 }
