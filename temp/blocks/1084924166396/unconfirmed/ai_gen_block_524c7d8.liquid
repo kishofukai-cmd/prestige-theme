@@ -1,6 +1,302 @@
+{% doc %}
+  @prompt
+    写真とテキストを2カラムでPC表記したい。
+    SPビューは縦に並ぶようにしたい。SPビューはテキストと画像の上下を変えれるようにしたい。
+    テキストはタイトルとテキスト入れれるようにして、画像サイズに合わせて縦横変わるようにして, カラムの上下に余白調整できるようにして。, 画像の上にも余白設定できるようにしたい, テキストの行間を設定できるようにして
+{% enddoc %}
+{% doc %}
+  @prompt
+    写真とテキストの2カラム。PCは横並び、スマートフォンは順序変更可能。画像上部余白とテキスト行間を調整。
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin-block: {{ block.settings.vertical_spacing }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__media {
+    min-width: 0;
+    line-height: 0;
+    margin-top: {{ block.settings.image_top_spacing }}px;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__media img,
+  .ai-image-text-{{ ai_gen_id }}__placeholder svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__placeholder {
+    width: 100%;
+    background: #f2f1ef;
+    line-height: 0;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__placeholder svg {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__copy {
+    min-width: 0;
+    padding: {{ block.settings.text_padding }}px;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__heading {
+    margin: 0 0 16px;
+    color: inherit;
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.25;
+    font-weight: 400;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body {
+    color: inherit;
+    font-size: {{ block.settings.body_size }}px;
+    line-height: {{ block.settings.body_line_height | divided_by: 10.0 }};
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body > :first-child {
+    margin-top: 0;
+  }
+
+  .ai-image-text-{{ ai_gen_id }}__body > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-text-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}__layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}__media {
+      margin-top: {{ block.settings.image_top_spacing_mobile }}px;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}--text-first .ai-image-text-{{ ai_gen_id }}__copy {
+      order: 1;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}--text-first .ai-image-text-{{ ai_gen_id }}__media {
+      order: 2;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}--image-first .ai-image-text-{{ ai_gen_id }}__media {
+      order: 1;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}--image-first .ai-image-text-{{ ai_gen_id }}__copy {
+      order: 2;
+    }
+
+    .ai-image-text-{{ ai_gen_id }}__copy {
+      padding: 0;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-image-text-{{ ai_gen_id }} ai-image-text-{{ ai_gen_id }}--{{ block.settings.mobile_order }}" {{ block.shopify_attributes }}>
+  <div class="ai-image-text-{{ ai_gen_id }}__layout">
+    <div class="ai-image-text-{{ ai_gen_id }}__media">
+      {% if block.settings.image != blank %}
+        <img
+          src="{{ block.settings.image | image_url: width: 2000 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% else %}
+        <div class="ai-image-text-{{ ai_gen_id }}__placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="ai-image-text-{{ ai_gen_id }}__copy">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-image-text-{{ ai_gen_id }}__heading">{{ block.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if block.settings.body != blank %}
+        <div class="ai-image-text-{{ ai_gen_id }}__body">{{ block.settings.body }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "写真とテキストの2カラム",
+  "settings": [
+    {
+      "type": "header",
+      "content": "コンテンツ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "画像"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "タイトル",
+      "default": "素材の魅力を、日々の暮らしに"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "テキスト",
+      "default": "<p>商品の特徴やこだわりを入力してください。</p>"
+    },
+    {
+      "type": "header",
+      "content": "レイアウト"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "PCの幅",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "vertical_spacing",
+      "label": "上下の余白",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_top_spacing",
+      "label": "画像上部の余白（PC）",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_top_spacing_mobile",
+      "label": "画像上部の余白（SP）",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "mobile_order",
+      "label": "SPの並び順",
+      "options": [
+        { "value": "image-first", "label": "画像を上" },
+        { "value": "text-first", "label": "テキストを上" }
+      ],
+      "default": "image-first"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "PCのカラム間隔",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "SPの間隔",
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "text_padding",
+      "label": "テキストの余白（PC）",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "スタイル"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "文字色",
+      "default": "#1C1C1C"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "タイトルサイズ",
+      "min": 18,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "本文サイズ",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "label": "本文の行間",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "0.1",
+      "default": 18
+    }
+  ],
+  "presets": [
+    {
+      "name": "写真とテキストの2カラム"
+    }
+  ],
+  "tag": null,
+  "class": "image-text-columns"
+}
 {% endschema %}
