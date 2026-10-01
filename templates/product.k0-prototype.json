@@ -1,5 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "1790842508763b2acd": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c87846a_aTGjFM": {
+          "type": "ai_gen_block_c87846a",
+          "settings": {
+            "desktop_width_percent": 100,
+            "title": "",
+            "title_font": "proza_libre_n4",
+            "title_size": 32,
+            "mobile_title_size": 24,
+            "title_bold": false,
+            "title_alignment": "center",
+            "title_color": "#1c1c1c",
+            "title_margin_top": 24,
+            "title_margin_bottom": 24,
+            "mobile_title_margin_top": 16,
+            "mobile_title_margin_bottom": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c87846a_aTGjFM"
+      ],
+      "settings": {}
+    },
+    "17908443297870bac9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8d29343_L4Ypxh": {
+          "type": "ai_gen_block_8d29343",
+          "settings": {
+            "image": "shopify://shop_images/260807_KAPOKKNOT0162.jpg",
+            "heading": "K-0 PROTOTYPE",
+            "body": "<p>植物由来の新しい中綿</p><p>「NEO DOWN KAPOK® BEYOND」</p><p>を使用した、5着限定の開発初期モデル。</p><p></p><p>¥198,000（税込）</p><p>5着限定・抽選販売</p><h4>これは、完成された量産品ではありません。</h4><p>新しい素材がいまどこまで来ているのか。</p><p>その現在地を実際に着て、体験いただくための限定プロダクトです。&nbsp;</p>",
+            "button_label": "「NEO DOWN KAPOK® BEYOND」についてはこちら",
+            "button_link": "shopify://collections/2022aw",
+            "desktop_width_percent": 100,
+            "image_width_percent": 50,
+            "image_size_percent": 60,
+            "image_alignment": "center",
+            "image_size_mobile_percent": 100,
+            "image_alignment_mobile": "center",
+            "vertical_spacing": 0,
+            "image_top_spacing": 0,
+            "image_top_spacing_mobile": 0,
+            "mobile_order": "image-first",
+            "column_gap": 40,
+            "mobile_gap": 20,
+            "text_padding": 20,
+            "text_color": "#1C1C1C",
+            "heading_size": 28,
+            "body_size": 16,
+            "body_line_height": 18,
+            "button_background": "#1C1C1C",
+            "button_text_color": "#FFFFFF",
+            "button_font_size": 14,
+            "button_radius": 0,
+            "button_top_spacing": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8d29343_L4Ypxh"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "k0-prototype",
       "blocks": {
@@ -8,7 +86,9 @@
           "settings": {
             "title": "着丈",
             "title_en": "Length",
-            "value_1": "68"
+            "value_1": "68",
+            "value_2": "",
+            "value_3": ""
           }
         },
         "size_shoulder": {
@@ -16,7 +96,9 @@
           "settings": {
             "title": "肩幅",
             "title_en": "Shoulder width",
-            "value_1": "42.5"
+            "value_1": "42.5",
+            "value_2": "",
+            "value_3": ""
           }
         },
         "size_bust": {
@@ -24,7 +106,9 @@
           "settings": {
             "title": "バスト",
             "title_en": "Bust",
-            "value_1": "122.5"
+            "value_1": "122.5",
+            "value_2": "",
+            "value_3": ""
           }
         },
         "size_sleeve": {
@@ -32,14 +116,19 @@
           "settings": {
             "title": "袖丈",
             "title_en": "Sleeve Length",
-            "value_1": "66.5"
+            "value_1": "66.5",
+            "value_2": "",
+            "value_3": ""
           }
         },
         "size_yuki": {
           "type": "size_row",
           "settings": {
             "title": "裄丈",
-            "value_1": "87.75"
+            "title_en": "",
+            "value_1": "87.75",
+            "value_2": "",
+            "value_3": ""
           }
         },
         "spec_color": {
@@ -102,15 +191,20 @@
         "thumb_image_3": "shopify://shop_images/k0-sub-3-lining.jpg",
         "thumb_image_4": "shopify://shop_images/k0-sub-4-flat.jpg",
         "eyebrow": "NEO DOWN KAPOK® BEYOND",
+        "title_override": "",
+        "price_override": "",
         "price_note": "（税込）",
         "status_badge": "5着限定・抽選販売",
         "button_label": "抽選販売に応募する",
         "button_link": "#k0-apply",
         "show_buy_button": false,
+        "buy_button_label": "",
         "variant_label": "サイズ・カラー",
         "statement_heading": "植物からはじまる、次世代のダウン。",
-        "statement_p1": "<p>世界初※。カポック繊維100%から生まれた植物由来のロフト中綿<br>「NEO DOWN KAPOK® BEYOND」</p>",
-        "statement_p2": "<p>その新素材を、初めて一着のウェアに。<br>Kは、”KAPOK”。0は、完成ではなく“始まり”。</p><p>「K-0 PROTOTYPE」<br>未来の冬を、世界に5着だけ。</p>",
+        "statement_p1": "<p>世界初※。カポック繊維100%から生まれた植物由来のロフト中綿<br/>「NEO DOWN KAPOK® BEYOND」</p>",
+        "statement_p2": "<p>その新素材を、初めて一着のウェアに。<br/>Kは、”KAPOK”。0は、完成ではなく“始まり”。</p><p>「K-0 PROTOTYPE」<br/>未来の冬を、世界に5着だけ。</p>",
+        "statement_p3": "",
+        "statement_footnote": "",
         "statement_lead_in": "続く本文で、素材やこのプロトタイプについて、もう少し丁寧にお話しします。",
         "statement_more_label": "続きを読む",
         "statement_more_open": false,
@@ -118,6 +212,9 @@
         "acc_size_summary_note": "F（着丈68・肩幅42.5・バスト122.5 ほか）",
         "acc_size_open": false,
         "size_label_1": "F",
+        "size_label_2": "",
+        "size_label_3": "",
+        "size_note": "",
         "acc_material_title": "素材",
         "acc_material_summary_note": "表地 リサイクルナイロン／中綿 カポック繊維100%",
         "acc_material_open": false,
@@ -125,14 +222,18 @@
         "acc_care_title": "お手入れ方法",
         "acc_care_summary_note": "ご家庭での洗濯は推奨していません",
         "acc_care_open": false,
-        "care_body": "<p>現時点では、ご家庭での洗濯は推奨していません。クリーニングを含む最適なお手入れ方法についても、現在検証を進めています。<br>お手入れが必要な場合は、まずKAPOK KNOTへご相談ください。<br>連絡先：contact@kapok-knot.jp</p>",
+        "care_body": "<p>現時点では、ご家庭での洗濯は推奨していません。クリーニングを含む最適なお手入れ方法についても、現在検証を進めています。<br/>お手入れが必要な場合は、まずKAPOK KNOTへご相談ください。<br/>連絡先：contact@kapok-knot.jp</p>",
+        "care_note": "",
         "acc_shipping_title": "配送と返品",
         "acc_shipping_summary_note": "11月末頃の発送予定／キャンセル・変更不可",
         "acc_shipping_open": false,
-        "shipping_body": "<p>発送：11月末頃を予定しています。生産状況等により変更となる場合は、事前にご連絡いたします。<br>※予約および受注生産品につきましては、キャンセル・サイズ・カラーの変更はできません。</p>",
+        "shipping_body": "<p>発送：11月末頃を予定しています。生産状況等により変更となる場合は、事前にご連絡いたします。<br/>※予約および受注生産品につきましては、キャンセル・サイズ・カラーの変更はできません。</p>",
+        "refund_body": "",
+        "shipping_legal_note": "",
         "fine_print_label": "注記",
         "fine_print_summary_note": "「世界初」の表記について",
         "fine_print_open": false,
+        "fine_print_1": "",
         "fine_print_2": "<p>※「世界初」について　カポック繊維100%で構成され、特殊加工により羽毛と同等のかさ高性を実現したアパレル用ロフト中綿として。2026年3月時点、専門家による調査に基づく。嵩高データは当社調べ。</p>"
       }
     },
@@ -142,57 +243,61 @@
         "story_choice": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/k0-story-choice.jpg",
-            "reverse": false,
-            "body_open": false,
             "title": "冬の暖かさに、もうひとつの選択肢を。",
             "lead": "羽毛でも、ポリエステルでもない。\n植物でつくる、第3の中綿。",
-            "body": "<p>これまで防寒着の中綿には、主に羽毛（ダウン）と合成繊維が使われてきました。<br>羽毛は高い保温性を持つ一方で、価格や供給が安定しにくい。<br>ポリエステル中綿は、石油を主な原料としています。</p><p>そこで私たちは、植物から暖かさをつくることに挑みました。<br>ダウンのように空気をたっぷりと抱え込む暖かさを目指し、カポック繊維をふくらみのあるロフト中綿へ。</p><p>植物から、冬の選択肢を広げていく。<br>その最初のかたちとして、<strong>K-0 PROTOTYPEを、世界に5着だけ。</strong></p>"
+            "body": "<p>これまで防寒着の中綿には、主に羽毛（ダウン）と合成繊維が使われてきました。<br>羽毛は高い保温性を持つ一方で、価格や供給が安定しにくい。<br>ポリエステル中綿は、石油を主な原料としています。</p><p>そこで私たちは、植物から暖かさをつくることに挑みました。<br>ダウンのように空気をたっぷりと抱え込む暖かさを目指し、カポック繊維をふくらみのあるロフト中綿へ。</p><p>植物から、冬の選択肢を広げていく。<br>その最初のかたちとして、<strong>K-0 PROTOTYPEを、世界に5着だけ。</strong></p>",
+            "note": "",
+            "image": "shopify://shop_images/k0-story-choice.jpg",
+            "reverse": false,
+            "body_open": false
           }
         },
         "story_beyond": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/k0-story-beyond.jpg",
-            "reverse": true,
-            "body_open": false,
             "title": "NEO DOWN KAPOK® BEYOND",
             "lead": "木の実から生まれた、植物由来のロフト中綿",
-            "body": "<p>NEO DOWN KAPOK® BEYONDは、東南アジアに自生する木の実「カポック」から採れる繊維を100%使用した、新しいロフト中綿です。</p><p>独自の技術でカポック繊維をふくらみのある構造へ。<br>羽毛に迫る暖かさと、羽毛を凌ぐ吸放湿性を実現しました。</p><p>軽やかで暖かく、湿気がこもりにくい。<br>冬を快適に過ごすための、新しい中綿です。</p><p>NEO DOWN KAPOK® BEYONDについて詳しくは<a href=\"https://kapok-japan.com/neodownkapok/beyond\" target=\"_blank\">こちら</a></p>"
+            "body": "<p>NEO DOWN KAPOK® BEYONDは、東南アジアに自生する木の実「カポック」から採れる繊維を100%使用した、新しいロフト中綿です。</p><p>独自の技術でカポック繊維をふくらみのある構造へ。<br>羽毛に迫る暖かさと、羽毛を凌ぐ吸放湿性を実現しました。</p><p>軽やかで暖かく、湿気がこもりにくい。<br>冬を快適に過ごすための、新しい中綿です。</p><p>NEO DOWN KAPOK® BEYONDについて詳しくは<a href=\"https://kapok-japan.com/neodownkapok/beyond\" target=\"_blank\">こちら</a></p>",
+            "note": "",
+            "image": "shopify://shop_images/k0-story-beyond.jpg",
+            "reverse": true,
+            "body_open": false
           }
         },
         "story_experience": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/k0-story-experience.jpg",
-            "reverse": false,
-            "body_open": false,
             "title": "K-0 PROTOTYPEで体験できること",
             "lead": "この一着が、日々の暮らしをどう変えるか。",
-            "body": "<p><strong>01｜植物から生まれた、第3の中綿。</strong><br>羽毛でもポリエステルでもない。カポックから生まれた新しい中綿を、実際のウェアとして体験できます。</p><p><strong>02｜暖かい。でも、こもりにくい。</strong><br>ダウンに迫る暖かさと、ダウンを凌ぐ吸放湿性。屋外と室内を行き来する都市の冬でも、快適な着心地を目指しました。</p><p><strong>03｜まだ誰も知らない、未来の着心地。</strong><br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアにした最初期モデル。これから進化していく素材の“今”を体験する一着です。</p><p><em>冬の移動を、もっと軽やかに。</em><br>寒い屋外では暖かく、暖房の効いた室内ではこもりにくい。<br><strong>屋外と室内を行き来する都市の冬を、一着でもっと快適に。</strong></p>"
+            "body": "<p><strong>01｜植物から生まれた、第3の中綿。</strong><br>羽毛でもポリエステルでもない。カポックから生まれた新しい中綿を、実際のウェアとして体験できます。</p><p><strong>02｜暖かい。でも、こもりにくい。</strong><br>ダウンに迫る暖かさと、ダウンを凌ぐ吸放湿性。屋外と室内を行き来する都市の冬でも、快適な着心地を目指しました。</p><p><strong>03｜まだ誰も知らない、未来の着心地。</strong><br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアにした最初期モデル。これから進化していく素材の“今”を体験する一着です。</p><p><em>冬の移動を、もっと軽やかに。</em><br>寒い屋外では暖かく、暖房の効いた室内ではこもりにくい。<br><strong>屋外と室内を行き来する都市の冬を、一着でもっと快適に。</strong></p>",
+            "note": "",
+            "image": "shopify://shop_images/k0-story-experience.jpg",
+            "reverse": false,
+            "body_open": false
           }
         },
         "story_co2": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/k0-story-co2.jpg",
-            "reverse": true,
-            "body_open": false,
             "title": "暖かさを、その先まで考える。",
             "lead": "CO2という視点から。",
             "body": "<p>カポック原綿のカーボンフットプリントは、<br>羽毛原料と比べて、<br><em>約〇〇 LESS</em></p><p>中綿というこれまであまり語られてこなかった部分にこそ、脱炭素に向けた伸びしろがあると考えています。</p>",
-            "note": "<p>※自社試算。カポック原綿○○〜○○、羽毛原料○○〜○○を対象に、原料1kgあたりのGHG排出量（CO₂換算）を比較。</p>"
+            "note": "<p>※自社試算。カポック原綿○○〜○○、羽毛原料○○〜○○を対象に、原料1kgあたりのGHG排出量（CO₂換算）を比較。</p>",
+            "image": "shopify://shop_images/k0-story-co2.jpg",
+            "reverse": true,
+            "body_open": false
           }
         },
         "story_start": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/k0-story-start-b.jpg",
-            "reverse": false,
-            "body_open": false,
             "title": "K-0、すべてはここから。",
             "lead": "この一着から、未来のスタンダードへ。",
-            "body": "<p>Kは、\"KAPOK\"。0は、完成ではなく\"始まり\"を意味します。<br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアとして形にした、最初のモデルです。</p><p>まだ完成形ではありません。<br>だからこそ、ここから先があります。</p><p>実際の生活の中で着ていただき、暖かさや着心地、素材の変化を確かめながら、さらに進化させていく。<br>この5着で得られる体験や声を、次のBEYONDへつなげていきます。</p>"
+            "body": "<p>Kは、\"KAPOK\"。0は、完成ではなく\"始まり\"を意味します。<br/>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアとして形にした、最初のモデルです。</p><p>まだ完成形ではありません。<br/>だからこそ、ここから先があります。</p><p>実際の生活の中で着ていただき、暖かさや着心地、素材の変化を確かめながら、さらに進化させていく。<br/>この5着で得られる体験や声を、次のBEYONDへつなげていきます。</p>",
+            "note": "",
+            "image": "shopify://shop_images/k0-story-start-b.jpg",
+            "reverse": false,
+            "body_open": false
           }
         }
       },
@@ -205,7 +310,8 @@
       ],
       "settings": {
         "kicker": "ABOUT THE MATERIAL AND THE PROTOTYPE",
-        "more_label": "もっと読む"
+        "more_label": "もっと読む",
+        "closing": ""
       }
     },
     "apply": {
@@ -238,28 +344,28 @@
         "support_continuous": {
           "type": "support",
           "settings": {
-            "open": false,
             "title": "継続サポート",
             "summary_note": "気になる変化は、いつでもご相談ください",
-            "body": "<p>着用中に気になる変化があった場合は、いつでもご相談ください。製品の状態を確認し、その時点で可能な対応を一緒に検討します。</p>"
+            "body": "<p>着用中に気になる変化があった場合は、いつでもご相談ください。製品の状態を確認し、その時点で可能な対応を一緒に検討します。</p>",
+            "open": false
           }
         },
         "support_checkup": {
           "type": "support",
           "settings": {
-            "open": false,
             "title": "定期チェック",
             "summary_note": "一定期間のご使用後に、製品の状態を確認します",
-            "body": "<p>一定期間ご使用いただいた後、製品の状態を確認します。中綿の状態や着用による変化を確認し、今後のケアや開発につなげます。</p>"
+            "body": "<p>一定期間ご使用いただいた後、製品の状態を確認します。中綿の状態や着用による変化を確認し、今後のケアや開発につなげます。</p>",
+            "open": false
           }
         },
         "support_update": {
           "type": "support",
           "settings": {
-            "open": false,
             "title": "Future Update Program",
             "summary_note": "アップデートモデルを優先的にご案内します",
-            "body": "<p>今後、アップデートモデルが完成・発売された場合は、ご購入者の方へ優先的にご案内します。買い替えやアップデートなど、購入者向けのプログラムも検討していきます。</p>"
+            "body": "<p>今後、アップデートモデルが完成・発売された場合は、ご購入者の方へ優先的にご案内します。買い替えやアップデートなど、購入者向けのプログラムも検討していきます。</p>",
+            "open": false
           }
         },
         "timeline_period": {
@@ -354,6 +460,7 @@
         "password_field_label": "合言葉",
         "password_placeholder": "上記でご案内した合言葉を入力",
         "cta_label": "応募フォームへ（Googleフォーム）",
+        "cta_url": "",
         "cta_sub": "応募期間は10月30日（金）18:00までです",
         "cta_locked_text": "すべての項目にチェックし、合言葉を入力すると応募フォームへ進めます。",
         "cta_mismatch_text": "合言葉が一致しません。上の合言葉をご確認ください。",
@@ -362,6 +469,8 @@
     }
   },
   "order": [
+    "1790842508763b2acd",
+    "17908443297870bac9",
     "main",
     "story",
     "apply"
