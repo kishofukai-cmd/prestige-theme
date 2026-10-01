@@ -152,6 +152,18 @@
     {%- endif -%}
 
     {%- comment -%} 応募ボタン（JS が条件を満たしたときだけ href を付ける） {%- endcomment -%}
+     {%- comment -%} 法人・事業者向け案内 {%- endcomment -%}
+{%- if section.settings.business_notice != blank -%}
+  <div
+    class="k0-business-notice"
+    style="
+      font-size: {{ section.settings.business_notice_size }}px;
+      color: {{ section.settings.business_notice_color }};
+    "
+  >
+    {{ section.settings.business_notice }}
+  </div>
+{%- endif -%}
     <div class="k0-cta-wrap">
       <a class="k0-cta" data-k0-cta role="link" aria-disabled="true">{{ section.settings.cta_label | escape }}<i aria-hidden="true">→</i></a>
       <p class="k0-cta-hint" data-k0-hint aria-live="polite"
@@ -371,6 +383,32 @@
       "label": "合言葉の入力欄の薄い文字",
       "default": "上記でご案内した合言葉を入力"
     },
+    {
+  "type": "header",
+  "content": "法人・事業者向け案内"
+},
+{
+  "type": "richtext",
+  "id": "business_notice",
+  "label": "法人・事業者向けテキスト",
+  "default": "<p><strong>法人・事業者の皆さまへ</strong><br>本商品は一般のお客様を対象とした限定販売です。<br>法人・事業者の方で、素材・製品にご関心がある場合は、<a href=\"https://kapok-japan.com/contact\">コンタクト</a>よりお問い合わせください。</p>"
+},
+{
+  "type": "range",
+  "id": "business_notice_size",
+  "label": "フォントサイズ",
+  "min": 10,
+  "max": 24,
+  "step": 1,
+  "unit": "px",
+  "default": 13
+},
+{
+  "type": "color",
+  "id": "business_notice_color",
+  "label": "文字カラー",
+  "default": "#666666"
+},
     {
       "type": "header",
       "content": "応募ボタン"
