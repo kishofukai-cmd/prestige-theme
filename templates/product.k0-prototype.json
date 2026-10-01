@@ -34,7 +34,6 @@
       "block_order": [
         "ai_gen_block_c87846a_aTGjFM"
       ],
-      "disabled": true,
       "settings": {}
     },
     "17908443297870bac9": {
@@ -59,9 +58,9 @@
             "heading_size": 30,
             "body_size": 15,
             "body_line_height": 18,
-            "text_color": "#1C1C1C",
-            "button_background": "#1C1C1C",
-            "button_text_color": "#FFFFFF"
+            "text_color": "#1c1c1c",
+            "button_background": "#1c1c1c",
+            "button_text_color": "#ffffff"
           },
           "blocks": {}
         }
@@ -452,6 +451,9 @@
         "checklist_heading": "応募の前に、以下すべてにチェックをお願いします",
         "password_field_label": "合言葉",
         "password_placeholder": "上記でご案内した合言葉を入力",
+        "business_notice": "<p><strong>法人・事業者の皆さまへ</strong><br/>本商品は一般のお客様を対象とした限定販売です。<br/>法人・事業者の方で、素材・製品にご関心がある場合は、<a href=\"https://kapok-japan.com/contact\">コンタクト</a>よりお問い合わせください。</p>",
+        "business_notice_size": 11,
+        "business_notice_color": "#666666",
         "cta_label": "応募フォームへ（Googleフォーム）",
         "cta_url": "https://docs.google.com/forms/d/e/1FAIpQLSfYwPXok7uTchjkMvatjMO4lgpdM6iLPr11DzVtriKd8QgWew/viewform?usp=header",
         "cta_sub": "応募期間は10月16日（金）18:00までです",
