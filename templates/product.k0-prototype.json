@@ -39,6 +39,31 @@
     "17908443297870bac9": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_f4f726f_rQGRya": {
+          "type": "ai_gen_block_f4f726f",
+          "settings": {
+            "image": "shopify://shop_images/260807_KAPOKKNOT0162.jpg",
+            "heading": "K-0 PROTOTYPE",
+            "body": "<p>植物由来の新しい中綿</p><p>「NEO DOWN KAPOK® BEYOND」</p><p>を使用した、5着限定の開発初期モデル。</p><p>¥198,000（税込）</p><p>5着限定・抽選販売</p><p><strong>これは、完成された量産品ではありません。</strong></p><p>新しい素材がいまどこまで来ているのか。</p><p>その現在地を実際に着て、体験いただくための限定プロダクトです。&nbsp;</p>",
+            "button_label": "「NEO DOWN KAPOK® BEYOND」についてはこちら",
+            "button_link": "https://kapok-japan.com/neodownkapok/beyond",
+            "desktop_width_percent": 90,
+            "image_width_percent": 45,
+            "mobile_order": "image_first",
+            "image_max_height": 650,
+            "image_fit": "cover",
+            "column_gap": 40,
+            "mobile_gap": 10,
+            "text_padding": 25,
+            "heading_size": 30,
+            "body_size": 15,
+            "body_line_height": 18,
+            "text_color": "#1C1C1C",
+            "button_background": "#1C1C1C",
+            "button_text_color": "#FFFFFF"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_8d29343_L4Ypxh": {
           "type": "ai_gen_block_8d29343",
           "settings": {
@@ -47,11 +72,11 @@
             "body": "<p>植物由来の新しい中綿</p><p>「NEO DOWN KAPOK® BEYOND」</p><p>を使用した、5着限定の開発初期モデル。</p><p></p><p>¥198,000（税込）</p><p>5着限定・抽選販売</p><h4>これは、完成された量産品ではありません。</h4><p>新しい素材がいまどこまで来ているのか。</p><p>その現在地を実際に着て、体験いただくための限定プロダクトです。&nbsp;</p>",
             "button_label": "「NEO DOWN KAPOK® BEYOND」についてはこちら",
             "button_link": "shopify://collections/2022aw",
-            "desktop_width_percent": 100,
+            "desktop_width_percent": 95,
             "image_width_percent": 50,
             "image_size_percent": 60,
             "image_alignment": "center",
-            "image_size_mobile_percent": 100,
+            "image_size_mobile_percent": 90,
             "image_alignment_mobile": "center",
             "vertical_spacing": 0,
             "image_top_spacing": 0,
@@ -63,7 +88,7 @@
             "text_color": "#1C1C1C",
             "heading_size": 28,
             "body_size": 16,
-            "body_line_height": 18,
+            "body_line_height": 20,
             "button_background": "#1C1C1C",
             "button_text_color": "#FFFFFF",
             "button_font_size": 14,
@@ -74,6 +99,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_f4f726f_rQGRya",
         "ai_gen_block_8d29343_L4Ypxh"
       ],
       "settings": {}
