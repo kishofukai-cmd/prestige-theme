@@ -498,3 +498,55 @@ k0-apply-gate, k0-gallery { display: block; }
 .k0-cta-hint { margin-top: 14px; font-size: 12.5px; font-weight: 700; color: var(--k0-ink); }
 .k0-cta-hint:empty { display: none; }
 .k0-cta-sub { margin-top: 12px; font-size: 12px; color: var(--k0-ink-soft); }
+
+/* =========================================================
+   法人・事業者向け案内
+   ========================================================= */
+
+.k0-business-notice {
+  margin: 40px auto 20px;
+  width: 100%;
+  text-align: center;
+  font-size: var(--business-notice-size, 13px);
+  color: var(--business-notice-color, #666666);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.k0-business-notice p {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+.k0-business-notice strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+.k0-business-notice a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.k0-business-notice a:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 749px) {
+  .k0-business-notice {
+    margin: 32px auto 18px;
+    text-align: center;
+    line-height: 1.75;
+  }
+
+  .k0-business-notice p {
+    text-align: center;
+  }
+}
