@@ -34,6 +34,7 @@
       "block_order": [
         "ai_gen_block_c87846a_aTGjFM"
       ],
+      "disabled": true,
       "settings": {}
     },
     "17908443297870bac9": {
@@ -50,7 +51,7 @@
             "desktop_width_percent": 90,
             "image_width_percent": 45,
             "mobile_order": "image_first",
-            "image_max_height": 650,
+            "image_max_height": 450,
             "image_fit": "cover",
             "column_gap": 35,
             "mobile_gap": 0,
@@ -118,7 +119,7 @@
           "settings": {
             "title": "裄丈",
             "title_en": "",
-            "value_1": "87.75",
+            "value_1": "87.5",
             "value_2": "",
             "value_3": ""
           }
@@ -208,7 +209,7 @@
         "size_label_3": "",
         "size_note": "",
         "acc_material_title": "素材",
-        "acc_material_summary_note": "表地 リサイクルナイロン／中綿 カポック繊維100%",
+        "acc_material_summary_note": "表地：リサイクルナイロン/中綿：カポック100%/裏地：ポリエステル100%",
         "acc_material_open": false,
         "material_note": "<p>素材そのものについての詳しい説明は、<a href=\"https://kapok-japan.com/neodownkapok/beyond\" target=\"_blank\">NEO DOWN KAPOK® BEYONDのページ</a>でもご紹介しています。</p>",
         "acc_care_title": "お手入れ方法",
@@ -223,10 +224,10 @@
         "refund_body": "",
         "shipping_legal_note": "",
         "fine_print_label": "注記",
-        "fine_print_summary_note": "「世界初」の表記について",
+        "fine_print_summary_note": "「世界初」の表記/商品について",
         "fine_print_open": false,
-        "fine_print_1": "",
-        "fine_print_2": "<p>※「世界初」について　カポック繊維100%で構成され、特殊加工により羽毛と同等のかさ高性を実現したアパレル用ロフト中綿として。2026年3月時点、専門家による調査に基づく。嵩高データは当社調べ。</p>"
+        "fine_print_1": "<p>※「世界初」について　カポック繊維100%で構成され、特殊加工により羽毛と同等のかさ高性を実現したアパレル用ロフト中綿として。2026年3月時点、専門家による調査に基づく。嵩高データは当社調べ。</p>",
+        "fine_print_2": "<p>※実際の商品とは一部仕様が異なる場合があります。</p><p>※NEO DOWN KAPOK®はKAPOK JAPAN株式会社の登録商標です。</p>"
       }
     },
     "story": {
@@ -237,7 +238,7 @@
           "settings": {
             "title": "冬の暖かさに、もうひとつの選択肢を。",
             "lead": "羽毛でも、ポリエステルでもない。\n植物でつくる、第3の中綿。",
-            "body": "<p>これまで防寒着の中綿には、主に羽毛（ダウン）と合成繊維が使われてきました。<br>羽毛は高い保温性を持つ一方で、価格や供給が安定しにくい。<br>ポリエステル中綿は、石油を主な原料としています。</p><p>そこで私たちは、植物から暖かさをつくることに挑みました。<br>ダウンのように空気をたっぷりと抱え込む暖かさを目指し、カポック繊維をふくらみのあるロフト中綿へ。</p><p>植物から、冬の選択肢を広げていく。<br>その最初のかたちとして、<strong>K-0 PROTOTYPEを、世界に5着だけ。</strong></p>",
+            "body": "<p>これまで防寒着の中綿には、主に羽毛（ダウン）と合成繊維が使われてきました。<br/>羽毛は高い保温性を持つ一方で、価格や供給が安定しにくい。<br/>ポリエステル中綿は、石油を主な原料としています。</p><p>そこで私たちは、植物から暖かさをつくることに挑みました。<br/>ダウンのように空気をたっぷりと抱え込む暖かさを目指し、カポック繊維をふくらみのあるロフト中綿へ。</p><p>植物から、冬の選択肢を広げていく。<br/>その最初のかたちとして<br/><strong>K-0 PROTOTYPEを、世界に5着だけ。</strong></p>",
             "note": "",
             "image": "shopify://shop_images/k0-story-choice.jpg",
             "reverse": false,
@@ -261,7 +262,7 @@
           "settings": {
             "title": "K-0 PROTOTYPEで体験できること",
             "lead": "この一着が、日々の暮らしをどう変えるか。",
-            "body": "<p><strong>01｜植物から生まれた、第3の中綿。</strong><br>羽毛でもポリエステルでもない。カポックから生まれた新しい中綿を、実際のウェアとして体験できます。</p><p><strong>02｜暖かい。でも、こもりにくい。</strong><br>ダウンに迫る暖かさと、ダウンを凌ぐ吸放湿性。屋外と室内を行き来する都市の冬でも、快適な着心地を目指しました。</p><p><strong>03｜まだ誰も知らない、未来の着心地。</strong><br>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアにした最初期モデル。これから進化していく素材の“今”を体験する一着です。</p><p><em>冬の移動を、もっと軽やかに。</em><br>寒い屋外では暖かく、暖房の効いた室内ではこもりにくい。<br><strong>屋外と室内を行き来する都市の冬を、一着でもっと快適に。</strong></p>",
+            "body": "<p><strong>01｜植物から生まれた、第3の中綿。</strong><br/>羽毛でもポリエステルでもない。カポックから生まれた新しい中綿を、実際のウェアとして体験できます。</p><p><strong>02｜暖かい。でも、こもりにくい。</strong><br/>ダウンに迫る暖かさと、ダウンを凌ぐ吸放湿性。屋外と室内を行き来する都市の冬でも、快適な着心地を目指しました。</p><p><strong>03｜まだ誰も知らない、未来の着心地。</strong><br/>K-0 PROTOTYPEは、NEO DOWN KAPOK® BEYONDを初めてウェアにした最初期モデル。これから進化していく素材の“今”を体験する一着です。</p><p><em>冬の移動を、もっと軽やかに。</em><br/>寒い屋外では暖かく、暖房の効いた室内ではこもりにくい。<br/><strong>屋外と室内を行き来する都市の冬を、一着でもっと快適に。</strong></p>",
             "note": "",
             "image": "shopify://shop_images/k0-story-experience.jpg",
             "reverse": false,
@@ -273,7 +274,7 @@
           "settings": {
             "title": "暖かさを、その先まで考える。",
             "lead": "CO2という視点から。",
-            "body": "<p>カポック原綿のカーボンフットプリントは、<br>羽毛原料と比べて、<br><em>約〇〇 LESS</em></p><p>中綿というこれまであまり語られてこなかった部分にこそ、脱炭素に向けた伸びしろがあると考えています。</p>",
+            "body": "<p>カポック原綿のカーボンフットプリントは、<br/>羽毛原料と比べて、<br/><em>約〇〇 LESS</em></p><p>中綿というこれまであまり語られてこなかった部分にこそ、脱炭素に向けた伸びしろがあると考えています。</p>",
             "note": "<p>※自社試算。カポック原綿○○〜○○、羽毛原料○○〜○○を対象に、原料1kgあたりのGHG排出量（CO₂換算）を比較。</p>",
             "image": "shopify://shop_images/k0-story-co2.jpg",
             "reverse": true,
@@ -364,14 +365,14 @@
           "type": "timeline_row",
           "settings": {
             "title": "応募期間",
-            "value": "10月6日（火）13:30 〜 10月30日（金）18:00まで"
+            "value": "10月6日（火）13:30 〜 10月16日（金）18:00まで"
           }
         },
         "timeline_notice": {
           "type": "timeline_row",
           "settings": {
             "title": "当選連絡",
-            "value": "11月4日（水）"
+            "value": "10月21日（水）より連絡開始いたいします"
           }
         },
         "timeline_deadline": {
@@ -440,20 +441,20 @@
       "settings": {
         "kicker": "BEFORE YOU APPLY",
         "heading": "応募の前に、必ずご確認ください",
-        "intro": "<p>K-0 PROTOTYPEには、一般的なダウン製品とは異なる特性があります。<br>ご応募前に、必ず以下の点をご確認ください。</p>",
+        "intro": "<p>K-0 PROTOTYPEには、一般的なダウン製品とは異なる特性があります。<br/>ご応募前に、必ず以下の点をご確認ください。</p>",
         "summary": "これらの特性をご理解いただいたうえで、抽選販売へのご応募をお願いいたします。",
         "password": "［例：K0-START］",
         "password_label": "応募フォームで入力する合言葉：",
         "password_note": "この項目を最後までお読みいただいた方への合言葉です。",
         "support_heading": "購入後のサポート — K-0 PROTOTYPEは、販売して終わりの製品ではありません",
         "timeline_heading": "抽選販売について",
-        "timeline_note": "<p>今回の5着は、単なる限定販売ではありません。<br>新素材「NEO DOWN KAPOK® BEYOND」の現在地や、まだ残る課題まで含めて<br>興味を持っていただける方にお届けしたいと考えています。<br>そのため、応募フォームでは「なぜK-0 PROTOTYPEを着てみたいと思ったか」を簡単にお聞かせください。</p>",
+        "timeline_note": "<p>今回の5着は、単なる限定販売ではありません。<br/>新素材「NEO DOWN KAPOK® BEYOND」の現在地や、まだ残る課題まで含めて<br/>興味を持っていただける方にお届けしたいと考えています。<br/>そのため、応募フォームでは「なぜK-0 PROTOTYPEを着てみたいと思ったか」を簡単にお聞かせください。</p>",
         "checklist_heading": "応募の前に、以下すべてにチェックをお願いします",
         "password_field_label": "合言葉",
         "password_placeholder": "上記でご案内した合言葉を入力",
         "cta_label": "応募フォームへ（Googleフォーム）",
         "cta_url": "",
-        "cta_sub": "応募期間は10月30日（金）18:00までです",
+        "cta_sub": "応募期間は10月16日（金）18:00までです",
         "cta_locked_text": "すべての項目にチェックし、合言葉を入力すると応募フォームへ進めます。",
         "cta_mismatch_text": "合言葉が一致しません。上の合言葉をご確認ください。",
         "cta_unavailable_text": "応募フォームは準備中です。"
