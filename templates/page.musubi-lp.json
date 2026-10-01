@@ -308,7 +308,7 @@
         "soldout_record_REBAFA": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年8月8日 先行予約",
+            "date": "2026年8月8日 一般販売",
             "status": "開催中！"
           }
         }
@@ -357,7 +357,7 @@
     "musubi_lp_cta_HwYcWT": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#72a4dc",
+        "bg_color": "#F4B573",
         "subtitle": "",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -538,7 +538,7 @@
     "musubi_lp_cta_8ETwxc": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#72a4dc",
+        "bg_color": "#F4B573",
         "subtitle": "",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -1170,7 +1170,7 @@
     "musubi_lp_cta_8Fft8y": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#72a4dc",
+        "bg_color": "#F4B573",
         "subtitle": "",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
@@ -1653,7 +1653,7 @@
     "musubi_lp_cta_Dk33GH": {
       "type": "musubi-lp-cta",
       "settings": {
-        "bg_color": "#72a4dc",
+        "bg_color": "#F4B573",
         "subtitle": "<p><strong>【先行予約開催中】</strong></p>",
         "subtitle_font_size": 18,
         "subtitle_font_weight": "400",
