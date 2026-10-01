@@ -15,6 +15,8 @@
         "ai_gen_block_c87846a_aTGjFM": {
           "type": "ai_gen_block_c87846a",
           "settings": {
+            "desktop_image": "shopify://shop_images/20260925_KAPOK_B1_Poster_OL-22_CMYK.jpg",
+            "mobile_image": "shopify://shop_images/20260904_Kapok_B0_board__OL-01.jpg",
             "desktop_width_percent": 100,
             "title": "",
             "title_font": "proza_libre_n4",
