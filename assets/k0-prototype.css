@@ -154,6 +154,46 @@ k0-apply-gate, k0-gallery { display: block; }
   cursor: pointer;
   transition: opacity .3s ease, box-shadow .3s ease;
 }
+/* サブ写真：5枚 × 2段 */
+.k0-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.k0-gallery__thumb {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.k0-gallery__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 選択中 */
+.k0-gallery__thumb[aria-current="true"] {
+  border-color: #111;
+}
+
+/* SP */
+@media screen and (max-width: 749px) {
+  .k0-gallery__thumbs {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+  }
+}
 .k0 .k0-gallery__thumb:hover { opacity: 1; }
 /* 選択中: 地の色で少し離したチャコールの枠（LP の .sig__thumb.is-current の形） */
 .k0 .k0-gallery__thumb[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 2px var(--k0-bg), 0 0 0 3.5px var(--k0-ink); }
