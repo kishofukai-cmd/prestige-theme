@@ -579,6 +579,15 @@
     "blocks_rm49VU": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_f779742_4YqTNQ": {
+          "type": "ai_gen_block_f779742",
+          "name": "スペース",
+          "settings": {
+            "desktop_height": 50,
+            "mobile_height": 30
+          },
+          "blocks": {}
+        },
         "ai_gen_block_e39c5fd_z8NbhQ": {
           "type": "ai_gen_block_e39c5fd",
           "settings": {
@@ -602,6 +611,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_f779742_4YqTNQ",
         "ai_gen_block_e39c5fd_z8NbhQ"
       ],
       "name": "Button",
