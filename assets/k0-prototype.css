@@ -154,10 +154,9 @@ k0-apply-gate, k0-gallery { display: block; }
   cursor: pointer;
   transition: opacity .3s ease, box-shadow .3s ease;
 }
-/* サブ写真：5枚 × 2段 */
 .k0-gallery__thumbs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
   margin-top: 12px;
@@ -181,15 +180,13 @@ k0-apply-gate, k0-gallery { display: block; }
   object-fit: cover;
 }
 
-/* 選択中 */
 .k0-gallery__thumb[aria-current="true"] {
   border-color: #111;
 }
 
-/* SP */
 @media screen and (max-width: 749px) {
   .k0-gallery__thumbs {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 6px;
     margin-top: 8px;
   }
