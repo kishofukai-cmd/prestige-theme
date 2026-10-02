@@ -51,7 +51,7 @@
   assign k0_image_sizes = '(max-width: 760px) calc(100vw - 40px), 560px'
 
   assign k0_thumb_count = 0
-  for i in (1..4)
+  for i in (1..10)
     assign k0_key = 'thumb_image_' | append: i
     if section.settings[k0_key] != blank
       assign k0_thumb_count = k0_thumb_count | plus: 1
@@ -95,7 +95,7 @@
               <div class="k0-gallery__thumb k0-gallery__thumb--empty" aria-hidden="true"></div>
             {%- endif -%}
 
-            {%- for i in (1..4) -%}
+            {%- for i in (1..10) -%}
               {%- assign k0_key = 'thumb_image_' | append: i -%}
               {%- assign k0_thumb = section.settings[k0_key] -%}
               {%- if k0_thumb != blank -%}
@@ -426,6 +426,36 @@
       "id": "thumb_image_4",
       "label": "サブ写真 4"
     },
+    {
+  "type": "image_picker",
+  "id": "thumb_image_5",
+  "label": "サブ写真 5"
+},
+{
+  "type": "image_picker",
+  "id": "thumb_image_6",
+  "label": "サブ写真 6"
+},
+{
+  "type": "image_picker",
+  "id": "thumb_image_7",
+  "label": "サブ写真 7"
+},
+{
+  "type": "image_picker",
+  "id": "thumb_image_8",
+  "label": "サブ写真 8"
+},
+{
+  "type": "image_picker",
+  "id": "thumb_image_9",
+  "label": "サブ写真 9"
+},
+{
+  "type": "image_picker",
+  "id": "thumb_image_10",
+  "label": "サブ写真 10"
+},
     {
       "type": "paragraph",
       "content": "サブ写真は主写真の下にサムネイルで並び、押すと主写真と入れ替わります。写真が未設定の枠は「写真を追加」と表示されます。"
