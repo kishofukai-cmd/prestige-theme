@@ -31,10 +31,86 @@
             "mobile_title_margin_bottom": 16
           },
           "blocks": {}
+        },
+        "ai_gen_block_e39c5fd_pWN9QL": {
+          "type": "ai_gen_block_e39c5fd",
+          "name": "Button",
+          "settings": {
+            "button_label": "「NEO DOWN KAPOK® BEYOND」とは",
+            "button_link": "https://kapok-japan.com/neodownkapok/beyond",
+            "open_new_tab": false,
+            "show_arrow": true,
+            "effect": "shine",
+            "desktop_width_percent": 100,
+            "background_color": "#1c1c1c",
+            "text_color": "#ffffff",
+            "border_color": "#1c1c1c",
+            "hover_color": "#04358d",
+            "hover_text_color": "#ffffff",
+            "border_radius": 0,
+            "text_transform": "normal",
+            "letter_spacing": 8,
+            "text_font": "sans_serif_n4"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5b54a15_7DP4DH": {
+          "type": "ai_gen_block_5b54a15",
+          "name": "スペーサー",
+          "settings": {
+            "desktop_height": 50,
+            "mobile_height": 30
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_eb214c8_QK7p3x": {
+          "type": "ai_gen_block_eb214c8",
+          "name": "Editorial layout",
+          "settings": {
+            "main_title": "",
+            "main_title_size": 32,
+            "header_alignment": "left",
+            "header_margin_bottom": 30,
+            "desktop_width_percent": 100,
+            "grid_gap": 16,
+            "mobile_grid_gap": 8,
+            "min_height": 400,
+            "mobile_min_height": 250,
+            "heading_font": "proza_libre_n4",
+            "title_transform": "none",
+            "title_letter_spacing": 0,
+            "title_size": 28,
+            "subtitle_size": 14,
+            "text_color": "#ffffff",
+            "overlay_opacity": 0.5,
+            "content_padding": 30,
+            "item_1_enabled": true,
+            "item_1_size": "large",
+            "item_1_image": "shopify://shop_images/20260925_KAPOK_B1_Poster_OL-14_CMYK.jpg",
+            "item_1_title": "",
+            "item_1_subtitle": "",
+            "item_1_link": "",
+            "item_2_enabled": true,
+            "item_2_size": "medium",
+            "item_2_image": "shopify://shop_images/k0-story-beyond.jpg",
+            "item_2_title": "",
+            "item_2_subtitle": "",
+            "item_2_link": "",
+            "item_3_enabled": true,
+            "item_3_size": "small",
+            "item_3_image": "shopify://shop_images/neodown-card-03-pod_5c888989-4221-4ccf-9eec-af97e94490cc.webp",
+            "item_3_title": "",
+            "item_3_subtitle": "",
+            "item_3_link": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_c87846a_aTGjFM"
+        "ai_gen_block_c87846a_aTGjFM",
+        "ai_gen_block_e39c5fd_pWN9QL",
+        "ai_gen_block_5b54a15_7DP4DH",
+        "ai_gen_block_eb214c8_QK7p3x"
       ],
       "settings": {}
     },
