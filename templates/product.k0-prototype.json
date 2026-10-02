@@ -575,6 +575,37 @@
         "cta_mismatch_text": "合言葉が一致しません。上の合言葉をご確認ください。",
         "cta_unavailable_text": "応募フォームは準備中です。"
       }
+    },
+    "blocks_rm49VU": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e39c5fd_z8NbhQ": {
+          "type": "ai_gen_block_e39c5fd",
+          "settings": {
+            "button_label": "「NEO DOWN KAPOK® BEYOND」とは",
+            "button_link": "https://kapok-japan.com/neodownkapok/beyond",
+            "open_new_tab": false,
+            "show_arrow": true,
+            "effect": "shine",
+            "desktop_width_percent": 100,
+            "background_color": "#1c1c1c",
+            "text_color": "#ffffff",
+            "border_color": "#1c1c1c",
+            "hover_color": "#04358d",
+            "hover_text_color": "#ffffff",
+            "border_radius": 0,
+            "text_transform": "normal",
+            "letter_spacing": 8,
+            "text_font": "sans_serif_n4"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e39c5fd_z8NbhQ"
+      ],
+      "name": "Button",
+      "settings": {}
     }
   },
   "order": [
@@ -582,6 +613,7 @@
     "17908443297870bac9",
     "main",
     "story",
-    "apply"
+    "apply",
+    "blocks_rm49VU"
   ]
 }
