@@ -41,6 +41,7 @@
         },
         "image_mgckaq": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/3_58c9e8cb-b324-4676-8bcc-3570079e5c53.png",
             "mobile_image": "shopify://shop_images/7_543897a6-0131-4898-a34f-75334fc99ace.png",
