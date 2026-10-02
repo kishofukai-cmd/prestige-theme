@@ -267,11 +267,11 @@
 
 
   <!-- タイトル -->
-  {% if block.settings.title != blank %}
-    <h2 class="ai-kv-block-{{ ai_gen_id }}__title">
-      {{ block.settings.title | escape }}
-    </h2>
-  {% endif %}
+{% if block.settings.title != blank %}
+  <h2 class="ai-kv-block-{{ ai_gen_id }}__title">
+    {{ block.settings.title | escape | newline_to_br }}
+  </h2>
+{% endif %}
 
 
   <!-- 本文 -->
