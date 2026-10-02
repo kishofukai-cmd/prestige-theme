@@ -104,13 +104,23 @@
             "item_3_link": ""
           },
           "blocks": {}
+        },
+        "ai_gen_block_5b54a15_Rt6pc6": {
+          "type": "ai_gen_block_5b54a15",
+          "name": "スペーサー",
+          "settings": {
+            "desktop_height": 50,
+            "mobile_height": 30
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_c87846a_aTGjFM",
         "ai_gen_block_e39c5fd_pWN9QL",
         "ai_gen_block_5b54a15_7DP4DH",
-        "ai_gen_block_eb214c8_QK7p3x"
+        "ai_gen_block_eb214c8_QK7p3x",
+        "ai_gen_block_5b54a15_Rt6pc6"
       ],
       "settings": {}
     },
