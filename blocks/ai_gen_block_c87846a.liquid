@@ -169,20 +169,22 @@
     }
 
     .ai-kv-block-{{ ai_gen_id }}__title {
-      margin-top: {{ block.settings.mobile_title_margin_top }}px;
-      margin-bottom: {{ block.settings.mobile_title_margin_bottom }}px;
-      padding-left: {{ block.settings.mobile_content_side_padding }}px;
-      padding-right: {{ block.settings.mobile_content_side_padding }}px;
-      font-size: {{ block.settings.mobile_title_size }}px;
-    }
+  margin-top: {{ block.settings.mobile_title_margin_top }}px;
+  margin-bottom: {{ block.settings.mobile_title_margin_bottom }}px;
+  padding-left: {{ block.settings.mobile_content_side_padding }}px;
+  padding-right: {{ block.settings.mobile_content_side_padding }}px;
+  font-size: {{ block.settings.mobile_title_size }}px;
+  text-align: {{ block.settings.mobile_title_alignment }};
+}
 
-    .ai-kv-block-{{ ai_gen_id }}__text {
-      margin-top: {{ block.settings.mobile_text_margin_top }}px;
-      margin-bottom: {{ block.settings.mobile_text_margin_bottom }}px;
-      padding-left: {{ block.settings.mobile_content_side_padding }}px;
-      padding-right: {{ block.settings.mobile_content_side_padding }}px;
-      font-size: {{ block.settings.mobile_text_size }}px;
-    }
+   .ai-kv-block-{{ ai_gen_id }}__text {
+  margin-top: {{ block.settings.mobile_text_margin_top }}px;
+  margin-bottom: {{ block.settings.mobile_text_margin_bottom }}px;
+  padding-left: {{ block.settings.mobile_content_side_padding }}px;
+  padding-right: {{ block.settings.mobile_content_side_padding }}px;
+  font-size: {{ block.settings.mobile_text_size }}px;
+  text-align: {{ block.settings.mobile_text_alignment }};
+}
   }
 
 
