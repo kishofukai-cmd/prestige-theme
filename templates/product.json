@@ -453,7 +453,7 @@
         "template--16816958701820__1b1122b1-fcf3-4517-92a0-e8dfbc1628a0-heading-1": {
           "type": "heading",
           "settings": {
-            "text": "<strong>最新の加工技術で実現したサステナブルな「エシカルダウンカポック」</strong>",
+            "text": "<strong>最新の加工技術で実現したサステナブルな「NEDO DOWN KAPOKⓇ」</strong>",
             "heading_tag": "h3"
           }
         },
@@ -471,7 +471,7 @@
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/2023-10-31_18.48.50.png",
+        "image": "shopify://shop_images/20250117_KAPOK_Logo_FIX-12_CMYK.jpg",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
@@ -486,7 +486,7 @@
         "separate_section_with_border": true,
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
-        "liquid": "<p>Write or copy/paste Liquid code</p>",
+        "liquid": "{%- assign seo = product.metafields.custom.seo_body.value -%}\n{%- if seo != blank -%}\n<div class=\"kk-seo-section\" style=\"max-width:860px;margin:0 auto;padding:8px 16px 24px;\">\n  <details class=\"kk-seo-accordion\" style=\"border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;\">\n    <summary style=\"cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:15px;font-weight:bold;letter-spacing:0.05em;\">\n      <span>この{{ product.type | default: 'アイテム' | replace: 'Coat', 'コート' | replace: 'Jacket', 'ジャケット' }}について詳しく（とは・選び方・気温の目安・よくある質問）</span>\n      <span class=\"kk-seo-icon\" aria-hidden=\"true\" style=\"font-size:20px;line-height:1;\">＋</span>\n    </summary>\n    <div class=\"kk-seo-body-wrap\" style=\"padding:0 0 16px;font-size:14px;line-height:1.9;\">\n      {{ seo }}\n    </div>\n  </details>\n</div>\n<style>\n  .kk-seo-accordion summary::-webkit-details-marker { display: none; }\n  .kk-seo-accordion[open] .kk-seo-icon { transform: rotate(45deg); }\n  .kk-seo-body-wrap h2 { font-size: 18px; margin: 24px 0 8px; }\n  .kk-seo-body-wrap h3 { font-size: 15px; margin: 18px 0 6px; }\n  .kk-seo-body-wrap table { font-size: 13px; }\n  @media (max-width: 480px) { .kk-seo-body-wrap table { display: block; overflow-x: auto; } }\n</style>\n{%- endif -%}\n{%- if product.metafields.custom.faq_jsonld != blank -%}\n<script type=\"application/ld+json\">{{ product.metafields.custom.faq_jsonld.value | json }}</script>\n{%- endif -%}",
         "text_alignment": "center"
       }
     },
