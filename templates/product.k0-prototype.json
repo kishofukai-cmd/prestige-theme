@@ -458,15 +458,6 @@
             "open": false
           }
         },
-        "support_checkup": {
-          "type": "support",
-          "settings": {
-            "title": "定期チェック",
-            "summary_note": "一定期間のご使用後に、製品の状態を確認します",
-            "body": "<p>一定期間ご使用いただいた後、製品の状態を確認します。中綿の状態や着用による変化を確認し、今後のケアや開発につなげます。</p>",
-            "open": false
-          }
-        },
         "support_update": {
           "type": "support",
           "settings": {
@@ -541,7 +532,6 @@
         "caution_longterm",
         "caution_care",
         "support_continuous",
-        "support_checkup",
         "support_update",
         "timeline_period",
         "timeline_notice",
