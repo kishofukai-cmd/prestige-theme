@@ -184,6 +184,7 @@
         },
         "ai_gen_block_6ad359c_BRGBhg": {
           "type": "ai_gen_block_6ad359c",
+          "disabled": true,
           "settings": {
             "title": "Ranking TOP5",
             "product_1": "musubi-en",
