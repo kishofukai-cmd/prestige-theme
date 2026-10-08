@@ -93,7 +93,7 @@
       "settings": {
         "bg_color": "#faf9f6",
         "kicker": "Farm to Fashion",
-        "heading": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>",
+        "heading": "<p>農園から、あなたの手元まで。<em>顔の見えるものづくり。</em></p>",
         "intro": "カポック農園、加工工場、縫製工場。間に業者を挟まず、顔の見える人たちと作っています。",
         "video_url": "https://youtu.be/-ZIZcHy7w8A",
         "video_title": "Farm to Fashion — KAPOK KNOT",
@@ -106,37 +106,52 @@
         "photo_3_url": "https://ucarecdn.com/5205c1a1-539c-4f07-83a0-1fd42fa7216d/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
         "photo_3_alt": "加工中の綿"
       },
+      "custom_css": [
+        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}",
+        ".a25-ftf__photos {grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;}"
+      ]
+    },
+    "process": {
+      "type": "airlight2026-process",
       "blocks": {
         "step_1": {
           "type": "step",
           "settings": {
-            "step_label": "01 FARM",
+            "number": "01",
+            "label": "FARM",
             "title": "インドネシアのカポック農園",
-            "text": "木の実を収穫します。木を伐採せず、動物も使いません。"
+            "text": "木の実を収穫します。木を伐採せず、動物も使いません。",
+            "illust": "farm"
           }
         },
         "step_2": {
           "type": "step",
           "settings": {
-            "step_label": "02 FACTORY",
+            "number": "02",
+            "label": "FACTORY",
             "title": "加工工場",
-            "text": "実から綿を取り出し、中わたのシートに加工します。"
+            "text": "実から綿を取り出し、中わたのシートに加工します。",
+            "illust": "factory"
           }
         },
         "step_3": {
           "type": "step",
           "settings": {
-            "step_label": "03 SEWING",
-            "title": "縫製工場",
-            "text": "自社で管理する工場で、1着ずつ縫い上げます。"
+            "number": "03",
+            "label": "SEWING",
+            "title": "縫製パートナー",
+            "text": "信頼する縫製パートナーの工場で、1着ずつ縫い上げます。",
+            "illust": "sewing"
           }
         },
         "step_4": {
           "type": "step",
           "settings": {
-            "step_label": "04 TEXTILE",
-            "title": "石川・金沢の織物工場",
-            "text": "2026年、表地は金沢の織物メーカーと組んで織りました。"
+            "number": "04",
+            "label": "TEXTILE",
+            "title": "KAJI GROUP（石川・金沢）",
+            "text": "2026年、表地は金沢の KAJI GROUP と組んで織りました。",
+            "illust": "textile"
           }
         }
       },
@@ -146,11 +161,17 @@
         "step_3",
         "step_4"
       ],
-      "custom_css": [
-        ".a25-ftf__steps {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;}",
-        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}",
-        ".a25-ftf__photos {grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;}"
-      ]
+      "settings": {
+        "section_id": "a26-process",
+        "kicker": "PROCESS",
+        "heading": "農園から、一着になるまで。",
+        "lead": "",
+        "bg_color": "#faf9f6",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "art_color": "#c29d66"
+      }
     },
     "layers": {
       "type": "airlight2026-layers",
@@ -265,7 +286,7 @@
         "accent_color": "#c29d66",
         "kicker": "2026 UPDATE",
         "heading": "こだわりの表地リニューアル",
-        "body": "<p>今回のアップデートの核は、表地です。石川・金沢の織物メーカーと組み、ブランドのために織った別注生地「Tailored Texture」を使いました。世界のダウンジャケットの生地も手掛けるメーカーです。</p><p>50デニールと40デニールの細い糸で織り、1平方メートルあたり74gという軽さ。撥水加工に加え、衣擦れの音を抑えるサイレントコーティングを施しています。</p><p>しなやかで、羽のように軽い。それでいて、アウターとして毎日ハードに着られる強さを保つ。軽ければ軽いほど良いわけではなく、そのバランスを突き詰めました。色も、ブランドのオリジナルカラーで染めています。</p>",
+        "body": "<p>今回のアップデートの核は、表地です。石川・金沢の KAJI GROUP（カジグループ）と組み、ブランドのために織った別注生地「Tailored Texture」を使いました。世界のダウンジャケットの生地も手掛けるメーカーです。</p><p>50デニールと40デニールの細い糸で織り、1平方メートルあたり74gという軽さ。撥水加工に加え、衣擦れの音を抑えるサイレントコーティングを施しています。</p><p>しなやかで、羽のように軽い。それでいて、アウターとして毎日ハードに着られる強さを保つ。軽ければ軽いほど良いわけではなく、そのバランスを突き詰めました。色も、ブランドのオリジナルカラーで染めています。</p>",
         "text_align_sp": "left",
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0308.jpg?v=1787638646&width=1200",
         "image_alt": "エアーライトジャケット ブラックの表地",
@@ -385,7 +406,7 @@
         "kicker": "創業者からのメッセージ",
         "founder_name": "カポックノット代表 深井喜翔",
         "founder_image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%2069.png",
-        "founder_body": "<p><strong>この生地は、皆さんの力で実現しました。</strong></p><p>大きなブランドからすれば、大したことではないかもしれません。でも、私たちのようなブランドは、これまで生地問屋に積まれた色の生地しか選べませんでした。</p><p>今回、金沢のメーカーに直接足を運び、ブランドのオリジナルカラーで生地を織り、量産することができました。問屋を通していたら、この価格では出せなかった。</p><p>これまでKAPOK KNOTを選び、応援してくださった皆さんの力で、たどり着いた一着です。</p>",
+        "founder_body": "<p><strong>この生地は、皆さんの力で実現しました。</strong></p><p>大きなブランドからすれば、大したことではないかもしれません。でも、私たちのようなブランドは、これまで生地問屋に積まれた色の生地しか選べませんでした。</p><p>今回、KAJI GROUP に直接足を運び、ブランドのオリジナルカラーで生地を織り、量産することができました。問屋を通していたら、この価格では出せなかった。</p><p>これまでKAPOK KNOTを選び、応援してくださった皆さんの力で、たどり着いた一着です。</p>",
         "values_heading": "カポックノットの価値観"
       },
       "custom_css": [
@@ -694,7 +715,7 @@
           "type": "faq_item",
           "settings": {
             "question": "前作と何が変わりましたか？",
-            "answer": "<p>表地は金沢の織物メーカーの別注生地（ナイロン100%・74g/㎡）に変え、よりしなやかで軽くなりました。ユニセックス1型・3色になり、フードは深く、付属も見直して軽量化しています。</p>"
+            "answer": "<p>表地はKAJI GROUP（金沢）の別注生地（ナイロン100%・74g/㎡）に変え、よりしなやかで軽くなりました。ユニセックス1型・3色になり、フードは深く、付属も見直して軽量化しています。</p>"
           }
         }
       },
@@ -733,6 +754,7 @@
     "features",
     "demos",
     "farm-to-fashion",
+    "process",
     "layers",
     "products",
     "shell",
