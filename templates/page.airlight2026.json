@@ -336,7 +336,10 @@
         "cta_men_url": "/products/airlight-jacket-unisex",
         "cta_women_text": "",
         "price_note": "¥39,800（税込）"
-      }
+      },
+      "custom_css": [
+        ".a25-midcta__cta {word-break: keep-all; line-height: 1.5; text-align: center;}"
+      ]
     },
     "styling": {
       "type": "airlight2026-shell",
