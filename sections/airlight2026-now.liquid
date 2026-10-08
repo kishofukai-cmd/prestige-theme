@@ -1,0 +1,170 @@
+{% comment %}
+  AirLight 2026 — 今買う理由の帯
+  ヒーロー直下の細い帯。アイコン＋短文のチップを横に並べる（スマホは横スクロール）。
+  ブロック = チップ1つ（アイコン・文言・リンク先）。リンク先があればチップ全体がリンクになる。
+  文言の中の <small>…</small> は小さい字で表示する（例: 在庫ありに限る）。
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+
+<style>
+  #{{ sid }}.a26-now {
+    background: {{ section.settings.bg_color | default: '#f5f1e8' }};
+    color: {{ section.settings.text_color | default: '#2b2a28' }};
+    padding: {{ section.settings.padding_pc | default: 16 }}px 0;
+  }
+  #{{ sid }} .a26-now__track {
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | at_least: 1 }}, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+    list-style: none;
+  }
+  #{{ sid }} .a26-now__item { margin: 0; display: flex; }
+  #{{ sid }} .a26-now__chip {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: {{ section.settings.chip_bg | default: '#ffffff' }};
+    border: 1px solid {{ section.settings.chip_border | default: '#e8e0cf' }};
+    border-radius: 12px;
+    padding: 11px 14px;
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  #{{ sid }} a.a26-now__chip:hover {
+    border-color: {{ section.settings.icon_color | default: '#c29d66' }};
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+  #{{ sid }} .a26-now__icon {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    color: {{ section.settings.icon_color | default: '#c29d66' }};
+  }
+  #{{ sid }} .a26-now__icon svg { width: 100%; height: 100%; display: block; }
+  #{{ sid }} .a26-now__text { flex: 1 1 auto; }
+  #{{ sid }} .a26-now__text small { font-size: 11px; color: {{ section.settings.sub_color | default: '#6b655d' }}; white-space: nowrap; }
+  #{{ sid }} .a26-now__arrow {
+    flex: 0 0 auto;
+    font-size: 14px;
+    color: {{ section.settings.icon_color | default: '#c29d66' }};
+  }
+
+  @media (max-width: 900px) {
+    #{{ sid }}.a26-now { padding: {{ section.settings.padding_sp | default: 12 }}px 0; }
+    #{{ sid }} .a26-now__track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 16px;
+      gap: 8px;
+    }
+    #{{ sid }} .a26-now__track::-webkit-scrollbar { display: none; }
+    #{{ sid }} .a26-now__item { flex: 0 0 auto; width: 232px; scroll-snap-align: start; }
+    #{{ sid }} .a26-now__track::after { content: ''; flex: 0 0 8px; }
+    #{{ sid }} .a26-now__chip { font-size: 12.5px; padding: 10px 12px; }
+  }
+</style>
+
+{%- if section.blocks.size > 0 -%}
+<section class="a26-now" id="{{ sid }}" aria-label="{{ section.settings.aria_label | escape }}">
+  <ul class="a26-now__track" role="list">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign url = block.settings.url
+        assign external = false
+        if url contains 'http'
+          assign external = true
+        endif
+      -%}
+      <li class="a26-now__item" {{ block.shopify_attributes }}>
+        {%- if url != blank -%}
+          <a class="a26-now__chip" href="{{ url }}"{% if external %} target="_blank" rel="noopener"{% endif %}>
+        {%- else -%}
+          <div class="a26-now__chip">
+        {%- endif -%}
+          {%- case block.settings.icon -%}
+            {%- when 'stock' -%}
+              <span class="a26-now__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"/><path d="M3.5 7.5 12 12l8.5-4.5"/><path d="M12 12v9"/></svg></span>
+            {%- when 'season' -%}
+              <span class="a26-now__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M8 14h3"/></svg></span>
+            {%- when 'coupon' -%}
+              <span class="a26-now__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5A1.5 1.5 0 0 1 5 6h14a1.5 1.5 0 0 1 1.5 1.5V10a2 2 0 0 0 0 4v2.5A1.5 1.5 0 0 1 19 18H5a1.5 1.5 0 0 1-1.5-1.5V14a2 2 0 0 0 0-4z"/><path d="M14.5 6v12" stroke-dasharray="1.5 2"/></svg></span>
+            {%- when 'exchange' -%}
+              <span class="a26-now__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13"/><path d="M14 4.5 17.5 8 14 11.5"/><path d="M20 16H7"/><path d="M10 12.5 6.5 16l3.5 3.5"/></svg></span>
+          {%- endcase -%}
+          <span class="a26-now__text">{{ block.settings.text }}</span>
+          {%- if url != blank -%}<span class="a26-now__arrow" aria-hidden="true">›</span>{%- endif -%}
+        {%- if url != blank -%}
+          </a>
+        {%- else -%}
+          </div>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "A2026 今買う理由の帯",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "セクションID", "default": "a26-now" },
+    { "type": "text", "id": "aria_label", "label": "読み上げ用の名前", "default": "今買う理由" },
+    { "type": "color", "id": "bg_color", "label": "背景", "default": "#f5f1e8" },
+    { "type": "color", "id": "chip_bg", "label": "チップの背景", "default": "#ffffff" },
+    { "type": "color", "id": "chip_border", "label": "チップの枠線", "default": "#e8e0cf" },
+    { "type": "color", "id": "text_color", "label": "文字", "default": "#2b2a28" },
+    { "type": "color", "id": "sub_color", "label": "小さい字", "default": "#6b655d" },
+    { "type": "color", "id": "icon_color", "label": "アイコン", "default": "#c29d66" },
+    { "type": "range", "id": "padding_pc", "label": "上下の余白（PC）", "min": 8, "max": 40, "step": 2, "default": 16, "unit": "px" },
+    { "type": "range", "id": "padding_sp", "label": "上下の余白（スマホ）", "min": 6, "max": 32, "step": 2, "default": 12, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "chip",
+      "name": "チップ",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "アイコン",
+          "options": [
+            { "value": "stock", "label": "在庫（箱）" },
+            { "value": "season", "label": "季節（カレンダー）" },
+            { "value": "coupon", "label": "クーポン（チケット）" },
+            { "value": "exchange", "label": "交換（矢印）" },
+            { "value": "none", "label": "なし" }
+          ],
+          "default": "stock"
+        },
+        { "type": "text", "id": "text", "label": "文言", "info": "<small>…</small> で囲んだ部分は小さい字になります", "default": "色・サイズによっては、残りわずか。" },
+        { "type": "url", "id": "url", "label": "リンク先（任意）" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2026 今買う理由の帯",
+      "blocks": [
+        { "type": "chip", "settings": { "icon": "stock" } },
+        { "type": "chip", "settings": { "icon": "season", "text": "10月から4月まで。一番長く着られるのは、今から。" } },
+        { "type": "chip", "settings": { "icon": "coupon", "text": "LINE登録で、送料無料クーポン。" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
