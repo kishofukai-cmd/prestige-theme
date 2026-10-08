@@ -1,12 +1,12 @@
 {
   "sections": {
     "hero": {
-      "type": "airlight2025-hero",
+      "type": "airlight2026-hero",
       "settings": {
         "section_id": "a26-hero",
         "bg_color": "#ffffff",
-        "kv_use_builder": false,
         "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color.jpg?v=1791447909&width=2000",
+        "kv_image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-sp.jpg?v=1791449267&width=1200",
         "kv_image_alt": "エアーライトジャケット -Unisex-（ブラック・グレージュ・カーキ）· KAPOK KNOT",
         "eyebrow": "KAPOK KNOT — AirLight Jacket 2026",
         "eyebrow_color": "#c29d66",
@@ -29,7 +29,7 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-icon-light-500g.png?v=1791448269&width=600",
             "title": "約500gの軽さ",
-            "text": "<p>一般的なダウンジャケットの約半分。着ていることを忘れる軽さです。</p>"
+            "text": "<p>着ていることを忘れる軽さ。</p>"
           }
         },
         "feature_2": {
@@ -79,9 +79,9 @@
       ],
       "settings": {
         "bg_color": "#ffffff",
-        "kicker": "Functional Proof",
-        "heading": "<p>数字が証明する、<em>エアーライトの実力。</em></p>",
-        "intro": "実際の使用環境で検証した、確かな機能性能をご覧ください。"
+        "kicker": "THERMAL PROOF",
+        "heading": "<p>サーモカメラが証明する、<em>ダウンと変わらない暖かさ。</em></p>",
+        "intro": "3℃の環境で、着用1分後の表面温度を比べました。"
       }
     },
     "layers": {
@@ -141,8 +141,8 @@
         "body_color": "#4a4540",
         "accent_color": "#c29d66",
         "badge_bg": "#1a1a1a",
-        "kicker": "",
-        "heading": "AIR LIGHT 4層構造",
+        "kicker": "STRUCTURE",
+        "heading": "",
         "lead": "軽さと暖かさ、快適さを両立するために、素材の特性を活かした4層構造で仕上げました。",
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-layers-4.webp?v=1791447909",
         "image_alt": "AIR LIGHT 4層構造（表地・コーティング層・カポック中わた・裏地）",
@@ -270,7 +270,7 @@
         "body_color": "#4a4540",
         "accent_color": "#c29d66",
         "kicker": "2026 UPDATE",
-        "heading": "ディテール",
+        "heading": "2026年、細部も変えました。",
         "body": "",
         "text_align_sp": "center",
         "image_url": "",
@@ -599,7 +599,7 @@
         "section_id": "a26-proof",
         "bg_color": "#faf9f6",
         "makuake_heading": "<p>Makuakeで累計<em>5,000万円以上</em>の応援をいただきました</p>",
-        "makuake_body": "信頼のMakuake実績！KAPOK KNOTはデビュー以来、4年間でなんと、2,000人以上の方から、累計5,000万円以上の応援をいただいております！",
+        "makuake_body": "KAPOK KNOTはデビュー以来、2,000人以上の方から、Makuakeで累計5,000万円以上の応援をいただいています。",
         "media_heading": "多くのメディアでも取り上げていただきました",
         "creators_heading": "ブランドに共感いただいているクリエイターのみなさま"
       }
