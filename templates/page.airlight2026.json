@@ -8,7 +8,7 @@
         "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-no1s.jpg?v=1791449775&width=2000",
         "kv_image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-sp-no1s.jpg?v=1791449775&width=1200",
         "kv_image_alt": "エアーライトジャケット -Unisex-（ブラック・グレージュ・カーキ）· KAPOK KNOT",
-        "eyebrow": "KAPOK KNOT 人気No.1アウター、2026年アップデート",
+        "eyebrow": "人気No.1 アウター<br>2026年アップデート",
         "eyebrow_color": "#c29d66",
         "heading": "<p>空も飛べそうな、<em>軽さへ。</em></p>",
         "heading_color": "#1a1a1a",
@@ -20,59 +20,6 @@
         "cta_text_color": "#ffffff",
         "cta_note": "¥39,800（税込）・ユニセックス 3色",
         "footnote": "※「選ばれてNo.1」は、エアーライトジャケットが KAPOK KNOT のアウターで人気No.1のシリーズであることを示します（自社EC・前作の実績）。"
-      }
-    },
-    "trust": {
-      "type": "airlight2026-trust",
-      "blocks": {
-        "badge_1": {
-          "type": "badge",
-          "settings": {
-            "heading": "Makuake 応援購入 1,500万円",
-            "desc": "前作エアーライトジャケットの応援購入総額",
-            "note": ""
-          }
-        },
-        "badge_2": {
-          "type": "badge",
-          "settings": {
-            "heading": "Makuake Award 2022<br><em>Business Impact賞</em> 受賞",
-            "desc": "Makuake 終了後も事業を広げた実行者に贈られる特別賞（株式会社マクアケ・2022年11月）",
-            "note": ""
-          }
-        },
-        "badge_3": {
-          "type": "badge",
-          "settings": {
-            "heading": "選ばれて No.1",
-            "desc": "KAPOK KNOT のアウターで人気No.1（自社EC・前作実績）",
-            "note": ""
-          }
-        },
-        "badge_4": {
-          "type": "badge",
-          "settings": {
-            "heading": "累計 5,000万円以上",
-            "desc": "Makuake でブランド累計 2,000人以上の応援",
-            "note": ""
-          }
-        }
-      },
-      "block_order": [
-        "badge_1",
-        "badge_2",
-        "badge_3",
-        "badge_4"
-      ],
-      "settings": {
-        "section_id": "a26-trust",
-        "bg_color": "#ffffff",
-        "text_color": "#1a1a1a",
-        "body_color": "#5a5550",
-        "accent_color": "#c29d66",
-        "border_color": "#e6e0d6",
-        "layout_sp": "grid",
-        "footnote": ""
       }
     },
     "features": {
@@ -317,7 +264,7 @@
         "body_color": "#4a4540",
         "accent_color": "#c29d66",
         "kicker": "2026 UPDATE",
-        "heading": "表地を、作り直した。",
+        "heading": "こだわりの表地リニューアル",
         "body": "<p>今回のアップデートの核は、表地です。石川・金沢の織物メーカーと組み、ブランドのために織った別注生地「Tailored Texture」を使いました。世界のダウンジャケットの生地も手掛けるメーカーです。</p><p>50デニールと40デニールの細い糸で織り、1平方メートルあたり74gという軽さ。撥水加工に加え、衣擦れの音を抑えるサイレントコーティングを施しています。</p><p>しなやかで、羽のように軽い。それでいて、アウターとして毎日ハードに着られる強さを保つ。軽ければ軽いほど良いわけではなく、そのバランスを突き詰めました。色も、ブランドのオリジナルカラーで染めています。</p>",
         "text_align_sp": "left",
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0308.jpg?v=1787638646&width=1200",
@@ -572,7 +519,7 @@
         "accent_color": "#c29d66",
         "kicker": "STYLING",
         "heading": "着用イメージ",
-        "body": "",
+        "body": "<p>model: men 175cm / Lサイズ　women 160cm / Lサイズ</p>",
         "text_align_sp": "center",
         "image_url": "",
         "image_alt": "",
@@ -783,7 +730,6 @@
   },
   "order": [
     "hero",
-    "trust",
     "features",
     "demos",
     "farm-to-fashion",
