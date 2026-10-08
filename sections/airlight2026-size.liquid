@@ -63,20 +63,27 @@
   }
   #{{ sid }} .a26-size__table th,
   #{{ sid }} .a26-size__table td {
+    border-width: 0;
+    border-style: solid;
+    border-color: {{ section.settings.border_color | default: '#eee7dd' }};
+    opacity: 1;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    text-transform: none;
     padding: 14px 6px;
     text-align: center;
     font-size: 15px;
     line-height: 1.4;
     color: {{ section.settings.heading_color | default: '#1a1a1a' }};
-    border-bottom: 1px solid {{ section.settings.border_color | default: '#eee7dd' }};
   }
+  #{{ sid }} .a26-size__table tbody th,
+  #{{ sid }} .a26-size__table tbody td { border-bottom-width: 1px; }
   #{{ sid }} .a26-size__table thead th {
     font-family: 'Outfit', 'Noto Sans JP', sans-serif;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: {{ section.settings.label_color | default: '#8b7355' }};
     background: {{ section.settings.label_bg_color | default: '#f4eee6' }};
-    border-bottom: 0;
   }
   #{{ sid }} .a26-size__table thead th:first-child { border-radius: 12px 0 0 12px; }
   #{{ sid }} .a26-size__table thead th:last-child { border-radius: 0 12px 12px 0; }
@@ -87,7 +94,7 @@
     width: 22%;
   }
   #{{ sid }} .a26-size__table tbody tr:last-child th,
-  #{{ sid }} .a26-size__table tbody tr:last-child td { border-bottom: 0; }
+  #{{ sid }} .a26-size__table tbody tr:last-child td { border-bottom-width: 0; }
   #{{ sid }} .a26-size__note {
     margin: 16px 0 0;
     text-align: center;

@@ -763,6 +763,7 @@
         "padding_sp": 60
       },
       "custom_css": [
+        ".faq {display: block;}",
         ".faq__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
         ".faq__answer p + p {margin-top: 0.6em;}"
       ]
@@ -790,7 +791,7 @@
           "type": "chip",
           "settings": {
             "icon": "stock",
-            "text": "色・サイズによっては、残りわずか。",
+            "text": "色・サイズによっては、<br>残りわずか。",
             "url": ""
           }
         },
@@ -798,7 +799,7 @@
           "type": "chip",
           "settings": {
             "icon": "season",
-            "text": "10月から4月まで。一番長く着られるのは、今から。",
+            "text": "10月から4月まで。<br>一番長く着られるのは、今から。",
             "url": ""
           }
         },
@@ -806,7 +807,7 @@
           "type": "chip",
           "settings": {
             "icon": "coupon",
-            "text": "LINE登録で、送料無料クーポン。",
+            "text": "LINE登録で、<br>送料無料クーポン。",
             "url": "https://page.line.me/258kaxeg"
           }
         },
@@ -814,7 +815,7 @@
           "type": "chip",
           "settings": {
             "icon": "exchange",
-            "text": "2週間以内なら、サイズ交換できます。<small>（在庫ありに限る）</small>",
+            "text": "2週間以内なら、サイズ交換できます。<br><small>（在庫ありに限る）</small>",
             "url": ""
           }
         }
@@ -1061,6 +1062,7 @@
       },
       "custom_css": [
         ".why__cards {margin-bottom: 0;}",
+        ".why__card-img img {position: absolute; inset: 0;}",
         ".why__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
         ".why__card:nth-child(1) .why__card-img img {object-position: center 28%;}",
         ".why__card:nth-child(3) .why__card-img img {object-position: center 20%;}"
@@ -1255,7 +1257,7 @@
         "care_1": {
           "type": "care_point",
           "settings": {
-            "icon": "🫧",
+            "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#b08a52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 10h18l-1.6 8.2a2 2 0 0 1-2 1.8H6.6a2 2 0 0 1-2-1.8z\"/><path d=\"M7 14c1 .8 2 .8 3 0s2-.8 3 0 2 .8 3 0\"/><path d=\"M12 3.5c-1.2 1.6-2 2.6-2 3.6a2 2 0 0 0 4 0c0-1-.8-2-2-3.6z\"/></svg>",
             "title": "手洗いできる",
             "description": "洗濯ネットに入れて、手洗いモードで。柔軟剤は避け、アイロンは低温で当て布を。"
           }
@@ -1263,7 +1265,7 @@
         "care_2": {
           "type": "care_point",
           "settings": {
-            "icon": "✂️",
+            "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#b08a52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"7\" r=\"2.5\"/><circle cx=\"6\" cy=\"17\" r=\"2.5\"/><path d=\"M8.2 8.3 20 18\"/><path d=\"M8.2 15.7 20 6\"/></svg>",
             "title": "綿が出たら、切る",
             "description": "素材の特性上、中わたが表に出ることがあります。引っ張らず、ハサミで切ってください。"
           }
@@ -1307,7 +1309,12 @@
         "padding_sp": 60
       },
       "custom_css": [
-        ".care__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}"
+        ".care__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".care__content {align-content: center;}",
+        ".care__point {align-content: start; align-items: center;}",
+        ".care__point h3 {margin: 0;}",
+        ".care__img {position: relative;}",
+        ".care__img img {position: absolute; inset: 0; object-position: center 40%;}"
       ]
     }
   },
