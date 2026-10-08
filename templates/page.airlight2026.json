@@ -131,6 +131,9 @@
       "block_order": [
         "demo_1"
       ],
+      "custom_css": [
+        ".a25-demos__heading {word-break: keep-all; overflow-wrap: anywhere;}"
+      ],
       "settings": {
         "bg_color": "#ffffff",
         "kicker": "THERMAL PROOF",
@@ -197,7 +200,8 @@
         "step_4"
       ],
       "custom_css": [
-        ".a25-ftf__steps {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;}"
+        ".a25-ftf__steps {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;}",
+        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}"
       ]
     },
     "layers": {
