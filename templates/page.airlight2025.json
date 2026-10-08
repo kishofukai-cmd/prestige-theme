@@ -14,7 +14,7 @@
       "settings": {
         "section_id": "a25-hero",
         "bg_color": "#ffffff",
-        "kv_image_url": "https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+        "kv_image_url": "https://ucarecdn.com/63c5640b-16df-4cea-8ceb-ea770b3a0e3c/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
         "kv_image_alt": "エアーライトジャケット · KAPOK KNOT",
         "eyebrow": "KAPOK KNOT — AirLight Jacket 2026",
         "eyebrow_color": "#c29d66",
@@ -23,10 +23,10 @@
         "sub_text": "植物由来のカポック素材で実現した、約500gの冬アウター。軽く、暖かく、動物も地球も傷つけない。",
         "sub_color": "#5a5550",
         "cta_text": "商品を見る →",
-        "cta_url": "",
+        "cta_url": "#a25-products",
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
-        "cta_note": "¥39,800〜"
+        "cta_note": "在庫限り20%OFF ¥31,840〜"
       }
     },
     "features": {
@@ -35,7 +35,7 @@
         "feature_1": {
           "type": "feature_card",
           "settings": {
-            "image_url": "https://ucarecdn.com/76a865d0-ddaa-4028-b4a7-daeac90ec724/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "image_url": "https://ucarecdn.com/76a865d0-ddaa-4028-b4a7-daeac90ec724/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
             "title": "ダウンの暖かさを保ち、軽いカポック素材！",
             "text": "<p>カポックは特殊な構造によって湿気を吸い、熱を放出する「吸湿発熱」ダウンに匹敵するため、木に実るダウンとも呼ばれています。</p>"
           }
@@ -43,7 +43,7 @@
         "feature_2": {
           "type": "feature_card",
           "settings": {
-            "image_url": "https://ucarecdn.com/f2dea617-10ee-4af0-9176-c2c33d49261e/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "image_url": "https://ucarecdn.com/f2dea617-10ee-4af0-9176-c2c33d49261e/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
             "title": "吸放湿性で室内に入ってもじめっとしない！",
             "text": "<p>軽さの秘密でもある繊維の空洞。 寒い時には湿気を吸い、暖かく発熱します。暑い時には湿気を放出し、涼しく快適に。カポックの空気の層が、今までに無かった「薄くて・軽くて・暖かい」を実現します。</p>"
           }
@@ -51,7 +51,7 @@
         "feature_3": {
           "type": "feature_card",
           "settings": {
-            "image_url": "https://ucarecdn.com/a75b5489-b6fa-41a3-a988-68ef8a8488aa/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "image_url": "https://ucarecdn.com/a75b5489-b6fa-41a3-a988-68ef8a8488aa/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
             "title": "アウターが手洗い可能に！",
             "text": "<p>シートとして中わたをアウターに入れることでご自宅での手洗いが可能になり、清潔に、長く愛用できます。</p>"
           }
@@ -76,19 +76,19 @@
           "settings": {
             "product_name": "エアーライトジャケット-Men-",
             "subtitle": "5Color: Navy / Beige / Olive / Black / Greige",
-            "price": "¥39,800",
+            "price": "¥31,840（在庫限り20%OFF・通常¥39,800）",
             "description": "エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触り。",
             "cta_text": "購入ページへ",
-            "cta_url": "",
-            "image_1_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/3000x3000/-/quality/lighter/25.png",
+            "cta_url": "/products/men-hooded-jacket",
+            "image_1_url": "https://ucarecdn.com/07e530d0-b408-4caa-80f6-d6248d549785/-/format/auto/-/preview/1200x1200/-/quality/lighter/25.png",
             "color_1": "Navy",
-            "image_2_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/3000x3000/-/quality/lighter/17.png",
+            "image_2_url": "https://ucarecdn.com/bf7c9646-721b-4419-81bd-d87583e83565/-/format/auto/-/preview/1200x1200/-/quality/lighter/17.png",
             "color_2": "Beige",
-            "image_3_url": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
+            "image_3_url": "https://ucarecdn.com/4e330423-94d1-4675-b91b-c8e14a66eb42/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT0292%20_1_.jpg",
             "color_3": "Olive",
-            "image_4_url": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
+            "image_4_url": "https://ucarecdn.com/910d7d51-4f10-49e3-a96d-d6fe28d9dae7/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT3809.jpg",
             "color_4": "Black",
-            "image_5_url": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg",
+            "image_5_url": "https://ucarecdn.com/db7f0c44-29d2-4860-9608-fc1a12a96e40/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT2146-2.jpg",
             "color_5": "Greige"
           }
         },
@@ -97,48 +97,26 @@
           "settings": {
             "product_name": "エアーライトジャケット-Women-",
             "subtitle": "5Color: Navy / Beige / Olive / Black / Greige",
-            "price": "¥39,800",
+            "price": "¥31,840（在庫限り20%OFF・通常¥39,800）",
             "description": "エアーライトジャケットは、まるで空気をまとっているように軽く、暖かい空気の層があなたを包み込みます。カジュアルでリラックスな着心地で、冬の定番になること間違いなしです。ポケット裏とフード裏が起毛素材を使用しているため、滑らかで心地よい肌触り。また Women はウエストにスピンドルが付いていますので、ウエストを調節して絞ることができます。",
             "cta_text": "購入ページへ",
-            "cta_url": "",
-            "image_1_url": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/3000x3000/-/quality/lighter/8.png",
+            "cta_url": "/products/women-hooded-jacket",
+            "image_1_url": "https://ucarecdn.com/16fc8795-7ccf-4e2a-8ad8-4a33289a537c/-/format/auto/-/preview/1200x1200/-/quality/lighter/8.png",
             "color_1": "Navy",
-            "image_2_url": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/3000x3000/-/quality/lighter/1%20_2_.png",
+            "image_2_url": "https://ucarecdn.com/3a14c2ec-dcb0-46c5-b3e1-48ac3119aada/-/format/auto/-/preview/1200x1200/-/quality/lighter/1%20_2_.png",
             "color_2": "Beige",
-            "image_3_url": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
+            "image_3_url": "https://ucarecdn.com/9b751abb-be60-48b0-a657-9ae26b9a1efb/-/format/auto/-/preview/1200x1200/-/quality/lighter/240802_KAPOKKNOT3154.jpg",
             "color_3": "Olive",
-            "image_4_url": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/3000x3000/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg",
+            "image_4_url": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/1200x1200/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg",
             "color_4": "Black",
-            "image_5_url": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/3000x3000/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
+            "image_5_url": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
             "color_5": "Greige"
-          }
-        },
-        "product_card_3": {
-          "type": "product_card",
-          "settings": {
-            "product_name": "エアーライトペプラムジャケット-Women-",
-            "subtitle": "4Color: White / Ice Blue / Black / khaki",
-            "price": "¥49,800",
-            "description": "エアーライトペプラムジャケットは Women シリーズならではの特長として、ウエストにはスピンドルを搭載。ウエストラインをキュッと絞って女性らしいシルエットをつくることも、ゆったり着ることも自由自在です。",
-            "cta_text": "購入ページへ",
-            "cta_url": "",
-            "image_1_url": "https://ucarecdn.com/628d9f24-f30d-40b8-99da-430d9d373ebd/-/format/auto/-/preview/3000x3000/-/quality/lighter/142.png",
-            "color_1": "White",
-            "image_2_url": "https://ucarecdn.com/1cf3aa70-99c1-427e-8307-dafd6fea37ae/-/format/auto/-/preview/3000x3000/-/quality/lighter/307.png",
-            "color_2": "Ice Blue",
-            "image_3_url": "https://ucarecdn.com/ba545d1e-6b48-4e3f-a040-9a639486eaf8/-/format/auto/-/preview/3000x3000/-/quality/lighter/527.png",
-            "color_3": "Black",
-            "image_4_url": "https://ucarecdn.com/68c263f1-9a90-48ec-95a6-38c62aa49e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/517.png",
-            "color_4": "khaki",
-            "image_5_url": "",
-            "color_5": ""
           }
         }
       },
       "block_order": [
         "product_card_1",
-        "product_card_2",
-        "product_card_3"
+        "product_card_2"
       ],
       "settings": {
         "section_id": "a25-products",
@@ -164,7 +142,7 @@
           "settings": {
             "title": "暖かく、温もりを感じる木になるダウン「カポック」",
             "body": "<p>カポックは植物由来のため、化学繊維のポリエステルとは違い「呼吸」をします。</p><p>湿気を吸って暖かくなる吸湿発熱という機能を持っており、軽さと暖かさの両立を実現しています。カポックはこれらの特徴から、「木に実るダウン」や「ホワイトシルクコットン」とも呼ばれています。</p><p>このカポックをリサイクルのポリエステルと混ぜてシート状にしたものが、エシカルダウンカポック™です。</p>",
-            "image_url": "https://ucarecdn.com/a21ea9da-ddb5-4657-ab56-b163a7666035/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "image_url": "https://ucarecdn.com/a21ea9da-ddb5-4657-ab56-b163a7666035/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
             "image_caption": "",
             "image_position": "full"
           }
@@ -174,7 +152,7 @@
           "settings": {
             "title": "動物にも優しいアニマルフリー",
             "body": "<p>従来のダウンは水鳥の羽が使用されていました。一説には、１つのダウンジャケットには約30羽分の羽毛が使われているといわれています。</p><p>羽毛の採取方法にもいくつかありますが、ライブハンドピッキング法は質の良い羽毛を採取できる方法としても知られています。実際、採取方法を表明していない企業も存在しています。カポックノットの商品で使用するカポックは木の実由来ですから、その事実に心を痛める必要はありません。</p>",
-            "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20139.png",
+            "image_url": "https://ucarecdn.com/7195ca1b-4376-4352-a81c-f6aad630623d/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%20139.png",
             "image_caption": "▲カポックの木の実",
             "image_position": "full"
           }
@@ -201,7 +179,7 @@
           "settings": {
             "tag": "THERMAL TEST",
             "title": "ダウンと変わらない暖かさ",
-            "gif_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/3000x3000/-/quality/lighter/kapok_comparison_image.png",
+            "gif_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/1200x1200/-/quality/lighter/kapok_comparison_image.png",
             "caption": "※ 3度環境の中、着用1分後の状態",
             "body": "サーモカメラで撮影した3者比較テスト。同じ重さで素材がポリエステルのダウン・コートと比較しても、カポック中綿シートを使った商品は変わらない暖かさを保っています。※ この検証は当社のカポック中綿シートを使用した別商品による測定結果です。"
           }
@@ -250,26 +228,15 @@
         "heading": "<p>軽く、暖かく、<em>後悔しない。</em></p>",
         "sub": "植物由来のカポック素材。着心地を、もう一段上へ。",
         "cta_men_text": "エアーライトジャケット-Men- 購入ページへ",
-        "cta_men_url": "",
+        "cta_men_url": "/products/men-hooded-jacket",
         "cta_women_text": "エアーライトジャケット-Women- 購入ページへ",
-        "cta_women_url": "",
-        "price_note": "¥39,800"
+        "cta_women_url": "/products/women-hooded-jacket",
+        "price_note": "在庫限り20%OFF ¥31,840"
       }
     },
     "crosssell": {
       "type": "airlight2025-crosssell",
       "blocks": {
-        "product_tile_1": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "エアーライトペプラムジャケット - Women",
-            "colors": "Ice Blue / White / Black",
-            "price": "¥49,800",
-            "image_url": "https://ucarecdn.com/d689ce11-3252-4479-8a75-37a78f70a272/-/format/auto/-/preview/3000x3000/-/quality/lighter/56A6362F-60EA-4006-93B3-0B2F82B282B7_1_201_a.jpg",
-            "cta_url": ""
-          }
-        },
         "product_tile_2": {
           "type": "product_tile",
           "settings": {
@@ -277,19 +244,8 @@
             "name": "ベロアキルティングジャケット - Unisex",
             "colors": "Khaki / Navy",
             "price": "¥39,800",
-            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/3000x3000/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_3": {
-          "type": "product_tile",
-          "settings": {
-            "group": "jacket",
-            "name": "WARMデニムジャケット - Men",
-            "colors": "Black / Blue",
-            "price": "¥39,800",
-            "image_url": "https://ucarecdn.com/efabb791-2db0-4cf0-98e9-be9aa229fd52/-/format/auto/-/preview/3000x3000/-/quality/lighter/75E3C9E6-B70C-4861-935A-FD7099F48B05_1_201_a%20_1_.jpg",
-            "cta_url": ""
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/1200x1200/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "cta_url": "/products/velours-quilting-jacket"
           }
         },
         "product_tile_4": {
@@ -299,64 +255,14 @@
             "name": "キルティングジャケット(チェック) - Unisex",
             "colors": "Olive / Black",
             "price": "¥48,000",
-            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/3000x3000/-/quality/lighter/0191.png",
-            "cta_url": ""
-          }
-        },
-        "product_tile_5": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "スタンドカラーコート - Unisex",
-            "colors": "Black(New) / Greige / Green / Navy",
-            "price": "¥69,000",
-            "image_url": "https://ucarecdn.com/dc2d24df-b77d-4368-bed7-1952aec988d7/-/format/auto/-/preview/3000x3000/-/quality/lighter/240802_KAPOKKNOT1105.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_6": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "ポンチョコート - Unisex",
-            "colors": "Olive / Navy / Black / Greige",
-            "price": "¥65,000",
-            "image_url": "https://ucarecdn.com/384d66e6-9a07-44be-b247-b6f493612833/-/format/auto/-/preview/3000x3000/-/quality/lighter/pc-1%20_3_.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_7": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "ウエストマークパーカーコート - Women",
-            "colors": "Camel / Greige / Navy",
-            "price": "¥49,800",
-            "image_url": "https://ucarecdn.com/b1dfa58b-f3da-44d9-8c7a-b2aaf64707fa/-/format/auto/-/preview/3000x3000/-/quality/lighter/949d1456929bc33f6ea6ba92259a369b.jpg",
-            "cta_url": ""
-          }
-        },
-        "product_tile_8": {
-          "type": "product_tile",
-          "settings": {
-            "group": "coat",
-            "name": "バルマカンコート - Women/Men",
-            "colors": "Dark Navy / Beige / Camel",
-            "price": "¥48,000",
-            "image_url": "https://ucarecdn.com/c4e3a83c-40ef-4121-9d13-e595676c2314/-/format/auto/-/preview/3000x3000/-/quality/lighter/W21U1BLC01-DNY-01.jpg",
-            "cta_url": ""
+            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/1200x1200/-/quality/lighter/0191.png",
+            "cta_url": "/products/men-quilted-jacket"
           }
         }
       },
       "block_order": [
-        "product_tile_1",
         "product_tile_2",
-        "product_tile_3",
-        "product_tile_4",
-        "product_tile_5",
-        "product_tile_6",
-        "product_tile_7",
-        "product_tile_8"
+        "product_tile_4"
       ],
       "settings": {
         "section_id": "a25-cross",
@@ -371,42 +277,42 @@
         "media_logo_1": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/91648580-94ad-4c05-aec0-25bc05ec5e0f/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/91648580-94ad-4c05-aec0-25bc05ec5e0f/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "Makuake"
           }
         },
         "media_logo_2": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/074aec7d-3118-4fbb-b23c-875673e2e4e4/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/074aec7d-3118-4fbb-b23c-875673e2e4e4/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "ALTERNA"
           }
         },
         "media_logo_3": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/3f383661-9360-4604-ae99-ffdc877c6c4f/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/3f383661-9360-4604-ae99-ffdc877c6c4f/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "日経新聞"
           }
         },
         "media_logo_4": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/a8886c3a-cb13-4011-96de-f5bba196a8e0/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/a8886c3a-cb13-4011-96de-f5bba196a8e0/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "WBS (TV東京)"
           }
         },
         "media_logo_5": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/9c4a6be4-1cce-4f1c-a1e7-60d16b10c97d/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/9c4a6be4-1cce-4f1c-a1e7-60d16b10c97d/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "Finders"
           }
         },
         "media_logo_6": {
           "type": "media_logo",
           "settings": {
-            "logo_url": "https://ucarecdn.com/979798e1-1d1b-4f66-8a4a-8d36c015ae64/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
+            "logo_url": "https://ucarecdn.com/979798e1-1d1b-4f66-8a4a-8d36c015ae64/-/format/auto/-/preview/400x400/-/quality/lighter/",
             "alt": "繊研新聞"
           }
         },
@@ -415,7 +321,7 @@
           "settings": {
             "name": "谷尻誠さん・谷尻直子さん",
             "role": "建築家 / 料理家",
-            "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/3000x3000/-/quality/lighter/Mask%20Group%20_1_.png"
+            "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/1200x1200/-/quality/lighter/Mask%20Group%20_1_.png"
           }
         },
         "creator_5": {
@@ -423,7 +329,7 @@
           "settings": {
             "name": "平原依文さん",
             "role": "『201カ国、202人の夢xSDGs』編集者",
-            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2092.png"
+            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%2092.png"
           }
         },
         "creator_6": {
@@ -431,7 +337,7 @@
           "settings": {
             "name": "eriさん",
             "role": "DEPT Company代表 デザイナー/アクティビスト",
-            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%20120.png"
+            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%20120.png"
           }
         }
       },
@@ -488,7 +394,7 @@
       "settings": {
         "kicker": "創業者からのメッセージ",
         "founder_name": "カポックノット代表 深井喜翔",
-        "founder_image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/3000x3000/-/quality/lighter/image%2069.png",
+        "founder_image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%2069.png",
         "founder_body": "<p>初めまして、カポックノット創業者の深井喜翔です。</p><p>老舗アパレル企業の4代目として、また繊維業界に身を置くことで、アパレル業界の大量生産・大量廃棄という負のシステム、そしてそのシステムが生み出す弊害を目の当たりにしてきました。</p><p>そんな中、カポックと出会い「これこそが自分が人生を懸けて取り組むべき素材である」という感覚を持ちました。</p><p>「消費者」「生産者」「環境」の3つの視点に立ち、製品ができてから届くまでに関わる全ての人たちに寄り添ったものづくりをしていきます。</p>",
         "values_heading": "カポックノットの価値観"
       }
@@ -502,7 +408,7 @@
         "heading": "<p>軽くて暖かいアウターを<em>体験してみませんか?</em></p>",
         "sub": "期間限定 POP UP を全国で開催中！",
         "cta_text": "POPUP開催情報はこちら",
-        "cta_url": ""
+        "cta_url": "/pages/pop-up-calendar"
       }
     },
     "faq": {

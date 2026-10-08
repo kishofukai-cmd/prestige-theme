@@ -167,10 +167,25 @@
                      alt="{{ block.settings.title | escape }}"
                      loading="lazy">
               {% elsif block.settings.gif_url != blank %}
-                <img class="a25-demo__gif"
-                     src="{{ block.settings.gif_url }}"
-                     alt="{{ block.settings.title | escape }}"
-                     loading="lazy">
+                {%- liquid
+                  # ucarecdnのGIFは自動でmp4動画に変換して配信（容量・デコード負荷削減）
+                  assign a25d_is_uc_gif = false
+                  if block.settings.gif_url contains 'ucarecdn.com' and block.settings.gif_url contains '.gif'
+                    assign a25d_is_uc_gif = true
+                    assign a25d_uc_uuid = block.settings.gif_url | remove: 'https://ucarecdn.com/' | split: '/' | first
+                  endif
+                -%}
+                {%- if a25d_is_uc_gif -%}
+                  <video class="a25-demo__gif"
+                         src="https://ucarecdn.com/{{ a25d_uc_uuid }}/gif2video/-/format/mp4/"
+                         autoplay muted loop playsinline preload="none"
+                         aria-label="{{ block.settings.title | escape }}"></video>
+                {%- else -%}
+                  <img class="a25-demo__gif"
+                       src="{{ block.settings.gif_url }}"
+                       alt="{{ block.settings.title | escape }}"
+                       loading="lazy">
+                {%- endif -%}
               {% endif %}
             </div>
 

@@ -55,6 +55,24 @@
     margin: 0;
   }
 
+  /* Photo strip (above video) */
+  #{{ section.id }} .a25-ftf__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(10px, 1.5vw, 16px);
+    margin-bottom: clamp(16px, 2.5vw, 24px);
+  }
+  #{{ section.id }} .a25-ftf__photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+  #{{ section.id }} .a25-ftf__photo--wide {
+    grid-column: span 1;
+  }
+
   /* Video wrap */
   #{{ section.id }} .a25-ftf__video-wrap {
     position: relative;
@@ -166,6 +184,20 @@
       {% endif %}
     </div>
 
+    {% if section.settings.photo_1_url != blank or section.settings.photo_2_url != blank or section.settings.photo_3_url != blank %}
+      <div class="a25-ftf__photos">
+        {% if section.settings.photo_1_url != blank %}
+          <img class="a25-ftf__photo" src="{{ section.settings.photo_1_url }}" alt="{{ section.settings.photo_1_alt | default: 'Kapok farm' }}" loading="lazy">
+        {% endif %}
+        {% if section.settings.photo_2_url != blank %}
+          <img class="a25-ftf__photo" src="{{ section.settings.photo_2_url }}" alt="{{ section.settings.photo_2_alt | default: 'Kapok processing' }}" loading="lazy">
+        {% endif %}
+        {% if section.settings.photo_3_url != blank %}
+          <img class="a25-ftf__photo" src="{{ section.settings.photo_3_url }}" alt="{{ section.settings.photo_3_alt | default: 'Garment sewing' }}" loading="lazy">
+        {% endif %}
+      </div>
+    {% endif %}
+
     {%- assign vid = section.settings.video_url -%}
     <div class="a25-ftf__video-wrap">
       {%- if vid != blank -%}
@@ -227,6 +259,14 @@
     { "type": "text", "id": "kicker", "label": "キッカー", "default": "Farm to Fashion" },
     { "type": "richtext", "id": "heading", "label": "見出し", "default": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>" },
     { "type": "textarea", "id": "intro", "label": "リード文", "default": "カポック農園、加工工場、縫製工場まで — 実際に働く人たちの姿を、映像でご覧ください。" },
+
+    { "type": "header", "content": "写真ストリップ (動画の上・任意)" },
+    { "type": "text", "id": "photo_1_url", "label": "写真1 URL" },
+    { "type": "text", "id": "photo_1_alt", "label": "写真1 alt" },
+    { "type": "text", "id": "photo_2_url", "label": "写真2 URL" },
+    { "type": "text", "id": "photo_2_alt", "label": "写真2 alt" },
+    { "type": "text", "id": "photo_3_url", "label": "写真3 URL" },
+    { "type": "text", "id": "photo_3_alt", "label": "写真3 alt" },
 
     { "type": "header", "content": "動画" },
     { "type": "video_url", "id": "video_url", "label": "動画 URL (YouTube / Vimeo)", "accept": ["youtube", "vimeo"], "default": "https://youtu.be/-ZIZcHy7w8A" },
