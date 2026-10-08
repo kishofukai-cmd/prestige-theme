@@ -101,7 +101,7 @@
     #{{ sid }} .a26-pr__head { padding: 0 16px; }
     #{{ sid }} .a26-pr__track {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       overflow-x: auto;
       overscroll-behavior-x: contain;
       scroll-snap-type: x mandatory;
@@ -256,7 +256,7 @@
     function update() {
       ticking = false;
       if (!mqSp.matches) {
-        cards.forEach(function (c) { c.style.transform = ''; });
+        cards.forEach(function (c) { c.style.transform = ''; c.style.transformOrigin = ''; });
         return;
       }
       var tr = track.getBoundingClientRect();
@@ -268,6 +268,8 @@
         var t = Math.max(-1, Math.min(1, d));
         if (Math.abs(d) < bestD) { bestD = Math.abs(d); best = i; }
         if (!reduce) {
+          // 両脇のカードは内側の端を軸に回す（縮んでも次のカードが右に覗くように）
+          c.style.transformOrigin = t > 0 ? 'left center' : (t < 0 ? 'right center' : 'center center');
           c.style.transform = 'rotateY(' + (t * 16).toFixed(2) + 'deg) scale(' + (1 - Math.abs(t) * 0.06).toFixed(3) + ')';
         }
       });
