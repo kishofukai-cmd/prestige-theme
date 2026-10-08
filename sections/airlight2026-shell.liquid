@@ -266,7 +266,14 @@
 
     { "type": "header", "content": "カード（ブロックを追加すると表示）" },
     { "type": "range", "id": "cards_per_row_pc", "label": "1行のカード数（PC）", "min": 2, "max": 4, "step": 1, "default": 4 },
-    { "type": "range", "id": "cards_per_row_sp", "label": "1行のカード数（スマホ）", "min": 1, "max": 2, "step": 1, "default": 1 },
+    {
+      "type": "select", "id": "cards_per_row_sp", "label": "1行のカード数（スマホ）",
+      "options": [
+        { "value": "1", "label": "1枚" },
+        { "value": "2", "label": "2枚" }
+      ],
+      "default": "1"
+    },
     {
       "type": "select", "id": "card_ratio", "label": "カード写真の縦横比",
       "options": [
