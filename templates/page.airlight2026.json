@@ -39,7 +39,8 @@
             "heading": "Makuake 受賞",
             "desc": "（賞の正式名称・年を確認中）",
             "note": ""
-          }
+          },
+          "disabled": true
         },
         "badge_3": {
           "type": "badge",
@@ -138,7 +139,7 @@
         "bg_color": "#ffffff",
         "kicker": "THERMAL PROOF",
         "heading": "<p>サーモカメラが証明する、<em>ダウンと変わらない暖かさ。</em></p>",
-        "intro": "3℃の環境で、着用1分後の表面温度を比べました。"
+        "intro": "サーモカメラで、同じ重さのダウンのコートと比べました。"
       }
     },
     "farm-to-fashion": {
@@ -153,11 +154,11 @@
         "autoplay": false,
         "footnote": "※ 映像は KAPOK KNOT の公式動画です。",
         "photo_1_url": "https://ucarecdn.com/ee41ca4a-65c4-40b6-a60e-c984098f67f0/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
-        "photo_1_alt": "カポック農園と、加工・縫製の工場で働く人たち",
+        "photo_1_alt": "農園・加工・縫製の現場",
         "photo_2_url": "https://ucarecdn.com/d2b60ed9-a82a-493d-89bf-612801a0f9fb/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
         "photo_2_alt": "収穫したカポックの実",
         "photo_3_url": "https://ucarecdn.com/5205c1a1-539c-4f07-83a0-1fd42fa7216d/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
-        "photo_3_alt": "加工中のカポックの綿"
+        "photo_3_alt": "加工中の綿"
       },
       "blocks": {
         "step_1": {
@@ -201,7 +202,8 @@
       ],
       "custom_css": [
         ".a25-ftf__steps {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;}",
-        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}"
+        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}",
+        ".a25-ftf__photos {grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;}"
       ]
     },
     "layers": {
