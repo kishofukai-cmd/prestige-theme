@@ -36,11 +36,10 @@
         "badge_2": {
           "type": "badge",
           "settings": {
-            "heading": "Makuake 受賞",
-            "desc": "（賞の正式名称・年を確認中）",
+            "heading": "Makuake Award 2022<br><em>Business Impact賞</em> 受賞",
+            "desc": "Makuake 終了後も事業を広げた実行者に贈られる特別賞（株式会社マクアケ・2022年11月）",
             "note": ""
-          },
-          "disabled": true
+          }
         },
         "badge_3": {
           "type": "badge",
@@ -266,7 +265,7 @@
         "kicker": "STRUCTURE",
         "heading": "",
         "lead": "軽さと暖かさ、快適さを両立するために、素材の特性を活かした4層構造で仕上げました。",
-        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-layers-4.webp?v=1791447909",
+        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-layers-4-nylon.webp?v=1791450443",
         "image_alt": "AIR LIGHT 4層構造（表地・コーティング層・カポック中わた・裏地）",
         "image_max_width": 900,
         "footnote": "Light yet warm."
