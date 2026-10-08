@@ -30,7 +30,7 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-icon-light-500g.png?v=1791448269&width=600",
             "title": "着ていることを、忘れる。",
-            "text": "<p>約500g。ペットボトル1本より軽い、冬のアウターです。</p>"
+            "text": "<p>約500g。ペットボトル1本ぶんの軽さ、冬のアウターです。</p>"
           }
         },
         "feature_2": {
@@ -150,7 +150,7 @@
             "number": "04",
             "label": "TEXTILE",
             "title": "KAJI GROUP（石川・金沢）",
-            "text": "2026年、表地は金沢の KAJI GROUP と組んで織りました。",
+            "text": "2026年、表地は世界のダウン生地を手掛ける KAJI GROUP と織りました。",
             "illust": "textile"
           }
         }
@@ -764,6 +764,7 @@
       },
       "custom_css": [
         ".faq {display: block;}",
+        ".faq__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
         ".faq__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
         ".faq__answer p + p {margin-top: 0.6em;}"
       ]
@@ -899,6 +900,7 @@
         ".empathy__icon {color: #b08a52;}",
         ".empathy__arrow {color: #b08a52;}",
         ".empathy__item {border-radius: 14px;}",
+        ".empathy__title {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: 0.04em;}",
         ".empathy__solution-img img {aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;}",
         "@media (max-width: 768px) {.empathy__solution {max-width: 340px;}}"
       ]
@@ -924,7 +926,8 @@
       },
       "custom_css": [
         ".story__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif; letter-spacing: 0.22em;}",
-        ".story__heading p {margin: 0;}"
+        ".story__heading p {margin: 0;}",
+        ".story__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}"
       ]
     },
     "why": {
@@ -1064,7 +1067,9 @@
         ".why__cards {margin-bottom: 0;}",
         ".why__card-img img {position: absolute; inset: 0;}",
         ".why__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
-        ".why__card:nth-child(1) .why__card-img img {object-position: center 28%;}",
+        ".why__heading, .why__card-title {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
+        ".why__card-title {font-weight: 600;}",
+        ".why__card:nth-child(1) .why__card-img img {object-position: center 62%;}",
         ".why__card:nth-child(3) .why__card-img img {object-position: center 20%;}"
       ]
     },
@@ -1152,7 +1157,8 @@
         "padding_sp": 60
       },
       "custom_css": [
-        ".a26-size__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}"
+        ".a26-size__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".a26-size__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}"
       ]
     },
     "reviews": {
@@ -1247,6 +1253,7 @@
       "custom_css": [
         ".reviews__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
         ".reviews__heading p {margin: 0;}",
+        ".reviews__heading p:first-child {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
         ".reviews__heading p + p {margin-top: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: #555555;}",
         ".reviews__heading p + p strong {color: #c6a15b; font-size: 20px; font-weight: 700; margin-right: 4px;}"
       ]
@@ -1311,6 +1318,7 @@
       "custom_css": [
         ".care__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
         ".care__content {align-content: center;}",
+        ".care__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
         ".care__point {align-content: start; align-items: center;}",
         ".care__point h3 {margin: 0;}",
         ".care__img {position: relative;}",
