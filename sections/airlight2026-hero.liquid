@@ -112,6 +112,15 @@
     color: #8a7f6e;
     margin: 0;
   }
+  .a26-hero__footnote {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+    color: #8a7f6e;
+    max-width: 560px;
+    margin: clamp(14px, 2vw, 20px) auto 0;
+  }
   @media (max-width: 768px) {
     .a26-hero__inner { padding: 0 16px; }
     .a26-hero__heading {
@@ -166,6 +175,9 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+    {%- if section.settings.footnote != blank -%}
+      <p class="a26-hero__footnote">{{ section.settings.footnote | newline_to_br }}</p>
+    {%- endif -%}
   </div>
 </section>
 
@@ -201,7 +213,8 @@
     { "type": "url", "id": "cta_url", "label": "ボタンリンク" },
     { "type": "color", "id": "cta_bg_color", "label": "ボタン背景色", "default": "#1a1a1a" },
     { "type": "color", "id": "cta_text_color", "label": "ボタン文字色", "default": "#ffffff" },
-    { "type": "text", "id": "cta_note", "label": "ボタン下の注記" }
+    { "type": "text", "id": "cta_note", "label": "ボタン下の注記" },
+    { "type": "textarea", "id": "footnote", "label": "最下部の小さな注記（エンブレムの説明など・空なら非表示）" }
   ],
   "presets": [
     { "name": "A2026 Hero" }

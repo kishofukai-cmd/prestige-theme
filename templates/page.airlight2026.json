@@ -5,8 +5,8 @@
       "settings": {
         "section_id": "a26-hero",
         "bg_color": "#ffffff",
-        "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color.jpg?v=1791447909&width=2000",
-        "kv_image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-sp.jpg?v=1791449267&width=1200",
+        "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-no1.jpg?v=1791449572&width=2000",
+        "kv_image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-sp-no1.jpg?v=1791449572&width=1200",
         "kv_image_alt": "エアーライトジャケット -Unisex-（ブラック・グレージュ・カーキ）· KAPOK KNOT",
         "eyebrow": "KAPOK KNOT — AirLight Jacket 2026",
         "eyebrow_color": "#c29d66",
@@ -18,7 +18,8 @@
         "cta_url": "#a26-products",
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
-        "cta_note": "¥39,800（税込）・ユニセックス 3色"
+        "cta_note": "¥39,800（税込）・ユニセックス 3色",
+        "footnote": "※「選ばれてNo.1」は、エアーライトジャケットが KAPOK KNOT のアウターで人気No.1のシリーズであることを示します（自社EC・前作の実績）。"
       }
     },
     "features": {
@@ -84,6 +85,68 @@
         "intro": "3℃の環境で、着用1分後の表面温度を比べました。"
       }
     },
+    "farm-to-fashion": {
+      "type": "airlight2025-farm-to-fashion",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "kicker": "Farm to Fashion",
+        "heading": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>",
+        "intro": "カポック農園、加工工場、縫製工場。間に業者を挟まず、顔の見える人たちと作っています。",
+        "video_url": "https://youtu.be/-ZIZcHy7w8A",
+        "video_title": "Farm to Fashion — KAPOK KNOT",
+        "autoplay": false,
+        "footnote": "※ 映像は KAPOK KNOT の公式動画です。",
+        "photo_1_url": "https://ucarecdn.com/ee41ca4a-65c4-40b6-a60e-c984098f67f0/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_1_alt": "カポック農園と、加工・縫製の工場で働く人たち",
+        "photo_2_url": "https://ucarecdn.com/d2b60ed9-a82a-493d-89bf-612801a0f9fb/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_2_alt": "収穫したカポックの実",
+        "photo_3_url": "https://ucarecdn.com/5205c1a1-539c-4f07-83a0-1fd42fa7216d/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_3_alt": "加工中のカポックの綿"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "step_label": "01 FARM",
+            "title": "インドネシアのカポック農園",
+            "text": "木の実を収穫します。木を伐採せず、動物も使いません。"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "step_label": "02 FACTORY",
+            "title": "加工工場",
+            "text": "実から綿を取り出し、中わたのシートに加工します。"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "step_label": "03 SEWING",
+            "title": "縫製工場",
+            "text": "自社で管理する工場で、1着ずつ縫い上げます。"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "step_label": "04 TEXTILE",
+            "title": "石川・金沢の織物工場",
+            "text": "2026年、表地は金沢の織物メーカーと組んで織りました。"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "custom_css": [
+        ".a25-ftf__steps {grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;}"
+      ]
+    },
     "layers": {
       "type": "airlight2026-layers",
       "blocks": {
@@ -94,7 +157,7 @@
             "word_ja": "守る",
             "word_en": "SHELL",
             "title": "別注の表地",
-            "body": "金沢で織った極細糸のナイロン生地。撥水加工で小雨や雪に対応し、冷たい風を防ぎます。"
+            "body": "金沢で織った別注のナイロン生地（74g/㎡）。撥水加工で小雨や雪に対応し、冷たい風を防ぎます。"
           }
         },
         "layer_2": {
@@ -197,7 +260,7 @@
         "accent_color": "#c29d66",
         "kicker": "2026 UPDATE",
         "heading": "表地を、作り直した。",
-        "body": "<p>今回のアップデートの核は、表地です。石川・金沢の織物メーカーと組み、髪の毛の3分の1ほどの極細の糸で織った別注生地を使いました。世界のダウンジャケットの生地も手掛けるメーカーです。</p><p>しなやかで、羽のように軽い。それでいて、アウターとして毎日ハードに着られる強さを保つ。軽ければ軽いほど良いわけではなく、そのバランスを突き詰めました。色も、ブランドのオリジナルカラーで染めています。</p>",
+        "body": "<p>今回のアップデートの核は、表地です。石川・金沢の織物メーカーと組み、ブランドのために織った別注生地「Tailored Texture」を使いました。世界のダウンジャケットの生地も手掛けるメーカーです。</p><p>50デニールと40デニールの細い糸で織り、1平方メートルあたり74gという軽さ。撥水加工に加え、衣擦れの音を抑えるサイレントコーティングを施しています。</p><p>しなやかで、羽のように軽い。それでいて、アウターとして毎日ハードに着られる強さを保つ。軽ければ軽いほど良いわけではなく、そのバランスを突き詰めました。色も、ブランドのオリジナルカラーで染めています。</p>",
         "text_align_sp": "left",
         "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0308.jpg?v=1787638646&width=1200",
         "image_alt": "エアーライトジャケット ブラックの表地",
@@ -463,19 +526,6 @@
         "card_ratio": "2/3"
       }
     },
-    "farm-to-fashion": {
-      "type": "airlight2025-farm-to-fashion",
-      "settings": {
-        "bg_color": "#faf9f6",
-        "kicker": "Farm to Fashion",
-        "heading": "<p>農園から、あなたの手元まで。<em>すべて自社管理。</em></p>",
-        "intro": "カポック農園、加工工場、縫製工場まで — 実際に働く人たちの姿を、映像でご覧ください。表地は石川・金沢の織物メーカーで織っています。",
-        "video_url": "https://youtu.be/-ZIZcHy7w8A",
-        "video_title": "Farm to Fashion — KAPOK KNOT",
-        "autoplay": false,
-        "footnote": "※ 映像は KAPOK KNOT の公式動画です。"
-      }
-    },
     "crosssell": {
       "type": "airlight2025-crosssell",
       "blocks": {
@@ -639,7 +689,7 @@
           "type": "faq_item",
           "settings": {
             "question": "前作と何が変わりましたか？",
-            "answer": "<p>表地を金沢の織物メーカーの別注生地に変え、よりしなやかで軽くなりました。ユニセックス1型・3色になり、フードは深く、付属も見直して軽量化しています。</p>"
+            "answer": "<p>表地は金沢の織物メーカーの別注生地（ナイロン100%・74g/㎡）に変え、よりしなやかで軽くなりました。ユニセックス1型・3色になり、フードは深く、付属も見直して軽量化しています。</p>"
           }
         }
       },
@@ -677,6 +727,7 @@
     "hero",
     "features",
     "demos",
+    "farm-to-fashion",
     "layers",
     "products",
     "shell",
@@ -684,7 +735,6 @@
     "founder",
     "mid-cta",
     "styling",
-    "farm-to-fashion",
     "crosssell",
     "proof",
     "faq",
