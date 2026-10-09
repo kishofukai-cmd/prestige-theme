@@ -69,7 +69,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -54%);
+    transform: translate(-50%, -58%);
     font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
     font-weight: 500;
     line-height: 1;
@@ -93,10 +93,10 @@
     font-size: 13px;
     letter-spacing: 0.18em;
     color: #5a5550;
-    margin-top: 6px;
+    margin-bottom: 10px;
   }
   #{{ sid }} .a26-fab__stage.is-crumpled .a26-fab__num {
-    transform: translate(-50%, -54%) scale(.86);
+    transform: translate(-50%, -58%) scale(.86);
   }
   #{{ sid }} .a26-fab__caption,
   #{{ sid }} .a26-fab__hint {
@@ -218,8 +218,8 @@
     <div class="a26-fab__stage" data-stage>
       <canvas data-canvas aria-hidden="true"></canvas>
       <div class="a26-fab__num" aria-live="polite">
-        <span data-count>0</span><span class="a26-fab__g">g</span>
         <span class="a26-fab__per">{{ section.settings.per_label | default: '1m × 1m の表地' | escape }}</span>
+        <span data-count>0</span><span class="a26-fab__g">g</span>
       </div>
       <p class="a26-fab__caption" data-caption>{{ section.settings.crumple_caption | default: '手のひらに、収まる。' | escape }}</p>
       <p class="a26-fab__hint" data-hint>
@@ -280,6 +280,8 @@
   var noiseX = new Float32Array(V), noiseY = new Float32Array(V), noiseZ = new Float32Array(V);
   var seed = 7;
   function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  var quadOrder = new Int32Array(N * N), quadSorted = new Int32Array(N * N), quadDepth = new Float32Array(N * N);
+  for (var qo = 0, jo = N - 1; jo >= 0; jo--) for (var io = 0; io < N; io++) quadOrder[qo++] = jo * N + io;
   for (var i = 0; i < V; i++) {
     noiseX[i] = (rnd() - 0.5) * 0.22;
     noiseY[i] = (rnd() - 0.5) * 0.30;
@@ -318,8 +320,8 @@
     // ---- 頂点 ----
     var amp = (reduced ? 0 : 0.055) * (1 + 1.6 * (1 - land)) * (1 - 0.9 * c);
     var lift = 0.95 * (1 - land) + 0.06 * c;      // 落ちてくる高さ／縮むと少し浮く
-    var tiltX = 1.05 - 0.42 * land;               // 俯瞰角（rad）: 上から → 斜め
-    var swayY = (reduced ? 0 : 0.22) * (1 - land) * Math.sin(t * 1.3);
+    var tiltX = 1.12 - 0.54 * land;               // 俯瞰角（rad）: 上から → 斜め
+    var swayY = (reduced ? 0 : 1) * (0.22 * (1 - land) * Math.sin(t * 1.3) + 0.08 * land * Math.sin(t * 0.45));
     var scaleC = 1 - 0.68 * c;
     var cosX = Math.cos(tiltX), sinX = Math.sin(tiltX);
     var cosY = Math.cos(swayY), sinY = Math.sin(swayY);
@@ -330,12 +332,17 @@
     for (var j = 0; j <= N; j++) {
       for (var i = 0; i <= N; i++) {
         var k = j * (N + 1) + i;
-        var x = i / N - 0.5, z = j / N - 0.5;
-        var y = amp * (Math.sin(x * 6.9 + t * 1.15 + z * 2.0) * 0.6 + Math.sin(z * 9.7 - t * 0.85) * 0.4 + Math.sin((x + z) * 4.2 + t * 1.7) * 0.28);
-        // 縮む: 中心へ引き寄せ＋皺
-        x = x * scaleC + noiseX[k] * c;
-        z = z * scaleC + noiseZ[k] * c;
-        y = y + noiseY[k] * c + lift;
+        var x0 = i / N - 0.5, z0 = j / N - 0.5;
+        var edge = Math.max(Math.abs(x0), Math.abs(z0)) * 2;          // 0 中心 → 1 縁
+        var y = amp * (1 + 0.6 * edge) * (Math.sin(x0 * 6.9 + t * 1.15 + z0 * 2.0) * 0.6 + Math.sin(z0 * 9.7 - t * 0.85) * 0.4 + Math.sin((x0 + z0) * 4.2 + t * 1.7) * 0.28);
+        // 縮む: 放射状に中心へ寄せ、なだらかな折り目と中央のふくらみで「くしゃ」に
+        var r = Math.sqrt(x0 * x0 + z0 * z0), ang = Math.atan2(z0, x0);
+        var pull = 1 - 0.74 * c * (0.78 + 0.22 * Math.sin(ang * 5 + r * 9));
+        var fold = c * (0.11 * Math.sin(x0 * 11 + 1.3) * Math.sin(z0 * 9 - 0.7) + 0.06 * Math.sin(x0 * 23) * Math.cos(z0 * 19) + 0.04 * noiseY[k]);
+        var mound = c * 0.2 * Math.max(0, 1 - r * 2.2);
+        var x = x0 * pull + noiseX[k] * c * 0.35;
+        var z = z0 * pull + noiseZ[k] * c * 0.35;
+        y = y + fold + mound + lift;
         // Y 回転（揺れ）→ X 回転（俯瞰）
         var x1 = x * cosY + z * sinY, z1 = -x * sinY + z * cosY;
         var y2 = y * cosX - z1 * sinX, z2 = y * sinX + z1 * cosX;
@@ -364,8 +371,21 @@
 
     // 面（奥から手前へ）
     var lx = 0.35, ly = 0.85, lz = -0.4, ll = Math.sqrt(lx * lx + ly * ly + lz * lz); lx /= ll; ly /= ll; lz /= ll;
-    for (var jj = N - 1; jj >= 0; jj--) {
-      for (var ii = 0; ii < N; ii++) {
+    // 描画順: 平らなときは奥の行から、縮んでいるときは奥行きで並べ替え（折り目の重なりを正しく）
+    var orderArr = quadOrder;
+    if (c > 0.01) {
+      for (var qi = 0; qi < N * N; qi++) {
+        var qa = (qi / N | 0) * (N + 1) + (qi % N);
+        quadDepth[qi] = pz[qa] + pz[qa + 1] + pz[qa + N + 1] + pz[qa + N + 2];
+      }
+      orderArr = quadSorted;
+      for (var qs = 0; qs < N * N; qs++) quadSorted[qs] = qs;
+      quadSorted.sort(function (p1, p2) { return quadDepth[p2] - quadDepth[p1]; });
+    }
+    for (var oi = 0; oi < N * N; oi++) {
+      var qidx = orderArr[oi];
+      var jj = qidx / N | 0, ii = qidx % N;
+      {
         var a = jj * (N + 1) + ii, b = a + 1, cc = a + N + 1, dd = cc + 1;
         // 法線（回転後の座標で）
         var ux = px[b] - px[a], uy = py[b] - py[a], uz = pz[b] - pz[a];
@@ -374,7 +394,7 @@
         var nl = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
         var lum = (nx * lx + ny * ly + nz * lz) / nl;
         if (lum < 0) lum = -lum * 0.6;
-        var k2 = 0.84 + 0.26 * lum;
+        var k2 = (0.84 - 0.1 * c) + (0.26 + 0.14 * c) * lum;
         ctx.fillStyle = shade(k2);
         ctx.beginPath();
         ctx.moveTo(sx[a], sy[a]); ctx.lineTo(sx[b], sy[b]); ctx.lineTo(sx[dd], sy[dd]); ctx.lineTo(sx[cc], sy[cc]);
@@ -397,7 +417,7 @@
     }
     // 縁
     ctx.lineWidth = 1.4;
-    ctx.strokeStyle = 'rgba(40,36,32,' + (0.75 * (1 - 0.4 * c)).toFixed(3) + ')';
+    ctx.strokeStyle = 'rgba(40,36,32,' + (0.75 * (1 - c)).toFixed(3) + ')';
     ctx.beginPath();
     for (var e = 0; e <= N; e++) { var ke = e; if (e === 0) ctx.moveTo(sx[ke], sy[ke]); else ctx.lineTo(sx[ke], sy[ke]); }
     for (var e2 = 1; e2 <= N; e2++) { var ke2 = e2 * (N + 1) + N; ctx.lineTo(sx[ke2], sy[ke2]); }
@@ -416,13 +436,13 @@
       ctx.strokeStyle = 'rgba(90,85,80,.7)';
       ctx.lineWidth = 1;
       var bl = N * (N + 1), br = bl + N;          // 手前の辺（j = N）
-      var mx = (sx[bl] + sx[br]) / 2, my = (sy[bl] + sy[br]) / 2 + 16;
+      var mx = (sx[bl] + sx[br]) / 2, my = (sy[bl] + sy[br]) / 2 + 24;
       ctx.beginPath(); ctx.moveTo(sx[bl], my); ctx.lineTo(sx[br], my); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(sx[bl], my - 5); ctx.lineTo(sx[bl], my + 5); ctx.moveTo(sx[br], my - 5); ctx.lineTo(sx[br], my + 5); ctx.stroke();
       ctx.textAlign = 'center'; ctx.textBaseline = 'top';
       ctx.fillText('1 m', mx, my + 5);
       var tl = 0, ll2 = bl;                         // 左の辺（i = 0）
-      var lxm = Math.min(sx[tl], sx[ll2]) - 14, lym = (sy[tl] + sy[ll2]) / 2;
+      var lxm = Math.min(sx[tl], sx[ll2]) - 20, lym = (sy[tl] + sy[ll2]) / 2;
       ctx.beginPath(); ctx.moveTo(lxm, sy[tl]); ctx.lineTo(lxm, sy[ll2]); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(lxm - 5, sy[tl]); ctx.lineTo(lxm + 5, sy[tl]); ctx.moveTo(lxm - 5, sy[ll2]); ctx.lineTo(lxm + 5, sy[ll2]); ctx.stroke();
       ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
