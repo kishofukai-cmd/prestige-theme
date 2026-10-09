@@ -1,0 +1,1376 @@
+{
+  "sections": {
+    "hero": {
+      "type": "airlight2026-hero",
+      "settings": {
+        "section_id": "a26-hero",
+        "bg_color": "#ffffff",
+        "kv_image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-no1s.jpg?v=1791449775&width=2000",
+        "kv_image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-hero-3color-sp-no1s.jpg?v=1791449775&width=1200",
+        "kv_image_alt": "エアーライトジャケット -Unisex-（ブラック・グレージュ・カーキ）· KAPOK KNOT",
+        "eyebrow": "人気No.1 アウター<br>2026年アップデート",
+        "eyebrow_color": "#c29d66",
+        "heading": "<p>空も飛べそうな、<em>軽さへ。</em></p>",
+        "heading_color": "#1a1a1a",
+        "sub_text": "朝の電車も、夜の帰り道も、着ているのを忘れる約500g。植物由来の中わたと、世界のダウンを支える日本の生地で、2026年のエアーライト。",
+        "sub_color": "#5a5550",
+        "cta_text": "商品を見る →",
+        "cta_url": "#a26-products",
+        "cta_bg_color": "#1a1a1a",
+        "cta_text_color": "#ffffff",
+        "cta_note": "¥39,800（税込）・ユニセックス 3色",
+        "footnote": "※「選ばれてNo.1」は、エアーライトジャケットが KAPOK KNOT のアウターで人気No.1のシリーズであることを示します（自社EC・前作の実績）。"
+      }
+    },
+    "features": {
+      "type": "kapok-feature-cards",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-icon-light-500g.png?v=1791448269&width=600",
+            "title": "着ていることを、忘れる。",
+            "text": "<p>約500g。ペットボトル1本ぶんの軽さ、冬のアウターです。</p>"
+          }
+        },
+        "feature_2": {
+          "type": "feature_card",
+          "settings": {
+            "image_url": "https://ucarecdn.com/76a865d0-ddaa-4028-b4a7-daeac90ec724/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+            "title": "暖かさは、ダウンのまま。",
+            "text": "<p>植物由来のカポック中わた。サーモカメラの比較で、ダウンと変わらない暖かさを確かめました。</p>"
+          }
+        },
+        "feature_3": {
+          "type": "feature_card",
+          "settings": {
+            "image_url": "https://ucarecdn.com/a75b5489-b6fa-41a3-a988-68ef8a8488aa/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+            "title": "蒸れない。洗える。",
+            "text": "<p>湿気を吸って放つ繊維だから、室内でもじめっとしない。シート状の中わたは、家で手洗いできます。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "title": "",
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a"
+      }
+    },
+    "demos": {
+      "type": "airlight2025-demos",
+      "blocks": {
+        "demo_1": {
+          "type": "demo",
+          "settings": {
+            "tag": "THERMAL TEST",
+            "title": "ダウンと変わらない暖かさ",
+            "gif_url": "https://ucarecdn.com/bbdf6a42-3a07-4b56-8342-f0df4b6da65b/-/format/auto/-/preview/1200x1200/-/quality/lighter/kapok_comparison_image.png",
+            "caption": "※ 3度環境の中、着用1分後の状態",
+            "body": "サーモカメラで撮影した3者比較テスト。同じ重さで素材がポリエステルのダウン・コートと比較しても、カポック中綿シートを使った商品は変わらない暖かさを保っています。※ この検証は当社のカポック中綿シートを使用した別商品による測定結果です。"
+          }
+        }
+      },
+      "block_order": [
+        "demo_1"
+      ],
+      "custom_css": [
+        ".a25-demos__heading {word-break: keep-all; overflow-wrap: anywhere;}"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "kicker": "THERMAL PROOF",
+        "heading": "<p>暖かさを、<em>目で確かめる。</em></p>",
+        "intro": "サーモカメラで、同じ重さのダウンのコートと比べました。"
+      }
+    },
+    "farm-to-fashion": {
+      "type": "airlight2025-farm-to-fashion",
+      "settings": {
+        "bg_color": "#faf9f6",
+        "kicker": "Farm to Fashion",
+        "heading": "<p>農園から、あなたの手元まで。<em>顔の見えるものづくり。</em></p>",
+        "intro": "カポック農園、加工工場、縫製工場。間に業者を挟まず、顔の見える人たちと作っています。",
+        "video_url": "https://youtu.be/-ZIZcHy7w8A",
+        "video_title": "Farm to Fashion — KAPOK KNOT",
+        "autoplay": false,
+        "footnote": "※ 映像は KAPOK KNOT の公式動画です。",
+        "photo_1_url": "https://ucarecdn.com/ee41ca4a-65c4-40b6-a60e-c984098f67f0/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_1_alt": "農園・加工・縫製の現場",
+        "photo_2_url": "https://ucarecdn.com/d2b60ed9-a82a-493d-89bf-612801a0f9fb/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_2_alt": "収穫したカポックの実",
+        "photo_3_url": "https://ucarecdn.com/5205c1a1-539c-4f07-83a0-1fd42fa7216d/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+        "photo_3_alt": "加工中の綿"
+      },
+      "custom_css": [
+        ".a25-ftf__heading {word-break: keep-all; overflow-wrap: anywhere;}",
+        ".a25-ftf__photos {grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;}"
+      ]
+    },
+    "process": {
+      "type": "airlight2026-process",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "label": "FARM",
+            "title": "インドネシアのカポック農園",
+            "text": "木の実を収穫します。木を伐採せず、動物も使いません。",
+            "illust": "farm"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "label": "FACTORY",
+            "title": "加工工場",
+            "text": "実から綿を取り出し、中わたのシートに加工します。",
+            "illust": "factory"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "label": "SEWING",
+            "title": "縫製パートナー",
+            "text": "信頼する縫製パートナーの工場で、1着ずつ縫い上げます。",
+            "illust": "sewing"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "label": "TEXTILE",
+            "title": "KAJI GROUP（石川・金沢）",
+            "text": "2026年、表地は世界のダウン生地を手掛ける KAJI GROUP と織りました。",
+            "illust": "textile"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "section_id": "a26-process",
+        "kicker": "PROCESS",
+        "heading": "農園から、一着になるまで。",
+        "lead": "",
+        "bg_color": "#faf9f6",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "art_color": "#c29d66"
+      }
+    },
+    "layers": {
+      "type": "airlight2026-layers",
+      "blocks": {
+        "layer_1": {
+          "type": "layer",
+          "settings": {
+            "number": "01",
+            "word_ja": "守る",
+            "word_en": "SHELL",
+            "title": "別注の表地",
+            "body": "日本の繊維技術で織ったナイロン生地、74g/㎡。撥水加工が小雨と雪をはじき、冷たい風を止めます。"
+          }
+        },
+        "layer_2": {
+          "type": "layer",
+          "settings": {
+            "number": "02",
+            "word_ja": "防ぐ",
+            "word_en": "COATING",
+            "title": "風を防ぐコーティング層",
+            "body": "風の侵入を抑える薄いコーティング。今作は風合いとしなやかさを優先し、前作より耐水圧は控えめにしています。"
+          }
+        },
+        "layer_3": {
+          "type": "layer",
+          "settings": {
+            "number": "03",
+            "word_ja": "暖める",
+            "word_en": "INSULATION",
+            "title": "植物由来のカポック中わた",
+            "body": "空気を含む繊維構造で、薄くてもダウンと同等の暖かさ。湿気を吸って放つので、蒸れにくい。"
+          }
+        },
+        "layer_4": {
+          "type": "layer",
+          "settings": {
+            "number": "04",
+            "word_ja": "包む",
+            "word_en": "LINING",
+            "title": "なめらかな裏地",
+            "body": "肌あたりのよいポリエステルの裏地。羽織りやすさと快適さを支えます。"
+          }
+        }
+      },
+      "block_order": [
+        "layer_1",
+        "layer_2",
+        "layer_3",
+        "layer_4"
+      ],
+      "settings": {
+        "section_id": "a26-layers",
+        "bg_color": "#f5f1e8",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "badge_bg": "#1a1a1a",
+        "kicker": "STRUCTURE",
+        "heading": "",
+        "lead": "軽さと暖かさを両立する、4つの層。",
+        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-layers-4-nylon.webp?v=1791450443",
+        "image_alt": "AIR LIGHT 4層構造（表地・コーティング層・カポック中わた・裏地）",
+        "image_max_width": 900,
+        "footnote": "Light yet warm."
+      }
+    },
+    "products": {
+      "type": "airlight2025-products",
+      "blocks": {
+        "product_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product_name": "エアーライトジャケット -Unisex-",
+            "subtitle": "3Color: Black / Khaki / Greige　Size: S / M / L / LL",
+            "price": "¥39,800（税込）",
+            "description": "ユニセックス1型。前作より、男性は1サイズ上、女性は1サイズ下が目安です。\nmodel: men 175cm / L、women 160cm / L",
+            "cta_text": "購入ページへ",
+            "cta_url": "/products/airlight-jacket-unisex",
+            "image_1_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-product-black.jpg?v=1791447909&width=900",
+            "color_1": "Black",
+            "image_2_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-product-khaki.jpg?v=1791447909&width=900",
+            "color_2": "Khaki",
+            "image_3_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-product-greige.jpg?v=1791447909&width=900",
+            "color_3": "Greige",
+            "image_4_url": "",
+            "color_4": "",
+            "image_5_url": "",
+            "color_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_card_1"
+      ],
+      "custom_css": [
+        ".a25-products__grid {grid-template-columns: minmax(0, 480px); justify-content: center;}"
+      ],
+      "settings": {
+        "section_id": "a26-products",
+        "bg_color": "#ffffff",
+        "heading": "<p>AirLight Jacket 2026 <em>Unisex</em></p>"
+      }
+    },
+    "shell": {
+      "type": "airlight2026-shell",
+      "settings": {
+        "section_id": "a26-shell",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "kicker": "2026 UPDATE",
+        "heading": "世界のダウンを支える日本の生地を、私たちのために。",
+        "body": "<p>羽織って、まず軽い。触れると、しなやかで、衣擦れの音がしない。</p><p>世界のダウンジャケットの生地を手掛ける日本のテキスタイルメーカー KAJI GROUP（カジグループ・石川県金沢）と組み、ブランドのために織った別注生地「Tailored Texture」。50デニールと40デニールの細い糸で、1平方メートルあたり74g。撥水に加え、衣擦れの音を抑えるサイレントコーティング。</p><p>軽ければ軽いほど良い、とは考えませんでした。毎日ハードに着られる強さと、羽のような軽さ。その間にある生地を、KAJI GROUP に足を運んで決めました。色は、ブランドのオリジナルカラーです。</p>",
+        "text_align_sp": "left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0308.jpg?v=1787638646&width=1200",
+        "image_alt": "エアーライトジャケット ブラックの表地",
+        "image_side": "left",
+        "image_ratio": "4/5",
+        "image_position": "top",
+        "cards_per_row_pc": 4,
+        "cards_per_row_sp": "1",
+        "card_ratio": "4/5"
+      }
+    },
+    "fabric": {
+      "type": "airlight2026-fabric",
+      "settings": {
+        "section_id": "a26-fabric",
+        "kicker": "TAILORED TEXTURE",
+        "heading": "驚きの軽さの秘密は、生地とカポックの融合。",
+        "lead": "<p>表地は、1平方メートルでたった74g。鶏卵1個とほぼ同じ軽さの生地に、植物由来のカポック中わたを重ねています。</p>",
+        "weight": 74,
+        "per_label": "1m × 1m の表地",
+        "chip1_title": "鶏卵 1個 とほぼ同じ",
+        "chip1_sub": "LLサイズ 70〜76g",
+        "chip2_title": "A4コピー用紙 15枚分",
+        "chip2_sub": "80g/㎡の紙で換算",
+        "note": "<p>※ 表地「Tailored Texture」の目付（1㎡あたりの重さ）は74g。鶏卵LLサイズは70〜76g（鶏卵の取引規格）。A4コピー用紙は80g/㎡の紙1枚約5gで換算。</p>",
+        "stage_height_pc": 540,
+        "stage_height_sp": 400,
+        "cloth_label": "表地 1m × 1m",
+        "egg_label": "鶏卵 1個（LL）",
+        "balance_caption": "鶏卵1個と、同じ重さ。"
+      }
+    },
+    "details": {
+      "type": "airlight2026-shell",
+      "blocks": {
+        "detail_1": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0918.jpg?v=1787638676&width=900",
+            "image_alt": "袖のNEO DOWN KAPOK PADDINGワッペン（カーキ）",
+            "image_position": "center",
+            "title": "袖に、ワッペン。",
+            "text": "中わたの素材ブランド NEO DOWN KAPOK PADDING のワッペンを、袖に初めて付けました。KAPOK KNOT で、このワッペンが付く唯一のモデルです。",
+            "label": ""
+          }
+        },
+        "detail_2": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-detail-front-open-3613.jpg?v=1791448692&width=900",
+            "image_alt": "前を開けたエアーライトジャケット（グレージュ）",
+            "image_position": "top",
+            "title": "内ポケットに、フック。",
+            "text": "鍵やパスケースを掛けられるフックを、胸の内ポケットに。",
+            "label": ""
+          }
+        },
+        "detail_3": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0268.jpg?v=1787638647&width=900",
+            "image_alt": "フードの立ち上がり（ブラック・横から）",
+            "image_position": "top",
+            "title": "フードは、立ち上がりを美しく。",
+            "text": "かぶっていない時のシルエットが決まるよう、フードの立ち上がりを見直しました。",
+            "label": ""
+          }
+        },
+        "detail_4": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-detail-unisex-share.jpg?v=1791447909&width=900",
+            "image_alt": "男性と女性がカーキを着用",
+            "image_position": "top",
+            "title": "ユニセックスだから、シェアできる。",
+            "text": "1型でサイズを共有できる設計。パートナーや家族と、1着を分け合えます。",
+            "label": ""
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3",
+        "detail_4"
+      ],
+      "settings": {
+        "section_id": "a26-details",
+        "bg_color": "#faf9f6",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "kicker": "2026 UPDATE",
+        "heading": "細部に、4つの進化。",
+        "body": "",
+        "text_align_sp": "center",
+        "image_url": "",
+        "image_alt": "",
+        "image_side": "left",
+        "image_ratio": "4/5",
+        "image_position": "center",
+        "cards_per_row_pc": 4,
+        "cards_per_row_sp": "1",
+        "card_ratio": "4/5"
+      }
+    },
+    "founder": {
+      "type": "airlight2025-founder",
+      "blocks": {
+        "value_block_1": {
+          "type": "value_block",
+          "settings": {
+            "title": "機能｜軽く、暖かく、蒸れない。",
+            "body": "約500gでダウンの暖かさ。湿気を吸って放つカポックは、冬の室内でも蒸れません。機能は、数字で確かめてから語ります。"
+          }
+        },
+        "value_block_2": {
+          "type": "value_block",
+          "settings": {
+            "title": "デザイン｜長く着ても、古くならない。",
+            "body": "性別も年齢も問わない、シンプルで静かな形。流行を追わず、毎日の定番になる一着を。"
+          }
+        },
+        "value_block_3": {
+          "type": "value_block",
+          "settings": {
+            "title": "サステナブル｜木を伐らず、動物を使わない。",
+            "body": "木の実から採れるカポックは、森を守りながら増やせる素材。農園から縫製パートナーまで顔の見える関係で作り、利益の一部を地球環境の再生に還元します。"
+          }
+        }
+      },
+      "block_order": [
+        "value_block_1",
+        "value_block_2",
+        "value_block_3"
+      ],
+      "settings": {
+        "kicker": "創業者からのメッセージ",
+        "founder_name": "カポックノット代表 深井喜翔",
+        "founder_image_url": "https://ucarecdn.com/ee2273fb-34e1-4d2b-b443-bb4b32c0b2ff/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%2069.png",
+        "founder_body": "<p><strong>この生地は、皆さんの力で生まれました。</strong></p><p>大きなブランドからすれば、大したことではないかもしれません。でも、私たちのようなブランドは、これまで、すでに織られた色の生地しか選べませんでした。</p><p>今回、KAJI GROUP に直接足を運び、ブランドのオリジナルカラーで生地を織り、量産することができました。間に業者を挟んでいたら、この価格では出せなかった。</p><p>これまでKAPOK KNOTを選び、応援してくださった皆さんの力で、たどり着いた一着です。</p>",
+        "values_heading": "カポックノットが大切にする、3つのこと。"
+      },
+      "custom_css": [
+        ".a25-founder__body p:first-child strong {display: block; font-size: 1.18em; line-height: 1.6;}"
+      ]
+    },
+    "mid-cta": {
+      "type": "airlight2025-mid-cta",
+      "settings": {
+        "bg_image_url": "",
+        "overlay_opacity": 65,
+        "eyebrow": "この冬の新定番を",
+        "heading": "<p>軽く、暖かく、<em>もっと冬を好きになる。</em></p>",
+        "sub": "植物由来のカポック中わたと、日本の別注生地。",
+        "cta_men_text": "エアーライトジャケット -Unisex- 購入ページへ",
+        "cta_men_url": "/products/airlight-jacket-unisex",
+        "cta_women_text": "",
+        "price_note": "¥39,800（税込）"
+      },
+      "custom_css": [
+        ".a25-midcta__cta {word-break: keep-all; line-height: 1.5; text-align: center;}"
+      ]
+    },
+    "styling": {
+      "type": "airlight2026-shell",
+      "blocks": {
+        "look_1": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0294.jpg?v=1787638646&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Black の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Black"
+          }
+        },
+        "look_2": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0892.jpg?v=1787638677&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Khaki の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Khaki"
+          }
+        },
+        "look_3": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-styling-3616.jpg?v=1791448269&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Greige の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Greige"
+          }
+        },
+        "look_4": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT2548.jpg?v=1787638727&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Khaki の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Khaki"
+          }
+        },
+        "look_5": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-styling-3639.jpg?v=1791448269&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Greige の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Greige"
+          }
+        },
+        "look_6": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-styling-2752.jpg?v=1791448269&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Black の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Black"
+          }
+        },
+        "look_7": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/airlight2026-styling-3174.jpg?v=1791448269&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Khaki の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Khaki"
+          }
+        },
+        "look_8": {
+          "type": "card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT2811.jpg?v=1787638777&width=900",
+            "image_alt": "エアーライトジャケット -Unisex- Greige の着用イメージ",
+            "image_position": "top",
+            "title": "",
+            "text": "",
+            "label": "Greige"
+          }
+        }
+      },
+      "block_order": [
+        "look_1",
+        "look_4",
+        "look_3",
+        "look_6",
+        "look_5",
+        "look_2",
+        "look_8",
+        "look_7"
+      ],
+      "settings": {
+        "section_id": "a26-styling",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "body_color": "#4a4540",
+        "accent_color": "#c29d66",
+        "kicker": "STYLING",
+        "heading": "3色展開で様々なシーンで",
+        "body": "<p>model: men 175cm / Lサイズ　women 160cm / Lサイズ</p>",
+        "text_align_sp": "center",
+        "image_url": "",
+        "image_alt": "",
+        "image_side": "left",
+        "image_ratio": "4/5",
+        "image_position": "center",
+        "cards_per_row_pc": 4,
+        "cards_per_row_sp": "2",
+        "card_ratio": "2/3"
+      }
+    },
+    "crosssell": {
+      "type": "airlight2025-crosssell",
+      "blocks": {
+        "product_tile_2": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "ベロアキルティングジャケット - Unisex",
+            "colors": "Khaki / Navy",
+            "price": "¥39,800",
+            "image_url": "https://ucarecdn.com/6de69a3f-ee4a-4b02-96fe-792f35de2685/-/format/auto/-/preview/1200x1200/-/quality/lighter/424DB9F6-2EB2-4AAB-9EDC-76368EBE3201_1_201_a.jpg",
+            "cta_url": "/products/velours-quilting-jacket"
+          }
+        },
+        "product_tile_4": {
+          "type": "product_tile",
+          "settings": {
+            "group": "jacket",
+            "name": "キルティングジャケット(チェック) - Unisex",
+            "colors": "Olive / Black",
+            "price": "¥48,000",
+            "image_url": "https://ucarecdn.com/82d9d30d-56e0-4716-adcd-56d831a2e88d/-/format/auto/-/preview/1200x1200/-/quality/lighter/0191.png",
+            "cta_url": "/products/men-quilted-jacket"
+          }
+        }
+      },
+      "block_order": [
+        "product_tile_2",
+        "product_tile_4"
+      ],
+      "settings": {
+        "section_id": "a26-cross",
+        "bg_color": "#ffffff",
+        "jackets_heading": "【KAPOK KNOT】他のおすすめジャケットはこちら",
+        "coats_heading": "【KAPOK KNOT】他のおすすめコートはこちら"
+      },
+      "disabled": true
+    },
+    "proof": {
+      "type": "airlight2025-proof",
+      "blocks": {
+        "media_logo_1": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/91648580-94ad-4c05-aec0-25bc05ec5e0f/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "Makuake"
+          }
+        },
+        "media_logo_2": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/074aec7d-3118-4fbb-b23c-875673e2e4e4/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "ALTERNA"
+          }
+        },
+        "media_logo_3": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/3f383661-9360-4604-ae99-ffdc877c6c4f/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "日経新聞"
+          }
+        },
+        "media_logo_4": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/a8886c3a-cb13-4011-96de-f5bba196a8e0/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "WBS (TV東京)"
+          }
+        },
+        "media_logo_5": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/9c4a6be4-1cce-4f1c-a1e7-60d16b10c97d/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "Finders"
+          }
+        },
+        "media_logo_6": {
+          "type": "media_logo",
+          "settings": {
+            "logo_url": "https://ucarecdn.com/979798e1-1d1b-4f66-8a4a-8d36c015ae64/-/format/auto/-/preview/400x400/-/quality/lighter/",
+            "alt": "繊研新聞"
+          }
+        },
+        "creator_4": {
+          "type": "creator",
+          "settings": {
+            "name": "谷尻誠さん・谷尻直子さん",
+            "role": "建築家 / 料理家",
+            "image_url": "https://ucarecdn.com/9b2ed1bc-35ff-4f24-97e3-ded6d5e207ec/-/format/auto/-/preview/1200x1200/-/quality/lighter/Mask%20Group%20_1_.png"
+          }
+        },
+        "creator_5": {
+          "type": "creator",
+          "settings": {
+            "name": "平原依文さん",
+            "role": "『201カ国、202人の夢xSDGs』編集者",
+            "image_url": "https://ucarecdn.com/a6808ab6-469b-4a29-8553-0d87f0f7c8ea/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%2092.png"
+          }
+        },
+        "creator_6": {
+          "type": "creator",
+          "settings": {
+            "name": "eriさん",
+            "role": "DEPT Company代表 デザイナー/アクティビスト",
+            "image_url": "https://ucarecdn.com/3830ffb0-0c97-4709-b844-e02ef7cf06e3/-/format/auto/-/preview/1200x1200/-/quality/lighter/image%20120.png"
+          }
+        }
+      },
+      "block_order": [
+        "media_logo_1",
+        "media_logo_2",
+        "media_logo_3",
+        "media_logo_4",
+        "media_logo_5",
+        "media_logo_6",
+        "creator_4",
+        "creator_5",
+        "creator_6"
+      ],
+      "settings": {
+        "section_id": "a26-proof",
+        "bg_color": "#faf9f6",
+        "makuake_heading": "<p>Makuakeで累計<em>5,000万円以上</em>の応援をいただきました</p>",
+        "makuake_body": "KAPOK KNOTはデビュー以来、2,000人以上の方から、Makuakeで累計5,000万円以上の応援をいただいています。",
+        "media_heading": "多くのメディアでも取り上げていただきました",
+        "creators_heading": "ブランドに共感いただいているクリエイターのみなさま"
+      }
+    },
+    "faq": {
+      "type": "musubi-lp-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "雨の日も着られますか？",
+            "answer": "<p>撥水加工があり、小雨や雪には対応します。今作はしなやかさを優先してコーティングを軽くしたため、長時間の雨には防水アウターをおすすめします。</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "サイズはどう選べばいいですか？",
+            "answer": "<p>ユニセックス1型です。前作のエアーライトをお持ちの方は、男性は1サイズ上、女性は1サイズ下が目安です。model: men 175cm / L、women 160cm / L</p><p>2週間以内ならサイズ交換可能です（在庫ありに限る）。</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "自宅で洗えますか？",
+            "answer": "<p>手洗いできます。洗濯ネットを使い、柔軟剤は避けてください。アイロンは低温で当て布を。</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "いつ届きますか？",
+            "answer": "<p>ご注文から1週間以内に順次発送します。</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "前作と何が変わりましたか？",
+            "answer": "<p>表地は日本のテキスタイルメーカー KAJI GROUP の別注生地（ナイロン100%・74g/㎡）に変え、よりしなやかで軽くなりました。ユニセックス1型・3色になり、フードは深く、付属も見直して軽量化しています。</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "次の販売はいつですか？",
+            "answer": "<p>現在販売中です。再入荷や次回販売の情報は、公式LINEで最速でお届けします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "label": "FAQ",
+        "heading": "<p>よくあるご質問</p>",
+        "bg_color": "#ffffff",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#faf7f2",
+        "border_color": "#eee7dd",
+        "question_color": "#1a1a1a",
+        "answer_color": "#555555",
+        "icon_bg_color": "#ffffff",
+        "icon_color": "#8b7355",
+        "link_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "question_size_pc": 16,
+        "question_size_sp": 15,
+        "answer_size_pc": 14,
+        "answer_size_sp": 14,
+        "card_radius_pc": 18,
+        "card_radius_sp": 16,
+        "max_width": 860,
+        "padding_pc": 88,
+        "padding_sp": 60
+      },
+      "custom_css": [
+        ".faq {display: block;}",
+        ".faq__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
+        ".faq__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".faq__answer p + p {margin-top: 0.6em;}"
+      ]
+    },
+    "sticky": {
+      "type": "airlight2025-sticky",
+      "settings": {
+        "enabled": true,
+        "product_name": "エアーライトジャケット -Unisex-",
+        "price_text": "¥39,800（税込）",
+        "sub_text": "1週間以内に順次発送",
+        "cta_text": "購入ページへ",
+        "cta_url": "/products/airlight-jacket-unisex",
+        "show_on_desktop": false,
+        "bg_color": "#1a1a1a",
+        "text_color": "#ffffff",
+        "accent_color": "#c29d66",
+        "show_after_px": 700
+      }
+    },
+    "now": {
+      "type": "airlight2026-now",
+      "blocks": {
+        "chip_1": {
+          "type": "chip",
+          "settings": {
+            "icon": "stock",
+            "text": "色・サイズによっては、<br>残りわずか。",
+            "url": ""
+          }
+        },
+        "chip_2": {
+          "type": "chip",
+          "settings": {
+            "icon": "season",
+            "text": "10月から4月まで。<br>一番長く着られるのは、今から。",
+            "url": ""
+          }
+        },
+        "chip_3": {
+          "type": "chip",
+          "settings": {
+            "icon": "coupon",
+            "text": "LINE登録で、<br>送料無料クーポン。",
+            "url": "https://page.line.me/258kaxeg"
+          }
+        },
+        "chip_4": {
+          "type": "chip",
+          "settings": {
+            "icon": "exchange",
+            "text": "2週間以内なら、サイズ交換できます。<br><small>（在庫ありに限る）</small>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "chip_1",
+        "chip_2",
+        "chip_3",
+        "chip_4"
+      ],
+      "settings": {
+        "section_id": "a26-now",
+        "aria_label": "今買う理由",
+        "bg_color": "#f5f1e8",
+        "chip_bg": "#ffffff",
+        "chip_border": "#e8e0cf",
+        "text_color": "#2b2a28",
+        "sub_color": "#6b655d",
+        "icon_color": "#b08a52",
+        "padding_pc": 16,
+        "padding_sp": 12
+      }
+    },
+    "empathy": {
+      "type": "musubi-lp-empathy",
+      "blocks": {
+        "worry_1": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"14\" rx=\"3\"/><path d=\"M5 10h14\"/><circle cx=\"9\" cy=\"13.5\" r=\".6\"/><circle cx=\"15\" cy=\"13.5\" r=\".6\"/><path d=\"M8 21l2-4\"/><path d=\"M16 21l-2-4\"/></svg>",
+            "text": "電車で暑くて脱いだら、<br>荷物が増える。"
+          }
+        },
+        "worry_2": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 7a3 3 0 1 1 6 0\"/><path d=\"M6.5 7h11l2 13h-15z\"/><path d=\"M10 14h4\"/></svg>",
+            "text": "重いコートで、<br>肩がこる。"
+          }
+        },
+        "worry_3": {
+          "type": "worry_item",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3.5c-3 4-5 6.6-5 9.5a5 5 0 0 0 10 0c0-2.9-2-5.5-5-9.5z\"/><path d=\"M9.8 13.5a2.3 2.3 0 0 0 2.2 2.2\"/></svg>",
+            "text": "室内に入ると、<br>蒸れる。"
+          }
+        }
+      },
+      "block_order": [
+        "worry_1",
+        "worry_2",
+        "worry_3"
+      ],
+      "settings": {
+        "label": "RESTLESS WINTER",
+        "heading": "こんな冬、ありませんか？",
+        "heading_size_pc": 26,
+        "heading_size_sp": 22,
+        "item_text_size_pc": 14,
+        "item_text_size_sp": 14,
+        "heading_color": "#1a1a1a",
+        "item_text_color": "#333333",
+        "bg_color": "#faf9f6",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "padding_pc": 64,
+        "padding_sp": 48,
+        "solution_image": "shopify://shop_images/airlight2026-styling-3639.jpg",
+        "solution_image_alt": "エアーライトジャケット（グレージュ）を軽やかに羽織る女性",
+        "show_arrow": true,
+        "solution_width": 480,
+        "solution_radius": 18,
+        "solution_radius_sp": 14,
+        "icon_size_pc": 44,
+        "icon_size_sp": 34,
+        "arrow_size_pc": 28,
+        "arrow_size_sp": 24
+      },
+      "custom_css": [
+        ".empathy__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif; color: #b08a52; letter-spacing: 0.22em; font-size: 12px;}",
+        ".empathy__icon {color: #b08a52;}",
+        ".empathy__arrow {color: #b08a52;}",
+        ".empathy__item {border-radius: 14px;}",
+        ".empathy__title {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: 0.04em;}",
+        ".empathy__solution-img img {aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;}",
+        "@media (max-width: 768px) {.empathy__solution {max-width: 340px;}}"
+      ]
+    },
+    "story": {
+      "type": "musubi-lp-story",
+      "settings": {
+        "label": "ANSWER",
+        "label_size": 13,
+        "label_size_sp": 12,
+        "label_color": "#b08a52",
+        "heading": "<p>軽さは、我慢ではなく設計で。</p>",
+        "heading_size": 32,
+        "heading_size_sp": 24,
+        "heading_color": "#1a1a1a",
+        "body": "<p>ダウンの暖かさを、約500gで。<br>植物由来のカポック中わたと、<br>世界のダウンを支える日本の生地。<br>暑ければ脱いで、畳んでバッグへ。<br>室内でも蒸れない。<br>冬の移動を、軽くする一着です。</p>",
+        "body_size": 16,
+        "body_size_sp": 14,
+        "body_color": "#555555",
+        "accent_color": "#b8a78a",
+        "divider_color": "#d4c8b8",
+        "bg_color": "#faf7f2"
+      },
+      "custom_css": [
+        ".story__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif; letter-spacing: 0.22em;}",
+        ".story__heading p {margin: 0;}",
+        ".story__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}"
+      ]
+    },
+    "why": {
+      "type": "musubi-lp-why",
+      "blocks": {
+        "reason_1": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT0309.jpg?width=1200",
+            "number": "01",
+            "title": "世界のダウンを支える日本の生地",
+            "description": "世界のダウンジャケットの生地を手掛ける KAJI GROUP との別注。50デニールと40デニールの細い糸で織り、1平方メートルあたり74g。"
+          }
+        },
+        "reason_2": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://ucarecdn.com/5205c1a1-539c-4f07-83a0-1fd42fa7216d/-/crop/1500x1000/360,300/-/format/auto/-/preview/1200x1200/-/quality/lighter/",
+            "number": "02",
+            "title": "植物由来のカポック中わた",
+            "description": "空気を含む繊維が、薄くてもダウンと同じ暖かさを生みます。湿気は吸って、放つ。"
+          }
+        },
+        "reason_3": {
+          "type": "reason_card",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT3191.jpg?width=1200",
+            "number": "03",
+            "title": "風を防ぐ薄いコーティング",
+            "description": "風の侵入を抑えながら、しなやかさを優先。耐水圧は前作より控えめで、小雨と雪には撥水加工で応えます。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3"
+      ],
+      "settings": {
+        "label": "WHY AIRLIGHT",
+        "heading": "<p>なぜ、軽くて暖かいのか。</p>",
+        "lead": "<p>軽さと暖かさを両立する、3つの理由。</p>",
+        "show_comparison": false,
+        "comparison_label": "LABORATORY TEST",
+        "comparison_heading": "<p>検証データが示す<br>MUSUBIの快適性</p>",
+        "chart_title": "寝床内湿度（空間）比較データ",
+        "chart_note": "※発汗量 15ml/㎡/hr → 30ml/㎡/hrの条件下で計測",
+        "conclusion_label": "理想的な寝床内湿度：50% ± 5%",
+        "conclusion": "<p>MUSUBIの「あみあみ構造」は、重みによるムレを軽減。<br><strong>365日・オールシーズン快適に使える加重ブランケット</strong>を目指しました。</p>",
+        "musubi_value": "約47〜48%",
+        "musubi_desc": "60分間ほぼ一定で推移",
+        "musubi_verdict": "✓ 理想的な範囲内",
+        "other_value": "55% → 70%",
+        "other_desc": "時間経過とともに上昇",
+        "other_verdict": "✗ ムレやすい",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "label_color": "#8b7355",
+        "label_bg_color": "#f4eee6",
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "heading_color": "#1a1a1a",
+        "lead_size_pc": 15,
+        "lead_size_sp": 14,
+        "lead_color": "#555555",
+        "number_size_pc": 13,
+        "number_size_sp": 12,
+        "number_color": "#ffffff",
+        "number_bg_color": "#8b7355",
+        "title_size_pc": 24,
+        "title_size_sp": 21,
+        "title_color": "#1a1a1a",
+        "description_size_pc": 15,
+        "description_size_sp": 14,
+        "description_color": "#555555",
+        "comparison_label_size_pc": 12,
+        "comparison_label_size_sp": 11,
+        "comparison_label_color": "#8b7355",
+        "comparison_label_bg_color": "#f4eee6",
+        "comparison_heading_size_pc": 28,
+        "comparison_heading_size_sp": 23,
+        "comparison_heading_color": "#1a1a1a",
+        "comparison_value_size_pc": 36,
+        "comparison_value_size_sp": 30,
+        "comparison_value_color": "#8b7355",
+        "comparison_badge_size_pc": 13,
+        "comparison_badge_size_sp": 12,
+        "comparison_badge_color": "#333333",
+        "comparison_desc_size_pc": 13,
+        "comparison_desc_size_sp": 12,
+        "comparison_desc_color": "#555555",
+        "comparison_verdict_size_pc": 13,
+        "comparison_verdict_size_sp": 12,
+        "vs_size_pc": 22,
+        "vs_size_sp": 18,
+        "vs_color": "#8b7355",
+        "chart_title_size_pc": 16,
+        "chart_title_size_sp": 14,
+        "chart_title_color": "#1a1a1a",
+        "chart_note_size_pc": 11,
+        "chart_note_size_sp": 11,
+        "chart_note_color": "#777777",
+        "conclusion_label_size_pc": 16,
+        "conclusion_label_size_sp": 14,
+        "conclusion_label_color": "#1a1a1a",
+        "conclusion_text_size_pc": 15,
+        "conclusion_text_size_sp": 14,
+        "conclusion_text_color": "#555555",
+        "strong_color": "#8b7355",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf7f2",
+        "card_border_color": "#eee7dd",
+        "image_bg_color": "#f4eee6",
+        "image_fit": "cover",
+        "image_height_pc": 420,
+        "image_height_sp": 280,
+        "card_radius": 26,
+        "card_radius_sp": 20,
+        "max_width": 1080,
+        "comparison_bg_color": "#faf7f2",
+        "comparison_border_color": "#eee7dd",
+        "comparison_radius": 26,
+        "comparison_radius_sp": 20,
+        "comparison_card_bg_color": "#ffffff",
+        "comparison_card_border_color": "#eee7dd",
+        "musubi_accent_color": "#8b7355",
+        "good_text_color": "#2f6b4f",
+        "good_bg_color": "#e7f3ec",
+        "bad_text_color": "#8a4a3a",
+        "bad_bg_color": "#f7ebe7",
+        "conclusion_bg_color": "#ffffff",
+        "conclusion_border_color": "#eee7dd",
+        "padding_pc": 88,
+        "padding_sp": 60
+      },
+      "custom_css": [
+        ".why__cards {margin-bottom: 0;}",
+        ".why__card-img img {position: absolute; inset: 0;}",
+        ".why__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".why__heading, .why__card-title {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
+        ".why__card-title {font-weight: 600;}",
+        ".why__card:nth-child(1) .why__card-img img {object-position: center 62%;}",
+        ".why__card:nth-child(3) .why__card-img img {object-position: center 20%;}"
+      ]
+    },
+    "size": {
+      "type": "airlight2026-size",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "name": "着丈",
+            "v1": "62",
+            "v2": "65.5",
+            "v3": "67.5",
+            "v4": "69.5"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "name": "肩幅",
+            "v1": "44",
+            "v2": "48",
+            "v3": "50",
+            "v4": "52"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "name": "バスト",
+            "v1": "104",
+            "v2": "110",
+            "v3": "115",
+            "v4": "120"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "name": "袖丈",
+            "v1": "58.5",
+            "v2": "64",
+            "v3": "65",
+            "v4": "66"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "name": "裄丈",
+            "v1": "80.5",
+            "v2": "88",
+            "v3": "90",
+            "v4": "92"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5"
+      ],
+      "settings": {
+        "section_id": "a26-size",
+        "label": "SIZE GUIDE",
+        "heading": "サイズは、2つの目安で。",
+        "lead": "<p>ユニセックス1型。前作をお持ちなら、男性は1サイズ上、女性は1サイズ下が目安です。<br>model: men 175cm / L、women 160cm / L</p>",
+        "unit": "（cm）",
+        "corner_label": "項目",
+        "col_1": "S",
+        "col_2": "M",
+        "col_3": "L",
+        "col_4": "LL",
+        "note": "2週間以内ならサイズ交換可能（在庫ありに限る）",
+        "bg_color": "#faf9f6",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "text_color": "#555555",
+        "border_color": "#eee7dd",
+        "max_width": 760,
+        "padding_pc": 88,
+        "padding_sp": 60
+      },
+      "custom_css": [
+        ".a26-size__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".a26-size__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}"
+      ]
+    },
+    "reviews": {
+      "type": "musubi-lp-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "肩こり知らず！",
+            "text": "冬のコートはどれも重たくて、万年肩こり気味の私にはつらい季節でした。このジャケットは、冗談ではなく上着を着ていることを忘れるぐらい軽い！きれいめファッションに合わせられるのも嬉しいです。",
+            "meta": "前作 Women・2021年10月",
+            "tags": "#軽さ, #きれいめ"
+          }
+        },
+        "review_2": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "とにかく軽い！！動きやすい！！",
+            "text": "ダウンは電車の中では暑かったり、脱いでも手荷物になってジャマだったり、リュックも背負いにくくて苦手でした。エアーライトジャケットは、ほんとに驚きの軽さと動きやすさ！そして、しっかり暖かい！",
+            "meta": "前作 Men・購入者・2021年3月",
+            "tags": "#軽さ, #電車移動"
+          }
+        },
+        "review_3": {
+          "type": "review_card",
+          "settings": {
+            "stars": "★★★★★",
+            "title": "スタイリッシュ！",
+            "text": "通勤は満員電車が多く、脱いだアウターは網棚に置くのですが、ダウンはボリュームがあり大変でした。これは薄手なので脱ぎ着がとてもラク。着膨れ感がないので、きれいめにもカジュアルにも合わせやすいです。",
+            "meta": "前作 Men・購入者・2025年12月",
+            "tags": "#通勤, #着膨れしない"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "label": "USER REVIEW",
+        "heading": "<p>前作を着た人の声</p><p><strong>★ 4.5</strong>　42件のレビュー（前作 Men・Women）</p>",
+        "show_graph": false,
+        "avg_score": "4.5",
+        "avg_stars": "★★★★☆",
+        "review_count": "42件のレビュー（前作 Men・Women）",
+        "star5_pct": 52,
+        "star4_pct": 30,
+        "star3_pct": 4,
+        "star2_pct": 7,
+        "star1_pct": 7,
+        "bg_color": "#faf9f6",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "accent_color": "#8b7355",
+        "star_color": "#c6a15b",
+        "text_color": "#555555",
+        "title_color": "#1a1a1a",
+        "meta_color": "#777777",
+        "graph_bg_color": "#ffffff",
+        "card_bg_color": "#ffffff",
+        "border_color": "#eee7dd",
+        "bar_bg_color": "#f1ebe4",
+        "tag_bg_color": "#f4eee6",
+        "tag_color": "#8b7355",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "score_size_pc": 46,
+        "score_size_sp": 38,
+        "star_size_pc": 18,
+        "star_size_sp": 16,
+        "count_size_pc": 13,
+        "count_size_sp": 12,
+        "title_size_pc": 18,
+        "title_size_sp": 17,
+        "body_size_pc": 14,
+        "body_size_sp": 14,
+        "columns_pc": 3,
+        "graph_radius": 26,
+        "graph_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
+      },
+      "custom_css": [
+        ".reviews__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".reviews__heading p {margin: 0;}",
+        ".reviews__heading p:first-child {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
+        ".reviews__heading p + p {margin-top: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; color: #555555;}",
+        ".reviews__heading p + p strong {color: #c6a15b; font-size: 20px; font-weight: 700; margin-right: 4px;}"
+      ]
+    },
+    "care": {
+      "type": "musubi-lp-care",
+      "blocks": {
+        "care_1": {
+          "type": "care_point",
+          "settings": {
+            "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#b08a52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 10h18l-1.6 8.2a2 2 0 0 1-2 1.8H6.6a2 2 0 0 1-2-1.8z\"/><path d=\"M7 14c1 .8 2 .8 3 0s2-.8 3 0 2 .8 3 0\"/><path d=\"M12 3.5c-1.2 1.6-2 2.6-2 3.6a2 2 0 0 0 4 0c0-1-.8-2-2-3.6z\"/></svg>",
+            "title": "手洗いできる",
+            "description": "洗濯ネットに入れて、手洗いモードで。柔軟剤は避け、アイロンは低温で当て布を。"
+          }
+        },
+        "care_2": {
+          "type": "care_point",
+          "settings": {
+            "icon": "<svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#b08a52\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"6\" cy=\"7\" r=\"2.5\"/><circle cx=\"6\" cy=\"17\" r=\"2.5\"/><path d=\"M8.2 8.3 20 18\"/><path d=\"M8.2 15.7 20 6\"/></svg>",
+            "title": "綿が出たら、切る",
+            "description": "素材の特性上、中わたが表に出ることがあります。引っ張らず、ハサミで切ってください。"
+          }
+        }
+      },
+      "block_order": [
+        "care_1",
+        "care_2"
+      ],
+      "settings": {
+        "label": "EASY CARE",
+        "heading": "<p>ご家庭で洗濯できます</p>",
+        "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/3_a5c9aa2a-c5f3-4e9c-8ef5-46fa811a73b1.jpg?width=1200",
+        "image_alt": "エアーライトジャケット（ブラック）の平置き",
+        "bg_color": "#faf9f6",
+        "label_bg_color": "#f4eee6",
+        "label_color": "#8b7355",
+        "heading_color": "#1a1a1a",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#eee7dd",
+        "icon_bg_color": "#f4eee6",
+        "title_color": "#1a1a1a",
+        "text_color": "#555555",
+        "label_size_pc": 12,
+        "label_size_sp": 11,
+        "heading_size_pc": 32,
+        "heading_size_sp": 25,
+        "title_size_pc": 19,
+        "title_size_sp": 18,
+        "text_size_pc": 14,
+        "text_size_sp": 14,
+        "image_fit": "cover",
+        "image_height_pc": 520,
+        "image_height_sp": 320,
+        "image_radius": 26,
+        "image_radius_sp": 20,
+        "card_radius": 22,
+        "card_radius_sp": 18,
+        "max_width": 1080,
+        "padding_pc": 88,
+        "padding_sp": 60
+      },
+      "custom_css": [
+        ".care__label {font-family: 'Outfit', 'Noto Sans JP', sans-serif;}",
+        ".care__content {align-content: center;}",
+        ".care__heading {font-family: 'Noto Serif JP', 'Cormorant Garamond', serif; font-weight: 500;}",
+        ".care__point {align-content: start; align-items: center;}",
+        ".care__point h3 {margin: 0;}",
+        ".care__img {position: relative;}",
+        ".care__img img {position: absolute; inset: 0; object-position: center 40%;}"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "now",
+    "empathy",
+    "story",
+    "features",
+    "demos",
+    "why",
+    "layers",
+    "products",
+    "size",
+    "shell",
+    "fabric",
+    "details",
+    "reviews",
+    "mid-cta",
+    "founder",
+    "farm-to-fashion",
+    "process",
+    "styling",
+    "crosssell",
+    "care",
+    "proof",
+    "faq",
+    "sticky"
+  ]
+}

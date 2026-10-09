@@ -1,0 +1,597 @@
+{% comment %}
+  AirLight 2026 — 表地の軽さ「1㎡で74g」を 3D の布と天秤で見せる
+  - canvas 2D で 1m×1m の布（10cm グリッド）を奥行きのある構図に投影し、風で波打たせながら舞い降ろす
+  - 布はたたまれて天秤の左の皿に乗り、右の皿に鶏卵が1個落ちてきて、釣り合う（74g ≒ 卵1個）
+  - 中央の数字は 0 → 74 にカウントアップ。終わったら止まる（タップ／クリックで再生）
+  - ライブラリ不要。prefers-reduced-motion では最後の状態を静止画で出し、画面外では描画を止める
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+{%- assign accent = section.settings.accent_color | default: '#c29d66' -%}
+{%- assign weight = section.settings.weight | default: 74 -%}
+
+<style>
+  #{{ sid }}.a26-fab {
+    background: {{ section.settings.bg_color | default: '#faf7f2' }};
+    color: {{ section.settings.text_color | default: '#1a1a1a' }};
+    padding: clamp(48px, 8vw, 96px) 0;
+    overflow: hidden;
+  }
+  #{{ sid }} .a26-fab__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+    text-align: center;
+  }
+  #{{ sid }} .a26-fab__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: {{ accent }};
+    margin: 0 0 14px;
+  }
+  #{{ sid }} .a26-fab__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(24px, 3.2vw, 38px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin: 0 0 14px;
+  }
+  #{{ sid }} .a26-fab__lead {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 2;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  #{{ sid }} .a26-fab__stage {
+    position: relative;
+    width: min(100%, 880px);
+    height: {{ section.settings.stage_height_pc | default: 540 }}px;
+    margin: clamp(20px, 3vw, 36px) auto 0;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  #{{ sid }} .a26-fab__stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  #{{ sid }} .a26-fab__num {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -58%);
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    font-weight: 500;
+    line-height: 1;
+    color: #1a1a1a;
+    text-shadow: 0 0 22px rgba(255,255,255,.95), 0 0 8px rgba(255,255,255,.9);
+    pointer-events: none;
+    white-space: nowrap;
+    transition: top .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  }
+  #{{ sid }} .a26-fab__num [data-count] {
+    font-size: clamp(72px, 11vw, 132px);
+    letter-spacing: -0.02em;
+  }
+  #{{ sid }} .a26-fab__g {
+    font-size: clamp(28px, 4vw, 48px);
+    margin-left: 4px;
+  }
+  #{{ sid }} .a26-fab__per {
+    display: block;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: #5a5550;
+    margin-bottom: 10px;
+  }
+  #{{ sid }} .a26-fab__stage.is-folded .a26-fab__num {
+    top: 2%;
+    transform: translate(-50%, 0) scale(.72);
+  }
+  #{{ sid }} .a26-fab__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    margin: 0;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    letter-spacing: 0.08em;
+    color: #1a1a1a;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s ease;
+  }
+  #{{ sid }} .a26-fab__stage.is-balanced .a26-fab__caption { opacity: 1; }
+  #{{ sid }} .a26-fab__chips {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: clamp(16px, 2.5vw, 28px) 0 0;
+  }
+  #{{ sid }} .a26-fab__chip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e8e0cf;
+    border-radius: 999px;
+    padding: 10px 20px 10px 14px;
+    text-align: left;
+  }
+  #{{ sid }} .a26-fab__chip svg {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    stroke: {{ accent }};
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  #{{ sid }} .a26-fab__chip b {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #1a1a1a;
+  }
+  #{{ sid }} .a26-fab__chip small {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11.5px;
+    color: #6b655d;
+    margin-top: 2px;
+  }
+  #{{ sid }} .a26-fab__eq {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: #8a8178;
+    align-self: center;
+  }
+  #{{ sid }} .a26-fab__note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #8a8178;
+    max-width: 720px;
+    margin: 18px auto 0;
+  }
+  @media (max-width: 749px) {
+    #{{ sid }} .a26-fab__stage { height: {{ section.settings.stage_height_sp | default: 400 }}px; }
+    #{{ sid }} .a26-fab__chips { flex-direction: column; align-items: stretch; gap: 10px; }
+    #{{ sid }} .a26-fab__chip { border-radius: 14px; }
+    #{{ sid }} .a26-fab__eq { display: none; }
+    #{{ sid }} .a26-fab__lead { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #{{ sid }} .a26-fab__num, #{{ sid }} .a26-fab__caption { transition: none; }
+  }
+</style>
+
+<section id="{{ sid }}" class="a26-fab" data-a26-fabric data-weight="{{ weight }}" data-fabric-color="{{ section.settings.fabric_color | default: '#d8cfc1' }}" data-cloth-label="{{ section.settings.cloth_label | default: '表地 1m × 1m' | escape }}" data-egg-label="{{ section.settings.egg_label | default: '鶏卵 1個（LL）' | escape }}" aria-label="{{ section.settings.heading | strip_html | escape }}">
+  <div class="a26-fab__inner">
+    {%- if section.settings.kicker != blank -%}
+      <p class="a26-fab__kicker">{{ section.settings.kicker | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="a26-fab__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.lead != blank -%}
+      <p class="a26-fab__lead">{{ section.settings.lead }}</p>
+    {%- endif -%}
+
+    <div class="a26-fab__stage" data-stage>
+      <canvas data-canvas aria-hidden="true"></canvas>
+      <div class="a26-fab__num" aria-live="polite">
+        <span class="a26-fab__per">{{ section.settings.per_label | default: '1m × 1m の表地' | escape }}</span>
+        <span data-count>0</span><span class="a26-fab__g">g</span>
+      </div>
+      <p class="a26-fab__caption" data-caption>{{ section.settings.balance_caption | default: '鶏卵1個と、同じ重さ。' | escape }}</p>
+    </div>
+
+    <ul class="a26-fab__chips">
+      <li class="a26-fab__chip">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 4.5c5.2 0 10 7.2 10 14.3 0 6-4.5 10.7-10 10.7S7 24.8 7 18.8C7 11.7 11.8 4.5 17 4.5z"/><path d="M12.6 14.2c.6-2.4 2-4.6 3.6-6"/></svg>
+        <span><b>{{ section.settings.chip1_title | default: '鶏卵 1個 とほぼ同じ' | escape }}</b><small>{{ section.settings.chip1_sub | default: 'LLサイズ 70〜76g' | escape }}</small></span>
+      </li>
+      <li class="a26-fab__eq" aria-hidden="true">=</li>
+      <li class="a26-fab__chip">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M9 11.5l14-3.2 2.4 15.4-14 3.2z"/><path d="M7.2 14.2l14-3.2M5.4 17l14-3.2"/><path d="M13.4 15.8l8-1.8M14.3 19.4l8-1.8M15.2 23l5-1.1"/></svg>
+        <span><b>{{ section.settings.chip2_title | default: 'A4コピー用紙 15枚分' | escape }}</b><small>{{ section.settings.chip2_sub | default: '80g/㎡の紙で換算' | escape }}</small></span>
+      </li>
+    </ul>
+
+    {%- if section.settings.note != blank -%}
+      <p class="a26-fab__note">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('{{ sid }}');
+  if (!root || root.dataset.a26FabricReady) return;
+  root.dataset.a26FabricReady = '1';
+
+  var stage = root.querySelector('[data-stage]');
+  var canvas = root.querySelector('[data-canvas]');
+  var countEl = root.querySelector('[data-count]');
+  var ctx = canvas.getContext('2d');
+  var TARGET = parseInt(root.dataset.weight, 10) || 74;
+  var CLOTH_LABEL = root.dataset.clothLabel || '表地 1m × 1m';
+  var EGG_LABEL = root.dataset.eggLabel || '鶏卵 1個（LL）';
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- 色（生成りの布・チャコールの線） ----
+  function hexToRgb(h) {
+    h = (h || '#d8cfc1').replace('#', '');
+    if (h.length === 3) h = h.split('').map(function (c) { return c + c; }).join('');
+    var n = parseInt(h, 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  var base = hexToRgb(root.dataset.fabricColor);
+  function shade(k) {
+    var r = Math.min(255, Math.round(base[0] * k)), g = Math.min(255, Math.round(base[1] * k)), b = Math.min(255, Math.round(base[2] * k));
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  }
+  var INK = '40,36,32', INK2 = '#5a5550', GOLD = '#c29d66';
+
+  // ---- 布のメッシュ ----
+  var N = 30;                     // 30分割 = 10cm グリッドが3セルごと
+  var V = (N + 1) * (N + 1);
+  var px = new Float32Array(V), py = new Float32Array(V), pz = new Float32Array(V);   // 回転後（陰影用）
+  var sx = new Float32Array(V), sy = new Float32Array(V), sz = new Float32Array(V);   // 画面座標・奥行き
+  var noiseX = new Float32Array(V), noiseY = new Float32Array(V), noiseZ = new Float32Array(V);
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  for (var i = 0; i < V; i++) {
+    noiseX[i] = (rnd() - 0.5) * 0.22;
+    noiseY[i] = (rnd() - 0.5) * 0.30;
+    noiseZ[i] = (rnd() - 0.5) * 0.22;
+  }
+  var quadOrder = new Int32Array(N * N), quadSorted = new Int32Array(N * N), quadDepth = new Float32Array(N * N);
+  for (var qo = 0, jo = N - 1; jo >= 0; jo--) for (var io = 0; io < N; io++) quadOrder[qo++] = jo * N + io;
+
+  var W = 0, H = 0, DPR = 1;
+  function resize() {
+    var r = stage.getBoundingClientRect();
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    W = Math.max(1, Math.round(r.width)); H = Math.max(1, Math.round(r.height));
+    canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  var enterAt = null, visible = false, raf = 0, finished = false;
+  function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+  function easeOut(x) { return 1 - Math.pow(1 - x, 3); }
+  function easeInOut(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+
+  // 時間割（秒）: 0〜1.9 舞い降り → 2.1〜3.0 たたまれて左の皿へ → 3.0〜 皿が沈む → 3.5〜4.1 卵が落ちる → 4.1〜 釣り合う
+  var T_FOLD = 2.1, T_FOLD_D = 0.9, T_EGG = 3.5, T_EGG_D = 0.6, T_END = 8.5;
+
+  function project(x, y, z, cosX, sinX, cosY, sinY, S, cx, cy, d, f, out, k) {
+    var x1 = x * cosY + z * sinY, z1 = -x * sinY + z * cosY;
+    var y2 = y * cosX + z1 * sinX, z2 = -y * sinX + z1 * cosX;     // 奥（z大）が画面の上・遠くに
+    var pr = f / (z2 + d);
+    out[0][k] = cx + x1 * pr * S;
+    out[1][k] = cy - y2 * pr * S;
+    out[2][k] = z2;
+    return [x1, y2, z2];
+  }
+  var tmpX = new Float32Array(V), tmpY = new Float32Array(V), tmpZ = new Float32Array(V);
+  var outSheet = [sx, sy, sz], outPile = [tmpX, tmpY, tmpZ];
+
+  function frame(now) {
+    raf = 0;
+    var tt = enterAt === null ? 0 : (now - enterAt) / 1000;
+    if (reduced) tt = T_END + 1;
+    var t = now / 1000;
+
+    var land = easeOut(clamp01(tt / 1.9));
+    var fold = easeInOut(clamp01((tt - T_FOLD) / T_FOLD_D));
+    var eggP = clamp01((tt - T_EGG) / T_EGG_D); eggP = eggP * eggP;            // 落下（加速）
+    var tilt = 0;                                                               // 負 = 左の皿が下がる
+    if (tt > T_FOLD + T_FOLD_D - 0.1) tilt = -0.13 * easeOut(clamp01((tt - (T_FOLD + T_FOLD_D - 0.1)) / 0.5));
+    if (tt > T_EGG + T_EGG_D) { var u = tt - (T_EGG + T_EGG_D); tilt = -0.13 * Math.exp(-2.4 * u) * Math.cos(5.2 * u); }
+    var labelA = clamp01((tt - (T_EGG + T_EGG_D + 0.2)) / 0.6);
+    stage.classList.toggle('is-folded', fold > 0.02);
+    stage.classList.toggle('is-balanced', tt > T_EGG + T_EGG_D + 0.8);
+
+    // ---- 天秤のレイアウト ----
+    var cx = W / 2;
+    var beamHalf = Math.min(W * 0.34, 300);
+    var pivotY = H * 0.40, hang = H * 0.25;
+    var panRx = Math.min(beamHalf * 0.44, 124), panRy = panRx * 0.3;
+    var cT = Math.cos(tilt), sT = Math.sin(tilt);
+    var eLx = cx - beamHalf * cT, eLy = pivotY - beamHalf * sT;
+    var eRx = cx + beamHalf * cT, eRy = pivotY + beamHalf * sT;
+    var pLx = eLx, pLy = eLy + hang, pRx = eRx, pRy = eRy + hang;
+    var baseY = H * 0.9;
+
+    // ---- 布: 浮いている姿（sheet）と、皿の上にたたまれた姿（pile）を計算し、fold で補間 ----
+    var amp = (reduced ? 0 : 0.055) * (1 + 1.6 * (1 - land)) * (1 - fold);
+    var lift = 0.95 * (1 - land);
+    var tiltX = 1.12 - 0.54 * land, swayY = (reduced ? 0 : 1) * (0.22 * (1 - land) * Math.sin(t * 1.3) + 0.08 * land * Math.sin(t * 0.45));
+    var cosX = Math.cos(tiltX), sinX = Math.sin(tiltX), cosY = Math.cos(swayY), sinY = Math.sin(swayY);
+    var d = 2.15, f = 1.5;
+    var S = Math.min(W * 0.9, H * 1.75);
+    var scx = cx, scy = H / 2 - H * 0.02;
+    var tiltX2 = 0.95, cosX2 = Math.cos(tiltX2), sinX2 = Math.sin(tiltX2);
+    var S2 = panRx * 2.3, pcx = pLx, pcy = pLy - panRy * 0.4;
+
+    for (var j = 0; j <= N; j++) {
+      for (var i2 = 0; i2 <= N; i2++) {
+        var k = j * (N + 1) + i2;
+        var x0 = i2 / N - 0.5, z0 = j / N - 0.5;
+        var edge = Math.max(Math.abs(x0), Math.abs(z0)) * 2;
+        var wave = amp * (1 + 0.6 * edge) * (Math.sin(x0 * 6.9 + t * 1.15 + z0 * 2.0) * 0.6 + Math.sin(z0 * 9.7 - t * 0.85) * 0.4 + Math.sin((x0 + z0) * 4.2 + t * 1.7) * 0.28);
+        var a1 = project(x0, wave + lift, z0, cosX, sinX, cosY, sinY, S, scx, scy, d, f, outSheet, k);
+        // たたまれた布: 放射状に中心へ寄せ、なだらかな折り目と中央のふくらみ
+        var r = Math.sqrt(x0 * x0 + z0 * z0), ang = Math.atan2(z0, x0);
+        var pull = 1 - 0.74 * (0.78 + 0.22 * Math.sin(ang * 5 + r * 9));
+        var foldY = 0.12 * Math.sin(x0 * 11 + 1.3) * Math.sin(z0 * 9 - 0.7) + 0.05 * Math.sin(x0 * 19) * Math.cos(z0 * 17) + 0.015 * noiseY[k];
+        var mound = 0.2 * Math.max(0, 1 - r * 2.2);
+        var a2 = project(x0 * pull + noiseX[k] * 0.16, foldY + mound, z0 * pull + noiseZ[k] * 0.16, cosX2, sinX2, 1, 0, S2, pcx, pcy, d, f, outPile, k);
+        sx[k] += (tmpX[k] - sx[k]) * fold;
+        sy[k] += (tmpY[k] - sy[k]) * fold;
+        sz[k] += (tmpZ[k] - sz[k]) * fold;
+        px[k] = a1[0] + (a2[0] - a1[0]) * fold;
+        py[k] = a1[1] + (a2[1] - a1[1]) * fold;
+        pz[k] = a1[2] + (a2[2] - a1[2]) * fold;
+      }
+    }
+
+    // ---- 描画 ----
+    ctx.clearRect(0, 0, W, H);
+
+    // 天秤（後ろ側）: 台・支柱・さお・糸・皿
+    ctx.save();
+    ctx.globalAlpha = 0.9;
+    ctx.fillStyle = 'rgba(' + INK + ',0.08)';
+    ctx.beginPath(); ctx.ellipse(cx, baseY + 4, Math.min(W * 0.12, 70), 7, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#efe9df'; ctx.strokeStyle = 'rgba(' + INK + ',0.7)'; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.ellipse(cx, baseY, Math.min(W * 0.1, 56), 6, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(' + INK + ',0.85)'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(cx, baseY); ctx.lineTo(cx, pivotY); ctx.stroke();
+    ctx.strokeStyle = GOLD; ctx.lineWidth = 3.5;
+    ctx.beginPath(); ctx.moveTo(eLx, eLy); ctx.lineTo(eRx, eRy); ctx.stroke();
+    ctx.fillStyle = '#1a1a1a';
+    ctx.beginPath(); ctx.arc(cx, pivotY, 4.5, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = 'rgba(' + INK + ',0.55)'; ctx.lineWidth = 1;
+    [[eLx, eLy, pLx, pLy], [eRx, eRy, pRx, pRy]].forEach(function (p) {
+      ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(p[2] - panRx * 0.85, p[3]); ctx.moveTo(p[0], p[1]); ctx.lineTo(p[2] + panRx * 0.85, p[3]); ctx.stroke();
+    });
+    [[pLx, pLy], [pRx, pRy]].forEach(function (p) {
+      ctx.fillStyle = '#f3eee6'; ctx.strokeStyle = 'rgba(' + INK + ',0.7)'; ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.ellipse(p[0], p[1], panRx, panRy, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = 'rgba(' + INK + ',0.06)';
+      ctx.beginPath(); ctx.ellipse(p[0], p[1] + 2, panRx * 0.86, panRy * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.restore();
+
+    // 浮いている布の影（たたまれるにつれて消える）
+    var bx0 = Infinity, bx1 = -Infinity, by1 = -Infinity;
+    for (var bi = 0; bi < V; bi++) { if (sx[bi] < bx0) bx0 = sx[bi]; if (sx[bi] > bx1) bx1 = sx[bi]; if (sy[bi] > by1) by1 = sy[bi]; }
+    var shAlpha = 0.10 * land * (1 - fold);
+    if (shAlpha > 0.005) {
+      ctx.save(); ctx.globalAlpha = shAlpha; ctx.fillStyle = '#6a625a'; ctx.filter = 'blur(6px)';
+      ctx.beginPath(); ctx.ellipse((bx0 + bx1) / 2, by1 + 10, (bx1 - bx0) * 0.46, 10 + S * 0.02, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    }
+
+    // 布の面（平らなときは奥の行から、たたまれるときは奥行きで並べ替え）
+    var lx = 0.35, ly = 0.85, lz = -0.4, ll = Math.sqrt(lx * lx + ly * ly + lz * lz); lx /= ll; ly /= ll; lz /= ll;
+    var orderArr = quadOrder;
+    if (fold > 0.01) {
+      for (var qi = 0; qi < N * N; qi++) {
+        var qa = (qi / N | 0) * (N + 1) + (qi % N);
+        quadDepth[qi] = sz[qa] + sz[qa + 1] + sz[qa + N + 1] + sz[qa + N + 2];
+      }
+      for (var qs = 0; qs < N * N; qs++) quadSorted[qs] = qs;
+      quadSorted.sort(function (p1, p2) { return quadDepth[p2] - quadDepth[p1]; });
+      orderArr = quadSorted;
+    }
+    for (var oi = 0; oi < N * N; oi++) {
+      var qidx = orderArr[oi];
+      var jj = qidx / N | 0, ii = qidx % N;
+      var a = jj * (N + 1) + ii, b = a + 1, cc = a + N + 1, dd = cc + 1;
+      var ux = px[b] - px[a], uy = py[b] - py[a], uz = pz[b] - pz[a];
+      var vx = px[cc] - px[a], vy = py[cc] - py[a], vz = pz[cc] - pz[a];
+      var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+      var nl = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+      var lum = (nx * lx + ny * ly + nz * lz) / nl;
+      if (lum < 0) lum = -lum * 0.6;
+      ctx.fillStyle = shade((0.84 - 0.1 * fold) + (0.26 + 0.14 * fold) * lum);
+      ctx.beginPath();
+      ctx.moveTo(sx[a], sy[a]); ctx.lineTo(sx[b], sy[b]); ctx.lineTo(sx[dd], sy[dd]); ctx.lineTo(sx[cc], sy[cc]);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // グリッド（10cm 刻み）と縁: たたまれると薄く
+    var gridA = 0.42 * (1 - fold);
+    if (gridA > 0.01) {
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(58,52,46,' + gridA.toFixed(3) + ')';
+      for (var g = 0; g <= N; g += 3) {
+        ctx.beginPath();
+        for (var q = 0; q <= N; q++) { var k3 = g * (N + 1) + q; if (q === 0) ctx.moveTo(sx[k3], sy[k3]); else ctx.lineTo(sx[k3], sy[k3]); }
+        ctx.stroke();
+        ctx.beginPath();
+        for (var q2 = 0; q2 <= N; q2++) { var k4 = q2 * (N + 1) + g; if (q2 === 0) ctx.moveTo(sx[k4], sy[k4]); else ctx.lineTo(sx[k4], sy[k4]); }
+        ctx.stroke();
+      }
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = 'rgba(' + INK + ',' + (0.75 * (1 - fold)).toFixed(3) + ')';
+      ctx.beginPath();
+      for (var e = 0; e <= N; e++) { if (e === 0) ctx.moveTo(sx[e], sy[e]); else ctx.lineTo(sx[e], sy[e]); }
+      for (var e2 = 1; e2 <= N; e2++) { var ke2 = e2 * (N + 1) + N; ctx.lineTo(sx[ke2], sy[ke2]); }
+      for (var e3 = N - 1; e3 >= 0; e3--) { var ke3 = N * (N + 1) + e3; ctx.lineTo(sx[ke3], sy[ke3]); }
+      for (var e4 = N - 1; e4 >= 0; e4--) { var ke4 = e4 * (N + 1); ctx.lineTo(sx[ke4], sy[ke4]); }
+      ctx.closePath();
+      ctx.stroke();
+    }
+
+    // 寸法「1 m」（浮いている間だけ）
+    var dimA = land * (1 - fold * 2);
+    if (dimA > 0.02) {
+      ctx.save();
+      ctx.globalAlpha = Math.min(1, dimA);
+      ctx.font = '600 12px Outfit, "Noto Sans JP", sans-serif';
+      ctx.fillStyle = INK2; ctx.strokeStyle = 'rgba(90,85,80,.7)'; ctx.lineWidth = 1;
+      var bl = 0, br = N;
+      var mx = (sx[bl] + sx[br]) / 2, my = Math.max(sy[bl], sy[br]) + 22;
+      ctx.beginPath(); ctx.moveTo(sx[bl], my); ctx.lineTo(sx[br], my); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(sx[bl], my - 5); ctx.lineTo(sx[bl], my + 5); ctx.moveTo(sx[br], my - 5); ctx.lineTo(sx[br], my + 5); ctx.stroke();
+      ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.fillText('1 m', mx, my + 5);
+      var nearL = 0, farL = N * (N + 1);
+      var lxm = Math.min(sx[nearL], sx[farL]) - 14, lyTop = Math.min(sy[nearL], sy[farL]), lyBot = Math.max(sy[nearL], sy[farL]);
+      ctx.beginPath(); ctx.moveTo(lxm, lyTop); ctx.lineTo(lxm, lyBot); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(lxm - 5, lyTop); ctx.lineTo(lxm + 5, lyTop); ctx.moveTo(lxm - 5, lyBot); ctx.lineTo(lxm + 5, lyBot); ctx.stroke();
+      ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+      ctx.fillText('1 m', lxm, lyTop - 6);
+      ctx.restore();
+    }
+
+    // 卵（右の皿に落ちてくる）
+    if (eggP > 0) {
+      var eggRx = panRx * 0.28, eggRy = eggRx * 1.26;
+      var restY = pRy - panRy * 0.2 - eggRy;
+      var eggY = (-eggRy - 20) + (restY + eggRy + 20) * eggP;
+      var squash = 1 - 0.1 * Math.max(0, 1 - Math.abs(tt - (T_EGG + T_EGG_D)) / 0.18);   // 着地の一瞬だけつぶれる
+      ctx.save();
+      if (eggP >= 1) {
+        ctx.globalAlpha = 0.14;
+        ctx.fillStyle = '#6a625a';
+        ctx.beginPath(); ctx.ellipse(pRx, pRy - panRy * 0.15, eggRx * 1.15, panRy * 0.45, 0, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      ctx.translate(pRx, eggY + eggRy * (1 - squash));
+      ctx.scale(1, squash);
+      var grad = ctx.createRadialGradient(-eggRx * 0.35, -eggRy * 0.4, eggRx * 0.1, 0, 0, eggRy * 1.1);
+      grad.addColorStop(0, '#f6eddc'); grad.addColorStop(0.6, '#e3d3b8'); grad.addColorStop(1, '#c2ad8c');
+      ctx.fillStyle = grad;
+      // 卵の輪郭: 下半分は楕円、上に向かって少しだけ細くなる丸い形（尖らせない）
+      ctx.beginPath();
+      for (var ei = 0; ei <= 72; ei++) {
+        var th = ei / 72 * Math.PI * 2;
+        var yy = Math.sin(th);                                   // -1 上 → +1 下
+        var wx = Math.cos(th) * (0.9 + 0.1 * yy);                // 下は広く、上はやや細く
+        var ex = wx * eggRx, ey = yy * eggRy;
+        if (ei === 0) ctx.moveTo(ex, ey); else ctx.lineTo(ex, ey);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(' + INK + ',0.35)'; ctx.lineWidth = 1; ctx.stroke();
+      ctx.restore();
+    }
+
+    // 皿の下のラベル（釣り合ってから）
+    if (labelA > 0.01) {
+      ctx.save();
+      ctx.globalAlpha = labelA;
+      ctx.font = '500 12px "Noto Sans JP", sans-serif';
+      ctx.fillStyle = INK2; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.fillText(CLOTH_LABEL, pLx, pLy + panRy + 10);
+      ctx.fillText(EGG_LABEL, pRx, pRy + panRy + 10);
+      ctx.font = '600 13px Outfit, "Noto Sans JP", sans-serif';
+      ctx.fillStyle = '#1a1a1a';
+      ctx.fillText(TARGET + ' g', pLx, pLy + panRy + 28);
+      ctx.fillText('70–76 g', pRx, pRy + panRy + 28);
+      ctx.restore();
+    }
+
+    // カウントアップ（舞い降り〜たたむまで）
+    var n = Math.round(TARGET * easeOut(clamp01(tt / 2.6)));
+    if (countEl.textContent !== String(n)) countEl.textContent = String(n);
+
+    finished = tt > T_END;
+    if (!reduced && visible && !finished) raf = requestAnimationFrame(frame);
+  }
+
+  function start() { if (!raf) raf = requestAnimationFrame(frame); }
+
+  // ---- 可視判定（入ったら舞い降り、出たら止める） ----
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        visible = en.isIntersecting && en.intersectionRatio > 0.25;
+        if (visible && enterAt === null) enterAt = performance.now();
+        if (visible) start();
+      });
+    }, { threshold: [0, 0.25, 0.5] });
+    io.observe(stage);
+  } else {
+    visible = true; enterAt = performance.now(); start();
+  }
+
+  // 終わったあとにタップ／クリックで再生
+  stage.addEventListener('pointerdown', function () {
+    if (finished && !reduced) { enterAt = performance.now(); finished = false; start(); }
+  });
+
+  // ---- サイズ ----
+  resize();
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(function () { resize(); start(); }).observe(stage);
+  } else {
+    window.addEventListener('resize', function () { resize(); start(); });
+  }
+  if (reduced) { enterAt = performance.now(); visible = true; start(); }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "A2026 表地の軽さ（3Dの布と天秤）",
+  "tag": "div",
+  "class": "shopify-section--a26-fabric",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 色" },
+    { "type": "text", "id": "section_id", "label": "Section ID（英数字）" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#faf7f2" },
+    { "type": "color", "id": "text_color", "label": "見出しの色", "default": "#1a1a1a" },
+    { "type": "color", "id": "body_color", "label": "本文の色", "default": "#4a4540" },
+    { "type": "color", "id": "accent_color", "label": "アクセント色", "default": "#c29d66" },
+    { "type": "color", "id": "fabric_color", "label": "布の色", "default": "#d8cfc1" },
+
+    { "type": "header", "content": "文言" },
+    { "type": "text", "id": "kicker", "label": "キッカー", "default": "TAILORED TEXTURE" },
+    { "type": "text", "id": "heading", "label": "見出し", "default": "1メートル四方で、卵ひとつ。" },
+    { "type": "richtext", "id": "lead", "label": "リード", "default": "<p>表地の重さは、1平方メートルあたり74g。鶏卵1個とほぼ同じです。</p>" },
+    { "type": "number", "id": "weight", "label": "数字（g）", "default": 74 },
+    { "type": "text", "id": "per_label", "label": "数字の上の説明", "default": "1m × 1m の表地" },
+    { "type": "text", "id": "cloth_label", "label": "左の皿のラベル", "default": "表地 1m × 1m" },
+    { "type": "text", "id": "egg_label", "label": "右の皿のラベル", "default": "鶏卵 1個（LL）" },
+    { "type": "text", "id": "balance_caption", "label": "釣り合ったときの一言", "default": "鶏卵1個と、同じ重さ。" },
+
+    { "type": "header", "content": "比較" },
+    { "type": "text", "id": "chip1_title", "label": "比較1 見出し", "default": "鶏卵 1個 とほぼ同じ" },
+    { "type": "text", "id": "chip1_sub", "label": "比較1 補足", "default": "LLサイズ 70〜76g" },
+    { "type": "text", "id": "chip2_title", "label": "比較2 見出し", "default": "A4コピー用紙 15枚分" },
+    { "type": "text", "id": "chip2_sub", "label": "比較2 補足", "default": "80g/㎡の紙で換算" },
+    { "type": "richtext", "id": "note", "label": "注記", "default": "<p>※ 表地「Tailored Texture」の目付（1㎡あたりの重さ）は74g。鶏卵LLサイズは70〜76g（鶏卵の取引規格）。A4コピー用紙は80g/㎡の紙1枚約5gで換算。</p>" },
+
+    { "type": "header", "content": "サイズ" },
+    { "type": "range", "id": "stage_height_pc", "label": "舞台の高さ（PC・px）", "min": 320, "max": 720, "step": 10, "default": 540 },
+    { "type": "range", "id": "stage_height_sp", "label": "舞台の高さ（スマホ・px）", "min": 240, "max": 560, "step": 10, "default": 400 }
+  ],
+  "presets": [ { "name": "A2026 表地の軽さ（3Dの布と天秤）" } ]
+}
+{% endschema %}
