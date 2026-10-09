@@ -298,6 +298,27 @@
         "card_ratio": "4/5"
       }
     },
+    "fabric": {
+      "type": "airlight2026-fabric",
+      "settings": {
+        "section_id": "a26-fabric",
+        "kicker": "TAILORED TEXTURE",
+        "heading": "1メートル四方で、卵ひとつ。",
+        "lead": "<p>表地の重さは、1平方メートルあたり74g。鶏卵1個とほぼ同じです。</p>",
+        "weight": 74,
+        "per_label": "1m × 1m の表地",
+        "crumple_caption": "手のひらに、収まる。",
+        "hint_pc": "カーソルを重ねると、布が縮みます",
+        "hint_sp": "布に触れている間、縮みます",
+        "chip1_title": "鶏卵 1個 とほぼ同じ",
+        "chip1_sub": "LLサイズ 70〜76g",
+        "chip2_title": "A4コピー用紙 15枚分",
+        "chip2_sub": "80g/㎡の紙で換算",
+        "note": "<p>※ 表地「Tailored Texture」の目付（1㎡あたりの重さ）は74g。鶏卵LLサイズは70〜76g（鶏卵の取引規格）。A4コピー用紙は80g/㎡の紙1枚約5gで換算。</p>",
+        "stage_height_pc": 520,
+        "stage_height_sp": 380
+      }
+    },
     "details": {
       "type": "airlight2026-shell",
       "blocks": {
@@ -1338,6 +1359,7 @@
     "products",
     "size",
     "shell",
+    "fabric",
     "details",
     "reviews",
     "mid-cta",
