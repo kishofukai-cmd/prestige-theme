@@ -326,8 +326,8 @@
     var cosX = Math.cos(tiltX), sinX = Math.sin(tiltX);
     var cosY = Math.cos(swayY), sinY = Math.sin(swayY);
     var d = 2.35, f = 1.55;
-    var S = Math.min(W * 0.92, H * 1.35);
-    var cx = W / 2, cy = H / 2 + H * 0.03;
+    var S = Math.min(W * 0.98, H * 1.75);
+    var cx = W / 2, cy = H / 2 - H * 0.02;
 
     for (var j = 0; j <= N; j++) {
       for (var i = 0; i <= N; i++) {
@@ -357,14 +357,17 @@
     // ---- 描画 ----
     ctx.clearRect(0, 0, W, H);
 
-    // 影（床に落ちる薄い影）
-    var shAlpha = 0.16 * land * (1 - 0.5 * c);
+    // 影（布の真下に落ちる薄い影。投影後の外接枠から位置を決める）
+    var bx0 = Infinity, bx1 = -Infinity, by1 = -Infinity;
+    for (var bi = 0; bi < V; bi++) { if (sx[bi] < bx0) bx0 = sx[bi]; if (sx[bi] > bx1) bx1 = sx[bi]; if (sy[bi] > by1) by1 = sy[bi]; }
+    var shAlpha = (0.10 + 0.12 * c) * land;
     if (shAlpha > 0.005) {
       ctx.save();
       ctx.globalAlpha = shAlpha;
       ctx.fillStyle = '#6a625a';
+      ctx.filter = 'blur(6px)';
       ctx.beginPath();
-      ctx.ellipse(cx, cy + S * 0.36 * (1 - 0.55 * c) + lift * 0, S * 0.42 * scaleC, S * 0.1 * scaleC, 0, 0, Math.PI * 2);
+      ctx.ellipse((bx0 + bx1) / 2, by1 + 10 + 6 * c, (bx1 - bx0) * 0.46, 10 + S * 0.02, 0, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
