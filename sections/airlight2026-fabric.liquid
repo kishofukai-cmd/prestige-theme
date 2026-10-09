@@ -1,9 +1,9 @@
 {% comment %}
-  AirLight 2026 — 表地の軽さ「1㎡で74g」を 3D の布で見せる
-  - canvas 2D で 1m×1m の布（10cm グリッド）を奥行きのある構図に投影し、風で波打たせる
-  - セクションが画面に入ると布が舞い降り、中央の数字が 0 → 74 にカウントアップ
-  - PC はカーソルを重ねる／スマホは触れている間、布がくしゃっと縮んで手のひらサイズに
-  - ライブラリ不要。prefers-reduced-motion では静止画、画面外では描画を止める
+  AirLight 2026 — 表地の軽さ「1㎡で74g」を 3D の布と天秤で見せる
+  - canvas 2D で 1m×1m の布（10cm グリッド）を奥行きのある構図に投影し、風で波打たせながら舞い降ろす
+  - 布はたたまれて天秤の左の皿に乗り、右の皿に鶏卵が1個落ちてきて、釣り合う（74g ≒ 卵1個）
+  - 中央の数字は 0 → 74 にカウントアップ。終わったら止まる（タップ／クリックで再生）
+  - ライブラリ不要。prefers-reduced-motion では最後の状態を静止画で出し、画面外では描画を止める
 {% endcomment %}
 
 {%- assign sid = section.settings.section_id | default: section.id -%}
@@ -51,12 +51,11 @@
   #{{ sid }} .a26-fab__stage {
     position: relative;
     width: min(100%, 880px);
-    height: {{ section.settings.stage_height_pc | default: 520 }}px;
+    height: {{ section.settings.stage_height_pc | default: 540 }}px;
     margin: clamp(20px, 3vw, 36px) auto 0;
     touch-action: pan-y;
     user-select: none;
     -webkit-user-select: none;
-    cursor: pointer;
   }
   #{{ sid }} .a26-fab__stage canvas {
     position: absolute;
@@ -77,7 +76,7 @@
     text-shadow: 0 0 22px rgba(255,255,255,.95), 0 0 8px rgba(255,255,255,.9);
     pointer-events: none;
     white-space: nowrap;
-    transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .4s;
+    transition: top .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
   }
   #{{ sid }} .a26-fab__num [data-count] {
     font-size: clamp(72px, 11vw, 132px);
@@ -95,44 +94,25 @@
     color: #5a5550;
     margin-bottom: 10px;
   }
-  #{{ sid }} .a26-fab__stage.is-crumpled .a26-fab__num {
-    transform: translate(-50%, -58%) scale(.86);
+  #{{ sid }} .a26-fab__stage.is-folded .a26-fab__num {
+    top: 2%;
+    transform: translate(-50%, 0) scale(.72);
   }
-  #{{ sid }} .a26-fab__caption,
-  #{{ sid }} .a26-fab__hint {
+  #{{ sid }} .a26-fab__caption {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 6px;
     margin: 0;
-    font-family: 'Noto Sans JP', sans-serif;
-    pointer-events: none;
-    transition: opacity .45s ease;
-  }
-  #{{ sid }} .a26-fab__caption {
-    bottom: 14px;
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(16px, 2vw, 22px);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     color: #1a1a1a;
     opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s ease;
   }
-  #{{ sid }} .a26-fab__stage.is-crumpled .a26-fab__caption { opacity: 1; }
-  #{{ sid }} .a26-fab__hint {
-    bottom: 16px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    color: #8a8178;
-    opacity: 1;
-  }
-  #{{ sid }} .a26-fab__hint span { display: none; }
-  @media (hover: hover) and (pointer: fine) {
-    #{{ sid }} .a26-fab__hint .a26-fab__hint--pc { display: inline; }
-  }
-  @media not all and (hover: hover) and (pointer: fine) {
-    #{{ sid }} .a26-fab__hint .a26-fab__hint--sp { display: inline; }
-  }
-  #{{ sid }} .a26-fab__stage.is-crumpled .a26-fab__hint,
-  #{{ sid }} .a26-fab__stage.was-crumpled .a26-fab__hint { opacity: 0; }
+  #{{ sid }} .a26-fab__stage.is-balanced .a26-fab__caption { opacity: 1; }
   #{{ sid }} .a26-fab__chips {
     list-style: none;
     display: flex;
@@ -192,18 +172,18 @@
     margin: 18px auto 0;
   }
   @media (max-width: 749px) {
-    #{{ sid }} .a26-fab__stage { height: {{ section.settings.stage_height_sp | default: 380 }}px; }
+    #{{ sid }} .a26-fab__stage { height: {{ section.settings.stage_height_sp | default: 400 }}px; }
     #{{ sid }} .a26-fab__chips { flex-direction: column; align-items: stretch; gap: 10px; }
     #{{ sid }} .a26-fab__chip { border-radius: 14px; }
     #{{ sid }} .a26-fab__eq { display: none; }
     #{{ sid }} .a26-fab__lead { text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) {
-    #{{ sid }} .a26-fab__num, #{{ sid }} .a26-fab__caption, #{{ sid }} .a26-fab__hint { transition: none; }
+    #{{ sid }} .a26-fab__num, #{{ sid }} .a26-fab__caption { transition: none; }
   }
 </style>
 
-<section id="{{ sid }}" class="a26-fab" data-a26-fabric data-weight="{{ weight }}" data-fabric-color="{{ section.settings.fabric_color | default: '#d8cfc1' }}" aria-label="{{ section.settings.heading | strip_html | escape }}">
+<section id="{{ sid }}" class="a26-fab" data-a26-fabric data-weight="{{ weight }}" data-fabric-color="{{ section.settings.fabric_color | default: '#d8cfc1' }}" data-cloth-label="{{ section.settings.cloth_label | default: '表地 1m × 1m' | escape }}" data-egg-label="{{ section.settings.egg_label | default: '鶏卵 1個（LL）' | escape }}" aria-label="{{ section.settings.heading | strip_html | escape }}">
   <div class="a26-fab__inner">
     {%- if section.settings.kicker != blank -%}
       <p class="a26-fab__kicker">{{ section.settings.kicker | escape }}</p>
@@ -221,11 +201,7 @@
         <span class="a26-fab__per">{{ section.settings.per_label | default: '1m × 1m の表地' | escape }}</span>
         <span data-count>0</span><span class="a26-fab__g">g</span>
       </div>
-      <p class="a26-fab__caption" data-caption>{{ section.settings.crumple_caption | default: '手のひらに、収まる。' | escape }}</p>
-      <p class="a26-fab__hint" data-hint>
-        <span class="a26-fab__hint--pc">{{ section.settings.hint_pc | default: 'カーソルを重ねると、布が縮みます' | escape }}</span>
-        <span class="a26-fab__hint--sp">{{ section.settings.hint_sp | default: '布に触れている間、縮みます' | escape }}</span>
-      </p>
+      <p class="a26-fab__caption" data-caption>{{ section.settings.balance_caption | default: '鶏卵1個と、同じ重さ。' | escape }}</p>
     </div>
 
     <ul class="a26-fab__chips">
@@ -257,6 +233,8 @@
   var countEl = root.querySelector('[data-count]');
   var ctx = canvas.getContext('2d');
   var TARGET = parseInt(root.dataset.weight, 10) || 74;
+  var CLOTH_LABEL = root.dataset.clothLabel || '表地 1m × 1m';
+  var EGG_LABEL = root.dataset.eggLabel || '鶏卵 1個（LL）';
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---- 色（生成りの布・チャコールの線） ----
@@ -267,26 +245,27 @@
     return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
   }
   var base = hexToRgb(root.dataset.fabricColor);
-  function shade(k) { // k: 0.7〜1.15
+  function shade(k) {
     var r = Math.min(255, Math.round(base[0] * k)), g = Math.min(255, Math.round(base[1] * k)), b = Math.min(255, Math.round(base[2] * k));
     return 'rgb(' + r + ',' + g + ',' + b + ')';
   }
+  var INK = '40,36,32', INK2 = '#5a5550', GOLD = '#c29d66';
 
   // ---- 布のメッシュ ----
   var N = 30;                     // 30分割 = 10cm グリッドが3セルごと
   var V = (N + 1) * (N + 1);
-  var px = new Float32Array(V), py = new Float32Array(V), pz = new Float32Array(V);
-  var sx = new Float32Array(V), sy = new Float32Array(V), sz = new Float32Array(V); // 投影後
+  var px = new Float32Array(V), py = new Float32Array(V), pz = new Float32Array(V);   // 回転後（陰影用）
+  var sx = new Float32Array(V), sy = new Float32Array(V), sz = new Float32Array(V);   // 画面座標・奥行き
   var noiseX = new Float32Array(V), noiseY = new Float32Array(V), noiseZ = new Float32Array(V);
   var seed = 7;
   function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
-  var quadOrder = new Int32Array(N * N), quadSorted = new Int32Array(N * N), quadDepth = new Float32Array(N * N);
-  for (var qo = 0, jo = N - 1; jo >= 0; jo--) for (var io = 0; io < N; io++) quadOrder[qo++] = jo * N + io;
   for (var i = 0; i < V; i++) {
     noiseX[i] = (rnd() - 0.5) * 0.22;
     noiseY[i] = (rnd() - 0.5) * 0.30;
     noiseZ[i] = (rnd() - 0.5) * 0.22;
   }
+  var quadOrder = new Int32Array(N * N), quadSorted = new Int32Array(N * N), quadDepth = new Float32Array(N * N);
+  for (var qo = 0, jo = N - 1; jo >= 0; jo--) for (var io = 0; io < N; io++) quadOrder[qo++] = jo * N + io;
 
   var W = 0, H = 0, DPR = 1;
   function resize() {
@@ -297,154 +276,191 @@
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
 
-  var t0 = null, enterAt = null, visible = false, raf = 0;
-  var crumpleTarget = 0, crumple = 0;
-  var landed = false;
-
+  var enterAt = null, visible = false, raf = 0, finished = false;
+  function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
   function easeOut(x) { return 1 - Math.pow(1 - x, 3); }
   function easeInOut(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
 
+  // 時間割（秒）: 0〜1.9 舞い降り → 2.1〜3.0 たたまれて左の皿へ → 3.0〜 皿が沈む → 3.5〜4.1 卵が落ちる → 4.1〜 釣り合う
+  var T_FOLD = 2.1, T_FOLD_D = 0.9, T_EGG = 3.5, T_EGG_D = 0.6, T_END = 8.5;
+
+  function project(x, y, z, cosX, sinX, cosY, sinY, S, cx, cy, d, f, out, k) {
+    var x1 = x * cosY + z * sinY, z1 = -x * sinY + z * cosY;
+    var y2 = y * cosX + z1 * sinX, z2 = -y * sinX + z1 * cosX;     // 奥（z大）が画面の上・遠くに
+    var pr = f / (z2 + d);
+    out[0][k] = cx + x1 * pr * S;
+    out[1][k] = cy - y2 * pr * S;
+    out[2][k] = z2;
+    return [x1, y2, z2];
+  }
+  var tmpX = new Float32Array(V), tmpY = new Float32Array(V), tmpZ = new Float32Array(V);
+  var outSheet = [sx, sy, sz], outPile = [tmpX, tmpY, tmpZ];
+
   function frame(now) {
     raf = 0;
-    if (t0 === null) t0 = now;
-    var t = (now - t0) / 1000;
-    var enter = enterAt === null ? 0 : Math.min(1, (now - enterAt) / 1900);
-    var land = easeOut(enter);                  // 0 → 1 舞い降り
-    if (enter >= 1 && !landed) { landed = true; }
+    var tt = enterAt === null ? 0 : (now - enterAt) / 1000;
+    if (reduced) tt = T_END + 1;
+    var t = now / 1000;
 
-    // くしゃ（ホバー／タッチ）
-    crumple += (crumpleTarget - crumple) * (reduced ? 1 : 0.12);
-    var c = easeInOut(Math.max(0, Math.min(1, crumple)));
-    stage.classList.toggle('is-crumpled', c > 0.5);
+    var land = easeOut(clamp01(tt / 1.9));
+    var fold = easeInOut(clamp01((tt - T_FOLD) / T_FOLD_D));
+    var eggP = clamp01((tt - T_EGG) / T_EGG_D); eggP = eggP * eggP;            // 落下（加速）
+    var tilt = 0;                                                               // 負 = 左の皿が下がる
+    if (tt > T_FOLD + T_FOLD_D - 0.1) tilt = -0.13 * easeOut(clamp01((tt - (T_FOLD + T_FOLD_D - 0.1)) / 0.5));
+    if (tt > T_EGG + T_EGG_D) { var u = tt - (T_EGG + T_EGG_D); tilt = -0.13 * Math.exp(-2.4 * u) * Math.cos(5.2 * u); }
+    var labelA = clamp01((tt - (T_EGG + T_EGG_D + 0.2)) / 0.6);
+    stage.classList.toggle('is-folded', fold > 0.02);
+    stage.classList.toggle('is-balanced', tt > T_EGG + T_EGG_D + 0.8);
 
-    // ---- 頂点 ----
-    var amp = (reduced ? 0 : 0.055) * (1 + 1.6 * (1 - land)) * (1 - 0.9 * c);
-    var lift = 0.95 * (1 - land) + 0.06 * c;      // 落ちてくる高さ／縮むと少し浮く
-    var tiltX = 1.12 - 0.54 * land;               // 俯瞰角（rad）: 上から → 斜め
-    var swayY = (reduced ? 0 : 1) * (0.22 * (1 - land) * Math.sin(t * 1.3) + 0.08 * land * Math.sin(t * 0.45));
-    var scaleC = 1 - 0.68 * c;
-    var cosX = Math.cos(tiltX), sinX = Math.sin(tiltX);
-    var cosY = Math.cos(swayY), sinY = Math.sin(swayY);
+    // ---- 天秤のレイアウト ----
+    var cx = W / 2;
+    var beamHalf = Math.min(W * 0.34, 300);
+    var pivotY = H * 0.40, hang = H * 0.25;
+    var panRx = Math.min(beamHalf * 0.44, 124), panRy = panRx * 0.3;
+    var cT = Math.cos(tilt), sT = Math.sin(tilt);
+    var eLx = cx - beamHalf * cT, eLy = pivotY - beamHalf * sT;
+    var eRx = cx + beamHalf * cT, eRy = pivotY + beamHalf * sT;
+    var pLx = eLx, pLy = eLy + hang, pRx = eRx, pRy = eRy + hang;
+    var baseY = H * 0.9;
+
+    // ---- 布: 浮いている姿（sheet）と、皿の上にたたまれた姿（pile）を計算し、fold で補間 ----
+    var amp = (reduced ? 0 : 0.055) * (1 + 1.6 * (1 - land)) * (1 - fold);
+    var lift = 0.95 * (1 - land);
+    var tiltX = 1.12 - 0.54 * land, swayY = (reduced ? 0 : 1) * (0.22 * (1 - land) * Math.sin(t * 1.3) + 0.08 * land * Math.sin(t * 0.45));
+    var cosX = Math.cos(tiltX), sinX = Math.sin(tiltX), cosY = Math.cos(swayY), sinY = Math.sin(swayY);
     var d = 2.15, f = 1.5;
     var S = Math.min(W * 0.9, H * 1.75);
-    var cx = W / 2, cy = H / 2 - H * 0.02;
+    var scx = cx, scy = H / 2 - H * 0.02;
+    var tiltX2 = 0.95, cosX2 = Math.cos(tiltX2), sinX2 = Math.sin(tiltX2);
+    var S2 = panRx * 2.3, pcx = pLx, pcy = pLy - panRy * 0.4;
 
     for (var j = 0; j <= N; j++) {
-      for (var i = 0; i <= N; i++) {
-        var k = j * (N + 1) + i;
-        var x0 = i / N - 0.5, z0 = j / N - 0.5;
-        var edge = Math.max(Math.abs(x0), Math.abs(z0)) * 2;          // 0 中心 → 1 縁
-        var y = amp * (1 + 0.6 * edge) * (Math.sin(x0 * 6.9 + t * 1.15 + z0 * 2.0) * 0.6 + Math.sin(z0 * 9.7 - t * 0.85) * 0.4 + Math.sin((x0 + z0) * 4.2 + t * 1.7) * 0.28);
-        // 縮む: 放射状に中心へ寄せ、なだらかな折り目と中央のふくらみで「くしゃ」に
+      for (var i2 = 0; i2 <= N; i2++) {
+        var k = j * (N + 1) + i2;
+        var x0 = i2 / N - 0.5, z0 = j / N - 0.5;
+        var edge = Math.max(Math.abs(x0), Math.abs(z0)) * 2;
+        var wave = amp * (1 + 0.6 * edge) * (Math.sin(x0 * 6.9 + t * 1.15 + z0 * 2.0) * 0.6 + Math.sin(z0 * 9.7 - t * 0.85) * 0.4 + Math.sin((x0 + z0) * 4.2 + t * 1.7) * 0.28);
+        var a1 = project(x0, wave + lift, z0, cosX, sinX, cosY, sinY, S, scx, scy, d, f, outSheet, k);
+        // たたまれた布: 放射状に中心へ寄せ、なだらかな折り目と中央のふくらみ
         var r = Math.sqrt(x0 * x0 + z0 * z0), ang = Math.atan2(z0, x0);
-        var pull = 1 - 0.74 * c * (0.78 + 0.22 * Math.sin(ang * 5 + r * 9));
-        var fold = c * (0.12 * Math.sin(x0 * 11 + 1.3) * Math.sin(z0 * 9 - 0.7) + 0.05 * Math.sin(x0 * 19) * Math.cos(z0 * 17) + 0.015 * noiseY[k]);
-        var mound = c * 0.2 * Math.max(0, 1 - r * 2.2);
-        var x = x0 * pull + noiseX[k] * c * 0.16;
-        var z = z0 * pull + noiseZ[k] * c * 0.16;
-        y = y + fold + mound + lift;
-        // Y 回転（揺れ）→ X 回転（俯瞰）
-        var x1 = x * cosY + z * sinY, z1 = -x * sinY + z * cosY;
-        var y2 = y * cosX + z1 * sinX, z2 = -y * sinX + z1 * cosX;   // 奥（z大）が画面の上・遠くに
-        var pr = f / (z2 + d);
-        sx[k] = cx + x1 * pr * S;
-        sy[k] = cy - y2 * pr * S;
-        sz[k] = z2;
-        px[k] = x1; py[k] = y2; pz[k] = z2;
+        var pull = 1 - 0.74 * (0.78 + 0.22 * Math.sin(ang * 5 + r * 9));
+        var foldY = 0.12 * Math.sin(x0 * 11 + 1.3) * Math.sin(z0 * 9 - 0.7) + 0.05 * Math.sin(x0 * 19) * Math.cos(z0 * 17) + 0.015 * noiseY[k];
+        var mound = 0.2 * Math.max(0, 1 - r * 2.2);
+        var a2 = project(x0 * pull + noiseX[k] * 0.16, foldY + mound, z0 * pull + noiseZ[k] * 0.16, cosX2, sinX2, 1, 0, S2, pcx, pcy, d, f, outPile, k);
+        sx[k] += (tmpX[k] - sx[k]) * fold;
+        sy[k] += (tmpY[k] - sy[k]) * fold;
+        sz[k] += (tmpZ[k] - sz[k]) * fold;
+        px[k] = a1[0] + (a2[0] - a1[0]) * fold;
+        py[k] = a1[1] + (a2[1] - a1[1]) * fold;
+        pz[k] = a1[2] + (a2[2] - a1[2]) * fold;
       }
     }
 
     // ---- 描画 ----
     ctx.clearRect(0, 0, W, H);
 
-    // 影（布の真下に落ちる薄い影。投影後の外接枠から位置を決める）
+    // 天秤（後ろ側）: 台・支柱・さお・糸・皿
+    ctx.save();
+    ctx.globalAlpha = 0.9;
+    ctx.fillStyle = 'rgba(' + INK + ',0.08)';
+    ctx.beginPath(); ctx.ellipse(cx, baseY + 4, Math.min(W * 0.12, 70), 7, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#efe9df'; ctx.strokeStyle = 'rgba(' + INK + ',0.7)'; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.ellipse(cx, baseY, Math.min(W * 0.1, 56), 6, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = 'rgba(' + INK + ',0.85)'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(cx, baseY); ctx.lineTo(cx, pivotY); ctx.stroke();
+    ctx.strokeStyle = GOLD; ctx.lineWidth = 3.5;
+    ctx.beginPath(); ctx.moveTo(eLx, eLy); ctx.lineTo(eRx, eRy); ctx.stroke();
+    ctx.fillStyle = '#1a1a1a';
+    ctx.beginPath(); ctx.arc(cx, pivotY, 4.5, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = 'rgba(' + INK + ',0.55)'; ctx.lineWidth = 1;
+    [[eLx, eLy, pLx, pLy], [eRx, eRy, pRx, pRy]].forEach(function (p) {
+      ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(p[2] - panRx * 0.85, p[3]); ctx.moveTo(p[0], p[1]); ctx.lineTo(p[2] + panRx * 0.85, p[3]); ctx.stroke();
+    });
+    [[pLx, pLy], [pRx, pRy]].forEach(function (p) {
+      ctx.fillStyle = '#f3eee6'; ctx.strokeStyle = 'rgba(' + INK + ',0.7)'; ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.ellipse(p[0], p[1], panRx, panRy, 0, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = 'rgba(' + INK + ',0.06)';
+      ctx.beginPath(); ctx.ellipse(p[0], p[1] + 2, panRx * 0.86, panRy * 0.7, 0, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.restore();
+
+    // 浮いている布の影（たたまれるにつれて消える）
     var bx0 = Infinity, bx1 = -Infinity, by1 = -Infinity;
     for (var bi = 0; bi < V; bi++) { if (sx[bi] < bx0) bx0 = sx[bi]; if (sx[bi] > bx1) bx1 = sx[bi]; if (sy[bi] > by1) by1 = sy[bi]; }
-    var shAlpha = (0.10 + 0.12 * c) * land;
+    var shAlpha = 0.10 * land * (1 - fold);
     if (shAlpha > 0.005) {
-      ctx.save();
-      ctx.globalAlpha = shAlpha;
-      ctx.fillStyle = '#6a625a';
-      ctx.filter = 'blur(6px)';
-      ctx.beginPath();
-      ctx.ellipse((bx0 + bx1) / 2, by1 + 10 + 6 * c, (bx1 - bx0) * 0.46, 10 + S * 0.02, 0, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.save(); ctx.globalAlpha = shAlpha; ctx.fillStyle = '#6a625a'; ctx.filter = 'blur(6px)';
+      ctx.beginPath(); ctx.ellipse((bx0 + bx1) / 2, by1 + 10, (bx1 - bx0) * 0.46, 10 + S * 0.02, 0, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
     }
 
-    // 面（奥から手前へ）
+    // 布の面（平らなときは奥の行から、たたまれるときは奥行きで並べ替え）
     var lx = 0.35, ly = 0.85, lz = -0.4, ll = Math.sqrt(lx * lx + ly * ly + lz * lz); lx /= ll; ly /= ll; lz /= ll;
-    // 描画順: 平らなときは奥の行から、縮んでいるときは奥行きで並べ替え（折り目の重なりを正しく）
     var orderArr = quadOrder;
-    if (c > 0.01) {
+    if (fold > 0.01) {
       for (var qi = 0; qi < N * N; qi++) {
         var qa = (qi / N | 0) * (N + 1) + (qi % N);
-        quadDepth[qi] = pz[qa] + pz[qa + 1] + pz[qa + N + 1] + pz[qa + N + 2];
+        quadDepth[qi] = sz[qa] + sz[qa + 1] + sz[qa + N + 1] + sz[qa + N + 2];
       }
-      orderArr = quadSorted;
       for (var qs = 0; qs < N * N; qs++) quadSorted[qs] = qs;
       quadSorted.sort(function (p1, p2) { return quadDepth[p2] - quadDepth[p1]; });
+      orderArr = quadSorted;
     }
     for (var oi = 0; oi < N * N; oi++) {
       var qidx = orderArr[oi];
       var jj = qidx / N | 0, ii = qidx % N;
-      {
-        var a = jj * (N + 1) + ii, b = a + 1, cc = a + N + 1, dd = cc + 1;
-        // 法線（回転後の座標で）
-        var ux = px[b] - px[a], uy = py[b] - py[a], uz = pz[b] - pz[a];
-        var vx = px[cc] - px[a], vy = py[cc] - py[a], vz = pz[cc] - pz[a];
-        var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
-        var nl = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
-        var lum = (nx * lx + ny * ly + nz * lz) / nl;
-        if (lum < 0) lum = -lum * 0.6;
-        var k2 = (0.84 - 0.1 * c) + (0.26 + 0.14 * c) * lum;
-        ctx.fillStyle = shade(k2);
+      var a = jj * (N + 1) + ii, b = a + 1, cc = a + N + 1, dd = cc + 1;
+      var ux = px[b] - px[a], uy = py[b] - py[a], uz = pz[b] - pz[a];
+      var vx = px[cc] - px[a], vy = py[cc] - py[a], vz = pz[cc] - pz[a];
+      var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+      var nl = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+      var lum = (nx * lx + ny * ly + nz * lz) / nl;
+      if (lum < 0) lum = -lum * 0.6;
+      ctx.fillStyle = shade((0.84 - 0.1 * fold) + (0.26 + 0.14 * fold) * lum);
+      ctx.beginPath();
+      ctx.moveTo(sx[a], sy[a]); ctx.lineTo(sx[b], sy[b]); ctx.lineTo(sx[dd], sy[dd]); ctx.lineTo(sx[cc], sy[cc]);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    // グリッド（10cm 刻み）と縁: たたまれると薄く
+    var gridA = 0.42 * (1 - fold);
+    if (gridA > 0.01) {
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(58,52,46,' + gridA.toFixed(3) + ')';
+      for (var g = 0; g <= N; g += 3) {
         ctx.beginPath();
-        ctx.moveTo(sx[a], sy[a]); ctx.lineTo(sx[b], sy[b]); ctx.lineTo(sx[dd], sy[dd]); ctx.lineTo(sx[cc], sy[cc]);
-        ctx.closePath();
-        ctx.fill();
+        for (var q = 0; q <= N; q++) { var k3 = g * (N + 1) + q; if (q === 0) ctx.moveTo(sx[k3], sy[k3]); else ctx.lineTo(sx[k3], sy[k3]); }
+        ctx.stroke();
+        ctx.beginPath();
+        for (var q2 = 0; q2 <= N; q2++) { var k4 = q2 * (N + 1) + g; if (q2 === 0) ctx.moveTo(sx[k4], sy[k4]); else ctx.lineTo(sx[k4], sy[k4]); }
+        ctx.stroke();
       }
-    }
-
-    // グリッド（10cm 刻み）: 縮むと薄く
-    var gridA = 0.42 * (1 - 0.85 * c);
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(58,52,46,' + gridA.toFixed(3) + ')';
-    for (var g = 0; g <= N; g += 3) {
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = 'rgba(' + INK + ',' + (0.75 * (1 - fold)).toFixed(3) + ')';
       ctx.beginPath();
-      for (var q = 0; q <= N; q++) { var k3 = g * (N + 1) + q; if (q === 0) ctx.moveTo(sx[k3], sy[k3]); else ctx.lineTo(sx[k3], sy[k3]); }
-      ctx.stroke();
-      ctx.beginPath();
-      for (var q2 = 0; q2 <= N; q2++) { var k4 = q2 * (N + 1) + g; if (q2 === 0) ctx.moveTo(sx[k4], sy[k4]); else ctx.lineTo(sx[k4], sy[k4]); }
+      for (var e = 0; e <= N; e++) { if (e === 0) ctx.moveTo(sx[e], sy[e]); else ctx.lineTo(sx[e], sy[e]); }
+      for (var e2 = 1; e2 <= N; e2++) { var ke2 = e2 * (N + 1) + N; ctx.lineTo(sx[ke2], sy[ke2]); }
+      for (var e3 = N - 1; e3 >= 0; e3--) { var ke3 = N * (N + 1) + e3; ctx.lineTo(sx[ke3], sy[ke3]); }
+      for (var e4 = N - 1; e4 >= 0; e4--) { var ke4 = e4 * (N + 1); ctx.lineTo(sx[ke4], sy[ke4]); }
+      ctx.closePath();
       ctx.stroke();
     }
-    // 縁
-    ctx.lineWidth = 1.4;
-    ctx.strokeStyle = 'rgba(40,36,32,' + (0.75 * (1 - c)).toFixed(3) + ')';
-    ctx.beginPath();
-    for (var e = 0; e <= N; e++) { var ke = e; if (e === 0) ctx.moveTo(sx[ke], sy[ke]); else ctx.lineTo(sx[ke], sy[ke]); }
-    for (var e2 = 1; e2 <= N; e2++) { var ke2 = e2 * (N + 1) + N; ctx.lineTo(sx[ke2], sy[ke2]); }
-    for (var e3 = N - 1; e3 >= 0; e3--) { var ke3 = N * (N + 1) + e3; ctx.lineTo(sx[ke3], sy[ke3]); }
-    for (var e4 = N - 1; e4 >= 0; e4--) { var ke4 = e4 * (N + 1); ctx.lineTo(sx[ke4], sy[ke4]); }
-    ctx.closePath();
-    ctx.stroke();
 
-    // 寸法「1 m」: 手前の辺と左の辺に添える（縮むと消える）
-    var dimA = land * (1 - c * 2);
+    // 寸法「1 m」（浮いている間だけ）
+    var dimA = land * (1 - fold * 2);
     if (dimA > 0.02) {
       ctx.save();
       ctx.globalAlpha = Math.min(1, dimA);
       ctx.font = '600 12px Outfit, "Noto Sans JP", sans-serif';
-      ctx.fillStyle = '#5a5550';
-      ctx.strokeStyle = 'rgba(90,85,80,.7)';
-      ctx.lineWidth = 1;
-      var bl = 0, br = N;                           // 手前の辺（j = 0・画面の下）
+      ctx.fillStyle = INK2; ctx.strokeStyle = 'rgba(90,85,80,.7)'; ctx.lineWidth = 1;
+      var bl = 0, br = N;
       var mx = (sx[bl] + sx[br]) / 2, my = Math.max(sy[bl], sy[br]) + 22;
       ctx.beginPath(); ctx.moveTo(sx[bl], my); ctx.lineTo(sx[br], my); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(sx[bl], my - 5); ctx.lineTo(sx[bl], my + 5); ctx.moveTo(sx[br], my - 5); ctx.lineTo(sx[br], my + 5); ctx.stroke();
       ctx.textAlign = 'center'; ctx.textBaseline = 'top';
       ctx.fillText('1 m', mx, my + 5);
-      var nearL = 0, farL = N * (N + 1);            // 左の辺（i = 0）: 手前 → 奥
+      var nearL = 0, farL = N * (N + 1);
       var lxm = Math.min(sx[nearL], sx[farL]) - 14, lyTop = Math.min(sy[nearL], sy[farL]), lyBot = Math.max(sy[nearL], sy[farL]);
       ctx.beginPath(); ctx.moveTo(lxm, lyTop); ctx.lineTo(lxm, lyBot); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(lxm - 5, lyTop); ctx.lineTo(lxm + 5, lyTop); ctx.moveTo(lxm - 5, lyBot); ctx.lineTo(lxm + 5, lyBot); ctx.stroke();
@@ -453,18 +469,58 @@
       ctx.restore();
     }
 
-    // カウントアップ（舞い降りと同時）
-    var n = Math.round(TARGET * easeOut(Math.min(1, enter * 1.25)));
+    // 卵（右の皿に落ちてくる）
+    if (eggP > 0) {
+      var eggRx = panRx * 0.27, eggRy = eggRx * 1.32;
+      var restY = pRy - panRy * 0.2 - eggRy;
+      var eggY = (-eggRy - 20) + (restY + eggRy + 20) * eggP;
+      var squash = 1 - 0.1 * Math.max(0, 1 - Math.abs(tt - (T_EGG + T_EGG_D)) / 0.18);   // 着地の一瞬だけつぶれる
+      ctx.save();
+      if (eggP >= 1) {
+        ctx.globalAlpha = 0.14;
+        ctx.fillStyle = '#6a625a';
+        ctx.beginPath(); ctx.ellipse(pRx, pRy - panRy * 0.15, eggRx * 1.15, panRy * 0.45, 0, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      ctx.translate(pRx, eggY + eggRy * (1 - squash));
+      ctx.scale(1, squash);
+      var grad = ctx.createRadialGradient(-eggRx * 0.35, -eggRy * 0.4, eggRx * 0.1, 0, 0, eggRy * 1.1);
+      grad.addColorStop(0, '#f6eddc'); grad.addColorStop(0.6, '#e3d3b8'); grad.addColorStop(1, '#c2ad8c');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(0, -eggRy);
+      ctx.bezierCurveTo(eggRx * 0.95, -eggRy, eggRx * 1.05, eggRy * 0.55, 0, eggRy);
+      ctx.bezierCurveTo(-eggRx * 1.05, eggRy * 0.55, -eggRx * 0.95, -eggRy, 0, -eggRy);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(' + INK + ',0.35)'; ctx.lineWidth = 1; ctx.stroke();
+      ctx.restore();
+    }
+
+    // 皿の下のラベル（釣り合ってから）
+    if (labelA > 0.01) {
+      ctx.save();
+      ctx.globalAlpha = labelA;
+      ctx.font = '500 12px "Noto Sans JP", sans-serif';
+      ctx.fillStyle = INK2; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+      ctx.fillText(CLOTH_LABEL, pLx, pLy + panRy + 10);
+      ctx.fillText(EGG_LABEL, pRx, pRy + panRy + 10);
+      ctx.font = '600 13px Outfit, "Noto Sans JP", sans-serif';
+      ctx.fillStyle = '#1a1a1a';
+      ctx.fillText(TARGET + ' g', pLx, pLy + panRy + 28);
+      ctx.fillText('70–76 g', pRx, pRy + panRy + 28);
+      ctx.restore();
+    }
+
+    // カウントアップ（舞い降り〜たたむまで）
+    var n = Math.round(TARGET * easeOut(clamp01(tt / 2.6)));
     if (countEl.textContent !== String(n)) countEl.textContent = String(n);
 
-    var moving = !reduced && (visible || Math.abs(crumpleTarget - crumple) > 0.002);
-    if (moving) raf = requestAnimationFrame(frame);
+    finished = tt > T_END;
+    if (!reduced && visible && !finished) raf = requestAnimationFrame(frame);
   }
 
-  function start() {
-    if (raf) return;
-    raf = requestAnimationFrame(frame);
-  }
+  function start() { if (!raf) raf = requestAnimationFrame(frame); }
 
   // ---- 可視判定（入ったら舞い降り、出たら止める） ----
   if ('IntersectionObserver' in window) {
@@ -480,19 +536,10 @@
     visible = true; enterAt = performance.now(); start();
   }
 
-  // ---- くしゃ（ホバー／タッチ） ----
-  function setCrumple(v) {
-    crumpleTarget = v ? 1 : 0;
-    if (v) stage.classList.add('was-crumpled');
-    start();
-  }
-  stage.addEventListener('pointerenter', function (ev) { if (ev.pointerType === 'mouse') setCrumple(true); });
-  stage.addEventListener('pointerleave', function (ev) { if (ev.pointerType === 'mouse') setCrumple(false); });
-  stage.addEventListener('pointerdown', function (ev) { if (ev.pointerType !== 'mouse') setCrumple(true); });
-  ['pointerup', 'pointercancel'].forEach(function (evn) {
-    stage.addEventListener(evn, function (ev) { if (ev.pointerType !== 'mouse') setCrumple(false); });
+  // 終わったあとにタップ／クリックで再生
+  stage.addEventListener('pointerdown', function () {
+    if (finished && !reduced) { enterAt = performance.now(); finished = false; start(); }
   });
-  window.addEventListener('blur', function () { setCrumple(false); });
 
   // ---- サイズ ----
   resize();
@@ -501,13 +548,13 @@
   } else {
     window.addEventListener('resize', function () { resize(); start(); });
   }
-  if (reduced) { enterAt = performance.now() - 5000; visible = true; start(); }
+  if (reduced) { enterAt = performance.now(); visible = true; start(); }
 })();
 </script>
 
 {% schema %}
 {
-  "name": "A2026 表地の軽さ（3Dの布）",
+  "name": "A2026 表地の軽さ（3Dの布と天秤）",
   "tag": "div",
   "class": "shopify-section--a26-fabric",
   "settings": [
@@ -524,10 +571,10 @@
     { "type": "text", "id": "heading", "label": "見出し", "default": "1メートル四方で、卵ひとつ。" },
     { "type": "richtext", "id": "lead", "label": "リード", "default": "<p>表地の重さは、1平方メートルあたり74g。鶏卵1個とほぼ同じです。</p>" },
     { "type": "number", "id": "weight", "label": "数字（g）", "default": 74 },
-    { "type": "text", "id": "per_label", "label": "数字の下の説明", "default": "1m × 1m の表地" },
-    { "type": "text", "id": "crumple_caption", "label": "縮んだときの一言", "default": "手のひらに、収まる。" },
-    { "type": "text", "id": "hint_pc", "label": "操作のヒント（PC）", "default": "カーソルを重ねると、布が縮みます" },
-    { "type": "text", "id": "hint_sp", "label": "操作のヒント（スマホ）", "default": "布に触れている間、縮みます" },
+    { "type": "text", "id": "per_label", "label": "数字の上の説明", "default": "1m × 1m の表地" },
+    { "type": "text", "id": "cloth_label", "label": "左の皿のラベル", "default": "表地 1m × 1m" },
+    { "type": "text", "id": "egg_label", "label": "右の皿のラベル", "default": "鶏卵 1個（LL）" },
+    { "type": "text", "id": "balance_caption", "label": "釣り合ったときの一言", "default": "鶏卵1個と、同じ重さ。" },
 
     { "type": "header", "content": "比較" },
     { "type": "text", "id": "chip1_title", "label": "比較1 見出し", "default": "鶏卵 1個 とほぼ同じ" },
@@ -537,9 +584,9 @@
     { "type": "richtext", "id": "note", "label": "注記", "default": "<p>※ 表地「Tailored Texture」の目付（1㎡あたりの重さ）は74g。鶏卵LLサイズは70〜76g（鶏卵の取引規格）。A4コピー用紙は80g/㎡の紙1枚約5gで換算。</p>" },
 
     { "type": "header", "content": "サイズ" },
-    { "type": "range", "id": "stage_height_pc", "label": "舞台の高さ（PC・px）", "min": 320, "max": 720, "step": 10, "default": 520 },
-    { "type": "range", "id": "stage_height_sp", "label": "舞台の高さ（スマホ・px）", "min": 240, "max": 560, "step": 10, "default": 380 }
+    { "type": "range", "id": "stage_height_pc", "label": "舞台の高さ（PC・px）", "min": 320, "max": 720, "step": 10, "default": 540 },
+    { "type": "range", "id": "stage_height_sp", "label": "舞台の高さ（スマホ・px）", "min": 240, "max": 560, "step": 10, "default": 400 }
   ],
-  "presets": [ { "name": "A2026 表地の軽さ（3Dの布）" } ]
+  "presets": [ { "name": "A2026 表地の軽さ（3Dの布と天秤）" } ]
 }
 {% endschema %}
