@@ -471,7 +471,7 @@
 
     // 卵（右の皿に落ちてくる）
     if (eggP > 0) {
-      var eggRx = panRx * 0.27, eggRy = eggRx * 1.32;
+      var eggRx = panRx * 0.28, eggRy = eggRx * 1.26;
       var restY = pRy - panRy * 0.2 - eggRy;
       var eggY = (-eggRy - 20) + (restY + eggRy + 20) * eggP;
       var squash = 1 - 0.1 * Math.max(0, 1 - Math.abs(tt - (T_EGG + T_EGG_D)) / 0.18);   // 着地の一瞬だけつぶれる
@@ -487,10 +487,15 @@
       var grad = ctx.createRadialGradient(-eggRx * 0.35, -eggRy * 0.4, eggRx * 0.1, 0, 0, eggRy * 1.1);
       grad.addColorStop(0, '#f6eddc'); grad.addColorStop(0.6, '#e3d3b8'); grad.addColorStop(1, '#c2ad8c');
       ctx.fillStyle = grad;
+      // 卵の輪郭: 下半分は楕円、上に向かって少しだけ細くなる丸い形（尖らせない）
       ctx.beginPath();
-      ctx.moveTo(0, -eggRy);
-      ctx.bezierCurveTo(eggRx * 0.95, -eggRy, eggRx * 1.05, eggRy * 0.55, 0, eggRy);
-      ctx.bezierCurveTo(-eggRx * 1.05, eggRy * 0.55, -eggRx * 0.95, -eggRy, 0, -eggRy);
+      for (var ei = 0; ei <= 72; ei++) {
+        var th = ei / 72 * Math.PI * 2;
+        var yy = Math.sin(th);                                   // -1 上 → +1 下
+        var wx = Math.cos(th) * (0.9 + 0.1 * yy);                // 下は広く、上はやや細く
+        var ex = wx * eggRx, ey = yy * eggRy;
+        if (ei === 0) ctx.moveTo(ex, ey); else ctx.lineTo(ex, ey);
+      }
       ctx.closePath();
       ctx.fill();
       ctx.strokeStyle = 'rgba(' + INK + ',0.35)'; ctx.lineWidth = 1; ctx.stroke();
