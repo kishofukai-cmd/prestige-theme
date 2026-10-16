@@ -14,10 +14,10 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "message_AYPFcL": {
+        "message_EPU64K": {
           "type": "message",
           "settings": {
-            "text": "【抽選販売】世界初100%植物由来ダウン",
+            "text": "<a href=\"/blogs/news/musubi-good-design-award-2026\" title=\"リカバリー加重ブランケットMUSUBIが「2026年度グッドデザイン賞」を受賞しました。\">MUSUBIが「2026年度グッドデザイン賞」を受賞いたしました！</a>",
             "text_en": ""
           }
         },
@@ -37,7 +37,7 @@
         }
       },
       "block_order": [
-        "message_AYPFcL",
+        "message_EPU64K",
         "message_etrBia",
         "message_rcWxdd"
       ],
