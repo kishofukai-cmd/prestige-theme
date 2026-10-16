@@ -96,6 +96,7 @@
         },
         "image_hpJVBD": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/d_2_2x_3.png",
             "mobile_image": "shopify://shop_images/d_2x_1_1daf5ab2-5cb3-453d-aa24-1c43e8f5305e.png",
