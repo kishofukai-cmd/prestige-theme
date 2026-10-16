@@ -32,7 +32,7 @@
             "title_margin_bottom": 24,
             "mobile_title_margin_top": 16,
             "mobile_title_margin_bottom": 16,
-            "text": "<p>カポック繊維100%で、<br/>羽毛に類するかさ高構造を実現した<br/>世界初の植物由来ロフト中綿素材&nbsp;<br/><strong>\"NEO DOWN KAPOK® BEYOND”</strong></p><p>その革新的な素材を使い<br/>軽さと暖かさを実現し<br/>都市に映える一着へと仕立てたK-0 prototype</p>",
+            "text": "<p>カポック繊維100%で、<br/>羽毛に類するかさ高構造を実現した<br/>世界初の植物由来ロフト中綿素材&nbsp;<br/><strong>\"NEO DOWN KAPOK® BEYOND”</strong></p><p>その革新的な素材を使い<br/>軽さと暖かさを実現し<br/>都市に映える一着へと仕立てたK-0 prototype</p><p><strong>抽選販売は終了しております。</strong></p>",
             "text_size": 15,
             "mobile_text_size": 14,
             "text_alignment": "center",
@@ -303,8 +303,8 @@
         "price_override": "",
         "price_note": "（税込）",
         "status_badge": "5着限定・抽選販売",
-        "button_label": "抽選販売に応募する",
-        "button_link": "#k0-apply",
+        "button_label": "現在抽選販売は終了しております。",
+        "button_link": "",
         "show_buy_button": false,
         "buy_button_label": "",
         "variant_label": "サイズ・カラー",
@@ -543,6 +543,7 @@
         "check_longterm",
         "check_deadline"
       ],
+      "disabled": true,
       "settings": {
         "kicker": "BEFORE YOU APPLY",
         "heading": "応募の前に、必ずご確認ください",
