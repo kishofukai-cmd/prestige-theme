@@ -3,6 +3,7 @@
   設置場所: Shopify テーマ > Sections > 新規追加
   最終更新: 2026-10-19（AI要約は44件のレビューから作成。平均と件数は商品のレビュー情報 reviews.rating / reviews.rating_count から自動。
   星ごとの棒グラフは手で合わせるとずれるため外し、正確な分布は下の Judge.me の欄に任せる）
+  2026-10-19 追加: レビューが0件の商品（コラボ商品など）は、設定「参考に出す商品」のレビューを注記つきで出す。構造化データには載せない
 {% endcomment %}
 
 <style>
@@ -68,6 +69,12 @@
 
   .mrs-star-lg--empty {
     fill: #e0e0e0;
+  }
+
+  .mrs-ref-note {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: #888;
   }
 
   .mrs-all-link {
@@ -313,8 +320,15 @@
   </div>
 
   {%- comment -%} 平均と件数は Judge.me が商品に記録しているレビュー情報から。無いとき（件数0）は評価の行ごと出さない {%- endcomment -%}
+  {%- assign mrs_src = product -%}
+  {%- assign mrs_ref = false -%}
   {%- assign mrs_count = product.metafields.reviews.rating_count.value | default: 0 -%}
-  {%- assign mrs_rating = product.metafields.reviews.rating.value.rating | default: 0 -%}
+  {%- if mrs_count == 0 and section.settings.reference_product != blank -%}
+    {%- assign mrs_src = section.settings.reference_product -%}
+    {%- assign mrs_count = mrs_src.metafields.reviews.rating_count.value | default: 0 -%}
+    {%- assign mrs_ref = true -%}
+  {%- endif -%}
+  {%- assign mrs_rating = mrs_src.metafields.reviews.rating.value.rating | default: 0 -%}
   {%- if mrs_count > 0 -%}
   <div class="mrs-rating-row">
     <div></div>
@@ -329,7 +343,12 @@
       </div>
       <div class="mrs-score-num">{{ mrs_rating | round: 1 }}</div>
       <div class="mrs-review-count">レビュー件数：{{ mrs_count }}件</div>
+      {%- if mrs_ref -%}
+      <p class="mrs-ref-note">{{ section.settings.reference_note }}</p>
+      <a class="mrs-all-link" href="{{ mrs_src.url }}#judgeme_product_reviews">{{ section.settings.reference_link_text }}</a>
+      {%- else -%}
       <a class="mrs-all-link" href="#judgeme_product_reviews">すべてのレビューを見る</a>
+      {%- endif -%}
     </div>
   </div>
   {%- endif -%}
@@ -404,7 +423,11 @@
 {% schema %}
 {
   "name": "MUSUBI レビュー要約",
-  "settings": [],
+  "settings": [
+    { "type": "product", "id": "reference_product", "label": "レビューが0件のときに参考に出す商品", "info": "コラボ商品など、まだレビューの無い商品で使う。選ばなければ何も出さない" },
+    { "type": "text", "id": "reference_note", "label": "参考表示の注記", "default": "元のMUSUBI（MUSUBI -en-）のレビューを参考に表示しています" },
+    { "type": "text", "id": "reference_link_text", "label": "参考表示のリンクの文言", "default": "元のMUSUBIのレビューを見る" }
+  ],
   "presets": [{ "name": "MUSUBI レビュー要約" }]
 }
 {% endschema %}
