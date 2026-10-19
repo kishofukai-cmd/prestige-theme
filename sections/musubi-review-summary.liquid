@@ -1,7 +1,8 @@
 {% comment %}
   MUSUBI-en レビューAIサマリーセクション
   設置場所: Shopify テーマ > Sections > 新規追加
-  最終更新: 2026-04-03 (29件レビューより生成)
+  最終更新: 2026-10-19（AI要約は44件のレビューから作成。平均と件数は商品のレビュー情報 reviews.rating / reviews.rating_count から自動。
+  星ごとの棒グラフは手で合わせるとずれるため外し、正確な分布は下の Judge.me の欄に任せる）
 {% endcomment %}
 
 <style>
@@ -63,6 +64,18 @@
 
   .mrs-star-lg--half {
     fill: url(#mrs-half-grad);
+  }
+
+  .mrs-star-lg--empty {
+    fill: #e0e0e0;
+  }
+
+  .mrs-all-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: underline;
   }
 
   .mrs-score-num {
@@ -299,49 +312,27 @@
     <h2>レビュー</h2>
   </div>
 
+  {%- comment -%} 平均と件数は Judge.me が商品に記録しているレビュー情報から。無いとき（件数0）は評価の行ごと出さない {%- endcomment -%}
+  {%- assign mrs_count = product.metafields.reviews.rating_count.value | default: 0 -%}
+  {%- assign mrs_rating = product.metafields.reviews.rating.value.rating | default: 0 -%}
+  {%- if mrs_count > 0 -%}
   <div class="mrs-rating-row">
     <div></div>
 
     <div class="mrs-score">
       <div class="mrs-stars-large">
-        <svg class="mrs-star-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-        <svg class="mrs-star-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-        <svg class="mrs-star-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-        <svg class="mrs-star-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-        <svg class="mrs-star-lg mrs-star-lg--half" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        {%- for i in (1..5) -%}
+          {%- assign mrs_diff = mrs_rating | minus: forloop.index0 -%}
+          {%- if mrs_diff >= 0.75 -%}{%- assign mrs_cls = '' -%}{%- elsif mrs_diff >= 0.25 -%}{%- assign mrs_cls = ' mrs-star-lg--half' -%}{%- else -%}{%- assign mrs_cls = ' mrs-star-lg--empty' -%}{%- endif -%}
+          <svg class="mrs-star-lg{{ mrs_cls }}" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        {%- endfor -%}
       </div>
-      <div class="mrs-score-num">4.1</div>
-      <div class="mrs-review-count">レビュー件数：29件</div>
-    </div>
-
-    <div class="mrs-bars">
-      <div class="mrs-bar-row">
-        <span class="mrs-bar-star">5<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></span>
-        <div class="mrs-bar-track"><div class="mrs-bar-fill" style="width:52%"></div></div>
-        <span class="mrs-bar-count">(15)</span>
-      </div>
-      <div class="mrs-bar-row">
-        <span class="mrs-bar-star">4<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></span>
-        <div class="mrs-bar-track"><div class="mrs-bar-fill" style="width:31%"></div></div>
-        <span class="mrs-bar-count">(9)</span>
-      </div>
-      <div class="mrs-bar-row">
-        <span class="mrs-bar-star">3<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></span>
-        <div class="mrs-bar-track"><div class="mrs-bar-fill" style="width:3%"></div></div>
-        <span class="mrs-bar-count">(1)</span>
-      </div>
-      <div class="mrs-bar-row">
-        <span class="mrs-bar-star">2<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></span>
-        <div class="mrs-bar-track"><div class="mrs-bar-fill" style="width:7%"></div></div>
-        <span class="mrs-bar-count">(2)</span>
-      </div>
-      <div class="mrs-bar-row">
-        <span class="mrs-bar-star">1<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></span>
-        <div class="mrs-bar-track"><div class="mrs-bar-fill" style="width:7%"></div></div>
-        <span class="mrs-bar-count">(2)</span>
-      </div>
+      <div class="mrs-score-num">{{ mrs_rating | round: 1 }}</div>
+      <div class="mrs-review-count">レビュー件数：{{ mrs_count }}件</div>
+      <a class="mrs-all-link" href="#judgeme_product_reviews">すべてのレビューを見る</a>
     </div>
   </div>
+  {%- endif -%}
 
   <div class="mrs-ai-section">
     <div class="mrs-ai-title">レビューのAI要約</div>
@@ -353,12 +344,11 @@
 
     <div class="mrs-panel is-active" id="mrs-panel-voices">
       <ul class="mrs-voice-list">
-        <li>「包まれる安心感」で寝つきが格段に早くなったという声が多数。使い始めた初日から朝まで目が覚めなかったというレビューも複数あります。</li>
-        <li>網目構造のおかげで熱がこもらず、真夏の熱帯夜でも布団を蹴ることなく朝まで使えたという評価が目立ちます。</li>
-        <li>パウダーベージュ・パープルなど、カラーが部屋のインテリアに自然に溶け込むと好評。「置いてあるだけで絵になる」という声も。</li>
-        <li>腰痛が改善した、Apple Watchの睡眠スコアが上がったなど、身体への変化を実感したお客様からのレビューもあります。</li>
-        <li>サイズ感について：Lでも横幅が想定より短く感じる場合があります。ベッドで全身を覆いたい方はLサイズを推奨。ソファ・昼寝用途にはNapサイズが好評です。</li>
-        <li>従来型ビーズ入り加重ブランケットより圧は柔らかめです。より強い重みを求める方は、薄手の布団を一枚重ねると加重感が増すとのお客様アドバイスも。</li>
+        <li>重みに包まれる安心感で「寝つきが早くなった」「夜中に目が覚めにくくなった」と感じたという声が多く寄せられています。使い始めた日から朝までぐっすり眠れたというレビューも。</li>
+        <li>あみあみの編み目から熱が抜けるので、暑い夜でも蹴らずに朝までかけていられたという声が目立ちます。冬は「寝ている間に掛け布団がずれず、暑すぎず寒すぎずで快適」という声も。</li>
+        <li>もちもち・ふかふかとした肌触りと、部屋になじむ見た目が好評。ベッドやソファに置いておくだけで絵になるという声も。</li>
+        <li>サイズについて：Sleep Size（L）は縦に長く、身長175〜185cmでもつま先まで届いたという声がある一方、横幅は狭めと感じる方もいます（編み物のため、表記より幅が狭く感じたという声も）。体をすっぽり包みたい方・体格の大きい方には Full Size（XL）が向いています。</li>
+        <li>重さの感じ方は人それぞれです。「思ったより重い」という声と、「ビーズ入りの加重ブランケットより圧はやわらかめ」という声の両方があります。重みを強めたいときは、薄手の掛け布団を1枚あいだに挟むと面で圧を感じやすい、というお客様のアドバイスも。</li>
       </ul>
     </div>
 
@@ -366,19 +356,23 @@
       <ul class="mrs-usage-list">
         <li class="mrs-usage-item">
           <span class="mrs-usage-tag">就寝</span>
-          <span class="mrs-usage-text">就寝時にかけて使うのが最も多い用途。重みが身体に沿うことで寝姿勢が安定し、布団のずれによる寝冷えが改善したという声が多いです。</span>
+          <span class="mrs-usage-text">夏は1枚で、冬は掛け布団と合わせて。重みで寝る姿勢が落ち着き、掛け布団がずれにくくなったという声があります。</span>
         </li>
         <li class="mrs-usage-item">
           <span class="mrs-usage-tag">昼寝</span>
-          <span class="mrs-usage-text">ソファでの昼寝に使っているお客様が複数。「すぐ寝落ちしてしまい困っている」という嬉しいレビューも。</span>
+          <span class="mrs-usage-text">ソファでの昼寝や仮眠に。短い時間でもすっきり起きられた、すぐ寝落ちしてしまうという声も。</span>
         </li>
         <li class="mrs-usage-item">
-          <span class="mrs-usage-tag">瞑想</span>
-          <span class="mrs-usage-text">軽い加重感が落ち着きをもたらすため、瞑想やリラックスタイムに活用しているお客様も。ご家族への贈り物として選ばれるケースもあります。</span>
+          <span class="mrs-usage-tag">くつろぎ</span>
+          <span class="mrs-usage-text">ソファでくるまってリラックスしたり、瞑想の時間に使ったり。丸めて枕代わりにする使い方も。</span>
         </li>
         <li class="mrs-usage-item">
           <span class="mrs-usage-tag">インテリア</span>
-          <span class="mrs-usage-text">使わない時間もベッドやソファの上に置くだけで絵になると好評。カラー選びを楽しんでいるお客様も多いです。</span>
+          <span class="mrs-usage-text">ラグのように敷いて寝転んだり、ベッドやソファに置いて飾ったり。使わない時間も部屋になじみます。</span>
+        </li>
+        <li class="mrs-usage-item">
+          <span class="mrs-usage-tag">贈り物</span>
+          <span class="mrs-usage-text">ご家族へのプレゼントに選ばれています。</span>
         </li>
       </ul>
     </div>
