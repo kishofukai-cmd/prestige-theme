@@ -1026,7 +1026,7 @@
       "settings": {
         "label": "USER REVIEW",
         "heading": "<p>実際の声</p>",
-        "show_graph": true,
+        "show_graph": false,
         "avg_score": "4.1",
         "avg_stars": "★★★★☆",
         "review_count": "27件のレビュー",
