@@ -176,6 +176,9 @@ quick buy information in a template, that will be extracted in JS, which ensures
   }
 </script>
 
+{%- comment -%} 説明の画像（ギャラリーの外）も、押したら商品画像と同じ拡大画面で開く（2026-10-20） {%- endcomment -%}
+<script type="module" src="{{ 'tap-zoom-images.js' | asset_url }}"></script>
+
 {% schema %}
 {
   "name": "t:sections.main_product.name",
