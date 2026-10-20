@@ -3259,7 +3259,7 @@ var ProductGallery = class extends HTMLElement {
      */
     __privateAdd(this, _onMediaSettle);
     /**
-     * Detect a click on an image on desktop, and open the lightbox for the corresponding image
+     * Detect a click on an image (desktop and mobile), and open the lightbox for the corresponding image
      */
     __privateAdd(this, _onCarouselClick);
     /**
@@ -3455,7 +3455,7 @@ onMediaSettle_fn = function(event) {
 };
 _onCarouselClick = new WeakSet();
 onCarouselClick_fn = function(event) {
-  if (!this.hasAttribute("allow-zoom") || !matchesMediaQuery("md") || event.target.tagName !== "IMG") {
+  if (!this.hasAttribute("allow-zoom") || event.target.tagName !== "IMG") {
     return;
   }
   const media = event.target.closest(".product-gallery__media");
