@@ -136,7 +136,7 @@
             "show_below_gallery": false,
             "icon": "picto-leaf",
             "title": "<strong>カーボンフットプリント</strong>",
-            "content": "<p>カーボンフットプリントは-{{ product.metafields.custom.detail_cfp.value }}kg-CO2です。<br/>KAPOK KNOTは素材、製造、消費者の使用のカーボンフットプリントを算出しています。</p>",
+            "content": "<p>カーボンフットプリントは{{ product.metafields.custom.detail_cfp.value }}kg-CO2です。<br/>KAPOK KNOTは素材、製造、消費者の使用のカーボンフットプリントを算出しています。</p>",
             "page": ""
           }
         },
