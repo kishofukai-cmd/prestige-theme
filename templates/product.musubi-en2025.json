@@ -491,32 +491,6 @@
     "musubi_review_summary_wBph6j": {
       "type": "musubi-review-summary",
       "name": "MUSUBI レビュー要約",
-      "settings": {
-        "reference_product": "",
-        "reference_note": "元のMUSUBI（MUSUBI -en-）のレビューを参考に表示しています",
-        "reference_link_text": "元のMUSUBIのレビューを見る"
-      }
-    },
-    "1792473966559b3605": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_67c624e_tEt6xT": {
-          "type": "ai_gen_block_67c624e",
-          "settings": {
-            "button_label": "レビューを見る",
-            "button_link": "#product-reviews",
-            "alignment": "center",
-            "desktop_width_percent": 100,
-            "button_color": "#65636E",
-            "button_text_color": "#ffffff",
-            "corner_radius": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_67c624e_tEt6xT"
-      ],
       "settings": {}
     },
     "ugc": {
@@ -1599,7 +1573,6 @@
     "musubi_size_guide_xenQjE",
     "makuake",
     "musubi_review_summary_wBph6j",
-    "1792473966559b3605",
     "ugc",
     "empathy",
     "story",
