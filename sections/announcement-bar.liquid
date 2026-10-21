@@ -39,14 +39,19 @@
       {%- endif -%}
 
       <announcement-bar-carousel allow-swipe {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}"{% endif %} id="{{ carousel_id }}" class="announcement-bar__carousel">
+        {%- comment -%} 英語テキストが「-」のメッセージは英語ページで出さない（MUSUBIは海外で売らないため・2026-10-21）{%- endcomment -%}
+        {%- assign shown_count = 0 -%}
         {%- for block in section.blocks -%}
           {%- liquid
             assign msg = block.settings.text
             if request.locale.iso_code != 'ja' and block.settings.text_en != blank
               assign msg = block.settings.text_en
             endif
+            assign msg_plain = msg | strip_html | strip
           -%}
-          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- msg -}}</p>
+          {%- if msg_plain == '-' -%}{%- continue -%}{%- endif -%}
+          <p class="prose heading {% if shown_count == 0 %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- msg -}}</p>
+          {%- assign shown_count = shown_count | plus: 1 -%}
         {%- endfor -%}
       </announcement-bar-carousel>
 
@@ -84,7 +89,7 @@
         {
           "type": "inline_richtext",
           "id": "text_en",
-          "label": "英語テキスト（英語ページ用・空なら上と同じ）"
+          "label": "英語テキスト（英語ページ用・空なら上と同じ・「-」なら英語ページでは出さない）"
         }
       ]
     }
