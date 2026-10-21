@@ -226,6 +226,7 @@
         },
         "support_xJAxrR": {
           "type": "support",
+          "disabled": true,
           "settings": {
             "title": "定期チェック",
             "summary_note": "一定期間のご使用後に、製品の状態を確認します",
