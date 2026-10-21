@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "freeship": {
+      "type": "airlight2025-freeship",
+      "settings": {
+        "enabled": true,
+        "tag": "LIMITED TIME ONLY",
+        "heading": "FREE Worldwide Shipping",
+        "sub": "No minimum spend · No code needed.",
+        "link_text": "Shop now →",
+        "bg_color": "#c29d66",
+        "text_color": "#1a2640"
+      }
+    },
     "hero": {
       "type": "airlight2025-hero",
       "settings": {
@@ -58,7 +70,7 @@
         "price_now_gbp": "£248",
         "price_was_eur": "€360",
         "price_now_eur": "€288",
-        "code_text": "<p><strong>Launch offer</strong> — 20% off, no code needed. Limited time only.</p>",
+        "code_text": "<p><strong>Launch offer</strong> — 20% off, no code needed. Limited time only.</p><p>Free shipping. Import duties &amp; VAT are paid to the courier on delivery — around £85 in the UK or €100 in the EU, plus any courier fee. See FAQ below.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
@@ -485,7 +497,14 @@
           "type": "faq_item",
           "settings": {
             "question": "What's your shipping and return policy?",
-            "answer": "<p>Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
+            "answer": "<p>Shipping is free worldwide for a limited time. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
+          }
+        },
+        "faq_item_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I pay import duties or VAT?",
+            "answer": "<p>Yes. Your order ships from Japan, and import duties and VAT are not included in our price. The courier collects them before delivery.</p><p>For one AirLight Jacket, expect around £85 in the UK (12% duty + 20% VAT) or around €100 in the Netherlands (12% duty + 21% VAT), plus any handling fee the courier charges. Amounts differ in other countries.</p>"
           }
         },
         "faq_item_3": {
@@ -513,6 +532,7 @@
       "block_order": [
         "faq_item_1",
         "faq_item_2",
+        "faq_item_6",
         "faq_item_3",
         "faq_item_4",
         "faq_item_5"
@@ -598,6 +618,7 @@
     }
   },
   "order": [
+    "freeship",
     "hero",
     "offer",
     "kapok-story",
