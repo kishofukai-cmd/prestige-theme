@@ -1,0 +1,165 @@
+{% comment %}
+  AirLight 2026 — 実績の帯
+  ブロック（バッジ）を3〜4個。各バッジ = 見出し（数字・短い見出し／セリフ体）＋説明＋任意の注記
+  PC は横並び（縦の罫線で区切る）、スマホは2列（または横スクロール）。白地の控えめな帯
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+{%- assign cols = section.blocks.size | at_least: 1 | at_most: 5 -%}
+
+<style>
+  #{{ sid }}.a26-tr {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    color: {{ section.settings.text_color | default: '#1a1a1a' }};
+    padding: clamp(20px, 3.5vw, 36px) 0;
+  }
+  #{{ sid }} .a26-tr__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+  #{{ sid }} .a26-tr__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat({{ cols }}, minmax(0, 1fr));
+    border-top: 1px solid {{ section.settings.border_color | default: '#e6e0d6' }};
+    border-bottom: 1px solid {{ section.settings.border_color | default: '#e6e0d6' }};
+  }
+  #{{ sid }} .a26-tr__item {
+    padding: clamp(16px, 2.2vw, 24px) clamp(10px, 1.6vw, 20px);
+    text-align: center;
+    border-left: 1px solid {{ section.settings.border_color | default: '#e6e0d6' }};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+  #{{ sid }} .a26-tr__item:first-child { border-left: 0; }
+  #{{ sid }} .a26-tr__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.7vw, 1.22rem);
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  #{{ sid }} .a26-tr__heading em {
+    font-style: normal;
+    color: {{ section.settings.accent_color | default: '#c29d66' }};
+  }
+  #{{ sid }} .a26-tr__desc {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: {{ section.settings.body_color | default: '#5a5550' }};
+    margin: 0;
+  }
+  #{{ sid }} .a26-tr__note {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #8a7f6e;
+    margin: 0;
+  }
+  #{{ sid }} .a26-tr__foot {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: #8a7f6e;
+    text-align: center;
+    margin: 10px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    {%- if section.settings.layout_sp == 'scroll' -%}
+      #{{ sid }} .a26-tr__inner { padding: 0; }
+      #{{ sid }} .a26-tr__list {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 16px;
+      }
+      #{{ sid }} .a26-tr__list::-webkit-scrollbar { display: none; }
+      #{{ sid }} .a26-tr__item { flex: 0 0 44%; scroll-snap-align: start; }
+      #{{ sid }} .a26-tr__foot { padding: 0 16px; }
+    {%- else -%}
+      #{{ sid }} .a26-tr__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #{{ sid }} .a26-tr__item { border-left: 0; border-top: 1px solid {{ section.settings.border_color | default: '#e6e0d6' }}; }
+      #{{ sid }} .a26-tr__item:nth-child(-n+2) { border-top: 0; }
+      #{{ sid }} .a26-tr__item:nth-child(2n) { border-left: 1px solid {{ section.settings.border_color | default: '#e6e0d6' }}; }
+      #{{ sid }} .a26-tr__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    {%- endif -%}
+    #{{ sid }} .a26-tr__item { padding: 14px 10px; }
+    #{{ sid }} .a26-tr__heading { font-size: 0.98rem; }
+    #{{ sid }} .a26-tr__desc { font-size: 11px; }
+  }
+</style>
+
+{%- if section.blocks.size > 0 -%}
+<section class="a26-tr" id="{{ sid }}">
+  <div class="a26-tr__inner">
+    <ul class="a26-tr__list">
+      {%- for block in section.blocks -%}
+        <li class="a26-tr__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.heading != blank -%}
+            <p class="a26-tr__heading">{{ block.settings.heading }}</p>
+          {%- endif -%}
+          {%- if block.settings.desc != blank -%}
+            <p class="a26-tr__desc">{{ block.settings.desc }}</p>
+          {%- endif -%}
+          {%- if block.settings.note != blank -%}
+            <p class="a26-tr__note">{{ block.settings.note }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if section.settings.footnote != blank -%}
+      <p class="a26-tr__foot">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "A2026 実績の帯",
+  "tag": "div",
+  "class": "shopify-section--a26-trust",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "Section ID（ページ内リンク用・英数字）" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "見出しの色", "default": "#1a1a1a" },
+    { "type": "color", "id": "body_color", "label": "説明の色", "default": "#5a5550" },
+    { "type": "color", "id": "accent_color", "label": "強調の色（見出しの <em>）", "default": "#c29d66" },
+    { "type": "color", "id": "border_color", "label": "罫線の色", "default": "#e6e0d6" },
+    {
+      "type": "select", "id": "layout_sp", "label": "スマホの並べ方",
+      "options": [
+        { "value": "grid", "label": "2列" },
+        { "value": "scroll", "label": "横スクロール" }
+      ],
+      "default": "grid"
+    },
+    { "type": "text", "id": "footnote", "label": "帯の下の小さな注記（空なら非表示）" }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "実績",
+      "limit": 5,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "見出し（数字・短い見出し。<em>で色強調）", "default": "選ばれて No.1" },
+        { "type": "text", "id": "desc", "label": "説明" },
+        { "type": "text", "id": "note", "label": "注記（任意・空なら非表示）" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "A2026 実績の帯" }
+  ]
+}
+{% endschema %}

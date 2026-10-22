@@ -1,0 +1,259 @@
+{% comment %}
+  AirLight 2026 — AIR LIGHT 4層構造
+  図解の画像1枚（PCは最大幅を設定・スマホは全幅）＋ その下に項目（ブロック）
+  各項目: 番号の丸バッジ／日本語の一語／英字／見出し／本文。PCは横並び、スマホは縦積み。
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+{%- assign accent = section.settings.accent_color | default: '#c29d66' -%}
+
+<style>
+  #{{ sid }}.a26-ly {
+    background: {{ section.settings.bg_color | default: '#f5f1e8' }};
+    color: {{ section.settings.text_color | default: '#1a1a1a' }};
+    padding: clamp(56px, 8vw, 104px) 0;
+  }
+  #{{ sid }} .a26-ly__inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+  #{{ sid }} .a26-ly__head { text-align: center; margin: 0 auto clamp(24px, 4vw, 44px); max-width: 720px; }
+  #{{ sid }} .a26-ly__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: {{ accent }};
+    margin: 0 0 12px;
+  }
+  #{{ sid }} .a26-ly__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.8vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    margin: 0 0 clamp(12px, 2vw, 20px);
+  }
+  #{{ sid }} .a26-ly__lead {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(14px, 1.6vw, 15.5px);
+    line-height: 1.9;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+    margin: 0;
+  }
+  #{{ sid }} .a26-ly__figure {
+    margin: 0 auto clamp(32px, 5vw, 56px);
+    max-width: {{ section.settings.image_max_width | default: 900 }}px;
+  }
+  #{{ sid }} .a26-ly__figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+  #{{ sid }} .a26-ly__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | at_least: 1 | at_most: 4 }}, minmax(0, 1fr));
+    gap: clamp(16px, 2.2vw, 28px);
+  }
+  #{{ sid }} .a26-ly__item {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 8px;
+    padding: clamp(20px, 2.4vw, 28px) clamp(16px, 2vw, 22px);
+    text-align: center;
+  }
+  #{{ sid }} .a26-ly__badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: {{ section.settings.badge_bg | default: '#1a1a1a' }};
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+  #{{ sid }} .a26-ly__word {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    margin: 0;
+  }
+  #{{ sid }} .a26-ly__en {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    color: {{ accent }};
+    margin: 6px 0 14px;
+  }
+  #{{ sid }} .a26-ly__title {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 8px;
+  }
+  #{{ sid }} .a26-ly__body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+    margin: 0;
+    text-align: left;
+  }
+  #{{ sid }} .a26-ly__foot {
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    letter-spacing: 0.06em;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+    text-align: center;
+    margin: clamp(28px, 4vw, 44px) 0 0;
+  }
+
+  @media (max-width: 1024px) {
+    #{{ sid }} .a26-ly__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    #{{ sid }} .a26-ly__figure { max-width: none; margin-left: -16px; margin-right: -16px; }
+    #{{ sid }} .a26-ly__figure img { border-radius: 0; }
+    #{{ sid }} .a26-ly__list { grid-template-columns: 1fr; gap: 12px; }
+    #{{ sid }} .a26-ly__item {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      column-gap: 14px;
+      text-align: left;
+      padding: 18px 16px;
+    }
+    #{{ sid }} .a26-ly__mark { text-align: center; }
+    #{{ sid }} .a26-ly__badge { width: 38px; height: 38px; font-size: 13px; margin-bottom: 8px; }
+    #{{ sid }} .a26-ly__word { font-size: 1.15rem; letter-spacing: 0.08em; }
+    #{{ sid }} .a26-ly__en { font-size: 9.5px; letter-spacing: 0.16em; margin: 4px 0 0; }
+    #{{ sid }} .a26-ly__title { font-size: 14.5px; }
+  }
+</style>
+
+<section class="a26-ly" id="{{ sid }}">
+  <div class="a26-ly__inner">
+    {%- if section.settings.kicker != blank or section.settings.heading != blank or section.settings.lead != blank -%}
+      <div class="a26-ly__head">
+        {%- if section.settings.kicker != blank -%}
+          <p class="a26-ly__kicker">{{ section.settings.kicker }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="a26-ly__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.lead != blank -%}
+          <p class="a26-ly__lead">{{ section.settings.lead | newline_to_br }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      assign fig_src = ''
+      if section.settings.image != blank
+        assign fig_src = section.settings.image | image_url: width: 1800
+      elsif section.settings.image_url != blank
+        assign fig_src = section.settings.image_url
+      endif
+    -%}
+    {%- if fig_src != '' -%}
+      <figure class="a26-ly__figure">
+        <img src="{{ fig_src }}" alt="{{ section.settings.image_alt | escape }}" width="{{ section.settings.image.width | default: 879 }}" height="{{ section.settings.image.height | default: 580 }}" loading="lazy">
+      </figure>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="a26-ly__list">
+        {%- for block in section.blocks -%}
+          <li class="a26-ly__item" {{ block.shopify_attributes }}>
+            <div class="a26-ly__mark">
+              {%- if block.settings.number != blank -%}
+                <span class="a26-ly__badge">{{ block.settings.number }}</span>
+              {%- endif -%}
+              {%- if block.settings.word_ja != blank -%}
+                <p class="a26-ly__word">{{ block.settings.word_ja }}</p>
+              {%- endif -%}
+              {%- if block.settings.word_en != blank -%}
+                <p class="a26-ly__en">{{ block.settings.word_en }}</p>
+              {%- endif -%}
+            </div>
+            <div class="a26-ly__desc">
+              {%- if block.settings.title != blank -%}
+                <h3 class="a26-ly__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <p class="a26-ly__body">{{ block.settings.body | newline_to_br }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="a26-ly__foot">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2026 4層構造",
+  "tag": "div",
+  "class": "shopify-section--a26-layers",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 色" },
+    { "type": "text", "id": "section_id", "label": "Section ID（ページ内リンク用・英数字）" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#f5f1e8" },
+    { "type": "color", "id": "text_color", "label": "見出しの色", "default": "#1a1a1a" },
+    { "type": "color", "id": "body_color", "label": "本文の色", "default": "#4a4540" },
+    { "type": "color", "id": "accent_color", "label": "アクセント色（英字）", "default": "#c29d66" },
+    { "type": "color", "id": "badge_bg", "label": "番号バッジの色", "default": "#1a1a1a" },
+
+    { "type": "header", "content": "見出し" },
+    { "type": "text", "id": "kicker", "label": "キッカー（上の小さな文字・空なら非表示）" },
+    { "type": "text", "id": "heading", "label": "見出し", "default": "AIR LIGHT 4層構造" },
+    { "type": "textarea", "id": "lead", "label": "リード文" },
+
+    { "type": "header", "content": "図解の画像" },
+    { "type": "image_picker", "id": "image", "label": "画像" },
+    { "type": "text", "id": "image_url", "label": "画像 URL（画像未設定時に使う）" },
+    { "type": "text", "id": "image_alt", "label": "画像の代替テキスト" },
+    { "type": "range", "id": "image_max_width", "label": "画像の最大幅（PC・px）", "min": 600, "max": 1200, "step": 50, "default": 900 },
+
+    { "type": "header", "content": "末尾" },
+    { "type": "text", "id": "footnote", "label": "末尾の小さな一文（空なら非表示）", "default": "Light yet warm." }
+  ],
+  "blocks": [
+    {
+      "type": "layer",
+      "name": "層",
+      "limit": 6,
+      "settings": [
+        { "type": "text", "id": "number", "label": "番号", "default": "01" },
+        { "type": "text", "id": "word_ja", "label": "日本語の一語", "default": "守る" },
+        { "type": "text", "id": "word_en", "label": "英字", "default": "SHELL" },
+        { "type": "text", "id": "title", "label": "見出し" },
+        { "type": "textarea", "id": "body", "label": "本文" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "A2026 4層構造" }
+  ]
+}
+{% endschema %}

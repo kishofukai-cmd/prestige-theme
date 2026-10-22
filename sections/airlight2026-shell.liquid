@@ -1,0 +1,314 @@
+{% comment %}
+  AirLight 2026 — 写真＋本文の2カラム ／ 写真カードのグリッド
+  1つのセクションで次の3通りに使う（テンプレートに何度でも置ける）:
+  - 「表地を、作り直した。」: 写真＋本文の2カラムだけ（カードなし）
+  - 「2026 UPDATE ディテール」: 見出しだけ＋写真カード（写真・見出し・本文）
+  - 「着用イメージ」: 見出しだけ＋写真カード（写真のみ）
+  写真が無ければ本文は中央寄せ。カードが無ければグリッドは出さない。
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+{%- assign accent = section.settings.accent_color | default: '#c29d66' -%}
+
+<style>
+  #{{ sid }}.a26-sh {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    color: {{ section.settings.text_color | default: '#1a1a1a' }};
+    padding: clamp(48px, 8vw, 96px) 0;
+  }
+  #{{ sid }} .a26-sh__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+  }
+  #{{ sid }} .a26-sh__intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+  #{{ sid }} .a26-sh__intro--right .a26-sh__media { order: 2; }
+  #{{ sid }} .a26-sh__intro--text-only {
+    display: block;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #{{ sid }} .a26-sh__media {
+    margin: 0;
+    aspect-ratio: {{ section.settings.image_ratio | default: '4/5' }};
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f3efe8;
+  }
+  #{{ sid }} .a26-sh__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center {{ section.settings.image_position | default: 'center' }};
+    display: block;
+  }
+  #{{ sid }} .a26-sh__kicker {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: {{ accent }};
+    margin: 0 0 14px;
+  }
+  #{{ sid }} .a26-sh__heading {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin: 0 0 clamp(16px, 2.4vw, 28px);
+  }
+  #{{ sid }} .a26-sh__body {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: clamp(14px, 1.6vw, 15.5px);
+    line-height: 2;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+  }
+  #{{ sid }} .a26-sh__body p { margin: 0 0 1em; }
+  #{{ sid }} .a26-sh__body p:last-child { margin-bottom: 0; }
+  #{{ sid }} .a26-sh__intro--text-only .a26-sh__body { max-width: 640px; margin: 0 auto; }
+
+  #{{ sid }} .a26-sh__cards {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.cards_per_row_pc | default: 4 }}, minmax(0, 1fr));
+    gap: clamp(16px, 2.4vw, 28px);
+    margin-top: clamp(28px, 5vw, 56px);
+    list-style: none;
+    padding: 0;
+  }
+  #{{ sid }} .a26-sh__intro-empty + .a26-sh__cards { margin-top: 0; }
+  #{{ sid }} .a26-sh__card { margin: 0; }
+  #{{ sid }} .a26-sh__card-media {
+    aspect-ratio: {{ section.settings.card_ratio | default: '4/5' }};
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f3efe8;
+    margin: 0 0 14px;
+  }
+  #{{ sid }} .a26-sh__card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #{{ sid }} .a26-sh__card-title {
+    font-family: 'Noto Serif JP', 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.5vw, 1.08rem);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+  #{{ sid }} .a26-sh__card-text {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: {{ section.settings.body_color | default: '#4a4540' }};
+    margin: 0;
+  }
+  #{{ sid }} .a26-sh__card-label {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: {{ accent }};
+    margin: -4px 0 0;
+  }
+
+  @media (max-width: 1024px) {
+    #{{ sid }} .a26-sh__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    #{{ sid }} .a26-sh__intro { grid-template-columns: 1fr; }
+    #{{ sid }} .a26-sh__intro--right .a26-sh__media { order: 0; }
+    #{{ sid }} .a26-sh__intro--text-only { text-align: {{ section.settings.text_align_sp | default: 'center' }}; }
+    #{{ sid }} .a26-sh__cards { grid-template-columns: repeat({{ section.settings.cards_per_row_sp | default: 1 }}, minmax(0, 1fr)); gap: 20px 12px; }
+  }
+</style>
+
+<section class="a26-sh" id="{{ sid }}">
+  <div class="a26-sh__inner">
+    {%- liquid
+      assign img_src = ''
+      if section.settings.image != blank
+        assign img_src = section.settings.image | image_url: width: 1400
+      elsif section.settings.image_url != blank
+        assign img_src = section.settings.image_url
+      endif
+      assign has_text = false
+      if section.settings.kicker != blank or section.settings.heading != blank or section.settings.body != blank
+        assign has_text = true
+      endif
+    -%}
+
+    {%- if img_src != '' or has_text -%}
+      <div class="a26-sh__intro{% if img_src == '' %} a26-sh__intro--text-only{% elsif section.settings.image_side == 'right' %} a26-sh__intro--right{% endif %}">
+        {%- if img_src != '' -%}
+          <figure class="a26-sh__media">
+            <img src="{{ img_src }}" alt="{{ section.settings.image_alt | escape }}" width="1200" height="1500" loading="lazy">
+          </figure>
+        {%- endif -%}
+        <div class="a26-sh__text">
+          {%- if section.settings.kicker != blank -%}
+            <p class="a26-sh__kicker">{{ section.settings.kicker }}</p>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="a26-sh__heading">{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.body != blank -%}
+            <div class="a26-sh__body">{{ section.settings.body }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- else -%}
+      <div class="a26-sh__intro-empty"></div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="a26-sh__cards">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign c_src = ''
+            if block.settings.image != blank
+              assign c_src = block.settings.image | image_url: width: 900
+            elsif block.settings.image_url != blank
+              assign c_src = block.settings.image_url
+            endif
+            assign c_alt = block.settings.image_alt | default: block.settings.title
+          -%}
+          <li class="a26-sh__card" {{ block.shopify_attributes }}>
+            {%- if c_src != '' -%}
+              <div class="a26-sh__card-media">
+                <img src="{{ c_src }}" alt="{{ c_alt | escape }}" width="900" height="1350" loading="lazy" style="object-position: center {{ block.settings.image_position | default: 'center' }};">
+              </div>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3 class="a26-sh__card-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="a26-sh__card-text">{{ block.settings.text | newline_to_br }}</p>
+            {%- endif -%}
+            {%- if block.settings.label != blank -%}
+              <p class="a26-sh__card-label">{{ block.settings.label }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2026 写真と本文／カード",
+  "tag": "div",
+  "class": "shopify-section--a26-shell",
+  "settings": [
+    { "type": "header", "content": "セクション ID / 色" },
+    { "type": "text", "id": "section_id", "label": "Section ID（ページ内リンク用・英数字）" },
+    { "type": "color", "id": "bg_color", "label": "背景色", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "見出しの色", "default": "#1a1a1a" },
+    { "type": "color", "id": "body_color", "label": "本文の色", "default": "#4a4540" },
+    { "type": "color", "id": "accent_color", "label": "アクセント色（キッカー）", "default": "#c29d66" },
+
+    { "type": "header", "content": "見出しと本文" },
+    { "type": "text", "id": "kicker", "label": "キッカー（上の小さな文字）" },
+    { "type": "text", "id": "heading", "label": "見出し" },
+    { "type": "richtext", "id": "body", "label": "本文" },
+    {
+      "type": "select", "id": "text_align_sp", "label": "写真なしの時の文字揃え（スマホ）",
+      "options": [
+        { "value": "center", "label": "中央" },
+        { "value": "left", "label": "左" }
+      ],
+      "default": "center"
+    },
+
+    { "type": "header", "content": "写真（空なら本文だけを中央に表示）" },
+    { "type": "image_picker", "id": "image", "label": "写真" },
+    { "type": "text", "id": "image_url", "label": "写真 URL（写真未設定時に使う）" },
+    { "type": "text", "id": "image_alt", "label": "写真の代替テキスト" },
+    {
+      "type": "select", "id": "image_side", "label": "写真の位置（PC）",
+      "options": [
+        { "value": "left", "label": "左" },
+        { "value": "right", "label": "右" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select", "id": "image_ratio", "label": "写真の縦横比",
+      "options": [
+        { "value": "4/5", "label": "4:5（縦長）" },
+        { "value": "2/3", "label": "2:3（縦長）" },
+        { "value": "1/1", "label": "1:1（正方形）" },
+        { "value": "3/2", "label": "3:2（横長）" }
+      ],
+      "default": "4/5"
+    },
+    {
+      "type": "select", "id": "image_position", "label": "写真の上下の寄せ",
+      "options": [
+        { "value": "top", "label": "上" },
+        { "value": "center", "label": "中央" },
+        { "value": "bottom", "label": "下" }
+      ],
+      "default": "center"
+    },
+
+    { "type": "header", "content": "カード（ブロックを追加すると表示）" },
+    { "type": "range", "id": "cards_per_row_pc", "label": "1行のカード数（PC）", "min": 2, "max": 4, "step": 1, "default": 4 },
+    {
+      "type": "select", "id": "cards_per_row_sp", "label": "1行のカード数（スマホ）",
+      "options": [
+        { "value": "1", "label": "1枚" },
+        { "value": "2", "label": "2枚" }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "select", "id": "card_ratio", "label": "カード写真の縦横比",
+      "options": [
+        { "value": "4/5", "label": "4:5（縦長）" },
+        { "value": "2/3", "label": "2:3（縦長）" },
+        { "value": "1/1", "label": "1:1（正方形）" }
+      ],
+      "default": "4/5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "カード",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "写真" },
+        { "type": "text", "id": "image_url", "label": "写真 URL（写真未設定時に使う）" },
+        { "type": "text", "id": "image_alt", "label": "写真の代替テキスト（空なら見出し）" },
+        {
+          "type": "select", "id": "image_position", "label": "写真の上下の寄せ",
+          "options": [
+            { "value": "top", "label": "上" },
+            { "value": "center", "label": "中央" },
+            { "value": "bottom", "label": "下" }
+          ],
+          "default": "center"
+        },
+        { "type": "text", "id": "title", "label": "見出し（空なら非表示）" },
+        { "type": "textarea", "id": "text", "label": "本文（空なら非表示）" },
+        { "type": "text", "id": "label", "label": "小さなラベル（色名など・空なら非表示）" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "A2026 写真と本文／カード" }
+  ]
+}
+{% endschema %}

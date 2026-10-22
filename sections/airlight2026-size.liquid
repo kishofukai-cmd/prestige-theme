@@ -1,0 +1,216 @@
+{% comment %}
+  AirLight 2026 — サイズの目安と寸法表
+  見た目は MUSUBI の LP（ラベルの丸帯・太めの見出し・白いカード）に合わせる。
+  ブロック = 表の1行（項目名と S/M/L/LL の数値）。列の見出しはセクション設定で変えられる。
+{% endcomment %}
+
+{%- assign sid = section.settings.section_id | default: section.id -%}
+
+<style>
+  #{{ sid }}.a26-size {
+    background: {{ section.settings.bg_color | default: '#faf7f2' }};
+    padding: {{ section.settings.padding_pc | default: 88 }}px 20px;
+  }
+  #{{ sid }} .a26-size__inner { max-width: {{ section.settings.max_width | default: 860 }}px; margin: 0 auto; }
+  #{{ sid }} .a26-size__header { text-align: center; margin-bottom: 32px; }
+  #{{ sid }} .a26-size__label {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    border-radius: 999px;
+    padding: 8px 15px;
+    font-size: 12px;
+    background: {{ section.settings.label_bg_color | default: '#f4eee6' }};
+    color: {{ section.settings.label_color | default: '#8b7355' }};
+    margin-bottom: 16px;
+  }
+  #{{ sid }} .a26-size__heading {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+    margin: 0 0 14px;
+  }
+  #{{ sid }} .a26-size__lead {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: {{ section.settings.text_color | default: '#555555' }};
+  }
+  #{{ sid }} .a26-size__lead p { margin: 0; }
+  #{{ sid }} .a26-size__card {
+    background: #ffffff;
+    border: 1px solid {{ section.settings.border_color | default: '#eee7dd' }};
+    border-radius: 22px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
+    padding: 28px 28px 24px;
+  }
+  #{{ sid }} .a26-size__unit {
+    text-align: right;
+    font-size: 12px;
+    color: {{ section.settings.text_color | default: '#555555' }};
+    margin: 0 0 8px;
+    letter-spacing: 0.04em;
+  }
+  #{{ sid }} .a26-size__table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-variant-numeric: tabular-nums;
+  }
+  #{{ sid }} .a26-size__table th,
+  #{{ sid }} .a26-size__table td {
+    border-width: 0;
+    border-style: solid;
+    border-color: {{ section.settings.border_color | default: '#eee7dd' }};
+    opacity: 1;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    padding: 14px 6px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.4;
+    color: {{ section.settings.heading_color | default: '#1a1a1a' }};
+  }
+  #{{ sid }} .a26-size__table tbody th,
+  #{{ sid }} .a26-size__table tbody td { border-bottom-width: 1px; }
+  #{{ sid }} .a26-size__table thead th {
+    font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: {{ section.settings.label_color | default: '#8b7355' }};
+    background: {{ section.settings.label_bg_color | default: '#f4eee6' }};
+  }
+  #{{ sid }} .a26-size__table thead th:first-child { border-radius: 12px 0 0 12px; }
+  #{{ sid }} .a26-size__table thead th:last-child { border-radius: 0 12px 12px 0; }
+  #{{ sid }} .a26-size__table tbody th {
+    text-align: left;
+    font-weight: 700;
+    padding-left: 10px;
+    width: 22%;
+  }
+  #{{ sid }} .a26-size__table tbody tr:last-child th,
+  #{{ sid }} .a26-size__table tbody tr:last-child td { border-bottom-width: 0; }
+  #{{ sid }} .a26-size__note {
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: {{ section.settings.text_color | default: '#555555' }};
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    #{{ sid }}.a26-size { padding: {{ section.settings.padding_sp | default: 60 }}px 16px; }
+    #{{ sid }} .a26-size__header { margin-bottom: 24px; }
+    #{{ sid }} .a26-size__label { font-size: 11px; }
+    #{{ sid }} .a26-size__heading { font-size: 25px; }
+    #{{ sid }} .a26-size__lead { font-size: 14px; }
+    #{{ sid }} .a26-size__card { border-radius: 18px; padding: 18px 12px 16px; }
+    #{{ sid }} .a26-size__table th,
+    #{{ sid }} .a26-size__table td { font-size: 14px; padding: 12px 2px; }
+    #{{ sid }} .a26-size__table tbody th { padding-left: 6px; width: 24%; }
+  }
+</style>
+
+<section class="a26-size" id="{{ sid }}">
+  <div class="a26-size__inner">
+    <div class="a26-size__header">
+      {%- if section.settings.label != blank -%}
+        <div class="a26-size__label">{{ section.settings.label }}</div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="a26-size__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.lead != blank -%}
+        <div class="a26-size__lead">{{ section.settings.lead }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="a26-size__card">
+        {%- if section.settings.unit != blank -%}
+          <p class="a26-size__unit">{{ section.settings.unit }}</p>
+        {%- endif -%}
+        <table class="a26-size__table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr-only">{{ section.settings.corner_label }}</span></th>
+              <th scope="col">{{ section.settings.col_1 }}</th>
+              <th scope="col">{{ section.settings.col_2 }}</th>
+              <th scope="col">{{ section.settings.col_3 }}</th>
+              <th scope="col">{{ section.settings.col_4 }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for block in section.blocks -%}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row">{{ block.settings.name }}</th>
+                <td>{{ block.settings.v1 }}</td>
+                <td>{{ block.settings.v2 }}</td>
+                <td>{{ block.settings.v3 }}</td>
+                <td>{{ block.settings.v4 }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+        {%- if section.settings.note != blank -%}
+          <p class="a26-size__note">{{ section.settings.note }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "A2026 サイズ表",
+  "settings": [
+    { "type": "text", "id": "section_id", "label": "セクションID", "default": "a26-size" },
+    { "type": "text", "id": "label", "label": "ラベル", "default": "SIZE GUIDE" },
+    { "type": "text", "id": "heading", "label": "見出し", "default": "サイズは、2つの目安で。" },
+    { "type": "richtext", "id": "lead", "label": "リード" },
+    { "type": "text", "id": "unit", "label": "単位の表記", "default": "（cm）" },
+    { "type": "text", "id": "corner_label", "label": "表の左上（読み上げ用）", "default": "項目" },
+    { "type": "text", "id": "col_1", "label": "列1", "default": "S" },
+    { "type": "text", "id": "col_2", "label": "列2", "default": "M" },
+    { "type": "text", "id": "col_3", "label": "列3", "default": "L" },
+    { "type": "text", "id": "col_4", "label": "列4", "default": "LL" },
+    { "type": "text", "id": "note", "label": "表の下の注記" },
+    { "type": "color", "id": "bg_color", "label": "背景", "default": "#faf7f2" },
+    { "type": "color", "id": "label_bg_color", "label": "ラベル・表見出しの背景", "default": "#f4eee6" },
+    { "type": "color", "id": "label_color", "label": "ラベル・表見出しの文字", "default": "#8b7355" },
+    { "type": "color", "id": "heading_color", "label": "見出し・数値", "default": "#1a1a1a" },
+    { "type": "color", "id": "text_color", "label": "本文", "default": "#555555" },
+    { "type": "color", "id": "border_color", "label": "枠線", "default": "#eee7dd" },
+    { "type": "range", "id": "max_width", "label": "最大幅", "min": 560, "max": 1080, "step": 20, "default": 760, "unit": "px" },
+    { "type": "range", "id": "padding_pc", "label": "上下の余白（PC）", "min": 40, "max": 140, "step": 4, "default": 88, "unit": "px" },
+    { "type": "range", "id": "padding_sp", "label": "上下の余白（スマホ）", "min": 32, "max": 100, "step": 4, "default": 60, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "行",
+      "settings": [
+        { "type": "text", "id": "name", "label": "項目名", "default": "着丈" },
+        { "type": "text", "id": "v1", "label": "列1の値" },
+        { "type": "text", "id": "v2", "label": "列2の値" },
+        { "type": "text", "id": "v3", "label": "列3の値" },
+        { "type": "text", "id": "v4", "label": "列4の値" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "A2026 サイズ表",
+      "blocks": [
+        { "type": "row" }
+      ]
+    }
+  ]
+}
+{% endschema %}
