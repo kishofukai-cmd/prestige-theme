@@ -58,7 +58,7 @@
         "image_KfFfVf": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_12_2x_274b3ae0-4653-4cb8-8af5-29077cd4623e.png",
+            "image": "shopify://shop_images/2_12_3x_e59157f4-cf20-4a62-b6a8-930cf57bc8aa.png",
             "alignment": "center",
             "width_mode": "full_width",
             "max_width": 300,
@@ -518,7 +518,7 @@
             "button_link": "#product-reviews",
             "alignment": "center",
             "desktop_width_percent": 100,
-            "button_color": "#04358D",
+            "button_color": "#04358d",
             "button_text_color": "#ffffff",
             "corner_radius": 0
           },
