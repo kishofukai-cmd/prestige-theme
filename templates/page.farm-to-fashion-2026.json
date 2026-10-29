@@ -15,9 +15,8 @@
         "image_full_1": {
           "type": "hero",
           "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/ff2026c-kv2026_pc.png?v=1793266562",
-            "margin_bottom": 60,
-            "image_sp_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/ff2026c-kv2026_sp.png?v=1793266562"
+            "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/ff2026c-kv2026_sp.png?v=1793266562",
+            "margin_bottom": 60
           }
         },
         "rich_text_2": {
