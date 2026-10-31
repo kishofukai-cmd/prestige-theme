@@ -13,7 +13,7 @@
       "type": "airlight2025-freeship",
       "settings": {
         "enabled": true,
-        "tag": "LIMITED TIME ONLY",
+        "tag": "",
         "heading": "FREE Worldwide Shipping",
         "sub": "No minimum spend · No code needed.",
         "link_text": "Shop now →",
@@ -497,7 +497,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What's your shipping and return policy?",
-            "answer": "<p>Shipping is free worldwide for a limited time. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
+            "answer": "<p>Shipping is free worldwide. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days. If your item arrives faulty or not as described, we'll replace or refund it at our cost — your statutory consumer rights (including under Australian Consumer Law for AU customers) always apply.</p>"
           }
         },
         "faq_item_6": {
