@@ -86,6 +86,29 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "r1ugdg77m1");
 </script>
+    <script type="text/javascript">
+    // Clarity に同意の結果を渡す。渡さないと英国・EU・スイスの録画がページごとに切れる
+    (function () {
+      function sendConsent(analytics, marketing) {
+        window.clarity('consentv2', {
+          ad_Storage: marketing ? 'granted' : 'denied',
+          analytics_Storage: analytics ? 'granted' : 'denied'
+        });
+      }
+      document.addEventListener('visitorConsentCollected', function (e) {
+        sendConsent(e.detail.analyticsAllowed, e.detail.marketingAllowed);
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!window.Shopify || !window.Shopify.loadFeatures) return;
+        window.Shopify.loadFeatures([{ name: 'consent-tracking-api', version: '0.2' }], function (error) {
+          var privacy = window.Shopify.customerPrivacy;
+          if (error || !privacy) return;
+          // 未回答の人には送らない（同意なしの状態のまま動かす）
+          if (privacy.analyticsProcessingAllowed()) sendConsent(true, privacy.marketingAllowed());
+        });
+      });
+    })();
+    </script>
     
 </head>
 
