@@ -54,23 +54,23 @@
         "cta_url": "#a25-products",
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
-        "cta_note": "A$598",
-        "cta_note_gbp": "£310",
-        "cta_note_eur": "€360"
+        "cta_note": "A$478",
+        "cta_note_gbp": "£248",
+        "cta_note_eur": "€288"
       }
     },
     "offer": {
       "type": "airlight2025-offer",
       "settings": {
         "section_id": "a25-offer",
-        "tag": "LAUNCH OFFER",
+        "tag": "FINAL STOCK",
         "price_was": "A$598",
         "price_now": "A$478",
         "price_was_gbp": "£310",
         "price_now_gbp": "£248",
         "price_was_eur": "€360",
         "price_now_eur": "€288",
-        "code_text": "<p><strong>Launch offer</strong> — 20% off, no code needed. Limited time only.</p><p>Free shipping. Import duties &amp; VAT are paid to the courier on delivery — around £85 in the UK or €100 in the EU, plus any courier fee. See FAQ below.</p>",
+        "code_text": "<p><strong>Final stock</strong> — 20% off while it lasts, no code needed.</p><p>Free shipping. Import duties &amp; VAT are paid to the courier on delivery — around £85 in the UK or €100 in the EU, plus any courier fee. See FAQ below.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
@@ -254,7 +254,7 @@
           "type": "product_card",
           "settings": {
             "product_name": "AirLight Jacket — Women's",
-            "subtitle": "5 Colors: Navy / Beige / Olive / Black / Greige",
+            "subtitle": "4 Colors: Navy / Beige / Olive / Black",
             "price": "A$478",
             "price_gbp": "£248",
             "price_eur": "€288",
@@ -269,8 +269,8 @@
             "color_3": "Olive",
             "image_4_url": "https://ucarecdn.com/96942bb5-0fc9-4b69-a76b-68bf383331df/-/format/auto/-/preview/1200x1200/-/quality/lighter/W20U2HJ02-GRE-03%20_1_.jpg",
             "color_4": "Black",
-            "image_5_url": "https://ucarecdn.com/2043d868-571e-4baf-b495-15a40ff77240/-/format/auto/-/preview/1200x1200/-/quality/lighter/_240802_KAPOKKNOT5187.jpg",
-            "color_5": "Greige"
+            "image_5_url": "",
+            "color_5": ""
           }
         }
       },
@@ -333,7 +333,7 @@
       "settings": {
         "heading": "Real Customers. Real Winters.",
         "avg_stars": "★★★★★",
-        "avg_label": "4.8 / 5 — 142 Verified Buyers",
+        "avg_label": "4.6 / 5 — 42 reviews",
         "verified_badge": "✓ Verified Buyer",
         "background_style": "cream"
       }
@@ -345,7 +345,7 @@
         "overlay_opacity": 65,
         "eyebrow": "Your new winter staple",
         "heading": "<p>Light, warm, <em>no regrets.</em></p>",
-        "sub": "Launch offer — 20% off, no code needed.",
+        "sub": "Final stock — 20% off while it lasts.",
         "cta_men_text": "Shop Men's",
         "cta_men_url": "/en/products/men-hooded-jacket",
         "cta_women_text": "Shop Women's",
@@ -606,14 +606,15 @@
         "price_text": "A$478",
         "price_text_gbp": "£248",
         "price_text_eur": "€288",
-        "sub_text": "Launch offer — 20% off",
+        "sub_text": "Final stock — 20% off",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "show_on_desktop": false,
         "bg_color": "#1a2640",
         "text_color": "#ffffff",
         "accent_color": "#c29d66",
-        "show_after_px": 700
+        "show_after_px": 200,
+        "hide_chat_button_mobile": true
       }
     }
   },
@@ -621,10 +622,10 @@
     "freeship",
     "hero",
     "offer",
+    "products",
     "kapok-story",
     "demos",
     "farm-to-fashion",
-    "products",
     "reviews",
     "mid-cta",
     "proof",

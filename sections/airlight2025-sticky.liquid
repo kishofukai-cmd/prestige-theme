@@ -164,6 +164,17 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     update();
 
+    {% if section.settings.hide_chat_button_mobile %}
+    // チャットのボタンが固定バーのボタンに被るので、このLPのスマホだけ隠す（チャットの読み込みが遅いので数回試す）
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      var chatTries = 0;
+      var chatTimer = setInterval(function () {
+        if (typeof window.ChannelIO === 'function') window.ChannelIO('hideChannelButton');
+        if (++chatTries >= 20) clearInterval(chatTimer);
+      }, 1000);
+    }
+    {% endif %}
+
     // Theme editor: re-evaluate when section is re-rendered
     document.addEventListener('shopify:section:load', function (e) {
       if (e.detail && e.detail.sectionId === '{{ section.id }}') update();
@@ -186,6 +197,7 @@
     { "type": "text", "id": "cta_text", "label": "CTA Text", "default": "Shop Now →" },
     { "type": "url", "id": "cta_url", "label": "CTA URL (empty = #ag-products)" },
     { "type": "checkbox", "id": "show_on_desktop", "label": "Show on Desktop", "default": false },
+    { "type": "checkbox", "id": "hide_chat_button_mobile", "label": "Hide chat button on mobile", "default": false },
     { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#1a2640" },
     { "type": "color", "id": "text_color", "label": "Text Color", "default": "#ffffff" },
     { "type": "color", "id": "accent_color", "label": "Accent Color (CTA button)", "default": "#c29d66" },
