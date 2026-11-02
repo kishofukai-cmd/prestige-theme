@@ -70,7 +70,7 @@
         "price_now_gbp": "£248",
         "price_was_eur": "€360",
         "price_now_eur": "€288",
-        "code_text": "<p><strong>Final stock</strong> — 20% off while it lasts, no code needed.</p><p>Free shipping. Import duties &amp; VAT are paid to the courier on delivery — around £85 in the UK or €100 in the EU, plus any courier fee. See FAQ below.</p>",
+        "code_text": "<p><strong>Final stock</strong> — 20% off while it lasts, no code needed.</p><p>Free shipping. Import duties &amp; VAT are added at checkout — around £85 in the UK or €105 in the Netherlands — so there is nothing more to pay on delivery. See FAQ below.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
         "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
@@ -504,7 +504,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Will I pay import duties or VAT?",
-            "answer": "<p>Yes. Your order ships from Japan, and import duties and VAT are not included in our price. The courier collects them before delivery.</p><p>For one AirLight Jacket, expect around £85 in the UK (12% duty + 20% VAT) or around €100 in the Netherlands (12% duty + 21% VAT), plus any handling fee the courier charges. Amounts differ in other countries.</p>"
+            "answer": "<p>Yes. Your order ships from Japan, and import duties and VAT are not included in our price. They are calculated and added at checkout, so you see the full total before you pay. We settle them with the courier, so there is nothing more to pay on delivery.</p><p>For one AirLight Jacket, expect around £85 in the UK (12% duty + 20% VAT) or around €105 in the Netherlands (12% duty + €2 EU handling fee + 21% VAT). Amounts differ in other countries.</p>"
           }
         },
         "faq_item_3": {
