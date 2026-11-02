@@ -77,15 +77,6 @@
             "margin_bottom": 60
           }
         },
-        "rich_text_8": {
-          "type": "rich_text",
-          "settings": {
-            "heading": "たった5mmでダウンの暖かさ",
-            "text": "<p>長く愛されたクラシックスタイルをベースに、</p><p>たった5mmでダウンの暖かさのあるカポックダウンを使用することにより、</p><p>軽くて暖かく着膨れしないダウンで、冬をもっと好きになる。</p>",
-            "text_alignment": "center",
-            "margin_bottom": 40
-          }
-        },
         "features_grid_9": {
           "type": "features_grid",
           "settings": {
@@ -353,7 +344,7 @@
           "type": "rich_text",
           "settings": {
             "heading": "今だけ、この3着は送料無料",
-            "text": "<p>カンガルーパーカー・シャツブルゾン K90・Tenderproof ジャケットのどれかを含むご注文は、先着100名さま送料無料（通常1,000円）。ほかの商品と一緒のご注文も無料です。</p><p>100名さまに達した時点で終了し、このページでお知らせします。</p>",
+            "text": "<p>下の3着のどれかを含むご注文は、先着100名さまの送料が無料です。</p>",
             "text_alignment": "center",
             "text_color": "#1E2A5A",
             "bg_color": "#FFF7ED",
@@ -362,26 +353,13 @@
             "margin_bottom": 40
           }
         },
-        "feature_grid_top": {
-          "type": "product_grid",
-          "settings": {
-            "heading": "送料無料の3着",
-            "columns_desktop": 3,
-            "collection_limit": 3,
-            "product_1": "unisex-kangaroo-hoodie",
-            "product_2": "unisex-shirt-blouson-k90",
-            "product_3": "tenderproof-jacket",
-            "margin_top": 0,
-            "margin_bottom": 60
-          }
-        },
         "feature_item_1": {
           "type": "image_text",
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/274_f00e23c4-34f6-4ca4-ac1c-c82f657b1793.png",
-            "layout": "left",
+            "layout": "right",
             "heading": "カンガルーパーカー　35,000円",
-            "text": "<p>街とアウトドアを行き来する、カポックダウンのパーカー。前の大きなポケットはキャンプでも普段でも活躍します。</p><p>袖を外せば半袖にもなる2way袖で、気温に合わせて着方を変えられます。</p>",
+            "text": "<p>袖を外せば半袖にもなる、2way袖のダウンパーカー。</p>",
             "button_label": "商品を見る（送料無料）",
             "button_link": "/products/unisex-kangaroo-hoodie",
             "margin_bottom": 60
@@ -391,9 +369,9 @@
           "type": "image_text",
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/products/U22U2SHI02-ORA-08.jpg",
-            "layout": "right",
+            "layout": "left",
             "heading": "シャツブルゾン K90　35,000円",
-            "text": "<p>人気のシャツブルゾンに、カポックダウンを増やした暖かいモデル。ゆったりしたサイズと軽さはそのままです。</p><p>シワになりにくい生地で、セーターやマフラーの上にさっと羽織れば、真冬も身軽に出かけられます。</p>",
+            "text": "<p>シワになりにくい生地で、セーターの上にさっと羽織れます。</p>",
             "button_label": "商品を見る（送料無料）",
             "button_link": "/products/unisex-shirt-blouson-k90",
             "margin_bottom": 60
@@ -405,7 +383,7 @@
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT1720.jpg",
             "layout": "left",
             "heading": "Tenderproof ジャケット　59,000円",
-            "text": "<p>撥水の表地と、ふわりとしたボアの裏地。雨の日もためらわず羽織れます。</p><p>お尻まで隠れる丈で、タートルや厚手のニットとももたつかず、秋から春まで長く着られる一枚です。</p>",
+            "text": "<p>撥水の表地と、ふわりとしたボアの裏地。雨の日もためらわず羽織れます。</p>",
             "button_label": "商品を見る（送料無料）",
             "button_link": "/products/tenderproof-jacket",
             "margin_bottom": 60
@@ -437,17 +415,15 @@
       "block_order": [
         "image_full_1",
         "free_notice",
-        "feature_grid_top",
+        "feature_item_3",
         "feature_item_1",
         "feature_item_2",
-        "feature_item_3",
         "rich_text_2",
         "rich_text_3",
         "image_text_4",
         "image_text_5",
         "image_text_6",
         "image_text_7",
-        "rich_text_8",
         "features_grid_9",
         "image_full_12",
         "rich_text_13",
