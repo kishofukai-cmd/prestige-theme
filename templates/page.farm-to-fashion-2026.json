@@ -343,7 +343,7 @@
         "free_notice": {
           "type": "rich_text",
           "settings": {
-            "heading": "今だけ、この3着は送料無料",
+            "heading": "今だけ、<span style=\"white-space:nowrap\">この3着は送料無料</span>",
             "text": "<p>下の3着のどれかを含むご注文は、先着100名さまの送料が無料です。</p>",
             "text_alignment": "center",
             "text_color": "#1E2A5A",
@@ -382,7 +382,7 @@
           "settings": {
             "image_url": "https://cdn.shopify.com/s/files/1/0407/6027/9202/files/260807_KAPOKKNOT1720.jpg",
             "layout": "left",
-            "heading": "Tenderproof ジャケット　59,000円",
+            "heading": "Tenderproof ジャケット　<span style=\"white-space:nowrap\">59,000円</span>",
             "text": "<p>撥水の表地と、ふわりとしたボアの裏地。雨の日もためらわず羽織れます。</p>",
             "button_label": "商品を見る（送料無料）",
             "button_link": "/products/tenderproof-jacket",
