@@ -1,0 +1,507 @@
+{%- comment -%}
+  Kimono Poncho Coat — overseas single-product LP (2026-11-04)
+  Template: templates/page.kimono-global.json
+  Axis: "Born from the kimono. Worn with anything."
+  All copy lives in the template settings / blocks (editable in the theme editor).
+  Colour cards add the matching variant (by SKU) to the cart and go to the cart page.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign p = s.product
+  assign price = p.price | money_without_trailing_zeros
+  assign jp_chars = s.story_jp | append: s.design_jp | append: s.everyday_jp | append: s.material_jp | append: s.shop_jp | append: s.makers_jp | append: s.faq_jp
+  for b in section.blocks
+    if b.type == 'color'
+      assign jp_chars = jp_chars | append: b.settings.kanji
+    endif
+  endfor
+-%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text={{ jp_chars | url_encode }}">
+
+<style>
+  #kg-{{ section.id }}{--ink:#1c1c1e;--paper:#f3efe7;--white:#fbf9f5;--mute:#6c6862;--line:#dcd5c8;--accent:#a8322a;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--jp:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;--pad:clamp(20px,5vw,72px);color:var(--ink);background:var(--white);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+  #kg-{{ section.id }} *{box-sizing:border-box}
+  .kg img{display:block;width:100%;height:100%;object-fit:cover}
+  .kg figure{margin:0}
+  .kg p{margin:0 0 1em}
+  .kg p:last-child{margin-bottom:0}
+  .kg h1,.kg h2,.kg h3{font-family:var(--serif);font-weight:500;letter-spacing:0;text-transform:none;line-height:1.1;margin:0;color:inherit}
+  .kg h2{font-size:clamp(34px,5vw,60px);margin-bottom:24px}
+  .kg h3{font-size:clamp(22px,2.1vw,26px);font-weight:600;margin-bottom:8px}
+  .kg-sec{padding:clamp(72px,10vw,140px) var(--pad)}
+  .kg-wrap{max-width:1180px;margin:0 auto}
+  .kg-narrow{max-width:760px;margin:0 auto}
+  .kg-label{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+  .kg-label b{font-family:var(--jp);font-weight:500;font-size:16px;letter-spacing:.12em;color:inherit;opacity:.9}
+  .kg-label i{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+  .kg-center{text-align:center}
+  .kg-center .kg-label{justify-content:center}
+  .kg-lead{font-size:clamp(17px,1.5vw,19px);color:#3a3835}
+  .kg-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;background:var(--ink);color:#fff !important;font-size:14px;letter-spacing:.08em;text-decoration:none !important;border:0;cursor:pointer;transition:opacity .2s}
+  .kg-btn:hover{opacity:.85}
+  .kg-btn[disabled]{background:#b9b4ab;cursor:not-allowed}
+  .kg-btn--block{width:100%;padding:0 12px}
+  .kg-quote{margin:40px 0 0;padding:0 0 0 22px;border-left:2px solid var(--accent);font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,24px);line-height:1.45}
+  .kg-quote cite{display:block;margin-top:10px;font-family:inherit;font-style:normal;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+
+  /* Hero */
+  .kg-hero{display:grid;grid-template-columns:1fr minmax(340px,.92fr) 1fr;height:min(86vh,940px);min-height:620px;background:var(--paper)}
+  .kg-hero figure{position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .kg-hero figure img{flex:1;min-height:0}
+  .kg-hero figcaption{padding:10px 16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);background:var(--paper)}
+  .kg-hero__pic--1{order:1}.kg-hero__text{order:2}.kg-hero__pic--2{order:3}
+  .kg-hero__text{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px clamp(20px,3vw,48px)}
+  .kg-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);margin-bottom:22px !important}
+  .kg-hero h1{font-size:clamp(40px,4.3vw,66px);line-height:1.04}
+  .kg-hero__sub{margin-top:22px !important;font-size:16px;color:#3a3835;max-width:30em}
+  .kg-hero__price{margin:22px 0 18px !important;font-family:var(--serif);font-size:26px}
+  .kg-hero__price span{font-family:inherit;font-size:15px;color:var(--mute)}
+  .kg-ship{margin-top:14px !important;font-size:12px;color:var(--mute);letter-spacing:.02em}
+
+  /* Story */
+  .kg-split{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,96px);align-items:center}
+  .kg-split__pic{aspect-ratio:4/5;overflow:hidden}
+  .kg-split--rev .kg-split__pic{order:2}
+
+  /* Design */
+  .kg-design{background:var(--paper)}
+  .kg-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,32px);margin-top:48px}
+  .kg-card__pic{aspect-ratio:4/5;overflow:hidden;margin-bottom:18px}
+  .kg-card p{font-size:15px;color:#3a3835}
+  .kg-note{margin-top:28px !important;font-size:14px;color:var(--mute)}
+
+  /* Everyday */
+  .kg-every__head{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,96px);align-items:start}
+  .kg-looks{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.4vw,16px);margin-top:56px}
+  .kg-looks figure{aspect-ratio:3/4;overflow:hidden}
+
+  /* Material */
+  .kg-material{background:var(--ink);color:#f1ede6}
+  .kg-material .kg-label{color:#a9a49b}
+  .kg-material .kg-lead{color:#d9d4cb}
+  .kg-specs{margin-top:32px;font-size:14px}
+  .kg-specs p{margin:0;padding:13px 0;border-top:1px solid rgba(255,255,255,.18)}
+  .kg-specs p:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+  .kg-specs strong{display:inline-block;min-width:92px;font-weight:600;letter-spacing:.06em}
+
+  /* Shop */
+  .kg-colors{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,3vw,40px);max-width:920px;margin:48px auto 0}
+  .kg-color__pic{aspect-ratio:4/5;overflow:hidden;margin-bottom:18px;background:var(--paper)}
+  .kg-color__name{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .kg-color__name b{font-family:var(--jp);font-weight:500;font-size:18px}
+  .kg-color p{font-size:14px;color:var(--mute);min-height:3.4em;margin:6px 0 14px}
+  .kg-color__price{font-family:var(--serif);font-size:24px;margin-bottom:14px}
+  .kg-shop__note{margin-top:32px !important;font-size:13px;color:var(--mute)}
+
+  /* Makers */
+  .kg-makers{background:var(--paper)}
+  .kg-people{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);margin-top:48px}
+  .kg-person{border-top:1px solid var(--ink);padding-top:22px}
+  .kg-person__role{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:14px !important}
+  .kg-person p{font-size:15px;color:#3a3835}
+
+  /* FAQ */
+  .kg-faq details{border-top:1px solid var(--line)}
+  .kg-faq details:last-of-type{border-bottom:1px solid var(--line)}
+  .kg-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-family:var(--serif);font-size:clamp(19px,1.8vw,22px);font-weight:600}
+  .kg-faq summary::-webkit-details-marker{display:none}
+  .kg-faq summary::after{content:'+';font-family:Georgia,serif;font-weight:400;color:var(--accent);flex:none}
+  .kg-faq details[open] summary::after{content:'\2212'}
+  .kg-faq__a{padding:0 0 24px;font-size:15px;color:#3a3835}
+
+  /* Closing */
+  .kg-close{background:var(--white);border-top:1px solid var(--line)}
+  .kg-close h2{margin-bottom:14px}
+
+  /* Sticky bar */
+  .kg-sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));background:var(--ink);color:#fff;transform:translateY(110%);transition:transform .35s ease}
+  .kg-sticky.is-on{transform:none}
+  .kg-sticky__t{font-family:var(--serif);font-size:18px;line-height:1.2}
+  .kg-sticky__t span{display:block;font-family:inherit;font-size:14px;opacity:.75}
+  .kg-sticky .kg-btn{background:#fff;color:var(--ink) !important;min-height:44px;padding:0 24px}
+
+  /* Reveal */
+  .kg.js .kg-r{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+  .kg.js .kg-r.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.kg.js .kg-r{opacity:1;transform:none;transition:none}.kg-sticky{transition:none}}
+
+  @media (max-width:989px){
+    .kg-hero{grid-template-columns:1fr 1fr;height:auto;min-height:0}
+    .kg-hero figure{aspect-ratio:3/4}
+    .kg-hero__text{order:3;grid-column:1/-1;padding:40px var(--pad) 48px}
+    .kg-hero__pic--2{order:2}
+    .kg-split,.kg-every__head{grid-template-columns:1fr}
+    .kg-split--rev .kg-split__pic{order:0}
+    .kg-cards{grid-template-columns:1fr 1fr}
+    .kg-people{grid-template-columns:1fr}
+  }
+  @media (max-width:599px){
+    .kg-hero h1{font-size:40px}
+    .kg-hero figcaption{padding:8px 10px;font-size:10px;letter-spacing:.14em}
+    .kg-cards{grid-template-columns:1fr;gap:22px;margin-top:36px}
+    .kg-card{display:grid;grid-template-columns:38% 1fr;gap:16px;align-items:start}
+    .kg-card__pic{margin:0}
+    .kg-card h3{font-size:21px}
+    .kg-card p{font-size:14px}
+    .kg-looks{grid-template-columns:1fr 1fr;margin-top:40px}
+    .kg-color p{font-size:13px;min-height:0}
+    .kg-color__name{gap:6px}
+    .kg-color__name h3{font-size:20px}
+    .kg-color__price{font-size:21px}
+    .kg-sticky__t{font-size:16px}
+  }
+</style>
+
+<div class="kg" id="kg-{{ section.id }}">
+
+  {%- comment -%} 1. Hero {%- endcomment -%}
+  <section class="kg-hero">
+    <figure class="kg-hero__pic--1">
+      {%- if s.hero_left != blank -%}{{ s.hero_left | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500,800,1100,1400', sizes: '(max-width: 989px) 50vw, 34vw', alt: s.caption_left }}{%- endif -%}
+      <figcaption>{{ s.caption_left }}</figcaption>
+    </figure>
+    <div class="kg-hero__text">
+      <p class="kg-eyebrow">{{ s.eyebrow }}</p>
+      <h1>{{ s.heading | newline_to_br }}</h1>
+      <p class="kg-hero__sub">{{ s.sub }}</p>
+      {%- if p != blank -%}<p class="kg-hero__price">{{ price }} <span>· {{ s.size_label }}</span></p>{%- endif -%}
+      <a class="kg-btn" href="#kg-shop" data-kg-cta>{{ s.cta_label }}</a>
+      <p class="kg-ship">{{ s.ship_note }}</p>
+    </div>
+    <figure class="kg-hero__pic--2">
+      {%- if s.hero_right != blank -%}{{ s.hero_right | image_url: width: 1400 | image_tag: loading: 'eager', widths: '500,800,1100,1400', sizes: '(max-width: 989px) 50vw, 34vw', alt: s.caption_right }}{%- endif -%}
+      <figcaption>{{ s.caption_right }}</figcaption>
+    </figure>
+  </section>
+
+  {%- comment -%} 2. Story {%- endcomment -%}
+  <section class="kg-sec">
+    <div class="kg-wrap kg-split">
+      <figure class="kg-split__pic kg-r">
+        {%- if s.story_image != blank -%}{{ s.story_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500,800,1200', sizes: '(max-width: 989px) 100vw, 45vw' }}{%- endif -%}
+      </figure>
+      <div class="kg-r">
+        <p class="kg-label"><i></i><b>{{ s.story_jp }}</b>{{ s.story_en }}</p>
+        <h2>{{ s.story_heading }}</h2>
+        <div class="kg-lead">{{ s.story_body }}</div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} 3. Design (blocks: design) {%- endcomment -%}
+  <section class="kg-sec kg-design">
+    <div class="kg-wrap">
+      <div class="kg-narrow kg-center kg-r">
+        <p class="kg-label"><i></i><b>{{ s.design_jp }}</b>{{ s.design_en }}</p>
+        <h2>{{ s.design_heading }}</h2>
+        <p class="kg-lead">{{ s.design_intro }}</p>
+      </div>
+      <div class="kg-cards">
+        {%- for b in section.blocks -%}{%- if b.type == 'design' -%}
+          <div class="kg-card kg-r" {{ b.shopify_attributes }}>
+            <figure class="kg-card__pic">{%- if b.settings.image != blank -%}{{ b.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '300,500,800', sizes: '(max-width: 599px) 38vw, (max-width: 989px) 50vw, 25vw', alt: b.settings.title }}{%- endif -%}</figure>
+            <div>
+              <h3>{{ b.settings.title }}</h3>
+              <p>{{ b.settings.text }}</p>
+            </div>
+          </div>
+        {%- endif -%}{%- endfor -%}
+      </div>
+      {%- if s.design_note != blank -%}<p class="kg-note kg-center">{{ s.design_note }}</p>{%- endif -%}
+      {%- if s.design_quote != blank -%}
+        <blockquote class="kg-quote kg-narrow kg-r">“{{ s.design_quote }}”<cite>{{ s.quote_cite }}</cite></blockquote>
+      {%- endif -%}
+    </div>
+  </section>
+
+  {%- comment -%} 4. Everyday (blocks: look) {%- endcomment -%}
+  <section class="kg-sec">
+    <div class="kg-wrap">
+      <div class="kg-every__head kg-r">
+        <div>
+          <p class="kg-label"><i></i><b>{{ s.everyday_jp }}</b>{{ s.everyday_en }}</p>
+          <h2>{{ s.everyday_heading }}</h2>
+        </div>
+        <div>
+          <p class="kg-lead">{{ s.everyday_body }}</p>
+          {%- if s.everyday_quote != blank -%}
+            <blockquote class="kg-quote">“{{ s.everyday_quote }}”<cite>{{ s.quote_cite }}</cite></blockquote>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="kg-looks">
+        {%- for b in section.blocks -%}{%- if b.type == 'look' and b.settings.image != blank -%}
+          <figure class="kg-r" {{ b.shopify_attributes }}>{{ b.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400,600,900', sizes: '(max-width: 599px) 50vw, 25vw', alt: b.settings.alt }}</figure>
+        {%- endif -%}{%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} 5. Material {%- endcomment -%}
+  <section class="kg-sec kg-material">
+    <div class="kg-wrap kg-split">
+      <figure class="kg-split__pic kg-r">
+        {%- if s.material_image != blank -%}{{ s.material_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500,800,1200', sizes: '(max-width: 989px) 100vw, 45vw' }}{%- endif -%}
+      </figure>
+      <div class="kg-r">
+        <p class="kg-label"><i></i><b>{{ s.material_jp }}</b>{{ s.material_en }}</p>
+        <h2>{{ s.material_heading }}</h2>
+        <div class="kg-lead">{{ s.material_body }}</div>
+        <div class="kg-specs">{{ s.material_specs }}</div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} 6. Shop (blocks: color, matched to variants by SKU) {%- endcomment -%}
+  <section class="kg-sec" id="kg-shop">
+    <div class="kg-wrap">
+      <div class="kg-narrow kg-center kg-r">
+        <p class="kg-label"><i></i><b>{{ s.shop_jp }}</b>{{ s.shop_en }}</p>
+        <h2>{{ s.shop_heading }}</h2>
+      </div>
+      <div class="kg-colors">
+        {%- for b in section.blocks -%}{%- if b.type == 'color' -%}
+          {%- liquid
+            assign v = blank
+            for x in p.variants
+              if x.sku == b.settings.sku
+                assign v = x
+              endif
+            endfor
+          -%}
+          <div class="kg-color kg-r" {{ b.shopify_attributes }}>
+            <figure class="kg-color__pic">{%- if b.settings.image != blank -%}{{ b.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400,700,1000', sizes: '(max-width: 989px) 50vw, 440px', alt: b.settings.name }}{%- endif -%}</figure>
+            <div class="kg-color__name"><b>{{ b.settings.kanji }}</b><h3>{{ b.settings.name }}</h3></div>
+            <p>{{ b.settings.text }}</p>
+            {%- if v != blank -%}
+              <div class="kg-color__price">{{ v.price | money_without_trailing_zeros }}</div>
+              {%- form 'product', p, class: 'kg-form', novalidate: 'novalidate' -%}
+                <input type="hidden" name="id" value="{{ v.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+                <button type="submit" class="kg-btn kg-btn--block" {% unless v.available %}disabled{% endunless %}>
+                  {%- if v.available -%}{{ s.add_label }}{%- else -%}{{ s.soldout_label }}{%- endif -%}
+                </button>
+              {%- endform -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}{%- endfor -%}
+      </div>
+      <p class="kg-shop__note kg-center">{{ s.shop_note }}</p>
+    </div>
+  </section>
+
+  {%- comment -%} 7. Makers (blocks: maker) {%- endcomment -%}
+  <section class="kg-sec kg-makers">
+    <div class="kg-wrap">
+      <div class="kg-r">
+        <p class="kg-label"><i></i><b>{{ s.makers_jp }}</b>{{ s.makers_en }}</p>
+        <h2>{{ s.makers_heading }}</h2>
+      </div>
+      <div class="kg-people">
+        {%- for b in section.blocks -%}{%- if b.type == 'maker' -%}
+          <div class="kg-person kg-r" {{ b.shopify_attributes }}>
+            <h3>{{ b.settings.name }}</h3>
+            <p class="kg-person__role">{{ b.settings.role }}</p>
+            <p>{{ b.settings.text }}</p>
+          </div>
+        {%- endif -%}{%- endfor -%}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} 8. FAQ (blocks: faq) {%- endcomment -%}
+  <section class="kg-sec kg-faq">
+    <div class="kg-narrow">
+      <div class="kg-center kg-r">
+        <p class="kg-label"><i></i><b>{{ s.faq_jp }}</b>{{ s.faq_en }}</p>
+        <h2>{{ s.faq_heading }}</h2>
+      </div>
+      {%- for b in section.blocks -%}{%- if b.type == 'faq' -%}
+        <details {{ b.shopify_attributes }}>
+          <summary>{{ b.settings.question }}</summary>
+          <div class="kg-faq__a">{{ b.settings.answer }}</div>
+        </details>
+      {%- endif -%}{%- endfor -%}
+    </div>
+  </section>
+
+  {%- comment -%} 9. Closing {%- endcomment -%}
+  <section class="kg-sec kg-close kg-center">
+    <div class="kg-narrow kg-r">
+      <h2>{{ s.close_heading }}</h2>
+      {%- if p != blank -%}<p class="kg-hero__price">{{ price }} <span>· {{ s.size_label }}</span></p>{%- endif -%}
+      <a class="kg-btn" href="#kg-shop">{{ s.cta_label }}</a>
+      <p class="kg-ship">{{ s.ship_note }}</p>
+    </div>
+  </section>
+
+  <div class="kg-sticky" aria-hidden="true" data-kg-sticky>
+    <div class="kg-sticky__t">{{ s.sticky_label }}{%- if p != blank -%}<span>{{ price }}</span>{%- endif -%}</div>
+    <a class="kg-btn" href="#kg-shop" tabindex="-1">{{ s.sticky_cta }}</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('kg-{{ section.id }}');
+    if (!root) return;
+    root.classList.add('js');
+
+    var reveal = root.querySelectorAll('.kg-r');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      reveal.forEach(function (el) { io.observe(el); });
+    } else {
+      reveal.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    // Sticky bar: show after the hero button scrolls away, hide while the shop section is on screen
+    var bar = root.querySelector('[data-kg-sticky]');
+    var cta = root.querySelector('[data-kg-cta]');
+    var shop = root.querySelector('#kg-shop');
+    var ctaGone = false, shopIn = false;
+    function upd() {
+      var on = ctaGone && !shopIn;
+      bar.classList.toggle('is-on', on);
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      var a = bar.querySelector('a'); if (a) a.tabIndex = on ? 0 : -1;
+    }
+    if (bar && cta && shop && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { ctaGone = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; upd(); }).observe(cta);
+      new IntersectionObserver(function (es) { shopIn = es[0].isIntersecting; upd(); }, { threshold: 0.15 }).observe(shop);
+    }
+
+    // Smooth scroll for in-page links
+    root.querySelectorAll('a[href="#kg-shop"]').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); shop.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    });
+
+    {%- if s.hide_chat %}
+    // Hide the chat bubble on phones so it doesn't cover the sticky button
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      var tries = 0, t = setInterval(function () {
+        if (typeof window.ChannelIO === 'function') window.ChannelIO('hideChannelButton');
+        if (++tries >= 20) clearInterval(t);
+      }, 1000);
+    }
+    {%- endif %}
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Kimono Poncho LP",
+  "tag": "div",
+  "class": "kg-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "header", "content": "Hero" },
+    { "type": "image_picker", "id": "hero_left", "label": "Left photo (kimono)" },
+    { "type": "text", "id": "caption_left", "label": "Left caption", "default": "Over a kimono" },
+    { "type": "image_picker", "id": "hero_right", "label": "Right photo (everyday)" },
+    { "type": "text", "id": "caption_right", "label": "Right caption", "default": "Over everyday clothes" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KAPOK KNOT — Tokyo" },
+    { "type": "textarea", "id": "heading", "label": "Heading (line breaks kept)", "default": "Born from the kimono.\nWorn with anything." },
+    { "type": "textarea", "id": "sub", "label": "Sub text" },
+    { "type": "text", "id": "size_label", "label": "Size label next to price", "default": "One size" },
+    { "type": "text", "id": "cta_label", "label": "Button", "default": "Choose your colour" },
+    { "type": "text", "id": "ship_note", "label": "Shipping note" },
+    { "type": "header", "content": "Story" },
+    { "type": "text", "id": "story_jp", "label": "Label (kanji)", "default": "物語" },
+    { "type": "text", "id": "story_en", "label": "Label (English)", "default": "The story" },
+    { "type": "text", "id": "story_heading", "label": "Heading" },
+    { "type": "richtext", "id": "story_body", "label": "Text" },
+    { "type": "image_picker", "id": "story_image", "label": "Photo" },
+    { "type": "header", "content": "Design (add Design blocks)" },
+    { "type": "text", "id": "design_jp", "label": "Label (kanji)", "default": "仕立て" },
+    { "type": "text", "id": "design_en", "label": "Label (English)", "default": "The design" },
+    { "type": "text", "id": "design_heading", "label": "Heading" },
+    { "type": "textarea", "id": "design_intro", "label": "Intro" },
+    { "type": "text", "id": "design_note", "label": "Small note under the cards" },
+    { "type": "textarea", "id": "design_quote", "label": "Customer quote" },
+    { "type": "text", "id": "quote_cite", "label": "Quote credit", "default": "Customer review, translated from Japanese" },
+    { "type": "header", "content": "Everyday (add Look blocks)" },
+    { "type": "text", "id": "everyday_jp", "label": "Label (kanji)", "default": "日常" },
+    { "type": "text", "id": "everyday_en", "label": "Label (English)", "default": "Everyday" },
+    { "type": "text", "id": "everyday_heading", "label": "Heading" },
+    { "type": "textarea", "id": "everyday_body", "label": "Text" },
+    { "type": "textarea", "id": "everyday_quote", "label": "Customer quote" },
+    { "type": "header", "content": "Material" },
+    { "type": "text", "id": "material_jp", "label": "Label (kanji)", "default": "素材" },
+    { "type": "text", "id": "material_en", "label": "Label (English)", "default": "The material" },
+    { "type": "text", "id": "material_heading", "label": "Heading" },
+    { "type": "richtext", "id": "material_body", "label": "Text" },
+    { "type": "richtext", "id": "material_specs", "label": "Specs (one line per paragraph, bold = label)" },
+    { "type": "image_picker", "id": "material_image", "label": "Photo" },
+    { "type": "header", "content": "Shop (add Colour blocks)" },
+    { "type": "text", "id": "shop_jp", "label": "Label (kanji)", "default": "二色" },
+    { "type": "text", "id": "shop_en", "label": "Label (English)", "default": "Two colours" },
+    { "type": "text", "id": "shop_heading", "label": "Heading", "default": "Kimono Poncho Coat" },
+    { "type": "text", "id": "add_label", "label": "Add-to-bag button", "default": "Add to bag" },
+    { "type": "text", "id": "soldout_label", "label": "Sold-out button", "default": "Sold out" },
+    { "type": "text", "id": "shop_note", "label": "Note under the cards" },
+    { "type": "header", "content": "Makers (add Maker blocks)" },
+    { "type": "text", "id": "makers_jp", "label": "Label (kanji)", "default": "作り手" },
+    { "type": "text", "id": "makers_en", "label": "Label (English)", "default": "The makers" },
+    { "type": "text", "id": "makers_heading", "label": "Heading" },
+    { "type": "header", "content": "FAQ (add FAQ blocks)" },
+    { "type": "text", "id": "faq_jp", "label": "Label (kanji)", "default": "問答" },
+    { "type": "text", "id": "faq_en", "label": "Label (English)", "default": "Questions" },
+    { "type": "text", "id": "faq_heading", "label": "Heading", "default": "Good to know" },
+    { "type": "header", "content": "Closing & sticky bar" },
+    { "type": "text", "id": "close_heading", "label": "Closing heading" },
+    { "type": "text", "id": "sticky_label", "label": "Sticky bar title", "default": "Kimono Poncho Coat" },
+    { "type": "text", "id": "sticky_cta", "label": "Sticky bar button", "default": "Shop" },
+    { "type": "checkbox", "id": "hide_chat", "label": "Hide the chat button on phones", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "design", "name": "Design point",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "look", "name": "Look photo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "alt", "label": "Alt text" }
+      ]
+    },
+    {
+      "type": "color", "name": "Colour",
+      "settings": [
+        { "type": "text", "id": "sku", "label": "Variant SKU" },
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "kanji", "label": "Kanji" },
+        { "type": "text", "id": "name", "label": "Colour name" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "maker", "name": "Maker",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "role", "label": "Role" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "faq", "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Kimono Poncho LP" }]
+}
+{% endschema %}

@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "main": {
+      "type": "kimono-global",
+      "blocks": {
+        "design_sleeve": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__7357.jpg",
+            "title": "Sleeves that slip inside",
+            "text": "Wide openings take a kimono's long sleeves — or a chunky knit — without bunching."
+          }
+        },
+        "design_collar": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__7480.jpg",
+            "title": "A collar that follows yours",
+            "text": "It sits along the kimono collar. Turn it up on cold days and it wraps your neck — no scarf needed."
+          }
+        },
+        "design_back": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__6796.jpg",
+            "title": "A back that makes room",
+            "text": "The back opens over the obi bow and falls in a soft, wide line."
+          }
+        },
+        "design_tie": {
+          "type": "design",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__7055.jpg",
+            "title": "A tie, not a squeeze",
+            "text": "A cord from the hips ties at the front, so nothing presses on the obi. Pull it tighter for a sharper shape."
+          }
+        },
+        "look_1": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/240802_KAPOKKNOT3975.jpg",
+            "alt": "Sumi Black worn over a long skirt and boots"
+          }
+        },
+        "look_2": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/240802_KAPOKKNOT3260.jpg",
+            "alt": "Sumi Black worn over jeans"
+          }
+        },
+        "look_3": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/240802_KAPOKKNOT4172.jpg",
+            "alt": "Usuzumi Gray worn open over a dress"
+          }
+        },
+        "look_4": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/240802_KAPOKKNOT3527.jpg",
+            "alt": "Usuzumi Gray worn over a roll-neck"
+          }
+        },
+        "color_sumi": {
+          "type": "color",
+          "settings": {
+            "sku": "KU4211135-02-BLK-F",
+            "image": "shopify://shop_images/240802_KAPOKKNOT3254.jpg",
+            "kanji": "墨",
+            "name": "Sumi Black",
+            "text": "Sumi is the black of calligraphy ink — deep and quiet."
+          }
+        },
+        "color_usuzumi": {
+          "type": "color",
+          "settings": {
+            "sku": "KU4211135-LGR-F",
+            "image": "shopify://shop_images/240802_KAPOKKNOT4222.jpg",
+            "kanji": "薄墨",
+            "name": "Usuzumi Gray",
+            "text": "Usuzumi is ink thinned with water: a soft, pale grey."
+          }
+        },
+        "maker_ito": {
+          "type": "maker",
+          "settings": {
+            "name": "Hitomi Ito",
+            "role": "Kimono artist",
+            "text": "Born into a Zen temple in Gion, Kyoto, Hitomi is a master of kimono dressing and the founder of enso, a studio that carries the Japanese sense of beauty into the present. She works with brands and artists in Japan and abroad."
+          }
+        },
+        "maker_lin": {
+          "type": "maker",
+          "settings": {
+            "name": "Lin Li",
+            "role": "Designer",
+            "text": "With roots in both Japan and China and an education in London, Lin designs with a minimal, careful hand."
+          }
+        },
+        "maker_kk": {
+          "type": "maker",
+          "settings": {
+            "name": "KAPOK KNOT",
+            "role": "Outerwear brand, Tokyo",
+            "text": "Founded in answer to mass production and waste, KAPOK KNOT makes warm clothing from kapok — a plant fibre that needs no feathers or fur."
+          }
+        },
+        "faq_size": {
+          "type": "faq",
+          "settings": {
+            "question": "What size is it?",
+            "answer": "<p>One size (F). The coat is cut loose so it can go over a kimono or a heavy knit, and the tie lets you adjust the shape.</p>"
+          }
+        },
+        "faq_ship": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Shipping is free worldwide. Orders ship from Japan within 3–5 business days; international delivery typically takes 7–14 days.</p>"
+          }
+        },
+        "faq_duty": {
+          "type": "faq",
+          "settings": {
+            "question": "Will I pay import duties or VAT?",
+            "answer": "<p>Your order ships from Japan, and import duties and VAT are not included in our price. They are calculated and added at checkout, so you see the full total before you pay. We settle them with the courier, so there is nothing more to pay on delivery.</p>"
+          }
+        },
+        "faq_wash": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I wash it?",
+            "answer": "<p>Machine wash on a hand-wash cycle inside a laundry net, spin well, then reshape and hang to dry. Avoid fabric softener. Because the kapok is untreated, a trace of natural plant oil may show after washing — it rinses out with water.</p>"
+          }
+        },
+        "faq_return": {
+          "type": "faq",
+          "settings": {
+            "question": "What if something is wrong with my order?",
+            "answer": "<p>If your item arrives faulty or not as described, we'll replace or refund it at our cost. Your statutory consumer rights always apply.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "design_sleeve",
+        "design_collar",
+        "design_back",
+        "design_tie",
+        "look_1",
+        "look_2",
+        "look_3",
+        "look_4",
+        "color_sumi",
+        "color_usuzumi",
+        "maker_ito",
+        "maker_lin",
+        "maker_kk",
+        "faq_size",
+        "faq_ship",
+        "faq_duty",
+        "faq_wash",
+        "faq_return"
+      ],
+      "settings": {
+        "product": "kimono_ponchocoat",
+        "hero_left": "shopify://shop_images/KAPOK_KNOT__6819.jpg",
+        "caption_left": "Over a kimono",
+        "hero_right": "shopify://shop_images/240802_KAPOKKNOT4150.jpg",
+        "caption_right": "Over everyday clothes",
+        "eyebrow": "KAPOK KNOT — Tokyo",
+        "heading": "Born from the kimono.\nWorn with anything.",
+        "sub": "A poncho coat created with kimono artist Hitomi Ito and designer Lin Li. Wide enough to go over a kimono, light enough to wear every day.",
+        "size_label": "One size",
+        "cta_label": "Choose your colour",
+        "ship_note": "Free worldwide shipping · Duties & VAT added at checkout",
+        "story_jp": "物語",
+        "story_en": "The story",
+        "story_heading": "A coat the kimono never had.",
+        "story_body": "<p>It began in June 2023 with a request from kimono artist Hitomi Ito: a warm winter coat that wouldn't crush a kimono.</p><p>A kimono is cut in straight lines, with long sleeves, a deep collar and the obi sash tied at the back. Western coats are cut in curves and fight all three. With designer Lin Li, we spent twice our usual development time on prototypes until the two could meet.</p>",
+        "story_image": "shopify://shop_images/KAPOK_KNOT__6886.jpg",
+        "design_jp": "仕立て",
+        "design_en": "The design",
+        "design_heading": "Cut for the kimono. Better for everything else.",
+        "design_intro": "Every detail answers a problem kimono wearers know well — and makes it easier to layer whatever you wear underneath.",
+        "design_note": "Buttoned cuffs keep the wind out.",
+        "design_quote": "Over a kimono it follows the collar without pressing, and the back opens around the obi beautifully.",
+        "quote_cite": "Customer review, translated from Japanese",
+        "everyday_jp": "日常",
+        "everyday_en": "Everyday",
+        "everyday_heading": "No kimono required.",
+        "everyday_body": "Over jeans, a dress or a heavy knit, it reads as a sculptural wrap coat. One size, a relaxed drape — tie it loose or cinch it in.",
+        "everyday_quote": "I wear it with everyday clothes, not kimono. I was amazed how light it is, and it's warm even with a thick knit underneath. People always ask where it's from.",
+        "material_jp": "素材",
+        "material_en": "The material",
+        "material_heading": "Warmth that grows on trees.",
+        "material_body": "<p>Kapok is the soft fibre inside the seed pods of the kapok tree. Each fibre is hollow — one-eighth the weight of cotton — and harvesting it takes no feathers, no animals and no felled trees.</p><p>Short kapok fibres are notoriously hard to work with. After years of joint development with a Japanese textile maker, we turned them into a thin padding sheet: down-like warmth, without the bulk.</p>",
+        "material_specs": "<p><strong>Shell</strong> Nylon 100%, water-repellent</p><p><strong>Padding</strong> Recycled polyester 70%, kapok 30%</p><p><strong>Lining</strong> Polyester 100%</p><p><strong>Size</strong> One size (F)</p><p><strong>Care</strong> Machine washable in a laundry net</p>",
+        "material_image": "shopify://shop_images/KAPOK_KNOT__6755_8c603f99-9076-48e8-a6f0-b441bf578c63.jpg",
+        "shop_jp": "二色",
+        "shop_en": "Two colours",
+        "shop_heading": "Kimono Poncho Coat",
+        "add_label": "Add to bag",
+        "soldout_label": "Sold out",
+        "shop_note": "One size · Free worldwide shipping · Duties & VAT added at checkout, nothing to pay on delivery",
+        "makers_jp": "作り手",
+        "makers_en": "The makers",
+        "makers_heading": "The people behind it.",
+        "faq_jp": "問答",
+        "faq_en": "Questions",
+        "faq_heading": "Good to know.",
+        "close_heading": "Winter, worn lightly.",
+        "sticky_label": "Kimono Poncho Coat",
+        "sticky_cta": "Shop",
+        "hide_chat": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
