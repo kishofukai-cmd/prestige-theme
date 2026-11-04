@@ -33,7 +33,7 @@
   .kg h1,.kg h2,.kg h3{font-family:var(--serif);font-weight:500;letter-spacing:0;text-transform:none;line-height:1.1;margin:0;color:inherit;text-wrap:balance}
   .kg h2{font-size:clamp(34px,5vw,60px);margin-bottom:24px}
   .kg h3{font-size:clamp(22px,2.1vw,26px);font-weight:600;margin-bottom:8px}
-  .kg-sec{padding:clamp(72px,10vw,140px) var(--pad)}
+  .kg-sec{padding:clamp(96px,13vw,190px) var(--pad)}
   .kg-wrap{max-width:1180px;margin:0 auto}
   .kg-narrow{max-width:760px;margin:0 auto}
   .kg-label{display:flex;align-items:center;gap:12px;margin:0 0 20px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
@@ -62,6 +62,28 @@
   .kg-hero__price{margin:22px 0 18px !important;font-family:var(--serif);font-size:26px}
   .kg-hero__price span{font-family:inherit;font-size:15px;color:var(--mute)}
   .kg-ship{margin-top:14px !important;font-size:12px;color:var(--mute);letter-spacing:.02em}
+
+  /* Scene hero (one quiet photo, words below) */
+  .kg-scene{background:var(--white)}
+  .kg-scene__pic{height:min(88vh,1000px);overflow:hidden}
+  .kg-scene__pic img{object-position:var(--pos,50% 50%)}
+  .kg-scene__text{text-align:center;padding:clamp(64px,9vw,128px) var(--pad) 0}
+  .kg-scene h1{font-size:clamp(38px,4.4vw,68px);line-height:1.08}
+  .kg-scene .kg-hero__sub{margin:28px auto 0 !important;max-width:34em}
+
+  /* Pause: a quiet photo and/or one line between chapters */
+  .kg-pause{padding:clamp(88px,12vw,180px) var(--pad);text-align:center}
+  .kg-pause--paper{background:var(--paper)}
+  .kg-pause--ink{background:var(--ink)}
+  .kg-pause--full{padding-left:0;padding-right:0}
+  .kg .kg-pause__pic{margin:0 auto;overflow:hidden}
+  .kg-pause__pic img{object-position:var(--pos,50% 50%)}
+  .kg-pause--full .kg-pause__pic{height:min(84vh,980px)}
+  .kg-pause--wide .kg-pause__pic{max-width:1180px;aspect-ratio:16/9}
+  .kg-pause--narrow .kg-pause__pic{max-width:440px;aspect-ratio:2/3}
+  .kg-pause__text{max-width:21em;margin:clamp(48px,6vw,80px) auto 0 !important;padding:0 var(--pad);font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.4vw,32px);line-height:1.5;color:var(--mute)}
+  .kg-pause__text:first-child{margin-top:0 !important}
+  .kg-pause--ink .kg-pause__text{color:#b9b3a9}
 
   /* Story */
   .kg-split{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,96px);align-items:center}
@@ -93,7 +115,9 @@
   /* Everyday */
   .kg-every__head{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,96px);align-items:start}
   .kg-looks{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.4vw,16px);margin-top:56px}
-  .kg-looks figure{aspect-ratio:3/4;overflow:hidden}
+  .kg-looks figure{display:flex;flex-direction:column}
+  .kg-looks figure img{aspect-ratio:3/4;height:auto}
+  .kg-looks figcaption{padding-top:10px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
 
   /* Material */
   .kg-material{background:var(--ink);color:#f1ede6}
@@ -162,7 +186,10 @@
     .kg-people{grid-template-columns:1fr}
   }
   @media (max-width:599px){
-    .kg-hero h1{font-size:35px}
+    .kg-hero h1,.kg-scene h1{font-size:35px}
+    .kg-scene__pic{height:auto;aspect-ratio:1/1}
+    .kg-pause--full .kg-pause__pic{height:auto;aspect-ratio:4/5}
+    .kg-pause--narrow .kg-pause__pic{max-width:78%}
     .kg-hero figcaption{padding:8px 10px;font-size:10px;letter-spacing:.14em}
     .kg-cards{grid-template-columns:1fr;gap:22px;margin-top:36px}
     .kg-card{display:grid;grid-template-columns:38% 1fr;gap:16px;align-items:start}
@@ -179,8 +206,28 @@
 </style>
 
 <div class="kg" id="kg-{{ section.id }}">
+  {%- comment -%}
+    Chapters render in this order. "Pause" blocks (a quiet photo and/or one line) render after the chapter named in their "after" setting.
+  {%- endcomment -%}
+  {%- assign slots = 'hero,story,kimono,design,material,everyday,shop,makers,faq,closing' | split: ',' -%}
+  {%- for slot in slots -%}
+  {%- case slot -%}
 
-  {%- comment -%} 1. Hero {%- endcomment -%}
+  {%- when 'hero' -%}
+  {%- if s.hero_scene != blank -%}
+  <section class="kg-scene">
+    <figure class="kg-scene__pic" style="--pos: {{ s.hero_scene_focus | default: '50% 50%' }}">{{ s.hero_scene | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '800,1200,1800,2400', sizes: '100vw', alt: s.hero_scene_alt }}</figure>
+    <div class="kg-scene__text">
+      <p class="kg-eyebrow">{{ s.eyebrow }}</p>
+      <h1>{{ s.heading | newline_to_br }}</h1>
+      <p class="kg-hero__sub">{{ s.sub }}</p>
+      {%- if s.hero_show_buy -%}
+        {%- if p != blank -%}<p class="kg-hero__price">{{ price }} <span>· {{ s.size_label }}</span></p>{%- endif -%}
+        <a class="kg-btn" href="#kg-shop" data-kg-cta>{{ s.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </section>
+  {%- else -%}
   <section class="kg-hero">
     <figure class="kg-hero__pic--1">
       {%- if s.hero_left != blank -%}{{ s.hero_left | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500,800,1100,1400', sizes: '(max-width: 989px) 50vw, 34vw', alt: s.caption_left }}{%- endif -%}
@@ -199,8 +246,9 @@
       <figcaption>{{ s.caption_right }}</figcaption>
     </figure>
   </section>
+  {%- endif -%}
 
-  {%- comment -%} 2. Story {%- endcomment -%}
+  {%- when 'story' -%}
   <section class="kg-sec">
     <div class="kg-wrap kg-split">
       <figure class="kg-split__pic kg-r">
@@ -214,7 +262,8 @@
     </div>
   </section>
 
-  {%- comment -%} 2b. Kimono gallery (blocks: kimono_photo — 1st large, 2nd wide, 3rd/4th tall) {%- endcomment -%}
+  {%- when 'kimono' -%}
+  {%- comment -%} Kimono gallery (blocks: kimono_photo — 1st large, 2nd wide, 3rd/4th tall) {%- endcomment -%}
   <section class="kg-sec kg-kimono">
     <div class="kg-wrap">
       <div class="kg-kimono__head kg-r">
@@ -235,7 +284,8 @@
     </div>
   </section>
 
-  {%- comment -%} 3. Design (blocks: design) {%- endcomment -%}
+  {%- when 'design' -%}
+  {%- comment -%} Design / innovation (blocks: design) {%- endcomment -%}
   <section class="kg-sec kg-design">
     <div class="kg-wrap">
       <div class="kg-narrow kg-center kg-r">
@@ -262,7 +312,8 @@
     </div>
   </section>
 
-  {%- comment -%} 4. Everyday (blocks: look) {%- endcomment -%}
+  {%- when 'everyday' -%}
+  {%- comment -%} Everyday (blocks: look) {%- endcomment -%}
   <section class="kg-sec">
     <div class="kg-wrap">
       <div class="kg-every__head kg-r">
@@ -279,13 +330,14 @@
       </div>
       <div class="kg-looks">
         {%- for b in section.blocks -%}{%- if b.type == 'look' and b.settings.image != blank -%}
-          <figure class="kg-r" {{ b.shopify_attributes }}>{{ b.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400,600,900', sizes: '(max-width: 599px) 50vw, 25vw', alt: b.settings.alt }}</figure>
+          <figure class="kg-r" {{ b.shopify_attributes }}>{{ b.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400,600,900', sizes: '(max-width: 599px) 50vw, 25vw', alt: b.settings.alt }}{%- if b.settings.caption != blank -%}<figcaption>{{ b.settings.caption }}</figcaption>{%- endif -%}</figure>
         {%- endif -%}{%- endfor -%}
       </div>
     </div>
   </section>
 
-  {%- comment -%} 5. Material {%- endcomment -%}
+  {%- when 'material' -%}
+  {%- comment -%} Material / shōjin {%- endcomment -%}
   <section class="kg-sec kg-material">
     <div class="kg-wrap kg-split">
       <figure class="kg-split__pic kg-r">
@@ -300,7 +352,8 @@
     </div>
   </section>
 
-  {%- comment -%} 6. Shop (blocks: color, matched to variants by SKU) {%- endcomment -%}
+  {%- when 'shop' -%}
+  {%- comment -%} Shop (blocks: color, matched to variants by SKU) {%- endcomment -%}
   <section class="kg-sec" id="kg-shop">
     <div class="kg-wrap">
       <div class="kg-narrow kg-center kg-r">
@@ -339,7 +392,8 @@
     </div>
   </section>
 
-  {%- comment -%} 7. Makers (blocks: maker) {%- endcomment -%}
+  {%- when 'makers' -%}
+  {%- comment -%} Makers (blocks: maker) {%- endcomment -%}
   <section class="kg-sec kg-makers">
     <div class="kg-wrap">
       <div class="kg-r">
@@ -358,7 +412,8 @@
     </div>
   </section>
 
-  {%- comment -%} 8. FAQ (blocks: faq) {%- endcomment -%}
+  {%- when 'faq' -%}
+  {%- comment -%} FAQ (blocks: faq) {%- endcomment -%}
   <section class="kg-sec kg-faq">
     <div class="kg-narrow">
       <div class="kg-center kg-r">
@@ -374,7 +429,7 @@
     </div>
   </section>
 
-  {%- comment -%} 9. Closing {%- endcomment -%}
+  {%- when 'closing' -%}
   <section class="kg-sec kg-close kg-center">
     <div class="kg-narrow kg-r">
       <h2>{{ s.close_heading }}</h2>
@@ -383,11 +438,30 @@
       <p class="kg-ship">{{ s.ship_note }}</p>
     </div>
   </section>
+  {%- endcase -%}
 
+  {%- comment -%} Pauses after this chapter (blocks: pause) {%- endcomment -%}
+  {%- for b in section.blocks -%}{%- if b.type == 'pause' and b.settings.after == slot -%}
+    {%- case b.settings.width -%}
+      {%- when 'full' -%}{%- assign psz = '100vw' -%}
+      {%- when 'wide' -%}{%- assign psz = '(max-width: 1180px) 100vw, 1180px' -%}
+      {%- else -%}{%- assign psz = '(max-width: 599px) 100vw, 520px' -%}
+    {%- endcase -%}
+    <section class="kg-pause kg-pause--{{ b.settings.width }} kg-pause--{{ b.settings.tone }}" {{ b.shopify_attributes }}>
+      {%- if b.settings.image != blank -%}
+        <figure class="kg-pause__pic kg-r" style="--pos: {{ b.settings.focus | default: '50% 50%' }}">{{ b.settings.image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '600,1000,1600,2400', sizes: psz, alt: b.settings.alt }}</figure>
+      {%- endif -%}
+      {%- if b.settings.text != blank -%}<p class="kg-pause__text kg-r">{{ b.settings.text }}</p>{%- endif -%}
+    </section>
+  {%- endif -%}{%- endfor -%}
+  {%- endfor -%}
+
+  {%- if s.show_sticky -%}
   <div class="kg-sticky" aria-hidden="true" data-kg-sticky>
     <div class="kg-sticky__t">{{ s.sticky_label }}{%- if p != blank -%}<span>{{ price }}</span>{%- endif -%}</div>
     <a class="kg-btn" href="#kg-shop" tabindex="-1">{{ s.sticky_cta }}</a>
   </div>
+  {%- endif -%}
 </div>
 
 <script>
@@ -423,7 +497,7 @@
     }
 
     // Smooth scroll for in-page links
-    root.querySelectorAll('a[href="#kg-shop"]').forEach(function (a) {
+    if (shop) root.querySelectorAll('a[href="#kg-shop"]').forEach(function (a) {
       a.addEventListener('click', function (e) { e.preventDefault(); shop.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     });
 
@@ -447,6 +521,10 @@
   "settings": [
     { "type": "product", "id": "product", "label": "Product" },
     { "type": "header", "content": "Hero" },
+    { "type": "image_picker", "id": "hero_scene", "label": "Scene photo (replaces the two photos)" },
+    { "type": "text", "id": "hero_scene_alt", "label": "Scene photo alt text" },
+    { "type": "text", "id": "hero_scene_focus", "label": "Scene photo focus (x% y%)", "default": "50% 50%" },
+    { "type": "checkbox", "id": "hero_show_buy", "label": "Show price and button in the hero", "default": false },
     { "type": "image_picker", "id": "hero_left", "label": "Left photo (kimono)" },
     { "type": "text", "id": "caption_left", "label": "Left caption", "default": "Over a kimono" },
     { "type": "image_picker", "id": "hero_right", "label": "Right photo (everyday)" },
@@ -507,6 +585,7 @@
     { "type": "text", "id": "faq_heading", "label": "Heading", "default": "Good to know" },
     { "type": "header", "content": "Closing & sticky bar" },
     { "type": "text", "id": "close_heading", "label": "Closing heading" },
+    { "type": "checkbox", "id": "show_sticky", "label": "Show the sticky buy bar", "default": false },
     { "type": "text", "id": "sticky_label", "label": "Sticky bar title", "default": "Kimono Poncho Coat" },
     { "type": "text", "id": "sticky_cta", "label": "Sticky bar button", "default": "Shop" },
     { "type": "checkbox", "id": "hide_chat", "label": "Hide the chat button on phones", "default": true }
@@ -533,7 +612,29 @@
       "type": "look", "name": "Look photo",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Photo" },
-        { "type": "text", "id": "alt", "label": "Alt text" }
+        { "type": "text", "id": "alt", "label": "Alt text" },
+        { "type": "text", "id": "caption", "label": "Caption" }
+      ]
+    },
+    {
+      "type": "pause", "name": "Pause",
+      "settings": [
+        { "type": "select", "id": "after", "label": "Place after", "default": "hero",
+          "options": [
+            { "value": "hero", "label": "Hero" }, { "value": "story", "label": "Story" },
+            { "value": "kimono", "label": "Kimono gallery" }, { "value": "design", "label": "Innovation" },
+            { "value": "material", "label": "Shōjin / material" }, { "value": "everyday", "label": "Everyday" },
+            { "value": "shop", "label": "Shop" }, { "value": "makers", "label": "Makers" },
+            { "value": "faq", "label": "FAQ" }
+          ] },
+        { "type": "image_picker", "id": "image", "label": "Photo (optional)" },
+        { "type": "text", "id": "alt", "label": "Alt text" },
+        { "type": "text", "id": "focus", "label": "Photo focus (x% y%)", "default": "50% 50%" },
+        { "type": "select", "id": "width", "label": "Photo width", "default": "narrow",
+          "options": [ { "value": "full", "label": "Full width" }, { "value": "wide", "label": "Wide" }, { "value": "narrow", "label": "Narrow (tall photo)" } ] },
+        { "type": "select", "id": "tone", "label": "Background", "default": "white",
+          "options": [ { "value": "white", "label": "White" }, { "value": "paper", "label": "Paper" }, { "value": "ink", "label": "Ink" } ] },
+        { "type": "text", "id": "text", "label": "One line (optional)" }
       ]
     },
     {

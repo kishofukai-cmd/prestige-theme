@@ -74,29 +74,69 @@
         "look_1": {
           "type": "look",
           "settings": {
-            "image": "shopify://shop_images/240802_KAPOKKNOT3975.jpg",
-            "alt": "Sumi Black worn over a long skirt and boots"
+            "image": "shopify://shop_images/KAPOK_KNOT__6819.jpg",
+            "alt": "Sumi Black worn over a kimono",
+            "caption": "Over a kimono"
           }
         },
         "look_2": {
           "type": "look",
           "settings": {
-            "image": "shopify://shop_images/240802_KAPOKKNOT3260.jpg",
-            "alt": "Sumi Black worn over jeans"
+            "image": "shopify://shop_images/240802_KAPOKKNOT4150.jpg",
+            "alt": "Usuzumi Gray worn over a dress",
+            "caption": "Over a dress"
           }
         },
         "look_3": {
           "type": "look",
           "settings": {
-            "image": "shopify://shop_images/240802_KAPOKKNOT4172.jpg",
-            "alt": "Usuzumi Gray worn open over a dress"
+            "image": "shopify://shop_images/240802_KAPOKKNOT3260.jpg",
+            "alt": "Sumi Black worn over jeans",
+            "caption": "Over jeans"
           }
         },
         "look_4": {
           "type": "look",
           "settings": {
             "image": "shopify://shop_images/240802_KAPOKKNOT3527.jpg",
-            "alt": "Usuzumi Gray worn over a roll-neck"
+            "alt": "Usuzumi Gray worn over a roll-neck",
+            "caption": "Over a roll-neck"
+          }
+        },
+        "pause_curtain": {
+          "type": "pause",
+          "settings": {
+            "after": "hero",
+            "image": "shopify://shop_images/kimono-curtain-light.jpg",
+            "alt": "Winter light through a curtain onto a wooden veranda",
+            "focus": "50% 50%",
+            "width": "narrow",
+            "tone": "white",
+            "text": "Winter in an old Japanese house is quiet, and cold."
+          }
+        },
+        "pause_koi": {
+          "type": "pause",
+          "settings": {
+            "after": "kimono",
+            "image": "shopify://shop_images/kimono-koi-pond.jpg",
+            "alt": "Koi in a garden pond beside the veranda",
+            "focus": "30% 62%",
+            "width": "full",
+            "tone": "white",
+            "text": ""
+          }
+        },
+        "pause_water": {
+          "type": "pause",
+          "settings": {
+            "after": "design",
+            "image": "shopify://shop_images/kimono-water-light.jpg",
+            "alt": "Light on the surface of the pond",
+            "focus": "50% 55%",
+            "width": "narrow",
+            "tone": "ink",
+            "text": "Nothing taken from animals. Warmth from the seed pod of a tree."
           }
         },
         "color_sumi": {
@@ -192,6 +232,9 @@
         "look_2",
         "look_3",
         "look_4",
+        "pause_curtain",
+        "pause_koi",
+        "pause_water",
         "color_sumi",
         "color_usuzumi",
         "maker_ito",
@@ -209,6 +252,11 @@
         "caption_left": "Over a kimono",
         "hero_right": "shopify://shop_images/240802_KAPOKKNOT4150.jpg",
         "caption_right": "Over everyday clothes",
+        "hero_scene": "shopify://shop_images/kimono-koi-engawa.jpg",
+        "hero_scene_alt": "A woman in a kimono and the coat, seated on the veranda of an old house above a koi pond",
+        "hero_scene_focus": "45% 50%",
+        "hero_show_buy": false,
+        "show_sticky": false,
         "eyebrow": "KAPOK KNOT — Tokyo",
         "heading": "Born from the kimono.\nWorn with anything.",
         "sub": "Cut to make room for a kimono's sleeves, emon and obi — and padded with kapok, a fibre that grows on trees. Created with kimono artist Hitomi Ito and designer Lin Li.",
