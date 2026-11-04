@@ -1,1 +1,47 @@
-{"sections":{"main":{"type":"main-customers-account","blocks":{"orders":{"type":"orders","settings":{}},"6c941173-f6b7-44fc-8a59-77e4d541cfc7":{"type":"shopify:\/\/apps\/\/blocks\/dokopoi-customer_v2\/76829e09-68d0-4a74-bcca-a1319e063714","settings":{"dokopoiContainerClass":"dokopoi_customer page-width dokopoi_account","dokopoiRemainingLayout":"left","dokopoiPointSymbol":"P","dokopoiPointRemainingLabel":"現在の保有ポイント","dokopoiLoginLayout":"center","dokopoiLoginButtonBoolean":false,"dokopoiLoginMidashi":"ログインすると現在の保有ポイントが確認できます","dokopoiLoginRedirect":"account","dokopoiLoginButtonId":"dokopoiLoginButtonId","dokopoiLoginButtonClass":"cart__checkout-button button","dokopoiLoginButtonText":"ログインはこちらから","customcss":""}},"2e1c8c56-5574-4466-82e7-236d173772c1":{"type":"shopify:\/\/apps\/\/blocks\/dokopoi-pointhistory_v2\/76829e09-68d0-4a74-bcca-a1319e063714","settings":{"dokopoiContainerClass":"dokopoi_customer page-width dokopoi_account","dokopoiPointTitle":"ポイント履歴","pointdefaultbutton":true,"dokopoiTableClass":"order-history","dokopoiTheadId":"dokopoiTheadId","dokopoiTheadClass":"dokopoiTheadClass","dokopoiTrId":"dokopoiTrId","dokopoiTrClass":"dokopoiTrClass","dokopoiTableCol1":"注文","dokopoiTableCol2":"購入日","dokopoiTableCol3":"ステータス","dokopoiTableCol4":"ポイント","dokopoiTableCol5":"有効期限","dokopoiTableCol6":"備考","dokopoiLoginLayout":"center","dokopoiLoginButtonBoolean":false,"dokopoiLoginMidashi":"ログインするとポイント履歴が確認できます","dokopoiLoginRedirect":"account","dokopoiLoginButtonId":"dokopoiLoginButtonId","dokopoiLoginButtonClass":"cart__checkout-button button","dokopoiLoginButtonText":"ログインはこちらから","dokopoiNoneText":"ポイント履歴はありません","dokopoiPageNate":"10","customcss":""}}},"block_order":["orders","6c941173-f6b7-44fc-8a59-77e4d541cfc7","2e1c8c56-5574-4466-82e7-236d173772c1"],"settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-customers-account",
+      "blocks": {
+        "orders": {
+          "type": "orders",
+          "settings": {}
+        },
+        "6c941173-f6b7-44fc-8a59-77e4d541cfc7": {
+          "type": "shopify://apps//blocks/dokopoi-customer_v2/76829e09-68d0-4a74-bcca-a1319e063714",
+          "settings": {
+            "dokopoiContainerClass": "dokopoi_customer page-width dokopoi_account",
+            "dokopoiRemainingLayout": "left",
+            "dokopoiPointSymbol": "P",
+            "dokopoiPointRemainingLabel": "現在の保有ポイント",
+            "dokopoiLoginLayout": "center",
+            "dokopoiLoginButtonBoolean": false,
+            "dokopoiLoginMidashi": "ログインすると現在の保有ポイントが確認できます",
+            "dokopoiLoginRedirect": "account",
+            "dokopoiLoginButtonId": "dokopoiLoginButtonId",
+            "dokopoiLoginButtonClass": "cart__checkout-button button",
+            "dokopoiLoginButtonText": "ログインはこちらから",
+            "customcss": ""
+          }
+        }
+      },
+      "block_order": [
+        "orders",
+        "6c941173-f6b7-44fc-8a59-77e4d541cfc7"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
