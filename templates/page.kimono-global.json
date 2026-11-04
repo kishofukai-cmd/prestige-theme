@@ -3,6 +3,34 @@
     "main": {
       "type": "kimono-global",
       "blocks": {
+        "kimono_1": {
+          "type": "kimono_photo",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__6774_107ffeb9-fc19-46db-afc0-0e6df7e1a492.jpg",
+            "alt": "Sumi Black worn over a kimono, seen from behind by a window"
+          }
+        },
+        "kimono_2": {
+          "type": "kimono_photo",
+          "settings": {
+            "image": "shopify://shop_images/kimono-collar-profile.jpg",
+            "alt": "The collar raised around the neck, worn over a kimono"
+          }
+        },
+        "kimono_3": {
+          "type": "kimono_photo",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__7377.jpg",
+            "alt": "Usuzumi Gray worn over a kimono on temple steps"
+          }
+        },
+        "kimono_4": {
+          "type": "kimono_photo",
+          "settings": {
+            "image": "shopify://shop_images/KAPOK_KNOT__7251.jpg",
+            "alt": "Usuzumi Gray worn over a kimono, seated on a veranda"
+          }
+        },
         "design_sleeve": {
           "type": "design",
           "settings": {
@@ -144,6 +172,10 @@
         }
       },
       "block_order": [
+        "kimono_1",
+        "kimono_2",
+        "kimono_3",
+        "kimono_4",
         "design_sleeve",
         "design_collar",
         "design_back",
@@ -180,6 +212,10 @@
         "story_heading": "A coat the kimono never had.",
         "story_body": "<p>It began in June 2023 with a request from kimono artist Hitomi Ito: a warm winter coat that wouldn't crush a kimono.</p><p>A kimono is cut in straight lines, with long sleeves, a deep collar and the obi sash tied at the back. Western coats are cut in curves and fight all three. With designer Lin Li, we spent twice our usual development time on prototypes until the two could meet.</p>",
         "story_image": "shopify://shop_images/KAPOK_KNOT__6886.jpg",
+        "kimono_jp": "着物",
+        "kimono_en": "With kimono",
+        "kimono_heading": "As it was first imagined.",
+        "kimono_body": "Over a kimono, the coat keeps the line of the collar, the sleeves and the obi — so winter no longer means choosing between staying warm and dressing the way you love.",
         "design_jp": "仕立て",
         "design_en": "The design",
         "design_heading": "Cut for the kimono. Better for everything else.",
