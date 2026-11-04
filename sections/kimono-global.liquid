@@ -13,6 +13,8 @@
   for b in section.blocks
     if b.type == 'color'
       assign jp_chars = jp_chars | append: b.settings.kanji
+    elsif b.type == 'design'
+      assign jp_chars = jp_chars | append: b.settings.tag_jp
     endif
   endfor
 -%}
@@ -83,6 +85,8 @@
   .kg-design{background:var(--paper)}
   .kg-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,32px);margin-top:48px}
   .kg-card__pic{aspect-ratio:4/5;overflow:hidden;margin-bottom:18px}
+  .kg-tag{display:flex;align-items:baseline;gap:8px;margin:0 0 6px !important;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .kg-tag b{font-family:var(--jp);font-weight:500;font-size:18px;letter-spacing:.06em;color:var(--ink)}
   .kg-card p{font-size:15px;color:#3a3835}
   .kg-note{margin-top:28px !important;font-size:14px;color:var(--mute)}
 
@@ -244,6 +248,7 @@
           <div class="kg-card kg-r" {{ b.shopify_attributes }}>
             <figure class="kg-card__pic">{%- if b.settings.image != blank -%}{{ b.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '300,500,800', sizes: '(max-width: 599px) 38vw, (max-width: 989px) 50vw, 25vw', alt: b.settings.title }}{%- endif -%}</figure>
             <div>
+              {%- if b.settings.tag_jp != blank or b.settings.tag_en != blank -%}<p class="kg-tag"><b>{{ b.settings.tag_jp }}</b>{{ b.settings.tag_en }}</p>{%- endif -%}
               <h3>{{ b.settings.title }}</h3>
               <p>{{ b.settings.text }}</p>
             </div>
@@ -511,6 +516,8 @@
       "type": "design", "name": "Design point",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "tag_jp", "label": "Tag (kanji)" },
+        { "type": "text", "id": "tag_en", "label": "Tag (English)" },
         { "type": "text", "id": "title", "label": "Title" },
         { "type": "textarea", "id": "text", "label": "Text" }
       ]

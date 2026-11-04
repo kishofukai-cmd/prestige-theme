@@ -35,6 +35,8 @@
           "type": "design",
           "settings": {
             "image": "shopify://shop_images/KAPOK_KNOT__7357.jpg",
+            "tag_jp": "袖",
+            "tag_en": "Sleeves",
             "title": "Sleeves that slip inside",
             "text": "Wide openings take a kimono's long sleeves — or a chunky knit — without bunching."
           }
@@ -43,15 +45,19 @@
           "type": "design",
           "settings": {
             "image": "shopify://shop_images/KAPOK_KNOT__7480.jpg",
-            "title": "A collar that follows yours",
-            "text": "It sits along the kimono collar. Turn it up on cold days and it wraps your neck — no scarf needed."
+            "tag_jp": "衣紋",
+            "tag_en": "Emon",
+            "title": "A collar that leaves the emon open",
+            "text": "The collar follows the eased-back kimono collar instead of pressing it flat. Turn it up on cold days and it wraps your neck — no scarf needed."
           }
         },
         "design_back": {
           "type": "design",
           "settings": {
             "image": "shopify://shop_images/KAPOK_KNOT__6796.jpg",
-            "title": "A back that makes room",
+            "tag_jp": "帯",
+            "tag_en": "Obi",
+            "title": "A back that makes room for the obi",
             "text": "The back opens over the obi bow and falls in a soft, wide line."
           }
         },
@@ -59,6 +65,8 @@
           "type": "design",
           "settings": {
             "image": "shopify://shop_images/KAPOK_KNOT__7055.jpg",
+            "tag_jp": "紐",
+            "tag_en": "Tie",
             "title": "A tie, not a squeeze",
             "text": "A cord from the hips ties at the front, so nothing presses on the obi. Pull it tighter for a sharper shape."
           }
@@ -203,35 +211,35 @@
         "caption_right": "Over everyday clothes",
         "eyebrow": "KAPOK KNOT — Tokyo",
         "heading": "Born from the kimono.\nWorn with anything.",
-        "sub": "A poncho coat created with kimono artist Hitomi Ito and designer Lin Li. Wide enough to go over a kimono, light enough to wear every day.",
+        "sub": "Cut to make room for a kimono's sleeves, emon and obi — and padded with kapok, a fibre that grows on trees. Created with kimono artist Hitomi Ito and designer Lin Li.",
         "size_label": "One size",
         "cta_label": "Choose your colour",
         "ship_note": "Free worldwide shipping · Duties & VAT added at checkout",
         "story_jp": "物語",
         "story_en": "The story",
-        "story_heading": "A coat the kimono never had.",
-        "story_body": "<p>It began in June 2023 with a request from kimono artist Hitomi Ito: a warm winter coat that wouldn't crush a kimono.</p><p>A kimono is cut in straight lines, with long sleeves, a deep collar and the obi sash tied at the back. Western coats are cut in curves and fight all three. With designer Lin Li, we spent twice our usual development time on prototypes until the two could meet.</p>",
+        "story_heading": "A winter coat the kimono never had.",
+        "story_body": "<p>Warm, padded coats were made for Western clothes. Over a kimono they crush the long sleeves, push down the emon — the back of the collar, eased away from the nape — and press against the obi tied at the back. So kimono wearers have long had to choose between staying warm and wearing a kimono well.</p><p>We set out to change that. In June 2023, kimono artist Hitomi Ito asked us for a coat that would make room for all three. With designer Lin Li, we spent twice our usual development time on prototypes until a padded coat could do it.</p>",
         "story_image": "shopify://shop_images/KAPOK_KNOT__6886.jpg",
         "kimono_jp": "着物",
         "kimono_en": "With kimono",
         "kimono_heading": "As it was first imagined.",
-        "kimono_body": "Over a kimono, the coat keeps the line of the collar, the sleeves and the obi — so winter no longer means choosing between staying warm and dressing the way you love.",
-        "design_jp": "仕立て",
-        "design_en": "The design",
-        "design_heading": "Cut for the kimono. Better for everything else.",
-        "design_intro": "Every detail answers a problem kimono wearers know well — and makes it easier to layer whatever you wear underneath.",
+        "kimono_body": "Over a kimono, the sleeves, the emon and the obi all keep their line — so winter no longer means choosing between staying warm and dressing the way you love.",
+        "design_jp": "革新",
+        "design_en": "The innovation",
+        "design_heading": "Sleeves, emon, obi. Room for all three.",
+        "design_intro": "Each answers a problem kimono wearers know well — and the same room makes it easy to layer anything underneath.",
         "design_note": "Buttoned cuffs keep the wind out.",
-        "design_quote": "Over a kimono it follows the collar without pressing, and the back opens around the obi beautifully.",
+        "design_quote": "Over a kimono it follows the emon, so there's no pressure on the neck, and the back opens to fit the obi beautifully.",
         "quote_cite": "Customer review, translated from Japanese",
         "everyday_jp": "日常",
         "everyday_en": "Everyday",
         "everyday_heading": "No kimono required.",
         "everyday_body": "Over jeans, a dress or a heavy knit, it reads as a sculptural wrap coat. One size, a relaxed drape — tie it loose or cinch it in.",
         "everyday_quote": "I wear it with everyday clothes, not kimono. I was amazed how light it is, and it's warm even with a thick knit underneath. People always ask where it's from.",
-        "material_jp": "素材",
-        "material_en": "The material",
-        "material_heading": "Warmth that grows on trees.",
-        "material_body": "<p>Kapok is the soft fibre inside the seed pods of the kapok tree. Each fibre is hollow — one-eighth the weight of cotton — and harvesting it takes no feathers, no animals and no felled trees.</p><p>Short kapok fibres are notoriously hard to work with. After years of joint development with a Japanese textile maker, we turned them into a thin padding sheet: down-like warmth, without the bulk.</p>",
+        "material_jp": "精進",
+        "material_en": "Shōjin",
+        "material_heading": "Warmth in the spirit of shōjin.",
+        "material_body": "<p>In Japan's Buddhist temples, shōjin ryōri is cooked without meat or fish, following the precept against taking life. Kapok brings that spirit to winter clothing.</p><p>It is the soft fibre from the seed pods of the kapok tree — hollow, one-eighth the weight of cotton — and harvesting it takes no feathers, no fur and no felled trees. After years of joint development with a Japanese textile maker, we turned it into a thin padding sheet: down-like warmth, without the bulk.</p>",
         "material_specs": "<p><strong>Shell</strong> Nylon 100%, water-repellent</p><p><strong>Padding</strong> Recycled polyester 70%, kapok 30%</p><p><strong>Lining</strong> Polyester 100%</p><p><strong>Size</strong> One size (F)</p><p><strong>Care</strong> Machine washable in a laundry net</p>",
         "material_image": "shopify://shop_images/KAPOK_KNOT__6755_8c603f99-9076-48e8-a6f0-b441bf578c63.jpg",
         "shop_jp": "二色",
