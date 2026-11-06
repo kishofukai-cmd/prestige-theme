@@ -45,6 +45,12 @@
             "text_color": ""
           }
         },
+        "text_KBHbg9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>11月6日(金)12:00より新色とサイズ在庫追加いたします。</p><p>【お届け時期】</p><p>新色M.L.XLサイズ：12月上旬お届け予定<br/>XLサイズ：12月上旬お届け予定<br/>その他：1週間以内にお届け予定</p>"
+          }
+        },
         "image_XqUpDh": {
           "type": "image",
           "settings": {
@@ -231,6 +237,7 @@
         "price",
         "text_6YiFKA",
         "button_ny4ifY",
+        "text_KBHbg9",
         "image_XqUpDh",
         "image_KfFfVf",
         "a615e0e6-a4a6-4f41-8682-f658955aa9f7",
