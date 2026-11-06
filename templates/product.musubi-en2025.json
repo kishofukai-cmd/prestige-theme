@@ -1250,6 +1250,13 @@
     "musubi_color_variation_gx8aVL": {
       "type": "musubi-color-variation",
       "blocks": {
+        "color_item_DMYj3r": {
+          "type": "color_item",
+          "settings": {
+            "name": "Laurel Green(New)",
+            "color_code": "#C5C56A"
+          }
+        },
         "color_item_BkkPJm": {
           "type": "color_item",
           "settings": {
@@ -1299,6 +1306,7 @@
         }
       },
       "block_order": [
+        "color_item_DMYj3r",
         "color_item_BkkPJm",
         "color_item_VxYqgN",
         "color_item_ntG3LD",
