@@ -470,7 +470,14 @@
         "soldout_record_9gfxei": {
           "type": "soldout_record",
           "settings": {
-            "date": "2026年9月16日(水)  一般発売",
+            "date": "2026年9月 先行予約",
+            "status": "完売"
+          }
+        },
+        "soldout_record_8J8FNw": {
+          "type": "soldout_record",
+          "settings": {
+            "date": "2025年11月 先行予約(新色追加）",
             "status": "開催中"
           }
         }
@@ -487,7 +494,8 @@
         "soldout_record_Rr47tV",
         "soldout_record_xzzJhT",
         "soldout_record_pLeVCr",
-        "soldout_record_9gfxei"
+        "soldout_record_9gfxei",
+        "soldout_record_8J8FNw"
       ],
       "settings": {
         "heading": "<p>クラウドファンディングで<br/>圧倒的支持を獲得</p>",
