@@ -1250,20 +1250,20 @@
     "musubi_color_variation_gx8aVL": {
       "type": "musubi-color-variation",
       "blocks": {
-        "color_item_DMYj3r": {
-          "type": "color_item",
-          "settings": {
-            "name": "Laurel Green(New)",
-            "color_code": "#C5C56A",
-            "image": "shopify://shop_images/261013_KAPOKKNOT0151.jpg"
-          }
-        },
         "color_item_BkkPJm": {
           "type": "color_item",
           "settings": {
             "name": "Honey mustard(New)",
             "color_code": "#FFCB05",
             "image": "shopify://shop_images/261013_KAPOKKNOT0008.jpg"
+          }
+        },
+        "color_item_DMYj3r": {
+          "type": "color_item",
+          "settings": {
+            "name": "Laurel Green(New)",
+            "color_code": "#576128",
+            "image": "shopify://shop_images/261013_KAPOKKNOT0151.jpg"
           }
         },
         "color_item_VxYqgN": {
@@ -1308,8 +1308,8 @@
         }
       },
       "block_order": [
-        "color_item_DMYj3r",
         "color_item_BkkPJm",
+        "color_item_DMYj3r",
         "color_item_VxYqgN",
         "color_item_ntG3LD",
         "color_item_M4RyTm",
