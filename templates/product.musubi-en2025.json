@@ -48,7 +48,7 @@
         "text_KBHbg9": {
           "type": "text",
           "settings": {
-            "text": "<p>11月6日(金)12:00より新色とサイズ在庫追加いたします。</p><p>【お届け時期】</p><p>新色M.L.XLサイズ：12月上旬お届け予定<br/>(Honey mustard,Laurel Green)<br/>各色XLサイズ：12月上旬お届け予定<br/>その他：1週間以内にお届け予定</p>"
+            "text": "<p>11月6日(金)12:00より新色とサイズ在庫追加いたします。</p><p>【お届け時期】</p><p>12月上旬お届け予定<br/>Honey mustard,Laurel Green 全サイズ<br/>Calm Brown Lサイズ<br/>各色XLサイズ<br/>その他：1週間以内にお届け予定</p>"
           }
         },
         "image_XqUpDh": {
@@ -1254,7 +1254,7 @@
           "type": "color_item",
           "settings": {
             "name": "Laurel Green(New)",
-            "color_code": "#C5C56A",
+            "color_code": "#c5c56a",
             "image": "shopify://shop_images/261013_KAPOKKNOT0151.jpg"
           }
         },
@@ -1262,7 +1262,7 @@
           "type": "color_item",
           "settings": {
             "name": "Honey mustard(New)",
-            "color_code": "#FFCB05",
+            "color_code": "#ffcb05",
             "image": "shopify://shop_images/261013_KAPOKKNOT0008.jpg"
           }
         },
