@@ -55,8 +55,8 @@
         "cta_bg_color": "#1a1a1a",
         "cta_text_color": "#ffffff",
         "cta_note": "A$478",
-        "cta_note_gbp": "£248",
-        "cta_note_eur": "€288"
+        "cta_note_gbp": "£335",
+        "cta_note_eur": "€395"
       }
     },
     "offer": {
@@ -66,14 +66,14 @@
         "tag": "FINAL STOCK",
         "price_was": "A$598",
         "price_now": "A$478",
-        "price_was_gbp": "£310",
-        "price_now_gbp": "£248",
-        "price_was_eur": "€360",
-        "price_now_eur": "€288",
+        "price_was_gbp": "£420",
+        "price_now_gbp": "£335",
+        "price_was_eur": "€495",
+        "price_now_eur": "€395",
         "code_text": "<p><strong>Final stock</strong> — 20% off while it lasts, no code needed.</p><p>Free shipping. Import duties &amp; VAT are added at checkout — around £85 in the UK or €105 in the Netherlands — so there is nothing more to pay on delivery. See FAQ below.</p>",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
-        "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout",
+        "trust_line": "Visa · Mastercard · Amex · PayPal · Apple Pay — secure checkout · UK & EU prices include all taxes and duties",
         "bg_color": "#1a2640",
         "text_color": "#ffffff",
         "accent_color": "#c29d66"
@@ -233,8 +233,8 @@
             "product_name": "AirLight Jacket — Men's",
             "subtitle": "5 Colors: Navy / Beige / Olive / Black / Greige",
             "price": "A$478",
-            "price_gbp": "£248",
-            "price_eur": "€288",
+            "price_gbp": "£335",
+            "price_eur": "€395",
             "description": "Light as air, warm as down, with brushed lining at the pockets and hood for extra comfort. Casual, relaxed, and built to be your new winter staple.",
             "cta_text": "Shop Now →",
             "cta_url": "/en/products/men-hooded-jacket",
@@ -256,8 +256,8 @@
             "product_name": "AirLight Jacket — Women's",
             "subtitle": "4 Colors: Navy / Beige / Olive / Black",
             "price": "A$478",
-            "price_gbp": "£248",
-            "price_eur": "€288",
+            "price_gbp": "£335",
+            "price_eur": "€395",
             "description": "Light as air, warm as down, with a waist drawcord to shape the silhouette and brushed lining for extra comfort.",
             "cta_text": "Shop Now →",
             "cta_url": "/en/products/women-hooded-jacket",
@@ -351,8 +351,8 @@
         "cta_women_text": "Shop Women's",
         "cta_women_url": "/en/products/women-hooded-jacket",
         "price_note": "A$478",
-        "price_note_gbp": "£248",
-        "price_note_eur": "€288"
+        "price_note_gbp": "£335",
+        "price_note_eur": "€395"
       }
     },
     "proof": {
@@ -604,8 +604,8 @@
         "enabled": true,
         "product_name": "AirLight Jacket",
         "price_text": "A$478",
-        "price_text_gbp": "£248",
-        "price_text_eur": "€288",
+        "price_text_gbp": "£335",
+        "price_text_eur": "€395",
         "sub_text": "Final stock — 20% off",
         "cta_text": "Shop Now →",
         "cta_url": "#a25-products",
